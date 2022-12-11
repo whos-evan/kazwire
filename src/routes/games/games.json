@@ -71,6 +71,15 @@
 			"embedURL": "https://jklm.fun/"
 		},
 		{
+			"name": "GeForce NOW",
+			"id": "geforce-now",
+			"image": "geforce-now.png",
+			"releaseDate": "?",
+			"developer": "Nvidia",
+			"description": "GeForce NOW is a cloud gaming service developed by Nvidia.",
+			"embedURL": "https://play.geforcenow.com/"
+		},
+		{
 			"name": "Papas Pizzeria",
 			"id": "papas-pizzeria",
 			"image": "papas-pizzeria.jpg",
