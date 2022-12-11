@@ -44,6 +44,33 @@
 			"description": "Cookie Clicker is a free-to-play incremental clicker game developed by Orteil."
 		},
 		{
+			"name": "Combines.io",
+			"id": "combines",
+			"image": "combines.png",
+			"releaseDate": "?",
+			"developer": "Yendis Entertainment",
+			"description": "Combines.io is a crazy blend of action and farming where you drive a combine, harvest crops and destroy other players in heated online battles.",
+			"embedURL": "https://combines.io/"
+		},
+		{
+			"name": "Fortnite",
+			"id": "fortnite",
+			"image": "fortnite.png",
+			"releaseDate": "2017-07-25",
+			"developer": "Epic Games",
+			"description": "Fortnite is a co-op sandbox survival game developed by Epic Games and People Can Fly, with the former publishing it.",
+			"embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=46bfab06-d864-465d-9e56-2d9e45cdee0a&utm_source=shortcut"
+		},
+		{
+			"name": "JKLM.fun",
+			"id": "jklm",
+			"image": "jklm.png",
+			"releaseDate": "?",
+			"developer": "Sparklin Labs",
+			"description": "JKLM.fun is a fun and fast-paced multiplayer game where you have to press the right keys at the right time to win.",
+			"embedURL": "https://jklm.fun/"
+		}
+		{
 			"name": "Papas Pizzeria",
 			"id": "papas-pizzeria",
 			"image": "papas-pizzeria.jpg",
