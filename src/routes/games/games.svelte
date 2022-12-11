@@ -30,7 +30,7 @@
         on:input={searchGames}
 	/>
 	<div
-		class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
+		class="grid grid-flow-rows lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 	>
 		{#each gamesJson['games'] as game}
 			<Box
