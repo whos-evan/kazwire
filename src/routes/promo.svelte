@@ -33,9 +33,7 @@
 				id="yt-video"
 				class="lg:col-start-2 lg:row-start-1 sm:row-start-2 relative w-full pb-[56.25%]"
 			>
-				<video class="absolute w-full h-full" controls>
-					<source src="./showoff.mp4" type="video/mp4" />
-				</video>
+				<img src="showoff.gif" class="absolute w-full h-full">
 			</div>
 		</div>
 	</div>
