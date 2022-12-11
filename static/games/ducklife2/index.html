@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="../ruffle/ruffle.js"></script>
+	</head>
+	<body>
+		<script>
+			window.RufflePlayer = window.RufflePlayer || {};
+			window.addEventListener('load', (event) => {
+				const ruffle = window.RufflePlayer.newest();
+				const player = ruffle.createPlayer();
+				player.style.width = '98vw';
+				player.style.height = '97vh';
+				player.style.margin = '0 auto';
+				const container = document.getElementById('container');
+				container.appendChild(player);
+				player.load('ducklife2.swf');
+			});
+		</script>
+		<div id="container" class="w-full h-[1000px]"></div>
+	</body>
+</html>

@@ -1,23 +1,42 @@
 <div class="Promo">
-    <div class='text-white'>
-        <div class='grid lg:grid-cols-2 lg:grid-rows-none sm:grid-cols-none sm:grid-rows-2 gap-5 items-center justify-center justify-items-center align-middle
-        w-full h-[35rem] pl-16 pr-16 pt-20'>
-        <div class='lg:col-start-1 lg:row-start-1'>
-            <div class='font-bold lg:text-7xl md:text-5xl sm:text-4xl'>
-            <h1>
-                <span class='pb-1 block'>Your favorites</span>
-                <span class='text-[#0875bb]'>all in one place!</span>
-            </h1>
-            </div>
-            <div class='mt-2 lg:text-2xl sm:text-sm wrap break-normal w-[32vw]'>
-            <p>From the gaming classics to the internet, access YouTube, TikTok, and even your favorite games freely and securely.</p>
-            </div>
-            <button class='bg-[#0875bb] hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg'>Start Browsing</button>
-            <button class='bg-[#0875bb] hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg'>Start Playing</button>
-        </div>
-        <div id="yt-video" class='lg:col-start-2 lg:row-start-1 sm:row-start-2 relative w-full pb-[56.25%]'>
-            <iframe class='absolute w-full h-full' src="https://www.youtube.com/embed/-dMCLWCEbsk" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
-        </div>
-        </div>
-    </div>
+	<div class="text-white">
+		<div
+			class="grid lg:grid-cols-2 lg:grid-rows-none sm:grid-cols-none sm:grid-rows-2 gap-5 items-center justify-center justify-items-center align-middle
+        w-full h-[35rem] pl-16 pr-16"
+		>
+			<div class="lg:col-start-1 lg:row-start-1">
+				<div class="font-bold lg:text-7xl md:text-5xl sm:text-xl">
+					<h1>
+						<span class="pb-1 block">Your favorites</span>
+						<span class="text-[#0875bb]">all in one place!</span>
+					</h1>
+				</div>
+				<div class="mt-2 lg:text-2xl sm:text-sm wrap break-normal w-[32vw]">
+					<p>
+						From the gaming classics to the internet, access YouTube, TikTok, and even your favorite
+						games freely and securely.
+					</p>
+				</div>
+				<a href="/search">
+					<button
+						class="bg-[#0875bb] hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg"
+						>Start Browsing</button
+					>
+				</a>
+				<a href="/games">
+					<button class="bg-[#0875bb] hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg"
+						>Start Playing</button
+					>
+				</a>
+			</div>
+			<div
+				id="yt-video"
+				class="lg:col-start-2 lg:row-start-1 sm:row-start-2 relative w-full pb-[56.25%]"
+			>
+				<video class="absolute w-full h-full" controls>
+					<source src="./showoff.mp4" type="video/mp4" />
+				</video>
+			</div>
+		</div>
+	</div>
 </div>

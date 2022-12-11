@@ -1,0 +1,77 @@
+{
+	"games": [
+		{
+			"name": "Run 3",
+			"id": "run-3",
+			"image": "run-3.png",
+			"releaseDate": "2014-06-05",
+			"developer": "Sega",
+			"description": "Run 3 is the first Run game to introduce a storyline, mainly told through cutscenes.",
+			"embedURL": "https://nggyu.tk/service/hvtr%3A-%2Frlcygr23%2Ccmm-rwn-3-bgtc%2F"
+		},
+		{
+			"name": "Papas Pizzeria",
+			"id": "papas-pizzeria",
+			"image": "papas-pizzeria.jpg",
+			"releaseDate": "2007-08-07",
+			"developer": "Flipline Studios'",
+			"description": "Papa's Pizzeria is the first game in the Papa Louie time-management restaurant series, and was officially released on August 7, 2007."
+		},
+		{
+			"name": "Bloons Tower Defense 2",
+			"id": "bloons-td2",
+			"image": "bloons-td2.webp",
+			"releaseDate": "?",
+			"developer": "Ninja Kiwi",
+			"description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi."
+		},
+		{
+			"name": "Frogger",
+			"id": "frogger",
+			"image": "frogger.png",
+			"releaseDate": "?",
+			"developer": "Konami",
+			"description": "Frogger is either single-player or two players alternating. The frog starts at the bottom of the screen, which contains a horizontal road occupied by speeding cars, trucks, and bulldozers."
+		},
+		{
+			"name": "Crazy Taxi",
+			"id": "crazy-taxi",
+			"image": "crazy-taxi.png",
+			"releaseDate": "?",
+			"developer": "Hitmaker",
+			"description": "Crazy Taxi is a series of racing video games that was developed by Hitmaker and published by Sega."
+		},
+		{
+			"name": "Duck Life 1",
+			"id": "ducklife1",
+			"image": "ducklife1.png",
+			"releaseDate": "?",
+			"developer": "Wix Games",
+			"description": "Duck Life is a game series where you train your duck for races and/or battles."
+		},
+		{
+			"name": "Duck Life 2",
+			"id": "ducklife2",
+			"image": "ducklife2.png",
+			"releaseDate": "?",
+			"developer": "Wix Games",
+			"description": "Duck Life is a game series where you train your duck for races and/or battles."
+		},
+		{
+			"name": "Duck Life 3 - Evolution",
+			"id": "ducklife3-evolution",
+			"image": "ducklife3-evolution.png",
+			"releaseDate": "?",
+			"developer": "Wix Games",
+			"description": "Duck Life is a game series where you train your duck for races and/or battles."
+		},
+		{
+			"name": "Duck Life 4",
+			"id": "ducklife4",
+			"image": "ducklife4.png",
+			"releaseDate": "?",
+			"developer": "Wix Games",
+			"description": "Duck Life is a game series where you train your duck for races and/or battles."
+		}
+	]
+}
