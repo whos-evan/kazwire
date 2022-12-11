@@ -165,6 +165,13 @@
             "developer": "Matheus Valadares",
             "description": "Diep.io is a multiplayer action game where players control tanks and earn points by destroying shapes and killing other players in a 2D arena.",
             "embedURL": "https://diep.io/"
+        },
+        {
+            "name": "Super Mario 64",
+            "id": "super-mario-64",
+            "image": "super-mario-64",
+            "developer": "Nintendo",
+            "description": "Super Mario 64 is a 1996 platform game for the Nintendo 64, developed by Nintendo EAD and published by Nintendo. The first Super Mario game to feature 3D gameplay!"
         }
     ]
 }
