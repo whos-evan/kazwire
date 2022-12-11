@@ -11,11 +11,11 @@
 </script>
 
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">
-	<h1 class="lg:text-5xl md:text-4xl sm:text-xl font-bold mb-5">
+	<h1 class="lg:text-5xl md:text-4xl sm:text-xl font-bold mb-5 mt-10">
 		Here are two recommended games!
 	</h1>
 	<div
-		class="grid grid-flow-rows grid-cols-2 auto-rows-auto gap-10"
+		class="grid grid-flow-rows lg:grid-cols-2 lg:grid-rows-none sm:grid-cols-1 sm:grid-rows-2 auto-rows-auto gap-10"
 	>
 		<Box
 			title={randomGame1['name']}
