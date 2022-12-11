@@ -1,4 +1,13 @@
 <script>
+	import { onMount } from 'svelte';
+
+	async function iframeSearch(input) {
+        await registerSW();
+
+        let iframe = document.getElementById('game-frame');
+
+        iframe.src = __uv$config.prefix + __uv$config.encodeUrl(input);
+    }
 	// get game files based off slug from games directory
 	import { page } from '$app/stores';
 
@@ -15,21 +24,16 @@
 			}
 		}
 	}
-
-	function getGamePath() {
-		// for loop to find the game in the json file
-		for (let i = 0; i < gamesJson['games'].length; i++) {
-			if (gamesJson['games'][i]['id'] == slug) {
-				if (gamesJson['games'][i]['embedURL'] != undefined) {
-					return gamesJson['games'][i]['embedURL'];
-				} else {
-					return '/games/' + slug + '/' + 'index.html';
-				}
+	onMount(() => {
+		function getGamePath() {
+			if (getGame()['embedURL'] != undefined) {
+				iframeSearch(getGame()['embedURL']);
+			} else {
+				document.getElementById('game-frame').src = '/games/' + slug + '/' + 'index.html';
 			}
 		}
-	}
-
-	export let gamepath = getGamePath();
+		getGamePath();
+	});
 
 	export let title = getGame()['name'];
 	export let description = getGame()['description'];
@@ -54,7 +58,7 @@
 
 <div class="flex h-[calc(100vh-132px)] max-w-full pl-5 pr-5 pb-5">
 	<div class="flex-grow mb-14 align-center">
-		<iframe src={gamepath} id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
+		<iframe src="" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
 		<div
 			class="block relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white"
 		>

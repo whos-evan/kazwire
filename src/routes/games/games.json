@@ -7,7 +7,41 @@
 			"releaseDate": "2014-06-05",
 			"developer": "Sega",
 			"description": "Run 3 is the first Run game to introduce a storyline, mainly told through cutscenes.",
-			"embedURL": "/search/hvtr%3A-%2Frlcygr23%2Ccmm-rwn-3-bgtc%2F"
+			"embedURL": "https://player03.com/run/3/beta/"
+		},
+		{
+			"name": "Krunker.io",
+			"id": "krunker",
+			"image": "krunker.png",
+			"releaseDate": "?",
+			"developer": "Yendis Entertainment",
+			"description": "An easy to get into fully moddable First Person Shooter with advanced movement mechanics.",
+			"embedURL": "https://krunker.io/"
+		},
+		{
+			"name": "agar.io",
+			"id": "agar",
+			"image": "agar.png",
+			"releaseDate": "?",
+			"developer": "Matheus Valadares",
+			"description": "Agar.io is a massively multiplayer online action game.",
+			"embedURL": "https://agar.io/"
+		},
+		{
+			"name": "2048",
+			"id": "2048",
+			"image": "2048.png",
+			"releaseDate": "?",
+			"developer": "Gabriele Cirulli",
+			"description": "2048 is a single-player sliding block puzzle game designed by Italian web developer Gabriele Cirulli."
+		},
+		{
+			"name": "Cookie Clicker",
+			"id": "cookie-clicker",
+			"image": "cookie-clicker.png",
+			"releaseDate": "?",
+			"developer": "Orteil",
+			"description": "Cookie Clicker is a free-to-play incremental clicker game developed by Orteil."
 		},
 		{
 			"name": "Papas Pizzeria",
