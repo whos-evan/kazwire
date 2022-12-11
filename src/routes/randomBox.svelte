@@ -4,6 +4,10 @@
 
 	let randomGame1 = gamesJson['games'][Math.floor(Math.random() * gamesJson['games'].length)];
 	let randomGame2 = gamesJson['games'][Math.floor(Math.random() * gamesJson['games'].length)];
+	// if they are the same game, reroll
+	while (randomGame1['id'] == randomGame2['id']) {
+		randomGame2 = gamesJson['games'][Math.floor(Math.random() * gamesJson['games'].length)];
+	}
 </script>
 
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">
