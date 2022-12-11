@@ -21,10 +21,6 @@
 </script>
 
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">
-	<div class="mb-5">
-		<h1 class="font-bold text-5xl">Games</h1>
-		<p class="text-lg">Search or scroll for your favorites!</p>
-	</div>
 	<input
 		id="search"
 		type="text"
