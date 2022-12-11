@@ -1,147 +1,170 @@
 {
-	"games": [
-		{
-			"name": "Run 3",
-			"id": "run-3",
-			"image": "run-3.png",
-			"releaseDate": "2014-06-05",
-			"developer": "Sega",
-			"description": "Run 3 is the first Run game to introduce a storyline, mainly told through cutscenes.",
-			"embedURL": "https://player03.com/run/3/beta/"
-		},
-		{
-			"name": "Krunker.io",
-			"id": "krunker",
-			"image": "krunker.png",
-			"releaseDate": "?",
-			"developer": "Yendis Entertainment",
-			"description": "An easy to get into fully moddable First Person Shooter with advanced movement mechanics.",
-			"embedURL": "https://krunker.io/"
-		},
-		{
-			"name": "agar.io",
-			"id": "agar",
-			"image": "agar.png",
-			"releaseDate": "?",
-			"developer": "Matheus Valadares",
-			"description": "Agar.io is a massively multiplayer online action game.",
-			"embedURL": "https://agar.io/"
-		},
-		{
-			"name": "2048",
-			"id": "2048",
-			"image": "2048.png",
-			"releaseDate": "?",
-			"developer": "Gabriele Cirulli",
-			"description": "2048 is a single-player sliding block puzzle game designed by Italian web developer Gabriele Cirulli."
-		},
-		{
-			"name": "Cookie Clicker",
-			"id": "cookie-clicker",
-			"image": "cookie-clicker.png",
-			"releaseDate": "?",
-			"developer": "Orteil",
-			"description": "Cookie Clicker is a free-to-play incremental clicker game developed by Orteil."
-		},
-		{
-			"name": "Combines.io",
-			"id": "combines",
-			"image": "combines.png",
-			"releaseDate": "?",
-			"developer": "Yendis Entertainment",
-			"description": "Combines.io is a crazy blend of action and farming where you drive a combine, harvest crops and destroy other players in heated online battles.",
-			"embedURL": "https://combines.io/"
-		},
-		{
-			"name": "Fortnite",
-			"id": "fortnite",
-			"image": "fortnite.png",
-			"releaseDate": "2017-07-25",
-			"developer": "Epic Games",
-			"description": "Fortnite is a co-op sandbox survival game developed by Epic Games and People Can Fly, with the former publishing it.",
-			"embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=46bfab06-d864-465d-9e56-2d9e45cdee0a&utm_source=shortcut"
-		},
-		{
-			"name": "JKLM.fun",
-			"id": "jklm",
-			"image": "jklm.png",
-			"releaseDate": "?",
-			"developer": "Sparklin Labs",
-			"description": "JKLM.fun is a fun and fast-paced multiplayer game where you have to press the right keys at the right time to win.",
-			"embedURL": "https://jklm.fun/"
-		},
-		{
-			"name": "GeForce NOW",
-			"id": "geforce-now",
-			"image": "geforce-now.png",
-			"releaseDate": "?",
-			"developer": "Nvidia",
-			"description": "GeForce NOW is a cloud gaming service developed by Nvidia.",
-			"embedURL": "https://play.geforcenow.com/"
-		},
-		{
-			"name": "Papas Pizzeria",
-			"id": "papas-pizzeria",
-			"image": "papas-pizzeria.jpg",
-			"releaseDate": "2007-08-07",
-			"developer": "Flipline Studios'",
-			"description": "Papa's Pizzeria is the first game in the Papa Louie time-management restaurant series, and was officially released on August 7, 2007."
-		},
-		{
-			"name": "Bloons Tower Defense 2",
-			"id": "bloons-td2",
-			"image": "bloons-td2.webp",
-			"releaseDate": "?",
-			"developer": "Ninja Kiwi",
-			"description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi."
-		},
-		{
-			"name": "Frogger",
-			"id": "frogger",
-			"image": "frogger.png",
-			"releaseDate": "?",
-			"developer": "Konami",
-			"description": "Frogger is either single-player or two players alternating. The frog starts at the bottom of the screen, which contains a horizontal road occupied by speeding cars, trucks, and bulldozers."
-		},
-		{
-			"name": "Crazy Taxi",
-			"id": "crazy-taxi",
-			"image": "crazy-taxi.png",
-			"releaseDate": "?",
-			"developer": "Hitmaker",
-			"description": "Crazy Taxi is a series of racing video games that was developed by Hitmaker and published by Sega."
-		},
-		{
-			"name": "Duck Life 1",
-			"id": "ducklife1",
-			"image": "ducklife1.png",
-			"releaseDate": "?",
-			"developer": "Wix Games",
-			"description": "Duck Life is a game series where you train your duck for races and/or battles."
-		},
-		{
-			"name": "Duck Life 2",
-			"id": "ducklife2",
-			"image": "ducklife2.png",
-			"releaseDate": "?",
-			"developer": "Wix Games",
-			"description": "Duck Life is a game series where you train your duck for races and/or battles."
-		},
-		{
-			"name": "Duck Life 3 - Evolution",
-			"id": "ducklife3-evolution",
-			"image": "ducklife3-evolution.png",
-			"releaseDate": "?",
-			"developer": "Wix Games",
-			"description": "Duck Life is a game series where you train your duck for races and/or battles."
-		},
-		{
-			"name": "Duck Life 4",
-			"id": "ducklife4",
-			"image": "ducklife4.png",
-			"releaseDate": "?",
-			"developer": "Wix Games",
-			"description": "Duck Life is a game series where you train your duck for races and/or battles."
-		}
-	]
+    "games": [
+        {
+            "name": "Run 3",
+            "id": "run-3",
+            "image": "run-3.png",
+            "releaseDate": "2014-06-05",
+            "developer": "Sega",
+            "description": "Run 3 is the first Run game to introduce a storyline, mainly told through cutscenes.",
+            "embedURL": "https://player03.com/run/3/beta/"
+        },
+        {
+            "name": "Krunker.io",
+            "id": "krunker",
+            "image": "krunker.png",
+            "releaseDate": "?",
+            "developer": "Yendis Entertainment",
+            "description": "An easy to get into fully moddable First Person Shooter with advanced movement mechanics.",
+            "embedURL": "https://krunker.io/"
+        },
+        {
+            "name": "agar.io",
+            "id": "agar",
+            "image": "agar.png",
+            "releaseDate": "?",
+            "developer": "Matheus Valadares",
+            "description": "Agar.io is a massively multiplayer online action game.",
+            "embedURL": "https://agar.io/"
+        },
+        {
+            "name": "2048",
+            "id": "2048",
+            "image": "2048.png",
+            "releaseDate": "?",
+            "developer": "Gabriele Cirulli",
+            "description": "2048 is a single-player sliding block puzzle game designed by Italian web developer Gabriele Cirulli."
+        },
+        {
+            "name": "Cookie Clicker",
+            "id": "cookie-clicker",
+            "image": "cookie-clicker.png",
+            "releaseDate": "?",
+            "developer": "Orteil",
+            "description": "Cookie Clicker is a free-to-play incremental clicker game developed by Orteil."
+        },
+        {
+            "name": "Combines.io",
+            "id": "combines",
+            "image": "combines.png",
+            "releaseDate": "?",
+            "developer": "Yendis Entertainment",
+            "description": "Combines.io is a crazy blend of action and farming where you drive a combine, harvest crops and destroy other players in heated online battles.",
+            "embedURL": "https://combines.io/"
+        },
+        {
+            "name": "Fortnite",
+            "id": "fortnite",
+            "image": "fortnite.png",
+            "releaseDate": "2017-07-25",
+            "developer": "Epic Games",
+            "description": "Fortnite is a co-op sandbox survival game developed by Epic Games and People Can Fly, with the former publishing it.",
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=46bfab06-d864-465d-9e56-2d9e45cdee0a&utm_source=shortcut"
+        },
+        {
+            "name": "JKLM.fun",
+            "id": "jklm",
+            "image": "jklm.png",
+            "releaseDate": "?",
+            "developer": "Sparklin Labs",
+            "description": "JKLM.fun is a fun and fast-paced multiplayer game where you have to press the right keys at the right time to win.",
+            "embedURL": "https://jklm.fun/"
+        },
+        {
+            "name": "GeForce NOW",
+            "id": "geforce-now",
+            "image": "geforce-now.png",
+            "releaseDate": "?",
+            "developer": "Nvidia",
+            "description": "GeForce NOW is a cloud gaming service developed by Nvidia.",
+            "embedURL": "https://play.geforcenow.com/"
+        },
+        {
+            "name": "Papas Pizzeria",
+            "id": "papas-pizzeria",
+            "image": "papas-pizzeria.jpg",
+            "releaseDate": "2007-08-07",
+            "developer": "Flipline Studios'",
+            "description": "Papa's Pizzeria is the first game in the Papa Louie time-management restaurant series, and was officially released on August 7, 2007."
+        },
+        {
+            "name": "Bloons Tower Defense 2",
+            "id": "bloons-td2",
+            "image": "bloons-td2.webp",
+            "releaseDate": "?",
+            "developer": "Ninja Kiwi",
+            "description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi."
+        },
+        {
+            "name": "Frogger",
+            "id": "frogger",
+            "image": "frogger.png",
+            "releaseDate": "?",
+            "developer": "Konami",
+            "description": "Frogger is either single-player or two players alternating. The frog starts at the bottom of the screen, which contains a horizontal road occupied by speeding cars, trucks, and bulldozers."
+        },
+        {
+            "name": "Crazy Taxi",
+            "id": "crazy-taxi",
+            "image": "crazy-taxi.png",
+            "releaseDate": "?",
+            "developer": "Hitmaker",
+            "description": "Crazy Taxi is a series of racing video games that was developed by Hitmaker and published by Sega."
+        },
+        {
+            "name": "Duck Life 1",
+            "id": "ducklife1",
+            "image": "ducklife1.png",
+            "releaseDate": "?",
+            "developer": "Wix Games",
+            "description": "Duck Life is a game series where you train your duck for races and/or battles."
+        },
+        {
+            "name": "Duck Life 2",
+            "id": "ducklife2",
+            "image": "ducklife2.png",
+            "releaseDate": "?",
+            "developer": "Wix Games",
+            "description": "Duck Life is a game series where you train your duck for races and/or battles."
+        },
+        {
+            "name": "Duck Life 3 - Evolution",
+            "id": "ducklife3-evolution",
+            "image": "ducklife3-evolution.png",
+            "releaseDate": "?",
+            "developer": "Wix Games",
+            "description": "Duck Life is a game series where you train your duck for races and/or battles."
+        },
+        {
+            "name": "Duck Life 4",
+            "id": "ducklife4",
+            "image": "ducklife4.png",
+            "releaseDate": "?",
+            "developer": "Wix Games",
+            "description": "Duck Life is a game series where you train your duck for races and/or battles."
+        },
+        {
+            "name": "Wings.io",
+            "id": "wings",
+            "image": "wings.png",
+            "developer": "Profusion Studios",
+            "description": "Wings.io is a Massive multiplayer online game. Control your plane and shoot down other players!",
+            "embedURL": "https://wings.io/"
+        },
+        {
+            "name": "Bow Man",
+            "id": "bow-man",
+            "image": "bow-man.png",
+            "developer": "Unknown",
+            "description": "Bowman is an archery game where you and an opponent take shots at each other. You win when you've hit the opponent fatally."
+        },
+        {
+            "name": "Diep.io",
+            "id": "diep",
+            "image": "diep.png",
+            "developer": "Matheus Valadares",
+            "description": "Diep.io is a multiplayer action game where players control tanks and earn points by destroying shapes and killing other players in a 2D arena.",
+            "embedURL": "https://diep.io/"
+        }
+    ]
 }
