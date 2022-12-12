@@ -237,6 +237,13 @@
             "developer": "Rivet Gaming",
             "description": "Build Royale.io is a 2D shooter IO game where you must build and loot to upgrade your weapons to defeat all your enemies.",
             "embedURL": "https://buildroyale.io/"
+        },
+        {
+            "name": "Sonic The Hedgehog",
+            "id": "sonic",
+            "image": "sonic.png",
+            "developer": "Sega",
+            "description": "Race at lightning speeds across seven classic zones as Sonic the Hedgehog."
         }
     ]
 }
