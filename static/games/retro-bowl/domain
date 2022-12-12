@@ -1,0 +1,4 @@
+1. Create a TXT record in your DNS configuration for the following hostname: _github-pages-challenge-loserboysonyt.retrobowl2.com
+2. Use this code for the value of the TXT record: b5dc667632b026c06a4d0927220b88
+3. Wait until your DNS configuration changes. This could take up to 24 hours to propagate.
+  

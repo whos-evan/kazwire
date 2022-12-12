@@ -179,6 +179,41 @@
             "image": "pokemon-stadium-2.png",
             "developer": "Nintendo",
             "description": "Pok\u00e9mon Stadium 2 is a strategy video game developed by Nintendo EAD and published by Nintendo for the Nintendo 64. It features all 251 Pok\u00e9mon from the first and second generations of the franchise."
+        },
+        {
+            "name": "Slope",
+            "id": "slope",
+            "image": "slope.png",
+            "developer": "Rob Kay",
+            "description": "Slope, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way."
+        },
+        {
+            "name": "Retro Bowl",
+            "id": "retro-bowl",
+            "image": "retro-bowl.png",
+            "developer": "New Star Games",
+            "description": "Retro Bowl emulates the gameplay of American football and was heavily influenced by the Tecmo Bowl series."
+        },
+        {
+            "name": "Tetris",
+            "id": "tetris",
+            "image": "tetris.png",
+            "developer": "Larprad",
+            "description": "Tetris, video game created by Russian designer Alexey Pajitnov in 1985 that allows players to rotate falling blocks strategically to clear levels."
+        },
+        {
+            "name": "Rooftop Snipers",
+            "id": "rooftop-snipers",
+            "image": "rooftop-snipers.png",
+            "developer": "Michael Eichler",
+            "description": "Rooftop Snipers is a chaotic two-button two-player sniper game."
+        },
+        {
+            "name": "Stack",
+            "id": "stack",
+            "image": "stack.png",
+            "developer": "meshde",
+            "description": "The goal of the game is to stack the moving blocks over each other as high as you can."
         }
     ]
 }

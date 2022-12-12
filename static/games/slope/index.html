@@ -1,0 +1,31 @@
+<head>
+    <link rel="stylesheet" href="TemplateData/style.css">
+    <script src="TemplateData/UnityProgress.js"></script>
+    <script src="TemplateData/unityloader41.js"></script>
+    <script>
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") } } });
+    </script>
+        .closebtn {
+          margin-left: 15px;
+          color: white;
+          p {text-align: center;}  
+          font-weight: bold;
+          float: right;
+          font-size: 22px;
+          line-height: 20px;
+          cursor: pointer;
+          transition: 0.3s;
+        }
+
+        .closebtn:hover {
+          color: black;
+        }
+    </style>
+</head>
+
+<body style="margin: 0; overflow: hidden;">
+    <div class="webgl-content">
+        <div id="gameContainer" style="width: 100%; height: 100%; margin: 0;"></div>
+    </div>
+</body>
+<!-- Slope game by y8 games, not me.-->
