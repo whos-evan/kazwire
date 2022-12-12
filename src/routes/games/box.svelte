@@ -17,7 +17,7 @@
 	export let id;
 </script>
 
-<a class="game" id={title} href="/game/{id}">
+<a class="game" id={title} href="/games/{id}">
 	<div
 		class="bg-white hover:bg-gray-200 hover:cursor-pointer text-black w-full h-full mb-5 rounded-xl"
 	>
