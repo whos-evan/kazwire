@@ -17,12 +17,12 @@
 	export let id;
 </script>
 
-<a class="game" id={title} href="/games/{id}">
+<a class="game" id={title} href="/game/{id}">
 	<div
 		class="bg-white hover:bg-gray-200 hover:cursor-pointer text-black w-full h-full mb-5 rounded-xl"
 	>
 		<div class="p-5 w-full justify-center flex">
-			<img src="./games/img/{image}" class="bg-black w-auto h-[10rem]" alt={description} />
+			<img src="./game/img/{image}" class="bg-black w-auto h-[10rem]" alt={description} />
 		</div>
 		<div class="pl-5 pr-5">
 			<h1 class="font-bold text-2xl">{title}</h1>
