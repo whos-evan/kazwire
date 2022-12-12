@@ -213,6 +213,14 @@
             "image": "stack.png",
             "developer": "meshde",
             "description": "The goal of the game is to stack the moving blocks over each other as high as you can."
+        },
+        {
+            "name": "1v1.lol",
+            "id": "1v1-lol",
+            "image": "1v1-lol.png",
+            "developer": "JustPlay.LOL",
+            "description": "Fight to survive in this epic multiplayer battle royale build battle where only the last player standing wins and achieves the long-awaited master victory.",
+            "embedURL": "https://1v1.lol/"
         }
     ]
 }
