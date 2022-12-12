@@ -29,7 +29,7 @@
 			if (getGame()['embedURL'] != undefined) {
 				iframeSearch(getGame()['embedURL']);
 			} else {
-				document.getElementById('game-frame').src = '/games/' + slug + '/' + 'index.html';
+				document.getElementById('game-frame').src = '/game/' + slug + '/' + 'index.html';
 			}
 		}
 		getGamePath();
