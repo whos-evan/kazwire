@@ -48,9 +48,9 @@ if isEmbed == 'yes':
         'description': description,
         'embedURL': embedURL
     })
-    write_json(gameJson, './src/routes/games/games.json')
+    write_json(gameJson, './src/routes/game/games.json')
 
-    urllib.request.urlretrieve(image, "./static/games/img/" + imageFileName)
+    urllib.request.urlretrieve(image, "./static/game/img/" + imageFileName)
 
 else:
     isSwf = input('Is the game a swf? (yes/no) ')
@@ -66,9 +66,9 @@ else:
                     shutil.copy(src, dst)
                 else: raise
 
-        copyanything('./static/games/ruffle-template', './static/games/' + id)
+        copyanything('./static/game/ruffle-template', './static/game/' + id)
 
-        with open(r'./static/games/' + id + '/index.html', 'r') as file:
+        with open(r'./static/game/' + id + '/index.html', 'r') as file:
   
             # Reading the content of the file
             # using the read() function and storing
@@ -77,7 +77,7 @@ else:
 
             data = data.replace('ruffle-template', id)
 
-        with open(r'./static/games/' + id + '/index.html', 'w') as file:
+        with open(r'./static/game/' + id + '/index.html', 'w') as file:
   
             # Writing the replaced data in our
             # text file
@@ -92,9 +92,9 @@ else:
             'developer': developer,
             'description': description
         }
-        write_json(gameJson, './src/routes/games/games.json')
+        write_json(gameJson, './src/routes/game/games.json')
         
-        urllib.request.urlretrieve(image, "./static/games/img/" + imageFileName)
+        urllib.request.urlretrieve(image, "./static/game/img/" + imageFileName)
     elif input('Is the game a n64 game? (yes/no) ') == 'yes':
         import shutil, errno
 
@@ -106,9 +106,9 @@ else:
                     shutil.copy(src, dst)
                 else: raise
 
-        copyanything('./static/games/n64-template', './static/games/' + id)
+        copyanything('./static/game/n64-template', './static/game/' + id)
 
-        with open(r'./static/games/' + id + '/index.html', 'r') as file:
+        with open(r'./static/game/' + id + '/index.html', 'r') as file:
   
             # Reading the content of the file
             # using the read() function and storing
@@ -117,7 +117,7 @@ else:
 
             data = data.replace('game-url-here', id)
 
-        with open(r'./static/games/' + id + '/index.html', 'w') as file:
+        with open(r'./static/game/' + id + '/index.html', 'w') as file:
   
             # Writing the replaced data in our
             # text file
@@ -132,9 +132,9 @@ else:
             'developer': developer,
             'description': description
         }
-        write_json(gameJson, './src/routes/games/games.json')
+        write_json(gameJson, './src/routes/game/games.json')
         
-        urllib.request.urlretrieve(image, "./static/games/img/" + imageFileName)
+        urllib.request.urlretrieve(image, "./static/game/img/" + imageFileName)
     else:
         isEmbed = 'no'
         print('Adding game', game, 'with ID', id, 'and image', image, 'and developer', developer, 'and description', description, 'and isEmbed', isEmbed)
@@ -146,6 +146,6 @@ else:
             'developer': developer,
             'description': description
         }
-        write_json(gameJson, './src/routes/games/games.json')
+        write_json(gameJson, './src/routes/game/games.json')
 
-        urllib.request.urlretrieve(image, "./static/games/img/" + imageFileName)
+        urllib.request.urlretrieve(image, "./static/game/img/" + imageFileName)
