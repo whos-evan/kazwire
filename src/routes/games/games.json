@@ -221,6 +221,22 @@
             "developer": "JustPlay.LOL",
             "description": "Fight to survive in this epic multiplayer battle royale build battle where only the last player standing wins and achieves the long-awaited master victory.",
             "embedURL": "https://1v1.lol/"
+        },
+        {
+            "name": "Team Fortress 2",
+            "id": "tf2",
+            "image": "tf2.png",
+            "developer": "Valve",
+            "description": "Team Fortress 2 is a 2007 multiplayer first-person shooter game developed and published by Valve Corporation.",
+            "embed_url": "https://play.geforcenow.com/mall/#/deeplink?game-id=40512534-ad27-4a12-afa7-6fc412288072&utm_source=shortcut"
+        },
+        {
+            "name": "BuildRoyale.io",
+            "id": "buildroyale",
+            "image": "buildroyale.png",
+            "developer": "Rivet Gaming",
+            "description": "Build Royale.io is a 2D shooter IO game where you must build and loot to upgrade your weapons to defeat all your enemies.",
+            "embed_url": "https://buildroyale.io/"
         }
     ]
 }
