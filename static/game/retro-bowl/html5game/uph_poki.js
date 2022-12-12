@@ -50,7 +50,7 @@ var inst = { };
 function poki_loadbar(ctx, width, height, total, current, image) {
     if (window.PokiSDK) { // if you have your own loadbar, just copy this block in there
         if (window.PokiSDK_loadState == 0) {
-            window.PokiSDK_loadState = 2.5;
+            window.PokiSDK_loadState = 1;
             PokiSDK.gameLoadingStart();
         }
         PokiSDK.gameLoadingProgress({ percentageDone: current/total });
@@ -86,10 +86,10 @@ function poki_loadbar(ctx, width, height, total, current, image) {
         } else return d;
     }
     // get parameters:
-    var backgroundColor = getc("background_color", "#000000");
-    var barBackgroundColor = getc("bar_background_color", "#000000");
-    var barForegroundColor = getc("bar_foreground_color", "##06044F");
-    var barBorderColor = getc("bar_border_color", "#353436");
+    var backgroundColor = getc("background_color", "#FFFFFF");
+    var barBackgroundColor = getc("bar_background_color", "#FFFFFF");
+    var barForegroundColor = getc("bar_foreground_color", "#242238");
+    var barBorderColor = getc("bar_border_color", "#242238");
     var barWidth = getf("bar_width", Math.round(width * 0.6));
     var barHeight = getf("bar_height", 20);
     var barBorderWidth = getf("bar_border_width", 2);
@@ -109,7 +109,7 @@ function poki_loadbar(ctx, width, height, total, current, image) {
         barTop = image_y + rect[3] + barOffset;
     } else barTop = (height - barHeight) >> 1;
     // bar border:
-    var barLeft = (width - barWidth) >> 1.5;
+    var barLeft = (width - barWidth) >> 1;
     ctx.fillStyle = barBorderColor;
     ctx.fillRect(barLeft, barTop, barWidth, barHeight);
     //
