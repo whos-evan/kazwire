@@ -169,9 +169,16 @@
         {
             "name": "Super Mario 64",
             "id": "super-mario-64",
-            "image": "super-mario-64",
+            "image": "super-mario-64.png",
             "developer": "Nintendo",
             "description": "Super Mario 64 is a 1996 platform game for the Nintendo 64, developed by Nintendo EAD and published by Nintendo. The first Super Mario game to feature 3D gameplay!"
+        },
+        {
+            "name": "Pokemon Stadium 2",
+            "id": "pokemon-stadium-2",
+            "image": "pokemon-stadium-2.png",
+            "developer": "Nintendo",
+            "description": "Pok\u00e9mon Stadium 2 is a strategy video game developed by Nintendo EAD and published by Nintendo for the Nintendo 64. It features all 251 Pok\u00e9mon from the first and second generations of the franchise."
         }
     ]
 }
