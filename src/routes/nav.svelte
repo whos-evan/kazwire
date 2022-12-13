@@ -42,10 +42,9 @@
                             <img src="/logo.png" class="h-16" alt="Kazwire Logo"/>
                         </a>
                     </li>
-                    <li class='float-left'><a href="/games" class="text-white text-lg ml-10">Games</a></li>
-                    <li class='float-left'><a href="/search" class="text-white text-lg ml-10">Search</a></li>
-                    <!-- <li class='float-left'><a href="/faq" class="text-white text-lg ml-10">FAQ</a></li> -->
-                    <li class='float-left'><a href="https://discord.com/invite/5jKVKPtZSu" class="text-white text-lg ml-10">Support/Discord</a></li>
+                    <li class='float-left'><a href="/search" class="text-white text-lg hover:text-gray-200 ml-10">Search</a></li>
+                    <li class='float-left'><a href="/games" class="text-white text-lg hover:text-gray-200 ml-10">Games</a></li>
+                    <li class='float-left'><a href="/discord" class="text-white hover:text-gray-200 text-lg ml-10">Support/Discord</a></li>
                 </ul>
 
             </div>

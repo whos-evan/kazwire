@@ -1,9 +1,9 @@
 <script>
-	import Games from './games.svelte';
 	import Nav from '../nav.svelte';
+	import Discord from './discord.svelte';
 	import Footer from '../footer.svelte';
 </script>
 
 <Nav />
-<Games />
+<Discord />
 <Footer />
