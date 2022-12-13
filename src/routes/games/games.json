@@ -264,6 +264,14 @@
             "developer": "Electronauts",
             "description": "A real-time, real-fun multiplayer game. Play together in teams, upgrade your mighty battleship and destroy the enemy base.",
             "embedURL": "https://battleboats.io/"
+        },
+        {
+            "name": "SuperSnake.io",
+            "id": "supersnake",
+            "image": "supersnake.png",
+            "developer": "Sang Mobile",
+            "description": "Your goal is become the biggest and longest snake in the world.If your head touches another player, you will explode and then it's game over. But if others run into YOU, then THEY will explode, and you can eat their remains!",
+            "embedURL": "https://supersnake.io"
         }
     ]
 }
