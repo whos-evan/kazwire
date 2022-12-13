@@ -244,6 +244,14 @@
             "image": "sonic.png",
             "developer": "Sega",
             "description": "Race at lightning speeds across seven classic zones as Sonic the Hedgehog."
+        },
+        {
+            "name": "Battleboats.io",
+            "id": "battle-boats",
+            "image": "battle-boats.png",
+            "developer": "Electronauts",
+            "description": "A real-time, real-fun multiplayer game. Play together in teams, upgrade your mighty battleship and destroy the enemy base.",
+            "embedURL": "https://battleboats.io/"
         }
     ]
 }
