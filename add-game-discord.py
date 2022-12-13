@@ -92,8 +92,8 @@ async def addgame(
             'description': description,
             'embedURL': embed_url
         })
-        write_json(gameJson, './proxy/kazwire//src/routes/games/games.json')
-        image = await image.save('./proxy/kazwire//static/game/img/' + image_name)
+        write_json(gameJson, './proxy/kazwire/src/routes/games/games.json')
+        image = await image.save('./proxy/kazwire/static/game/img/' + image_name)
         await interaction.response.send_message(f'Game added!\nJSON: ```{gameJson}```')
 
     elif swf_file is not None:
@@ -101,7 +101,7 @@ async def addgame(
         image_extension = image.filename.split('.')[-1]
         image_name = id + '.' + image_extension
         
-        swf_file.save('./proxy/kazwire//static/game/' + id + '/' + id + '.swf')
+        swf_file.save('./proxy/kazwire/static/game/' + id + '/' + id + '.swf')
         def copyanything(src, dst):
             try:
                 shutil.copytree(src, dst)
@@ -110,9 +110,9 @@ async def addgame(
                     shutil.copy(src, dst)
                 else: raise
 
-        copyanything('./proxy/kazwire//static/game/ruffle-template', './proxy/kazwire//static/game/' + id)
+        copyanything('./proxy/kazwire/static/game/ruffle-template', './proxy/kazwire/static/game/' + id)
 
-        with open(r'./proxy/kazwire//static/game/' + id + '/index.html', 'r') as file:
+        with open(r'./proxy/kazwire/static/game/' + id + '/index.html', 'r') as file:
   
             # Reading the content of the file
             # using the read() function and storing
@@ -121,7 +121,7 @@ async def addgame(
 
             data = data.replace('ruffle-template', id)
 
-        with open(r'./proxy/kazwire//static/game/' + id + '/index.html', 'w') as file:
+        with open(r'./proxy/kazwire/static/game/' + id + '/index.html', 'w') as file:
   
             # Writing the replaced data in our
             # text file
@@ -132,11 +132,12 @@ async def addgame(
             'id': id,
             'image': image_name,
             'developer': developer,
-            'description': description
+            'description': description,
+            'emulator': 'ruffle'
         })
-        write_json(gameJson, './proxy/kazwire//src/routes/games/games.json')
+        write_json(gameJson, './proxy/kazwire/src/routes/games/games.json')
 
-        image = await image.save('./proxy/kazwire//static/game/img/' + image_name)
+        image = await image.save('./proxy/kazwire/static/game/img/' + image_name)
 
         await interaction.response.send_message(f'Game added!\nJSON: ```{gameJson}```')
 
@@ -145,7 +146,7 @@ async def addgame(
         image_extension = image.filename.split('.')[-1]
         image_name = id + '.' + image_extension
 
-        n64_file.save('./proxy/kazwire//static/game/' + id + '/' + id + '.n64')
+        n64_file.save('./proxy/kazwire/static/game/' + id + '/' + id + '.n64')
 
         def copyanything(src, dst):
             try:
@@ -155,9 +156,9 @@ async def addgame(
                     shutil.copy(src, dst)
                 else: raise
 
-        copyanything('./proxy/kazwire//static/game/n64-template', './proxy/kazwire//static/game/' + id)
+        copyanything('./proxy/kazwire/static/game/n64-template', './proxy/kazwire/static/game/' + id)
 
-        with open(r'./proxy/kazwire//static/game/' + id + '/index.html', 'r') as file:
+        with open(r'./proxy/kazwire/static/game/' + id + '/index.html', 'r') as file:
   
             # Reading the content of the file
             # using the read() function and storing
@@ -166,7 +167,7 @@ async def addgame(
 
             data = data.replace('game-url-here', id)
 
-        with open(r'./proxy/kazwire//static/game/' + id + '/index.html', 'w') as file:
+        with open(r'./proxy/kazwire/static/game/' + id + '/index.html', 'w') as file:
   
             # Writing the replaced data in our
             # text file
@@ -177,10 +178,11 @@ async def addgame(
             'id': id,
             'image': image_name,
             'developer': developer,
-            'description': description
+            'description': description,
+            'emulator': 'emulatorjs'
         })
-        write_json(gameJson, './proxy/kazwire//src/routes/games/games.json')
+        write_json(gameJson, './proxy/kazwire/src/routes/games/games.json')
 
-        image = await image.save('./proxy/kazwire//static/game/img/' + image_name)
+        image = await image.save('./proxy/kazwire/static/game/img/' + image_name)
 
 client.run('token')
