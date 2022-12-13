@@ -6,7 +6,6 @@
 	export let staticGames = gamesJson['games'].filter(
 		(game) => game['embedURL'] === undefined && game['emulator'] === undefined
 	);
-	console.log(staticGames);
 	export let emulatedGames = gamesJson['games'].filter(
 		(game) => game['embedURL'] === undefined && game['emulator'] !== undefined
 	);
