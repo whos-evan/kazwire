@@ -98,7 +98,8 @@
             "image": "papas-pizzeria.jpg",
             "releaseDate": "2007-08-07",
             "developer": "Flipline Studios'",
-            "description": "Papa's Pizzeria is the first game in the Papa Louie time-management restaurant series, and was officially released on August 7, 2007."
+            "description": "Papa's Pizzeria is the first game in the Papa Louie time-management restaurant series, and was officially released on August 7, 2007.",
+            "emulator": "ruffle"
         },
         {
             "name": "Bloons Tower Defense 2",
@@ -106,7 +107,8 @@
             "image": "bloons-td2.webp",
             "releaseDate": "?",
             "developer": "Ninja Kiwi",
-            "description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi."
+            "description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi.",
+            "emulator": "ruffle"
         },
         {
             "name": "Frogger",
@@ -114,7 +116,8 @@
             "image": "frogger.png",
             "releaseDate": "?",
             "developer": "Konami",
-            "description": "Frogger is either single-player or two players alternating. The frog starts at the bottom of the screen, which contains a horizontal road occupied by speeding cars, trucks, and bulldozers."
+            "description": "Frogger is either single-player or two players alternating. The frog starts at the bottom of the screen, which contains a horizontal road occupied by speeding cars, trucks, and bulldozers.",
+            "emulator": "ruffle"
         },
         {
             "name": "Crazy Taxi",
@@ -122,7 +125,8 @@
             "image": "crazy-taxi.png",
             "releaseDate": "?",
             "developer": "Hitmaker",
-            "description": "Crazy Taxi is a series of racing video games that was developed by Hitmaker and published by Sega."
+            "description": "Crazy Taxi is a series of racing video games that was developed by Hitmaker and published by Sega.",
+            "emulator": "ruffle"
         },
         {
             "name": "Duck Life 1",
@@ -130,7 +134,8 @@
             "image": "ducklife1.png",
             "releaseDate": "?",
             "developer": "Wix Games",
-            "description": "Duck Life is a game series where you train your duck for races and/or battles."
+            "description": "Duck Life is a game series where you train your duck for races and/or battles.",
+            "emulator": "ruffle"
         },
         {
             "name": "Duck Life 2",
@@ -138,7 +143,8 @@
             "image": "ducklife2.png",
             "releaseDate": "?",
             "developer": "Wix Games",
-            "description": "Duck Life is a game series where you train your duck for races and/or battles."
+            "description": "Duck Life is a game series where you train your duck for races and/or battles.",
+            "emulator": "ruffle"
         },
         {
             "name": "Duck Life 3 - Evolution",
@@ -146,7 +152,8 @@
             "image": "ducklife3-evolution.png",
             "releaseDate": "?",
             "developer": "Wix Games",
-            "description": "Duck Life is a game series where you train your duck for races and/or battles."
+            "description": "Duck Life is a game series where you train your duck for races and/or battles.",
+            "emulator": "ruffle"
         },
         {
             "name": "Duck Life 4",
@@ -154,7 +161,8 @@
             "image": "ducklife4.png",
             "releaseDate": "?",
             "developer": "Wix Games",
-            "description": "Duck Life is a game series where you train your duck for races and/or battles."
+            "description": "Duck Life is a game series where you train your duck for races and/or battles.",
+            "emulator": "ruffle"
         },
         {
             "name": "Wings.io",
@@ -169,7 +177,8 @@
             "id": "bow-man",
             "image": "bow-man.png",
             "developer": "Unknown",
-            "description": "Bowman is an archery game where you and an opponent take shots at each other. You win when you've hit the opponent fatally."
+            "description": "Bowman is an archery game where you and an opponent take shots at each other. You win when you've hit the opponent fatally.",
+            "emulator": "ruffle"
         },
         {
             "name": "Diep.io",
@@ -184,14 +193,16 @@
             "id": "super-mario-64",
             "image": "super-mario-64.png",
             "developer": "Nintendo",
-            "description": "Super Mario 64 is a 1996 platform game for the Nintendo 64, developed by Nintendo EAD and published by Nintendo. The first Super Mario game to feature 3D gameplay!"
+            "description": "Super Mario 64 is a 1996 platform game for the Nintendo 64, developed by Nintendo EAD and published by Nintendo. The first Super Mario game to feature 3D gameplay!",
+            "emulator": "emulatorjs"
         },
         {
             "name": "Pokemon Stadium 2",
             "id": "pokemon-stadium-2",
             "image": "pokemon-stadium-2.png",
             "developer": "Nintendo",
-            "description": "Pokemon Stadium 2 is a strategy video game developed by Nintendo EAD and published by Nintendo for the Nintendo 64. It features all 251 Pok\u00e9mon from the first and second generations of the franchise."
+            "description": "Pokemon Stadium 2 is a strategy video game developed by Nintendo EAD and published by Nintendo for the Nintendo 64. It features all 251 Pok\u00e9mon from the first and second generations of the franchise.",
+            "emulator": "emulatorjs"
         },
         {
             "name": "Slope",
@@ -243,7 +254,8 @@
             "id": "sonic",
             "image": "sonic.png",
             "developer": "Sega",
-            "description": "Race at lightning speeds across seven classic zones as Sonic the Hedgehog."
+            "description": "Race at lightning speeds across seven classic zones as Sonic the Hedgehog.",
+            "emulator": "emulatorjs"
         },
         {
             "name": "Battleboats.io",

@@ -2,6 +2,18 @@
 	import Box from './box.svelte';
 	import gamesJson from './games.json';
 
+	// get all static games without embedURL or emulator set
+	export let staticGames = gamesJson['games'].filter(
+		(game) => game['embedURL'] === undefined && game['emulator'] === undefined
+	);
+	console.log(staticGames);
+	export let emulatedGames = gamesJson['games'].filter(
+		(game) => game['embedURL'] === undefined && game['emulator'] !== undefined
+	);
+	export let embedGames = gamesJson['games'].filter(
+		(game) => game['embedURL'] !== undefined
+	);
+
     export function searchGames() {
         let input = document.getElementById('search');
         let filter = input.value.toUpperCase();
@@ -32,12 +44,31 @@
 	<div
 		class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 	>
-		{#each gamesJson['games'] as game}
+		{#each staticGames as game}
 			<Box
 				title={game['name']}
 				image={game['image']}
 				description={game['description']}
 				id={game['id']}
+				color='black'
+			/>
+		{/each}
+		{#each emulatedGames as game}
+			<Box
+				title={game['name']}
+				image={game['image']}
+				description={game['description']}
+				id={game['id']}
+				color='#37528c'
+			/>
+		{/each}
+		{#each embedGames as game}
+			<Box
+				title={game['name']}
+				image={game['image']}
+				description={game['description']}
+				id={game['id']}
+				color='#c81a00'
 			/>
 		{/each}
 	</div>
