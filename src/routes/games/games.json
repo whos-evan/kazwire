@@ -272,6 +272,34 @@
             "developer": "Sang Mobile",
             "description": "Your goal is become the biggest and longest snake in the world.If your head touches another player, you will explode and then it's game over. But if others run into YOU, then THEY will explode, and you can eat their remains!",
             "embedURL": "https://supersnake.io"
+        },
+        {
+            "name": "Core Ball",
+            "id": "core-ball",
+            "image": "core-ball.png",
+            "developer": "randomyang",
+            "description": "Core Ball is a fun and addictive game where you have to control a ball and avoid the obstacles. The game is simple, but it's hard to master."
+        },
+        {
+            "name": "Friday Night Funkin: Vs Ex",
+            "id": "fnf-vs-ex",
+            "image": "fnf-vs-ex.png",
+            "developer": "NinjaMuffin99",
+            "description": "Friday Night Funkin' Vs Ex is a mod of Friday Night Funkin' that adds a new character, Ex Boyfriend, and a new week, Ex Week."
+        },
+        {
+            "name": "Fireboy and Watergirl Forest Temple",
+            "id": "fireboy-and-watergirl-forest-temple",
+            "image": "fireboy-and-watergirl-forest-temple.png",
+            "developer": "IceGirl",
+            "description": "Fireboy and Watergirl: Forest Temple is a fun and addictive game where you have to control two characters at the same time. The game is simple, but it's hard to master."
+        },
+        {
+            "name": "Drift Hunters",
+            "id": "drift-hunters",
+            "image": "drift-hunters.png",
+            "developer": "Kiz10",
+            "description": "Drift Hunters is a fun and addictive game where you have to control a car and drift around the track. The game is simple, but it's hard to master."
         }
     ]
 }

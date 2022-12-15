@@ -1,0 +1,38 @@
+:SETMUSIC:bgms/0
+:SETVOICE:home
+:BGCHANGE:cutscenes/0
+:gf-letsgo:Hey there, Boyfriend!
+:bf-left:Beep!
+:gf-letsgo:I wanted to tell you Iâ€™m inviting you with me to a restaurant!
+:bf-left:Beep?
+:gf-talking:Well, my fatherâ€™s friend invited me for some reason.
+:bf-left:Skboop bep? Bep dop boop.
+:gf-letsgo:Itâ€™s my favorite restaurant!
+:gf-hmm:I wonder how he knew...
+:gf-talking:Anyways! I wanted to take you aswell. I want yaâ€™ll to meet each other already Heâ€™s my uncle!
+:bf-left:Beep.
+:gf-letsgo:Great, then Iâ€™m going to call for a taxi.
+:BGCHANGE:cutscenes/0-b
+:SETMUSIC:bgms/1
+:BGCHANGE:cutscenes/1
+:SETVOICE:bath
+:gf:Hey Boyfriend, I need to go to the bathroom, wait for me here.
+:bf-left:Beep! Skbeep!
+:gf-letsgo:Ahah! Okay, okay! You can escort me there, my love.
+:bf-left:*shy beeps*
+:gf-letsgo:I love you too!
+:gf-talking:Huh? Tabi?!
+:tabi-mad:...:NoVoice
+:bf-right:Skbeep?
+:gf-worried:Shit...
+:BGCHANGE:cutscenes/2
+:SETVOICE:tabi1
+:PLAY:Tabi_into:0:0:0.6
+:tabi:So, we finally meet after 1 year of hiding.
+:gf-scared:*shaking from fear*:NoVoice
+:tabi-mad:Wait... Who are you?
+:bf-right:Beep Bop Skbeep
+:tabi:So you already started dating another guy, yet another victim, huh?
+:tabi:Listen dude, this is my battle, not yours. Just let me end this all! Leave!
+:bf-right:Beep Bop Dop Skbop
+:tabi-mad:You do realize she is just using you, right?

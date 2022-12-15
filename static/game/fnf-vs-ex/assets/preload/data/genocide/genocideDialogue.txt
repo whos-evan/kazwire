@@ -1,0 +1,12 @@
+:SETMUSIC:bgms/2
+:BGCHANGE:cutscenes/3
+:PLAY:Tabi_Cutscene:100:180:1
+:BGCHANGE:null
+:tabi:Heheheâ€¦ so, you survived the explosion, huh?
+:gf-scared:*terrified*:NoVoice
+:bf-exp:*worried beep bops*
+:tabi-mad:You think Iâ€™m stupid? I knew you would bring someone with you, but him?!
+:bf-exp:Bep Bob Skbed
+:tabi-worried:I DONâ€™T CARE ANYMORE! I WILL KILL HER HERE AND NOW NO MATTER WHAT!!!
+:tabi-worried:JUST TO MAKE THAT PIECE OF CRAP SHE CALLS HER FATHER FEEL PAIN
+:tabi-worried:JUST DIE!!!

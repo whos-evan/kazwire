@@ -1,0 +1,11 @@
+
+{
+"TOTAL_MEMORY": 1073741824,
+"dataUrl": "https://ubg100.bitbucket.io/games/dh/dh.data.unityweb",
+"asmCodeUrl": "dh.asm.code.unityweb",
+"asmMemoryUrl": "dh.asm.memory.unityweb",
+"asmFrameworkUrl": "dh.asm.framework.unityweb",
+"backgroundUrl": "",
+"splashScreenStyle": "Dark",
+"backgroundColor": "#111111"
+}
