@@ -30,6 +30,7 @@
     }
 
     async function iframeSearch() {
+        startLoad();
         await registerSW();
 
         let input = document.getElementById('uv-address').value;
@@ -83,6 +84,17 @@
         searchFrame.style.borderRadius = '0';
     }
 
+    // shows a loading animation
+    function startLoad() {
+        let searchFrame = document.getElementById('search-frame');
+        // background transparent
+        searchFrame.src = 'about:blank';
+        searchFrame.style.background = 'rgba(31, 41, 55, 100) url(/assets/loading.gif) no-repeat center';
+        searchFrame.style.backgroundSize = '100px';
+        searchFrame.style.backgroundRepeat = 'no-repeat';
+        searchFrame.style.backgroundPosition = 'center';
+    }
+
 </script>
 
 <div class="text-white w-full pb-5 text-center">
@@ -99,7 +111,7 @@
 
 <div class="flex h-[calc(100vh-220px)] max-w-full pl-5 pr-5 pb-5">
 	<div class="flex-grow mb-14 align-center">
-		<iframe id="search-frame" class="w-full h-full rounded-t-lg bg-blue-200 dark:bg-gray-800" on:load={checkTitle}/>
+		<iframe id="search-frame" class="w-full h-full rounded-t-lg bg-blue-200 dark:bg-gray-800"/>
 		<div
 			class="block relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white"
 		>
