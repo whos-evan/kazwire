@@ -20,6 +20,12 @@
 	 * @type {string}
 	 */
 	export let color;
+
+	/**
+	 * @type {string}
+	 * @default undefined
+	 */
+	export let category;
 </script>
 
 <a class="game" id={title} href="/games/{id}">
@@ -31,6 +37,9 @@
 		</div>
 		<div class="pl-5 pr-5">
 			<h1 class="font-bold text-2xl" style="color: {color};">{title}</h1>
+			{#if category != undefined}
+				<p class="text-black text-sm">Category: {category}</p>
+			{/if}
 			<p class="text-black">{description}</p>
 		</div>
 	</div>

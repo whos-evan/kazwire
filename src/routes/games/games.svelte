@@ -50,6 +50,7 @@
 				description={game['description']}
 				id={game['id']}
 				color='black'
+				category='Static'
 			/>
 		{/each}
 		{#each emulatedGames as game}
@@ -59,6 +60,7 @@
 				description={game['description']}
 				id={game['id']}
 				color='#37528c'
+				category='Emulated'
 			/>
 		{/each}
 		{#each embedGames as game}
@@ -68,6 +70,7 @@
 				description={game['description']}
 				id={game['id']}
 				color='#c81a00'
+				category='Embeded'
 			/>
 		{/each}
 	</div>
