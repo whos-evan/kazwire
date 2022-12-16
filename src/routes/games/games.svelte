@@ -29,6 +29,8 @@
                 }
             }
         }
+	
+	let filter;
 </script>
 
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">
@@ -40,9 +42,16 @@
         autocomplete="off"
         on:input={searchGames}
 	/>
+	<select id="filterSelect" class="rounded-lg text-black p-3" bind:value={filter}>
+		<option value="all">All</option>
+		<option value="static">Static</option>
+		<option value="emulated">Emulated</option>
+		<option value="embeded">Embeded</option>
+	</select>
 	<div
 		class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 	>
+	{#if filter == "all"}
 		{#each staticGames as game}
 			<Box
 				title={game['name']}
@@ -73,5 +82,6 @@
 				category='Embeded'
 			/>
 		{/each}
+		{/if}
 	</div>
 </div>
