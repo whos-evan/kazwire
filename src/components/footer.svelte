@@ -6,7 +6,6 @@
         darkMode();
         console.log('test')
     });
-    
 </script>
 
 <div class="Footer">

@@ -1,8 +1,8 @@
 <script>
-	import Nav from '../../nav.svelte';
+	import Nav from '../../../components/nav.svelte';
 	import Game from './[games].svelte';
 	import { page } from '$app/stores';
-	import Footer from '../../footer.svelte';
+	import Footer from '../../../components/footer.svelte';
 </script>
 
 <Nav />
