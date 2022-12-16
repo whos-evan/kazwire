@@ -1,6 +1,6 @@
 <script>
-	import Box from './games/box.svelte';
-	import gamesJson from './games/games.json';
+	import Box from '../routes/games/box.svelte';
+	import gamesJson from '../routes/games/games.json';
 
 	let randomGame1 = gamesJson['games'][Math.floor(Math.random() * gamesJson['games'].length)];
 	let randomGame2 = gamesJson['games'][Math.floor(Math.random() * gamesJson['games'].length)];

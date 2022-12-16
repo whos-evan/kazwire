@@ -1,8 +1,8 @@
 <script>
 	import Nav from '../components/nav.svelte';
-	import Promo from './promo.svelte';
-	import RandomBox from './randomBox.svelte';
-	import News from './news.svelte';
+	import Promo from '../components/promo.svelte';
+	import RandomBox from '../components/randomBox.svelte';
+	import News from '../components/news/news.svelte';
 	import Footer from '../components/footer.svelte';
 </script>
 
