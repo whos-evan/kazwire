@@ -82,6 +82,39 @@
 				category='Embeded'
 			/>
 		{/each}
-		{/if}
+	{:else if filter == "static"}
+		{#each staticGames as game}
+			<Box
+				title={game['name']}
+				image={game['image']}
+				description={game['description']}
+				id={game['id']}
+				color='black'
+				category='Static'
+			/>
+		{/each}
+	{:else if filter == "emulated"}
+		{#each emulatedGames as game}
+			<Box
+				title={game['name']}
+				image={game['image']}
+				description={game['description']}
+				id={game['id']}
+				color='#37528c'
+				category='Emulated'
+			/>
+		{/each}
+	{:else if filter == "embeded"}
+		{#each embedGames as game}
+			<Box
+				title={game['name']}
+				image={game['image']}
+				description={game['description']}
+				id={game['id']}
+				color='#c81a00'
+				category='Embeded'
+			/>
+		{/each}
+	{/if}
 	</div>
 </div>
