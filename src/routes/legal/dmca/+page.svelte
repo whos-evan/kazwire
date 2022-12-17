@@ -149,12 +149,9 @@
 	</p>
 	<br>
 	<p>
-		<a
-			href="&#109;&#097;&#105;&#108;&#116;&#111;&#058;&#99;&#111;n&#116;a&#99;t&#64;is-&#97;&#46;win"
-			>c&#111;&#110;&#116;&#97;&#99;&#116;&#64;i&#115;-a&#46;win</a
-		>
+		<a href = "mailto: contact@kazwire.com">contact@kazwire.com</a>
 	</p>
 	<br>
-	<p>This document was last updated on December 15, 2022</p>
+	<p>This document was last updated on December 16, 2022</p>
 </div>
 <Footer />
