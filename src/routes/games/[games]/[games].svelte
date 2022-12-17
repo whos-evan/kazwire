@@ -14,7 +14,6 @@
 	import gamesJson from '../games.json';
 
 	let slug = $page.url.pathname.substr($page.url.pathname.lastIndexOf('/') + 1);
-	console.log(slug);
 
 	function getGame() {
 		// for loop to find the game in the json file
@@ -75,7 +74,21 @@
 
 <div class="flex h-[calc(100vh-132px)] max-w-full pl-5 pr-5 pb-5">
 	<div class="flex-grow mb-14 align-center">
-		<iframe src="" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
+		{#if getGame()['embedURL'] != undefined}
+			<iframe id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
+		{:else if getGame()['emulator'] == 'ruffle'}
+			<script src="/game/ruffle/ruffle.js"></script>
+			<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
+				<embed
+					src="/game/{slug}/{slug}.swf"
+					class="h-full w-full"
+				>
+			</div>
+		{:else}
+			<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
+				<iframe src="/game/{slug}/index.html" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
+			</div>
+		{/if}
 		<div
 			class="block relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white"
 		>

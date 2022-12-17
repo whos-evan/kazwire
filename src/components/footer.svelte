@@ -4,7 +4,6 @@
     import { onMount } from "svelte";
     onMount(() => {
         darkMode();
-        console.log('test')
     });
 </script>
 
