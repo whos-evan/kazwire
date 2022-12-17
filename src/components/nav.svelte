@@ -3,6 +3,7 @@
     import { onMount } from "svelte";
 
     onMount(() => {
+        // gets the theme and sets it
         let themeSelector = document.getElementById('theme-selector') || undefined;
         if (darkMode() === true) {
             if (themeSelector) {
@@ -12,6 +13,12 @@
             if (themeSelector) {
                 themeSelector.innerHTML = '☀️';
             }
+        }
+
+        // gets the title and sets it
+        let title = localStorage.getItem('title') || undefined;
+        if (title) {
+            document.title = title;
         }
     });
 
@@ -44,6 +51,7 @@
                     </li>
                     <li class='float-left'><a href="/search" class="text-white text-md hover:text-gray-200 ml-10">Search</a></li>
                     <li class='float-left'><a href="/games" class="text-white text-md hover:text-gray-200 ml-10">Games</a></li>
+                    <li class='float-left'><a href="/settings" class="text-white hover:text-gray-200 text-md ml-10">Settings</a></li>
                     <li class='float-left'><a href="/discord" class="text-white hover:text-gray-200 text-md ml-10">Support/Discord</a></li>
                 </ul>
 
