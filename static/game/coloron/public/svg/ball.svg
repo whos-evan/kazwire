@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="79px" height="77px" viewBox="0 0 79 77" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 39.1 (31720) - http://www.bohemiancoding.com/sketch -->
+    <title>Ball</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-1">
+            <feGaussianBlur stdDeviation="10" in="SourceGraphic"></feGaussianBlur>
+        </filter>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Panoramic" transform="translate(-493.000000, -336.000000)">
+            <g id="Ball" transform="translate(494.113519, 335.113519)">
+                <g id="revolve" transform="translate(45.000000, 45.000000) rotate(55.000000) translate(-45.000000, -45.000000) translate(13.000000, 13.000000)">
+                    <path d="M32,64 C49.673112,64 64,49.673112 64,32 C64,14.326888 49.673112,-9.23705556e-14 32,-9.23705556e-14 C14.326888,-9.23705556e-14 -2.13162821e-13,14.326888 -2.13162821e-13,32 C-2.13162821e-13,49.673112 14.326888,64 32,64 Z" id="Oval"></path>
+                    <rect id="Rectangle-3" fill="#FFFFFF" opacity="0.200851213" x="13.8666667" y="29.8666667" width="30.9333333" height="4.26666667" rx="2.13333333"></rect>
+                    <rect id="Rectangle-3-Copy" fill="#FFFFFF" opacity="0.200851213" x="39.4666667" y="20.2666667" width="17.0666667" height="4.26666667" rx="2.13333333"></rect>
+                    <rect id="Rectangle-3-Copy-3" fill="#FFFFFF" opacity="0.200851213" x="22.4" y="49.0666667" width="17.0666667" height="4.26666667" rx="2.13333333"></rect>
+                    <rect id="Rectangle-3-Copy-4" fill="#FFFFFF" opacity="0.200851213" x="13.8666667" y="12.8" width="11.7333333" height="4.26666667" rx="2.13333333"></rect>
+                    <rect id="Rectangle-3-Copy-2" fill="#FFFFFF" opacity="0.200851213" x="32" y="34.1333333" width="17.0666667" height="4.26666667" rx="2.13333333"></rect>
+                </g>
+                <path d="M77,60.9502674 C71.5095291,70.5391348 61.1771792,77 49.3358134,77 C31.7423335,77 17.48,62.7376665 17.48,45.1441866 C17.48,34.6495658 22.5548193,25.3402326 30.384328,19.536317 C27.7172525,24.1942476 26.1927011,29.5902837 26.1927011,35.3423978 C26.1927011,52.9358778 40.4550346,67.1982113 58.0485145,67.1982113 C65.1473737,67.1982113 71.7038983,64.8762006 77,60.9502674 Z" id="Shadow" fill="#000000" opacity="0.08" transform="translate(47.240000, 48.268158) scale(-1, 1) translate(-47.240000, -48.268158) "></path>
+                <circle id="Oval-4" fill="#FFE345" opacity="0.680095616" filter="url(#filter-1)" cx="30.8978538" cy="32.6560811" r="7"></circle>
+            </g>
+        </g>
+    </g>
+</svg>

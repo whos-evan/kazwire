@@ -1,0 +1,18 @@
+{
+    "levelMap": "levelV",
+    "levelMusic": "ditzy",
+    "goalFace": "abdullah",
+    "goalEmit": "mezcal",
+    "selfRef": "level20data",
+    "hat": "safety cap",
+    "number": 2,
+    "title": "Grandma's Basement",
+    "tileswapper": {
+        "tile1": 9,
+        "tile2": 10,
+        "topleftX": 306,
+        "topleftY": 58,
+        "w": 23,
+        "h": 1
+    }
+}

@@ -1,0 +1,18 @@
+{
+    "levelMap": "levelAA",
+    "levelMusic": "level2music",
+    "goalFace": "jon",
+    "goalEmit": "mezcal",
+    "selfRef": "level25data",
+    "hat": "safety cap",
+    "number": 4,
+    "title": "Freshkills Graveyard",
+    "tileswapper": {
+        "tile1": 35,
+        "tile2": 36,
+        "topleftX": 163,
+        "topleftY": 58,
+        "w": 265,
+        "h": 71
+    }
+}

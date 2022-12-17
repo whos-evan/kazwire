@@ -1,0 +1,18 @@
+{
+    "levelMap": "levelW",
+    "levelMusic": "bonkBeachMusic",
+    "goalFace": "kelly",
+    "goalEmit": "mezcal",
+    "selfRef": "level21data",
+    "hat": "safety cap",
+    "number": 1,
+    "title": "Bonk Beach",
+    "tileswapper": {
+        "tile1": 6,
+        "tile2": 7,
+        "topleftX": 0,
+        "topleftY": 30,
+        "w": 389,
+        "h": 13
+    }
+}

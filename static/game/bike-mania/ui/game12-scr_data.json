@@ -1,0 +1,102 @@
+{
+  "root": {
+    "matrix_a": 1,
+    "matrix_tx": 0,
+    "alpha": 1,
+    "matrix_ty": 0,
+    "name": "instance399",
+    "matrix_c": 0,
+    "matrix_d": 1,
+    "matrix_b": 0,
+    "type": "sprite",
+    "childs": [
+      {
+        "matrix_a": 1,
+        "name": "main_wnd",
+        "alpha": 1,
+        "matrix_ty": 0,
+        "matrix_tx": 0,
+        "matrix_c": 0,
+        "matrix_d": 1,
+        "matrix_b": 0,
+        "type": "sprite",
+        "childs": [
+          {
+            "matrix_a": 1,
+            "name": "mc_level",
+            "alpha": 1,
+            "matrix_ty": 0,
+            "matrix_tx": 0,
+            "matrix_c": 0,
+            "matrix_d": 1,
+            "matrix_b": 0,
+            "type": "sprite",
+            "childs": [
+              {
+                "matrix_a": 0.9999542236328125,
+                "name": "mc",
+                "alpha": 1,
+                "matrix_ty": 0,
+                "matrix_tx": 0,
+                "matrix_c": 0,
+                "matrix_d": 0.999847412109375,
+                "matrix_b": 0,
+                "type": "sprite",
+                "childs": [
+                  {
+                    "matrix_a": 1,
+                    "class_name": "mc_back_level12",
+                    "name": "instance400",
+                    "alpha": 1,
+                    "matrix_ty": 93.05,
+                    "matrix_tx": 301.95,
+                    "matrix_c": 0,
+                    "matrix_d": 1,
+                    "matrix_b": 0,
+                    "type": "anim"
+                  },
+                  {
+                    "matrix_a": 1,
+                    "name": "mc_bike",
+                    "alpha": 1,
+                    "matrix_ty": 232,
+                    "matrix_tx": 131,
+                    "matrix_c": 0,
+                    "matrix_d": 1,
+                    "matrix_b": 0,
+                    "type": "sprite",
+                    "childs": []
+                  },
+                  {
+                    "matrix_a": 1,
+                    "name": "mc_finish",
+                    "alpha": 1,
+                    "matrix_ty": 223,
+                    "matrix_tx": 1936.95,
+                    "matrix_c": 0,
+                    "matrix_d": 1,
+                    "matrix_b": 0,
+                    "type": "sprite",
+                    "childs": []
+                  }
+                ]
+              },
+              {
+                "matrix_a": 1,
+                "name": "mc_hit",
+                "alpha": 1,
+                "matrix_ty": 52,
+                "matrix_tx": -15,
+                "matrix_c": 0,
+                "matrix_d": 1,
+                "matrix_b": 0,
+                "type": "sprite",
+                "childs": []
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -212,6 +212,13 @@
             "description": "Slope, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way."
         },
         {
+            "name": "Slope 2",
+            "id": "slope-2",
+            "image": "slope-2.png",
+            "developer": "Rob Kay",
+            "description": "Slope 2, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way."
+        },
+        {
             "name": "Tetris",
             "id": "tetris",
             "image": "tetris.png",
@@ -300,6 +307,76 @@
             "image": "drift-hunters.png",
             "developer": "Kiz10",
             "description": "Drift Hunters is a fun and addictive game where you have to control a car and drift around the track. The game is simple, but it's hard to master."
+        },
+        {
+            "name": "A Dark Room",
+            "id": "a-dark-room",
+            "image": "a-dark-room.png",
+            "developer": "Dylan",
+            "description": "A Dark Room is a text-based adventure game where you have to survive in a dark room. The game is simple, but it's hard to master."
+        },
+        {
+            "name": "Basketball Stars",
+            "id": "basketball-stars",
+            "image": "basketball-stars.png",
+            "developer": "Miniclip",
+            "description": "Basketball Stars is a fun and addictive game where you have to control a basketball player and score as many points as you can. The game is simple, but it's hard to master."
+        },
+        {
+            "name": "Basket Random",
+            "id": "basket-random",
+            "image": "basket-random.png",
+            "developer": "Unknown",
+            "description": "In Basket Random game, try to score a basket by using only one key with different variations from each other!"
+        },
+        {
+            "name": "Bike Mania",
+            "id": "bike-mania",
+            "image": "bike-mania.png",
+            "developer": "Third Soul",
+            "description": "Ride your bike through the bumpy and challenging tracks. Do not hit the ground and show your skill!"
+        },
+        {
+            "name": "Breaklock",
+            "id": "breaklock",
+            "image": "breaklock.png",
+            "developer": "maxwellito",
+            "description": "A hybrid of Mastermind and the Android pattern lock. A game you gonna love to hate."
+        },
+        {
+            "name": "The Chroma Incident",
+            "id": "chroma",
+            "image": "chroma.png",
+            "developer": "Ryan Malm",
+            "description": "The Achromats have taken the worlds color offline! Raid their colorless lair and vanquish them all, restoring the world to it's technicolor glory."
+        },
+        {
+            "name": "Coloron",
+            "id": "coloron",
+            "image": "coloron.png",
+            "developer": "Greg Hovanesyan",
+            "description": "COLORON is a fun and well-designed platformer. The goal is to match the color of the tower to the bouncing ball. Keep it going for as long as you can, just don't get mad."
+        },
+        {
+            "name": "Cubefield",
+            "id": "cubefield",
+            "image": "cubefield.png",
+            "developer": "Nils Asejevs",
+            "description": "Cubefield is a simple but addictive game, there are only two controls – left and right. Use the arrow keys on your keyboard to guide your ship through an endless field of ominous looking coloured cubes – if you hit one, it’s game over."
+        },
+        {
+            "name": "Donut Boy",
+            "id": "donut-boy",
+            "image": "donut-boy.png",
+            "developer": "Dahoh Bolesta",
+            "description": "The Dough-Nutter 4000 has malfunctioned! It's up to you, Donut Boy, to rescue the employees and donuts that were scattered around town from the resulting explosion."
+        },
+        {
+            "name": "Doodle Jump",
+            "id": "doodle-jump",
+            "image": "doodle-jump.png",
+            "developer": "Doodle Mobile",
+            "description": "Let's travel with the cartoon character as high as possible!"
         }
     ]
 }

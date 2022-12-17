@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang='en' class=''>
+<head>
+<meta charset='UTF-8'>
+<title>UBG100</title>
+<meta name="robots" content="noindex">
+<link rel="shortcut icon" type="image/x-icon" href="ubg100.png"/>
+<link rel="mask-icon" type="" href="ubg100.png" color="#111"/>
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<meta name="description" content="A game made to inspire developers to use GSAP, ES6 and Flexbox">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="apple-touch-icon" href="public/images/touch-icon-iphone.png">
+<link rel="apple-touch-icon" sizes="76x76" href="public/images/touch-icon-ipad.png">
+<link rel="apple-touch-icon" sizes="120x120" href="public/images/touch-icon-iphone-retina.png">
+<link rel="apple-touch-icon" sizes="152x152" href="public/images/touch-icon-ipad-retina.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="COLORON GAME: inspiring developers to use SVG Animations, ES6 and Flexbox">
+<meta name="twitter:description" content="A game made to inspire developers to use GSAP, ES6 and Flexbox">
+<meta name="twitter:creator" content="@greghvns">
+<meta name="twitter:image" content="public/images/coloron-image.png">
+<meta property="og:image" content="public/images/coloron-image.png">
+<meta property="og:title" content="COLORON GAME: inspiring developers to use SVG Animations, ES6 and Flexbox">
+<meta property="og:description" content="A game made to inspire developers to use GSAP, ES6 and Flexbox">
+<script type="text/javascript"> 
+function disableselect(e){  
+return false  
+}  
+
+function reEnable(){  
+return true  
+}  
+
+//if IE4+  
+document.onselectstart=new Function ("return false")  
+document.oncontextmenu=new Function ("return false")  
+//if NS6  
+if (window.sidebar){  
+document.onmousedown=disableselect  
+document.onclick=reEnable  
+}
+</script>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,700,900">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet" href="coloron.css">
+</head>
+<body oncontextmenu="return false;" id="ancss">
+<div class="splash"></div>
+<div class="container">
+<div class="start-game game-full-flex" id="start-game">
+<div class="start-game-top"><a class="play-full-page" href="/index.html"></a></div>
+<div class="logo-holder">
+<p class="logo">
+<span>C</span>
+<span>o</span>
+<span>l</span>
+<span>o</span>
+<span>r</span>
+<span>o</span>
+<span>n</span>
+</p>
+<a class="play-button" href="#" onclick="game.start()">Play</a>
+<h4 class="hint">hint: <span>red</span> color always comes first</h4>
+</div>
+<div class="how-to-play">
+<div class="section section-1">
+<h4>Bouncing ball<br>changes color</h4>
+<div class="content">
+<div class="ball-demo" id="ball-demo"></div>
+</div>
+</div>
+<div class="section section-2">
+<h4>Tap on the bar to switch the colors<br>(Red, Yellow, Purple)</h4>
+<div class="content">
+<div class="bar bar-1" data-index="0"></div>
+<div class="bar bar-2"></div>
+<div class="bar bar-3"></div>
+</div>
+</div>
+<div class="section section-3">
+<h4>Always match the<br>ball and bar colors</h4>
+<div class="content">
+<div class="ball-demo" id="ball-demo"></div>
+<div class="bar bar-1"></div>
+</div>
+</div>
+</div>
+</div>
+<div class="stop-game game-full-flex">
+<div class="score-container">
+<h1>Coloron</h1>
+<div class="final-score"></div>
+<div class="result"></div>
+<div>
+<a class="play-again" href="#" onclick="game.start()">Play Again</a>
+<a class="main-menu" href="#" onclick="game.intro()">Menu</a>
+</div>
+</div>
+</div>
+<div class="small-glows"></div>
+<div class="glow"><div class="sun"></div></div>
+<div class="waves">
+<div class="top_wave"></div>
+<div class="wave1"></div>
+<div class="wave2"></div>
+<div class="wave3"></div>
+<div class="wave4"></div>
+</div>
+<div class="mounts">
+<div class="mount1"></div>
+<div class="mount2"></div>
+</div>
+<div class="clouds"></div>
+<div class="scene">
+<div class="learn-to-play">Click on the bars to change the color!</div>
+<div class="score" id="score"></div>
+<div class="ball-holder"></div>
+<div class="sticks" id="sticks"></div>
+</div>
+<div class="noise"></div>
+</div>
+<script src="stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.0/TweenMax.min.js"></script>
+<script src="coloron.js"></script>
+			<script type="text/javascript"
+			src="https://www.statcounter.com/counter/counter.js" async></script>
+			<noscript><div class="statcounter"><a title="Web Analytics"
+			href="https://statcounter.com/" target="_blank"><img class="statcounter"
+			src="https://c.statcounter.com/12471302/0/9a266461/1/" alt="Web
+			Analytics"></a></div></noscript>
+</body>
+</html>

@@ -1,0 +1,18 @@
+{
+    "levelMap": "levelY",
+    "levelMusic": "level3music",
+    "goalFace": "zach",
+    "goalEmit": "mezcal",
+    "selfRef": "level23data",
+    "hat": "safety cap",
+    "number": 3,
+    "title": "Fishstick Facility",
+    "tileswapper": {
+        "tile1": 9,
+        "tile2": 10,
+        "topleftX": 21,
+        "topleftY": 25,
+        "w": 259,
+        "h": 56
+    }
+}

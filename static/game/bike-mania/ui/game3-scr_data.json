@@ -1,0 +1,102 @@
+{
+  "root": {
+    "childs": [
+      {
+        "childs": [
+          {
+            "childs": [
+              {
+                "childs": [
+                  {
+                    "matrix_tx": 324.45,
+                    "class_name": "mc_back_level3",
+                    "name": "instance400",
+                    "alpha": 1,
+                    "matrix_b": 0,
+                    "matrix_d": 1,
+                    "matrix_c": 0,
+                    "matrix_a": 1,
+                    "type": "anim",
+                    "matrix_ty": 180.05
+                  },
+                  {
+                    "childs": [],
+                    "matrix_tx": 131,
+                    "name": "mc_bike",
+                    "alpha": 1,
+                    "matrix_b": 0,
+                    "matrix_d": 1,
+                    "matrix_c": 0,
+                    "matrix_a": 1,
+                    "type": "sprite",
+                    "matrix_ty": 232
+                  },
+                  {
+                    "childs": [],
+                    "matrix_tx": 2496.95,
+                    "name": "mc_finish",
+                    "alpha": 1,
+                    "matrix_b": 0,
+                    "matrix_d": 1,
+                    "matrix_c": 0,
+                    "matrix_a": 1,
+                    "type": "sprite",
+                    "matrix_ty": 223
+                  }
+                ],
+                "matrix_tx": 0,
+                "name": "mc",
+                "alpha": 1,
+                "matrix_b": 0,
+                "matrix_d": 0.999847412109375,
+                "matrix_c": 0,
+                "matrix_a": 0.9999542236328125,
+                "type": "sprite",
+                "matrix_ty": 0
+              },
+              {
+                "childs": [],
+                "matrix_tx": -11,
+                "name": "instance402",
+                "alpha": 1,
+                "matrix_b": 0,
+                "matrix_d": 1,
+                "matrix_c": 0,
+                "matrix_a": 1,
+                "type": "sprite",
+                "matrix_ty": 58
+              }
+            ],
+            "matrix_tx": 0,
+            "name": "mc_level",
+            "alpha": 1,
+            "matrix_b": 0,
+            "matrix_d": 1,
+            "matrix_c": 0,
+            "matrix_a": 1,
+            "type": "sprite",
+            "matrix_ty": 0
+          }
+        ],
+        "matrix_tx": 0,
+        "name": "main_wnd",
+        "alpha": 1,
+        "matrix_b": 0,
+        "matrix_d": 1,
+        "matrix_c": 0,
+        "matrix_a": 1,
+        "type": "sprite",
+        "matrix_ty": 0
+      }
+    ],
+    "matrix_tx": 0,
+    "matrix_ty": 0,
+    "alpha": 1,
+    "matrix_b": 0,
+    "matrix_d": 1,
+    "matrix_c": 0,
+    "matrix_a": 1,
+    "type": "sprite",
+    "name": "instance399"
+  }
+}

@@ -2,6 +2,7 @@
 	import Nav from '../components/nav.svelte';
 	import Promo from '../components/promo.svelte';
 	import RandomBox from '../components/randomBox.svelte';
+	import Faq from '../components/faq.svelte';
 	import News from '../components/news/news.svelte';
 	import Footer from '../components/footer.svelte';
 </script>
@@ -16,5 +17,9 @@
 		<News />
 	</div>
 </div>
+<div class="w-full pt-5 pl-10 pr-10">
+	<Faq />
+</div>
+
 <Footer />
 

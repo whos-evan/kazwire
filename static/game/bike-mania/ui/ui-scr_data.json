@@ -1,0 +1,338 @@
+{
+  "root": {
+    "matrix_d": 1,
+    "matrix_b": 0,
+    "childs": [
+      {
+        "matrix_d": 1,
+        "matrix_b": 0,
+        "childs": [
+          {
+            "matrix_d": 0.75,
+            "matrix_b": 0,
+            "alpha": 1,
+            "matrix_c": 0,
+            "matrix_a": 0.75,
+            "matrix_tx": 158.2,
+            "matrix_ty": 350.8,
+            "name": "tilt_right",
+            "type": "anim",
+            "class_name": "btn_tilt_right_up"
+          },
+          {
+            "matrix_d": 0.75,
+            "matrix_b": 0,
+            "alpha": 1,
+            "matrix_c": 0,
+            "matrix_a": 0.75,
+            "matrix_tx": 53.05,
+            "matrix_ty": 349.3,
+            "name": "tilt_left",
+            "type": "anim",
+            "class_name": "btn_tilt_left_up"
+          },
+          {
+            "matrix_d": 0.75,
+            "matrix_b": 0,
+            "alpha": 1,
+            "matrix_c": 0,
+            "matrix_a": 0.75,
+            "matrix_tx": 445.3,
+            "matrix_ty": 350.55,
+            "name": "move_right",
+            "type": "anim",
+            "class_name": "btn_arrow_right_up"
+          },
+          {
+            "matrix_d": 0.75,
+            "matrix_b": 0,
+            "alpha": 1,
+            "matrix_c": 0,
+            "matrix_a": 0.75,
+            "matrix_tx": 343.45,
+            "matrix_ty": 350.55,
+            "name": "move_left",
+            "type": "anim",
+            "class_name": "btn_arrow_left_up"
+          },
+          {
+            "matrix_d": 1,
+            "matrix_b": 0,
+            "button_disabled": {
+              "matrix_d": 0.75,
+              "matrix_b": 0,
+              "childs": [
+                {
+                  "matrix_d": 0.4499969482421875,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 0.4499969482421875,
+                  "matrix_tx": 10.2,
+                  "matrix_ty": -1,
+                  "name": "instance309",
+                  "type": "anim",
+                  "class_name": "btn_body"
+                },
+                {
+                  "matrix_d": 1,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 1,
+                  "matrix_tx": -8.9,
+                  "matrix_ty": -17.05,
+                  "name": "sound_on",
+                  "type": "anim",
+                  "class_name": "sound_on"
+                },
+                {
+                  "matrix_d": 1,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 1,
+                  "matrix_tx": -8.9,
+                  "matrix_ty": -17.05,
+                  "name": "sound_off",
+                  "type": "anim",
+                  "class_name": "sound_off"
+                }
+              ],
+              "alpha": 1,
+              "matrix_c": 0,
+              "matrix_a": 0.75,
+              "matrix_tx": 23.55,
+              "matrix_ty": 34.75,
+              "name": "instance308",
+              "type": "sprite"
+            },
+            "button_down": {
+              "matrix_d": 0.75,
+              "matrix_b": 0,
+              "childs": [
+                {
+                  "matrix_d": 0.4499969482421875,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 0.4499969482421875,
+                  "matrix_tx": 10.2,
+                  "matrix_ty": -1,
+                  "name": "instance303",
+                  "type": "anim",
+                  "class_name": "btn_body"
+                },
+                {
+                  "matrix_d": 1,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 1,
+                  "matrix_tx": -8.9,
+                  "matrix_ty": -17.05,
+                  "name": "sound_on",
+                  "type": "anim",
+                  "class_name": "sound_on"
+                },
+                {
+                  "matrix_d": 1,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 1,
+                  "matrix_tx": -8.9,
+                  "matrix_ty": -17.05,
+                  "name": "sound_off",
+                  "type": "anim",
+                  "class_name": "sound_off"
+                }
+              ],
+              "alpha": 1,
+              "matrix_c": 0,
+              "matrix_a": 0.75,
+              "matrix_tx": 23.55,
+              "matrix_ty": 34.75,
+              "name": "instance302",
+              "type": "sprite"
+            },
+            "matrix_a": 1,
+            "matrix_tx": 12,
+            "button_over": {
+              "matrix_d": 0.75,
+              "matrix_b": 0,
+              "childs": [
+                {
+                  "matrix_d": 0.4499969482421875,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 0.4499969482421875,
+                  "matrix_tx": 10.2,
+                  "matrix_ty": -1,
+                  "name": "instance297",
+                  "type": "anim",
+                  "class_name": "btn_body"
+                },
+                {
+                  "matrix_d": 1,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 1,
+                  "matrix_tx": -8.9,
+                  "matrix_ty": -17.05,
+                  "name": "sound_on",
+                  "type": "anim",
+                  "class_name": "sound_on"
+                },
+                {
+                  "matrix_d": 1,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 1,
+                  "matrix_tx": -8.9,
+                  "matrix_ty": -17.05,
+                  "name": "sound_off",
+                  "type": "anim",
+                  "class_name": "sound_off"
+                }
+              ],
+              "alpha": 1,
+              "matrix_c": 0,
+              "matrix_a": 0.75,
+              "matrix_tx": 23.55,
+              "matrix_ty": 34.75,
+              "name": "instance296",
+              "type": "sprite"
+            },
+            "button_up": {
+              "matrix_d": 0.75,
+              "matrix_b": 0,
+              "childs": [
+                {
+                  "matrix_d": 0.4499969482421875,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 0.4499969482421875,
+                  "matrix_tx": 10.2,
+                  "matrix_ty": -1,
+                  "name": "instance291",
+                  "type": "anim",
+                  "class_name": "btn_body"
+                },
+                {
+                  "matrix_d": 1,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 1,
+                  "matrix_tx": -8.9,
+                  "matrix_ty": -17.05,
+                  "name": "sound_on",
+                  "type": "anim",
+                  "class_name": "sound_on"
+                },
+                {
+                  "matrix_d": 1,
+                  "matrix_b": 0,
+                  "alpha": 1,
+                  "matrix_c": 0,
+                  "matrix_a": 1,
+                  "matrix_tx": -8.9,
+                  "matrix_ty": -17.05,
+                  "name": "sound_off",
+                  "type": "anim",
+                  "class_name": "sound_off"
+                }
+              ],
+              "alpha": 1,
+              "matrix_c": 0,
+              "matrix_a": 0.75,
+              "matrix_tx": 23.55,
+              "matrix_ty": 34.75,
+              "name": "instance290",
+              "type": "sprite"
+            },
+            "matrix_ty": 12,
+            "type": "button",
+            "button_hit": {
+              "matrix_d": 25.321090698242188,
+              "matrix_b": 0,
+              "alpha": 1,
+              "matrix_c": 0,
+              "matrix_a": 5.50933837890625,
+              "matrix_tx": 23.15,
+              "matrix_ty": 21.95,
+              "type": "anim",
+              "class_name": "hit_template"
+            },
+            "matrix_c": 0,
+            "name": "button_sound",
+            "alpha": 1
+          },
+          {
+            "matrix_d": 1,
+            "text_color": 16777215,
+            "text_font": "a_MachinaNovaCps",
+            "matrix_b": 0,
+            "text": "00:000",
+            "text_align": "center",
+            "word_wrap": false,
+            "matrix_a": 1,
+            "matrix_tx": 434.35,
+            "matrix_ty": 6.8,
+            "text_height": 22.75,
+            "alpha": 1,
+            "text_width": 43.05,
+            "text_bold": false,
+            "type": "text",
+            "text_size": 16,
+            "matrix_c": 0,
+            "text_multiline": false,
+            "text_italic": false,
+            "name": "text_time"
+          },
+          {
+            "matrix_d": 1,
+            "text_color": 16777215,
+            "text_font": "a_MachinaNovaCps",
+            "matrix_b": 0,
+            "text": "00:000",
+            "text_align": "center",
+            "word_wrap": false,
+            "matrix_a": 1,
+            "matrix_tx": 179,
+            "matrix_ty": 6.8,
+            "text_height": 28.2,
+            "alpha": 1,
+            "text_width": 149,
+            "text_bold": false,
+            "type": "text",
+            "text_size": 20,
+            "matrix_c": 0,
+            "text_multiline": false,
+            "text_italic": false,
+            "name": "level_number"
+          }
+        ],
+        "alpha": 1,
+        "matrix_c": 0,
+        "matrix_a": 1,
+        "matrix_tx": 0,
+        "matrix_ty": 0,
+        "name": "main_wnd",
+        "type": "sprite"
+      }
+    ],
+    "alpha": 1,
+    "matrix_c": 0,
+    "matrix_a": 1,
+    "matrix_tx": 0,
+    "matrix_ty": 0,
+    "name": "instance277",
+    "type": "sprite"
+  }
+}
