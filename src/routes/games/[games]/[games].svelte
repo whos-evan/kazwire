@@ -79,7 +79,7 @@
 		{#if getGame()['embedURL'] != undefined}
 			<div class="grid lg:grid-cols-6 grid-rows-1 w-full h-full">
 				<iframe id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black" {title} />
-				<div class="w-full h-full lg:block sm:h-0 sm:w-0">
+				<div class="lg:w-full lg:h-full lg:block sm:h-0 sm:w-0">
 					<VertAd />
 				</div>
 			</div>
@@ -92,7 +92,7 @@
 						class="h-full w-full"
 					>
 				</div>
-				<div class="w-full h-full lg:block sm:h-0 sm:w-0">
+				<div class="lg:w-full lg:h-full lg:block sm:h-0 sm:w-0">
 					<VertAd />
 				</div>
 			</div>
@@ -101,7 +101,7 @@
 				<div id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black">
 					<iframe src="/game/{slug}/index.html" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
 				</div>
-				<div class="w-full h-full lg:block sm:h-0 sm:w-0">
+				<div class="lg:w-full lg:h-full lg:block sm:h-0 sm:w-0">
 					<VertAd />
 				</div>
 			</div>
