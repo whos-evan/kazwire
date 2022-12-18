@@ -18,7 +18,7 @@
 </script>
 
 <div class="Vert w-full align-center lg:block sm:hidden">
-    <div id="GoogleAds" align="center" class="w-full">
+    <div id="GoogleAds" align="center" class="w-full h-full">
         <ins class="adsbygoogle"
         style="display:block"
         data-ad-client="ca-pub-7648886706850999"
