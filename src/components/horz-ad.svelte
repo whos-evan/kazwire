@@ -11,7 +11,7 @@
                 document.getElementById('GoogleAds').innerHTML = '<img src="/logo.png" width="75"/><p class="text-2xl text-white"> Please disable ad blockers to support us!</p>';
                 console.log('test')
             }
-        }, 2000);
+        }, 10000);
     });
 
     
