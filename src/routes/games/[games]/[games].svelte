@@ -92,7 +92,7 @@
 				</div>
 			</div>
 		{:else}
-			<div class="flex w-full h-full"> 
+			<div class="flex w-full max-h-full"> 
 				<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
 					<iframe src="/game/{slug}/index.html" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
 				</div>
