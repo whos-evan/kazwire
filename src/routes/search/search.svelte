@@ -111,7 +111,7 @@
 
 <div class="flex h-[calc(100vh-220px)] max-w-full pl-5 pr-5 pb-5">
 	<div class="flex-grow mb-14 align-center">
-		<iframe id="search-frame" class="w-full h-full rounded-t-lg bg-blue-200 dark:bg-gray-800"/>
+		<iframe id="search-frame" name="search" class="search w-full h-full rounded-t-lg bg-blue-200 dark:bg-gray-800"/>
 		<div
 			class="block relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white"
 		>

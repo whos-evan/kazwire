@@ -6,5 +6,5 @@
 
 <div class="text-white w-full pl-10 pr-10 text-center ">
     <h1 class="text-4xl font-bold mb-5">📰 News: {newsDate}</h1>
-    <p class="text-xl h-full text-left">{newsText}</p>
+    <p class="text-xl text-left">{newsText}</p>
 </div>
