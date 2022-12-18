@@ -77,32 +77,23 @@
 <div class="flex h-[calc(100vh-132px)] max-w-full pl-5 pr-5 pb-5">
 	<div class="flex-grow mb-14 align-center">
 		{#if getGame()['embedURL'] != undefined}
-			<div class="grid lg:grid-cols-6 grid-rows-1 w-full h-full">
+			<div class="grid lg:grid-cols-6 w-full h-full">
 				<iframe id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black" {title} />
-				<div class="lg:w-full lg:h-full lg:block sm:h-0 sm:w-0">
-					<VertAd />
-				</div>
 			</div>
 		{:else if getGame()['emulator'] == 'ruffle'}
 			<script src="/game/ruffle/ruffle.js"></script>
-			<div class="grid lg:grid-cols-6 grid-rows-1 w-full h-full"> 
+			<div class="grid lg:grid-cols-6 w-full h-full"> 
 				<div id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black">
 					<embed
 						src="/game/{slug}/{slug}.swf"
 						class="h-full w-full"
 					>
 				</div>
-				<div class="lg:w-full lg:h-full lg:block sm:h-0 sm:w-0">
-					<VertAd />
-				</div>
 			</div>
 		{:else}
 			<div class="grid lg:grid-cols-6 grid-rows-1 w-full h-full"> 
 				<div id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black">
 					<iframe src="/game/{slug}/index.html" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
-				</div>
-				<div class="lg:w-full lg:h-full lg:block sm:h-0 sm:w-0">
-					<VertAd />
 				</div>
 			</div>
 		{/if}
