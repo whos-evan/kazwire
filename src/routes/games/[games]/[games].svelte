@@ -95,9 +95,12 @@
 				<div id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black">
 					<iframe src="/game/{slug}/index.html" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
 				</div>
+				<div class="col-span-1 col-start-6 h-full w-full md:block sm:hidden bg-white">
+					<VertAd />
+				</div>
 			</div>
 		{/if}
-		<div class="grid lg:grid-cols-6">
+		<div class="grid md:grid-cols-6">
 			<div class="col-span-5 block w-full relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white">
 				<div class="float-right mr-5">
 					<button class="mt-4 h-5 w-5 fill-white" on:click={fullScreen}>

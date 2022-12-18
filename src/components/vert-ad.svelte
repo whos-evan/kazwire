@@ -26,5 +26,4 @@
         data-ad-format="vertical"
         data-full-width-responsive="true"></ins>
     </div>
-
 </div>
