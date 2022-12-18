@@ -72,18 +72,19 @@
     }
 
 	import VertAd from '../../../components/vert-ad.svelte';
+	import HorzAd from '../../../components/horz-ad.svelte';
 </script>
 
 <div class="flex h-[calc(100vh-132px)] max-w-full pl-5 pr-5 pb-5">
 	<div class="flex-grow mb-14 align-center">
 		{#if getGame()['embedURL'] != undefined}
-			<div class="grid lg:grid-cols-6 w-full h-full">
-				<iframe id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black" {title} />
+			<div class="w-full h-full">
+				<iframe id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
 			</div>
 		{:else if getGame()['emulator'] == 'ruffle'}
 			<script src="/game/ruffle/ruffle.js"></script>
-			<div class="grid lg:grid-cols-6 w-full h-full"> 
-				<div id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black">
+			<div class="w-full h-full"> 
+				<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
 					<embed
 						src="/game/{slug}/{slug}.swf"
 						class="h-full w-full"
@@ -91,17 +92,17 @@
 				</div>
 			</div>
 		{:else}
-			<div class="grid lg:grid-cols-6 grid-rows-1 w-full h-full"> 
-				<div id="game-frame" class="col-span-5 w-full h-full rounded-t-lg bg-black">
+			<div class="flex w-full h-full"> 
+				<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
 					<iframe src="/game/{slug}/index.html" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
 				</div>
-				<div class="col-span-1 col-start-6 h-full w-full md:block sm:hidden bg-white">
+				<div class="grow md:block sm:hidden w-[20vw]">
 					<VertAd />
 				</div>
 			</div>
 		{/if}
-		<div class="grid md:grid-cols-6">
-			<div class="col-span-5 block w-full relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white">
+		<div class="grid">
+			<div class="w-full relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white">
 				<div class="float-right mr-5">
 					<button class="mt-4 h-5 w-5 fill-white" on:click={fullScreen}>
 						<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"
