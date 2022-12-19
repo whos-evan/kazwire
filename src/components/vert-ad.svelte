@@ -9,7 +9,8 @@
                 // if its unfilled then don't show anything
                 
                 if (ad && ad.innerHTML.replace(/\s/g, "").length == 0) { 
-                    document.getElementById('GoogleAds').style.cssText = 'display: hidden;';
+                    document.getElementById('GoogleAds').style.cssText = 'display:block !important; padding: 20px !important;';
+                    document.getElementById('GoogleAds').innerHTML = '<img src="/logo.png" width="75"/><p class="text-2xl text-white">Please disable your ad blocker to help support the site and keep it lighting fast!</p>';
                 }
             }, 3000);
     });
