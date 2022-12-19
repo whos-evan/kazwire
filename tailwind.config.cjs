@@ -24,7 +24,8 @@ module.exports = {
 				'6xl': '4rem'
 			},
 			screens: {
-				sm: '0px'
+				sm: '0px',
+				md: '1024px'
 			}
 		}
 	},

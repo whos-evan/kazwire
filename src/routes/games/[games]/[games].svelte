@@ -121,7 +121,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="md:block sm:hidden float-right w-[17vw] mb-3 rounded-lg bg-[#0875bb]">
+	<div class="md:block sm:hidden float-right w-auto h-auto min-w-[18vw] mb-3 p-5 rounded-lg bg-[#0875bb]" align="middle">
 		<VertAd />
 	</div>
 </div>
