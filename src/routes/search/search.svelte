@@ -38,6 +38,16 @@
 
         iframe.src = __uv$config.prefix + __uv$config.encodeUrl(search(input));
     }
+    // shows a loading animation
+    function startLoad() {
+        let searchFrame = document.getElementById('search-frame');
+        // background transparent
+        searchFrame.src = 'about:blank';
+        searchFrame.style.background = 'rgba(31, 41, 55, 100) url(/assets/loading.gif) no-repeat center';
+        searchFrame.style.backgroundSize = '100px';
+        searchFrame.style.backgroundRepeat = 'no-repeat';
+        searchFrame.style.backgroundPosition = 'center';
+    }
 
     // watch for title change in iframe
     function checkTitle() {
@@ -82,17 +92,6 @@
         searchFrame.style.zIndex = '999999';
         searchFrame.style.height = '100%';
         searchFrame.style.borderRadius = '0';
-    }
-
-    // shows a loading animation
-    function startLoad() {
-        let searchFrame = document.getElementById('search-frame');
-        // background transparent
-        searchFrame.src = 'about:blank';
-        searchFrame.style.background = 'rgba(31, 41, 55, 100) url(/assets/loading.gif) no-repeat center';
-        searchFrame.style.backgroundSize = '100px';
-        searchFrame.style.backgroundRepeat = 'no-repeat';
-        searchFrame.style.backgroundPosition = 'center';
     }
 
 </script>
