@@ -74,7 +74,7 @@
 	import VertAd from '../../../components/vert-ad.svelte';
 	import HorzAd from '../../../components/horz-ad.svelte';
 </script>
-<div class="flex h-full w-full">
+<div class="flex flex-row relative justify-center">
 	<div class="flex h-[calc(100vh-132px)] md:w-[80vw] sm:w-full float-left pl-5 pr-5 pb-5">
 		<div class="flex-grow mb-14 align-center">
 			{#if getGame()['embedURL'] != undefined}
@@ -121,7 +121,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="md:block sm:hidden float-right w-auto h-auto min-w-[18vw] mb-3 p-5 rounded-lg bg-[#0875bb]" align="middle">
+	<div class="w-full max-w-[280px] hidden xl:flex flex-col justify-center items-center gap-y-2 px-3 bg-opacity-50 backdrop-blur-md" align="middle">
 		<VertAd />
 	</div>
 </div>
