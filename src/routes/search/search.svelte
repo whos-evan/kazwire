@@ -58,6 +58,7 @@
         if (contentTitle !== title) {
             document.getElementById('title').innerHTML = contentTitle;
         }
+        return contentTitle;
     }
 
     function fullScreen() {
@@ -113,7 +114,7 @@
 	<div class="flex h-[calc(90vh-132px)] md:w-[80vw] sm:w-full float-left pl-5 pr-5 pb-5">
 		<div class="flex-grow mb-14 align-center">
             <div class="w-full h-full">
-                <iframe id="search-frame" class="w-full h-full rounded-t-lg bg-black" />
+                <iframe on:load={checkTitle} id="search-frame" class="w-full h-full rounded-t-lg bg-black" />
             </div>
 
 			<div class="grid">
