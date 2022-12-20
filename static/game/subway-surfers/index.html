@@ -1,83 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<script src="poki-sdk.js"></script>
-<meta http-equiv="content-type" content="text/html; charset=UTF8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black">
-<meta name="viewport" content="height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui, viewport-fit=cover" />
-<meta name="description" content="">
-<link rel="manifest" href="subwaysurfers.webmanifest">
-<link rel="icon" href="assets/images/app-icon-16.png" type="image/png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/images/app-icon-114.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/images/app-icon-72.png">
-<link rel="apple-touch-icon-precomposed" sizes="57x57" href="assets/images/app-icon-57.png">
-<link rel="apple-touch-icon-precomposed" href="assets/images/app-icon-57.png">
-<title>Subway Surfers Web</title>
-<style>
-        body, html { 
+    <meta http-equiv="content-type" content="text/html; charset=UTF8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, minimal-ui">
+    <meta name="description" content="">
+
+    <style>
+        body {
+            background-color: #000000;
             margin: 0;
-            height: 100%;
-            background-color: #0b316b;
-            overflow: hidden;
-            background-image: url('assets/preload/splash.png');
-            background-repeat: no-repeat;
-            background-position: center;
+            -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
         }
 
-        #message {
-            text-align: center;
-            font-size: 8px;
-            z-index: 5;
-            font-family: "Verdana", sans-serif;
-            color: �fff;
+        .fontcache {
             position: fixed;
+            margin-left: -100px;
+        }
+
+        #og-game-holder {
+            position: fixed;
+            overflow: hidden;
             width: 100%;
-            z-index: 9999;
+            height: 100vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
         }
-
-        .dot {
-            display: inline;
-            margin-left: 0.2em;
-            margin-right: 0.2em;
-            position: relative;
-            top: -1em;
-            font-size: 3.5em;
-            opacity: 0;
-            animation: showHideDot 2.5s ease-in-out infinite;
-        }
-
-        .dot.one { animation-delay: 0.2s; }
-        .dot.two { animation-delay: 0.4s; }
-        .dot.three { animation-delay: 0.6s; }
-
-        @keyframes showHideDot {
-            0% { opacity: 0; }
-            50% { opacity: 1; }
-            60% { opacity: 1; }
-            100% { opacity: 0; }
-        }
-
     </style>
-
-</head>
-<body>
-<script>
-        window.NOSW = true;
-        window.GAME_CONFIG = {
-            pokiSdkDebug: true,
-            leaderboard: 'mockup',
-            bundlesPath: 'bundles/',
-            quality: 'high'
-        }
+    <title>Subway Surfers Bali</title>
+    <script src="js/games_lib/ludiAdapter.js" charset="utf-8"></script>
+    <script type="text/javascript">
+        window.SDK_OPTIONS = {
+            gameId: "8t190jo3d0fumds5hftotvtjd4s590zq",
+            onEvent: function(a) {
+                switch (a.name) {
+                    case "SDK_GAME_PAUSE":
+                        // pause game logic / mute audio
+                        break;
+                    case "SDK_GAME_START":
+                        // advertisement done, resume game logic and unmute audio
+                        break;
+                    case "SDK_READY":
+                        // when sdk is ready
+                        break;
+                }
+            }
+        };
+        (function(a, b, c) {
+            var d = a.getElementsByTagName(b)[0];
+            a.getElementById(c) || (a = a.createElement(b), a.id = c, a.src = "", d.parentNode.insertBefore(a, d))
+        })(document, "script", "gamemonetize-sdk");
     </script>
-<div id="message">
-<h1>Loading</h1>
-<h1 class="dot one">.</h1><h1 class="dot two">.</h1><h1 class="dot three">.</h1>
-</div>
-<script src="js/loading.js"></script>
-<script src="js/boot.js"></script>
+<script type="text/javascript" src="js/scr.js"></script></head>
+
+<body>
+    <div id="og-game-holder"></div>
+
+    <script src="js/boot.js"></script>
+
 </body>
 </html>
