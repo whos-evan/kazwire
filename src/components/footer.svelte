@@ -7,7 +7,7 @@
     });
 </script>
 
-<div class="Footer">
+<div class="Footer relative z-[-1]">
     <nav class="bg-[#0875bb] max-w mt-10 pt-2">
         <div class="flex items-center justify-evenly flex-wrap p-6">
             <div class="flex items-center text-white ml-10">

@@ -264,9 +264,9 @@
             "embedURL": "https://buildroyale.io/"
         },
         {
-            "name": "Sonic The Hedgehog",
-            "id": "sonic",
-            "image": "sonic.png",
+            "name": "Sonic The Hedgehog (Original)",
+            "id": "sonic-original",
+            "image": "sonic-original.png",
             "developer": "Sega",
             "description": "Race at lightning speeds across seven classic zones as Sonic the Hedgehog.",
             "emulator": "emulatorjs"
@@ -384,6 +384,20 @@
             "image": "doodle-jump.png",
             "developer": "Doodle Mobile",
             "description": "Let's travel with the cartoon character as high as possible!"
+        },
+        {
+            "name": "Sonic 1",
+            "id": "sonic-1",
+            "image": "sonic-1.png",
+            "developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
+            "description": "Sonic 1 is a platform video game developed by Sonic Team and published by Sega."
+        },
+        {
+            "name": "Sonic 2",
+            "id": "sonic-2",
+            "image": "sonic-2.png",
+            "developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
+            "description": "Sonic 2 is a platform video game developed by Sonic Team and published by Sega."
         }
     ]
 }
