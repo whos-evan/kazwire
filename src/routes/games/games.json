@@ -8,6 +8,13 @@
             "description": "Retro Bowl emulates the gameplay of American football and was heavily influenced by the Tecmo Bowl series."
         },
         {
+            "name": "Subway Surfers",
+            "id": "subway-surfers",
+            "image": "subway-surfers.png",
+            "developer": "Kiloo",
+            "description": "Subway Surfers is an endless runner mobile game co-developed by Kiloo, a private company based in Denmark and SYBO Games."
+        },
+        {
             "name": "Rooftop Snipers",
             "id": "rooftop-snipers",
             "image": "rooftop-snipers.png",

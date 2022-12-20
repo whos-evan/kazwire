@@ -75,7 +75,7 @@
 	import HorzAd from '../../../components/horz-ad.svelte';
 </script>
 <div class="flex flex-row relative justify-center">
-	<div class="flex h-[calc(100vh-132px)] md:w-[80vw] sm:w-full float-left pl-5 pr-5 pb-5">
+	<div class="flex h-[calc(100vh-132px)] xl:w-full lg:w-[1000px] md:w-[820px] sm:w-full float-left pl-5 pr-5 pb-5">
 		<div class="flex-grow mb-14 align-center">
 			{#if getGame()['embedURL'] != undefined}
 				<div class="w-full h-full">
