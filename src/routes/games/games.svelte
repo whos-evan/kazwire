@@ -18,8 +18,7 @@
 		.filter(
 			(game) =>
 				game['embedURL'] === undefined &&
-				game['emulator'] === undefined &&
-				game['popular'] === undefined
+				game['emulator'] === undefined
 		)
 		.sort((a, b) => {
 			if (a['id'] < b['id']) {
@@ -34,8 +33,7 @@
 		.filter(
 			(game) =>
 				game['embedURL'] === undefined &&
-				game['emulator'] !== undefined &&
-				game['popular'] === undefined
+				game['emulator'] !== undefined
 		)
 		.sort((a, b) => {
 			if (a['id'] < b['id']) {
@@ -48,7 +46,7 @@
 		});
 
 	export let embedGames = gamesJson['games']
-		.filter((game) => game['embedURL'] !== undefined && game['popular'] === undefined)
+		.filter((game) => game['embedURL'] !== undefined)
 		.sort((a, b) => {
 			if (a['id'] < b['id']) {
 				return -1;
