@@ -15038,7 +15038,7 @@
                                     break
                                 }
                             }
-                            if (e) return t._src = e, t._state = "loading", "https:" === window.location.protocol && "http:" === e.slice(0, 5) && (t._html5 = !0, t._webAudio = !1), new o(t), t._webAudio && s(t), t;
+                            if (e) return t._src = e, t._state = "loading", "https:" === e.slice(0, 5) && (t._html5 = !0, t._webAudio = !1), new o(t), t._webAudio && s(t), t;
                             t._emit("loaderror", null, "No codec support for selected audio sources.")
                         }
                     },
