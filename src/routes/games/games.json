@@ -398,6 +398,30 @@
             "image": "sonic-2.png",
             "developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
             "description": "Sonic 2 is a platform video game developed by Sonic Team and published by Sega."
+        },
+        {
+            "name": "Repuls.io",
+            "id": "repuls",
+            "image": "repuls.png",
+            "developer": "Docski",
+            "description": "REPULS is a fast-paced multiplayer FPS game featuring various maps, weapons, and game modes. The pace and style of the game make it perfect for fans of the Halo series.",
+            "embedURL": "https://repuls.io/"
+        },
+        {
+            "name": "Idle Breakout",
+            "id": "idle-breakout",
+            "image": "idle-breakout.png",
+            "developer": "Kodiqi",
+            "description": "An idle version of classic Breakout. Use multiple balls of different strength, speed and special abilities to smash a million bricks!",
+            "embedURL": "https://idlebreakout.io/"
+        },
+        {
+            "name": "Mope.io",
+            "id": "mope",
+            "image": "mope.png",
+            "developer": "Stan Tatarnykov",
+            "description": "Mope.io is a game in which you play as an animal who eats food and water to survive.",
+            "embedURL": "https://mope.io/"
         }
     ]
 }
