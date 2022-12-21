@@ -1,4 +1,4 @@
-<div class="Promo">
+<div class="Promo sm:pt-14 md:pt-0">
 	<div class="text-white">
 		<div
 			class="grid lg:grid-cols-2 lg:grid-rows-none sm:grid-cols-none sm:grid-rows-2 gap-5 items-center justify-center justify-items-center align-middle

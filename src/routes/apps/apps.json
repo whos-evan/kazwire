@@ -1,0 +1,58 @@
+{
+	"apps": [
+		{
+			"description": "Spotify is a music streaming service.",
+			"developer": "Daniel Ek and Martin Lorentzon",
+			"id": "spotify",
+			"image": "spotify.png",
+			"name": "Spotify",
+			"releaseDate": "?",
+			"embedURL": "https://spotify.com"
+		},
+		{
+			"description": "YouTube is the world's most popular video sharing website.",
+			"developer": "Steve Chen, Chad Hurley, and Jawed Karim",
+			"id": "youtube",
+			"image": "youtube.png",
+			"name": "YouTube",
+			"releaseDate": "?",
+			"embedURL": "https://youtube.com"
+		},
+		{
+			"description": "TikTok is a mobile first video sharing app.",
+			"developer": "Zhang Yiming",
+			"id": "tiktok",
+			"image": "tiktok.png",
+			"name": "TikTok",
+			"releaseDate": "?",
+			"embedURL": "https://tiktok.com"
+		},
+		{
+			"description": "Google is the world's most popular search engine.",
+			"developer": "Larry Page and Sergey Brin",
+			"id": "google",
+			"image": "google.png",
+			"name": "Google",
+			"releaseDate": "?",
+			"embedURL": "https://google.com"
+		},
+		{
+			"description": "DuckDuckGo is a privacy respecting search engine.",
+			"developer": "Gabriel Weinberg and John Bumgarner",
+			"id": "duckduckgo",
+			"image": "duckduckgo.png",
+			"name": "DuckDuckGo",
+			"releaseDate": "?",
+			"embedURL": "https://duckduckgo.com"
+		},
+		{
+			"description": "Discord is a chat service designed for gamers.",
+			"developer": "Jason Citron",
+			"id": "discord",
+			"image": "discord.png",
+			"name": "Discord",
+			"releaseDate": "?",
+			"embedURL": "https://discord.com"
+		}
+	]
+}

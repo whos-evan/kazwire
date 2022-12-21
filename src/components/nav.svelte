@@ -51,6 +51,7 @@
                     </li>
                     <li class='float-left'><a href="/search" class="text-white text-md hover:text-gray-200 ml-10">Search</a></li>
                     <li class='float-left'><a href="/games" class="text-white text-md hover:text-gray-200 ml-10">Games</a></li>
+                    <li class='float-left'><a href="/apps" class="text-white text-md hover:text-gray-200 ml-10">Apps</a></li>
                     <li class='float-left'><a href="/settings" class="text-white hover:text-gray-200 text-md ml-10">Settings</a></li>
                     <li class='float-left'><a href="/discord" class="text-white hover:text-gray-200 text-md ml-10">Support/Discord</a></li>
                 </ul>
