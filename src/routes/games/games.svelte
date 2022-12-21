@@ -74,6 +74,7 @@
 	}
 
 	let filter;
+
 </script>
 
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">

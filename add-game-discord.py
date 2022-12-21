@@ -4,14 +4,10 @@
 from typing import Literal, Union, NamedTuple
 from enum import Enum
 
-import errno
-
 import json
-import shutil
 
 import discord
 from discord import app_commands
-import typing
 
 
 MY_GUILD = discord.Object(id=785577600219086881)  # replace with your guild id
@@ -58,14 +54,53 @@ def write_json(new_data, filename):
         json.dump(file_data, file, indent = 4)
 
 @client.tree.command()
+@app_commands.checks.cooldown(1, 5, key=lambda i: (i.user.id))
+@app_commands.describe(name='Name of the game to add.',
+    url="The URL of the game if applicable.",
+    image="An image of the game, this can be a screenshot or a logo.",
+    description="A short description of the game.",
+    other_info="Any other information you would like to add. If you did not provide a URL, please provide information for how to play the game here.")
+async def suggestgame(
+    interaction: discord.Interaction,
+    name: str,
+    url: str = 'None provided',
+    image: discord.Attachment = None,
+    description: str = 'None provided',
+    other_info: str = 'None provided'
+):
+    if url == 'None provided' and other_info == 'None provided':
+        return await interaction.response.send_message('You must provide either a URL or other information.', ephemeral=True)
+    
+    embed = discord.Embed()
+    embed.title = name
+    embed.description = 'Suggested by ``' + interaction.user.name + '#' + interaction.user.discriminator + '``'
+    embed.add_field(name='Information', value=f"Description: ``{str(description)}\n``URL to game: ``{str(url)}``\nOther Info: ``{str(other_info)}``")
+    embed.set_footer(text=f'Suggestion ID: {str(interaction.id)} | Suggester ID: {str(interaction.user.id)}')
+
+    if image is not None:
+        embed.set_image(url=image.url)
+
+    await interaction.response.send_message('Suggestion sent! If it is accepted you will recieve a ping.', ephemeral=True)
+    embed_message = await client.get_channel(1054890431416111134).send(embed=embed)
+    # react with thumbs up and thumbs down
+    await embed_message.add_reaction('👍')
+    await embed_message.add_reaction('👎')
+
+@client.tree.error
+async def on_command_error(interaction: discord.Interaction, error: Exception):
+    if isinstance(error, app_commands.errors.CommandOnCooldown):
+        return await interaction.response.send_message(f'You are on cooldown! Please wait {error.retry_after} seconds before using this command again.', ephemeral=True)
+    else:
+        raise error
+
+@client.tree.command()
 @app_commands.describe(name='Name of the game to add (this is what the users see)',
     id="This is what the backend sees, please remove spaces (replacing them with -'s) and keep it lowercase",
     image="The image of the game, this will be shown on the game page",
     developer="The developer of the game",
     description="The description of the game, this will be shown on the game page",
-    embed_url="The URL of the game, this will be shown on the game page",
-    swf_file="The SWF file of the game, this will be shown on the game page",
-    n64_file="The N64 file of the game, this will be shown on the game page")
+    embed_url="The URL of the game, this will be shown on the game page"
+)
 async def addgame(
     interaction: discord.Interaction,
     name: str,
@@ -73,9 +108,7 @@ async def addgame(
     image: discord.Attachment,
     developer: str,
     description: str,
-    embed_url: str = None,
-    swf_file: discord.Attachment = None,
-    n64_file: discord.Attachment = None
+    embed_url: str
 ):
     if interaction.user.id != 314174289110892556 and interaction.user.id != 400430761557229579: # replace with your user id
         return await interaction.response.send_message('You do not have permission to use this command!', ephemeral=True)
@@ -95,94 +128,5 @@ async def addgame(
         write_json(gameJson, './proxy/kazwire/src/routes/games/games.json')
         image = await image.save('./proxy/kazwire/static/game/img/' + image_name)
         await interaction.response.send_message(f'Game added!\nJSON: ```{gameJson}```')
-
-    elif swf_file is not None:
-        # get image file extension
-        image_extension = image.filename.split('.')[-1]
-        image_name = id + '.' + image_extension
-        
-        swf_file.save('./proxy/kazwire/static/game/' + id + '/' + id + '.swf')
-        def copyanything(src, dst):
-            try:
-                shutil.copytree(src, dst)
-            except OSError as exc: # python >2.5
-                if exc.errno in (errno.ENOTDIR, errno.EINVAL):
-                    shutil.copy(src, dst)
-                else: raise
-
-        copyanything('./proxy/kazwire/static/game/ruffle-template', './proxy/kazwire/static/game/' + id)
-
-        with open(r'./proxy/kazwire/static/game/' + id + '/index.html', 'r') as file:
-  
-            # Reading the content of the file
-            # using the read() function and storing
-            # them in a new variable
-            data = file.read()
-
-            data = data.replace('ruffle-template', id)
-
-        with open(r'./proxy/kazwire/static/game/' + id + '/index.html', 'w') as file:
-  
-            # Writing the replaced data in our
-            # text file
-            file.write(data)
-
-        gameJson = ({
-            'name': name,
-            'id': id,
-            'image': image_name,
-            'developer': developer,
-            'description': description,
-            'emulator': 'ruffle'
-        })
-        write_json(gameJson, './proxy/kazwire/src/routes/games/games.json')
-
-        image = await image.save('./proxy/kazwire/static/game/img/' + image_name)
-
-        await interaction.response.send_message(f'Game added!\nJSON: ```{gameJson}```')
-
-    elif n64_file is not None:
-        # get image file extension
-        image_extension = image.filename.split('.')[-1]
-        image_name = id + '.' + image_extension
-
-        n64_file.save('./proxy/kazwire/static/game/' + id + '/' + id + '.n64')
-
-        def copyanything(src, dst):
-            try:
-                shutil.copytree(src, dst)
-            except OSError as exc: # python >2.5
-                if exc.errno in (errno.ENOTDIR, errno.EINVAL):
-                    shutil.copy(src, dst)
-                else: raise
-
-        copyanything('./proxy/kazwire/static/game/n64-template', './proxy/kazwire/static/game/' + id)
-
-        with open(r'./proxy/kazwire/static/game/' + id + '/index.html', 'r') as file:
-  
-            # Reading the content of the file
-            # using the read() function and storing
-            # them in a new variable
-            data = file.read()
-
-            data = data.replace('game-url-here', id)
-
-        with open(r'./proxy/kazwire/static/game/' + id + '/index.html', 'w') as file:
-  
-            # Writing the replaced data in our
-            # text file
-            file.write(data)
-
-        gameJson = ({
-            'name': name,
-            'id': id,
-            'image': image_name,
-            'developer': developer,
-            'description': description,
-            'emulator': 'emulatorjs'
-        })
-        write_json(gameJson, './proxy/kazwire/src/routes/games/games.json')
-
-        image = await image.save('./proxy/kazwire/static/game/img/' + image_name)
 
 client.run('token')
