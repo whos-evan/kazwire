@@ -2,6 +2,8 @@
 	import Box from './box.svelte';
 	import gamesJson from './games.json';
 
+	export let allGames = gamesJson['games']
+
 	export let popularGames = gamesJson['games']
 		.filter((game) => game['popular'] === true)
 		.sort((a, b) => {
@@ -56,6 +58,7 @@
 			}
 			return 0;
 		});
+
 	export function searchGames() {
 		let input = document.getElementById('search');
 		let filter = input.value.toUpperCase();
@@ -73,9 +76,40 @@
 		}
 	}
 
+	function getCategory(game) {
+		if (game['embedURL'] !== undefined) {
+			return 'Embeded';
+		} else if (game['emulator'] !== undefined) {
+			return 'Emulated';
+		} else {
+			return 'Static';
+		}
+	}
+
 	let filter;
 
+
+	let games = [];
+	let loading = false;
+	let reachedEnd = false;
+
+	function loadMore() {
+		if (!loading && !reachedEnd) {
+			games = games.concat(allGames.slice(games.length, games.length + 5));
+		}
+	}
+
+	function handleScroll(event) {
+		if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+			loadMore();
+		}
+	}
+	loadMore();
+	loadMore();
+	loadMore();
 </script>
+
+<svelte:window on:scroll={handleScroll} />
 
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">
 	<input
@@ -102,38 +136,18 @@
 					image={game['image']}
 					description={game['description']}
 					id={game['id']}
-					color="#f2c94c"
-					popular="true"
+					color='#d4af37'
+					category="Popular"
 				/>
 			{/each}
-			{#each staticGames as game}
+			{#each games as game}
 				<Box
 					title={game['name']}
 					image={game['image']}
 					description={game['description']}
 					id={game['id']}
-					color="black"
-					category="Static"
-				/>
-			{/each}
-			{#each emulatedGames as game}
-				<Box
-					title={game['name']}
-					image={game['image']}
-					description={game['description']}
-					id={game['id']}
-					color="#37528c"
-					category="Emulated"
-				/>
-			{/each}
-			{#each embedGames as game}
-				<Box
-					title={game['name']}
-					image={game['image']}
-					description={game['description']}
-					id={game['id']}
-					color="#c81a00"
-					category="Embeded"
+					color='#000000'
+					category={getCategory(game)}
 				/>
 			{/each}
 		{:else if filter == 'static'}
