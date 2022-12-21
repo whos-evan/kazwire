@@ -103,8 +103,7 @@
 					description={game['description']}
 					id={game['id']}
 					color="#f2c94c"
-					shine="true"
-					category="Popular"
+					popular="true"
 				/>
 			{/each}
 			{#each staticGames as game}
