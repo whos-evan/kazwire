@@ -53,7 +53,7 @@
 	<div class="flex-grow mb-14 align-center">
 		<iframe src="" id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
 		<div
-			class="block relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white"
+			class="block relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-secondaryLight dark:bg-secondaryDark text-white"
 		>
 			<div class="float-right mr-5">
 				<button class="mt-4 h-5 w-5 fill-white" on:click={fullScreen}>

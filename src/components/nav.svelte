@@ -40,7 +40,7 @@
 </script>
 
 <div class="Nav">
-    <nav class="bg-[#0875bb] max-w mb-5 shadow-md shadow-black dark:shadow-white">
+    <nav class="bg-secondaryLight dark:bg-secondaryDark max-w mb-5 shadow-md shadow-black dark:shadow-white">
         <div class="flex items-center justify-between flex-wrap p-3">
             <div class="flex items-center text-white ml-10">
                 <ul class="align-middle leading-[2.5rem]">
@@ -58,7 +58,7 @@
 
             </div>
                 <div class='float-right text-white text-xl mr-10'>
-                    <button id="theme-selector" class="bg-[#0875bb] hover:bg-[#0875bb] text-white font-bold py-2 px-4 rounded-full" on:click={toggle}>
+                    <button id="theme-selector" class="bg-secondary text-white font-bold py-2 px-4 rounded-full" on:click={toggle}>
                         ☀️
                     </button>
             </div>

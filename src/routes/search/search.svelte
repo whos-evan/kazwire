@@ -118,7 +118,7 @@
             </div>
 
 			<div class="grid">
-				<div class="w-full relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-[#0875bb] text-white">
+				<div class="w-full relative items-center h-14 leading-[3.5rem] mt-2 rounded-b-lg bg-secondaryLight dark:bg-secondaryDark text-white">
 					<div class="float-right mr-5">
 						<button class="mt-4 h-5 w-5 fill-white" on:click={fullScreen}>
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"

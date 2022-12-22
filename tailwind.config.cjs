@@ -6,7 +6,13 @@ module.exports = {
 		extend: {
 			backgroundColor: {
 				dark: '#000000',
-				light: '#f7a520'
+				light: '#FF5733'
+			},
+			colors: {
+				secondaryLight: '#146B3A',
+				secondaryDark: '#146B3A'
+				// dark: '#FF5733',
+				// light: '#146B3A'
 			},
 			fontFamily: {
 				sans: ['Inter', 'sans-serif']

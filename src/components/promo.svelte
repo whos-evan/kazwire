@@ -8,7 +8,7 @@
 				<div class="font-bold lg:text-7xl md:text-5xl sm:text-xl">
 					<h1>
 						<span class="pb-1 block">Your favorites</span>
-						<span class="text-[#0875bb]">all in one place!</span>
+						<span class="text-secondaryLight dark:text-secondaryDark">all in one place!</span>
 					</h1>
 				</div>
 				<div class="mt-2 lg:text-2xl sm:text-sm wrap break-normal w-[32vw]">
@@ -19,12 +19,12 @@
 				</div>
 				<a href="/search">
 					<button
-						class="bg-[#0875bb] hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg"
+						class="bg-secondaryLight dark:bg-secondaryDark hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg"
 						>Start Browsing</button
 					>
 				</a>
 				<a href="/games">
-					<button class="bg-[#0875bb] hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg"
+					<button class="bg-secondaryLight dark:bg-secondaryDark hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg"
 						>Start Playing</button
 					>
 				</a>

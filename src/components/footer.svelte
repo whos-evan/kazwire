@@ -8,7 +8,7 @@
 </script>
 
 <div class="Footer relative">
-    <nav class="bg-[#0875bb] max-w mt-10 pt-2">
+    <nav class="bg-secondaryLight dark:bg-secondaryDark max-w mt-10 pt-2">
         <div class="flex items-center justify-evenly flex-wrap p-6">
             <div class="flex items-center text-white ml-10">
                 <ul class="align-middle leading-[3rem]">
