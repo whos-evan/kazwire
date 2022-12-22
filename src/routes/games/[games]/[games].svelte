@@ -1,5 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
+	import gamesJson from '../games.json';
 
 	async function iframeSearch(input) {
         await registerSW();
@@ -9,9 +11,7 @@
         iframe.src = __uv$config.prefix + __uv$config.encodeUrl(input);
     }
 	// get game files based off slug from games directory
-	import { page } from '$app/stores';
 
-	import gamesJson from '../games.json';
 
 	let slug = $page.url.pathname.substr($page.url.pathname.lastIndexOf('/') + 1);
 
@@ -72,7 +72,7 @@
     }
 
 	import VertAd from '../../../components/vert-ad.svelte';
-	import HorzAd from '../../../components/horz-ad.svelte';
+	import { error } from '@sveltejs/kit';
 </script>
 <div class="flex flex-row relative justify-center">
 	<div class="flex h-[calc(100vh-132px)] xl:w-full lg:w-[1000px] md:w-[820px] sm:w-full float-left pl-5 pr-5 pb-5">

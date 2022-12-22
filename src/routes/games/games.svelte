@@ -2,7 +2,7 @@
 	import Box from './box.svelte';
 	import gamesJson from './games.json';
 
-	export let allGames = gamesJson['games']
+	var allGames = gamesJson['games']
 
 	export let popularGames = gamesJson['games']
 		.filter((game) => game['popular'] === true)
@@ -15,65 +15,105 @@
 			}
 			return 0;
 		});
-
-	export let staticGames = gamesJson['games']
-		.filter(
-			(game) =>
-				game['embedURL'] === undefined &&
-				game['emulator'] === undefined
-		)
-		.sort((a, b) => {
-			if (a['id'] < b['id']) {
-				return -1;
-			}
-			if (a['id'] > b['id']) {
-				return 1;
-			}
-			return 0;
-		});
-	export let emulatedGames = gamesJson['games']
-		.filter(
-			(game) =>
-				game['embedURL'] === undefined &&
-				game['emulator'] !== undefined
-		)
-		.sort((a, b) => {
-			if (a['id'] < b['id']) {
-				return -1;
-			}
-			if (a['id'] > b['id']) {
-				return 1;
-			}
-			return 0;
-		});
-
-	export let embedGames = gamesJson['games']
-		.filter((game) => game['embedURL'] !== undefined)
-		.sort((a, b) => {
-			if (a['id'] < b['id']) {
-				return -1;
-			}
-			if (a['id'] > b['id']) {
-				return 1;
-			}
-			return 0;
-		});
-
-	export function searchGames() {
-		let input = document.getElementById('search');
-		let filter = input.value.toUpperCase();
-		let games = document.getElementsByClassName('game');
-		var ul, li, a, i, txtValue;
-
-		for (i = 0; i < games.length; i++) {
-			a = games[i].id;
-			txtValue = a;
-			if (txtValue.toUpperCase().indexOf(filter) > -1) {
-				games[i].style.display = '';
-			} else {
-				games[i].style.display = 'none';
-			}
+	// if filter changes then update the games
+	$: {
+		if (filter === 'all') {
+			games = [];
+			allGames = gamesJson['games']
+				.sort((a, b) => {
+					if (a['id'] < b['id']) {
+						return -1;
+					}
+					if (a['id'] > b['id']) {
+						return 1;
+					}
+					return 0;
+				});
+			loadMore();
+			loadMore();
+		} else if (filter === 'static') {
+			staticGames();
+			loadMore();
+			loadMore();
+		} else if (filter === 'emulated') {
+			emulatedGames();
+			loadMore();
+			loadMore();
+		} else if (filter === 'embeded') {
+			embededGames();
+			loadMore();
+			loadMore();
 		}
+	}
+
+	function staticGames() {
+		games = [];
+		allGames = gamesJson['games']
+			.filter(
+				(game) =>
+					game['embedURL'] === undefined &&
+					game['emulator'] === undefined
+			)
+			.sort((a, b) => {
+				if (a['id'] < b['id']) {
+					return -1;
+				}
+				if (a['id'] > b['id']) {
+					return 1;
+				}
+				return 0;
+			});
+	}
+	function emulatedGames() {
+		games = [];
+		allGames = gamesJson['games']
+		.filter(
+			(game) =>
+				game['embedURL'] === undefined &&
+				game['emulator'] != undefined
+		)
+		.sort((a, b) => {
+			if (a['id'] < b['id']) {
+				return -1;
+			}
+			if (a['id'] > b['id']) {
+				return 1;
+			}
+			return 0;
+		});
+	}
+
+	function embededGames() {
+		games = [];
+		allGames = gamesJson['games']
+			.filter((game) => game['embedURL'] !== undefined)
+			.sort((a, b) => {
+				if (a['id'] < b['id']) {
+					return -1;
+				}
+				if (a['id'] > b['id']) {
+					return 1;
+				}
+				return 0;
+			});
+	}
+
+	function searchGames() {
+		let input = document.getElementById('search');
+		let search = input.value.toUpperCase();
+		games = [];
+		allGames = gamesJson['games']
+			.filter((game) => game['name'].toUpperCase().indexOf(search) > -1)
+			.sort((a, b) => {
+				if (a['id'] < b['id']) {
+					return -1;
+				}
+				if (a['id'] > b['id']) {
+					return 1;
+				}
+				return 0;
+			});
+		loadMore();
 	}
 
 	function getCategory(game) {
@@ -95,7 +135,8 @@
 
 	function loadMore() {
 		if (!loading && !reachedEnd) {
-			games = games.concat(allGames.slice(games.length, games.length + 5));
+			games = games.concat(allGames.slice(games.length, games.length + 4));
+
 		}
 	}
 
@@ -104,9 +145,6 @@
 			loadMore();
 		}
 	}
-	loadMore();
-	loadMore();
-	loadMore();
 </script>
 
 <svelte:window on:scroll={handleScroll} />
@@ -129,7 +167,7 @@
 	<div
 		class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 	>
-		{#if filter == 'all'}
+		{#if filter === 'all'}
 			{#each popularGames as game}
 				<Box
 					title={game['name']}
@@ -138,51 +176,19 @@
 					id={game['id']}
 					color='#d4af37'
 					category="Popular"
-				/>
-			{/each}
-			{#each games as game}
-				<Box
-					title={game['name']}
-					image={game['image']}
-					description={game['description']}
-					id={game['id']}
-					color='#000000'
-					category={getCategory(game)}
-				/>
-			{/each}
-		{:else if filter == 'static'}
-			{#each staticGames as game}
-				<Box
-					title={game['name']}
-					image={game['image']}
-					description={game['description']}
-					id={game['id']}
-					color="black"
-					category="Static"
-				/>
-			{/each}
-		{:else if filter == 'emulated'}
-			{#each emulatedGames as game}
-				<Box
-					title={game['name']}
-					image={game['image']}
-					description={game['description']}
-					id={game['id']}
-					color="#37528c"
-					category="Emulated"
-				/>
-			{/each}
-		{:else if filter == 'embeded'}
-			{#each embedGames as game}
-				<Box
-					title={game['name']}
-					image={game['image']}
-					description={game['description']}
-					id={game['id']}
-					color="#c81a00"
-					category="Embeded"
+					popular='true'
 				/>
 			{/each}
 		{/if}
+		{#each games as game}
+			<Box
+				title={game['name']}
+				image={game['image']}
+				description={game['description']}
+				id={game['id']}
+				color='#000000'
+				category={getCategory(game)}
+			/>
+		{/each}
 	</div>
 </div>
