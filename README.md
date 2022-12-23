@@ -1,4 +1,4 @@
-# Kazwire - Unblocked Games + Proxy
+# Kazwire - Unblocked Games & Proxy
 
 ## Features:
 - Looks super sleek!
@@ -6,6 +6,9 @@
 - Constantly updating and adding the latest games.
 - Massive library of games that are constantly being updated.
 - Blazingly fast proxy.
+
+## I need support!
+Join the [Discord](https://discord.gg/Ve7JBjpYJg) for a ton of domains and for support with Kazwire!
 
 ## How can I add a game I want to it?
 There are two current ways that you can add a game. You can make a pull request to add the game or you can join the [Discord](https://discord.gg/Ve7JBjpYJg) and request the game there with ``/requestgame`` on our Discord bot!
