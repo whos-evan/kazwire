@@ -1,38 +1,26 @@
-# create-svelte
+# Kazwire - Unblocked Games + Proxy
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+## Features:
+- Looks super sleek!
+- Dark and light mode.
+- Constantly updating and adding the latest games.
+- Massive library of games that are constantly being updated.
+- Blazingly fast proxy.
 
-## Creating a project
+## How can I add a game I want to it?
+There are two current ways that you can add a game. You can make a pull request to add the game or you can join the [Discord](https://discord.gg/Ve7JBjpYJg) and request the game there with ``/requestgame`` on our Discord bot!
 
-If you're seeing this, you've probably already done this step. Congrats!
+## How can I deploy it?
+Well we don't support this at the moment. The proxy part of Kazwire will not work if you only do the following steps, it will require either editing the ``uv.config.js`` to point to a working bare-server (such as ``https://search.kazwire.com/bare/``). However if you would like to get it running here are the steps to do so!
+1. Install Node.js and NPM
+2. Clone the repository with ``git clone https://github.com/whos-evan/kazwire.git``
+2a. Optional: edit ``uv.config.js`` in the ``./static/uv`` folder to a working bare-server such as ``https://search.kazwire.com/bare/``.
+3. Run ``npm install`` in the directory where you cloned the repository.
+4. Run ``npm run build`` to build Kazwire.
+5. Run ``node index.js`` in the directory where you built Kazwire.
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
-
-# create a new project in my-app
-npm create svelte@latest my-app
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```bash
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Coming soon!
+1. Better self-hosting support!
+    - Docker support for easy deployment.
+    - Possibly support for Railway and other PaaS providers.
+    - Removal of the ``ad block disable`` message for users who selfhosting.

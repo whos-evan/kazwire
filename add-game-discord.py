@@ -11,7 +11,9 @@ from discord import app_commands
 
 
 MY_GUILD = discord.Object(id=785577600219086881)  # replace with your guild id
-
+OWNER_1 = 314174289110892556
+OWNER_2 = 400430761557229579
+REQUEST_CHANNEL = 1054890431416111134
 
 class MyClient(discord.Client):
     def __init__(self):
@@ -81,7 +83,7 @@ async def suggestgame(
         embed.set_image(url=image.url)
 
     await interaction.response.send_message('Suggestion sent! If it is accepted you will recieve a ping.', ephemeral=True)
-    embed_message = await client.get_channel(1054890431416111134).send(embed=embed)
+    embed_message = await client.get_channel(REQUEST_CHANNEL).send(embed=embed)
     # react with thumbs up and thumbs down
     await embed_message.add_reaction('👍')
     await embed_message.add_reaction('👎')
@@ -110,7 +112,7 @@ async def addgame(
     description: str,
     embed_url: str
 ):
-    if interaction.user.id != 314174289110892556 and interaction.user.id != 400430761557229579: # replace with your user id
+    if interaction.user.id != OWNER_1 and interaction.user.id != OWNER_2: # replace with your user id
         return await interaction.response.send_message('You do not have permission to use this command!', ephemeral=True)
     if embed_url is not None:
         # get image file extension
@@ -129,4 +131,4 @@ async def addgame(
         image = await image.save('./proxy/kazwire/static/game/img/' + image_name)
         await interaction.response.send_message(f'Game added!\nJSON: ```{gameJson}```')
 
-client.run('token')
+client.run('token') # replace with your token
