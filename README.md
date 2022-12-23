@@ -11,7 +11,7 @@
 Join the [Discord](https://discord.gg/Ve7JBjpYJg) for a ton of domains and for support with Kazwire!
 
 ## How can I add a game I want to it?
-There are two current ways that you can add a game. You can make a pull request to add the game or you can join the [Discord](https://discord.gg/Ve7JBjpYJg) and request the game there with ``/requestgame`` on our Discord bot!
+There are two current ways that you can add a game. You can make a pull request to add the game or you can join the [Discord](https://discord.gg/Ve7JBjpYJg) and request the game there with ``/suggestgame`` on our Discord bot!
 
 ## How can I deploy it?
 Well we don't support this at the moment. The proxy part of Kazwire will not work if you only do the following steps, it will require either editing the ``uv.config.js`` to point to a working bare-server (such as ``https://search.kazwire.com/bare/``). However if you would like to get it running here are the steps to do so!
