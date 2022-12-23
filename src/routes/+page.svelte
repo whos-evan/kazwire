@@ -19,8 +19,9 @@
 		<News />
 	</div>
 </div>
-
 <HorzAd />
+
+
 <Faq />
 
 <Footer />

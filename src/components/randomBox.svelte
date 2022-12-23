@@ -12,7 +12,7 @@
 
 <div class="text-white w-full text-center">
 	<h1 class="lg:text-5xl md:text-4xl sm:text-xl font-bold">
-		Here are two recommended games!
+		Here are two randomly generated games!
 	</h1>
 	<div
 		class="grid grid-flow-rows lg:grid-cols-2 lg:grid-rows-none sm:grid-cols-1 sm:grid-rows-2 auto-rows-auto mt-10 gap-10"
