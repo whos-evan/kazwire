@@ -1,8 +1,36 @@
 <script>
 	import Box from './box.svelte';
 	import gamesJson from './games.json';
+	import { onMount } from 'svelte';
 
 	var allGames = gamesJson['games']
+
+	// get loved games
+	var lovedIds = [];
+	var lovedGames = [];
+	onMount(() => {
+		let loves = localStorage.getItem('loved') || '';
+		console.log(loves)
+		loves.split(',').forEach((item) => {
+			if (item != '') {
+				lovedIds.push(item);
+			}
+		});
+		gamesJson['games'].forEach((game) => {
+			if (lovedIds.includes(game['id'])) {
+				lovedGames.push(game);
+			}
+		});
+		lovedGames.sort((a, b) => {
+			if (a['id'] < b['id']) {
+				return -1;
+			}
+			if (a['id'] > b['id']) {
+				return 1;
+			}
+			return 0;
+		});
+	});
 
 	export let popularGames = gamesJson['games']
 		.filter((game) => game['popular'] === true)
@@ -168,17 +196,30 @@
 		class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 	>
 		{#if filter === 'all'}
-			{#each popularGames as game}
-				<Box
-					title={game['name']}
-					image={game['image']}
-					description={game['description']}
-					id={game['id']}
-					color='#d4af37'
-					category="Popular"
-					popular='true'
-				/>
-			{/each}
+			{#if lovedGames.length !== 0}
+				{#each lovedGames as game}
+					<Box
+						title={game['name']}
+						image={game['image']}
+						description={game['description']}
+						id={game['id']}
+						color='#FF0000'
+						category="Loved"
+					/>
+				{/each}
+			{:else}
+				{#each popularGames as game}
+					<Box
+						title={game['name']}
+						image={game['image']}
+						description={game['description']}
+						id={game['id']}
+						color='#d4af37'
+						category="Popular"
+						popular='true'
+					/>
+				{/each}
+			{/if}
 		{/if}
 		{#each games as game}
 			<Box
