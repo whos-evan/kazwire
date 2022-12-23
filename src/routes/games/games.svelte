@@ -10,7 +10,6 @@
 	var lovedGames = [];
 	onMount(() => {
 		let loves = localStorage.getItem('loved') || '';
-		console.log(loves)
 		loves.split(',').forEach((item) => {
 			if (item != '') {
 				lovedIds.push(item);
