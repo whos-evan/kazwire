@@ -1,81 +1,98 @@
 <script>
 	import Box from './box.svelte';
-	import gamesJson from './games.json';
 	import { onMount } from 'svelte';
+	import { page } from '$app/stores';
 
-	let allGames = gamesJson['games'];
 	let lovedIds = [];
 	let lovedGames = [];
+
+	let filter;
+
+	// get the domain
+	let domain = 'http://' + $page.url.host;
+
+	let allGames = fetch(domain + '/api/games')
+		.then((response) => response.json())
+		.then((data) => {
+			return data;
+		});
+
+	let loadedGames = [];
+
+	let popularGames = fetch(domain + '/api/games?category=popular')
+		.then((response) => response.json())
+		.then((data) => {
+			return data;
+		});
 
 	onMount(() => {
 		let loves = localStorage.getItem('loved') || '';
 		lovedIds = loves.split(',').filter((item) => item !== '');
-		lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
-		lovedGames.sort((a, b) => a['id'] - b['id']);
+		// call the api to get the games
+		for (let i = 0; i < lovedIds.length; i++) {
+			// make a get request to the api
+			// add the game to the lovedGames array
+			fetch(domain + '/api/games?id=' + lovedIds[i])
+				.then((response) => response.json())
+				.then((data) => {
+					lovedGames.push(data);
+				});
+		}
 	});
 
-	export let popularGames = allGames
-		.filter((game) => game['popular'] === true)
-		.sort((a, b) => a['id'] - b['id']);
-
-	let games = [];
-	let filter = 'all';
-
-	function applyFilter(games, filter) {
-		if (filter === 'all') {
-			// sort alphabetically
-			return games.sort((a, b) => a['name'].localeCompare(b['name']));
-		} else if (filter === 'static') {
-			return games
-				.filter((game) => game['embedURL'] === undefined && game['emulator'] === undefined)
-				.sort((a, b) => a['name'].localeCompare(b['name']));
-		} else if (filter === 'emulated') {
-			return games
-				.filter((game) => game['embedURL'] === undefined && game['emulator'] !== undefined)
-				.sort((a, b) => a['name'].localeCompare(b['name']));
-		} else if (filter === 'embeded') {
-			return games
-				.filter((game) => game['embedURL'] !== undefined)
-				.sort((a, b) => a['name'].localeCompare(b['name']));
-		}
-	}
-
-	$: {
-		games = [];
-		allGames = applyFilter(gamesJson['games'], filter);
-		loadMore();
-		loadMore();
-	}
+	// call the api to get the game
 
 	function searchGames() {
 		let input = document.getElementById('search');
 		let search = input.value.toUpperCase();
-		games = [];
-		allGames = gamesJson['games']
-			.filter((game) => game['name'].toUpperCase().indexOf(search) > -1)
-			.sort((a, b) => a['id'] - b['id']);
+		let results;
+		// get search results
+		if (filter === 'all') {
+			results = fetch(domain + '/api/games?search=' + search)
+				.then((response) => response.json())
+				.then((data) => {
+					return data;
+				});
+		} else {
+			results = fetch(domain + '/api/games?search=' + search + '&category=' + filter)
+				.then((response) => response.json())
+				.then((data) => {
+					return data;
+				});
+		}
+		// set the games to the results
+		allGames = results;
+		loadMore();
 		loadMore();
 	}
 
-	function getCategory(game) {
-		if (game['embedURL'] !== undefined) {
-			return 'Embeded';
-		} else if (game['emulator'] !== undefined) {
-			return 'Emulated';
-		} else {
-			return 'Static';
-		}
+	if (filter === 'all') {
+		allGames = fetch(domain + '/api/games')
+			.then((response) => response.json())
+			.then((data) => {
+				return data;
+			});
+		loadMore();
+		loadMore();
+	} else {
+		allGames = fetch(domain + '/api/games?category=' + filter)
+			.then((response) => response.json())
+			.then((data) => {
+				return data;
+			});
+		loadMore();
+		loadMore();
 	}
 
 	let loading = false;
 	let reachedEnd = false;
 
-	function loadMore() {
-		if (!games || loading || reachedEnd) {
+	async function loadMore() {
+		if (!loadedGames || loading || reachedEnd) {
 			return;
 		}
-		games = games.concat(allGames.slice(games.length, games.length + 4));
-		console.log(games)
+		const games = await allGames;
+		loadedGames = loadedGames.concat(games.slice(loadedGames.length, loadedGames.length + 4));
 	}
 
 	function handleScroll(event) {
@@ -112,41 +129,35 @@
 	<div
 		class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 	>
-		{#if filter === 'all'}
-			{#if lovedGames.length !== 0}
-				{#each lovedGames as game}
-					<Box
-						title={game['name']}
-						image={game['image']}
-						description={game['description']}
-						id={game['id']}
-						color="#FF0000"
-						category="Loved"
-					/>
-				{/each}
-			{:else}
-				{#each popularGames as game}
-					<Box
-						title={game['name']}
-						image={game['image']}
-						description={game['description']}
-						id={game['id']}
-						color="#d4af37"
-						category="Popular"
-						popular="true"
-					/>
-				{/each}
-			{/if}
-		{/if}
-		{#each games as game}
-			<Box
-				title={game['name']}
-				image={game['image']}
-				description={game['description']}
-				id={game['id']}
-				color="#000000"
-				category={getCategory(game)}
-			/>
-		{/each}
+		{#await popularGames}
+			<div class="text-white text-2xl">Loading...</div>
+		{:then popularGames}
+			{#each popularGames as game}
+				<Box
+					title={game['name']}
+					image={game['image']}
+					description={game['description']}
+					id={game['id']}
+					color="#000000"
+					category="Popular"
+					popular="true"
+				/>
+			{/each}
+		{/await}
+
+		{#await loadedGames}
+			<div class="text-white text-2xl">Loading...</div>
+		{:then games}
+			{#each games as game}
+				<Box
+					title={game['name']}
+					image={game['image']}
+					description={game['description']}
+					id={game['id']}
+					color="#000000"
+					category={game['category']}
+				/>
+			{/each}
+		{/await}
 	</div>
 </div>
