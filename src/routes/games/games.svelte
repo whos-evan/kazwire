@@ -46,10 +46,11 @@
 	function searchGames() {
 		let input = document.getElementById('search');
 		let search = input.value.toUpperCase();
+		games = [];
 		allGames = gamesJson['games']
 			.filter((game) => game['name'].toUpperCase().indexOf(search) > -1)
 			.sort((a, b) => a['id'] - b['id']);
-		games = applyFilter(allGames, filter);
+		loadMore();
 	}
 
 	function getCategory(game) {
@@ -70,6 +71,7 @@
 			return;
 		}
 		games = games.concat(allGames.slice(games.length, games.length + 4));
+		console.log(games)
 	}
 
 	function handleScroll(event) {
