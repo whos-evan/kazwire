@@ -3,144 +3,53 @@
 	import gamesJson from './games.json';
 	import { onMount } from 'svelte';
 
-	var allGames = gamesJson['games']
+	let allGames = gamesJson['games'];
+	let lovedIds = [];
+	let lovedGames = [];
 
-	// get loved games
-	var lovedIds = [];
-	var lovedGames = [];
 	onMount(() => {
 		let loves = localStorage.getItem('loved') || '';
-		loves.split(',').forEach((item) => {
-			if (item != '') {
-				lovedIds.push(item);
-			}
-		});
-		gamesJson['games'].forEach((game) => {
-			if (lovedIds.includes(game['id'])) {
-				lovedGames.push(game);
-			}
-		});
-		lovedGames.sort((a, b) => {
-			if (a['id'] < b['id']) {
-				return -1;
-			}
-			if (a['id'] > b['id']) {
-				return 1;
-			}
-			return 0;
-		});
+		lovedIds = loves.split(',').filter((item) => item !== '');
+		lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
+		lovedGames.sort((a, b) => a['id'] - b['id']);
 	});
 
-	export let popularGames = gamesJson['games']
+	export let popularGames = allGames
 		.filter((game) => game['popular'] === true)
-		.sort((a, b) => {
-			if (a['id'] < b['id']) {
-				return -1;
-			}
-			if (a['id'] > b['id']) {
-				return 1;
-			}
-			return 0;
-		});
-	// if filter changes then update the games
-	$: {
+		.sort((a, b) => a['id'] - b['id']);
+
+	let games = [];
+	let filter = 'all';
+
+	function applyFilter(games, filter) {
 		if (filter === 'all') {
-			games = [];
-			allGames = gamesJson['games']
-				.sort((a, b) => {
-					if (a['id'] < b['id']) {
-						return -1;
-					}
-					if (a['id'] > b['id']) {
-						return 1;
-					}
-					return 0;
-				});
-			loadMore();
-			loadMore();
+			return games.sort((a, b) => a['id'] - b['id']);
 		} else if (filter === 'static') {
-			staticGames();
-			loadMore();
-			loadMore();
+			return games
+				.filter((game) => game['embedURL'] === undefined && game['emulator'] === undefined)
+				.sort((a, b) => a['id'] - b['id']);
 		} else if (filter === 'emulated') {
-			emulatedGames();
-			loadMore();
-			loadMore();
+			return games
+				.filter((game) => game['embedURL'] === undefined && game['emulator'] !== undefined)
+				.sort((a, b) => a['id'] - b['id']);
 		} else if (filter === 'embeded') {
-			embededGames();
-			loadMore();
-			loadMore();
+			return games
+				.filter((game) => game['embedURL'] !== undefined)
+				.sort((a, b) => a['id'] - b['id']);
 		}
 	}
 
-	function staticGames() {
-		games = [];
-		allGames = gamesJson['games']
-			.filter(
-				(game) =>
-					game['embedURL'] === undefined &&
-					game['emulator'] === undefined
-			)
-			.sort((a, b) => {
-				if (a['id'] < b['id']) {
-					return -1;
-				}
-				if (a['id'] > b['id']) {
-					return 1;
-				}
-				return 0;
-			});
-	}
-	function emulatedGames() {
-		games = [];
-		allGames = gamesJson['games']
-		.filter(
-			(game) =>
-				game['embedURL'] === undefined &&
-				game['emulator'] != undefined
-		)
-		.sort((a, b) => {
-			if (a['id'] < b['id']) {
-				return -1;
-			}
-			if (a['id'] > b['id']) {
-				return 1;
-			}
-			return 0;
-		});
-	}
-
-	function embededGames() {
-		games = [];
-		allGames = gamesJson['games']
-			.filter((game) => game['embedURL'] !== undefined)
-			.sort((a, b) => {
-				if (a['id'] < b['id']) {
-					return -1;
-				}
-				if (a['id'] > b['id']) {
-					return 1;
-				}
-				return 0;
-			});
+	$: {
+		allGames = applyFilter(allGames, filter);
 	}
 
 	function searchGames() {
 		let input = document.getElementById('search');
 		let search = input.value.toUpperCase();
-		games = [];
 		allGames = gamesJson['games']
 			.filter((game) => game['name'].toUpperCase().indexOf(search) > -1)
-			.sort((a, b) => {
-				if (a['id'] < b['id']) {
-					return -1;
-				}
-				if (a['id'] > b['id']) {
-					return 1;
-				}
-				return 0;
-			});
-		loadMore();
+			.sort((a, b) => a['id'] - b['id']);
+		games = applyFilter(allGames, filter);
 	}
 
 	function getCategory(game) {
@@ -153,18 +62,14 @@
 		}
 	}
 
-	let filter;
-
-
-	let games = [];
 	let loading = false;
 	let reachedEnd = false;
 
 	function loadMore() {
-		if (!loading && !reachedEnd) {
-			games = games.concat(allGames.slice(games.length, games.length + 4));
-
+		if (!games || loading || reachedEnd) {
+			return;
 		}
+		games = games.concat(allGames.slice(games.length, games.length + 4));
 	}
 
 	function handleScroll(event) {
@@ -174,6 +79,9 @@
 	}
 
 	import HorzAd from '../../components/horz-ad.svelte';
+
+	loadMore();
+	loadMore();
 </script>
 
 <svelte:window on:scroll={handleScroll} />
@@ -206,7 +114,7 @@
 						image={game['image']}
 						description={game['description']}
 						id={game['id']}
-						color='#FF0000'
+						color="#FF0000"
 						category="Loved"
 					/>
 				{/each}
@@ -217,9 +125,9 @@
 						image={game['image']}
 						description={game['description']}
 						id={game['id']}
-						color='#d4af37'
+						color="#d4af37"
 						category="Popular"
-						popular='true'
+						popular="true"
 					/>
 				{/each}
 			{/if}
@@ -230,7 +138,7 @@
 				image={game['image']}
 				description={game['description']}
 				id={game['id']}
-				color='#000000'
+				color="#000000"
 				category={getCategory(game)}
 			/>
 		{/each}
