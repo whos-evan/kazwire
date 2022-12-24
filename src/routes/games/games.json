@@ -442,6 +442,14 @@
             "developer": "Valve",
             "description": "Portal\u2122 is a new single player game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=df05c1d5-60a1-4969-a73a-2fef74a8dde8&utm_source=shortcut"
+        },
+        {
+            "name": "Portal 2",
+            "id": "portal-2",
+            "image": "portal-2.jpg",
+            "developer": "Valve",
+            "description": "Portal 2 is a new single player and multiplayer game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=749ab5aa-eded-4616-965e-fae5f9b6c7f1&utm_source=shortcut"
         }
     ]
 }
