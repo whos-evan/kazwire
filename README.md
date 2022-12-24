@@ -84,6 +84,8 @@ Example of the formatting
     - Removal of the ``ad block disable`` message for users who selfhosting.
 
 - Splitting of games assets and website code with different repositories.
+
+- Add a wiki for adding games and modifying the site.
 ## Screenshots!
 
 ![brave_Jl0NzV94ME](https://user-images.githubusercontent.com/72959444/209419997-4a995a17-1b1d-4b21-b9ef-f19c10d3c0d8.png)
