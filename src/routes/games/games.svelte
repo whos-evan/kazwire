@@ -23,24 +23,28 @@
 
 	function applyFilter(games, filter) {
 		if (filter === 'all') {
-			return games.sort((a, b) => a['id'] - b['id']);
+			// sort alphabetically
+			return games.sort((a, b) => a['name'].localeCompare(b['name']));
 		} else if (filter === 'static') {
 			return games
 				.filter((game) => game['embedURL'] === undefined && game['emulator'] === undefined)
-				.sort((a, b) => a['id'] - b['id']);
+				.sort((a, b) => a['name'].localeCompare(b['name']));
 		} else if (filter === 'emulated') {
 			return games
 				.filter((game) => game['embedURL'] === undefined && game['emulator'] !== undefined)
-				.sort((a, b) => a['id'] - b['id']);
+				.sort((a, b) => a['name'].localeCompare(b['name']));
 		} else if (filter === 'embeded') {
 			return games
 				.filter((game) => game['embedURL'] !== undefined)
-				.sort((a, b) => a['id'] - b['id']);
+				.sort((a, b) => a['name'].localeCompare(b['name']));
 		}
 	}
 
 	$: {
-		allGames = applyFilter(allGames, filter);
+		games = [];
+		allGames = applyFilter(gamesJson['games'], filter);
+		loadMore();
+		loadMore();
 	}
 
 	function searchGames() {
