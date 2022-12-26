@@ -3,27 +3,17 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 
+	let loading = false;
+	let reachedEnd = false;
+
 	let lovedIds = [];
 	let lovedGames = [];
 
 	let filter;
+	let search;
 
 	// get the domain
 	let domain = 'http://' + $page.url.host;
-
-	let allGames = fetch(domain + '/api/games')
-		.then((response) => response.json())
-		.then((data) => {
-			return data;
-		});
-
-	let loadedGames = [];
-
-	let popularGames = fetch(domain + '/api/games?category=popular')
-		.then((response) => response.json())
-		.then((data) => {
-			return data;
-		});
 
 	onMount(() => {
 		let loves = localStorage.getItem('loved') || '';
@@ -40,21 +30,19 @@
 		}
 	});
 
-	// call the api to get the game
+	let allGames = [];
 
-	function searchGames() {
-		let input = document.getElementById('search');
-		let search = input.value.toUpperCase();
+	async function searchGames() {
 		let results;
 		// get search results
 		if (filter === 'all') {
-			results = fetch(domain + '/api/games?search=' + search)
+			results = await fetch(domain + '/api/games?search=' + search)
 				.then((response) => response.json())
 				.then((data) => {
 					return data;
 				});
 		} else {
-			results = fetch(domain + '/api/games?search=' + search + '&category=' + filter)
+			results = await fetch(domain + '/api/games?search=' + search + '&category=' + filter)
 				.then((response) => response.json())
 				.then((data) => {
 					return data;
@@ -62,38 +50,56 @@
 		}
 		// set the games to the results
 		allGames = results;
+		loadedGames = [];
+		reachedEnd = false;
 		loadMore();
 		loadMore();
 	}
 
-	if (filter === 'all') {
-		allGames = fetch(domain + '/api/games')
-			.then((response) => response.json())
-			.then((data) => {
-				return data;
-			});
-		loadMore();
-		loadMore();
-	} else {
-		allGames = fetch(domain + '/api/games?category=' + filter)
-			.then((response) => response.json())
-			.then((data) => {
-				return data;
-			});
-		loadMore();
-		loadMore();
-	}
+	let popularGames = fetch(domain + '/api/games?category=popular')
+		.then((response) => response.json())
+		.then((data) => {
+			return data;
+		});
 
-	let loading = false;
-	let reachedEnd = false;
+	let loadedGames = [];
 
 	async function loadMore() {
-		if (!loadedGames || loading || reachedEnd) {
+		if (loading || reachedEnd) {
 			return;
 		}
-		const games = await allGames;
-		loadedGames = loadedGames.concat(games.slice(loadedGames.length, loadedGames.length + 4));
+		loading = true;
+		let games;
+		if (allGames.length === 0) {
+			if (!filter || filter === 'all') {
+				games = await fetch(domain + '/api/games')
+					.then((response) => response.json())
+					.then((data) => {
+						return data;
+					});
+			} else {
+				games = await fetch(domain + '/api/games?category=' + filter)
+					.then((response) => response.json())
+					.then((data) => {
+						return data;
+					});
+			}
+		} else {
+			games = allGames;
+		}
+
+		if (loadedGames.length + 4 >= games.length) {
+			// all games have been loaded
+			reachedEnd = true;
+			loadedGames = loadedGames.concat(games.slice(loadedGames.length));
+		} else {
+			loadedGames = loadedGames.concat(games.slice(loadedGames.length, loadedGames.length + 4));
+		}
+		loading = false;
 	}
+
+	loadMore();
+	loadMore();
 
 	function handleScroll(event) {
 		if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
@@ -102,9 +108,6 @@
 	}
 
 	import HorzAd from '../../components/horz-ad.svelte';
-
-	loadMore();
-	loadMore();
 </script>
 
 <svelte:window on:scroll={handleScroll} />
@@ -118,6 +121,7 @@
 		class="w-[35vw] h-10 p-6 rounded-lg mb-5 text-black placeholder:text-gray-500"
 		placeholder="Search for a game..."
 		autocomplete="off"
+		bind:value={search}
 		on:input={searchGames}
 	/>
 	<select id="filterSelect" class="rounded-lg text-black p-3" bind:value={filter}>
@@ -129,6 +133,7 @@
 	<div
 		class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 	>
+
 		{#await popularGames}
 			<div class="text-white text-2xl">Loading...</div>
 		{:then popularGames}
@@ -156,6 +161,7 @@
 					id={game['id']}
 					color="#000000"
 					category={game['category']}
+					popular="false"
 				/>
 			{/each}
 		{/await}
