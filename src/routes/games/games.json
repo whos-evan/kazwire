@@ -450,6 +450,20 @@
             "developer": "Valve",
             "description": "Portal 2 is a new single player and multiplayer game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=749ab5aa-eded-4616-965e-fae5f9b6c7f1&utm_source=shortcut"
+        },
+        {
+            "name": "Tube Jumpers",
+            "id": "tube-jumpers",
+            "image": "tube-jumpers.png",
+            "developer": "Dahoh Bolesta",
+            "description": "Tube Jumpers is a local multiplayer that can be played with up to 4 people. In the game you have to make sure to stay on your floating tube."
+        },
+        {
+            "name": "Jetpack Joyride",
+            "id": "jetpack-joyride",
+            "image": "jetpack-joyride.png",
+            "developer": "Halfbrick Studios",
+            "description": "Jetpack Joyride is a 2011 side-scrolling endless runner action video game developed by Halfbrick Studios and published by Halfbrick Studios."
         }
     ]
 }
