@@ -1,7 +1,87 @@
 <script>
 	import Box from './box.svelte';
 	import { onMount } from 'svelte';
+<<<<<<< Updated upstream
 	import { page } from '$app/stores';
+=======
+
+	let allGames = gamesJson['games'];
+	let lovedIds = [];
+
+	onMount(() => {
+		let loves = localStorage.getItem('loved') || '';
+		lovedIds = loves.split(',').filter((item) => item !== '');
+		// call the api to get the games
+		for (let i = 0; i < lovedIds.length; i++) {
+			// make a get request to the api
+			// add the game to the lovedGames array
+			fetch(domain + '/api/games?id=' + lovedIds[i])
+				.then((response) => response.json())
+				.then((data) => {
+					lovedGames.push(data);
+				});
+		}
+	});
+
+	export let popularGames = allGames
+		.filter((game) => game['popular'] === true)
+		.sort((a, b) => a['id'] - b['id']);
+
+	let games = [];
+	let filter = 'all';
+
+	function applyFilter(games, filter) {
+		if (filter === 'all') {
+			// sort alphabetically
+			return games.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'static') {
+			return games
+				.filter((game) => game['embedURL'] === undefined && game['emulator'] === undefined)
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'emulated') {
+			return games
+				.filter((game) => game['embedURL'] === undefined && game['emulator'] !== undefined)
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'embeded') {
+			return games
+				.filter((game) => game['embedURL'] !== undefined)
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		}
+	}
+
+	$: {
+		games = [];
+		allGames = applyFilter(gamesJson['games'], filter);
+		loadMore();
+		loadMore();
+	}
+
+	let popularGames = fetch(domain + '/api/games?category=popular')
+		.then((response) => response.json())
+		.then((data) => {
+			return data;
+		});
+
+	let loadedGames = [];
+
+	async function loadMore() {
+		if (loading || reachedEnd) {
+			return;
+		}
+		loading = true;
+		let games;
+		if (allGames.length === 0) {
+			if (!filter || filter === 'all') {
+				games = await fetch(domain + '/api/games')
+					.then((response) => response.json())
+					.then((data) => {
+						return data;
+					});
+			} else {
+			return 'Static';
+		}
+	}
+>>>>>>> Stashed changes
 
 	let loading = false;
 	let reachedEnd = false;

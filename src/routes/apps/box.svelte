@@ -39,7 +39,7 @@
 	onMount(() => {
 		const colorThief = new ColorThief();
 		const img = new Image();
-		img.src = `./app/img/${image}`;
+		img.src = `${image}`;
 		img.addEventListener('load', function() {
 			colorThief.getColor(img);
 			shine = `rgb(${colorThief.getColor(img)})`;
@@ -53,7 +53,7 @@
 		class="background-game bg-white shadow-lg hover:bg-gray-200 shadow-gray-200 dark:shadow-orange-300 hover:cursor-pointer w-full h-full mb-5 rounded-xl"
 	>
 		<div class="p-5 w-full justify-center flex">
-			<img loading="lazy" src="./app/img/{image}" class="img bg-white w-auto max-h-[10rem]" alt={description} />
+			<img loading="lazy" src="{image}" class="img bg-white w-auto max-h-[10rem]" alt={description} />
 		</div>
 		<div class="pl-5 pr-5">
 			<h1 class="font-bold text-2xl" style="color: {color};">{title}</h1>
@@ -69,7 +69,7 @@
 		style="box-shadow: 0 10px 15px -3px {shine};"
 	>
 		<div class="p-5 w-full justify-center flex">
-			<img loading="lazy" src="./app/img/{image}" class="img bg-white w-auto max-h-[10rem]" alt={description} />
+			<img loading="lazy" src="{image}" class="img bg-white w-auto max-h-[10rem]" alt={description} />
 		</div>
 		<div class="pl-5 pr-5">
 			<h1 class="font-bold text-2xl" style="color: {color};">{title}</h1>
