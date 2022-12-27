@@ -95,6 +95,12 @@
 	onMount(() => {
 		getGamePath();
 		isLoved();
+
+		gtag('event', 'page_view', {
+			page_title: getGame()['name'],
+			page_location: window.location.href,
+			page_path: window.location.pathname
+		});
 	});
 
 	export let title = getGame()['name'];
