@@ -48,6 +48,35 @@ def select_folder():
     # Copy the selected folder and its contents to the destination folder
     shutil.copytree(source_folder_path, destination_folder_path)
 
+def git_push():
+    print("Making git commit.")
+
+    if submitted == False:
+        tk.messagebox.showerror("Error", "You must submit the form before pushing to GitHub.")
+        return
+
+    import git
+
+    # Open the repo
+    repo = git.Repo("../.git")
+
+    # add all files
+    repo.git.add(A=True)
+
+    repo.index.commit("Added " + game_name_entry.get() + " to website.")
+    print("Git commit made.")
+    print("Pushing to GitHub.")
+    master = repo.remote(name='origin')
+    master.push()
+    print("Pushed to GitHub.")
+
+def git_clone():
+    print("Cloning repo. WARNING THIS WILL TAKE A WHILE.")
+    from git import Repo
+    Repo.clone_from("https://github.com/whos-evan/kazwire", "./kazwire")
+    print("Cloned repo. Please delete the main.exe file that you are running this with and use the one in the kazwire folder.")
+
+
 # Create the main window
 root = tk.Tk()
 root.title("Game Information")
@@ -78,6 +107,8 @@ emulator_type_var.set("None")  # default value
 emulator_type_menu = tk.OptionMenu(root, emulator_type_var, "None", "Ruffle", "EmulatorJS")
 folder_label = tk.Label(root, text="Select folder for static game: (MUST HAVE INDEX.HTML FILE)")
 folder_button = tk.Button(root, text="Select Folder", command=select_folder)
+git_clone_button = tk.Button(root, text="Git Clone", command=git_clone)
+git_push_button = tk.Button(root, text="Git Push", command=git_push)
 
 
 def submit():
@@ -178,23 +209,8 @@ def submit():
     print("Popular:", popular)
     print("Emulator Type:", emulator_type)
 
-    print('')
-    print("Making git commit.")
-
-    import git
-
-    # Open the repo
-    repo = git.Repo("../.git")
-
-    # add all files
-    repo.git.add(A=True)
-
-    repo.index.commit("Added " + game_name + " to website.")
-    print("Git commit made.")
-    print("Pushing to GitHub.")
-    master = repo.remote(name='origin')
-    master.push()
-    print("Pushed to GitHub.")
+    global submitted # set the global variable to True
+    submitted = True
 
 
 # Bind the submit function to the submit button's "command" attribute
@@ -224,6 +240,8 @@ emulator_type_menu.grid(row=8, column=1)
 folder_label.grid(row=10, column=0)
 folder_button.grid(row=10, column=1)
 submit_button.grid(row=11, column=1)
+git_clone_button.grid(row=12, column=0)
+git_push_button.grid(row=12, column=1)
 
 # Run the main loop
 root.mainloop()
