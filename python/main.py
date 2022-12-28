@@ -51,10 +51,6 @@ def select_folder():
 def git_push():
     print("Making git commit.")
 
-    if submitted == False:
-        tk.messagebox.showerror("Error", "You must submit the form before pushing to GitHub.")
-        return
-
     import git
 
     # Open the repo
@@ -208,9 +204,6 @@ def submit():
     print("Release Date:", release_date)
     print("Popular:", popular)
     print("Emulator Type:", emulator_type)
-
-    global submitted # set the global variable to True
-    submitted = True
 
 
 # Bind the submit function to the submit button's "command" attribute
