@@ -189,7 +189,7 @@ def submit():
     password = getpass.getpass("Enter your git password: ")
 
     # Open the repo
-    repo = git.Repo("../")
+    repo = git.Repo("C:/Users/evan/Documents/Coding/kaz frontend/kazwire")
 
     # Set the author and committer
     author = git.Actor(username, username + "@users.noreply.github.com")

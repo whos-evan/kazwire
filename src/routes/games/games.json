@@ -466,27 +466,6 @@
             "description": "Jetpack Joyride is a 2011 side-scrolling endless runner action video game developed by Halfbrick Studios and published by Halfbrick Studios."
         },
         {
-            "name": "THIS IS A TEST",
-            "id": "TEST",
-            "image": "TEST.png",
-            "developer": "TEST",
-            "description": "TEST"
-        },
-        {
-            "name": "THIS IS A TEST",
-            "id": "TEST",
-            "image": "TEST.png",
-            "developer": "TEST",
-            "description": "TEST"
-        },
-        {
-            "name": "TEST",
-            "id": "test",
-            "image": "test.png",
-            "developer": "test",
-            "description": "test"
-        },
-        {
             "name": "test",
             "id": "test",
             "image": "test.png",
