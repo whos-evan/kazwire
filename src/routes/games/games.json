@@ -478,6 +478,13 @@
             "image": "temple-run-2.png",
             "developer": "Imangi Studios",
             "description": "Temple Run 2 is an endless running video game developed and published by Imangi Studios."
+        },
+        {
+            "name": "Fruit Ninja",
+            "id": "fruit-ninja",
+            "image": "fruit-ninja.png",
+            "developer": "Halfbrick Studios",
+            "description": "In Fruit Ninja the player must slice fruit that is thrown into the air by swiping the device's touch screen with their finger or the player's arms and hands, and must not slice bombs."
         }
     ]
 }
