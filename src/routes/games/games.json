@@ -506,6 +506,14 @@
             "image": "giant-hamster-run.png",
             "developer": "FLGames",
             "description": "Tiny the Hamster as he stampedes through the city is this classic endless-runner."
+        },
+        {
+            "name": "Impossible Quiz",
+            "id": "impossible-quiz",
+            "image": "impossible-quiz.png",
+            "developer": "Glenn Rhodes",
+            "description": "The Impossible Quiz is an online trivia quiz that features only very hard questions.",
+            "emulator_type": "ruffle"
         }
     ]
 }
