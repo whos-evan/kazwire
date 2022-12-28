@@ -192,7 +192,7 @@ def submit():
     repo.index.commit("Added " + game_name + " to website.")
     print("Git commit made.")
     print("Pushing to GitHub.")
-    master = repo.remote(name='master')
+    master = repo.remote(name='origin')
     master.push()
     print("Pushed to GitHub.")
 
