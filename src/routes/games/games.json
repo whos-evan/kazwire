@@ -471,6 +471,13 @@
             "image": "worlds-hardest-game.png",
             "developer": "Stephen Critoph",
             "description": "The World's Hardest Game is an addictive puzzle game consisting of 30 incredibly challenging levels."
+        },
+        {
+            "name": "Test",
+            "id": "test",
+            "image": "test.png",
+            "developer": "test",
+            "description": "test"
         }
     ]
 }
