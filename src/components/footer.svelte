@@ -19,5 +19,6 @@
                     <li class='float-left text-white text-lg ml-10'>©2022 Kazwire</li>
                 </ul>
         </div>
+        <p class='float-left text-white text-lg ml-10'>Games shown in this website are the property of their respective owners.</p>
     </nav>
 </div>

@@ -6,7 +6,9 @@
             <br>
             <p>With a wide variety of games to choose from, including popular titles like Run 3, Slope, and Retro Bowl, as well as many of lesser-known games in a variety of genres, there's something for everyone on our site.</p>
             <br>
-            <p>We also give you the ability to browse the entire internet if you don't like what you see! If you ever need help please join our Discord and let us know!</p>
+            <p>We also give you the ability to browse the entire internet if you don't like what you see! If you ever need help please join our <a class="hover:cursor-pointer hover:underline" href="https://discord.gg/kazchat-785577600219086881">Discord</a> and let us know!</p>
+            <br>
+            <p>Games shown in this website are the property of their respective owners. If you see your game here and would like it removed please refer to our <a class="hover:cursor-pointer hover:underline" href="/legal/dmca">DMCA page</a>.</p>
         </div>
     </div>
 </div>
