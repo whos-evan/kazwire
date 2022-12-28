@@ -499,6 +499,13 @@
             "image": "crossy-road.png",
             "developer": "Hipster Whale",
             "description": "Crossy Road is the 8-bit endless arcade hopper that started it all. Collect custom characters and navigate freeways, railroads, rivers and much more."
+        },
+        {
+            "name": "Giant Hamster Run",
+            "id": "giant-hamster-run",
+            "image": "giant-hamster-run.png",
+            "developer": "FLGames",
+            "description": "Tiny the Hamster as he stampedes through the city is this classic endless-runner."
         }
     ]
 }
