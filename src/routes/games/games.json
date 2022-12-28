@@ -464,6 +464,13 @@
             "image": "jetpack-joyride.png",
             "developer": "Halfbrick Studios",
             "description": "Jetpack Joyride is a 2011 side-scrolling endless runner action video game developed by Halfbrick Studios and published by Halfbrick Studios."
+        },
+        {
+            "name": "World's Hardest Game",
+            "id": "worlds-hardest-game",
+            "image": "worlds-hardest-game.png",
+            "developer": "Stephen Critoph",
+            "description": "The World's Hardest Game is an addictive puzzle game consisting of 30 incredibly challenging levels."
         }
     ]
 }
