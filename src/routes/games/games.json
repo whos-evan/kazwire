@@ -521,13 +521,6 @@
             "image": "dadish.png",
             "developer": "Thomas K Young and CatCup Games",
             "description": "Dadish is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch."
-        },
-        {
-            "name": "Tiny Fishing",
-            "id": "tiny-fishing",
-            "image": "tiny-fishing.png",
-            "developer": "appdz and Mad Buffer",
-            "description": "Catch fish and sell them for money to buy upgrades and new fishing rods!"
         }
     ]
 }
