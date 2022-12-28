@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="pragma" content="no-cache"/>
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name ="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta charset="utf-8"/>
+
+        <script src="game-cdn.poki.com/scripts/v2/poki-sdk.js"></script>
+
+        <!-- Set the title bar of the page -->
+        <title>Tiny Fishing by buyhtml5.com</title>
+
+        <!-- Set the background colour of the document -->
+        <style>
+            body {
+              background: #0;
+              color:#cccccc;
+              margin: 0px;
+              padding: 0px;
+              border: 0px;
+            }
+            canvas {
+                      image-rendering: optimizeSpeed;
+                      -webkit-interpolation-mode: nearest-neighbor;
+                      -ms-touch-action: none;
+                      margin: 0px;
+                      padding: 0px;
+                      border: 0px;
+            }
+            :-webkit-full-screen #canvas {
+                 width: 100%;
+                 height: 100%;
+            }
+            invisible_button
+            {
+              background-color:   rgba(1, 1, 1, 1);
+              background-repeat:  no-repeat;
+              border:             none;
+              cursor:             disabled;
+              overflow:           hidden;
+              outline:            none;
+              bottom:             0;
+              left:               0;
+              position:           absolute;
+              width:              100px;
+              height:             100px;
+              top:                0px;
+              left:               0px;
+              pointer-events:     none;
+              filter:             alpha(opacity=0);
+              -mos-opacity:       0.0;
+              opacity:            0.0;
+              display:            block;
+              z-index:            2;   
+              -moz-user-select:   -moz-none;
+              -khtml-user-select: none;
+              -webkit-user-select:none;
+               /*
+                 Introduced in IE 10.
+                 See http://ie.microsoft.com/testdrive/HTML5/msUserSelect/
+               */
+              -ms-user-select:    none;
+              user-select:        none;
+            }
+            div.gm4html5_div_class
+            {
+              margin: 0px;
+              padding: 0px;
+              border: 0px;
+            }
+            /* START - Login Dialog Box */
+            div.gm4html5_login
+            {
+                 padding: 20px;
+                 position: absolute;
+                 border: solid 2px #000000;
+                 background-color: #404040;
+                 color:#00ff00;
+                 border-radius: 15px;
+                 box-shadow: #101010 20px 20px 40px;
+            }
+            div.gm4html5_cancel_button
+            {
+                 float: right;
+            }
+            div.gm4html5_login_button
+            {
+                 float: left;
+            }
+            div.gm4html5_login_header
+            {
+                 text-align: center;
+            }
+            /* END - Login Dialog Box */
+            :-webkit-full-screen {
+               width: 100%;
+               height: 100%;
+            }
+
+            #sbar1 {
+              border-radius: 25px;
+              background: #73AD21;
+              padding: 20px;
+              width: 200px;
+              height: 150px;
+            }
+        </style>
+
+        <script>
+          if(!Number.isNaN && window.isNaN) Number.isNaN = isNaN;
+          //if (typeof Math.sign === 'undefined') { Math.sign = function (x) { return x > 0 ? 1 : x < 0 ? -1 : x; } }
+        </script>
+
+    </head>
+
+    <body>
+
+            <img  src="html5game/bg.png" id="img_loadingbg" alt="" style="position:absolute; left : 0; top : 0; width:1px; height:1px;"/>
+            <img  src="html5game/caption.png" id="img_loadingicon" alt="" style="position:absolute; left : 0; top : 0; width:1px; height:1px;"/>
+            <img  src="html5game/bh5logo.png" id="img_loadinglogoicon" alt="" style="position:absolute; left : 0; top : 0; width:1px; height:1px;"/>
+
+            <div  id="img_loadingbar" style="border-radius: 25px; width:1px;height:1px; position:absolute; left : 0px; top : 0; background-color:#d7e0ee"></div>
+            <div  id="img_loadingbaroverlay" style="border-radius: 25px; width:1px;height:1px; position:absolute; left : 0px; top : 0; background-color:#f8703a"></div>
+
+        <div class="gm4html5_div_class" id="gm4html5_div_id">
+            <canvas id="canvas" width="1" height="1" >
+                     <p>Your browser doesn't support HTML5 canvas.</p>
+            </canvas>
+        </div>
+        <!-- Run the game code -->
+        <script type="text/javascript" src="html5game/TinyFishing.js"></script>
+
+
+
+
+        <script>
+
+      function POKI_INIT()
+      {
+
+        PokiSDK.init().then(
+            () => {
+                console.log("Poki SDK successfully initialized");
+                // your code to continue to game
+                PokiSDK.gameLoadingStart();
+             if(!window.AudioContext && !window.webkitAudioContext) g_WebAudioContext = {};
+                GameMaker_Init();
+             if(!window.AudioContext && !window.webkitAudioContext) g_WebAudioContext = null;
+            }   
+        ).catch(
+            () => {
+                console.log("Initialized, but the user likely has adblock");
+                // your code to continue to game
+                PokiSDK.gameLoadingStart();
+             if(!window.AudioContext && !window.webkitAudioContext) g_WebAudioContext = {};
+                GameMaker_Init();
+             if(!window.AudioContext && !window.webkitAudioContext) g_WebAudioContext = null;
+            }   
+        );
+        PokiSDK.setDebug(false);
+      }
+
+      window.onload = POKI_INIT;
+
+        </script>
+
+
+    </body>
+</html>
