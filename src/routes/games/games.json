@@ -514,13 +514,6 @@
             "developer": "Glenn Rhodes",
             "description": "The Impossible Quiz is an online trivia quiz that features only very hard questions.",
             "emulator": "ruffle"
-        },
-        {
-            "name": "Dadish",
-            "id": "dadish",
-            "image": "dadish.png",
-            "developer": "Thomas K Young and CatCup Games",
-            "description": "Dadish is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch."
         }
     ]
 }
