@@ -181,28 +181,28 @@ def submit():
     print('')
     print("Making git commit.")
 
-    import git
-    import getpass
+    # import git
+    # import getpass
 
-    # Get the username and password
-    username = input("Enter your git username: ")
-    password = getpass.getpass("Enter your git password: ")
+    # # Get the username and password
+    # username = input("Enter your git username: ")
+    # password = getpass.getpass("Enter your git password: ")
 
-    # Open the repo
-    repo = git.Repo("C:/Users/evan/Documents/Coding/kaz frontend/kazwire")
+    # # Open the repo
+    # repo = git.Repo("../")
 
-    # Set the author and committer
-    author = git.Actor(username, username + "@users.noreply.github.com")
-    committer = git.Actor(username, username + "@users.noreply.github.com")
+    # # Set the author and committer
+    # author = git.Actor(username, username + "@users.noreply.github.com")
+    # committer = git.Actor(username, username + "@users.noreply.github.com")
 
-    repo.git.add(A=True)
+    # repo.git.add(A=True)
 
-    repo.index.commit("Added " + game_name + " to website.", author=author, committer=committer)
-    print("Git commit made.")
-    print("Pushing to GitHub.")
-    master = repo.remote(name='master')
-    master.push(auth=git.credentials.UserPass(username, password))
-    print("Pushed to GitHub.")
+    # repo.index.commit("Added " + game_name + " to website.", author=author, committer=committer)
+    # print("Git commit made.")
+    # print("Pushing to GitHub.")
+    # master = repo.remote(name='master')
+    # master.push(auth=git.credentials.UserPass(username, password))
+    # print("Pushed to GitHub.")
 
 
 # Bind the submit function to the submit button's "command" attribute
