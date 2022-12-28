@@ -471,6 +471,13 @@
             "image": "worlds-hardest-game.png",
             "developer": "Stephen Critoph",
             "description": "The World's Hardest Game is an addictive puzzle game consisting of 30 incredibly challenging levels."
+        },
+        {
+            "name": "Temple Run 2",
+            "id": "temple-run-2",
+            "image": "temple-run-2.png",
+            "developer": "Imangi Studios",
+            "description": "Temple Run 2 is an endless running video game developed and published by Imangi Studios."
         }
     ]
 }
