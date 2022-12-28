@@ -184,8 +184,9 @@ def submit():
     import git
 
     # Open the repo
-    repo = git.Repo("../")
+    repo = git.Repo("../.git")
 
+    # add all files
     repo.git.add(A=True)
 
     repo.index.commit("Added " + game_name + " to website.")
