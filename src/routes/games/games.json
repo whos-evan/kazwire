@@ -485,6 +485,13 @@
             "image": "fruit-ninja.png",
             "developer": "Halfbrick Studios",
             "description": "In Fruit Ninja the player must slice fruit that is thrown into the air by swiping the device's touch screen with their finger or the player's arms and hands, and must not slice bombs."
+        },
+        {
+            "name": "BitLife",
+            "id": "bitlife",
+            "image": "bitlife.png",
+            "developer": "CandyWriter",
+            "description": "BitLife, is a mobile life simulator game."
         }
     ]
 }
