@@ -170,7 +170,7 @@ def submit():
         "embed_url": embed_url if embed_url else None,
         "release_date": release_date if release_date else None,
         "popular": popular if popular else None,
-        "emulator_type": emulator_type if emulator_type != "None" else None
+        "emulator": emulator_type if emulator_type != "None" else None
     })
 
     # remove null values
