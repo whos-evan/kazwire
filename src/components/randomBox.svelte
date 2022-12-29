@@ -41,14 +41,14 @@
 				image={randomGame1['image']}
 				description={randomGame1['description']}
 				id={randomGame1['id']}
-				color='black'
+				color="black"
 			/>
 			<Box
 				title={randomGame2['name']}
 				image={randomGame2['image']}
 				description={randomGame2['description']}
 				id={randomGame2['id']}
-				color='black'
+				color="black"
 			/>
 		{:else if lovedGames.length == 1}
 			<Box
@@ -56,8 +56,8 @@
 				image={lovedGames[0]['image']}
 				description={lovedGames[0]['description']}
 				id={lovedGames[0]['id']}
-				category='Loved'
-				color='red'
+				category="Loved"
+				color="red"
 			/>
 		{:else}
 			<Box
@@ -65,16 +65,16 @@
 				image={lovedGames[0]['image']}
 				description={lovedGames[0]['description']}
 				id={lovedGames[0]['id']}
-				category='Loved'
-				color='red'
+				category="Loved"
+				color="red"
 			/>
 			<Box
 				title={lovedGames[1]['name']}
 				image={lovedGames[1]['image']}
 				description={lovedGames[1]['description']}
 				id={lovedGames[1]['id']}
-				category='Loved'
-				color='red'
+				category="Loved"
+				color="red"
 			/>
 		{/if}
 	</div>
