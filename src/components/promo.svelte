@@ -19,12 +19,12 @@
 				</div>
 				<a href="/search">
 					<button
-						class="bg-secondaryLight dark:bg-secondaryDark hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg"
+						class="bg-secondaryLight dark:bg-secondaryDark hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg transition duration-100 hover:scale-[105%]"
 						>Start Browsing</button
 					>
 				</a>
 				<a href="/games">
-					<button class="bg-secondaryLight dark:bg-secondaryDark hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg"
+					<button class="bg-secondaryLight dark:bg-secondaryDark hover:bg-blue-900 pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg transition duration-100 hover:scale-[105%]"
 						>Start Playing</button
 					>
 				</a>

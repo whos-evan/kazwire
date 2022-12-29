@@ -50,7 +50,7 @@
 {#if popular != undefined}
 <a class="app" id={title} href="/apps/{id}">
 	<div
-		class="background-game bg-white shadow-lg hover:bg-gray-200 shadow-gray-200 dark:shadow-orange-300 hover:cursor-pointer w-full h-full mb-5 rounded-xl"
+		class="background-game bg-white shadow-lg hover:bg-gray-200 shadow-gray-200 dark:shadow-orange-300 hover:cursor-pointer w-full h-full mb-5 rounded-xl transition duration-100 hover:scale-[110%]"
 	>
 		<div class="p-5 w-full justify-center flex">
 			<img loading="lazy" src="./app/img/{image}" class="img bg-white w-auto max-h-[10rem]" alt={description} />
@@ -65,7 +65,7 @@
 {:else}
 <a class="app" id={title} href="/apps/{id}">
 	<div
-		class="background-game bg-white hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl w-full h-full mb-5 rounded-xl"
+		class="background-game bg-white hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl w-full h-full mb-5 rounded-xl transition duration-100 hover:scale-[110%]"
 		style="box-shadow: 0 10px 15px -3px {shine};"
 	>
 		<div class="p-5 w-full justify-center flex">
