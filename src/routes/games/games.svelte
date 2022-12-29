@@ -75,7 +75,6 @@
 			return;
 		}
 		games = games.concat(allGames.slice(games.length, games.length + 4));
-		console.log(games)
 	}
 
 	function handleScroll(event) {
