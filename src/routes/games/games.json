@@ -528,6 +528,13 @@
             "image": "tiny-fishing.png",
             "developer": "appdz and Mad Buffer",
             "description": "Catch fish and sell them for money to buy upgrades and new fishing rods!"
+        },
+        {
+            "name": "Geometry Dash (Scratch)",
+            "id": "geometry-dash",
+            "image": "geometry-dash.png",
+            "developer": "Robert Topala and RobTop Games",
+            "description": "Geometry Dash is a rhythm-based platform game developed and published by RobTop Games."
         }
     ]
 }
