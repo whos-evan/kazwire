@@ -26,7 +26,7 @@ function poki_init(_callbackPause, _callbackUnpause, prod)
         {
         if (window.PokiSDK)
             PokiSDK.setDebug(false);
-            sl();
+            //sl();
         } else
         {
         if (window.PokiSDK)
