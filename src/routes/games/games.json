@@ -557,7 +557,7 @@
             "image": "krew.jpg",
             "developer": "m0de",
             "description": "A fast paced pirate game where you compete against other players for treasure.",
-            "embed_url": "https://krew.io"
+            "embedURL": "https://krew.io"
         }
     ]
 }

@@ -167,7 +167,7 @@ def submit():
         "developer": developer,
         "description": description,
         # optional fields (only add them if they are not empty)
-        "embed_url": embed_url if embed_url else None,
+        "embedURL": embed_url if embed_url else None,
         "release_date": release_date if release_date else None,
         "popular": popular if popular else None,
         "emulator": emulator_type if emulator_type != "None" else None
