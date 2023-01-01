@@ -550,14 +550,6 @@
             "developer": "Studio Minus",
             "description": "Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls. This game is for people who enjoy throwing around ragdolls.",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=17f2bd78-5423-4946-afc4-08f92380ef97&utm_source=shortcut"
-        },
-        {
-            "name": "asdf",
-            "id": "asdf",
-            "image": "asdf.png",
-            "developer": "asdf",
-            "description": "asdf",
-            "embed_url": "https://example.com"
         }
     ]
 }
