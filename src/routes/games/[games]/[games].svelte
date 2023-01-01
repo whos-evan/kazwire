@@ -2,7 +2,9 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 	import gamesJson from '../games.json';
-	import Buttons from './back.svelte';
+
+	// import Buttons from './buttons.svelte';
+
 
 	let maximized = false;
 
@@ -134,7 +136,7 @@
 			{:else}
 				<div class="flex w-full h-full">
 					<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
-						<Buttons maximized={maximized}/>
+						<!-- <Buttons maximized={maximized}/> -->
 						<iframe
 							src="/game/{slug}/index.html"
 							id="game-frame"
