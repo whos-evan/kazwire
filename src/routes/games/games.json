@@ -558,6 +558,13 @@
             "developer": "m0de",
             "description": "A fast paced pirate game where you compete against other players for treasure.",
             "embedURL": "https://krew.io"
+        },
+        {
+            "name": "Bloxorz",
+            "id": "bloxorz",
+            "image": "bloxorz.png",
+            "developer": "Damien Clarke",
+            "description": "Bloxorz is a puzzle game, very challenging. It is a great block awesome game that gets harder at each progressive level."
         }
     ]
 }

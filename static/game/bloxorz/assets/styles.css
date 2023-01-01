@@ -1,0 +1,14 @@
+#loadLevelTextInput {
+	font-size: 7vw;
+    text-align: center;
+    color: #fff8ee;
+    background-color: #28140c;
+    border: none;
+    font-family: monospace;
+    padding: 20px;
+    letter-spacing: 2px;
+}
+
+html {
+	background-color: #000;
+}
