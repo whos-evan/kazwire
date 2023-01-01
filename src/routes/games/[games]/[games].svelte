@@ -3,6 +3,11 @@
 	import { page } from '$app/stores';
 	import gamesJson from '../games.json';
 
+	// import Buttons from './buttons.svelte';
+
+
+	let maximized = false;
+
 	let slug = $page.url.pathname.substr($page.url.pathname.lastIndexOf('/') + 1);
 
 	function getGame() {
@@ -90,6 +95,8 @@
 		gameFrame.style.width = '100%';
 		gameFrame.style.zIndex = '9999';
 		gameFrame.style.border = 'none';
+
+		maximized = true;
 	}
 
 	onMount(() => {
@@ -129,6 +136,7 @@
 			{:else}
 				<div class="flex w-full h-full">
 					<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
+						<!-- <Buttons maximized={maximized}/> -->
 						<iframe
 							src="/game/{slug}/index.html"
 							id="game-frame"
