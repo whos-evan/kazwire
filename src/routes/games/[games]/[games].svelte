@@ -4,9 +4,7 @@
 	import gamesJson from '../games.json';
 
 	// import Buttons from './buttons.svelte';
-
-
-	let maximized = false;
+	// let maximized = false;
 
 	let slug = $page.url.pathname.substr($page.url.pathname.lastIndexOf('/') + 1);
 
@@ -96,7 +94,7 @@
 		gameFrame.style.zIndex = '9999';
 		gameFrame.style.border = 'none';
 
-		maximized = true;
+		// maximized = true;
 	}
 
 	onMount(() => {
