@@ -3,6 +3,10 @@
 	import { onMount } from 'svelte';
 
 	onMount(() => {
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register(window.location.origin + '/sw.js');
+		}
+
 		// gets the theme and sets it
 		let themeSelector = document.getElementById('theme-selector') || undefined;
 		if (darkMode() === true) {
