@@ -3,7 +3,11 @@ window.onload = function() {
     let domain = window.location.hostname;
   
     allowed_domains = ['kazwire.com', 'kazwi.com', 'is-a.win']
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> 6218a83acf322f9812377b12946e63c6572eb01d
     if (allowed_domains.indexOf(domain) == -1) {
       // Create the watermark container element
       var watermark = document.createElement('div');
