@@ -3,8 +3,8 @@
 	import { page } from '$app/stores';
 	import gamesJson from '../games.json';
 
-	import Back from './back.svelte';
-	import Minimize from './minimize.svelte';
+	import Back from '../../../components/buttons/back.svelte';
+	import Minimize from '../../../components/buttons/minimize.svelte';
 	let maximized = false;
 
 	function minimize() {
@@ -139,14 +139,14 @@
 	>
 		<div class="flex-grow mb-14 align-center">
 			{#if getGame()['embedURL'] != undefined}
-				<div class="w-full h-full">
+				<div id="game-frame" class="w-full h-full">
 					<Back />
 					{#if maximized}
 						<button class="absolute" on:click={minimize}>
 							<Minimize />
 						</button>
 					{/if}
-					<iframe id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
+					<iframe class="w-full h-full rounded-t-lg bg-black" {title} />
 				</div>
 			{:else if getGame()['emulator'] == 'ruffle'}
 				<script src="/game/ruffle/ruffle.js"></script>
@@ -172,7 +172,6 @@
 						{/if}
 						<iframe
 							src="/game/{slug}/index.html"
-							id="game-frame"
 							class="w-full h-full rounded-t-lg bg-black"
 							{title}
 						/>
