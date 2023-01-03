@@ -33,13 +33,13 @@
 		await registerSW();
 
 		let input = document.getElementById('uv-address').value;
-		let iframe = document.getElementById('search-frame');
+		let iframe = document.getElementById('search-iframe');
 
 		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(search(input));
 	}
 	// shows a loading animation
 	function startLoad() {
-		let searchFrame = document.getElementById('search-frame');
+		let searchFrame = document.getElementById('search-iframe');
 		// background transparent
 		searchFrame.src = 'about:blank';
 		searchFrame.style.background =
@@ -51,7 +51,7 @@
 
 	// watch for title change in iframe
 	function checkTitle() {
-		let iframe = document.getElementById('search-frame');
+		let iframe = document.getElementById('search-iframe');
 		let contentTitle = iframe.contentDocument.title;
 		let title = document.getElementById('title').innerHTML;
 
@@ -143,7 +143,7 @@
 						<Minimize />
 					</button>
 				{/if}
-				<iframe on:load={checkTitle} class="w-full h-full rounded-t-lg bg-black" />
+				<iframe id="search-iframe" on:load={checkTitle} class="w-full h-full rounded-t-lg bg-black" />
 			</div>
 
 			<div class="grid">
