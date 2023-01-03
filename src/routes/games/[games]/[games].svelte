@@ -3,8 +3,26 @@
 	import { page } from '$app/stores';
 	import gamesJson from '../games.json';
 
-	// import Buttons from './buttons.svelte';
-	// let maximized = false;
+	import Back from './back.svelte';
+	import Minimize from './minimize.svelte';
+	let maximized = false;
+
+	function minimize() {
+		// make the iframe fill the entire screen
+		let gameFrame = document.getElementById('game-frame');
+		document.body.style.overflow = 'auto';
+		gameFrame.style.position = 'relative';
+		gameFrame.style.top = '0px';
+		gameFrame.style.bottom = '0px';
+		gameFrame.style.left = '0px';
+		gameFrame.style.right = '0px';
+		gameFrame.style.height = '100%';
+		gameFrame.style.width = '100%';
+		gameFrame.style.zIndex = '0';
+		gameFrame.style.border = 'none';
+
+		maximized = false;
+	}
 
 	let slug = $page.url.pathname.substr($page.url.pathname.lastIndexOf('/') + 1);
 
@@ -94,7 +112,7 @@
 		gameFrame.style.zIndex = '9999';
 		gameFrame.style.border = 'none';
 
-		// maximized = true;
+		maximized = true;
 	}
 
 	onMount(() => {
@@ -122,19 +140,36 @@
 		<div class="flex-grow mb-14 align-center">
 			{#if getGame()['embedURL'] != undefined}
 				<div class="w-full h-full">
+					<Back />
+					{#if maximized}
+						<button class="absolute" on:click={minimize}>
+							<Minimize />
+						</button>
+					{/if}
 					<iframe id="game-frame" class="w-full h-full rounded-t-lg bg-black" {title} />
 				</div>
 			{:else if getGame()['emulator'] == 'ruffle'}
 				<script src="/game/ruffle/ruffle.js"></script>
 				<div class="w-full h-full">
 					<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
+						<Back />
+						{#if maximized}
+							<button class="absolute" on:click={minimize}>
+								<Minimize />
+							</button>
+						{/if}
 						<embed src="/game/{slug}/{slug}.swf" class="h-full w-full" />
 					</div>
 				</div>
 			{:else}
 				<div class="flex w-full h-full">
 					<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
-						<!-- <Buttons maximized={maximized}/> -->
+						<Back />
+						{#if maximized}
+							<button class="absolute" on:click={minimize}>
+								<Minimize />
+							</button>
+						{/if}
 						<iframe
 							src="/game/{slug}/index.html"
 							id="game-frame"

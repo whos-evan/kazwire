@@ -1,33 +1,16 @@
-<script>
-     function minimize() {
-		// make the iframe fill the entire screen
-		let gameFrame = document.getElementById('game-frame');
-		document.body.style.overflow = 'auto';
-		gameFrame.style.position = 'relative';
-		gameFrame.style.top = '0px';
-		gameFrame.style.bottom = '0px';
-		gameFrame.style.left = '0px';
-		gameFrame.style.right = '0px';
-		gameFrame.style.height = '100%';
-		gameFrame.style.width = '100%';
-		gameFrame.style.zIndex = '0';
-		gameFrame.style.border = 'none';
-	}
-</script>
-
 <button
-    class="ml-20 mt-5 px-4 py-3 text-lg font-extrabold bg-secondary opacity-50 rounded-lg text-white absolute"
-    on:click={minimize}
+	class="m-5 px-4 py-3 text-lg font-extrabold bg-secondary opacity-50 rounded-lg text-white absolute"
+	on:click={() => window.history.back()}
 >
-    <!-- pitch in -->
-    <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 512 512"
-        class="h-6 w-6"
-        fill="white"
-        stroke="currentColor"
-        ><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
-            d="M473 7c-9.4-9.4-24.6-9.4-33.9 0l-87 87L313 55c-6.9-6.9-17.2-8.9-26.2-5.2S272 62.3 272 72V216c0 13.3 10.7 24 24 24H440c9.7 0 18.5-5.8 22.2-14.8s1.7-19.3-5.2-26.2l-39-39 87-87c9.4-9.4 9.4-24.6 0-33.9L473 7zM216 272H72c-9.7 0-18.5 5.8-22.2 14.8s-1.7 19.3 5.2 26.2l39 39L7 439c-9.4 9.4-9.4 24.6 0 33.9l32 32c9.4 9.4 24.6 9.4 33.9 0l87-87 39 39c6.9 6.9 17.2 8.9 26.2 5.2s14.8-12.5 14.8-22.2V296c0-13.3-10.7-24-24-24z"
-        /></svg
-    >
+	<!-- back arrow -->
+	<svg
+		xmlns="http://www.w3.org/2000/svg"
+		viewBox="0 0 448 512"
+		class="h-6 w-6"
+		fill="white"
+		stroke="currentColor"
+		><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path
+			d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.2 288 416 288c17.7 0 32-14.3 32-32s-14.3-32-32-32l-306.7 0L214.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"
+		/></svg
+	>
 </button>
