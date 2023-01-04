@@ -38,7 +38,7 @@
 	async function iframeSearch(input) {
 		await registerSW();
 
-		let iframe = document.getElementById('game-frame');
+		let iframe = document.getElementById('game-iframe');
 		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(input);
 	}
 
@@ -46,7 +46,7 @@
 		if (getGame()['embedURL'] != undefined) {
 			iframeSearch(getGame()['embedURL']);
 		} else {
-			document.getElementById('game-frame').src = '/game/' + slug + '/' + 'index.html';
+			document.getElementById('game-iframe').src = '/game/' + slug + '/' + 'index.html';
 		}
 	}
 
@@ -146,7 +146,7 @@
 							<Minimize />
 						</button>
 					{/if}
-					<iframe class="w-full h-full rounded-t-lg bg-black" {title} />
+					<iframe id="game-iframe" class="w-full h-full rounded-t-lg bg-black" {title} />
 				</div>
 			{:else if getGame()['emulator'] == 'ruffle'}
 				<script src="/game/ruffle/ruffle.js"></script>
@@ -158,7 +158,7 @@
 								<Minimize />
 							</button>
 						{/if}
-						<embed src="/game/{slug}/{slug}.swf" class="h-full w-full" />
+						<embed id="game-iframe" src="/game/{slug}/{slug}.swf" class="h-full w-full" />
 					</div>
 				</div>
 			{:else}
@@ -173,6 +173,7 @@
 						<iframe
 							src="/game/{slug}/index.html"
 							class="w-full h-full rounded-t-lg bg-black"
+							id="game-iframe"
 							{title}
 						/>
 					</div>
