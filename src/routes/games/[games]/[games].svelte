@@ -158,7 +158,7 @@
 								<Minimize />
 							</button>
 						{/if}
-						<embed id="game-iframe" src="/game/{slug}/{slug}.swf" class="h-full w-full" />
+						<embed src="/game/{slug}/{slug}.swf" class="h-full w-full" />
 					</div>
 				</div>
 			{:else}
