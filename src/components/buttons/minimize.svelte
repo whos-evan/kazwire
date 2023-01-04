@@ -1,12 +1,12 @@
 <button
-	class="ml-20 mt-5 px-4 py-3 text-lg font-extrabold bg-secondary opacity-50 rounded-lg text-white absolute"
+	class="ml-14 mt-5 px-2 py-[6px] text-lg font-extrabold bg-secondary opacity-50 rounded-lg text-white absolute"
 	id="minimize"
 >
 	<!-- pitch in -->
 	<svg
 		xmlns="http://www.w3.org/2000/svg"
 		viewBox="0 0 512 512"
-		class="h-6 w-6"
+		class="h-4 w-4"
 		fill="white"
 		stroke="currentColor"
 		><!--! Font Awesome Pro 6.2.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. --><path

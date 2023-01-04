@@ -137,7 +137,8 @@
 	<div class="flex h-[calc(90vh-132px)] md:w-[80vw] sm:w-full float-left pl-5 pr-5 pb-5">
 		<div class="flex-grow mb-14 align-center">
 			<div id="search-frame" class="w-full h-full">
-				<Back />
+				<!-- <Back /> -->
+				<!-- Removed due to complaints -->
 				{#if maximized}
 					<button class="absolute" on:click={minimize}>
 						<Minimize />
