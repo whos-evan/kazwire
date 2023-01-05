@@ -29,7 +29,7 @@
 		{:else if lovedGames.length == 1}
 			Here is your loved game!
 		{:else}
-			Here are two randomly generated games!
+			Here are two random games!
 		{/if}
 	</h1>
 	<div
