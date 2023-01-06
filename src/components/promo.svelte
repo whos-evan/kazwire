@@ -34,7 +34,7 @@
 				id="yt-video"
 				class="lg:col-start-2 lg:row-start-1 sm:row-start-2 relative w-full pb-[56.25%]"
 			>
-				<img src="showoff.gif" class="absolute w-full h-full" />
+				<img src="showoff.gif" class="absolute w-full h-full shadow-lg shadow-black dark:shadow-white" />
 			</div>
 		</div>
 	</div>
