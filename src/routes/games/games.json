@@ -571,8 +571,7 @@
             "id": "cat-ninja",
             "image": "cat-ninja.png",
             "developer": "Unknown",
-            "description": "Cat Ninja is one of the best new platform-adventure games online.",
-            "emulator": "ruffle"
+            "description": "Cat Ninja is one of the best new platform-adventure games online."
         }
     ]
 }
