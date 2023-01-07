@@ -11,7 +11,7 @@
 		Evan - Coded this site and did the bulk of the work. He has many years of experience in
 		developing web projects and his other sites and works can be found on <a
 			href="https://github.com/whos-evan"
-			target="_blank">his github</a
+			target="_blank">his GitHub</a
 		>.
 	</p>
 	<p class="text-xl">
