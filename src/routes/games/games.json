@@ -149,8 +149,7 @@
             "developer": "Kiz10",
             "id": "drift-hunters",
             "image": "drift-hunters.png",
-            "name": "Drift Hunters",
-            "popular": true
+            "name": "Drift Hunters"
         },
         {
             "description": "Duck Life is a game series where you train your duck for races and/or battles.",
@@ -491,7 +490,8 @@
             "id": "bitlife",
             "image": "bitlife.png",
             "developer": "CandyWriter",
-            "description": "BitLife, is a mobile life simulator game."
+            "description": "BitLife, is a mobile life simulator game.",
+            "popular": true
         },
         {
             "name": "Crossy Road",
