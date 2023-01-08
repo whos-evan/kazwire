@@ -13,7 +13,8 @@
             "developer": "Dylan",
             "id": "a-dark-room",
             "image": "a-dark-room.png",
-            "name": "A Dark Room"
+            "name": "A Dark Room",
+            "popular": true
         },
         {
             "description": "A hybrid of Mastermind and the Android pattern lock. A game you gonna love to hate.",
@@ -110,8 +111,7 @@
             "id": "cookie-clicker",
             "image": "cookie-clicker.png",
             "name": "Cookie Clicker",
-            "releaseDate": "?",
-            "popular": true
+            "releaseDate": "?"
         },
         {
             "description": "Core Ball is a fun and addictive game where you have to control a ball and avoid the obstacles. The game is simple, but it's hard to master.",
@@ -149,7 +149,8 @@
             "developer": "Kiz10",
             "id": "drift-hunters",
             "image": "drift-hunters.png",
-            "name": "Drift Hunters"
+            "name": "Drift Hunters",
+            "popular": true
         },
         {
             "description": "Duck Life is a game series where you train your duck for races and/or battles.",
@@ -185,7 +186,8 @@
             "id": "ducklife4",
             "image": "ducklife4.png",
             "name": "Duck Life 4",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "popular": true
         },
         {
             "description": "Fight to survive in this epic multiplayer battle royale build battle where only the last player standing wins and achieves the long-awaited master victory.",
@@ -305,8 +307,7 @@
             "developer": "New Star Games",
             "id": "retro-bowl",
             "image": "retro-bowl.png",
-            "name": "Retro Bowl",
-            "popular": true
+            "name": "Retro Bowl"
         },
         {
             "description": "Ride your bike through the bumpy and challenging tracks. Do not hit the ground and show your skill!",
@@ -363,8 +364,7 @@
             "developer": "Kiloo",
             "id": "subway-surfers",
             "image": "subway-surfers.png",
-            "name": "Subway Surfers",
-            "popular": true
+            "name": "Subway Surfers"
         },
         {
             "description": "Super Mario 64 is a 1996 platform game for the Nintendo 64, developed by Nintendo EAD and published by Nintendo. The first Super Mario game to feature 3D gameplay!",
