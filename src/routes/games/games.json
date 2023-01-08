@@ -13,8 +13,7 @@
             "developer": "Dylan",
             "id": "a-dark-room",
             "image": "a-dark-room.png",
-            "name": "A Dark Room",
-            "popular": true
+            "name": "A Dark Room"
         },
         {
             "description": "A hybrid of Mastermind and the Android pattern lock. A game you gonna love to hate.",
@@ -307,7 +306,8 @@
             "developer": "New Star Games",
             "id": "retro-bowl",
             "image": "retro-bowl.png",
-            "name": "Retro Bowl"
+            "name": "Retro Bowl",
+            "popular": true
         },
         {
             "description": "Ride your bike through the bumpy and challenging tracks. Do not hit the ground and show your skill!",
