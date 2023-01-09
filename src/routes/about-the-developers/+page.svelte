@@ -24,7 +24,7 @@
 	<br />
 	<p class="text-xl">
 		If you would like to join our team you can apply on our <a
-			href="https://discord.com/invite/5jKVKPtZSu"
+			href="https://discord.gg/FEkFSWRFM9"
 			target="_blank">Discord server</a
 		>!
 	</p>

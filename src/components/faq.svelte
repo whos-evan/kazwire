@@ -17,7 +17,7 @@
 				We also give you the ability to browse the entire internet if you don't like what you see!
 				If you ever need help please join our <a
 					class="hover:cursor-pointer hover:underline"
-					href="https://discord.gg/kazchat-785577600219086881">Discord</a
+					href="https://discord.gg/KRNy7EpXFD">Discord</a
 				> and let us know!
 			</p>
 			<br />

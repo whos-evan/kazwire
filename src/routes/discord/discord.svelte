@@ -11,7 +11,7 @@
 
 	export let title = "Kazwire's Discord";
 	onMount(() => {
-		iframeSearch('https://discord.com/invite/5jKVKPtZSu');
+		iframeSearch('https://discord.gg/ryAmV8ATNh');
 	});
 
 	function fullScreen() {
