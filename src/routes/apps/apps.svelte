@@ -30,8 +30,12 @@
 	}
 
 	let filter;
-</script>
 
+	import HorzAd from '../../components/horz-ad.svelte';
+</script>
+<div class="md:block sm:hidden">
+	<HorzAd />
+</div>
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">
 	<input
 		id="search"

@@ -39,10 +39,14 @@
 			].text
 		);
 	}
-</script>
 
+	import HorzAd from '../../components/horz-ad.svelte';
+</script>
 <Nav />
-<div class="h-[75vh] w-full mt-10 text-center text-white">
+<div class="md:block sm:hidden">
+	<HorzAd />
+</div>
+<div class="h-[65vh] w-full mt-10 text-center text-white">
 	<h1 class="text-3xl">Settings</h1>
 	<div class="grid grid-cols-1 gap-10 mt-5">
 		<div class="row-start-1 col-start-1">
