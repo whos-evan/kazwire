@@ -28,7 +28,7 @@ div#village:before {
 }
 
 div#workers {
-	position:absolute;
+	position: absolute;
 	top: -4px;
 	left: 160px;
 	width: 150px;

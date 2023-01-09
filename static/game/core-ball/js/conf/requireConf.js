@@ -1,3 +1,3 @@
 requirejs.config({
-	baseUrl : "/game/core-ball/js"
+	baseUrl: '/game/core-ball/js'
 });

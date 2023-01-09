@@ -1,13 +1,16 @@
-html, body {
+html,
+body {
 	padding: 0;
 	margin: 0;
 	overflow: hidden;
-	
+
 	background: #000000;
 	color: white;
 }
 
-html, body, canvas {
+html,
+body,
+canvas {
 	touch-action: none;
 	touch-action-delay: none;
 }
@@ -20,7 +23,8 @@ html, body, canvas {
 	border-radius: 1em;
 	padding: 2em;
 	background-color: #f0f0f0;
-	font-family: "Segoe UI", Frutiger, "Frutiger Linotype", "Dejavu Sans", "Helvetica Neue", Arial, sans-serif;
+	font-family: 'Segoe UI', Frutiger, 'Frutiger Linotype', 'Dejavu Sans', 'Helvetica Neue', Arial,
+		sans-serif;
 	color: black;
 }
 
@@ -35,5 +39,3 @@ html, body, canvas {
 .notSupportedMessage em {
 	color: #888;
 }
-
-

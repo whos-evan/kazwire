@@ -6,28 +6,27 @@
  */
 
 var animStack = [],
-		ratioFrameRate = 3
+	ratioFrameRate = 3;
 
 /**
  * Set up text animation on a dom element
  * @param  {DOMElement} element Element to animate
  * @param  {String}     text    Text to display in the element
  */
-function airportText (element, text) {
-	let existingAnim = popAnim(element)
-	if (existingAnim)
-		cancelFakeNextFrame(existingAnim.nextFrame)
+function airportText(element, text) {
+	let existingAnim = popAnim(element);
+	if (existingAnim) cancelFakeNextFrame(existingAnim.nextFrame);
 
 	var newAnim = {
-		el:             element,
-		counter:        text.length * ratioFrameRate,
+		el: element,
+		counter: text.length * ratioFrameRate,
 		originalLength: text.length,
-  	originalText:   text,
-  	nextFrame:      null
-	}
-	updateDisplay(newAnim)
+		originalText: text,
+		nextFrame: null
+	};
+	updateDisplay(newAnim);
 
-	animStack.push(newAnim)
+	animStack.push(newAnim);
 }
 
 /**
@@ -36,10 +35,9 @@ function airportText (element, text) {
  * @param  {DOMElement} element Element to find
  * @return {Object}
  */
-function popAnim (element) {
+function popAnim(element) {
 	for (let i = animStack.length - 1; i >= 0; i--) {
-		if (animStack[i].el === element)
-			return animStack.splice(i, 1)[0]
+		if (animStack[i].el === element) return animStack.splice(i, 1)[0];
 	}
 }
 
@@ -47,10 +45,10 @@ function popAnim (element) {
  * Set the next for animation
  * @param {Object} anim Anim object to set
  */
-function setNextFrame (anim) {
+function setNextFrame(anim) {
 	anim.nextFrame = requestFakeNextFrame(function () {
-		updateDisplay(anim)
-	})
+		updateDisplay(anim);
+	});
 }
 
 /**
@@ -58,34 +56,33 @@ function setNextFrame (anim) {
  * @param  {Object} anim Anim object to update
  * @return {[type]}
  */
-function updateDisplay (anim) {
-
+function updateDisplay(anim) {
 	// Increase the counter
 	anim.counter -= 1;
 
 	if (anim.counter <= 0) {
-		
 		// Wait to be ready
-		anim.el.textContent = anim.originalText
-		popAnim(anim.el)
-		return
+		anim.el.textContent = anim.originalText;
+		popAnim(anim.el);
+		return;
 	}
 
 	var randomLength = Math.floor(anim.originalLength - anim.counter / ratioFrameRate);
-	anim.el.textContent = anim.originalText.substr(0, randomLength) + getRandomWord(Math.min(anim.originalLength - randomLength, 3));
+	anim.el.textContent =
+		anim.originalText.substr(0, randomLength) +
+		getRandomWord(Math.min(anim.originalLength - randomLength, 3));
 
-	setNextFrame(anim)
+	setNextFrame(anim);
 }
-
 
 /**
  * getRandomWord
  * Get a random word (in lowercase)
- * 
+ *
  * @param	pLength	int 	Length of the random word
  * @return 			string 	Random word
  */
-function getRandomWord (pLength) {
+function getRandomWord(pLength) {
 	var toReturn = '';
 	var charList = 'abcdefghijklmnopqrstuvwxyz0123456789 _*%!?/\\|#@';
 
@@ -107,16 +104,16 @@ function getRandomWord (pLength) {
  * @param  {Function} callback Function to call
  * @return {Int}
  */
-function requestFakeNextFrame (callback){
-  return window.setTimeout(callback, 60);
+function requestFakeNextFrame(callback) {
+	return window.setTimeout(callback, 60);
 }
 
 /**
  * Cancel a planed call
  * @param  {Int} id Process ID of the planed call to execute
  */
-function cancelFakeNextFrame (id){
-  return window.clearTimeout(id);
+function cancelFakeNextFrame(id) {
+	return window.clearTimeout(id);
 }
 
-export default airportText
+export default airportText;

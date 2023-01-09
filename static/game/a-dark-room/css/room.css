@@ -4,7 +4,9 @@ div#buildBtns {
 	left: 0px;
 }
 
-div#buildBtns:before, div#craftBtns:before, div#buyBtns:before {
+div#buildBtns:before,
+div#craftBtns:before,
+div#buyBtns:before {
 	content: attr(data-legend);
 	position: relative;
 	top: -5px;
@@ -28,7 +30,8 @@ div#storesContainer {
 	right: 0px;
 }
 
-div#stores:before, div#weapons:before {
+div#stores:before,
+div#weapons:before {
 	position: absolute;
 	background: white;
 	content: attr(data-legend);
@@ -38,7 +41,7 @@ div#stores:before, div#weapons:before {
 
 div#stores {
 	position: relative;
-	z-index:10;
+	z-index: 10;
 	border: 1px solid black;
 	cursor: default;
 	padding: 5px 10px;

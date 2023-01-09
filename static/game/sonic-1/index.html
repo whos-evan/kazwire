@@ -1,5 +1,4 @@
-
-<!doctype html>
+<!DOCTYPE html>
 <!--suppress HtmlFormInputWithoutLabel, JSDeprecatedSymbols -->
 <html lang="en-us">
 	<head>
@@ -11,7 +10,8 @@
 
 		<link type="text/css" rel="stylesheet" href="css/fonts.css" />
 		<style type="text/css">
-			html, body {
+			html,
+			body {
 				font-family: arial, sans-serif;
 				margin: 0;
 				padding: 0;
@@ -45,9 +45,9 @@
 				display: inline-block;
 				vertical-align: top;
 
-				-webkit-animation: rotation .8s linear infinite;
-				-moz-animation: rotation .8s linear infinite;
-				-o-animation: rotation .8s linear infinite;
+				-webkit-animation: rotation 0.8s linear infinite;
+				-moz-animation: rotation 0.8s linear infinite;
+				-o-animation: rotation 0.8s linear infinite;
 				animation: rotation 0.8s linear infinite;
 
 				border-left: 5px solid rgb(235, 235, 235);
@@ -126,22 +126,25 @@
 		</style>
 	</head>
 	<body>
-		<div class="spinner" id="spinner" style="display: none;"></div>
-		<div id="status" style="display: none;">Downloading...</div>
+		<div class="spinner" id="spinner" style="display: none"></div>
+		<div id="status" style="display: none">Downloading...</div>
 		<progress id="progress" value="0" max="100" hidden="hidden"></progress>
 		<canvas id="canvas" onclick="window.focus();" oncontextmenu="event.preventDefault();"></canvas>
-		<textarea id="output" style="display: none;" rows="8"></textarea>
+		<textarea id="output" style="display: none" rows="8"></textarea>
 
 		<script type="text/javascript">
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('sw.js').then(function(registration) {
-					registration.addEventListener('updatefound', function() {
-						var installingWorker = registration.installing;
-						console.log('A new service worker is being installed:', installingWorker);
-					});
-				}, function(err) {
-					console.log('ServiceWorker registration failed: ', err);
-				});
+				navigator.serviceWorker.register('sw.js').then(
+					function (registration) {
+						registration.addEventListener('updatefound', function () {
+							var installingWorker = registration.installing;
+							console.log('A new service worker is being installed:', installingWorker);
+						});
+					},
+					function (err) {
+						console.log('ServiceWorker registration failed: ', err);
+					}
+				);
 			} else {
 				console.log('ServiceWorker not supported');
 			}
@@ -165,7 +168,7 @@
 						//text = text.replace('\n', '<br>', 'g');
 						console.log(text);
 						if (element) {
-							element.value += text + "\n";
+							element.value += text + '\n';
 							element.scrollTop = element.scrollHeight; // focus on bottom
 						}
 					};
@@ -180,15 +183,19 @@
 					// As a default initial behavior, pop up an alert when webgl context is lost. To make your
 					// application robust, you may want to override this behavior before shipping!
 					// See http://www.khronos.org/registry/webgl/specs/latest/1.0/#5.15.2
-					canvas.addEventListener("webglcontextlost", function (e) {
-						alert('WebGL context lost. You will need to reload the page.');
-						e.preventDefault();
-					}, false);
+					canvas.addEventListener(
+						'webglcontextlost',
+						function (e) {
+							alert('WebGL context lost. You will need to reload the page.');
+							e.preventDefault();
+						},
+						false
+					);
 
 					return canvas;
 				})(),
 				setStatus: function (text) {
-					if (!Module.setStatus.last) Module.setStatus.last = {time: Date.now(), text: ''};
+					if (!Module.setStatus.last) Module.setStatus.last = { time: Date.now(), text: '' };
 					if (text === Module.setStatus.last.text) return;
 					var m = text.match(/([^(]+)\((\d+(\.\d+)?)\/(\d+)\)/);
 					var now = Date.now();
@@ -212,7 +219,15 @@
 				totalDependencies: 0,
 				monitorRunDependencies: function (left) {
 					this.totalDependencies = Math.max(this.totalDependencies, left);
-					Module.setStatus(left ? 'Preparing... (' + (this.totalDependencies - left) + '/' + this.totalDependencies + ')' : 'All downloads complete.');
+					Module.setStatus(
+						left
+							? 'Preparing... (' +
+									(this.totalDependencies - left) +
+									'/' +
+									this.totalDependencies +
+									')'
+							: 'All downloads complete.'
+					);
 				}
 			};
 			Module.setStatus('Downloading...');

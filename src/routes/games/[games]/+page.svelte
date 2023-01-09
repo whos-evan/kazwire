@@ -9,4 +9,3 @@
 <div class="lg:pt-0 md:pt-10 sm:pt-40">
 	<Footer />
 </div>
-

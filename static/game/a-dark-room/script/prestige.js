@@ -1,13 +1,12 @@
 var Prestige = {
-		
 	name: 'Prestige',
 
 	options: {},
 
-	init: function(options) {
+	init: function (options) {
 		this.options = $.extend(this.options, options);
 	},
-	
+
 	storesMap: [
 		{ store: 'wood', type: 'g' },
 		{ store: 'fur', type: 'g' },
@@ -34,70 +33,70 @@ var Prestige = {
 		{ store: 'grenade', type: 'a' },
 		{ store: 'bolas', type: 'a' }
 	],
-	
-	getStores: function(reduce) {
+
+	getStores: function (reduce) {
 		var stores = [];
-		
-		for(var i in this.storesMap) {
+
+		for (var i in this.storesMap) {
 			var s = this.storesMap[i];
-			stores.push(Math.floor($SM.get('stores["' + s.store + '"]', true) / 
-					(reduce ? this.randGen(s.type) : 1)));
+			stores.push(
+				Math.floor($SM.get('stores["' + s.store + '"]', true) / (reduce ? this.randGen(s.type) : 1))
+			);
 		}
-		
+
 		return stores;
 	},
-	
-	get: function() {
+
+	get: function () {
 		return {
 			stores: $SM.get('previous.stores'),
 			score: $SM.get('previous.score')
 		};
 	},
-	
-	set: function(prestige) {
+
+	set: function (prestige) {
 		$SM.set('previous.stores', prestige.stores);
 		$SM.set('previous.score', prestige.score);
 	},
-	
-	save: function() {
+
+	save: function () {
 		$SM.set('previous.stores', this.getStores(true));
 		$SM.set('previous.score', Score.totalScore());
 	},
-  
-	collectStores : function() {
+
+	collectStores: function () {
 		var prevStores = $SM.get('previous.stores');
-		if(prevStores != null) {
+		if (prevStores != null) {
 			var toAdd = {};
-			for(var i in this.storesMap) {
+			for (var i in this.storesMap) {
 				var s = this.storesMap[i];
 				toAdd[s.store] = prevStores[i];
 			}
 			$SM.addM('stores', toAdd);
-			
+
 			// Loading the stores clears em from the save
 			prevStores.length = 0;
 		}
 	},
 
-	randGen : function(storeType) {
+	randGen: function (storeType) {
 		var amount;
-		switch(storeType) {
-		case 'g':
-			amount = Math.floor(Math.random() * 10);
-			break;
-		case 'w':
-			amount = Math.floor(Math.floor(Math.random() * 10) / 2);
-			break;
-		case 'a':
-			amount = Math.ceil(Math.random() * 10 * Math.ceil(Math.random() * 10));
-			break;
-		default:
-			return 1;
+		switch (storeType) {
+			case 'g':
+				amount = Math.floor(Math.random() * 10);
+				break;
+			case 'w':
+				amount = Math.floor(Math.floor(Math.random() * 10) / 2);
+				break;
+			case 'a':
+				amount = Math.ceil(Math.random() * 10 * Math.ceil(Math.random() * 10));
+				break;
+			default:
+				return 1;
 		}
 		if (amount !== 0) {
 			return amount;
 		}
 		return 1;
 	}
-
 };

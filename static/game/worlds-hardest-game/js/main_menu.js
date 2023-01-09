@@ -1,25 +1,31 @@
 const BOTTOM_BUTTONS_Y = cwh(CANVAS_HEIGHT - BAR_HEIGHT - 10);
-const BOTTOM_FONT = cwh(20) + "px Arial";
+const BOTTOM_FONT = cwh(20) + 'px Arial';
 
 function drawMainMenu() {
-  // music
-  if (firstTimeOnMainMenu && !muteMusic) {
-    music.play();
-    firstTimeOnMainMenu = false;
-  }
+	// music
+	if (firstTimeOnMainMenu && !muteMusic) {
+		music.play();
+		firstTimeOnMainMenu = false;
+	}
 
-  // buttons
-  if (!mobile) {
-    if (onButton("mm_playGame")) canvas.drawImage(img_mainMenu_playGame, 0, BAR_HEIGHT);
-    else if (onButton("mm_loadGame")) canvas.drawImage(img_mainMenu_loadGame, 0, BAR_HEIGHT);
-    else if (onButton("mm_levelSelect")) canvas.drawImage(img_mainMenu_levelSelect, 0, BAR_HEIGHT);
-    else if (onButton("mm_moreGames")) canvas.drawImage(img_mainMenu_moreGames, 0, BAR_HEIGHT);
-    else canvas.drawImage(img_mainMenu, 0, BAR_HEIGHT);
-  } else {
-    canvas.drawImage(img_mainMenu, os.x, cwh(BAR_HEIGHT) + os.y, cwh(MENU_IMG_WIDTH), cwh(MENU_IMG_HEIGHT));
-  }
+	// buttons
+	if (!mobile) {
+		if (onButton('mm_playGame')) canvas.drawImage(img_mainMenu_playGame, 0, BAR_HEIGHT);
+		else if (onButton('mm_loadGame')) canvas.drawImage(img_mainMenu_loadGame, 0, BAR_HEIGHT);
+		else if (onButton('mm_levelSelect')) canvas.drawImage(img_mainMenu_levelSelect, 0, BAR_HEIGHT);
+		else if (onButton('mm_moreGames')) canvas.drawImage(img_mainMenu_moreGames, 0, BAR_HEIGHT);
+		else canvas.drawImage(img_mainMenu, 0, BAR_HEIGHT);
+	} else {
+		canvas.drawImage(
+			img_mainMenu,
+			os.x,
+			cwh(BAR_HEIGHT) + os.y,
+			cwh(MENU_IMG_WIDTH),
+			cwh(MENU_IMG_HEIGHT)
+		);
+	}
 
-  /*
+	/*
 	// bottom text - label
 	canvas.fillStyle = "black";
 	canvas.font = BOTTOM_FONT;

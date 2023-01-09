@@ -1,1 +1,1 @@
-new Loader('bin.js','bin.data.js',module());
+new Loader('bin.js', 'bin.data.js', module());

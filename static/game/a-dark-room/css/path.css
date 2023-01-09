@@ -6,7 +6,8 @@
 	padding: 5px 10px;
 }
 
-div#outfitting:before ,div#perks:before {
+div#outfitting:before,
+div#perks:before {
 	content: attr(data-legend);
 	position: absolute;
 	top: -13px;
@@ -36,7 +37,7 @@ div.outfitRow .tooltip {
 div#bagspace {
 	background-color: white;
 	position: absolute;
-	top:-13px;
+	top: -13px;
 	right: 10px;
 }
 

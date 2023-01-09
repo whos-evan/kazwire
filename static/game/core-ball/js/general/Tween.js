@@ -4,25 +4,25 @@
  * @date 2015-03-09
  */
 
-define(function(require, exports, module) {
-	"use strict";
-	
+define(function (require, exports, module) {
+	'use strict';
+
 	var Tween = {
-		simple : function(sv, ev, st, d){
+		simple: function (sv, ev, st, d) {
 			var v = (ev - sv) / d;
-			var t = +(new Date);
-			
-			if(t - st < d){
+			var t = +new Date();
+
+			if (t - st < d) {
 				Tween.isEnd = false;
 				return sv + (t - st) * v;
-			}else {
+			} else {
 				Tween.isEnd = true;
 				return ev;
 			}
 		},
-		
-		isEnd : true
+
+		isEnd: true
 	};
-	
+
 	module.exports = Tween;
 });

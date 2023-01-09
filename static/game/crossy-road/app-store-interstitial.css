@@ -4,11 +4,11 @@
 	font-family: EditUndoBrk;
 	color: #fff;
 	-webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-     -khtml-user-select: none; /* Konqueror HTML */
-       -moz-user-select: none; /* Firefox */
-        -ms-user-select: none; /* Internet Explorer/Edge */
-            user-select: none; /* Non-prefixed version, currently
+	-webkit-user-select: none; /* Safari */
+	-khtml-user-select: none; /* Konqueror HTML */
+	-moz-user-select: none; /* Firefox */
+	-ms-user-select: none; /* Internet Explorer/Edge */
+	user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome and Opera */
 }
 
@@ -27,9 +27,9 @@
 	width: 100%;
 	height: 100%;
 	display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
 @media (orientation: portrait) {
@@ -74,7 +74,7 @@
 
 #screen-1 .usp-list {
 	width: 40%;
-    font-size: 1em;
+	font-size: 1em;
 	margin: 0;
 	list-style: none;
 	padding: 0 0 0 4%;
@@ -145,7 +145,7 @@
 
 #screen-2 h2 {
 	font-size: 1.5em;
-    line-height: 1.3em;
+	line-height: 1.3em;
 	text-align: center;
 	margin: 0 6%;
 }
@@ -183,23 +183,23 @@
 
 #screen-2 #poki-text {
 	position: absolute;
-    left: 7%;
-    color: #36B5E8;
-    top: 50%;
-    font-size: 2em;
-    margin-top: -0.65em;
+	left: 7%;
+	color: #36b5e8;
+	top: 50%;
+	font-size: 2em;
+	margin-top: -0.65em;
 }
 
 #screen-2 .hand {
 	position: absolute;
-    transform: rotate(-5deg);
-    bottom: -25%;
-    right: -3%;
-    width: 30%;
+	transform: rotate(-5deg);
+	bottom: -25%;
+	right: -3%;
+	width: 30%;
 }
 
 #screen-2 #type-cursor {
-	color: #FFD522;
+	color: #ffd522;
 	margin-left: 2%;
 	animation: blink-animation 1s steps(2, start) infinite;
 }
@@ -219,10 +219,10 @@
 
 #screen-3 .hand {
 	position: absolute;
-    transform: rotate(-12deg);
-    bottom: -25%;
-    right: 10%;
-    width: 40%;
+	transform: rotate(-12deg);
+	bottom: -25%;
+	right: 10%;
+	width: 40%;
 }
 
 /* Screen 4 */

@@ -1,15 +1,14 @@
-(function($) {    
-
-    $.anwidget("an.CSS", {
-        options: {
-			'visible': false
-        },
+(function ($) {
+	$.anwidget('an.CSS', {
+		options: {
+			visible: false
+		},
 		_attrs: ['href'],
-		getAttributes: function() {
+		getAttributes: function () {
 			return this._attrs;
 		},
-		getCreateString: function() {			
+		getCreateString: function () {
 			return "<link rel='stylesheet'>";
-		}    
-	});   
+		}
+	});
 })(jQuery);

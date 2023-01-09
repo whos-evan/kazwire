@@ -2,17 +2,15 @@
 	import Box from './box.svelte';
 	import appsJson from './apps.json';
 
-	export let apps = appsJson['apps']
-		.sort((a, b) => {
-			if (a['id'] < b['id']) {
-				return -1;
-			}
-			if (a['id'] > b['id']) {
-				return 1;
-			}
-			return 0;
-		});
-
+	export let apps = appsJson['apps'].sort((a, b) => {
+		if (a['id'] < b['id']) {
+			return -1;
+		}
+		if (a['id'] > b['id']) {
+			return 1;
+		}
+		return 0;
+	});
 
 	export function searchApps() {
 		let input = document.getElementById('search');
@@ -32,7 +30,6 @@
 	}
 
 	let filter;
-
 </script>
 
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">

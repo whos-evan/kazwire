@@ -1,4 +1,3 @@
-
 # Localization
 
 Supported languages
@@ -20,7 +19,6 @@ Supported languages
 
 default: `en-US`
 
-
 add the line to your code to use
 
 ```
@@ -28,7 +26,6 @@ EJS_language = ''; //language
 ```
 
 If the language file is not found or there was an error fetching the file, the emulator will default to english.
-
 
 ## credits
 

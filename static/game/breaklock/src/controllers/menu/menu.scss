@@ -1,15 +1,15 @@
-@import "../../_variables.scss";
+@import '../../_variables.scss';
 
 .menu-title {
-  margin: 0;
+	margin: 0;
 }
 
 .menu-layout-instructions {
-	-webkit-flex:1 0 auto;
+	-webkit-flex: 1 0 auto;
 }
 
 .menu-layout-form {
-  max-width: 480px;
+	max-width: 480px;
 }
 
 .introduction-demo {
@@ -20,7 +20,7 @@
 }
 
 @media (orientation: landscape), (min-width: $mq-xlarge-min) {
-  .menu-layout {
-    align-items: center;
-  }
+	.menu-layout {
+		align-items: center;
+	}
 }

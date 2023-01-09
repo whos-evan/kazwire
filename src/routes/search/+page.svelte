@@ -4,7 +4,6 @@
 	import Footer from '../../components/footer.svelte';
 </script>
 
-
 <Nav />
 <Proxy />
 <Footer />

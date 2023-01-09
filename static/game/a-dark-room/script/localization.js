@@ -1,6 +1,6 @@
-(function(){
+(function () {
 	//only used for poedit to find translatable strings
-	var keywords = [ 
+	var keywords = [
 		_('saved.'),
 		_('wood'),
 		_('builder'),
@@ -63,7 +63,7 @@
 		_('the compass points northwest'),
 		_('the compass points southeast'),
 		_('the compass points southwest')
-	]; 
+	];
 
 	keywords = null;
 })();

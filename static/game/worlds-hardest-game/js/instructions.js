@@ -1,9 +1,9 @@
 var instructions = [
-	[-1, "Touch anywhere on the screen and drag to move.", CANVAS_WIDTH / 2],
-	[2, "Collect all the coins.", CANVAS_WIDTH / 2],
+	[-1, 'Touch anywhere on the screen and drag to move.', CANVAS_WIDTH / 2],
+	[2, 'Collect all the coins.', CANVAS_WIDTH / 2],
 	[3, "Sometimes there's extra checkpoints to help out.", CANVAS_WIDTH / 2],
-	[4, "Sometimes going", "diagonally helps.", CANVAS_WIDTH / 4],
-	[6, "You can change the player color on the menu.", CANVAS_WIDTH / 2]
+	[4, 'Sometimes going', 'diagonally helps.', CANVAS_WIDTH / 4],
+	[6, 'You can change the player color on the menu.', CANVAS_WIDTH / 2]
 ];
 
 function initInstructions() {
@@ -36,8 +36,7 @@ function updateInstructions() {
 				instructionsFadingOut = false;
 				instructionsWaiting = false;
 			}
-		}
-		else if (instructionsFadingIn) {
+		} else if (instructionsFadingIn) {
 			if (instructionsAlpha < 1) {
 				instructionsAlpha += INSTRUCTIONS_FADE_IN_SPEED;
 			} else {
@@ -47,9 +46,7 @@ function updateInstructions() {
 				instructionsFadingOut = false;
 				instructionsWaiting = false;
 			}
-		} else if (!instructionsFadingIn &&
-				   !instructionsFadingOut &&
-				   !instructionsWaiting) {
+		} else if (!instructionsFadingIn && !instructionsFadingOut && !instructionsWaiting) {
 			if (instructionsTimer < INSTRUCTIONS_TIMER_TOT) {
 				instructionsTimer++;
 			} else {
@@ -62,7 +59,7 @@ function updateInstructions() {
 		} else if (instructionsFadingOut) {
 			if (instructionsAlpha > 0) {
 				instructionsAlpha -= INSTRUCTIONS_FADE_OUT_SPEED;
-				if(instructionsAlpha<0){
+				if (instructionsAlpha < 0) {
 					instructionsAlpha = 0;
 				}
 			} else {
@@ -74,14 +71,26 @@ function updateInstructions() {
 
 function drawInstructions() {
 	if (instrForLevel != null) {
-		canvas.fillStyle = INSTRUCTIONS_COLOR + instructionsAlpha + ")";
-		canvas.font = "Bold " + cwh(INSTRUCTIONS_TEXT_SIZE) + "px Arial";
-		canvas.textAlign = "center";
+		canvas.fillStyle = INSTRUCTIONS_COLOR + instructionsAlpha + ')';
+		canvas.font = 'Bold ' + cwh(INSTRUCTIONS_TEXT_SIZE) + 'px Arial';
+		canvas.textAlign = 'center';
 		if (instructions[instrForLevel].length == 3) {
-			canvas.fillText(instructions[instrForLevel][1], cwh(instructions[instrForLevel][2]) + os.x, cwh(INSTRUCTIONS_Y_0) + os.y);
+			canvas.fillText(
+				instructions[instrForLevel][1],
+				cwh(instructions[instrForLevel][2]) + os.x,
+				cwh(INSTRUCTIONS_Y_0) + os.y
+			);
 		} else if (instructions[instrForLevel].length == 4) {
-			canvas.fillText(instructions[instrForLevel][1], cwh(instructions[instrForLevel][3]) + os.x, cwh(INSTRUCTIONS_Y_0) + os.y);
-			canvas.fillText(instructions[instrForLevel][2], cwh(instructions[instrForLevel][3]) + os.x, cwh(INSTRUCTIONS_Y_1) + os.y);
+			canvas.fillText(
+				instructions[instrForLevel][1],
+				cwh(instructions[instrForLevel][3]) + os.x,
+				cwh(INSTRUCTIONS_Y_0) + os.y
+			);
+			canvas.fillText(
+				instructions[instrForLevel][2],
+				cwh(instructions[instrForLevel][3]) + os.x,
+				cwh(INSTRUCTIONS_Y_1) + os.y
+			);
 		}
 	}
 }

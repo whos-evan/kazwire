@@ -144,7 +144,11 @@
 						<Minimize />
 					</button>
 				{/if}
-				<iframe id="search-iframe" on:load={checkTitle} class="w-full h-full rounded-t-lg bg-black" />
+				<iframe
+					id="search-iframe"
+					on:load={checkTitle}
+					class="w-full h-full rounded-t-lg bg-black"
+				/>
 			</div>
 
 			<div class="grid">

@@ -10,23 +10,25 @@ var Room = {
 	_NEED_WOOD_DELAY: 15 * 1000, // from when the stranger shows up, to when you need wood
 	buttons: {},
 	Craftables: {
-		'trap': {
+		trap: {
 			name: _('trap'),
 			button: null,
 			maximum: 10,
-			availableMsg: _('builder says she can make traps to catch any creatures might still be alive out there'),
+			availableMsg: _(
+				'builder says she can make traps to catch any creatures might still be alive out there'
+			),
 			buildMsg: _('more traps to catch more creatures'),
 			maxMsg: _("more traps won't help now"),
 			type: 'building',
 			cost: function () {
 				var n = $SM.get('game.buildings["trap"]', true);
 				return {
-					'wood': 10 + (n * 10)
+					wood: 10 + n * 10
 				};
 			},
 			audio: AudioLibrary.BUILD_TRAP
 		},
-		'cart': {
+		cart: {
 			name: _('cart'),
 			button: null,
 			maximum: 1,
@@ -35,12 +37,12 @@ var Room = {
 			type: 'building',
 			cost: function () {
 				return {
-					'wood': 30
+					wood: 30
 				};
 			},
 			audio: AudioLibrary.BUILD_CART
 		},
-		'hut': {
+		hut: {
 			name: _('hut'),
 			button: null,
 			maximum: 20,
@@ -51,12 +53,12 @@ var Room = {
 			cost: function () {
 				var n = $SM.get('game.buildings["hut"]', true);
 				return {
-					'wood': 100 + (n * 50)
+					wood: 100 + n * 50
 				};
 			},
 			audio: AudioLibrary.BUILD_HUT
 		},
-		'lodge': {
+		lodge: {
 			name: _('lodge'),
 			button: null,
 			maximum: 1,
@@ -76,80 +78,82 @@ var Room = {
 			name: _('trading post'),
 			button: null,
 			maximum: 1,
-			availableMsg: _("a trading post would make commerce easier"),
-			buildMsg: _("now the nomads have a place to set up shop, they might stick around a while"),
+			availableMsg: _('a trading post would make commerce easier'),
+			buildMsg: _('now the nomads have a place to set up shop, they might stick around a while'),
 			type: 'building',
 			cost: function () {
 				return {
-					'wood': 400,
-					'fur': 100
+					wood: 400,
+					fur: 100
 				};
 			},
 			audio: AudioLibrary.BUILD_TRADING_POST
 		},
-		'tannery': {
+		tannery: {
 			name: _('tannery'),
 			button: null,
 			maximum: 1,
-			availableMsg: _("builder says leather could be useful. says the villagers could make it."),
+			availableMsg: _('builder says leather could be useful. says the villagers could make it.'),
 			buildMsg: _('tannery goes up quick, on the edge of the village'),
 			type: 'building',
 			cost: function () {
 				return {
-					'wood': 500,
-					'fur': 50
+					wood: 500,
+					fur: 50
 				};
 			},
 			audio: AudioLibrary.BUILD_TANNERY
 		},
-		'smokehouse': {
+		smokehouse: {
 			name: _('smokehouse'),
 			button: null,
 			maximum: 1,
-			availableMsg: _("should cure the meat, or it'll spoil. builder says she can fix something up."),
+			availableMsg: _(
+				"should cure the meat, or it'll spoil. builder says she can fix something up."
+			),
 			buildMsg: _('builder finishes the smokehouse. she looks hungry.'),
 			type: 'building',
 			cost: function () {
 				return {
-					'wood': 600,
-					'meat': 50
+					wood: 600,
+					meat: 50
 				};
 			},
 			audio: AudioLibrary.BUILD_SMOKEHOUSE
 		},
-		'workshop': {
+		workshop: {
 			name: _('workshop'),
 			button: null,
 			maximum: 1,
-			availableMsg: _("builder says she could make finer things, if she had the tools"),
+			availableMsg: _('builder says she could make finer things, if she had the tools'),
 			buildMsg: _("workshop's finally ready. builder's excited to get to it"),
 			type: 'building',
 			cost: function () {
 				return {
-					'wood': 800,
-					'leather': 100,
-					'scales': 10
+					wood: 800,
+					leather: 100,
+					scales: 10
 				};
 			},
 			audio: AudioLibrary.BUILD_WORKSHOP
 		},
-		'steelworks': {
+		steelworks: {
 			name: _('steelworks'),
 			button: null,
 			maximum: 1,
-			availableMsg: _("builder says the villagers could make steel, given the tools"),
-			buildMsg: _("a haze falls over the village as the steelworks fires up"),
+			availableMsg: _('builder says the villagers could make steel, given the tools'),
+			buildMsg: _('a haze falls over the village as the steelworks fires up'),
 			type: 'building',
 			cost: function () {
 				return {
-					'wood': 1500,
-					'iron': 100,
-					'coal': 100
+					wood: 1500,
+					iron: 100,
+					coal: 100
 				};
 			},
 			audio: AudioLibrary.BUILD_STEELWORKS
 		},
-		'armoury': {
+		armoury: {
 			name: _('armoury'),
 			button: null,
 			maximum: 1,
@@ -158,40 +162,40 @@ var Room = {
 			type: 'building',
 			cost: function () {
 				return {
-					'wood': 3000,
-					'steel': 100,
-					'sulphur': 50
+					wood: 3000,
+					steel: 100,
+					sulphur: 50
 				};
 			},
 			audio: AudioLibrary.BUILD_ARMOURY
 		},
-		'torch': {
+		torch: {
 			name: _('torch'),
 			button: null,
 			type: 'tool',
 			buildMsg: _('a torch to keep the dark away'),
 			cost: function () {
 				return {
-					'wood': 1,
-					'cloth': 1
+					wood: 1,
+					cloth: 1
 				};
 			},
 			audio: AudioLibrary.CRAFT_TORCH
 		},
-		'waterskin': {
+		waterskin: {
 			name: _('waterskin'),
 			button: null,
 			type: 'upgrade',
 			maximum: 1,
-			buildMsg: _('this waterskin\'ll hold a bit of water, at least'),
+			buildMsg: _("this waterskin'll hold a bit of water, at least"),
 			cost: function () {
 				return {
-					'leather': 50
+					leather: 50
 				};
 			},
 			audio: AudioLibrary.CRAFT_WATERSKIN
 		},
-		'cask': {
+		cask: {
 			name: _('cask'),
 			button: null,
 			type: 'upgrade',
@@ -199,8 +203,8 @@ var Room = {
 			buildMsg: _('the cask holds enough water for longer expeditions'),
 			cost: function () {
 				return {
-					'leather': 100,
-					'iron': 20
+					leather: 100,
+					iron: 20
 				};
 			},
 			audio: AudioLibrary.CRAFT_CASK
@@ -213,8 +217,8 @@ var Room = {
 			buildMsg: _('never go thirsty again'),
 			cost: function () {
 				return {
-					'iron': 100,
-					'steel': 50
+					iron: 100,
+					steel: 50
 				};
 			},
 			audio: AudioLibrary.CRAFT_WATER_TANK
@@ -226,13 +230,13 @@ var Room = {
 			buildMsg: _("this spear's not elegant, but it's pretty good at stabbing"),
 			cost: function () {
 				return {
-					'wood': 100,
-					'teeth': 5
+					wood: 100,
+					teeth: 5
 				};
 			},
 			audio: AudioLibrary.CRAFT_BONE_SPEAR
 		},
-		'rucksack': {
+		rucksack: {
 			name: _('rucksack'),
 			button: null,
 			type: 'upgrade',
@@ -240,12 +244,12 @@ var Room = {
 			buildMsg: _('carrying more means longer expeditions to the wilds'),
 			cost: function () {
 				return {
-					'leather': 200
+					leather: 200
 				};
 			},
 			audio: AudioLibrary.CRAFT_RUCKSACK
 		},
-		'wagon': {
+		wagon: {
 			name: _('wagon'),
 			button: null,
 			type: 'upgrade',
@@ -253,13 +257,13 @@ var Room = {
 			buildMsg: _('the wagon can carry a lot of supplies'),
 			cost: function () {
 				return {
-					'wood': 500,
-					'iron': 100
+					wood: 500,
+					iron: 100
 				};
 			},
 			audio: AudioLibrary.CRAFT_WAGON
 		},
-		'convoy': {
+		convoy: {
 			name: _('convoy'),
 			button: null,
 			type: 'upgrade',
@@ -267,9 +271,9 @@ var Room = {
 			buildMsg: _('the convoy can haul mostly everything'),
 			cost: function () {
 				return {
-					'wood': 1000,
-					'iron': 200,
-					'steel': 100
+					wood: 1000,
+					iron: 200,
+					steel: 100
 				};
 			},
 			audio: AudioLibrary.CRAFT_CONVOY
@@ -281,8 +285,8 @@ var Room = {
 			buildMsg: _("leather's not strong. better than rags, though."),
 			cost: function () {
 				return {
-					'leather': 200,
-					'scales': 20
+					leather: 200,
+					scales: 20
 				};
 			},
 			audio: AudioLibrary.CRAFT_LEATHER_ARMOUR
@@ -294,8 +298,8 @@ var Room = {
 			buildMsg: _("iron's stronger than leather"),
 			cost: function () {
 				return {
-					'leather': 200,
-					'iron': 100
+					leather: 200,
+					iron: 100
 				};
 			},
 			audio: AudioLibrary.CRAFT_IRON_ARMOUR
@@ -307,8 +311,8 @@ var Room = {
 			buildMsg: _("steel's stronger than iron"),
 			cost: function () {
 				return {
-					'leather': 200,
-					'steel': 100
+					leather: 200,
+					steel: 100
 				};
 			},
 			audio: AudioLibrary.CRAFT_STEEL_ARMOUR
@@ -317,12 +321,12 @@ var Room = {
 			name: _('iron sword'),
 			button: null,
 			type: 'weapon',
-			buildMsg: _("sword is sharp. good protection out in the wilds."),
+			buildMsg: _('sword is sharp. good protection out in the wilds.'),
 			cost: function () {
 				return {
-					'wood': 200,
-					'leather': 50,
-					'iron': 20
+					wood: 200,
+					leather: 50,
+					iron: 20
 				};
 			},
 			audio: AudioLibrary.CRAFT_IRON_SWORD
@@ -331,25 +335,25 @@ var Room = {
 			name: _('steel sword'),
 			button: null,
 			type: 'weapon',
-			buildMsg: _("the steel is strong, and the blade true."),
+			buildMsg: _('the steel is strong, and the blade true.'),
 			cost: function () {
 				return {
-					'wood': 500,
-					'leather': 100,
-					'steel': 20
+					wood: 500,
+					leather: 100,
+					steel: 20
 				};
 			},
 			audio: AudioLibrary.CRAFT_STEEL_SWORD
 		},
-		'rifle': {
+		rifle: {
 			name: _('rifle'),
 			type: 'weapon',
-			buildMsg: _("black powder and bullets, like the old days."),
+			buildMsg: _('black powder and bullets, like the old days.'),
 			cost: function () {
 				return {
-					'wood': 200,
-					'steel': 50,
-					'sulphur': 50
+					wood: 200,
+					steel: 50,
+					sulphur: 50
 				};
 			},
 			audio: AudioLibrary.CRAFT_RIFLE
@@ -357,65 +361,66 @@ var Room = {
 	},
 
 	TradeGoods: {
-		'scales': {
+		scales: {
 			type: 'good',
 			cost: function () {
 				return { fur: 150 };
 			},
 			audio: AudioLibrary.BUY_SCALES
 		},
-		'teeth': {
+		teeth: {
 			type: 'good',
 			cost: function () {
 				return { fur: 300 };
 			},
 			audio: AudioLibrary.BUY_TEETH
 		},
-		'iron': {
+		iron: {
 			type: 'good',
 			cost: function () {
 				return {
-					'fur': 150,
-					'scales': 50
+					fur: 150,
+					scales: 50
 				};
 			},
 			audio: AudioLibrary.BUY_IRON
 		},
-		'coal': {
+		coal: {
 			type: 'good',
 			cost: function () {
 				return {
-					'fur': 200,
-					'teeth': 50
+					fur: 200,
+					teeth: 50
 				};
 			},
 			audio: AudioLibrary.BUY_COAL
 		},
-		'steel': {
+		steel: {
 			type: 'good',
 			cost: function () {
 				return {
-					'fur': 300,
-					'scales': 50,
-					'teeth': 50
+					fur: 300,
+					scales: 50,
+					teeth: 50
 				};
 			},
 			audio: AudioLibrary.BUY_STEEL
 		},
-		'medicine': {
+		medicine: {
 			type: 'good',
 			cost: function () {
 				return {
-					'scales': 50, 'teeth': 30
+					scales: 50,
+					teeth: 30
 				};
 			},
 			audio: AudioLibrary.BUY_MEDICINE
 		},
-		'bullets': {
+		bullets: {
 			type: 'good',
 			cost: function () {
 				return {
-					'scales': 10
+					scales: 10
 				};
 			},
 			audio: AudioLibrary.BUY_BULLETS
@@ -424,37 +429,37 @@ var Room = {
 			type: 'good',
 			cost: function () {
 				return {
-					'scales': 10,
-					'teeth': 10
+					scales: 10,
+					teeth: 10
 				};
 			},
 			audio: AudioLibrary.BUY_ENERGY_CELL
 		},
-		'bolas': {
+		bolas: {
 			type: 'weapon',
 			cost: function () {
 				return {
-					'teeth': 10
+					teeth: 10
 				};
 			},
 			audio: AudioLibrary.BUY_BOLAS
 		},
-		'grenade': {
+		grenade: {
 			type: 'weapon',
 			cost: function () {
 				return {
-					'scales': 100,
-					'teeth': 50
+					scales: 100,
+					teeth: 50
 				};
 			},
 			audio: AudioLibrary.BUY_GRENADES
 		},
-		'bayonet': {
+		bayonet: {
 			type: 'weapon',
 			cost: function () {
 				return {
-					'scales': 500,
-					'teeth': 250
+					scales: 500,
+					teeth: 250
 				};
 			},
 			audio: AudioLibrary.BUY_BAYONET
@@ -463,14 +468,14 @@ var Room = {
 			type: 'good',
 			cost: function () {
 				return {
-					'fur': 1500,
-					'scales': 750,
-					'teeth': 300
+					fur: 1500,
+					scales: 750,
+					teeth: 300
 				};
 			},
 			audio: AudioLibrary.BUY_ALIEN_ALLOY
 		},
-		'compass': {
+		compass: {
 			type: 'special',
 			maximum: 1,
 			cost: function () {
@@ -490,12 +495,9 @@ var Room = {
 		}
 	},
 
-	name: _("Room"),
+	name: _('Room'),
 	init: function (options) {
-		this.options = $.extend(
-			this.options,
-			options
-		);
+		this.options = $.extend(this.options, options);
 
 		Room.pathDiscovery = Boolean($SM.get('stores["compass"]'));
 
@@ -511,17 +513,25 @@ var Room = {
 			$SM.set('game.builder.level', -1);
 		}
 
-		// If this is the first time playing, the fire is dead and it's freezing. 
+		// If this is the first time playing, the fire is dead and it's freezing.
 		// Otherwise grab past save state temp and fire level.
-		$SM.set('game.temperature', $SM.get('game.temperature.value') === undefined ? this.TempEnum.Freezing : $SM.get('game.temperature'));
-		$SM.set('game.fire', $SM.get('game.fire.value') === undefined ? this.FireEnum.Dead : $SM.get('game.fire'));
+		$SM.set(
+			'game.temperature',
+			$SM.get('game.temperature.value') === undefined
+				? this.TempEnum.Freezing
+				: $SM.get('game.temperature')
+		);
+		$SM.set(
+			'game.fire',
+			$SM.get('game.fire.value') === undefined ? this.FireEnum.Dead : $SM.get('game.fire')
+		);
 
 		// Create the room tab
-		this.tab = Header.addLocation(_("A Dark Room"), "room", Room);
+		this.tab = Header.addLocation(_('A Dark Room'), 'room', Room);
 
 		// Create the Room panel
 		this.panel = $('<div>')
-			.attr('id', "roomPanel")
+			.attr('id', 'roomPanel')
 			.addClass('location')
 			.appendTo('div#locationSlider');
 
@@ -534,17 +544,17 @@ var Room = {
 			click: Room.lightFire,
 			cooldown: Room._STOKE_COOLDOWN,
 			width: '80px',
-			cost: { 'wood': 5 }
+			cost: { wood: 5 }
 		}).appendTo('div#roomPanel');
 
 		// Create the stoke button
 		new Button.Button({
 			id: 'stokeButton',
-			text: _("stoke fire"),
+			text: _('stoke fire'),
 			click: Room.stokeFire,
 			cooldown: Room._STOKE_COOLDOWN,
 			width: '80px',
-			cost: { 'wood': 1 }
+			cost: { wood: 1 }
 		}).appendTo('div#roomPanel');
 
 		// Create the stores container
@@ -577,8 +587,14 @@ var Room = {
 		}
 		Engine.setTimeout($SM.collectIncome, 1000);
 
-		Notifications.notify(Room, _("the room is {0}", Room.TempEnum.fromInt($SM.get('game.temperature.value')).text));
-		Notifications.notify(Room, _("the fire is {0}", Room.FireEnum.fromInt($SM.get('game.fire.value')).text));
+		Notifications.notify(
+			Room,
+			_('the room is {0}', Room.TempEnum.fromInt($SM.get('game.temperature.value')).text)
+		);
+		Notifications.notify(
+			Room,
+			_('the fire is {0}', Room.FireEnum.fromInt($SM.get('game.fire.value')).text)
+		);
 	},
 
 	options: {}, // Nothing for now
@@ -586,22 +602,31 @@ var Room = {
 	onArrival: function (transition_diff) {
 		Room.setTitle();
 		if (Room.changed) {
-			Notifications.notify(Room, _("the fire is {0}", Room.FireEnum.fromInt($SM.get('game.fire.value')).text));
-			Notifications.notify(Room, _("the room is {0}", Room.TempEnum.fromInt($SM.get('game.temperature.value')).text));
+			Notifications.notify(
+				Room,
+				_('the fire is {0}', Room.FireEnum.fromInt($SM.get('game.fire.value')).text)
+			);
+			Notifications.notify(
+				Room,
+				_('the room is {0}', Room.TempEnum.fromInt($SM.get('game.temperature.value')).text)
+			);
 			Room.changed = false;
 		}
 		if ($SM.get('game.builder.level') == 3) {
 			$SM.add('game.builder.level', 1);
 			$SM.setIncome('builder', {
 				delay: 10,
-				stores: { 'wood': 2 }
+				stores: { wood: 2 }
 			});
 			Room.updateIncomeView();
-			Notifications.notify(Room, _("the stranger is standing by the fire. she says she can help. says she builds things."));
+			Notifications.notify(
+				Room,
+				_('the stranger is standing by the fire. she says she can help. says she builds things.')
+			);
 		}
 
 		Engine.moveStoresView(null, transition_diff);
-		
+
 		Room.setMusic();
 	},
 
@@ -638,7 +663,7 @@ var Room = {
 	},
 
 	setTitle: function () {
-		var title = $SM.get('game.fire.value') < 2 ? _("A Dark Room") : _("A Firelit Room");
+		var title = $SM.get('game.fire.value') < 2 ? _('A Dark Room') : _('A Firelit Room');
 		if (Engine.activeModule == this) {
 			document.title = title;
 		}
@@ -676,7 +701,7 @@ var Room = {
 	lightFire: function () {
 		var wood = $SM.get('stores.wood');
 		if (wood < 5) {
-			Notifications.notify(Room, _("not enough wood to get the fire going"));
+			Notifications.notify(Room, _('not enough wood to get the fire going'));
 			Button.clearCooldown($('#lightButton.button'));
 			return;
 		} else if (wood > 4) {
@@ -690,7 +715,7 @@ var Room = {
 	stokeFire: function () {
 		var wood = $SM.get('stores.wood');
 		if (wood === 0) {
-			Notifications.notify(Room, _("the wood has run out"));
+			Notifications.notify(Room, _('the wood has run out'));
 			Button.clearCooldown($('#stokeButton.button'));
 			return;
 		}
@@ -708,10 +733,17 @@ var Room = {
 		if (Engine.activeModule != Room) {
 			Room.changed = true;
 		}
-		Notifications.notify(Room, _("the fire is {0}", Room.FireEnum.fromInt($SM.get('game.fire.value')).text), true);
+		Notifications.notify(
+			Room,
+			_('the fire is {0}', Room.FireEnum.fromInt($SM.get('game.fire.value')).text),
+			true
+		);
 		if ($SM.get('game.fire.value') > 1 && $SM.get('game.builder.level') < 0) {
 			$SM.set('game.builder.level', 0);
-			Notifications.notify(Room, _("the light from the fire spills from the windows, out into the dark"));
+			Notifications.notify(
+				Room,
+				_('the light from the fire spills from the windows, out into the dark')
+			);
 			Engine.setTimeout(Room.updateBuilderState, Room._BUILDER_STATE_DELAY);
 		}
 		window.clearTimeout(Room._fireTimer);
@@ -727,9 +759,12 @@ var Room = {
 
 	coolFire: function () {
 		var wood = $SM.get('stores.wood');
-		if ($SM.get('game.fire.value') <= Room.FireEnum.Flickering.value &&
-			$SM.get('game.builder.level') > 3 && wood > 0) {
-			Notifications.notify(Room, _("builder stokes the fire"), true);
+		if (
+			$SM.get('game.fire.value') <= Room.FireEnum.Flickering.value &&
+			$SM.get('game.builder.level') > 3 &&
+			wood > 0
+		) {
+			Notifications.notify(Room, _('builder stokes the fire'), true);
 			$SM.set('stores.wood', wood - 1);
 			$SM.set('game.fire', Room.FireEnum.fromInt($SM.get('game.fire.value') + 1));
 		}
@@ -742,13 +777,27 @@ var Room = {
 
 	adjustTemp: function () {
 		var old = $SM.get('game.temperature.value');
-		if ($SM.get('game.temperature.value') > 0 && $SM.get('game.temperature.value') > $SM.get('game.fire.value')) {
+		if (
+			$SM.get('game.temperature.value') > 0 &&
+			$SM.get('game.temperature.value') > $SM.get('game.fire.value')
+		) {
 			$SM.set('game.temperature', Room.TempEnum.fromInt($SM.get('game.temperature.value') - 1));
-			Notifications.notify(Room, _("the room is {0}", Room.TempEnum.fromInt($SM.get('game.temperature.value')).text), true);
+			Notifications.notify(
+				Room,
+				_('the room is {0}', Room.TempEnum.fromInt($SM.get('game.temperature.value')).text),
+				true
+			);
 		}
-		if ($SM.get('game.temperature.value') < 4 && $SM.get('game.temperature.value') < $SM.get('game.fire.value')) {
+		if (
+			$SM.get('game.temperature.value') < 4 &&
+			$SM.get('game.temperature.value') < $SM.get('game.fire.value')
+		) {
 			$SM.set('game.temperature', Room.TempEnum.fromInt($SM.get('game.temperature.value') + 1));
-			Notifications.notify(Room, _("the room is {0}", Room.TempEnum.fromInt($SM.get('game.temperature.value')).text), true);
+			Notifications.notify(
+				Room,
+				_('the room is {0}', Room.TempEnum.fromInt($SM.get('game.temperature.value')).text),
+				true
+			);
 		}
 		if ($SM.get('game.temperature.value') != old) {
 			Room.changed = true;
@@ -759,26 +808,28 @@ var Room = {
 	unlockForest: function () {
 		$SM.set('stores.wood', 4);
 		Outside.init();
-		Notifications.notify(Room, _("the wind howls outside"));
-		Notifications.notify(Room, _("the wood is running out"));
+		Notifications.notify(Room, _('the wind howls outside'));
+		Notifications.notify(Room, _('the wood is running out'));
 		Engine.event('progress', 'outside');
 	},
 
 	updateBuilderState: function () {
 		var lBuilder = $SM.get('game.builder.level');
 		if (lBuilder === 0) {
-			Notifications.notify(Room, _("a ragged stranger stumbles through the door and collapses in the corner"));
+			Notifications.notify(
+				Room,
+				_('a ragged stranger stumbles through the door and collapses in the corner')
+			);
 			lBuilder = $SM.setget('game.builder.level', 1);
 			Engine.setTimeout(Room.unlockForest, Room._NEED_WOOD_DELAY);
-		}
-		else if (lBuilder < 3 && $SM.get('game.temperature.value') >= Room.TempEnum.Warm.value) {
-			var msg = "";
+		} else if (lBuilder < 3 && $SM.get('game.temperature.value') >= Room.TempEnum.Warm.value) {
+			var msg = '';
 			switch (lBuilder) {
 				case 1:
-					msg = _("the stranger shivers, and mumbles quietly. her words are unintelligible.");
+					msg = _('the stranger shivers, and mumbles quietly. her words are unintelligible.');
 					break;
 				case 2:
-					msg = _("the stranger in the corner stops shivering. her breathing calms.");
+					msg = _('the stranger in the corner stops shivering. her breathing calms.');
 					break;
 			}
 			Notifications.notify(Room, msg);
@@ -797,35 +848,46 @@ var Room = {
 		var resources = $('div#resources');
 		var special = $('div#special');
 		var weapons = $('div#weapons');
-		var needsAppend = false, rNeedsAppend = false, sNeedsAppend = false, wNeedsAppend = false, newRow = false;
+		var needsAppend = false,
+			rNeedsAppend = false,
+			sNeedsAppend = false,
+			wNeedsAppend = false,
+			newRow = false;
 		if (stores.length === 0) {
-			stores = $('<div>').attr({
-				'id': 'stores',
-				'data-legend': _('stores')
-			}).css('opacity', 0);
+			stores = $('<div>')
+				.attr({
+					id: 'stores',
+					'data-legend': _('stores')
+				})
+				.css('opacity', 0);
 			needsAppend = true;
 		}
 		if (resources.length === 0) {
-			resources = $('<div>').attr({
-				id: 'resources'
-			}).css('opacity', 0);
+			resources = $('<div>')
+				.attr({
+					id: 'resources'
+				})
+				.css('opacity', 0);
 			rNeedsAppend = true;
 		}
 		if (special.length === 0) {
-			special = $('<div>').attr({
-				id: 'special'
-			}).css('opacity', 0);
+			special = $('<div>')
+				.attr({
+					id: 'special'
+				})
+				.css('opacity', 0);
 			sNeedsAppend = true;
 		}
 		if (weapons.length === 0) {
-			weapons = $('<div>').attr({
-				'id': 'weapons',
-				'data-legend': _('weapons')
-			}).css('opacity', 0);
+			weapons = $('<div>')
+				.attr({
+					id: 'weapons',
+					'data-legend': _('weapons')
+				})
+				.css('opacity', 0);
 			wNeedsAppend = true;
 		}
 		for (var k in $SM.get('stores')) {
-
 			var type = null;
 			if (Room.Craftables[k]) {
 				type = Room.Craftables[k].type;
@@ -854,7 +916,7 @@ var Room = {
 					break;
 			}
 
-			var id = "row_" + k.replace(' ', '-');
+			var id = 'row_' + k.replace(' ', '-');
 			var row = $('div#' + id, location);
 			var num = $SM.get('stores["' + k + '"]');
 
@@ -868,7 +930,11 @@ var Room = {
 			var lk = _(k);
 
 			// thieves?
-			if (typeof $SM.get('game.thieves') == 'undefined' && num > 5000 && $SM.get('features.location.world')) {
+			if (
+				typeof $SM.get('game.thieves') == 'undefined' &&
+				num > 5000 &&
+				$SM.get('features.location.world')
+			) {
 				$SM.startThieves();
 			}
 
@@ -920,7 +986,7 @@ var Room = {
 			Room.updateIncomeView();
 		}
 
-		if ($("div#outsidePanel").length) {
+		if ($('div#outsidePanel').length) {
 			Outside.updateVillage();
 		}
 
@@ -960,7 +1026,10 @@ var Room = {
 			if (tt.children().length > 0) {
 				var total = totalIncome[storeName].income;
 				$('<div>').addClass('total row_key').text(_('total')).appendTo(tt);
-				$('<div>').addClass('total row_val').text(Engine.getIncomeMsg(total, totalIncome[storeName].delay)).appendTo(tt);
+				$('<div>')
+					.addClass('total row_val')
+					.text(Engine.getIncomeMsg(total, totalIncome[storeName].delay))
+					.appendTo(tt);
 				tt.appendTo(el);
 			}
 		});
@@ -980,7 +1049,7 @@ var Room = {
 		for (var k in cost) {
 			var have = $SM.get('stores["' + k + '"]', true);
 			if (have < cost[k]) {
-				Notifications.notify(Room, _("not enough " + k));
+				Notifications.notify(Room, _('not enough ' + k));
 				return false;
 			} else {
 				storeMod[k] = have - cost[k];
@@ -999,7 +1068,7 @@ var Room = {
 	build: function (buildBtn) {
 		var thing = $(buildBtn).attr('buildThing');
 		if ($SM.get('game.temperature.value') <= Room.TempEnum.Cold.value) {
-			Notifications.notify(Room, _("builder just shivers"));
+			Notifications.notify(Room, _('builder just shivers'));
 			return false;
 		}
 		var craftable = Room.Craftables[thing];
@@ -1027,7 +1096,7 @@ var Room = {
 		for (var k in cost) {
 			var have = $SM.get('stores["' + k + '"]', true);
 			if (have < cost[k]) {
-				Notifications.notify(Room, _("not enough " + k));
+				Notifications.notify(Room, _('not enough ' + k));
 				return false;
 			} else {
 				storeMod[k] = have - cost[k];
@@ -1072,7 +1141,11 @@ var Room = {
 		}
 		if ($SM.get('game.builder.level') < 4) return false;
 		var craftable = Room.Craftables[thing];
-		if (Room.needsWorkshop(craftable.type) && $SM.get('game.buildings["' + 'workshop' + '"]', true) === 0) return false;
+		if (
+			Room.needsWorkshop(craftable.type) &&
+			$SM.get('game.buildings["' + 'workshop' + '"]', true) === 0
+		)
+			return false;
 		var cost = craftable.cost();
 
 		//show button if one has already been built
@@ -1114,21 +1187,27 @@ var Room = {
 		var buildSection = $('#buildBtns');
 		var needsAppend = false;
 		if (buildSection.length === 0) {
-			buildSection = $('<div>').attr({ 'id': 'buildBtns', 'data-legend': _('build:') }).css('opacity', 0);
+			buildSection = $('<div>')
+				.attr({ id: 'buildBtns', 'data-legend': _('build:') })
+				.css('opacity', 0);
 			needsAppend = true;
 		}
 
 		var craftSection = $('#craftBtns');
 		var cNeedsAppend = false;
 		if (craftSection.length === 0 && $SM.get('game.buildings["workshop"]', true) > 0) {
-			craftSection = $('<div>').attr({ 'id': 'craftBtns', 'data-legend': _('craft:') }).css('opacity', 0);
+			craftSection = $('<div>')
+				.attr({ id: 'craftBtns', 'data-legend': _('craft:') })
+				.css('opacity', 0);
 			cNeedsAppend = true;
 		}
 
 		var buySection = $('#buyBtns');
 		var bNeedsAppend = false;
 		if (buySection.length === 0 && $SM.get('game.buildings["trading post"]', true) > 0) {
-			buySection = $('<div>').attr({ 'id': 'buyBtns', 'data-legend': _('buy:') }).css('opacity', 0);
+			buySection = $('<div>')
+				.attr({ id: 'buyBtns', 'data-legend': _('buy:') })
+				.css('opacity', 0);
 			bNeedsAppend = true;
 		}
 
@@ -1145,7 +1224,11 @@ var Room = {
 						click: Room.build,
 						width: '80px',
 						ttPos: loc.children().length > 10 ? 'top right' : 'bottom right'
-					}).css('opacity', 0).attr('buildThing', k).appendTo(loc).animate({ opacity: 1 }, 300, 'linear');
+					})
+						.css('opacity', 0)
+						.attr('buildThing', k)
+						.appendTo(loc)
+						.animate({ opacity: 1 }, 300, 'linear');
 				}
 			} else {
 				// refresh the tooltip
@@ -1153,8 +1236,8 @@ var Room = {
 				costTooltip.empty();
 				var cost = craftable.cost();
 				for (var c in cost) {
-					$("<div>").addClass('row_key').text(_(c)).appendTo(costTooltip);
-					$("<div>").addClass('row_val').text(cost[c]).appendTo(costTooltip);
+					$('<div>').addClass('row_key').text(_(c)).appendTo(costTooltip);
+					$('<div>').addClass('row_val').text(cost[c]).appendTo(costTooltip);
 				}
 				if (max && !craftable.button.hasClass('disabled')) {
 					Notifications.notify(Room, craftable.maxMsg);
@@ -1179,7 +1262,11 @@ var Room = {
 						click: Room.buy,
 						width: '80px',
 						ttPos: buySection.children().length > 10 ? 'top right' : 'bottom right'
-					}).css('opacity', 0).attr('buildThing', g).appendTo(buySection).animate({ opacity: 1 }, 300, 'linear');
+					})
+						.css('opacity', 0)
+						.attr('buildThing', g)
+						.appendTo(buySection)
+						.animate({ opacity: 1 }, 300, 'linear');
 				}
 			} else {
 				// refresh the tooltip
@@ -1187,8 +1274,8 @@ var Room = {
 				goodsCostTooltip.empty();
 				var goodCost = good.cost();
 				for (var gc in goodCost) {
-					$("<div>").addClass('row_key').text(_(gc)).appendTo(goodsCostTooltip);
-					$("<div>").addClass('row_val').text(goodCost[gc]).appendTo(goodsCostTooltip);
+					$('<div>').addClass('row_key').text(_(gc)).appendTo(goodsCostTooltip);
+					$('<div>').addClass('row_val').text(goodCost[gc]).appendTo(goodsCostTooltip);
 				}
 				if (goodsMax && !good.button.hasClass('disabled')) {
 					Notifications.notify(Room, good.maxMsg);
@@ -1215,7 +1302,10 @@ var Room = {
 	compassTooltip: function (direction) {
 		var ttPos = $('div#resources').children().length > 10 ? 'top right' : 'bottom right';
 		var tt = $('<div>').addClass('tooltip ' + ttPos);
-		$('<div>').addClass('row_key').text(_('the compass points ' + direction)).appendTo(tt);
+		$('<div>')
+			.addClass('row_key')
+			.text(_('the compass points ' + direction))
+			.appendTo(tt);
 		tt.appendTo($('#row_compass'));
 	},
 

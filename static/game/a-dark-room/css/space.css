@@ -1,60 +1,60 @@
 @-ms-keyframes spin {
-	0% { 
+	0% {
 		-ms-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg); 
+		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
-		transform:rotate(0deg); 
+		transform: rotate(0deg);
 	}
-	100% { 
-		-ms-transform: rotate(360deg); 
-		-webkit-transform: rotate(360deg); 
+	100% {
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
 		-moz-transform: rotate(360deg);
-		transform:rotate(360deg); 
+		transform: rotate(360deg);
 	}
 }
 
 @-webkit-keyframes spin {
-	0% { 
+	0% {
 		-ms-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg); 
+		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
-		transform:rotate(0deg); 
+		transform: rotate(0deg);
 	}
-	100% { 
-		-ms-transform: rotate(360deg); 
-		-webkit-transform: rotate(360deg); 
+	100% {
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
 		-moz-transform: rotate(360deg);
-		transform:rotate(360deg); 
+		transform: rotate(360deg);
 	}
 }
 
 @-moz-keyframes spin {
-	0% { 
+	0% {
 		-ms-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg); 
+		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
-		transform:rotate(0deg); 
+		transform: rotate(0deg);
 	}
-	100% { 
-		-ms-transform: rotate(360deg); 
-		-webkit-transform: rotate(360deg); 
+	100% {
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
 		-moz-transform: rotate(360deg);
-		transform:rotate(360deg); 
+		transform: rotate(360deg);
 	}
 }
 
 @keyframes spin {
-	0% { 
+	0% {
 		-ms-transform: rotate(0deg);
-		-webkit-transform: rotate(0deg); 
+		-webkit-transform: rotate(0deg);
 		-moz-transform: rotate(0deg);
-		transform:rotate(0deg); 
+		transform: rotate(0deg);
 	}
-	100% { 
-		-ms-transform: rotate(360deg); 
-		-webkit-transform: rotate(360deg); 
+	100% {
+		-ms-transform: rotate(360deg);
+		-webkit-transform: rotate(360deg);
 		-moz-transform: rotate(360deg);
-		transform:rotate(360deg); 
+		transform: rotate(360deg);
 	}
 }
 
@@ -74,13 +74,15 @@
 	overflow: hidden;
 }
 
-#stars, #starsBack {
+#stars,
+#starsBack {
 	position: absolute;
 	z-index: -1;
 	left: 0px;
 }
 
-#stars > div, #starsBack > div {
+#stars > div,
+#starsBack > div {
 	position: relative;
 	height: 3000px;
 	width: 3000px;
@@ -134,14 +136,14 @@
 }
 
 .centerCont {
-	padding-top:10%;
+	padding-top: 10%;
 }
 
 .endGame {
-	font-size:48px;
-	color:#FFFFFF;
-	opacity:0;
-	position:relative;
+	font-size: 48px;
+	color: #ffffff;
+	opacity: 0;
+	position: relative;
 }
 
 .endGameOption {

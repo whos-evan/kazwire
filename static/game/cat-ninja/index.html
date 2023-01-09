@@ -5,14 +5,18 @@
 	</head>
 	<body dir="ltr">
 		<script>
-            var rootURL = window.location.origin;
+			var rootURL = window.location.origin;
 			var gameConfig = {
-				swfUrl:
-					rootURL + '/game/cat-ninja/cat-ninja.swf'
+				swfUrl: rootURL + '/game/cat-ninja/cat-ninja.swf'
 			};
 		</script>
 		<div id="waflashContainer">
-			<canvas class="waflashCanvas" style="width: 100%; height: 100vh;" id="canvas" tabindex="1"></canvas>
+			<canvas
+				class="waflashCanvas"
+				style="width: 100%; height: 100vh"
+				id="canvas"
+				tabindex="1"
+			></canvas>
 			<div id="waflashStatus" style="width: 100%; height: 100%; display: none">Playing...</div>
 			<script>
 				var ua = navigator.userAgent.toLowerCase();
