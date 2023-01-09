@@ -572,6 +572,14 @@
             "image": "cat-ninja.png",
             "developer": "Richman Stewart",
             "description": "Cat Ninja is one of the best new platform-adventure games online."
+        },
+        {
+            "name": "Kirka.io",
+            "id": "kirka",
+            "image": "kirka.png",
+            "developer": "AwesomeSam",
+            "description": "Kirka.io is a multiplayer online slow-paced competitive FPS game on the browser.",
+            "embedURL": "https://kirka.io/"
         }
     ]
 }
