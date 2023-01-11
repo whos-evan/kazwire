@@ -140,7 +140,9 @@
 		<div class="flex-grow mb-14 align-center">
 			{#if getGame()['embedURL'] != undefined}
 				<div id="game-frame" class="w-full h-full">
-					<Back />
+					<button class="absolute" on:click={minimize}>
+						<Back />
+					</button>
 					{#if maximized}
 						<button class="absolute" on:click={minimize}>
 							<Minimize />
@@ -152,7 +154,9 @@
 				<script src="/game/ruffle/ruffle.js"></script>
 				<div class="w-full h-full">
 					<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
-						<Back />
+						<button class="absolute" on:click={minimize}>
+							<Back />
+						</button>
 						{#if maximized}
 							<button class="absolute" on:click={minimize}>
 								<Minimize />
@@ -164,7 +168,9 @@
 			{:else}
 				<div class="flex w-full h-full">
 					<div id="game-frame" class="w-full h-full rounded-t-lg bg-black">
-						<Back />
+						<button class="absolute" on:click={minimize}>
+							<Back />
+						</button>
 						{#if maximized}
 							<button class="absolute" on:click={minimize}>
 								<Minimize />
