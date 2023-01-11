@@ -3,18 +3,21 @@
 	import gamesJson from '../routes/games/games.json';
 	import { onMount } from 'svelte';
 
-	let randomGame1 = gamesJson['games'][Math.floor(Math.random() * gamesJson['games'].length)];
-	let randomGame2 = gamesJson['games'][Math.floor(Math.random() * gamesJson['games'].length)];
-	// if they are the same game, reroll
-	while (randomGame1['id'] == randomGame2['id']) {
-		randomGame2 = gamesJson['games'][Math.floor(Math.random() * gamesJson['games'].length)];
-	}
-
-	let allGames = gamesJson['games'];
+	let randomGame1 = { name: 'Loading...', image: '', description: '', id: ''};
+	let randomGame2 = { name: 'Loading...', image: '', description: '', id: ''};
 	let lovedIds = [];
 	let lovedGames = [];
 
 	onMount(() => {
+		let allGames = gamesJson['games'];
+
+		randomGame1 = allGames[Math.floor(Math.random() * allGames.length)];
+		randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
+		// if they are the same game, reroll
+		while (randomGame1['id'] == randomGame2['id']) {
+			randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
+		}
+
 		let loves = localStorage.getItem('loved') || '';
 		lovedIds = loves.split(',').filter((item) => item !== '');
 		lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));

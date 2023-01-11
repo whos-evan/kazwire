@@ -13,6 +13,7 @@
 	import { onMount } from 'svelte';
 	import ColorThief from '../../components/color-thief.mjs';
 
+
 	let shine;
 
 	onMount(() => {
