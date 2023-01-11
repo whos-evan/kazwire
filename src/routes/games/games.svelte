@@ -55,6 +55,14 @@
 			.filter((game) => game['name'].toUpperCase().indexOf(search) > -1)
 			.sort((a, b) => a['id'] - b['id']);
 		loadMore();
+
+		if (search === '') {
+			popularGames = allGames
+				.filter((game) => game['popular'] === true)
+				.sort((a, b) => a['id'] - b['id']);
+		} else {
+			popularGames = []
+		}
 	}
 
 	function getCategory(game) {
