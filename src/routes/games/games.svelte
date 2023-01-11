@@ -55,6 +55,7 @@
 			.filter((game) => game['name'].toUpperCase().indexOf(search) > -1)
 			.sort((a, b) => a['id'] - b['id']);
 		loadMore();
+		loadMore();
 
 		if (search === '') {
 			popularGames = allGames
@@ -86,7 +87,8 @@
 	}
 
 	function handleScroll(event) {
-		if (window.scrollY + window.innerHeight >= document.body.scrollHeight) {
+		// if the user has scrolled to the bottom of the page
+		if (window.innerHeight + window.scrollY >= document.body.offsetHeight - document.body.offsetHeight / 10) {
 			loadMore();
 		}
 	}
