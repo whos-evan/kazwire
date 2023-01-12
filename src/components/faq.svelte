@@ -53,6 +53,14 @@
 				<br>
 				<span class="font-bold text-xs">{developers}</span>
 			</p>
+			<br>
+		</div>
+		<div class="text-xl row-span-4 ml-10 mr-10">
+			<p>
+				We would also like to thank the following people for contributing to the site:
+				<br>
+				<span class="font-bold text-sm">nev#0069 for providing domain(s), Blazer for creating content about the site, and to everyone who suggested games on our Discord. If you would like to see your name here just contribute to the site!</span>
+			</p>
 		</div>
 	</div>
 </div>
