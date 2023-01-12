@@ -1,585 +1,592 @@
 {
-	"games": [
-		{
-			"description": "2048 is a single-player sliding block puzzle game designed by Italian web developer Gabriele Cirulli.",
-			"developer": "Gabriele Cirulli",
-			"id": "2048",
-			"image": "2048.png",
-			"name": "2048",
-			"releaseDate": "?"
-		},
-		{
-			"description": "A Dark Room is a text-based adventure game where you have to survive in a dark room. The game is simple, but it's hard to master.",
-			"developer": "Dylan",
-			"id": "a-dark-room",
-			"image": "a-dark-room.png",
-			"name": "A Dark Room"
-		},
-		{
-			"description": "A hybrid of Mastermind and the Android pattern lock. A game you gonna love to hate.",
-			"developer": "maxwellito",
-			"id": "breaklock",
-			"image": "breaklock.png",
-			"name": "Breaklock"
-		},
-		{
-			"description": "A real-time, real-fun multiplayer game. Play together in teams, upgrade your mighty battleship and destroy the enemy base.",
-			"developer": "Electronauts",
-			"embedURL": "https://battleboats.io/",
-			"id": "battle-boats",
-			"image": "battle-boats.png",
-			"name": "Battleboats.io"
-		},
-		{
-			"description": "Agar.io is a massively multiplayer online action game.",
-			"developer": "Matheus Valadares",
-			"embedURL": "https://agar.io/",
-			"id": "agar",
-			"image": "agar.png",
-			"name": "agar.io",
-			"releaseDate": "?"
-		},
-		{
-			"description": "An easy to get into fully moddable First Person Shooter with advanced movement mechanics.",
-			"developer": "Yendis Entertainment",
-			"embedURL": "https://krunker.io/",
-			"id": "krunker",
-			"image": "krunker.png",
-			"name": "Krunker.io",
-			"releaseDate": "?"
-		},
-		{
-			"description": "An idle version of classic Breakout. Use multiple balls of different strength, speed and special abilities to smash a million bricks!",
-			"developer": "Kodiqi",
-			"embedURL": "https://idlebreakout.io/",
-			"id": "idle-breakout",
-			"image": "idle-breakout.png",
-			"name": "Idle Breakout"
-		},
-		{
-			"description": "Basketball Stars is a fun and addictive game where you have to control a basketball player and score as many points as you can. The game is simple, but it's hard to master.",
-			"developer": "Miniclip",
-			"id": "basketball-stars",
-			"image": "basketball-stars.png",
-			"name": "Basketball Stars"
-		},
-		{
-			"description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi.",
-			"developer": "Ninja Kiwi",
-			"emulator": "ruffle",
-			"id": "bloons-td2",
-			"image": "bloons-td2.webp",
-			"name": "Bloons Tower Defense 2",
-			"releaseDate": "?"
-		},
-		{
-			"description": "Bowman is an archery game where you and an opponent take shots at each other. You win when you've hit the opponent fatally.",
-			"developer": "Unknown",
-			"emulator": "ruffle",
-			"id": "bow-man",
-			"image": "bow-man.png",
-			"name": "Bow Man"
-		},
-		{
-			"description": "Build Royale.io is a 2D shooter IO game where you must build and loot to upgrade your weapons to defeat all your enemies.",
-			"developer": "Rivet Gaming",
-			"embedURL": "https://buildroyale.io/",
-			"id": "buildroyale",
-			"image": "buildroyale.png",
-			"name": "BuildRoyale.io"
-		},
-		{
-			"description": "COLORON is a fun and well-designed platformer. The goal is to match the color of the tower to the bouncing ball. Keep it going for as long as you can, just don't get mad.",
-			"developer": "Greg Hovanesyan",
-			"id": "coloron",
-			"image": "coloron.png",
-			"name": "Coloron"
-		},
-		{
-			"description": "Combines.io is a crazy blend of action and farming where you drive a combine, harvest crops and destroy other players in heated online battles.",
-			"developer": "Yendis Entertainment",
-			"embedURL": "https://combines.io/",
-			"id": "combines",
-			"image": "combines.png",
-			"name": "Combines.io",
-			"releaseDate": "?"
-		},
-		{
-			"description": "Cookie Clicker is a free-to-play incremental clicker game developed by Orteil.",
-			"developer": "Orteil",
-			"id": "cookie-clicker",
-			"image": "cookie-clicker.png",
-			"name": "Cookie Clicker",
-			"releaseDate": "?"
-		},
-		{
-			"description": "Core Ball is a fun and addictive game where you have to control a ball and avoid the obstacles. The game is simple, but it's hard to master.",
-			"developer": "randomyang",
-			"id": "core-ball",
-			"image": "core-ball.png",
-			"name": "Core Ball"
-		},
-		{
-			"description": "Crazy Taxi is a series of racing video games that was developed by Hitmaker and published by Sega.",
-			"developer": "Hitmaker",
-			"emulator": "ruffle",
-			"id": "crazy-taxi",
-			"image": "crazy-taxi.png",
-			"name": "Crazy Taxi",
-			"releaseDate": "?"
-		},
-		{
-			"description": "Cubefield is a simple but addictive game, there are only two controls \u2013 left and right. Use the arrow keys on your keyboard to guide your ship through an endless field of ominous looking coloured cubes \u2013 if you hit one, it\u2019s game over.",
-			"developer": "Nils Asejevs",
-			"id": "cubefield",
-			"image": "cubefield.png",
-			"name": "Cubefield"
-		},
-		{
-			"description": "Diep.io is a multiplayer action game where players control tanks and earn points by destroying shapes and killing other players in a 2D arena.",
-			"developer": "Matheus Valadares",
-			"embedURL": "https://diep.io/",
-			"id": "diep",
-			"image": "diep.png",
-			"name": "Diep.io"
-		},
-		{
-			"description": "Drift Hunters is a fun and addictive game where you have to control a car and drift around the track. The game is simple, but it's hard to master.",
-			"developer": "Kiz10",
-			"id": "drift-hunters",
-			"image": "drift-hunters.png",
-			"name": "Drift Hunters",
-			"popular": true
-		},
-		{
-			"description": "Duck Life is a game series where you train your duck for races and/or battles.",
-			"developer": "Wix Games",
-			"emulator": "ruffle",
-			"id": "ducklife1",
-			"image": "ducklife1.png",
-			"name": "Duck Life 1",
-			"releaseDate": "?"
-		},
-		{
-			"description": "Duck Life is a game series where you train your duck for races and/or battles.",
-			"developer": "Wix Games",
-			"emulator": "ruffle",
-			"id": "ducklife2",
-			"image": "ducklife2.png",
-			"name": "Duck Life 2",
-			"releaseDate": "?"
-		},
-		{
-			"description": "Duck Life is a game series where you train your duck for races and/or battles.",
-			"developer": "Wix Games",
-			"emulator": "ruffle",
-			"id": "ducklife3-evolution",
-			"image": "ducklife3-evolution.png",
-			"name": "Duck Life 3 - Evolution",
-			"releaseDate": "?"
-		},
-		{
-			"description": "Duck Life is a game series where you train your duck for races and/or battles.",
-			"developer": "Wix Games",
-			"emulator": "ruffle",
-			"id": "ducklife4",
-			"image": "ducklife4.png",
-			"name": "Duck Life 4",
-			"releaseDate": "?",
-			"popular": true
-		},
-		{
-			"description": "Fight to survive in this epic multiplayer battle royale build battle where only the last player standing wins and achieves the long-awaited master victory.",
-			"developer": "JustPlay.LOL",
-			"embedURL": "https://1v1.lol/",
-			"id": "1v1-lol",
-			"image": "1v1-lol.png",
-			"name": "1v1.lol"
-		},
-		{
-			"description": "Fireboy and Watergirl: Forest Temple is a fun and addictive game where you have to control two characters at the same time. The game is simple, but it's hard to master.",
-			"developer": "IceGirl",
-			"id": "fireboy-and-watergirl-forest-temple",
-			"image": "fireboy-and-watergirl-forest-temple.png",
-			"name": "Fireboy and Watergirl Forest Temple"
-		},
-		{
-			"description": "Fortnite is a co-op sandbox survival game developed by Epic Games and People Can Fly, with the former publishing it.",
-			"developer": "Epic Games",
-			"embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=46bfab06-d864-465d-9e56-2d9e45cdee0a&utm_source=shortcut",
-			"id": "fortnite",
-			"image": "fortnite.png",
-			"name": "Fortnite",
-			"releaseDate": "2017-07-25"
-		},
-		{
-			"description": "Friday Night Funkin' Vs Ex is a mod of Friday Night Funkin' that adds a new character, Ex Boyfriend, and a new week, Ex Week.",
-			"developer": "NinjaMuffin99",
-			"id": "fnf-vs-ex",
-			"image": "fnf-vs-ex.png",
-			"name": "Friday Night Funkin: Vs Ex"
-		},
-		{
-			"description": "Frogger is either single-player or two players alternating. The frog starts at the bottom of the screen, which contains a horizontal road occupied by speeding cars, trucks, and bulldozers.",
-			"developer": "Konami",
-			"emulator": "ruffle",
-			"id": "frogger",
-			"image": "frogger.png",
-			"name": "Frogger",
-			"releaseDate": "?"
-		},
-		{
-			"description": "GeForce NOW is a cloud gaming service developed by Nvidia.",
-			"developer": "Nvidia",
-			"embedURL": "https://play.geforcenow.com/",
-			"id": "geforce-now",
-			"image": "geforce-now.png",
-			"name": "GeForce NOW",
-			"releaseDate": "?"
-		},
-		{
-			"description": "In Basket Random game, try to score a basket by using only one key with different variations from each other!",
-			"developer": "Unknown",
-			"id": "basket-random",
-			"image": "basket-random.png",
-			"name": "Basket Random"
-		},
-		{
-			"description": "JKLM.fun is a fun and fast-paced multiplayer game where you have to press the right keys at the right time to win.",
-			"developer": "Sparklin Labs",
-			"embedURL": "https://jklm.fun/",
-			"id": "jklm",
-			"image": "jklm.png",
-			"name": "JKLM.fun",
-			"releaseDate": "?"
-		},
-		{
-			"description": "Let's travel with the cartoon character as high as possible!",
-			"developer": "Doodle Mobile",
-			"id": "doodle-jump",
-			"image": "doodle-jump.png",
-			"name": "Doodle Jump"
-		},
-		{
-			"description": "Mope.io is a game in which you play as an animal who eats food and water to survive.",
-			"developer": "Stan Tatarnykov",
-			"embedURL": "https://mope.io/",
-			"id": "mope",
-			"image": "mope.png",
-			"name": "Mope.io"
-		},
-		{
-			"description": "Papa's Pizzeria is the first game in the Papa Louie time-management restaurant series, and was officially released on August 7, 2007.",
-			"developer": "Flipline Studios'",
-			"emulator": "ruffle",
-			"id": "papas-pizzeria",
-			"image": "papas-pizzeria.jpg",
-			"name": "Papas Pizzeria",
-			"releaseDate": "2007-08-07"
-		},
-		{
-			"description": "Pokemon Stadium 2 is a strategy video game developed by Nintendo EAD and published by Nintendo for the Nintendo 64. It features all 251 Pok\u00e9mon from the first and second generations of the franchise.",
-			"developer": "Nintendo",
-			"emulator": "emulatorjs",
-			"id": "pokemon-stadium-2",
-			"image": "pokemon-stadium-2.png",
-			"name": "Pokemon Stadium 2"
-		},
-		{
-			"description": "REPULS is a fast-paced multiplayer FPS game featuring various maps, weapons, and game modes. The pace and style of the game make it perfect for fans of the Halo series.",
-			"developer": "Docski",
-			"embedURL": "https://repuls.io/",
-			"id": "repuls",
-			"image": "repuls.png",
-			"name": "Repuls.io"
-		},
-		{
-			"description": "Race at lightning speeds across seven classic zones as Sonic the Hedgehog.",
-			"developer": "Sega",
-			"emulator": "emulatorjs",
-			"id": "sonic-original",
-			"image": "sonic-original.png",
-			"name": "Sonic The Hedgehog (Original)"
-		},
-		{
-			"description": "Retro Bowl emulates the gameplay of American football and was heavily influenced by the Tecmo Bowl series.",
-			"developer": "New Star Games",
-			"id": "retro-bowl",
-			"image": "retro-bowl.png",
-			"name": "Retro Bowl",
-			"popular": true
-		},
-		{
-			"description": "Ride your bike through the bumpy and challenging tracks. Do not hit the ground and show your skill!",
-			"developer": "Third Soul",
-			"id": "bike-mania",
-			"image": "bike-mania.png",
-			"name": "Bike Mania"
-		},
-		{
-			"description": "Rooftop Snipers is a chaotic two-button two-player sniper game.",
-			"developer": "Michael Eichler",
-			"id": "rooftop-snipers",
-			"image": "rooftop-snipers.png",
-			"name": "Rooftop Snipers"
-		},
-		{
-			"description": "Run 3 is the first Run game to introduce a storyline, mainly told through cutscenes.",
-			"developer": "Joseph Cloutier",
-			"id": "run-3",
-			"image": "run-3.png",
-			"name": "Run 3",
-			"releaseDate": "2014-06-05"
-		},
-		{
-			"description": "Slope 2, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way.",
-			"developer": "Rob Kay",
-			"id": "slope-2",
-			"image": "slope-2.png",
-			"name": "Slope 2"
-		},
-		{
-			"description": "Slope, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way.",
-			"developer": "Rob Kay",
-			"id": "slope",
-			"image": "slope.png",
-			"name": "Slope"
-		},
-		{
-			"description": "Sonic 1 is a platform video game developed by Sonic Team and published by Sega.",
-			"developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
-			"id": "sonic-1",
-			"image": "sonic-1.png",
-			"name": "Sonic 1"
-		},
-		{
-			"description": "Sonic 2 is a platform video game developed by Sonic Team and published by Sega.",
-			"developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
-			"id": "sonic-2",
-			"image": "sonic-2.png",
-			"name": "Sonic 2"
-		},
-		{
-			"description": "Subway Surfers is an endless runner mobile game co-developed by Kiloo, a private company based in Denmark and SYBO Games.",
-			"developer": "Kiloo",
-			"id": "subway-surfers",
-			"image": "subway-surfers.png",
-			"name": "Subway Surfers"
-		},
-		{
-			"description": "Super Mario 64 is a 1996 platform game for the Nintendo 64, developed by Nintendo EAD and published by Nintendo. The first Super Mario game to feature 3D gameplay!",
-			"developer": "Nintendo",
-			"emulator": "emulatorjs",
-			"id": "super-mario-64",
-			"image": "super-mario-64.png",
-			"name": "Super Mario 64"
-		},
-		{
-			"description": "Team Fortress 2 is a 2007 multiplayer first-person shooter game developed and published by Valve Corporation.",
-			"developer": "Valve",
-			"embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=40512534-ad27-4a12-afa7-6fc412288072&utm_source=shortcut",
-			"id": "tf2",
-			"image": "tf2.png",
-			"name": "Team Fortress 2"
-		},
-		{
-			"description": "Tetris, video game created by Russian designer Alexey Pajitnov in 1985 that allows players to rotate falling blocks strategically to clear levels.",
-			"developer": "Larprad",
-			"id": "tetris",
-			"image": "tetris.png",
-			"name": "Tetris"
-		},
-		{
-			"description": "The Achromats have taken the worlds color offline! Raid their colorless lair and vanquish them all, restoring the world to it's technicolor glory.",
-			"developer": "Ryan Malm",
-			"id": "chroma",
-			"image": "chroma.png",
-			"name": "The Chroma Incident"
-		},
-		{
-			"description": "The Dough-Nutter 4000 has malfunctioned! It's up to you, Donut Boy, to rescue the employees and donuts that were scattered around town from the resulting explosion.",
-			"developer": "Dahoh Bolesta",
-			"id": "donut-boy",
-			"image": "donut-boy.png",
-			"name": "Donut Boy"
-		},
-		{
-			"description": "The goal of the game is to stack the moving blocks over each other as high as you can.",
-			"developer": "meshde",
-			"id": "stack",
-			"image": "stack.png",
-			"name": "Stack"
-		},
-		{
-			"description": "Wings.io is a Massive multiplayer online game. Control your plane and shoot down other players!",
-			"developer": "Profusion Studios",
-			"embedURL": "https://wings.io/",
-			"id": "wings",
-			"image": "wings.png",
-			"name": "Wings.io"
-		},
-		{
-			"description": "Your goal is become the biggest and longest snake in the world.If your head touches another player, you will explode and then it's game over. But if others run into YOU, then THEY will explode, and you can eat their remains!",
-			"developer": "Sang Mobile",
-			"embedURL": "https://supersnake.io",
-			"id": "supersnake",
-			"image": "supersnake.png",
-			"name": "SuperSnake.io"
-		},
-		{
-			"name": "Sparebeat",
-			"id": "sparebeat",
-			"image": "sparebeat.png",
-			"developer": "suzukibakery",
-			"description": "A fun 4K rhythm game desinged to be played in browsers",
-			"embedURL": "https://sparebeat.com/"
-		},
-		{
-			"name": "Portal",
-			"id": "portal",
-			"image": "portal.jpg",
-			"developer": "Valve",
-			"description": "Portal is a new single player game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
-			"embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=df05c1d5-60a1-4969-a73a-2fef74a8dde8&utm_source=shortcut"
-		},
-		{
-			"name": "Portal 2",
-			"id": "portal-2",
-			"image": "portal-2.jpg",
-			"developer": "Valve",
-			"description": "Portal 2 is a new single player and multiplayer game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
-			"embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=749ab5aa-eded-4616-965e-fae5f9b6c7f1&utm_source=shortcut"
-		},
-		{
-			"name": "Tube Jumpers",
-			"id": "tube-jumpers",
-			"image": "tube-jumpers.png",
-			"developer": "Dahoh Bolesta",
-			"description": "Tube Jumpers is a local multiplayer that can be played with up to 4 people. In the game you have to make sure to stay on your floating tube."
-		},
-		{
-			"name": "Jetpack Joyride",
-			"id": "jetpack-joyride",
-			"image": "jetpack-joyride.png",
-			"developer": "Halfbrick Studios",
-			"description": "Jetpack Joyride is a 2011 side-scrolling endless runner action video game developed by Halfbrick Studios and published by Halfbrick Studios."
-		},
-		{
-			"name": "World's Hardest Game",
-			"id": "worlds-hardest-game",
-			"image": "worlds-hardest-game.png",
-			"developer": "Stephen Critoph",
-			"description": "The World's Hardest Game is an addictive puzzle game consisting of 30 incredibly challenging levels."
-		},
-		{
-			"name": "Temple Run 2",
-			"id": "temple-run-2",
-			"image": "temple-run-2.png",
-			"developer": "Imangi Studios",
-			"description": "Temple Run 2 is an endless running video game developed and published by Imangi Studios."
-		},
-		{
-			"name": "Fruit Ninja",
-			"id": "fruit-ninja",
-			"image": "fruit-ninja.png",
-			"developer": "Halfbrick Studios",
-			"description": "In Fruit Ninja the player must slice fruit that is thrown into the air by swiping the device's touch screen with their finger or the player's arms and hands, and must not slice bombs."
-		},
-		{
-			"name": "BitLife",
-			"id": "bitlife",
-			"image": "bitlife.png",
-			"developer": "CandyWriter",
-			"description": "BitLife, is a mobile life simulator game.",
-			"popular": true
-		},
-		{
-			"name": "Crossy Road",
-			"id": "crossy-road",
-			"image": "crossy-road.png",
-			"developer": "Hipster Whale",
-			"description": "Crossy Road is the 8-bit endless arcade hopper that started it all. Collect custom characters and navigate freeways, railroads, rivers and much more."
-		},
-		{
-			"name": "Giant Hamster Run",
-			"id": "giant-hamster-run",
-			"image": "giant-hamster-run.png",
-			"developer": "FLGames",
-			"description": "Tiny the Hamster as he stampedes through the city is this classic endless-runner."
-		},
-		{
-			"name": "Impossible Quiz",
-			"id": "impossible-quiz",
-			"image": "impossible-quiz.png",
-			"developer": "Glenn Rhodes",
-			"description": "The Impossible Quiz is an online trivia quiz that features only very hard questions.",
-			"emulator": "ruffle"
-		},
-		{
-			"name": "Dadish",
-			"id": "dadish",
-			"image": "dadish.png",
-			"developer": "Thomas K Young and CatCup Games",
-			"description": "Dadish is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch."
-		},
-		{
-			"name": "Tiny Fishing",
-			"id": "tiny-fishing",
-			"image": "tiny-fishing.png",
-			"developer": "appdz and Mad Buffer",
-			"description": "Catch fish and sell them for money to buy upgrades and new fishing rods!"
-		},
-		{
-			"name": "Geometry Dash (Scratch)",
-			"id": "geometry-dash",
-			"image": "geometry-dash.png",
-			"developer": "Robert Topala and RobTop Games",
-			"description": "Geometry Dash is a rhythm-based platform game developed and published by RobTop Games."
-		},
-		{
-			"name": "Dadish 2",
-			"id": "dadish-2",
-			"image": "dadish-2.png",
-			"developer": "Thomas K Young and CatCup Games",
-			"description": "Help reunite Dadish with his missing kids in this charming and challenging platforming adventure."
-		},
-		{
-			"name": "People Playground",
-			"id": "people-playground",
-			"image": "people-playground.png",
-			"developer": "Studio Minus",
-			"description": "Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls. This game is for people who enjoy throwing around ragdolls.",
-			"embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=17f2bd78-5423-4946-afc4-08f92380ef97&utm_source=shortcut"
-		},
-		{
-			"name": "Krew.io",
-			"id": "krew",
-			"image": "krew.jpg",
-			"developer": "m0de",
-			"description": "A fast paced pirate game where you compete against other players for treasure.",
-			"embedURL": "https://krew.io"
-		},
-		{
-			"name": "Bloxorz",
-			"id": "bloxorz",
-			"image": "bloxorz.png",
-			"developer": "Damien Clarke and CoolMathGames.com",
-			"description": "Bloxorz is a puzzle game, very challenging. It is a great block awesome game that gets harder at each progressive level."
-		},
-		{
-			"name": "Cat Ninja the Quest for the Magical Energy Crystals",
-			"id": "cat-ninja",
-			"image": "cat-ninja.png",
-			"developer": "Richman Stewart",
-			"description": "Cat Ninja is one of the best new platform-adventure games online."
-		},
-		{
-			"name": "Kirka.io",
-			"id": "kirka",
-			"image": "kirka.png",
-			"developer": "AwesomeSam",
-			"description": "Kirka.io is a multiplayer online slow-paced competitive FPS game on the browser.",
-			"embedURL": "https://kirka.io/"
-		}
-	]
+    "games": [
+        {
+            "description": "2048 is a single-player sliding block puzzle game designed by Italian web developer Gabriele Cirulli.",
+            "developer": "Gabriele Cirulli",
+            "id": "2048",
+            "image": "2048.png",
+            "name": "2048",
+            "releaseDate": "?"
+        },
+        {
+            "description": "A Dark Room is a text-based adventure game where you have to survive in a dark room. The game is simple, but it's hard to master.",
+            "developer": "Dylan",
+            "id": "a-dark-room",
+            "image": "a-dark-room.png",
+            "name": "A Dark Room"
+        },
+        {
+            "description": "A hybrid of Mastermind and the Android pattern lock. A game you gonna love to hate.",
+            "developer": "maxwellito",
+            "id": "breaklock",
+            "image": "breaklock.png",
+            "name": "Breaklock"
+        },
+        {
+            "description": "A real-time, real-fun multiplayer game. Play together in teams, upgrade your mighty battleship and destroy the enemy base.",
+            "developer": "Electronauts",
+            "embedURL": "https://battleboats.io/",
+            "id": "battle-boats",
+            "image": "battle-boats.png",
+            "name": "Battleboats.io"
+        },
+        {
+            "description": "Agar.io is a massively multiplayer online action game.",
+            "developer": "Matheus Valadares",
+            "embedURL": "https://agar.io/",
+            "id": "agar",
+            "image": "agar.png",
+            "name": "agar.io",
+            "releaseDate": "?"
+        },
+        {
+            "description": "An easy to get into fully moddable First Person Shooter with advanced movement mechanics.",
+            "developer": "Yendis Entertainment",
+            "embedURL": "https://krunker.io/",
+            "id": "krunker",
+            "image": "krunker.png",
+            "name": "Krunker.io",
+            "releaseDate": "?"
+        },
+        {
+            "description": "An idle version of classic Breakout. Use multiple balls of different strength, speed and special abilities to smash a million bricks!",
+            "developer": "Kodiqi",
+            "embedURL": "https://idlebreakout.io/",
+            "id": "idle-breakout",
+            "image": "idle-breakout.png",
+            "name": "Idle Breakout"
+        },
+        {
+            "description": "Basketball Stars is a fun and addictive game where you have to control a basketball player and score as many points as you can. The game is simple, but it's hard to master.",
+            "developer": "Miniclip",
+            "id": "basketball-stars",
+            "image": "basketball-stars.png",
+            "name": "Basketball Stars"
+        },
+        {
+            "description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi.",
+            "developer": "Ninja Kiwi",
+            "emulator": "ruffle",
+            "id": "bloons-td2",
+            "image": "bloons-td2.webp",
+            "name": "Bloons Tower Defense 2",
+            "releaseDate": "?"
+        },
+        {
+            "description": "Bowman is an archery game where you and an opponent take shots at each other. You win when you've hit the opponent fatally.",
+            "developer": "Unknown",
+            "emulator": "ruffle",
+            "id": "bow-man",
+            "image": "bow-man.png",
+            "name": "Bow Man"
+        },
+        {
+            "description": "Build Royale.io is a 2D shooter IO game where you must build and loot to upgrade your weapons to defeat all your enemies.",
+            "developer": "Rivet Gaming",
+            "embedURL": "https://buildroyale.io/",
+            "id": "buildroyale",
+            "image": "buildroyale.png",
+            "name": "BuildRoyale.io"
+        },
+        {
+            "description": "COLORON is a fun and well-designed platformer. The goal is to match the color of the tower to the bouncing ball. Keep it going for as long as you can, just don't get mad.",
+            "developer": "Greg Hovanesyan",
+            "id": "coloron",
+            "image": "coloron.png",
+            "name": "Coloron"
+        },
+        {
+            "description": "Combines.io is a crazy blend of action and farming where you drive a combine, harvest crops and destroy other players in heated online battles.",
+            "developer": "Yendis Entertainment",
+            "embedURL": "https://combines.io/",
+            "id": "combines",
+            "image": "combines.png",
+            "name": "Combines.io",
+            "releaseDate": "?"
+        },
+        {
+            "description": "Cookie Clicker is a free-to-play incremental clicker game developed by Orteil.",
+            "developer": "Orteil",
+            "id": "cookie-clicker",
+            "image": "cookie-clicker.png",
+            "name": "Cookie Clicker",
+            "releaseDate": "?"
+        },
+        {
+            "description": "Core Ball is a fun and addictive game where you have to control a ball and avoid the obstacles. The game is simple, but it's hard to master.",
+            "developer": "randomyang",
+            "id": "core-ball",
+            "image": "core-ball.png",
+            "name": "Core Ball"
+        },
+        {
+            "description": "Crazy Taxi is a series of racing video games that was developed by Hitmaker and published by Sega.",
+            "developer": "Hitmaker",
+            "emulator": "ruffle",
+            "id": "crazy-taxi",
+            "image": "crazy-taxi.png",
+            "name": "Crazy Taxi",
+            "releaseDate": "?"
+        },
+        {
+            "description": "Cubefield is a simple but addictive game, there are only two controls \u2013 left and right. Use the arrow keys on your keyboard to guide your ship through an endless field of ominous looking coloured cubes \u2013 if you hit one, it\u2019s game over.",
+            "developer": "Nils Asejevs",
+            "id": "cubefield",
+            "image": "cubefield.png",
+            "name": "Cubefield"
+        },
+        {
+            "description": "Diep.io is a multiplayer action game where players control tanks and earn points by destroying shapes and killing other players in a 2D arena.",
+            "developer": "Matheus Valadares",
+            "embedURL": "https://diep.io/",
+            "id": "diep",
+            "image": "diep.png",
+            "name": "Diep.io"
+        },
+        {
+            "description": "Drift Hunters is a fun and addictive game where you have to control a car and drift around the track. The game is simple, but it's hard to master.",
+            "developer": "Kiz10",
+            "id": "drift-hunters",
+            "image": "drift-hunters.png",
+            "name": "Drift Hunters",
+            "popular": true
+        },
+        {
+            "description": "Duck Life is a game series where you train your duck for races and/or battles.",
+            "developer": "Wix Games",
+            "emulator": "ruffle",
+            "id": "ducklife1",
+            "image": "ducklife1.png",
+            "name": "Duck Life 1",
+            "releaseDate": "?"
+        },
+        {
+            "description": "Duck Life is a game series where you train your duck for races and/or battles.",
+            "developer": "Wix Games",
+            "emulator": "ruffle",
+            "id": "ducklife2",
+            "image": "ducklife2.png",
+            "name": "Duck Life 2",
+            "releaseDate": "?"
+        },
+        {
+            "description": "Duck Life is a game series where you train your duck for races and/or battles.",
+            "developer": "Wix Games",
+            "emulator": "ruffle",
+            "id": "ducklife3-evolution",
+            "image": "ducklife3-evolution.png",
+            "name": "Duck Life 3 - Evolution",
+            "releaseDate": "?"
+        },
+        {
+            "description": "Duck Life is a game series where you train your duck for races and/or battles.",
+            "developer": "Wix Games",
+            "emulator": "ruffle",
+            "id": "ducklife4",
+            "image": "ducklife4.png",
+            "name": "Duck Life 4",
+            "releaseDate": "?",
+            "popular": true
+        },
+        {
+            "description": "Fight to survive in this epic multiplayer battle royale build battle where only the last player standing wins and achieves the long-awaited master victory.",
+            "developer": "JustPlay.LOL",
+            "embedURL": "https://1v1.lol/",
+            "id": "1v1-lol",
+            "image": "1v1-lol.png",
+            "name": "1v1.lol"
+        },
+        {
+            "description": "Fireboy and Watergirl: Forest Temple is a fun and addictive game where you have to control two characters at the same time. The game is simple, but it's hard to master.",
+            "developer": "IceGirl",
+            "id": "fireboy-and-watergirl-forest-temple",
+            "image": "fireboy-and-watergirl-forest-temple.png",
+            "name": "Fireboy and Watergirl Forest Temple"
+        },
+        {
+            "description": "Fortnite is a co-op sandbox survival game developed by Epic Games and People Can Fly, with the former publishing it.",
+            "developer": "Epic Games",
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=46bfab06-d864-465d-9e56-2d9e45cdee0a&utm_source=shortcut",
+            "id": "fortnite",
+            "image": "fortnite.png",
+            "name": "Fortnite",
+            "releaseDate": "2017-07-25"
+        },
+        {
+            "description": "Friday Night Funkin' Vs Ex is a mod of Friday Night Funkin' that adds a new character, Ex Boyfriend, and a new week, Ex Week.",
+            "developer": "NinjaMuffin99",
+            "id": "fnf-vs-ex",
+            "image": "fnf-vs-ex.png",
+            "name": "Friday Night Funkin: Vs Ex"
+        },
+        {
+            "description": "Frogger is either single-player or two players alternating. The frog starts at the bottom of the screen, which contains a horizontal road occupied by speeding cars, trucks, and bulldozers.",
+            "developer": "Konami",
+            "emulator": "ruffle",
+            "id": "frogger",
+            "image": "frogger.png",
+            "name": "Frogger",
+            "releaseDate": "?"
+        },
+        {
+            "description": "GeForce NOW is a cloud gaming service developed by Nvidia.",
+            "developer": "Nvidia",
+            "embedURL": "https://play.geforcenow.com/",
+            "id": "geforce-now",
+            "image": "geforce-now.png",
+            "name": "GeForce NOW",
+            "releaseDate": "?"
+        },
+        {
+            "description": "In Basket Random game, try to score a basket by using only one key with different variations from each other!",
+            "developer": "Unknown",
+            "id": "basket-random",
+            "image": "basket-random.png",
+            "name": "Basket Random"
+        },
+        {
+            "description": "JKLM.fun is a fun and fast-paced multiplayer game where you have to press the right keys at the right time to win.",
+            "developer": "Sparklin Labs",
+            "embedURL": "https://jklm.fun/",
+            "id": "jklm",
+            "image": "jklm.png",
+            "name": "JKLM.fun",
+            "releaseDate": "?"
+        },
+        {
+            "description": "Let's travel with the cartoon character as high as possible!",
+            "developer": "Doodle Mobile",
+            "id": "doodle-jump",
+            "image": "doodle-jump.png",
+            "name": "Doodle Jump"
+        },
+        {
+            "description": "Mope.io is a game in which you play as an animal who eats food and water to survive.",
+            "developer": "Stan Tatarnykov",
+            "embedURL": "https://mope.io/",
+            "id": "mope",
+            "image": "mope.png",
+            "name": "Mope.io"
+        },
+        {
+            "description": "Papa's Pizzeria is the first game in the Papa Louie time-management restaurant series, and was officially released on August 7, 2007.",
+            "developer": "Flipline Studios'",
+            "emulator": "ruffle",
+            "id": "papas-pizzeria",
+            "image": "papas-pizzeria.jpg",
+            "name": "Papas Pizzeria",
+            "releaseDate": "2007-08-07"
+        },
+        {
+            "description": "Pokemon Stadium 2 is a strategy video game developed by Nintendo EAD and published by Nintendo for the Nintendo 64. It features all 251 Pok\u00e9mon from the first and second generations of the franchise.",
+            "developer": "Nintendo",
+            "emulator": "emulatorjs",
+            "id": "pokemon-stadium-2",
+            "image": "pokemon-stadium-2.png",
+            "name": "Pokemon Stadium 2"
+        },
+        {
+            "description": "REPULS is a fast-paced multiplayer FPS game featuring various maps, weapons, and game modes. The pace and style of the game make it perfect for fans of the Halo series.",
+            "developer": "Docski",
+            "embedURL": "https://repuls.io/",
+            "id": "repuls",
+            "image": "repuls.png",
+            "name": "Repuls.io"
+        },
+        {
+            "description": "Race at lightning speeds across seven classic zones as Sonic the Hedgehog.",
+            "developer": "Sega",
+            "emulator": "emulatorjs",
+            "id": "sonic-original",
+            "image": "sonic-original.png",
+            "name": "Sonic The Hedgehog (Original)"
+        },
+        {
+            "description": "Retro Bowl emulates the gameplay of American football and was heavily influenced by the Tecmo Bowl series.",
+            "developer": "New Star Games",
+            "id": "retro-bowl",
+            "image": "retro-bowl.png",
+            "name": "Retro Bowl",
+            "popular": true
+        },
+        {
+            "description": "Ride your bike through the bumpy and challenging tracks. Do not hit the ground and show your skill!",
+            "developer": "Third Soul",
+            "id": "bike-mania",
+            "image": "bike-mania.png",
+            "name": "Bike Mania"
+        },
+        {
+            "description": "Rooftop Snipers is a chaotic two-button two-player sniper game.",
+            "developer": "Michael Eichler",
+            "id": "rooftop-snipers",
+            "image": "rooftop-snipers.png",
+            "name": "Rooftop Snipers"
+        },
+        {
+            "description": "Run 3 is the first Run game to introduce a storyline, mainly told through cutscenes.",
+            "developer": "Joseph Cloutier",
+            "id": "run-3",
+            "image": "run-3.png",
+            "name": "Run 3",
+            "releaseDate": "2014-06-05"
+        },
+        {
+            "description": "Slope 2, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way.",
+            "developer": "Rob Kay",
+            "id": "slope-2",
+            "image": "slope-2.png",
+            "name": "Slope 2"
+        },
+        {
+            "description": "Slope, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way.",
+            "developer": "Rob Kay",
+            "id": "slope",
+            "image": "slope.png",
+            "name": "Slope"
+        },
+        {
+            "description": "Sonic 1 is a platform video game developed by Sonic Team and published by Sega.",
+            "developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
+            "id": "sonic-1",
+            "image": "sonic-1.png",
+            "name": "Sonic 1"
+        },
+        {
+            "description": "Sonic 2 is a platform video game developed by Sonic Team and published by Sega.",
+            "developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
+            "id": "sonic-2",
+            "image": "sonic-2.png",
+            "name": "Sonic 2"
+        },
+        {
+            "description": "Subway Surfers is an endless runner mobile game co-developed by Kiloo, a private company based in Denmark and SYBO Games.",
+            "developer": "Kiloo",
+            "id": "subway-surfers",
+            "image": "subway-surfers.png",
+            "name": "Subway Surfers"
+        },
+        {
+            "description": "Super Mario 64 is a 1996 platform game for the Nintendo 64, developed by Nintendo EAD and published by Nintendo. The first Super Mario game to feature 3D gameplay!",
+            "developer": "Nintendo",
+            "emulator": "emulatorjs",
+            "id": "super-mario-64",
+            "image": "super-mario-64.png",
+            "name": "Super Mario 64"
+        },
+        {
+            "description": "Team Fortress 2 is a 2007 multiplayer first-person shooter game developed and published by Valve Corporation.",
+            "developer": "Valve",
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=40512534-ad27-4a12-afa7-6fc412288072&utm_source=shortcut",
+            "id": "tf2",
+            "image": "tf2.png",
+            "name": "Team Fortress 2"
+        },
+        {
+            "description": "Tetris, video game created by Russian designer Alexey Pajitnov in 1985 that allows players to rotate falling blocks strategically to clear levels.",
+            "developer": "Larprad",
+            "id": "tetris",
+            "image": "tetris.png",
+            "name": "Tetris"
+        },
+        {
+            "description": "The Achromats have taken the worlds color offline! Raid their colorless lair and vanquish them all, restoring the world to it's technicolor glory.",
+            "developer": "Ryan Malm",
+            "id": "chroma",
+            "image": "chroma.png",
+            "name": "The Chroma Incident"
+        },
+        {
+            "description": "The Dough-Nutter 4000 has malfunctioned! It's up to you, Donut Boy, to rescue the employees and donuts that were scattered around town from the resulting explosion.",
+            "developer": "Dahoh Bolesta",
+            "id": "donut-boy",
+            "image": "donut-boy.png",
+            "name": "Donut Boy"
+        },
+        {
+            "description": "The goal of the game is to stack the moving blocks over each other as high as you can.",
+            "developer": "meshde",
+            "id": "stack",
+            "image": "stack.png",
+            "name": "Stack"
+        },
+        {
+            "description": "Wings.io is a Massive multiplayer online game. Control your plane and shoot down other players!",
+            "developer": "Profusion Studios",
+            "embedURL": "https://wings.io/",
+            "id": "wings",
+            "image": "wings.png",
+            "name": "Wings.io"
+        },
+        {
+            "description": "Your goal is become the biggest and longest snake in the world.If your head touches another player, you will explode and then it's game over. But if others run into YOU, then THEY will explode, and you can eat their remains!",
+            "developer": "Sang Mobile",
+            "embedURL": "https://supersnake.io",
+            "id": "supersnake",
+            "image": "supersnake.png",
+            "name": "SuperSnake.io"
+        },
+        {
+            "name": "Sparebeat",
+            "id": "sparebeat",
+            "image": "sparebeat.png",
+            "developer": "suzukibakery",
+            "description": "A fun 4K rhythm game desinged to be played in browsers",
+            "embedURL": "https://sparebeat.com/"
+        },
+        {
+            "name": "Portal",
+            "id": "portal",
+            "image": "portal.jpg",
+            "developer": "Valve",
+            "description": "Portal is a new single player game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=df05c1d5-60a1-4969-a73a-2fef74a8dde8&utm_source=shortcut"
+        },
+        {
+            "name": "Portal 2",
+            "id": "portal-2",
+            "image": "portal-2.jpg",
+            "developer": "Valve",
+            "description": "Portal 2 is a new single player and multiplayer game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=749ab5aa-eded-4616-965e-fae5f9b6c7f1&utm_source=shortcut"
+        },
+        {
+            "name": "Tube Jumpers",
+            "id": "tube-jumpers",
+            "image": "tube-jumpers.png",
+            "developer": "Dahoh Bolesta",
+            "description": "Tube Jumpers is a local multiplayer that can be played with up to 4 people. In the game you have to make sure to stay on your floating tube."
+        },
+        {
+            "name": "Jetpack Joyride",
+            "id": "jetpack-joyride",
+            "image": "jetpack-joyride.png",
+            "developer": "Halfbrick Studios",
+            "description": "Jetpack Joyride is a 2011 side-scrolling endless runner action video game developed by Halfbrick Studios and published by Halfbrick Studios."
+        },
+        {
+            "name": "World's Hardest Game",
+            "id": "worlds-hardest-game",
+            "image": "worlds-hardest-game.png",
+            "developer": "Stephen Critoph",
+            "description": "The World's Hardest Game is an addictive puzzle game consisting of 30 incredibly challenging levels."
+        },
+        {
+            "name": "Temple Run 2",
+            "id": "temple-run-2",
+            "image": "temple-run-2.png",
+            "developer": "Imangi Studios",
+            "description": "Temple Run 2 is an endless running video game developed and published by Imangi Studios."
+        },
+        {
+            "name": "Fruit Ninja",
+            "id": "fruit-ninja",
+            "image": "fruit-ninja.png",
+            "developer": "Halfbrick Studios",
+            "description": "In Fruit Ninja the player must slice fruit that is thrown into the air by swiping the device's touch screen with their finger or the player's arms and hands, and must not slice bombs."
+        },
+        {
+            "name": "BitLife",
+            "id": "bitlife",
+            "image": "bitlife.png",
+            "developer": "CandyWriter",
+            "description": "BitLife, is a mobile life simulator game.",
+            "popular": true
+        },
+        {
+            "name": "Crossy Road",
+            "id": "crossy-road",
+            "image": "crossy-road.png",
+            "developer": "Hipster Whale",
+            "description": "Crossy Road is the 8-bit endless arcade hopper that started it all. Collect custom characters and navigate freeways, railroads, rivers and much more."
+        },
+        {
+            "name": "Giant Hamster Run",
+            "id": "giant-hamster-run",
+            "image": "giant-hamster-run.png",
+            "developer": "FLGames",
+            "description": "Tiny the Hamster as he stampedes through the city is this classic endless-runner."
+        },
+        {
+            "name": "Impossible Quiz",
+            "id": "impossible-quiz",
+            "image": "impossible-quiz.png",
+            "developer": "Glenn Rhodes",
+            "description": "The Impossible Quiz is an online trivia quiz that features only very hard questions.",
+            "emulator": "ruffle"
+        },
+        {
+            "name": "Dadish",
+            "id": "dadish",
+            "image": "dadish.png",
+            "developer": "Thomas K Young and CatCup Games",
+            "description": "Dadish is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch."
+        },
+        {
+            "name": "Tiny Fishing",
+            "id": "tiny-fishing",
+            "image": "tiny-fishing.png",
+            "developer": "appdz and Mad Buffer",
+            "description": "Catch fish and sell them for money to buy upgrades and new fishing rods!"
+        },
+        {
+            "name": "Geometry Dash (Scratch)",
+            "id": "geometry-dash",
+            "image": "geometry-dash.png",
+            "developer": "Robert Topala and RobTop Games",
+            "description": "Geometry Dash is a rhythm-based platform game developed and published by RobTop Games."
+        },
+        {
+            "name": "Dadish 2",
+            "id": "dadish-2",
+            "image": "dadish-2.png",
+            "developer": "Thomas K Young and CatCup Games",
+            "description": "Help reunite Dadish with his missing kids in this charming and challenging platforming adventure."
+        },
+        {
+            "name": "People Playground",
+            "id": "people-playground",
+            "image": "people-playground.png",
+            "developer": "Studio Minus",
+            "description": "Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls. This game is for people who enjoy throwing around ragdolls.",
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=17f2bd78-5423-4946-afc4-08f92380ef97&utm_source=shortcut"
+        },
+        {
+            "name": "Krew.io",
+            "id": "krew",
+            "image": "krew.jpg",
+            "developer": "m0de",
+            "description": "A fast paced pirate game where you compete against other players for treasure.",
+            "embedURL": "https://krew.io"
+        },
+        {
+            "name": "Bloxorz",
+            "id": "bloxorz",
+            "image": "bloxorz.png",
+            "developer": "Damien Clarke and CoolMathGames.com",
+            "description": "Bloxorz is a puzzle game, very challenging. It is a great block awesome game that gets harder at each progressive level."
+        },
+        {
+            "name": "Cat Ninja the Quest for the Magical Energy Crystals",
+            "id": "cat-ninja",
+            "image": "cat-ninja.png",
+            "developer": "Richman Stewart",
+            "description": "Cat Ninja is one of the best new platform-adventure games online."
+        },
+        {
+            "name": "Kirka.io",
+            "id": "kirka",
+            "image": "kirka.png",
+            "developer": "AwesomeSam",
+            "description": "Kirka.io is a multiplayer online slow-paced competitive FPS game on the browser.",
+            "embedURL": "https://kirka.io/"
+        },
+        {
+            "name": "Kopanito All-Stars Soccer",
+            "id": "kopanito-all-stars-soccer",
+            "image": "kopanito-all-stars-soccer.png",
+            "developer": "Merixgames",
+            "description": "Fast-paced football game without a referee on the pitch and with crazy super-powers!"
+        }
+    ]
 }

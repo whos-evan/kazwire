@@ -1,0 +1,25 @@
+/*
+ * Forms and form fields
+ */
+input,
+button,
+select {vertical-align: middle; outline: none}
+textarea {vertical-align: top; outline: none}
+
+button,
+select,
+label[for],
+input[type="reset"],
+input[type="radio"],
+input[type="button"],
+input[type="submit"],
+input[type="checkbox"] {cursor: pointer}
+
+button[disabled],
+select[disabled],
+label[disabled][for],
+input[disabled][type="reset"],
+input[disabled][type="radio"],
+input[disabled][type="button"],
+input[disabled][type="submit"],
+input[disabled][type="checkbox"] {cursor: default}

@@ -1,0 +1,10 @@
+<span
+    id="{{ id }}"
+    class="media
+        {% if focused %}focused{% endif %}
+        {% if selected %}selected{% endif %}
+        {% if disabled %}disabled{% endif %}
+        {{ classes }}"
+>
+ <img src="{{ data.imagePath }}">
+</span>
