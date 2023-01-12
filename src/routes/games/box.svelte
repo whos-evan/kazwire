@@ -1,5 +1,6 @@
 <script>
 	export let image;
+
 	export let title;
 	export let description;
 	export let id;
@@ -13,16 +14,22 @@
 	import { onMount } from 'svelte';
 	import ColorThief from '../../components/color-thief.mjs';
 
-
 	let shine;
 
-	onMount(() => {
-		const colorThief = new ColorThief();
-		const img = new Image();
-		img.src = `./game/img/${image}`;
-		img.addEventListener('load', function () {
-			shine = `rgb(${colorThief.getColor(img)})`;
-		});
+	onMount(async () => {
+		async function waitUntilImageChange() {
+			while (image == 'loading') {
+				await new Promise(resolve => setTimeout(resolve, 100));
+			}
+			const colorThief = new ColorThief();
+			const img = new Image();
+			img.src = `./game/img/${image}`;
+			img.addEventListener('load', function () {
+				shine = `rgb(${colorThief.getColor(img)})`;
+			});
+		}
+		await waitUntilImageChange();
+		
 	});
 </script>
 

@@ -3,8 +3,8 @@
 	import gamesJson from '../routes/games/games.json';
 	import { onMount } from 'svelte';
 
-	let randomGame1 = { name: 'Loading...', image: '', description: '', id: ''};
-	let randomGame2 = { name: 'Loading...', image: '', description: '', id: ''};
+	let randomGame1 = { name: 'Loading...', image: 'loading', description: '', id: ''};
+	let randomGame2 = { name: 'Loading...', image: 'loading', description: '', id: ''};
 	let lovedIds = [];
 	let lovedGames = [];
 
