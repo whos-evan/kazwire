@@ -10,6 +10,7 @@
 	<p class="text-xl">
 		Evan - Coded this site and did the bulk of the work. He has many years of experience in
 		developing web projects and his other sites and works can be found on <a
+			class="hover:cursor-pointer hover:underline"
 			href="https://github.com/whos-evan"
 			target="_blank">his GitHub</a
 		>.
@@ -17,6 +18,7 @@
 	<p class="text-xl">
 		Zachary - Made the name and whatnot and promotes the site by making videos. His YouTube channel
 		can be found at <a
+			class="hover:cursor-pointer hover:underline"
 			href="https://www.youtube.com/channel/UCWjGQfoEddPru_KC9zYfLig"
 			target="_blank">Kazwire</a
 		>.
@@ -24,6 +26,7 @@
 	<br />
 	<p class="text-xl">
 		If you would like to join our team you can apply on our <a
+			class="hover:cursor-pointer hover:underline"
 			href="https://discord.gg/FEkFSWRFM9"
 			target="_blank">Discord server</a
 		>!
