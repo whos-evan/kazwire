@@ -1,9 +1,9 @@
 <script>
 	export let gameId;
 	export let embedURL;
-    export let title;
-    export let description;
-    export let developer;
+	export let title;
+	export let description;
+	export let developer;
 
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
@@ -46,14 +46,6 @@
 
 		let iframe = document.getElementById('iframe');
 		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(input);
-	}
-
-	function getGamePath() {
-		if (getGame()['embedURL'] != undefined) {
-			iframeSearch(getGame()['embedURL']);
-		} else {
-			document.getElementById('iframe').src = '/game/' + slug + '/' + 'index.html';
-		}
 	}
 
 	// check if the game is loved
@@ -122,23 +114,24 @@
 	}
 
 	onMount(() => {
-		if (gameId != undefined) {
-			getGamePath();
-            isLoved();
+		if (gameId !== undefined) {
+			if (getGame()['embedURL'] != undefined) {
+				iframeSearch(getGame()['embedURL']);
+			}
+			isLoved();
 
-            gtag('event', 'page_view', {
-                page_title: getGame()['name'],
-                page_location: window.location.href,
-                page_path: window.location.pathname
-            });
+			gtag('event', 'page_view', {
+				page_title: getGame()['name'],
+				page_location: window.location.href,
+				page_path: window.location.pathname
+			});
 		} else if (embedURL != undefined) {
 			iframeSearch(embedURL);
-            // remove the heart
-            document.getElementById('heart').style.display = 'none';
+			// remove the heart
+			document.getElementById('heart').style.display = 'none';
 		} else {
-            alert('Error, contact the developer.')
-        }
-
+			alert('Error, contact the developer.');
+		}
 	});
 </script>
 
