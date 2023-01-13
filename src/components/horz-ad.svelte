@@ -22,7 +22,7 @@
 </script>
 
 <div class="Horz w-full align-center pl-10 pr-10">
-	{#if adblock}
+	{#if adblock == false}
 		<div id="GoogleAds" align="center" class="w-full">
 			<ins
 				class="adsbygoogle"
