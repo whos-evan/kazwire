@@ -1,3 +1,7 @@
+![kazwire](https://socialify.git.ci/whos-evan/kazwire/image?description=1&forks=1&issues=1&language=1&logo=https%3A%2F%2Fkazwire.com%2Flogo.png&name=1&owner=1&pattern=Solid&pulls=1&stargazers=1&theme=Dark)
+
+![Website Status](https://img.shields.io/website?down_color=red&down_message=offline&style=for-the-badge&up_color=green&up_message=online&url=https%3A%2F%2Fkazwire.com)  ![Discord](https://img.shields.io/discord/785577600219086881?style=for-the-badge) ![Repo Size](https://img.shields.io/github/repo-size/whos-evan/kazwire?style=for-the-badge)
+
 # Kazwire
 
 Kazwire allows you to play your favorite games whenever, wherever you need while also allowing you to browse the web freely and securely!
@@ -18,7 +22,6 @@ Check out our [wiki](https://github.com/whos-evan/kazwire/wiki) for development 
 - Splitting of games assets and website code with different repositories.
 
 ## Screenshots!
-
-![brave_Jl0NzV94ME](https://user-images.githubusercontent.com/72959444/209419997-4a995a17-1b1d-4b21-b9ef-f19c10d3c0d8.png)
-![brave_2PqHjNkeiM](https://user-images.githubusercontent.com/72959444/209420008-c458e229-074f-4a4f-a486-dcb682f1dfe9.png)
-![brave_DOGyTI4KJG](https://user-images.githubusercontent.com/72959444/209419990-b47880d2-2f08-40ba-a669-005a1456f1b2.png)
+![brave_ssPQIyRguI](https://user-images.githubusercontent.com/72959444/212424732-bd5f40bf-0f2e-4bb7-ab52-2f5834f49a0a.png)
+![brave_GoBRyQUQkr](https://user-images.githubusercontent.com/72959444/212424742-c86a73e0-be9c-4d70-b9ae-47f68adeb736.png)
+![brave_QshtoKtUd1](https://user-images.githubusercontent.com/72959444/212424747-7056dc96-0e39-49a8-ae2d-29d74fdcf8db.png)
