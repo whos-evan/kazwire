@@ -595,6 +595,14 @@
             "developer": "Jonochrome",
             "description": "Riddle School is a 2006 flash based puzzle-solving game.",
             "emulator": "ruffle"
+        },
+        {
+            "name": "Riddle School 2",
+            "id": "riddle-school-2",
+            "image": "riddle-school-2.png",
+            "developer": "Jonochrome",
+            "description": "Phil Eggtree is the main character of the series, Riddle School. He plans to escape Riddle Middle School.",
+            "emulator": "ruffle"
         }
     ]
 }
