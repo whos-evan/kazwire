@@ -587,6 +587,14 @@
             "image": "kopanito-all-stars-soccer.png",
             "developer": "Merixgames",
             "description": "Fast-paced football game without a referee on the pitch and with crazy super-powers!"
+        },
+        {
+            "name": "Riddle School",
+            "id": "riddle-school",
+            "image": "riddle-school.png",
+            "developer": "Jonochrome",
+            "description": "Riddle School is a 2006 flash based puzzle-solving game.",
+            "emulator": "ruffle"
         }
     ]
 }
