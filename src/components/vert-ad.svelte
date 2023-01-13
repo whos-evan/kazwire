@@ -22,7 +22,7 @@
 </script>
 
 <div class="Vert w-full h-full mt-10">
-	{#if adblock}
+	{#if adblock == false}
 		<div id="GoogleAds" align="center" class="w-full h-full">
 			<ins
 				class="adsbygoogle"
