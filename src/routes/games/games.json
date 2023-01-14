@@ -627,6 +627,13 @@
             "developer": "Jonochrome",
             "description": "Riddle School 5 is a Flash-based point-and-click puzzle game by Jonochrome.",
             "emulator": "ruffle"
+        },
+        {
+            "name": "A Dance of Fire and Ice",
+            "id": "a-dance-of-fire-and-ice",
+            "image": "a-dance-of-fire-and-ice.png",
+            "developer": "fizzd, Kyle, giacomopc",
+            "description": "A Dance of Fire and Ice is a simple one-button rhythm game."
         }
     ]
 }
