@@ -11,9 +11,11 @@
 
 	onMount(() => {
 		// check if the user minimized
-		let minimized = localStorage.getItem('smallGames') || '';
-		if (minimized === 'true') {
+		let minimized = localStorage.getItem('smallGames') === 'true';
+		if (minimized) {
 			smallGames = true;
+		} else {
+			smallGames = false;
 		}
 
 		let loves = localStorage.getItem('loved') || '';
@@ -134,7 +136,7 @@
 			<button
 				class="ml-2 p-3 text-lg font-extrabold bg-secondary rounded-lg text-white absolute"
 				id="minimize"
-				on:click={() => (smallGames = !smallGames) && localStorage.setItem('smallGames', 'true')}
+				on:click={() => (smallGames = true) && localStorage.setItem('smallGames', 'true')}
 			>
 				<!-- pitch in -->
 				<svg
@@ -152,7 +154,10 @@
 			<button
 				class="ml-2 p-3 text-lg font-extrabold bg-secondary rounded-lg text-white absolute"
 				id="mazimize"
-				on:click={() => (smallGames = !smallGames) && localStorage.setItem('smallGames', 'false')}
+				on:click={() => {
+					smallGames = !smallGames;
+					localStorage.setItem('smallGames', JSON.stringify(smallGames));
+				}}
 			>
 				<!-- pitch in -->
 				<svg
