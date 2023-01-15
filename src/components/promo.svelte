@@ -11,7 +11,7 @@
 						<span class="text-secondaryLight dark:text-secondaryDark">all in one place!</span>
 					</h1>
 				</div>
-				<div class="mt-2 lg:text-2xl sm:text-sm wrap break-normal w-[32vw] sm:w-[48vw]">
+				<div class="mt-2 lg:text-2xl sm:text-sm wrap break-normal w-[32vw]">
 					<p>
 						From the gaming classics to the internet, access YouTube, TikTok, and even your favorite
 						games freely and securely.
