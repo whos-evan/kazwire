@@ -145,7 +145,7 @@
 		{#if smallGames == false}
 			<button
 				class="md:col-start-10 md:row-start-1 col-span-2
-				sm:col-start-5 sm:row-start-2 ml-auto mr-auto
+				sm:col-start-5 sm:row-start-2 md:mr-auto md:ml-0 sm:ml-auto sm:mr-auto
 				p-3 h-12 w-12 text-lg font-extrabold bg-secondary rounded-lg text-white"
 				id="minimize"
 				on:click={() => (smallGames = true) && localStorage.setItem('smallGames', 'true')}
@@ -165,7 +165,7 @@
 		{:else}
 			<button
 				class="md:col-start-10 md:row-start-1 col-span-2
-				sm:col-start-5 sm:row-start-2 ml-auto mr-auto
+				sm:col-start-5 sm:row-start-2 ml:ml-0 md:mr-auto md:ml-0 sm:ml-auto sm:mr-auto
 				p-3 h-12 w-12 text-lg font-extrabold bg-secondary rounded-lg text-white"
 				id="mazimize"
 				on:click={() => {
