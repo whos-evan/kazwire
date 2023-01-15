@@ -119,16 +119,24 @@
 	<HorzAd />
 </div>
 <div class="text-white w-full pl-10 pr-10 pt-5 text-center">
-	<div class="text-white w-full pl-10 pr-[5.1rem] pt-5 text-center sm:mb-5 mb-0">
+	<div
+		class="text-white w-full h-18 pt-5 text-center mb-0 sm:mb-4 gap-4
+	lg:pr-40 lg:pl-40 md:pr-20 md:pl-20 sm:pr-0 sm:pl-0
+	grid md:grid-rows-1 sm:grid-rows-2 grid-cols-10"
+	>
 		<input
 			id="search"
 			type="text"
-			class="md:w-[35vw] sm:w-[70vw] h-10 p-6 rounded-lg mb-5 text-black placeholder:text-gray-500"
+			class="md:col-span-7 sm:col-span-7 h-12 p-6 rounded-lg mb-5 text-black placeholder:text-gray-500"
 			placeholder="Search for a game..."
 			autocomplete="off"
 			on:input={searchGames}
 		/>
-		<select id="filterSelect" class="rounded-lg text-black p-3" bind:value={filter}>
+		<select
+			id="filterSelect"
+			class="rounded-lg text-black p-3 h-12 md:col-span-2 sm:col-span-3"
+			bind:value={filter}
+		>
 			<option value="all">All</option>
 			<option value="static">Static</option>
 			<option value="emulated">Emulated</option>
@@ -136,7 +144,9 @@
 		</select>
 		{#if smallGames == false}
 			<button
-				class="ml-2 p-3 text-lg font-extrabold bg-secondary rounded-lg text-white absolute"
+				class="md:col-start-10 md:row-start-1 col-span-2
+				sm:col-start-5 sm:row-start-2 ml-auto mr-auto
+				p-3 h-12 w-12 text-lg font-extrabold bg-secondary rounded-lg text-white"
 				id="minimize"
 				on:click={() => (smallGames = true) && localStorage.setItem('smallGames', 'true')}
 			>
@@ -154,7 +164,9 @@
 			</button>
 		{:else}
 			<button
-				class="ml-2 p-3 text-lg font-extrabold bg-secondary rounded-lg text-white absolute"
+				class="md:col-start-10 md:row-start-1 col-span-2
+				sm:col-start-5 sm:row-start-2 ml-auto mr-auto
+				p-3 h-12 w-12 text-lg font-extrabold bg-secondary rounded-lg text-white"
 				id="mazimize"
 				on:click={() => {
 					smallGames = !smallGames;
