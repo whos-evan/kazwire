@@ -17,7 +17,7 @@
 	<div class="grid lg:col-start-1 lg:col-span-2 lg:row-start-1 sm:row-span-2 sm:row-start-1">
 		<RandomBox />
 	</div>
-	<div class="grid lg:col-start-3 lg:row-start-1 sm:row-start-3 sm:row-span-1 sm:mt-10">
+	<div class="grid lg:col-start-3 lg:row-start-1 sm:row-start-3 sm:row-span-1 justify-center sm:mt-10">
 		<News />
 	</div>
 </div>

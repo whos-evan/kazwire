@@ -40,7 +40,7 @@
 	<input
 		id="search"
 		type="text"
-		class="w-[35vw] h-10 p-6 rounded-lg mb-5 text-black placeholder:text-gray-500"
+		class="md:w-[35vw] sm:w-[70vw] h-10 p-6 rounded-lg mb-5 text-black placeholder:text-gray-500"
 		placeholder="Search for an app..."
 		autocomplete="off"
 		on:input={searchApps}

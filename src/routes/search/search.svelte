@@ -126,7 +126,7 @@
 		<input
 			id="uv-address"
 			type="text"
-			class="w-[35vw] h-10 p-6 rounded-lg mt-5 text-black placeholder:text-gray-500"
+			class="md:w-[35vw] sm:w-[70vw] h-10 p-6 rounded-lg mt-5 text-black placeholder:text-gray-500"
 			placeholder="Search here..."
 			autocomplete="off"
 		/>

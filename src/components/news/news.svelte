@@ -4,7 +4,7 @@
 	let newsDate = newsJson['news']['date'];
 </script>
 
-<div class="text-white w-full pl-10 pr-10 text-center ">
+<div class="text-white w-full pl-10 pr-10 text-center">
 	<h1 class="text-4xl font-bold mb-5">📰 News: {newsDate}</h1>
-	<p class="text-xl text-left">{newsText}</p>
+	<p class="text-xl md:text-left sm:text-center">{newsText}</p>
 </div>

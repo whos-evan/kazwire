@@ -18,6 +18,8 @@
 			smallGames = false;
 		}
 
+		// console.log all the games in a list
+		console.log(gamesJson['games'].map((game) => game['name']).join('\n'));
 		let loves = localStorage.getItem('loved') || '';
 		lovedIds = loves.split(',').filter((item) => item !== '');
 		lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
@@ -121,7 +123,7 @@
 		<input
 			id="search"
 			type="text"
-			class="w-[35vw] h-10 p-6 rounded-lg mb-5 text-black placeholder:text-gray-500"
+			class="md:w-[35vw] sm:w-[70vw] h-10 p-6 rounded-lg mb-5 text-black placeholder:text-gray-500"
 			placeholder="Search for a game..."
 			autocomplete="off"
 			on:input={searchGames}
