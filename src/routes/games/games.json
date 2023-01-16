@@ -641,6 +641,14 @@
             "image": "ovo.png",
             "developer": "Dedra Games",
             "description": "OvO is a 2D platformer game where the objective is to go through levels and complete them."
+        },
+        {
+            "name": "Gun Mayhem 2",
+            "id": "gun-mayhem-2",
+            "image": "gun-mayhem-2.png",
+            "developer": "Kevin Gu",
+            "description": "Defeat your powerful enemies by shooting them or blasting them off the platform with dynamite.",
+            "emulator": "ruffle"
         }
     ]
 }
