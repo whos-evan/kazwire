@@ -1,5 +1,5 @@
 <button
-	class="ml-14 mt-5 px-2 py-[6px] text-lg font-extrabold bg-secondary opacity-50 rounded-lg text-white absolute"
+	class="ml-14 mt-5 px-2 py-[6px] text-lg font-extrabold bg-secondary opacity-50 rounded-lg text-white absolute z-[99999]"
 	id="minimize"
 >
 	<!-- pitch in -->

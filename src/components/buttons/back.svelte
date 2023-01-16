@@ -1,5 +1,5 @@
 <button
-	class="m-5 px-2 py-[6px] text-lg font-extrabold bg-secondary opacity-50 rounded-lg text-white absolute"
+	class="m-5 px-2 py-[6px] text-lg font-extrabold bg-secondary opacity-50 rounded-lg text-white absolute z-[9999]"
 	on:click={() => window.history.back()}
 >
 	<!-- back arrow -->
