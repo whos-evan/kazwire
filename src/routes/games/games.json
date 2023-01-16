@@ -634,6 +634,13 @@
             "image": "a-dance-of-fire-and-ice.png",
             "developer": "fizzd, Kyle, giacomopc",
             "description": "A Dance of Fire and Ice is a simple one-button rhythm game."
+        },
+        {
+            "name": "OvO",
+            "id": "ovo",
+            "image": "ovo.png",
+            "developer": "Dedra Games",
+            "description": "OvO is a 2D platformer game where the objective is to go through levels and complete them."
         }
     ]
 }
