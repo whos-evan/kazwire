@@ -119,9 +119,20 @@
 
 		maximized = true;
 	}
+
+	function hideMessage() {
+		let message = document.getElementById('message');
+		message.style.display = 'none';
+	}
 </script>
 
 <div class="text-white w-full pb-5 text-center">
+	<div id="message" class="flex-center">
+		<button class="m-auto bg-secondary md:w-[50vw] sm:w-[80vw] p-3 rounded-lg mt-5 text-white"
+		on:click={hideMessage}>
+			We are currently working on scaling our systems. Please be patient while we work on it.
+	</button>
+	</div>
 	<form id="uv-form" class="flex-center" on:submit={iframeSearch}>
 		<input
 			id="uv-address"
