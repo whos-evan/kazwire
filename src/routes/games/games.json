@@ -649,6 +649,13 @@
             "developer": "Kevin Gu",
             "description": "Defeat your powerful enemies by shooting them or blasting them off the platform with dynamite.",
             "emulator": "ruffle"
+        },
+        {
+            "name": "FeedVid Live",
+            "id": "feedvid-live",
+            "image": "feedvid-live.png",
+            "developer": "Varun R.",
+            "description": "FeedVid Live is a short puzzle game taking place in an unusual livestreaming app."
         }
     ]
 }

@@ -44,7 +44,8 @@ module.exports = {
 	},
 	variants: {
 		extend: {
-			backgroundColor: ['dark']
+			backgroundColor: ['dark'],
+			display: ["group-hover"],
 		}
 	},
 	plugins: []
