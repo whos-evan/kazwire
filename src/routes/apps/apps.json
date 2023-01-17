@@ -53,6 +53,15 @@
 			"name": "Discord",
 			"releaseDate": "?",
 			"embedURL": "https://discord.com"
+		},
+		{
+			"description": "GeForce NOW is a cloud gaming service developed by Nvidia.",
+			"developer": "Nvidia",
+			"id": "geforce-now",
+			"image": "geforce-now.png",
+			"name": "GeForce NOW",
+			"releaseDate": "?",
+			"embedURL": "https://play.geforcenow.com/"
 		}
 	]
 }
