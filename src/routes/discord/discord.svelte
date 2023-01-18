@@ -3,7 +3,7 @@
 
 	let embedURL = "https://discord.gg/ryAmV8ATNh"
 	let title = "Kazwire Discord"
-	let description = "Kazwire Discord"
+	let description = "Kazwire Discord (Do NOT join if you are under 13. Please don't go on any forum site, especially Discord, if you are under 13."
 	let developer = "Kazwire"
 </script>
 
