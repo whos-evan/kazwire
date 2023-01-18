@@ -2,12 +2,12 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 
-	let adSupportedDomain = true;
+	// let adSupportedDomain = true;
 
 	// check to see if kazwire.com is in domain name
-	if ($page.url.hostname.includes('kazwire.com') == false) {
-		adSupportedDomain = false;
-	}
+//	if ($page.url.hostname.includes('kazwire.com') == false) {
+//		adSupportedDomain = false;
+//	}
 
 	onMount(() => {
 		var isAdsenseNotLoaded =
@@ -33,25 +33,15 @@
 		}, 3000);
 	});
 </script>
-
-{#if adSupportedDomain}
-	<div class="Horz w-full align-center">
-		<div id="GoogleAds" align="center" class="w-full">
-			<ins
-				class="adsbygoogle"
-				style="display:block"
-				data-ad-client="ca-pub-7648886706850999"
-				data-ad-slot="6262246352"
-				data-ad-format="auto"
-				data-full-width-responsive="true"
-			/>
-		</div>
+<div class="Horz w-full align-center">
+	<div id="GoogleAds" align="center" class="w-full">
+		<ins
+			class="adsbygoogle"
+			style="display:block"
+			data-ad-client="ca-pub-7648886706850999"
+			data-ad-slot="6262246352"
+			data-ad-format="auto"
+			data-full-width-responsive="true"
+		/>
 	</div>
-{:else}
-	<div id="AdAlternative" align="center" class="w-full p-5">
-		<img src="/logo.png" width="75" />
-		<p class="text-2xl text-white">
-			Please disable your ad blocker to help support the site and keep it lightning fast!
-		</p>
-	</div>
-{/if}
+</div>
