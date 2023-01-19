@@ -20,6 +20,7 @@ Check out our [wiki](https://github.com/whos-evan/kazwire/wiki) for development 
 ## Roadmap
 
 - Splitting of games assets and website code with different repositories.
+- Login system is currently being worked on!
 
 ## Screenshots!
 ![brave_ssPQIyRguI](https://user-images.githubusercontent.com/72959444/212424732-bd5f40bf-0f2e-4bb7-ab52-2f5834f49a0a.png)
