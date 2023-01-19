@@ -1,13 +1,5 @@
 <script>
 	import { onMount } from 'svelte';
-	import { page } from '$app/stores';
-
-	// let adSupportedDomain = true;
-
-	// check to see if kazwire.com is in domain name
-//	if ($page.url.hostname.includes('kazwire.com') == false) {
-//		adSupportedDomain = false;
-//	}
 
 	onMount(() => {
 		var isAdsenseNotLoaded =
@@ -33,6 +25,7 @@
 		}, 3000);
 	});
 </script>
+
 <div class="Horz w-full align-center">
 	<div id="GoogleAds" align="center" class="w-full">
 		<ins
