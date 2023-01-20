@@ -130,7 +130,7 @@
 	<div id="message" class="flex-center">
 		<button class="m-auto bg-secondary md:w-[50vw] sm:w-[80vw] p-3 rounded-lg mt-5 text-white"
 		on:click={hideMessage}>
-			We are currently working on scaling our systems. Please be patient while we work on it.
+			Please be patient while we work on scaling our systems.
 	</button>
 	</div>
 	<form id="uv-form" class="flex-center" on:submit={iframeSearch}>
