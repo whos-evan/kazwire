@@ -656,6 +656,13 @@
             "image": "feedvid-live.png",
             "developer": "Varun R.",
             "description": "FeedVid Live is a short puzzle game taking place in an unusual livestreaming app."
+        },
+        {
+            "name": "Universal Paperclips",
+            "id": "universal-paperclips",
+            "image": "universal-paperclips.png",
+            "developer": "Frank Lantz",
+            "description": "An idle game where you produce paperclips while trying to deal with public demand"
         }
     ]
 }
