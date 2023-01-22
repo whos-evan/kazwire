@@ -665,18 +665,11 @@
             "description": "An idle game where you produce paperclips while trying to deal with public demand"
         },
         {
-            "name": "Wordle",
-            "id": "wordle",
-            "image": "wordle.png",
-            "developer": "Josh Wardle",
-            "description": "Wordle is a word puzzle game where players are presented with a grid of letters and must guess the hidden word or phrase."
-        },
-        {
-            "name": "We Become What We Behold",
-            "id": "wbwwb",
-            "image": "wbwwb.png",
-            "developer": "Nicky Case",
-            "description": "We Become What We Behold is a 5 minute game that looks at how social media magnifies small differences into gross monstrosities."
+            "name": "DogeMiner",
+            "id": "dogeminer",
+            "image": "dogeminer.png",
+            "developer": "/u/DogeminerDev",
+            "description": "A space-travel, rock-crusher, free clicker adventure game. Build such mining operation, get much dogecoins."
         }
     ]
 }
