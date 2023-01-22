@@ -2,12 +2,21 @@
 	import { darkMode } from '../dark';
 	import { onMount } from 'svelte';
 
-	import { auth } from '../firebase';
-	import { authState } from 'rxfire/auth';
+	import { auth, googleProvider, user } from '../firebase';
 
-	let user;
+	let loggedIn = false;
+	let localUser = null;
 
-	const unsubscribe = authState(auth).subscribe((usr) => (user = usr));
+	auth.onAuthStateChanged(function (user) {
+		if (user) {
+			// User is signed in.
+			loggedIn = true;
+			localUser = user;
+		} else {
+			// No user is signed in.
+			loggedIn = false;
+		}
+	});
 
 	onMount(() => {
 		if ('serviceWorker' in navigator) {
@@ -96,10 +105,10 @@
 				</ul>
 			</div>
 			<div class="text-white ml-auto mr-3 text-xl">
-				{#if user}
+				{#if localUser}
 					<a href="/account/profile">
 						<img
-							src={user.photoURL}
+							src={localUser.photoURL}
 							class="transition duration-100 hover:scale-[105%] h-8 rounded-full"
 							alt="Profile"
 							referrerpolicy="no-referrer"
