@@ -665,6 +665,13 @@
             "description": "An idle game where you produce paperclips while trying to deal with public demand"
         },
         {
+            "name": "HexGL",
+            "id": "hexgl",
+            "image": "hexgl.png",
+            "developer": "Thibaut Despoulain",
+            "description": " HexGL is a futuristic, fast-paced racing game."
+        },
+        {
             "name": "DogeMiner",
             "id": "dogeminer",
             "image": "dogeminer.png",
