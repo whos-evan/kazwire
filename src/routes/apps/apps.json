@@ -55,15 +55,6 @@
 			"embedURL": "https://discord.com"
 		},
 		{
-			"description": "Snapchat is a mobile app that allows users to send and receive self-destructing photos and videos.",
-			"developer": "Evan Spiegel, Bobby Murphy, and Reggie Brown",
-			"id": "snapchat",
-			"image": "snapchat.png",
-			"name": "Snapchat",
-			"releaseDate": "?",
-			"embedURL": "https://web.snapchat.com"
-		},
-		{
 			"description": "GeForce NOW is a cloud gaming service developed by Nvidia.",
 			"developer": "Nvidia",
 			"id": "geforce-now",
