@@ -663,6 +663,13 @@
             "image": "universal-paperclips.png",
             "developer": "Frank Lantz",
             "description": "An idle game where you produce paperclips while trying to deal with public demand"
+        },
+        {
+            "name": "Wordle",
+            "id": "wordle",
+            "image": "wordle.png",
+            "developer": "Josh Wardle",
+            "description": "Wordle is a word puzzle game where players are presented with a grid of letters and must guess the hidden word or phrase."
         }
     ]
 }
