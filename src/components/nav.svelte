@@ -2,6 +2,13 @@
 	import { darkMode } from '../dark';
 	import { onMount } from 'svelte';
 
+	import { auth } from '../firebase';
+	import { authState } from 'rxfire/auth';
+
+	let user;
+
+	const unsubscribe = authState(auth).subscribe((usr) => (user = usr));
+
 	onMount(() => {
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register(window.location.origin + '/sw.js');
@@ -87,6 +94,20 @@
 						>
 					</li>
 				</ul>
+			</div>
+			<div class="text-white ml-auto mr-3 text-xl">
+				{#if user}
+					<a href="/account/profile">
+						<img
+							src={user.photoURL}
+							class="transition duration-100 hover:scale-[105%] h-8 rounded-full"
+							alt="Profile"
+							referrerpolicy="no-referrer"
+						/>
+					</a>
+				{:else}
+					<a href="/account" class="text-md transition duration-100 hover:scale-[105%]">Login</a>
+				{/if}
 			</div>
 			<div class="float-right text-white text-xl mr-10">
 				<button
