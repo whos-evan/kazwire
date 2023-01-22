@@ -6,16 +6,28 @@
 		<meta name="viewport" content="width=device-width" />
 		<link rel="manifest" href="/assets/manifest.json" />
 		<title>Kazwire</title>
+
+		<!-- Stuff for other domains -->
+		<meta name="hilltopads-site-verification" content="b3b34b39138ee1d6c265a50b5842a1d7e74ba530" />
+		<!-- End of stuff for other domains -->
+
 		%sveltekit.head%
+		<!-- Ads for main domain -->
 		<script
 			async
 			src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7648886706850999"
 			crossorigin="anonymous"
 		></script>
+		<!-- End of ads for main domain -->
+
+		<!-- UV stuff & service workers -->
 		<script src="/uv/uv.bundle.js" defer></script>
 		<script src="/uv/uv.config.js" defer></script>
 		<script src="/sw.js" defer></script>
 		<script src="/register-sw.js" defer></script>
+		<!-- End of UV stuff & service workers -->
+
+		<!-- Analytics -->
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLBJ64LGWV"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
@@ -28,6 +40,7 @@
 
 			// (adsbygoogle = window.adsbygoogle || []).push({});
 		</script>
+		<!-- End of analytics -->
 	</head>
 	<style>
 		*::-webkit-scrollbar {
