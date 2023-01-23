@@ -27,11 +27,19 @@
 				loadingHearts = true;
 				// Fetch the user's data from Firestore
 				const userData = await db.collection('users').doc(user.uid).get();
-				lovedIds = userData.data().lovedGames;
+				lovedIds = userData.data()?.lovedGames;
+				if (lovedIds == undefined) {
+					loadingHearts = false;
+					return;
+				}
 			} else {
 				// Fetch the loved games from local storage
 				let loves = localStorage.getItem('loved') || '';
 				lovedIds = loves.split(',').filter((item) => item !== '');
+				if (lovedIds == undefined) {
+					loadingHearts = false;
+					return;
+				}
 			}
 			lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
 			lovedGames.sort((a, b) => a['id'] - b['id']);
