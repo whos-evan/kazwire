@@ -53,16 +53,34 @@
 	function updateHeart() {
 		// check if the game is loved
 		let heart = document.getElementById('heart');
-		if (lovedIds.includes(slug)) {
-			heart.style.fill = '#ef4444';
+		const user = auth.currentUser;
+		if (user) {
+			db.collection('users')
+				.doc(user.uid)
+				.get()
+				.then((doc) => {
+					if (doc.exists) {
+						lovedIds = doc.data().lovedGames;
+						if (lovedIds.includes(slug)) {
+							heart.style.fill = '#ef4444';
+						} else {
+							heart.style.fill = '#ffffff';
+						}
+					} else {
+						heart.style.fill = '#ffffff';
+					}
+				});
 		} else {
-			heart.style.fill = '#ffffff';
+			if (localStorage.getItem('loved')?.includes(slug)) {
+				heart.style.fill = '#ef4444';
+			} else {
+				heart.style.fill = '#ffffff';
+			}
 		}
 	}
 
 	// toggle loved
 	function toggleLoved() {
-		const user = auth.currentUser;
 		if (lovedIds.includes(slug)) {
 			// Remove the game from the lovedIds array
 			lovedIds = lovedIds.filter((id) => id !== slug);
@@ -70,14 +88,33 @@
 			// Add the game to the lovedIds array
 			lovedIds.push(slug);
 		}
+		const user = auth.currentUser;
 		if (user) {
 			// Write the updated list to Firestore
-			db.collection('users').doc(user.uid).update({ lovedGames: lovedIds });
+			// Check if the user's data exists in firestore first
+			db.collection('users')
+				.doc(user.uid)
+				.get()
+				.then((doc) => {
+					if (doc.exists) {
+						db.collection('users').doc(user.uid).update({ lovedGames: lovedIds });
+						updateHeart();
+					} else {
+						// create the user's data if it doesn't exist
+						db.collection('users')
+							.doc(user.uid)
+							.set({ lovedGames: lovedIds }, { merge: true })
+							.then(() => updateHeart())
+							.catch((error) => console.error('Error writing document: ', error));
+						updateHeart();
+					}
+				});
 		} else {
+			// Convert local storage items to array
 			// Write the updated list to local storage
 			localStorage.setItem('loved', lovedIds.join(','));
+			updateHeart();
 		}
-		updateHeart();
 	}
 
 	function fullScreen() {
@@ -114,19 +151,46 @@
 	}
 
 	onMount(async () => {
-		const user = auth.currentUser;
-		if (user) {
-			// Get the user's loved games from Firestore
-			const doc = await db.collection('users').doc(user.uid).get();
-			lovedIds = doc.data().lovedGames || [];
-			updateHeart();
+		let authenticated = false;
+		await Promise.race([
+			new Promise((resolve) => {
+				auth.onAuthStateChanged((user) => {
+					if (user) {
+						authenticated = true;
+						resolve();
+					}
+				});
+			}),
+			new Promise((resolve) => setTimeout(resolve, 1000))
+		]);
+
+		if (authenticated) {
+			// Code to run if the user is authenticated
+			const user = auth.currentUser;
+			// Write the updated list to Firestore
+			// Check if the user's data exists in firestore first
+			db.collection('users')
+				.doc(user.uid)
+				.get()
+				.then((doc) => {
+					if (doc.exists) {
+						lovedIds = doc.data().lovedGames;
+						db.collection('users').doc(user.uid).update({ lovedGames: lovedIds });
+						updateHeart();
+					} else {
+						// create the user's data if it doesn't exist
+						db.collection('users')
+							.doc(user.uid)
+							.set({ lovedGames: [slug] });
+						lovedIds = [slug];
+						updateHeart();
+					}
+				});
 		} else {
-			// Get the user's loved games from local storage
-			const loved = localStorage.getItem('loved') || '';
-			lovedIds = loved.split(',').filter(Boolean);
+			// Write the updated list to local storage
+			lovedIds = localStorage?.getItem('loved')?.split(',');
 			updateHeart();
 		}
-		updateHeart();
 
 		if (gameId !== undefined) {
 			if (getGame()['embedURL'] != undefined) {
