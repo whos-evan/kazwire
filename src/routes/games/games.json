@@ -675,8 +675,15 @@
             "name": "Wordle",
             "id": "wordle",
             "image": "wordle.png",
-            "developer": "Josh Wardle and bosorioo",
+            "developer": "Josh Wardle and DharMesh",
             "description": "Wordle is a type of word puzzle in which a user is presented with a jumble of letters, and they must rearrange them to form words."
+        },
+        {
+            "name": "XX142-B2.EXE",
+            "id": "xx142-b2exe",
+            "image": "xx142-b2exe.png",
+            "developer": "Ben Clark and Salvatore Previti",
+            "description": "You are an AI weaponized virus built to infiltrate the alien network and deactivate all power generators and weapon systems."
         }
     ]
 }
