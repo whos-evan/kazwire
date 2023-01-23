@@ -663,6 +663,13 @@
             "image": "universal-paperclips.png",
             "developer": "Frank Lantz",
             "description": "An idle game where you produce paperclips while trying to deal with public demand"
+        },
+        {
+            "name": "Chrome Dino",
+            "id": "dinogame",
+            "image": "dinogame.png",
+            "developer": "Google",
+            "description": "The Chrome Dino game is a simple, browser-based game that can be played when a user's internet connection is offline"
         }
     ]
 }
