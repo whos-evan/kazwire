@@ -30,15 +30,17 @@
 
 <Nav />
 <div class="text-white h-[80vh] w-full text-center">
+	<div style="background-color: #0875BB; padding: 7px 7px 7px 7px;" class="rounded-lg mx-20 drop-shadow-md">
 	<h1 class="font-bold text-5xl">Login</h1>
-	<p class="text-lg mb-5">Login with Google to get access to more features in the future.</p>
+	<p class="text-lg mb-5">The login system is still being worked on, login with Google to get access to more features in the future.</p>
 	{#if loggedIn}
 		<p>Logged in as {localUser.email}</p>
-		<button on:click={logout} class="px-4 py-2 bg-white text-secondary font-bold">Logout</button>
+		<button on:click={logout} class="px-4 py-2 bg-white text-secondary font-bold rounded-lg hover:opacity-70 duration-300">Logout</button>
 	{:else}
 		<button on:click={login}>
-			<img src="/assets/google-signin.png" alt="signin" />
+			<img src="/assets/google-signin.png" alt="signin" class="hover:opacity-70 duration-300"/>
 		</button>
 	{/if}
+</div>
 </div>
 <Footer />
