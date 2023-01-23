@@ -3,13 +3,15 @@
 	import SmallBox from './smallBox.svelte';
 	import gamesJson from './games.json';
 	import { onMount } from 'svelte';
+	import { auth, db } from '../../firebase';
 
 	let smallGames = false;
 	let allGames = gamesJson['games'];
 	let lovedIds = [];
 	let lovedGames = [];
+	let loadingHearts = true;
 
-	onMount(() => {
+	onMount(async () => {
 		// check if the user minimized
 		let minimized = localStorage.getItem('smallGames') === 'true';
 		if (minimized) {
@@ -19,11 +21,22 @@
 		}
 
 		// console.log all the games in a list
-		console.log(gamesJson['games'].map((game) => game['name']).join('\n'));
-		let loves = localStorage.getItem('loved') || '';
-		lovedIds = loves.split(',').filter((item) => item !== '');
-		lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
-		lovedGames.sort((a, b) => a['id'] - b['id']);
+		// Check if the user is logged in
+		auth.onAuthStateChanged(async (user) => {
+			if (user) {
+				loadingHearts = true;
+				// Fetch the user's data from Firestore
+				const userData = await db.collection('users').doc(user.uid).get();
+				lovedIds = userData.data().lovedGames;
+			} else {
+				// Fetch the loved games from local storage
+				let loves = localStorage.getItem('loved') || '';
+				lovedIds = loves.split(',').filter((item) => item !== '');
+			}
+			lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
+			lovedGames.sort((a, b) => a['id'] - b['id']);
+			loadingHearts = false;
+		});
 	});
 
 	export let popularGames = allGames
@@ -201,7 +214,9 @@
 			class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 		>
 			{#if filter === 'all'}
-				{#if lovedGames.length !== 0}
+				{#if loadingHearts}
+					Loading...
+				{:else if lovedGames.length !== 0}
 					{#each lovedGames as game}
 						<Box
 							title={game['name']}
@@ -242,7 +257,9 @@
 			class="grid grid-flow-rows lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-1 auto-rows-auto gap-10"
 		>
 			{#if filter === 'all'}
-				{#if lovedGames.length !== 0}
+				{#if loadingHearts}
+					Loading...
+				{:else if lovedGames.length !== 0}
 					{#each lovedGames as game}
 						<SmallBox
 							title={game['name']}
