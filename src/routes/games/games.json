@@ -670,6 +670,13 @@
             "image": "dinogame.png",
             "developer": "Google",
             "description": "The Chrome Dino game is a simple, browser-based game that can be played when a user's internet connection is offline"
+        },
+        {
+            "name": "Wordle",
+            "id": "wordle",
+            "image": "wordle.png",
+            "developer": "Josh Wardle",
+            "description": "Wordle is a type of word puzzle in which a user is presented with a jumble of letters, and they must rearrange them to form words."
         }
     ]
 }
