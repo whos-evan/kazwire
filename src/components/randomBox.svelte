@@ -2,9 +2,10 @@
 	import Box from '../routes/games/box.svelte';
 	import gamesJson from '../routes/games/games.json';
 	import { onMount } from 'svelte';
+	import { auth, db } from '../firebase';
 
-	let randomGame1 = { name: 'Loading...', image: 'loading', description: '', id: ''};
-	let randomGame2 = { name: 'Loading...', image: 'loading', description: '', id: ''};
+	let randomGame1 = { name: 'Loading...', image: 'loading', description: '', id: '' };
+	let randomGame2 = { name: 'Loading...', image: 'loading', description: '', id: '' };
 	let lovedIds = [];
 	let lovedGames = [];
 
@@ -18,10 +19,29 @@
 			randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
 		}
 
-		let loves = localStorage.getItem('loved') || '';
-		lovedIds = loves.split(',').filter((item) => item !== '');
-		lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
-		lovedGames.sort((a, b) => a['id'] - b['id']);
+		const user = auth.currentUser;
+		if (user) {
+			db.collection('users')
+				.doc(user.uid)
+				.get()
+				.then((doc) => {
+					if (doc.exists) {
+						lovedIds = doc.data().lovedGames;
+						lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
+						lovedGames.sort((a, b) => a['id'] - b['id']);
+					} else {
+						let loves = localStorage.getItem('loved') || '';
+						lovedIds = loves.split(',').filter((item) => item !== '');
+						lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
+						lovedGames.sort((a, b) => a['id'] - b['id']);
+					}
+				});
+		} else {
+			let loves = localStorage.getItem('loved') || '';
+			lovedIds = loves.split(',').filter((item) => item !== '');
+			lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
+			lovedGames.sort((a, b) => a['id'] - b['id']);
+		}
 	});
 </script>
 

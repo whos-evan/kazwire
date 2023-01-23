@@ -7,11 +7,13 @@
 
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+	import { auth, db } from '../firebase';
 	import gamesJson from '../routes/games/games.json';
 
 	import Back from './buttons/back.svelte';
 	import Minimize from './buttons/minimize.svelte';
 	let maximized = false;
+	let lovedIds = [];
 
 	function minimize() {
 		// make the iframe fill the entire screen
@@ -48,36 +50,34 @@
 		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(input);
 	}
 
-	// check if the game is loved
-	function isLoved() {
-		let loved;
+	function updateHeart() {
+		// check if the game is loved
 		let heart = document.getElementById('heart');
-		let loves = localStorage.getItem('loved') || '';
-		loves.split(',').forEach((item) => {
-			if (item == slug) {
-				loved = 'true';
-				heart.style.fill = '#ef4444';
-			}
-		});
-		if (loved == undefined) {
-			loved = 'false';
+		if (lovedIds.includes(slug)) {
+			heart.style.fill = '#ef4444';
+		} else {
 			heart.style.fill = '#ffffff';
 		}
-		return loved;
 	}
 
 	// toggle loved
 	function toggleLoved() {
-		if (isLoved() == 'true') {
-			let loves = localStorage.getItem('loved') || '';
-			let removeLoves = loves.replace(slug + ',', '');
-			localStorage.setItem('loved', removeLoves);
-			heart.style.fill = '#ffffff';
+		const user = auth.currentUser;
+		if (lovedIds.includes(slug)) {
+			// Remove the game from the lovedIds array
+			lovedIds = lovedIds.filter((id) => id !== slug);
 		} else {
-			let loves = localStorage.getItem('loved') || '';
-			localStorage.setItem('loved', loves + slug + ',');
-			heart.style.fill = '#ef4444';
+			// Add the game to the lovedIds array
+			lovedIds.push(slug);
 		}
+		if (user) {
+			// Write the updated list to Firestore
+			db.collection('users').doc(user.uid).update({ lovedGames: lovedIds });
+		} else {
+			// Write the updated list to local storage
+			localStorage.setItem('loved', lovedIds.join(','));
+		}
+		updateHeart();
 	}
 
 	function fullScreen() {
@@ -113,12 +113,25 @@
 		maximized = true;
 	}
 
-	onMount(() => {
+	onMount(async () => {
+		const user = auth.currentUser;
+		if (user) {
+			// Get the user's loved games from Firestore
+			const doc = await db.collection('users').doc(user.uid).get();
+			lovedIds = doc.data().lovedGames || [];
+			updateHeart();
+		} else {
+			// Get the user's loved games from local storage
+			const loved = localStorage.getItem('loved') || '';
+			lovedIds = loved.split(',').filter(Boolean);
+			updateHeart();
+		}
+		updateHeart();
+
 		if (gameId !== undefined) {
 			if (getGame()['embedURL'] != undefined) {
 				iframeSearch(getGame()['embedURL']);
 			}
-			isLoved();
 
 			gtag('event', 'page_view', {
 				page_title: getGame()['name'],
