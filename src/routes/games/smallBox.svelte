@@ -45,7 +45,7 @@
 				/>
 			</div>
 			<div class="pl-5 pr-5">
-				<h1 class="font-bold text-2xl" style="color: {color};">{title}</h1>
+				<h1 class="font-bold text-2xl break-all" style="color: {color};">{title}</h1>
 			</div>
 		</div>
 	</a>
@@ -63,7 +63,7 @@
 				/>
 			</div>
 			<div class="pl-5 pr-5">
-				<h1 class="font-bold text-2xl" style="color: {color};">{title}</h1>
+				<h1 class="font-bold text-2xl break-words" style="color: {color};">{title}</h1>
 			</div>
 		</div>
 	</a>
