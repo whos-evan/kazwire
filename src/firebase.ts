@@ -4,13 +4,13 @@ import 'firebase/compat/firestore';
 import { initializeApp } from 'firebase/app';
 
 const firebaseConfig = {
-	apiKey: 'AIzaSyDdeaj5DFXkKDJOjFsCFkbwXFq_06njxbo',
-	authDomain: 'mystical-being-372905.firebaseapp.com',
-	projectId: 'mystical-being-372905',
-	storageBucket: 'mystical-being-372905.appspot.com',
-	messagingSenderId: '208620925125',
-	appId: '1:208620925125:web:38cf525729d9df823480ac',
-	measurementId: 'G-KS0SQ3ZEY8'
+	apiKey: "AIzaSyDqDM8RuuiH-L096jjO3l1eQwK32nJwSZs",
+	authDomain: "kazwire-d5d32.firebaseapp.com",
+	projectId: "kazwire-d5d32",
+	storageBucket: "kazwire-d5d32.appspot.com",
+	messagingSenderId: "944227417810",
+	appId: "1:944227417810:web:8ab1832544e0d77183370b",
+	measurementId: "G-3ER0F3GH23"
 };
 
 // Initialize Firebase
