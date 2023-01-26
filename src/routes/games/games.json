@@ -684,6 +684,13 @@
             "image": "xx142-b2exe.png",
             "developer": "Ben Clark and Salvatore Previti",
             "description": "You are an AI weaponized virus built to infiltrate the alien network and deactivate all power generators and weapon systems."
+        },
+        {
+            "name": "PACKABUNCHAS",
+            "id": "packabunchas",
+            "image": "packabunchas.png",
+            "developer": "Mattia Fortunati",
+            "description": "In this game, you try to fix tetris like shapes, into a rocket ship."
         }
     ]
 }
