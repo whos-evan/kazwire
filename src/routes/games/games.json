@@ -686,10 +686,17 @@
             "description": "You are an AI weaponized virus built to infiltrate the alien network and deactivate all power generators and weapon systems."
         },
         {
+<<<<<<< HEAD
             "name": "PACKABUNCHAS",
             "id": "packabunchas",
             "image": "packabunchas.png",
             "developer": "Mattia Fortunati",
+=======
+            "name": "Packa Bunchas",
+            "id": "packabunchas",
+            "image": "packabunchas.png",
+            "developer": "Unknown",
+>>>>>>> a3e32d0e3ea60c2365911e1f8e7ef238f0f91847
             "description": "In this game, you try to fix tetris like shapes, into a rocket ship."
         }
     ]
