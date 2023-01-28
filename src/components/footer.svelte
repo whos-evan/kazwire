@@ -16,6 +16,9 @@
 						>
 					</li>
 					<li class="float-left">
+						<a href="/request" class="text-white text-lg ml-10">Request a Game</a>
+					</li>
+					<li class="float-left">
 						<a href="/legal/tos" class="text-white text-lg ml-10">Terms of Service</a>
 					</li>
 					<li class="float-left">
