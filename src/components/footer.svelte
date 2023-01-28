@@ -6,37 +6,6 @@
 	});
 </script>
 
-<!-- <div class="Footer relative">
-	<nav class="bg-secondaryLight dark:bg-secondaryDark max-w mt-10 pt-2">
-		<div class="flex items-center justify-evenly flex-wrap p-6">
-			<div class="flex items-center text-white ml-10">
-				<ul class="align-middle leading-[3rem]">
-					<li class="float-left text-white text-lg">
-						<a href="/about-the-developers" class="text-white text-lg ml-10">Made with ❤️ by evan</a
-						>
-					</li>
-					<li class="float-left">
-						<a href="/request" class="text-white text-lg ml-10">Request a Game</a>
-					</li>
-					<li class="float-left">
-						<a href="/legal/tos" class="text-white text-lg ml-10">Terms of Service</a>
-					</li>
-					<li class="float-left">
-						<a href="/legal/privacy-policy" class="text-white text-lg ml-10">Privacy Policy</a>
-					</li>
-					<li class="float-left">
-						<a href="/legal/dmca" class="text-white text-lg ml-10">DMCA</a>
-					</li>
-					<li class="float-left text-white text-lg ml-10">©2023 Kazwire</li>
-				</ul>
-			</div>
-			<p class="float-left text-white text-lg ml-10">
-				Games shown on this website are the property of their respective owners.
-			</p>
-		</div>
-	</nav>
-</div> -->
-
 <footer class="p-4 sm:p-6 bg-secondary mt-10">
 	<div class="md:flex md:justify-between">
 		<div class="mb-6 md:mb-0">
@@ -45,7 +14,7 @@
 				<span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Kazwire</span>
 			</a>
 			<a href="/about-the-developers" class="self-center text-md text-white hover:underline">
-				Made with ❤️ by evan_
+				Made with ❤️ by evan
 			</a>
 		</div>
 		<div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
