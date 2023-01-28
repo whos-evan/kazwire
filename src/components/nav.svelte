@@ -76,6 +76,9 @@
 		document.getElementById('menu')?.classList.toggle('hidden');
 	}
 </script>
+
+<!-- https://codepen.io/hulyak/pen/yLbwXvB -->
+
 <nav
 	class="
           flex flex-wrap
