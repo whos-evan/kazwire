@@ -25,7 +25,7 @@
 						<a href="/request" class="hover:underline">Request a Game</a>
 					</li>
 					<li>
-						<a href="https://discord.gg/FEkFSWRFM9" class="hover:underline">Get Support</a>
+						<a href="/discord" class="hover:underline">Get Support</a>
 					</li>
 				</ul>
 			</div>
