@@ -5,13 +5,13 @@
         w-full h-[35rem] pl-16 pr-16"
 		>
 			<div class="lg:col-start-1 lg:row-start-1">
-				<div class="font-bold lg:text-7xl md:text-5xl sm:text-xl">
+				<div class="font-bold lg:text-7xl md:text-5xl sm:text-3xl">
 					<h1>
 						<span class="pb-1 block">Your favorites</span>
 						<span class="text-secondaryLight dark:text-secondaryDark">all in one place!</span>
 					</h1>
 				</div>
-				<div class="mt-2 lg:text-2xl sm:text-sm wrap break-normal w-[32vw]">
+				<div class="mt-2 lg:text-2xl sm:text-md wrap break-normal md:w-[32vw] sm:w-full">
 					<p>
 						From the gaming classics to the internet, access YouTube, TikTok, and even your favorite
 						games freely and securely.

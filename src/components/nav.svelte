@@ -71,54 +71,91 @@
 			}
 		}
 	}
-</script>
 
-<div class="Nav">
-	<nav
-		class="bg-secondaryLight dark:bg-secondaryDark max-w mb-5 shadow-md shadow-black dark:shadow-white"
-	>
-		<div class="flex items-center justify-between flex-wrap p-3">
-			<div class="flex items-center text-white ml-10">
-				<ul class="align-middle leading-[2.5rem]">
-					<li class="float-left">
-						<a class="block transition duration-100 hover:scale-[110%]" href="/">
-							<img src="/logo.png" class="h-10" alt="Kazwire Logo" />
-						</a>
-					</li>
-					<li class="float-left transition duration-100 hover:scale-[102%]">
-						<a href="/search" class="text-white text-md hover:text-gray-200 ml-10">Search</a>
-					</li>
-					<li class="float-left transition duration-100 hover:scale-[102%]">
-						<a href="/games" class="text-white text-md hover:text-gray-200 ml-10">Games</a>
-					</li>
-					<li class="float-left transition duration-100 hover:scale-[102%]">
-						<a href="/apps" class="text-white text-md hover:text-gray-200 ml-10">Apps</a>
-					</li>
-					<li class="float-left transition duration-100 hover:scale-[102%]">
-						<a href="/settings" class="text-white hover:text-gray-200 text-md ml-10">Settings</a>
-					</li>
-					<li class="float-left transition duration-100 hover:scale-[102%]">
-						<a href="/discord" class="text-white hover:text-gray-200 text-md ml-10"
-							>Support/Discord</a
-						>
-					</li>
-				</ul>
-			</div>
-			<div class="text-white ml-auto mr-3 text-xl">
+	function toggleMenu() {
+		document.getElementById('menu')?.classList.toggle('hidden');
+	}
+</script>
+<nav
+	class="
+          flex flex-wrap
+          items-center
+          justify-between
+          w-full
+          py-4
+          md:py-0
+          px-4
+		  mb-10
+          text-lg text-white
+          bg-secondary
+		  shadow-md shadow-black dark:shadow-white
+        "
+>
+	<div class="mt-auto mb-auto">
+		<a href="/">
+			<a class="block transition duration-100 hover:scale-[110%]" href="/">
+				<img src="/logo.png" class="h-16 p-3" alt="Kazwire Logo" />
+			</a>
+		</a>
+	</div>
+
+	<button on:click={toggleMenu}>
+		<svg
+			xmlns="http://www.w3.org/2000/svg"
+			id="menu-button"
+			class="h-6 w-6 cursor-pointer md:hidden block"
+			fill="none"
+			viewBox="0 0 24 24"
+			stroke="currentColor"
+		>
+			<path
+				stroke-linecap="round"
+				stroke-linejoin="round"
+				stroke-width="2"
+				d="M4 6h16M4 12h16M4 18h16"
+			/>
+		</svg>
+	</button>
+
+	<div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
+		<ul
+			class="
+              pt-4
+              text-base text-white
+              md:flex
+              md:justify-between
+              md:pt-0"
+		>
+			<li class="m-auto">
+				<a class="md:p-4 py-2 block hover:text-primary" href="/search">Search</a>
+			</li>
+			<li class="m-auto">
+				<a class="md:p-4 py-2 block hover:text-primary" href="/games">Games</a>
+			</li>
+			<li class="m-auto">
+				<a class="md:p-4 py-2 block hover:text-primary" href="/apps">Apps</a>
+			</li>
+			<li class="m-auto">
+				<a class="md:p-4 py-2 block hover:text-primary" href="/settings">Settings</a>
+			</li>
+			<li class="m-auto">
+				<a class="md:p-4 py-2 block hover:text-primary" href="/discord">Support/Discord</a>
+			</li>
+			<li class="m-auto">
 				{#if localUser}
 					<a href="/account/profile">
 						<img
 							src={localUser.photoURL}
-							class="transition duration-100 hover:scale-[105%] h-8 rounded-full"
+							class="transition duration-100 hover:scale-[105%] h-16 p-4 rounded-full"
 							alt="Profile"
 							referrerpolicy="no-referrer"
 						/>
 					</a>
 				{:else}
-					<a href="/account" class="text-md transition duration-100 hover:scale-[105%]">Login</a>
+					<a class="md:p-4 py-2 block hover:text-primary" href="/account">Sign Up</a>
 				{/if}
-			</div>
-			<div class="float-right text-white text-xl mr-10">
+			</li>
+			<li class="m-auto">
 				<button
 					id="theme-selector"
 					class="transition duration-100 hover:scale-[105%] bg-secondary text-white font-bold py-2 px-4 rounded-full"
@@ -126,7 +163,7 @@
 				>
 					☀️
 				</button>
-			</div>
-		</div>
-	</nav>
-</div>
+			</li>
+		</ul>
+	</div>
+</nav>
