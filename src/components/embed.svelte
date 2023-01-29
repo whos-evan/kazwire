@@ -1,19 +1,49 @@
 <script>
+	/**
+	 * @type {string}
+	 */
 	export let gameId;
+
+	/**
+	 * @type {string}
+	 */
+	export let appId;
+
+	/**
+	 * @type {string}
+	 */
 	export let embedURL;
+
+	/**
+	 * @type {string}
+	 */
 	export let title;
+
+	/**
+	 * @type {string}
+	 */
 	export let description;
+
+	/**
+	 * @type {string}
+	 */
 	export let developer;
 
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
+
 	import { auth, db } from '../firebase';
+
 	import gamesJson from '../routes/games/games.json';
+	import appsJson from '../routes/games/games.json';
 
 	import Back from './buttons/back.svelte';
 	import Minimize from './buttons/minimize.svelte';
+
 	let maximized = false;
-	let lovedIds = [];
+	
+	let lovedGameIds = [];
+	let lovedAppIds = [];
 
 	function minimize() {
 		// make the iframe fill the entire screen
@@ -60,8 +90,8 @@
 				.get()
 				.then((doc) => {
 					if (doc.exists) {
-						lovedIds = doc.data().lovedGames;
-						if (lovedIds.includes(slug)) {
+						lovedGameIds = doc.data().lovedGames;
+						if (lovedGameIds.includes(slug)) {
 							heart.style.fill = '#ef4444';
 						} else {
 							heart.style.fill = '#ffffff';
@@ -81,12 +111,12 @@
 
 	// toggle loved
 	function toggleLoved() {
-		if (lovedIds.includes(slug)) {
-			// Remove the game from the lovedIds array
-			lovedIds = lovedIds.filter((id) => id !== slug);
+		if (lovedGameIds.includes(slug)) {
+			// Remove the game from the lovedGameIds array
+			lovedGameIds = lovedGameIds.filter((id) => id !== slug);
 		} else {
-			// Add the game to the lovedIds array
-			lovedIds.push(slug);
+			// Add the game to the lovedGameIds array
+			lovedGameIds.push(slug);
 		}
 		const user = auth.currentUser;
 		if (user) {
@@ -97,13 +127,13 @@
 				.get()
 				.then((doc) => {
 					if (doc.exists) {
-						db.collection('users').doc(user.uid).update({ lovedGames: lovedIds });
+						db.collection('users').doc(user.uid).update({ lovedGames: lovedGameIds });
 						updateHeart();
 					} else {
 						// create the user's data if it doesn't exist
 						db.collection('users')
 							.doc(user.uid)
-							.set({ lovedGames: lovedIds }, { merge: true })
+							.set({ lovedGames: lovedGameIds }, { merge: true })
 							.then(() => updateHeart())
 							.catch((error) => console.error('Error writing document: ', error));
 						updateHeart();
@@ -112,7 +142,7 @@
 		} else {
 			// Convert local storage items to array
 			// Write the updated list to local storage
-			localStorage.setItem('loved', lovedIds.join(','));
+			localStorage.setItem('loved', lovedGameIds.join(','));
 			updateHeart();
 		}
 	}
@@ -174,21 +204,21 @@
 				.get()
 				.then((doc) => {
 					if (doc.exists) {
-						lovedIds = doc.data().lovedGames;
-						db.collection('users').doc(user.uid).update({ lovedGames: lovedIds });
+						lovedGameIds = doc.data().lovedGames;
+						db.collection('users').doc(user.uid).update({ lovedGames: lovedGameIds });
 						updateHeart();
 					} else {
 						// create the user's data if it doesn't exist
 						db.collection('users')
 							.doc(user.uid)
 							.set({ lovedGames: [slug] });
-						lovedIds = [slug];
+						lovedGameIds = [slug];
 						updateHeart();
 					}
 				});
 		} else {
 			// Write the updated list to local storage
-			lovedIds = localStorage?.getItem('loved')?.split(',');
+			lovedGameIds = localStorage?.getItem('loved')?.split(',');
 			updateHeart();
 		}
 

@@ -691,6 +691,13 @@
             "image": "packabunchas.png",
             "developer": "Mattia Fortunati",
             "description": "In this game, you try to fix tetris like shapes, into a rocket ship."
+        },
+        {
+            "name": "Pizza Tower",
+            "id": "pizza-tower",
+            "image": "pizza-tower.jpeg",
+            "developer": "Tour De Pizza",
+            "description": "Pizza Tower is a fast paced 2D platformer inspired by the Wario Land series, with an emphasis on movement, exploration and score attack. Featuring highly stylized pixel art inspired by the cartoons from the '90s, and a highly energetic soundtrack."
         }
     ]
 }
