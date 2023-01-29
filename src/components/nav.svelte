@@ -94,11 +94,12 @@
 		  shadow-md shadow-black dark:shadow-white
         "
 >
-	<div class="mt-auto mb-auto">
+	<div class="mt-auto mb-auto flex-col align-items-center">
 		<a href="/">
-			<a class="block transition duration-100 hover:scale-[110%]" href="/">
-				<img src="/logo.png" class="h-16 p-3" alt="Kazwire Logo" />
-			</a>
+			<img src="/logo.png" class="h-16 p-3 inline-block" alt="Kazwire Logo" />
+			<span class="hidden lg:inline-block text-2xl font-semibold whitespace-nowrap text-white align-middle"
+				>Kazwire</span
+			>
 		</a>
 	</div>
 
