@@ -698,6 +698,13 @@
             "image": "pizza-tower.jpeg",
             "developer": "Tour De Pizza",
             "description": "Pizza Tower is a fast paced 2D platformer inspired by the Wario Land series, with an emphasis on movement, exploration and score attack. Featuring highly stylized pixel art inspired by the cartoons from the '90s, and a highly energetic soundtrack."
+        },
+        {
+            "name": "Typing Test",
+            "id": "typing-test",
+            "image": "typing-test.png",
+            "developer": "salmannotkhan",
+            "description": "Type as fast as you possibly can! Test yourself and see how much you can improve."
         }
     ]
 }
