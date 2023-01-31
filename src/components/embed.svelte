@@ -58,6 +58,7 @@
 		gameFrame.style.width = '100%';
 		gameFrame.style.zIndex = '0';
 		gameFrame.style.border = 'none';
+		gameFrame.classList.add("rounded-t-lg");
 
 		maximized = false;
 	}
