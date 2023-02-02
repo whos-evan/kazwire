@@ -700,8 +700,16 @@
             "description": "Pizza Tower is a fast paced 2D platformer inspired by the Wario Land series, with an emphasis on movement, exploration and score attack. Featuring highly stylized pixel art inspired by the cartoons from the '90s, and a highly energetic soundtrack."
         },
         {
+            "name": "Drift Boss",
+            "id": "drift-boss",
+            "image": "drift-boss.png",
+            "developer": "White Label Games",
+            "description": "Drift boss is a drifting game played by pressing one button. Drive your vehicle around tricky corners and over bumps until you fall off the platform. Keep playing to earn rewards and unlock better cars!"
+        },
+        {
             "name": "Typing Test",
             "id": "typing-test",
+            "embedURL": "https://www.mathplayground.com/drift-boss/index.html",
             "image": "typing-test.png",
             "developer": "salmannotkhan",
             "description": "Type as fast as you possibly can! Test yourself and see how much you can improve."
