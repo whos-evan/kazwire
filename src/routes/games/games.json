@@ -705,6 +705,14 @@
             "image": "typing-test.png",
             "developer": "salmannotkhan",
             "description": "Type as fast as you possibly can! Test yourself and see how much you can improve."
+        },
+        {
+            "name": "Chess.com",
+            "id": "chess",
+            "image": "chess.png",
+            "developer": "Chess.com",
+            "description": "Chess.com is an internet chess server, news website and social networking website.",
+            "embedURL": "https://chess.com"
         }
     ]
 }
