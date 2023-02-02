@@ -177,7 +177,10 @@
 		gameFrame.style.width = '100%';
 		gameFrame.style.zIndex = '9999';
 		gameFrame.style.border = 'none';
-		gameFrame.classList.remove("rounded-t-lg");
+
+		let iframe = document.getElementById?.('iframe');
+		iframe?.classList.toggle('rounded-t-lg');
+		
 
 		maximized = true;
 	}
