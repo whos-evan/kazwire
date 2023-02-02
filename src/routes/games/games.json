@@ -701,10 +701,10 @@
         },
         {
             "name": "Drift Boss",
+            "developer": "White Label Games",
             "embedURL": "https://www.mathplayground.com/pg_drift_boss.html",
             "id": "drift-boss",
             "image": "drift-boss.png",
-            "developer": "White Label Games",
             "description": "Drift boss is a drifting game played by pressing one button. Drive your vehicle around tricky corners and over bumps until you fall off the platform. Keep playing to earn rewards and unlock better cars!"
         },
         {
