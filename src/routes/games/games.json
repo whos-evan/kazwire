@@ -701,6 +701,7 @@
         },
         {
             "name": "Drift Boss",
+            "embedURL": "https://www.mathplayground.com/drift-boss/index.html",
             "id": "drift-boss",
             "image": "drift-boss.png",
             "developer": "White Label Games",
@@ -709,7 +710,6 @@
         {
             "name": "Typing Test",
             "id": "typing-test",
-            "embedURL": "https://www.mathplayground.com/drift-boss/index.html",
             "image": "typing-test.png",
             "developer": "salmannotkhan",
             "description": "Type as fast as you possibly can! Test yourself and see how much you can improve."
