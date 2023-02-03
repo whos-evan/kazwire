@@ -715,6 +715,22 @@
             "description": "Type as fast as you possibly can! Test yourself and see how much you can improve."
         },
         {
+            "name": "Bonk.io",
+            "id": "bonk",
+            "image": "bonk.png",
+            "developer": "Chaz",
+            "description": "Bonk.io is a multiplayer physics game, for up to eight players at once. Push your opponents off the edge of the level, the last man standing wins!"
+            "embedURL": "https://bonk.io"
+        },
+        {
+            "name": "Kahoot.rocks",
+            "id": "kahoot-rocks",
+            "image": "kahoot-rocks.png",
+            "developer": "Abstract Land",
+            "description": "Kahoot Rocks is an alternative Kahoot client that acts like the original but adds many more features to make playing Kahoot much more enjoyable."
+            "embedURL": "https://kahoot.club"
+        },
+        {
             "name": "Chess.com",
             "id": "chess",
             "image": "chess.png",
