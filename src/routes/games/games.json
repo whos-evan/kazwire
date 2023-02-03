@@ -723,14 +723,6 @@
             "embedURL": "https://bonk.io"
         },
         {
-            "name": "Kahoot.rocks",
-            "id": "kahoot-rocks",
-            "image": "kahoot-rocks.png",
-            "developer": "Abstract Land",
-            "description": "Kahoot Rocks is an alternative Kahoot client that acts like the original but adds many more features to make playing Kahoot much more enjoyable."
-            "embedURL": "https://kahoot.club"
-        },
-        {
             "name": "Chess.com",
             "id": "chess",
             "image": "chess.png",
