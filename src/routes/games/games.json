@@ -700,11 +700,27 @@
             "description": "Pizza Tower is a fast paced 2D platformer inspired by the Wario Land series, with an emphasis on movement, exploration and score attack. Featuring highly stylized pixel art inspired by the cartoons from the '90s, and a highly energetic soundtrack."
         },
         {
+            "name": "Drift Boss",
+            "developer": "White Label Games",
+            "embedURL": "https://www.mathplayground.com/pg_drift_boss.html",
+            "id": "drift-boss",
+            "image": "drift-boss.png",
+            "description": "Drift boss is a drifting game played by pressing one button. Drive your vehicle around tricky corners and over bumps until you fall off the platform. Keep playing to earn rewards and unlock better cars!"
+        },
+        {
             "name": "Typing Test",
             "id": "typing-test",
             "image": "typing-test.png",
             "developer": "salmannotkhan",
             "description": "Type as fast as you possibly can! Test yourself and see how much you can improve."
+        },
+        {
+            "name": "Bonk.io",
+            "id": "bonk",
+            "image": "bonk.png",
+            "developer": "Chaz",
+            "description": "Bonk.io is a multiplayer physics game, for up to eight players at once. Push your opponents off the edge of the level, the last man standing wins!",
+            "embedURL": "https://bonk.io"
         },
         {
             "name": "Chess.com",

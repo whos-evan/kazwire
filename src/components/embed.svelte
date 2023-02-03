@@ -60,6 +60,10 @@
 		gameFrame.style.border = 'none';
 		gameFrame.classList.add("rounded-t-lg");
 
+		let iframe = document.getElementById?.('iframe');
+		iframe?.classList.toggle('rounded-t-lg');
+		
+
 		maximized = false;
 	}
 
