@@ -15,8 +15,8 @@ window.requestAnimFrame = (function () {
 var canvas = document.getElementById('canvas'),
 	ctx = canvas.getContext('2d');
 
-var width = max,
-	height = max;
+var width = 844,
+	height = 1104;
 
 canvas.width = width;
 canvas.height = height;
