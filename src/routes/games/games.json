@@ -719,7 +719,7 @@
             "id": "bonk",
             "image": "bonk.png",
             "developer": "Chaz",
-            "description": "Bonk.io is a multiplayer physics game, for up to eight players at once. Push your opponents off the edge of the level, the last man standing wins!"
+            "description": "Bonk.io is a multiplayer physics game, for up to eight players at once. Push your opponents off the edge of the level, the last man standing wins!",
             "embedURL": "https://bonk.io"
         },
         {
