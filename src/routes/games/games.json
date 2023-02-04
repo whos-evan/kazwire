@@ -729,6 +729,13 @@
             "developer": "Chess.com",
             "description": "Chess.com is an internet chess server, news website and social networking website.",
             "embedURL": "https://chess.com"
+        },
+        {
+            "name": "Swing Monkey",
+            "id": "swing-monkey",
+            "image": "swing-monkey.png",
+            "developer": "MarketJS",
+            "description": "Swing Monkey is a one-button monkey swinging game to reach the finish line successfully."
         }
     ]
 }
