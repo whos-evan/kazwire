@@ -735,8 +735,7 @@
             "id": "swing-monkey",
             "image": "swing-monkey.png",
             "developer": "MarketJS",
-            "description": "Swing Monkey is a one-button monkey swinging game to reach the finish line successfully.",
-            "embedURL": "https://www.swingmonkey.net/"
+            "description": "Swing Monkey is a one-button monkey swinging game to reach the finish line successfully."
         }
     ]
 }
