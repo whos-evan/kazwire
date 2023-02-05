@@ -35,7 +35,7 @@
 	});
 </script>
 
-<a class="partner" id={title} href={href}>
+<a class="partner p-10" id={title} href={href}>
 	<div
 		class="background-game bg-white hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl w-full h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 		style="box-shadow: 5px 5px 20px 0px {shine};"
