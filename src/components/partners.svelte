@@ -16,6 +16,13 @@
 			color="#e77e7e"
 		/>
 		<Box
+			title="Bigfoot's Game Shack"
+			image="bigfoot.png"
+			description="Built for real gamers. 100+ Games, Apps (Discord, etc), Tab Cloaking, and Game Cloaking!"
+			href="https://bgs.pages.dev/"
+			color="#774e24"
+		/>
+		<Box
 			title="Partner with us!"
 			image="kazwire.png"
 			description="We would love to partner with you and have you showcased here! Click the box to join our Discord server!"
