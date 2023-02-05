@@ -2,13 +2,13 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 
-	import randomThings from './random-things.json';
+	import randomThings from './randomThings.json';
 
 	let randomThing = 'Loading...';
 	onMount(() => {
 		randomThing = randomThings[Math.floor(Math.random() * randomThings.length)];
 	});
-	
+
 	const hostname = $page.url.hostname;
 	const protocol = $page.url.protocol;
 
