@@ -39,7 +39,7 @@
 	onMount(() => {
 		const colorThief = new ColorThief();
 		const img = new Image();
-		img.src = `./app/img/${image}`;
+		img.src = `/assets/partners/${image}`;
 		img.addEventListener('load', function () {
 			colorThief.getColor(img);
 			shine = `rgb(${colorThief.getColor(img)})`;
