@@ -42,7 +42,6 @@
 	>
 		<div class="p-5 w-full justify-center flex">
 			<img
-				loading="lazy"
 				src="./assets/partners/{image}"
 				class="img bg-white w-auto max-h-[5rem]"
 				alt={description}
