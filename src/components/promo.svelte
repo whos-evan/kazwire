@@ -1,7 +1,14 @@
 <script>
 	import { page } from '$app/stores';
-	import { get } from 'svelte/store';
+	import { onMount } from 'svelte';
 
+	import randomThings from './random-things.json';
+
+	let randomThing = 'Loading...';
+	onMount(() => {
+		randomThing = randomThings[Math.floor(Math.random() * randomThings.length)];
+	});
+	
 	const hostname = $page.url.hostname;
 	const protocol = $page.url.protocol;
 
@@ -35,14 +42,12 @@
 				<div class="mt-2 lg:text-2xl sm:text-md wrap break-normal md:w-[32vw] sm:w-full">
 					{#await getPremium()}
 						<p>
-							From the gaming classics to the internet, access YouTube, TikTok, and even your
-							favorite games freely and securely.
+							{randomThing}
 						</p>
 					{:then premium}
 						{#if premium === false}
 							<p>
-								From the gaming classics to the internet, access YouTube, TikTok, and even your
-								favorite games freely and securely.
+								{randomThing}
 							</p>
 						{:else}
 							<p>
