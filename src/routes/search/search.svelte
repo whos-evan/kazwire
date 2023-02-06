@@ -131,8 +131,8 @@
 		<button class="m-auto bg-secondary md:w-[50vw] sm:w-[80vw] p-3 rounded-lg mt-5 text-white"
 		on:click={hideMessage}>
 			Please be patient while we work on scaling our systems.
-	</button> -->
-	</div>
+	</button>
+	</div> -->
 	<form id="uv-form" class="flex-center" on:submit={iframeSearch}>
 		<input
 			id="uv-address"
