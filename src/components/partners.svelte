@@ -52,13 +52,13 @@
 					href="https://bgs.pages.dev/"
 					color="#774e24"
 				/>
-				<Box
+				<!-- <Box
 					title="3kh0"
 					image="3kh0.png"
 					description="The better unblocked games site, clean and user friendly."
 					href="https://3kh0.github.io/"
 					color="#3a0f1c"
-				/>
+				/> -->
 				<Box
 					title="Partner with us!"
 					image="kazwire.png"
