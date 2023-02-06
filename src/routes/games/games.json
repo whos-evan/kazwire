@@ -737,5 +737,11 @@
             "developer": "MarketJS",
             "description": "Swing Monkey is a one-button monkey swinging game to reach the finish line successfully."
         }
+        "description": "Description of the game",
+        "developer": "Evil objective,
+        Source: 3kh0",
+        "id": "btts",
+        "image": "btts.png",
+        `"name": "Big Tower Tiny Square"
     ]
 }
