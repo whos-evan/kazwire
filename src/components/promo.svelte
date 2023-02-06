@@ -4,6 +4,10 @@
 
 	import randomThings from './randomThings.json';
 
+	function newRandomThing() {
+		randomThing = randomThings[Math.floor(Math.random() * randomThings.length)];
+	}
+
 	let randomThing = 'Loading...';
 	onMount(() => {
 		randomThing = randomThings[Math.floor(Math.random() * randomThings.length)];
@@ -41,18 +45,23 @@
 				</div>
 				<div class="mt-2 lg:text-2xl sm:text-md wrap break-normal md:w-[32vw] sm:w-full">
 					{#await getPremium()}
-						<p>
-							{randomThing}
-						</p>
-					{:then premium}
-						{#if premium === false}
+						<button class="text-left" on:click={newRandomThing}>
 							<p>
 								{randomThing}
 							</p>
+						</button>
+					{:then premium}
+						{#if premium === false}
+							<button class="text-left" on:click={newRandomThing}>
+								<p>
+									{randomThing}
+								</p>
+							</button>
 						{:else}
 							<p>
 								Looks like you are accessing this site with a premium domain. You can boost the
-								<a class="hover:underline" href="/discord">Kazwire Discord server</a> to get access to all premium domains.
+								<a class="hover:underline" href="/discord">Kazwire Discord server</a> to get access to
+								all premium domains.
 							</p>
 						{/if}
 					{/await}
