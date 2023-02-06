@@ -3,6 +3,8 @@
 	import Promo from '../components/promo.svelte';
 	import RandomBox from '../components/randomBox.svelte';
 	import Faq from '../components/faq.svelte';
+	import Partners from '../components/partners.svelte';
+	import Credits from '../components/credits.svelte';
 	import News from '../components/news/news.svelte';
 	import Footer from '../components/footer.svelte';
 
@@ -24,5 +26,9 @@
 <HorzAd />
 
 <Faq />
+
+<Partners />
+
+<Credits />
 
 <Footer />

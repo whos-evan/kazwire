@@ -1,3 +1,31 @@
+<script>
+	import { page } from '$app/stores';
+	import { onMount } from 'svelte';
+
+	import randomThings from './randomThings.json';
+
+	let randomThing = 'Loading...';
+	onMount(() => {
+		randomThing = randomThings[Math.floor(Math.random() * randomThings.length)];
+	});
+
+	const hostname = $page.url.hostname;
+	const protocol = $page.url.protocol;
+
+	async function getPremium() {
+		try {
+			const res = await fetch(protocol + '//' + hostname + '/premium/');
+			if (res.status >= 400) {
+				return false;
+			} else {
+				return true;
+			}
+		} catch (err) {
+			return false;
+		}
+	}
+</script>
+
 <div class="Promo sm:pt-14 md:pt-0">
 	<div class="text-white">
 		<div
@@ -12,10 +40,22 @@
 					</h1>
 				</div>
 				<div class="mt-2 lg:text-2xl sm:text-md wrap break-normal md:w-[32vw] sm:w-full">
-					<p>
-						From the gaming classics to the internet, access YouTube, TikTok, and even your favorite
-						games freely and securely.
-					</p>
+					{#await getPremium()}
+						<p>
+							{randomThing}
+						</p>
+					{:then premium}
+						{#if premium === false}
+							<p>
+								{randomThing}
+							</p>
+						{:else}
+							<p>
+								Looks like you are accessing this site with a premium domain. You can boost the
+								<a class="hover:underline" href="/discord">Kazwire Discord server</a> to get access to all premium domains.
+							</p>
+						{/if}
+					{/await}
 				</div>
 				<a href="/search">
 					<button
