@@ -127,11 +127,11 @@
 </script>
 
 <div class="text-white w-full pb-5 text-center">
-	<div id="message" class="flex-center">
+	<!-- <div id="message" class="flex-center">
 		<button class="m-auto bg-secondary md:w-[50vw] sm:w-[80vw] p-3 rounded-lg mt-5 text-white"
 		on:click={hideMessage}>
 			Please be patient while we work on scaling our systems.
-	</button>
+	</button> -->
 	</div>
 	<form id="uv-form" class="flex-center" on:submit={iframeSearch}>
 		<input
