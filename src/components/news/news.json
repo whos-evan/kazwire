@@ -1,6 +1,11 @@
 {
+	"news1": {
+		"text": "There are now two servers, your searching can go twice as fast! There is now a recommended button and a reroll button.",
+		"date": "02/6/2023"
+	},
 	"news": {
 		"text": "Premium domains can be purchased in our Discord server. Added sort feature on games page. Minor bug fixes. Progress made on speeding up the servers, but more work will be done in the future.",
 		"date": "01/25/2023"
 	}
+	
 }
