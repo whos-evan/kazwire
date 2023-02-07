@@ -47,24 +47,14 @@
 <div class="text-white w-full text-center">
 	<h1 class="lg:text-5xl md:text-4xl sm:text-xl font-bold">
 		{#if lovedGames.length > 1}
-		Here are your loved games!
+			Here are your loved games!
 		{:else if lovedGames.length == 1}
-		Here is your loved game!
+			Here is your loved game!
 		{:else}
-		Here are two random games!
+			Here are two random games!
 		{/if}
 	</h1>
-	<button on:click={() => {
-		let allGames = gamesJson['games'];
- 
-		randomGame1 = allGames[Math.floor(Math.random() * allGames.length)];
-		randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
-		// if they are the same game, reroll
-		while (randomGame1['id'] == randomGame2['id']) {
-			randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
-		}
-	  }} class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 font-bold pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]">Reroll</button>
-	<div
+		<div
 		class="grid grid-flow-rows lg:grid-cols-2 lg:grid-rows-none sm:grid-cols-1 sm:grid-rows-2 auto-rows-auto mt-10 gap-10"
 	>
 		{#if lovedGames.length == 0}
@@ -108,5 +98,6 @@
 				category="Loved"
 				color="red"
 			/>
-</div>
+			{/if}
+		</div>
 </div>
