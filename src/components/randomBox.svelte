@@ -3,22 +3,22 @@
 	import gamesJson from '../routes/games/games.json';
 	import { onMount } from 'svelte';
 	import { auth, db } from '../firebase';
-
+ 
 	let randomGame1 = { name: 'Loading...', image: 'loading', description: '', id: '' };
 	let randomGame2 = { name: 'Loading...', image: 'loading', description: '', id: '' };
 	let lovedIds = [];
 	let lovedGames = [];
-
+ 
 	onMount(() => {
 		let allGames = gamesJson['games'];
-
+ 
 		randomGame1 = allGames[Math.floor(Math.random() * allGames.length)];
 		randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
 		// if they are the same game, reroll
 		while (randomGame1['id'] == randomGame2['id']) {
 			randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
 		}
-
+ 
 		const user = auth.currentUser;
 		if (user) {
 			db.collection('users')
@@ -44,7 +44,6 @@
 		}
 	});
 </script>
-
 <div class="text-white w-full text-center">
 	<h1 class="lg:text-5xl md:text-4xl sm:text-xl font-bold">
 		{#if lovedGames.length > 1}
@@ -55,7 +54,7 @@
 			Here are two random games!
 		{/if}
 	</h1>
-	<div
+		<div
 		class="grid grid-flow-rows lg:grid-cols-2 lg:grid-rows-none sm:grid-cols-1 sm:grid-rows-2 auto-rows-auto mt-10 gap-10"
 	>
 		{#if lovedGames.length == 0}
@@ -99,6 +98,6 @@
 				category="Loved"
 				color="red"
 			/>
-		{/if}
-	</div>
+			{/if}
+		</div>
 </div>

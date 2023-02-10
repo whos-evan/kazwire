@@ -9,14 +9,14 @@
 	var outerWidth = 0;
 </script>
 
-<svelte:window bind:innerWidth={outerWidth}/>
+<svelte:window bind:innerWidth={outerWidth} />
 <div class="Partners w-full sm:pl-0 sm:pr-0 pl-10 pr-10">
 	<h1 class="text-4xl text-white font-bold text-center mb-5">Partners</h1>
 	{#if browser}
 		<div class="pl-14 pr-14 sm:pr-4 sm:pl-4">
 			<Carousel
 				bind:this={carousel}
-				particlesToShow= {outerWidth > 768 ? 3 : 1}
+				particlesToShow={outerWidth > 768 ? 3 : 1}
 				particlesToScroll={1}
 				autoplay
 				autoplayDuration={2500}
@@ -52,13 +52,13 @@
 					href="https://bgs.pages.dev/"
 					color="#774e24"
 				/>
-				<!-- <Box
-					title="3kh0"
-					image="3kh0.png"
-					description="The better unblocked games site, clean and user friendly."
-					href="https://3kh0.github.io/"
-					color="#3a0f1c"
-				/> -->
+				<Box
+					title="Moonlight"
+					image="moonlight.png"
+					description="Browse tons of fun games for free with Moonlight. The cure to boredom at your fingertips."
+					href="https://moonlight.silvereen.net/"
+					color="#000449"
+				/>
 				<Box
 					title="Partner with us!"
 					image="kazwire.png"
