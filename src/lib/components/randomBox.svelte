@@ -7,10 +7,11 @@
 	let lovedIds = [];
 	let lovedGames = [];
 	let randomGame1, randomGame2;
-	let allGames = gamesJson['games'];
+	
 	let loadingHearts = true;
 
 	function rerollGames() {
+		let allGames = gamesJson['games'];
 		randomGame1 = allGames[Math.floor(Math.random() * allGames.length)];
 		randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
 		// if they are the same game, reroll
@@ -20,6 +21,7 @@
 	}
 
 	onMount(() => {
+		let allGames = gamesJson['games'];
 		randomGame1 = allGames[Math.floor(Math.random() * allGames.length)];
 		randomGame2 = allGames[Math.floor(Math.random() * allGames.length)];
 		// if they are the same game, reroll
@@ -58,6 +60,7 @@
 			Here is your loved game!
 		{:else}
 			Here are two random games!
+			<br>
 			<button
 				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 font-bold transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg hover:scale-[105%]"
 				on:click={rerollGames}
