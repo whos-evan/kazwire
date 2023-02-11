@@ -25,7 +25,7 @@
 				}
 			} else {
 				// Fetch the loved games from local storage
-				let loves = localStorage.getItem('lovedApps') || '';
+				let loves = localStorage.getItem('lovedApps') || '[]';
 				lovedIds = JSON.parse(loves);
 			}
 			// Get the loved games from the JSON file
