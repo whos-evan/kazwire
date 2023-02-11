@@ -98,18 +98,6 @@
 				Save
 			</button>
 		</div>
-		<div class="row-start-4 col-start-1">
-			Reset Loved Items:
-			<button
-				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 ml-2 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
-				on:click={changeFavicon}
-			>
-				Save
-			</button>
-			<p class="m-auto pt-5 w-[50vw] text-left">
-				Due to a recent update the way we now store loved games has changed. To reset your loved items, simply press this button after that you should be able to continue using the site normally.
-				</p>
-		</div>
 	</div>
 </div>
 <Footer />
