@@ -6,6 +6,7 @@
             "id": "2048",
             "image": "2048.png",
             "name": "2048",
+            "platform": "Mobile",
             "releaseDate": "?"
         },
         {
@@ -13,6 +14,7 @@
             "developer": "Dylan",
             "id": "a-dark-room",
             "image": "a-dark-room.png",
+            "platform": "Mobile",
             "name": "A Dark Room"
         },
         {
@@ -20,6 +22,7 @@
             "developer": "maxwellito",
             "id": "breaklock",
             "image": "breaklock.png",
+            "platform": "Mobile",
             "name": "Breaklock"
         },
         {
@@ -28,6 +31,7 @@
             "embedURL": "https://battleboats.io/",
             "id": "battle-boats",
             "image": "battle-boats.png",
+            "platform": "PC",
             "name": "Battleboats.io"
         },
         {
@@ -37,6 +41,7 @@
             "id": "agar",
             "image": "agar.png",
             "name": "agar.io",
+            "platform": "Mobile",
             "releaseDate": "?"
         },
         {
@@ -46,6 +51,7 @@
             "id": "krunker",
             "image": "krunker.png",
             "name": "Krunker.io",
+            "platform": "PC",
             "releaseDate": "?"
         },
         {
@@ -54,6 +60,7 @@
             "embedURL": "https://idlebreakout.io/",
             "id": "idle-breakout",
             "image": "idle-breakout.png",
+            "platform": "Mobile",
             "name": "Idle Breakout"
         },
         {
@@ -61,6 +68,7 @@
             "developer": "Miniclip",
             "id": "basketball-stars",
             "image": "basketball-stars.png",
+            "platform": "Mobie",
             "name": "Basketball Stars"
         },
         {
@@ -70,6 +78,7 @@
             "id": "bloons-td2",
             "image": "bloons-td2.webp",
             "name": "Bloons Tower Defense 2",
+            "platform": "Mobile",
             "releaseDate": "?"
         },
         {
@@ -78,6 +87,7 @@
             "emulator": "ruffle",
             "id": "bow-man",
             "image": "bow-man.png",
+            "platform": "PC",
             "name": "Bow Man"
         },
         {
@@ -86,6 +96,7 @@
             "embedURL": "https://buildroyale.io/",
             "id": "buildroyale",
             "image": "buildroyale.png",
+            "platform": "PC",
             "name": "BuildRoyale.io"
         },
         {
@@ -93,6 +104,7 @@
             "developer": "Greg Hovanesyan",
             "id": "coloron",
             "image": "coloron.png",
+            "platform": "Mobile",
             "name": "Coloron"
         },
         {
@@ -102,6 +114,7 @@
             "id": "combines",
             "image": "combines.png",
             "name": "Combines.io",
+            "platform": "Mobile",
             "releaseDate": "?"
         },
         {
@@ -110,6 +123,7 @@
             "id": "cookie-clicker",
             "image": "cookie-clicker.png",
             "name": "Cookie Clicker",
+            "platform": "Mobile",
             "releaseDate": "?"
         },
         {
@@ -117,6 +131,7 @@
             "developer": "randomyang",
             "id": "core-ball",
             "image": "core-ball.png",
+            "platform": "Mobile",
             "name": "Core Ball"
         },
         {
@@ -126,6 +141,7 @@
             "id": "crazy-taxi",
             "image": "crazy-taxi.png",
             "name": "Crazy Taxi",
+            "platform": "PC",
             "releaseDate": "?"
         },
         {
@@ -133,6 +149,7 @@
             "developer": "Nils Asejevs",
             "id": "cubefield",
             "image": "cubefield.png",
+            "platform": "Mobile",
             "name": "Cubefield"
         },
         {
@@ -141,6 +158,7 @@
             "embedURL": "https://diep.io/",
             "id": "diep",
             "image": "diep.png",
+            "platform": "Mobile",
             "name": "Diep.io"
         },
         {
@@ -149,6 +167,7 @@
             "id": "drift-hunters",
             "image": "drift-hunters.png",
             "name": "Drift Hunters",
+            "platform": "PC",
             "popular": true
         },
         {
@@ -158,6 +177,7 @@
             "id": "ducklife1",
             "image": "ducklife1.png",
             "name": "Duck Life 1",
+            "platform": "PC",
             "releaseDate": "?"
         },
         {
@@ -167,6 +187,7 @@
             "id": "ducklife2",
             "image": "ducklife2.png",
             "name": "Duck Life 2",
+            "platform": "PC",
             "releaseDate": "?"
         },
         {
@@ -176,6 +197,7 @@
             "id": "ducklife3-evolution",
             "image": "ducklife3-evolution.png",
             "name": "Duck Life 3 - Evolution",
+            "platform": "PC",
             "releaseDate": "?"
         },
         {
@@ -185,6 +207,7 @@
             "id": "ducklife4",
             "image": "ducklife4.png",
             "name": "Duck Life 4",
+            "platform": "PC",
             "releaseDate": "?",
             "popular": true
         },
@@ -194,6 +217,7 @@
             "embedURL": "https://1v1.lol/",
             "id": "1v1-lol",
             "image": "1v1-lol.png",
+            "platform": "PC",
             "name": "1v1.lol"
         },
         {
@@ -201,6 +225,7 @@
             "developer": "IceGirl",
             "id": "fireboy-and-watergirl-forest-temple",
             "image": "fireboy-and-watergirl-forest-temple.png",
+            "platform": "Mobile",
             "name": "Fireboy and Watergirl Forest Temple"
         },
         {
@@ -210,6 +235,7 @@
             "id": "fortnite",
             "image": "fortnite.png",
             "name": "Fortnite",
+            "platform": "PC",
             "releaseDate": "2017-07-25"
         },
         {
@@ -217,6 +243,7 @@
             "developer": "NinjaMuffin99",
             "id": "fnf-vs-ex",
             "image": "fnf-vs-ex.png",
+            "platform": "PC",
             "name": "Friday Night Funkin: Vs Ex"
         },
         {
@@ -226,6 +253,7 @@
             "id": "frogger",
             "image": "frogger.png",
             "name": "Frogger",
+            "platform": "PC",
             "releaseDate": "?"
         },
         {
@@ -235,6 +263,7 @@
             "id": "geforce-now",
             "image": "geforce-now.png",
             "name": "GeForce NOW",
+            "platform": "PC",
             "releaseDate": "?"
         },
         {
@@ -242,6 +271,7 @@
             "developer": "Unknown",
             "id": "basket-random",
             "image": "basket-random.png",
+            "platform": "Mobile",
             "name": "Basket Random"
         },
         {
@@ -251,6 +281,7 @@
             "id": "jklm",
             "image": "jklm.png",
             "name": "JKLM.fun",
+            "platform": "PC",
             "releaseDate": "?"
         },
         {
@@ -258,6 +289,7 @@
             "developer": "Doodle Mobile",
             "id": "doodle-jump",
             "image": "doodle-jump.png",
+            "platform": "Mobile",
             "name": "Doodle Jump"
         },
         {
@@ -266,6 +298,7 @@
             "embedURL": "https://mope.io/",
             "id": "mope",
             "image": "mope.png",
+            "platform": "PC",
             "name": "Mope.io"
         },
         {
@@ -275,6 +308,7 @@
             "id": "papas-pizzeria",
             "image": "papas-pizzeria.jpg",
             "name": "Papas Pizzeria",
+            "platform": "PC",
             "releaseDate": "2007-08-07"
         },
         {
@@ -283,6 +317,7 @@
             "emulator": "emulatorjs",
             "id": "pokemon-stadium-2",
             "image": "pokemon-stadium-2.png",
+            "platform": "PC",
             "name": "Pokemon Stadium 2"
         },
         {
@@ -291,6 +326,7 @@
             "embedURL": "https://repuls.io/",
             "id": "repuls",
             "image": "repuls.png",
+            "platform": "PC",
             "name": "Repuls.io"
         },
         {
@@ -299,6 +335,7 @@
             "emulator": "emulatorjs",
             "id": "sonic-original",
             "image": "sonic-original.png",
+            "platform": "PC",
             "name": "Sonic The Hedgehog (Original)"
         },
         {
@@ -307,6 +344,7 @@
             "id": "retro-bowl",
             "image": "retro-bowl.png",
             "name": "Retro Bowl",
+            "platform": "PC",
             "popular": true
         },
         {
@@ -314,6 +352,7 @@
             "developer": "Third Soul",
             "id": "bike-mania",
             "image": "bike-mania.png",
+            "platform": "PC",
             "name": "Bike Mania"
         },
         {
@@ -321,6 +360,7 @@
             "developer": "Michael Eichler",
             "id": "rooftop-snipers",
             "image": "rooftop-snipers.png",
+            "platform": "PC",
             "name": "Rooftop Snipers"
         },
         {
@@ -329,6 +369,7 @@
             "id": "run-3",
             "image": "run-3.png",
             "name": "Run 3",
+            "platform": "PC",
             "releaseDate": "2014-06-05"
         },
         {
@@ -336,6 +377,7 @@
             "developer": "Rob Kay",
             "id": "slope-2",
             "image": "slope-2.png",
+            "platform": "PC",
             "name": "Slope 2"
         },
         {
@@ -343,6 +385,7 @@
             "developer": "Rob Kay",
             "id": "slope",
             "image": "slope.png",
+            "platform": "PC",
             "name": "Slope"
         },
         {
@@ -350,6 +393,7 @@
             "developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
             "id": "sonic-1",
             "image": "sonic-1.png",
+            "platform": "PC",
             "name": "Sonic 1"
         },
         {
@@ -357,6 +401,7 @@
             "developer": "RubberDuckyCooly, GrubbyPlaya, mattConn, VinMannie, Christian Whitehead, and SEGA",
             "id": "sonic-2",
             "image": "sonic-2.png",
+            "platform": "PC",
             "name": "Sonic 2"
         },
         {
@@ -364,6 +409,7 @@
             "developer": "Kiloo",
             "id": "subway-surfers",
             "image": "subway-surfers.png",
+            "platform": "Mobile",
             "name": "Subway Surfers"
         },
         {
@@ -372,6 +418,7 @@
             "emulator": "emulatorjs",
             "id": "super-mario-64",
             "image": "super-mario-64.png",
+            "platform": "PC",
             "name": "Super Mario 64"
         },
         {
@@ -380,6 +427,7 @@
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=40512534-ad27-4a12-afa7-6fc412288072&utm_source=shortcut",
             "id": "tf2",
             "image": "tf2.png",
+            "platform": "PC",
             "name": "Team Fortress 2"
         },
         {
@@ -387,6 +435,7 @@
             "developer": "Larprad",
             "id": "tetris",
             "image": "tetris.png",
+            "platform": "PC",
             "name": "Tetris"
         },
         {
@@ -394,6 +443,7 @@
             "developer": "Ryan Malm",
             "id": "chroma",
             "image": "chroma.png",
+            "platform": "PC",
             "name": "The Chroma Incident"
         },
         {
@@ -401,6 +451,7 @@
             "developer": "Dahoh Bolesta",
             "id": "donut-boy",
             "image": "donut-boy.png",
+            "platform": "PC",
             "name": "Donut Boy"
         },
         {
@@ -408,6 +459,7 @@
             "developer": "meshde",
             "id": "stack",
             "image": "stack.png",
+            "platform": "Mobile",
             "name": "Stack"
         },
         {
@@ -416,6 +468,7 @@
             "embedURL": "https://wings.io/",
             "id": "wings",
             "image": "wings.png",
+            "platform": "PC",
             "name": "Wings.io"
         },
         {
@@ -424,6 +477,7 @@
             "embedURL": "https://supersnake.io",
             "id": "supersnake",
             "image": "supersnake.png",
+            "platform": "PC",
             "name": "SuperSnake.io"
         },
         {
@@ -432,6 +486,7 @@
             "image": "sparebeat.png",
             "developer": "suzukibakery",
             "description": "A fun 4K rhythm game desinged to be played in browsers",
+            "platform": "PC",
             "embedURL": "https://sparebeat.com/"
         },
         {
@@ -439,6 +494,7 @@
             "id": "portal",
             "image": "portal.jpg",
             "developer": "Valve",
+            "platform": "PC",
             "description": "Portal is a new single player game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=df05c1d5-60a1-4969-a73a-2fef74a8dde8&utm_source=shortcut"
         },
@@ -447,6 +503,7 @@
             "id": "portal-2",
             "image": "portal-2.jpg",
             "developer": "Valve",
+            "platform": "PC",
             "description": "Portal 2 is a new single player and multiplayer game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=749ab5aa-eded-4616-965e-fae5f9b6c7f1&utm_source=shortcut"
         },
@@ -455,6 +512,7 @@
             "id": "tube-jumpers",
             "image": "tube-jumpers.png",
             "developer": "Dahoh Bolesta",
+            "platform": "PC",
             "description": "Tube Jumpers is a local multiplayer that can be played with up to 4 people. In the game you have to make sure to stay on your floating tube."
         },
         {
@@ -462,6 +520,7 @@
             "id": "jetpack-joyride",
             "image": "jetpack-joyride.png",
             "developer": "Halfbrick Studios",
+            "platform": "Mobile",
             "description": "Jetpack Joyride is a 2011 side-scrolling endless runner action video game developed by Halfbrick Studios and published by Halfbrick Studios."
         },
         {
@@ -469,6 +528,7 @@
             "id": "worlds-hardest-game",
             "image": "worlds-hardest-game.png",
             "developer": "Stephen Critoph",
+            "platform": "PC",
             "description": "The World's Hardest Game is an addictive puzzle game consisting of 30 incredibly challenging levels."
         },
         {
@@ -476,6 +536,7 @@
             "id": "temple-run-2",
             "image": "temple-run-2.png",
             "developer": "Imangi Studios",
+            "platform": "Mobile",
             "description": "Temple Run 2 is an endless running video game developed and published by Imangi Studios."
         },
         {
@@ -483,6 +544,7 @@
             "id": "fruit-ninja",
             "image": "fruit-ninja.png",
             "developer": "Halfbrick Studios",
+            "platform": "Mobile",
             "description": "In Fruit Ninja the player must slice fruit that is thrown into the air by swiping the device's touch screen with their finger or the player's arms and hands, and must not slice bombs."
         },
         {
@@ -491,6 +553,7 @@
             "image": "bitlife.png",
             "developer": "CandyWriter",
             "description": "BitLife, is a mobile life simulator game.",
+            "platform": "Mobile",
             "popular": true
         },
         {
@@ -498,6 +561,7 @@
             "id": "crossy-road",
             "image": "crossy-road.png",
             "developer": "Hipster Whale",
+            "platform": "Mobile",
             "description": "Crossy Road is the 8-bit endless arcade hopper that started it all. Collect custom characters and navigate freeways, railroads, rivers and much more."
         },
         {
@@ -505,6 +569,7 @@
             "id": "giant-hamster-run",
             "image": "giant-hamster-run.png",
             "developer": "FLGames",
+            "platform": "Mobile",
             "description": "Tiny the Hamster as he stampedes through the city is this classic endless-runner."
         },
         {
@@ -513,6 +578,7 @@
             "image": "impossible-quiz.png",
             "developer": "Glenn Rhodes",
             "description": "The Impossible Quiz is an online trivia quiz that features only very hard questions.",
+            "platform": "PC",
             "emulator": "ruffle"
         },
         {
@@ -520,6 +586,7 @@
             "id": "dadish",
             "image": "dadish.png",
             "developer": "Thomas K Young and CatCup Games",
+            "platform": "Mobile",
             "description": "Dadish is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch."
         },
         {
@@ -534,6 +601,7 @@
             "id": "geometry-dash",
             "image": "geometry-dash.png",
             "developer": "Robert Topala and RobTop Games",
+            "platform": "Mobile",
             "description": "Geometry Dash is a rhythm-based platform game developed and published by RobTop Games."
         },
         {
@@ -541,6 +609,7 @@
             "id": "dadish-2",
             "image": "dadish-2.png",
             "developer": "Thomas K Young and CatCup Games",
+            "platform": "Mobile",
             "description": "Help reunite Dadish with his missing kids in this charming and challenging platforming adventure."
         },
         {
@@ -549,6 +618,7 @@
             "image": "people-playground.png",
             "developer": "Studio Minus",
             "description": "Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls. This game is for people who enjoy throwing around ragdolls.",
+            "platform": "PC",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=17f2bd78-5423-4946-afc4-08f92380ef97&utm_source=shortcut"
         },
         {
@@ -557,6 +627,7 @@
             "image": "krew.jpg",
             "developer": "m0de",
             "description": "A fast paced pirate game where you compete against other players for treasure.",
+            "platform": "PC",
             "embedURL": "https://krew.io"
         },
         {
@@ -564,6 +635,7 @@
             "id": "bloxorz",
             "image": "bloxorz.png",
             "developer": "Damien Clarke and CoolMathGames.com",
+            "platform": "PC",
             "description": "Bloxorz is a puzzle game, very challenging. It is a great block awesome game that gets harder at each progressive level."
         },
         {
@@ -571,6 +643,7 @@
             "id": "cat-ninja",
             "image": "cat-ninja.png",
             "developer": "Richman Stewart",
+            "platform": "PC",
             "description": "Cat Ninja is one of the best new platform-adventure games online."
         },
         {
@@ -579,6 +652,7 @@
             "image": "kirka.png",
             "developer": "AwesomeSam",
             "description": "Kirka.io is a multiplayer online slow-paced competitive FPS game on the browser.",
+            "platform": "PC",
             "embedURL": "https://kirka.io/"
         },
         {
@@ -586,6 +660,7 @@
             "id": "kopanito-all-stars-soccer",
             "image": "kopanito-all-stars-soccer.png",
             "developer": "Merixgames",
+            "platform": "PC",
             "description": "Fast-paced football game without a referee on the pitch and with crazy super-powers!"
         },
         {
@@ -594,6 +669,7 @@
             "image": "riddle-school.png",
             "developer": "Jonochrome",
             "description": "Riddle School is a 2006 flash based puzzle-solving game.",
+            "platform": "PC",
             "emulator": "ruffle"
         },
         {
@@ -602,6 +678,7 @@
             "image": "riddle-school-2.png",
             "developer": "Jonochrome",
             "description": "Riddle School 2 is a Flash-based point-and-click puzzle game by Jonochrome.",
+            "platform": "PC",
             "emulator": "ruffle"
         },
         {
@@ -610,6 +687,7 @@
             "image": "riddle-school-3.png",
             "developer": "Jonochrome",
             "description": "Riddle School 3 is a Flash-based point-and-click puzzle game by Jonochrome.",
+            "platform": "PC",
             "emulator": "ruffle"
         },
         {
@@ -618,6 +696,7 @@
             "image": "riddle-school-4.png",
             "developer": "Jonochrome",
             "description": "Riddle School 4 is a Flash-based point-and-click puzzle game by Jonochrome.",
+            "platform": "PC",
             "emulator": "ruffle"
         },
         {
@@ -626,6 +705,7 @@
             "image": "riddle-school-5.png",
             "developer": "Jonochrome",
             "description": "Riddle School 5 is a Flash-based point-and-click puzzle game by Jonochrome.",
+            "platform": "PC",
             "emulator": "ruffle"
         },
         {
@@ -633,6 +713,7 @@
             "id": "a-dance-of-fire-and-ice",
             "image": "a-dance-of-fire-and-ice.png",
             "developer": "fizzd, Kyle, giacomopc",
+            "platform": "Mobile",
             "description": "A Dance of Fire and Ice is a simple one-button rhythm game."
         },
         {
@@ -640,6 +721,7 @@
             "id": "ovo",
             "image": "ovo.png",
             "developer": "Dedra Games",
+            "platform": "Mobile",
             "description": "OvO is a 2D platformer game where the objective is to go through levels and complete them."
         },
         {
@@ -648,6 +730,7 @@
             "image": "gun-mayhem-2.png",
             "developer": "Kevin Gu",
             "description": "Defeat your powerful enemies by shooting them or blasting them off the platform with dynamite.",
+            "platform": "PC",
             "emulator": "ruffle"
         },
         {
@@ -655,6 +738,7 @@
             "id": "feedvid-live",
             "image": "feedvid-live.png",
             "developer": "Varun R.",
+            "platform": "Mobile",
             "description": "FeedVid Live is a short puzzle game taking place in an unusual livestreaming app."
         },
         {
@@ -662,6 +746,7 @@
             "id": "universal-paperclips",
             "image": "universal-paperclips.png",
             "developer": "Frank Lantz",
+            "platform": "Mobile",
             "description": "An idle game where you produce paperclips while trying to deal with public demand"
         },
         {
@@ -669,6 +754,7 @@
             "id": "dinogame",
             "image": "dinogame.png",
             "developer": "Google",
+            "platform": "Mobile",
             "description": "The Chrome Dino game is a simple, browser-based game that can be played when a user's internet connection is offline"
         },
         {
@@ -676,6 +762,7 @@
             "id": "wordle",
             "image": "wordle.png",
             "developer": "Josh Wardle and DharMesh",
+            "platform": "Mobile",
             "description": "Wordle is a type of word puzzle in which a user is presented with a jumble of letters, and they must rearrange them to form words."
         },
         {
@@ -683,6 +770,7 @@
             "id": "xx142-b2exe",
             "image": "xx142-b2exe.png",
             "developer": "Ben Clark and Salvatore Previti",
+            "platform": "Mobile",
             "description": "You are an AI weaponized virus built to infiltrate the alien network and deactivate all power generators and weapon systems."
         },
         {
@@ -690,6 +778,7 @@
             "id": "packabunchas",
             "image": "packabunchas.png",
             "developer": "Mattia Fortunati",
+            "platform": "Mobile",
             "description": "In this game, you try to fix tetris like shapes, into a rocket ship."
         },
         {
@@ -697,6 +786,7 @@
             "id": "pizza-tower",
             "image": "pizza-tower.jpeg",
             "developer": "Tour De Pizza",
+            "platform": "PC",
             "description": "Pizza Tower is a fast paced 2D platformer inspired by the Wario Land series, with an emphasis on movement, exploration and score attack. Featuring highly stylized pixel art inspired by the cartoons from the '90s, and a highly energetic soundtrack."
         },
         {
@@ -705,6 +795,7 @@
             "embedURL": "https://www.mathplayground.com/pg_drift_boss.html",
             "id": "drift-boss",
             "image": "drift-boss.png",
+            "platform": "Mobile",
             "description": "Drift boss is a drifting game played by pressing one button. Drive your vehicle around tricky corners and over bumps until you fall off the platform. Keep playing to earn rewards and unlock better cars!"
         },
         {
@@ -712,6 +803,7 @@
             "id": "typing-test",
             "image": "typing-test.png",
             "developer": "salmannotkhan",
+            "platform": "PC",
             "description": "Type as fast as you possibly can! Test yourself and see how much you can improve."
         },
         {
@@ -720,6 +812,7 @@
             "image": "bonk.png",
             "developer": "Chaz",
             "description": "Bonk.io is a multiplayer physics game, for up to eight players at once. Push your opponents off the edge of the level, the last man standing wins!",
+            "platform": "PC",
             "embedURL": "https://bonk.io"
         },
         {
@@ -728,6 +821,7 @@
             "image": "chess.png",
             "developer": "Chess.com",
             "description": "Chess.com is an internet chess server, news website and social networking website.",
+            "platform": "Mobile",
             "embedURL": "https://chess.com"
         },
         {
@@ -735,7 +829,8 @@
             "id": "swing-monkey",
             "image": "swing-monkey.png",
             "developer": "MarketJS",
-            "description": "Swing Monkey is a one-button monkey swinging game to reach the finish line successfully."
+            "description": "Swing Monkey is a one-button monkey swinging game to reach the finish line successfully.",
+            "platform": "Mobile"
         }
     ]
 }
