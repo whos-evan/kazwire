@@ -32,10 +32,9 @@
 	import { onMount } from 'svelte';
 	import { page } from '$app/stores';
 
-	import { auth, db } from '../firebase';
+	import { auth, db } from '$lib/firebase';
 
-	import gamesJson from '../routes/games/games.json';
-	import appsJson from '../routes/games/games.json';
+	import gamesJson from '../../routes/games/games.json';
 
 	import Back from './buttons/back.svelte';
 	import Minimize from './buttons/minimize.svelte';
@@ -43,7 +42,6 @@
 	let maximized = false;
 	
 	let lovedGameIds = [];
-	let lovedAppIds = [];
 
 	function minimize() {
 		// make the iframe fill the entire screen

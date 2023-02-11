@@ -1,6 +1,6 @@
 <script>
-	import Box from '../routes/games/box.svelte';
-	import gamesJson from '../routes/games/games.json';
+	import Box from '../../routes/games/box.svelte';
+	import gamesJson from '../../routes/games/games.json';
 	import { onMount } from 'svelte';
 	import { auth, db } from '../firebase';
  

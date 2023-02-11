@@ -1,6 +1,6 @@
 <script>
-	import Nav from '../../components/nav.svelte';
-	import Footer from '../../components/footer.svelte';
+	import Nav from '$lib/components/nav.svelte';
+	import Footer from '$lib/components/footer.svelte';
 
 	function changeTitle() {
 		document.title = document.getElementById('title').value;
@@ -40,7 +40,7 @@
 		);
 	}
 
-	import HorzAd from '../../components/horz-ad.svelte';
+	import HorzAd from '$lib/components/horz-ad.svelte';
 </script>
 <Nav />
 <div class="md:block sm:hidden">

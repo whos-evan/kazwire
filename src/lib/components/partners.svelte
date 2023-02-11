@@ -1,5 +1,5 @@
 <script>
-	import Box from './box.svelte';
+	import Box from './partnerBox.svelte';
 	import { onMount, onDestroy } from 'svelte';
 
 	import Carousel from 'svelte-carousel';

@@ -1,8 +1,8 @@
 <script lang="ts">
-	import { darkMode } from '../dark';
+	import { darkMode } from '$lib/dark';
 	import { onMount } from 'svelte';
 
-	import { auth, googleProvider, user } from '../firebase';
+	import { auth, googleProvider, user } from '$lib/firebase';
 
 	let loggedIn = false;
 	let localUser = null;

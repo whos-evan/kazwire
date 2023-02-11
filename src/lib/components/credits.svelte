@@ -1,5 +1,5 @@
 <script>
-	import gamesJson from '../routes/games/games.json';
+	import gamesJson from '../../routes/games/games.json';
 
 	// go through each game and find the developers and put them in a string
 	let developers = '';

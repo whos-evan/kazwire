@@ -3,7 +3,7 @@
 	import SmallBox from './smallBox.svelte';
 	import gamesJson from './games.json';
 	import { onMount } from 'svelte';
-	import { auth, db } from '../../firebase';
+	import { auth, db } from '$lib/firebase';
 
 	let smallGames = false;
 	let allGames = gamesJson['games'];
@@ -129,7 +129,7 @@
 		}
 	}
 
-	import HorzAd from '../../components/horz-ad.svelte';
+	import HorzAd from '$lib/components/horz-ad.svelte';
 
 	loadMore();
 	loadMore();

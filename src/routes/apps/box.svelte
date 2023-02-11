@@ -34,7 +34,7 @@
 	export let popular;
 
 	import { onMount } from 'svelte';
-	import ColorThief from '../../components/color-thief.mjs';
+	import ColorThief from '$lib/components/color-thief.mjs';
 	var shine;
 	onMount(() => {
 		const colorThief = new ColorThief();

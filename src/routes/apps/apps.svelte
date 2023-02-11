@@ -31,7 +31,7 @@
 
 	let filter;
 
-	import HorzAd from '../../components/horz-ad.svelte';
+	import HorzAd from '$lib/components/horz-ad.svelte';
 </script>
 <div class="md:block sm:hidden">
 	<HorzAd />
