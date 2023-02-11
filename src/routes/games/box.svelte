@@ -57,7 +57,7 @@
 	<a class="game" id={title} href={'/games/' + id}>
 		<div
 			class="background-game bg-white hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
-			style={`box-shadow: 0 10px 15px -3px ${shine}`}
+			style={`box-shadow: 0 10px 15px -3px ${shine};`}
 		>
 			<div class="p-5 w-full justify-center flex">
 				<img
