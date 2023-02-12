@@ -8,5 +8,5 @@
 </script>
 
 <div class="flex h-[calc(100vh-132px)] max-w-full pl-5 pr-5 pb-5">
-	<Embed embedURL={embedURL} title={title} description={description} developer={developer} />
+	<Embed embedURL={embedURL} title={title} description={description} developer={developer} loadHeart={false} />
 </div>

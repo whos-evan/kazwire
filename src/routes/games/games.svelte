@@ -34,12 +34,8 @@
 				}
 			} else {
 				// Fetch the loved games from local storage
-				let loves = localStorage.getItem('loved') || '';
-				lovedIds = loves.split(',').filter((item) => item !== '');
-				if (lovedIds == undefined) {
-					loadingHearts = false;
-					return;
-				}
+				let loves = localStorage.getItem('lovedGames') || '[]';
+				lovedIds = JSON.parse(loves);
 			}
 			lovedGames = allGames.filter((game) => lovedIds.includes(game['id']));
 			lovedGames.sort((a, b) => a['id'] - b['id']);
@@ -130,6 +126,7 @@
 	}
 
 	import HorzAd from '$lib/components/horz-ad.svelte';
+	import { json } from '@sveltejs/kit';
 
 	loadMore();
 	loadMore();

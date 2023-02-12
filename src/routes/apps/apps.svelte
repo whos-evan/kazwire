@@ -1,6 +1,44 @@
 <script>
 	import Box from './box.svelte';
 	import appsJson from './apps.json';
+	let allApps = appsJson['apps'];
+
+	import { onMount } from 'svelte';
+	import { auth, db } from '$lib/firebase';
+
+	let lovedIds = [];
+	let lovedApps = [];
+	let loadingHearts = true;
+
+	onMount(() => {
+		// console.log all the games in a list
+		// Check if the user is logged in
+		auth.onAuthStateChanged(async (user) => {
+			if (user) {
+				loadingHearts = true;
+				// Fetch the user's data from Firestore
+				const userData = await db.collection('users').doc(user.uid).get();
+				lovedIds = userData.data()?.lovedApps;
+				if (lovedIds == undefined) {
+					loadingHearts = false;
+					return;
+				}
+			} else {
+				// Fetch the loved games from local storage
+				let loves = localStorage.getItem('lovedApps') || '[]';
+				lovedIds = JSON.parse(loves);
+			}
+			// Get the loved games from the JSON file
+			for (let i = 0; i < lovedIds.length; i++) {
+				for (let j = 0; j < allApps.length; j++) {
+					if (lovedIds[i] == allApps[j]['id']) {
+						lovedApps.push(allApps[j]);
+					}
+				}
+			}
+			loadingHearts = false;
+		});
+	});
 
 	export let apps = appsJson['apps'].sort((a, b) => {
 		if (a['id'] < b['id']) {
@@ -33,6 +71,7 @@
 
 	import HorzAd from '$lib/components/horz-ad.svelte';
 </script>
+
 <div class="md:block sm:hidden">
 	<HorzAd />
 </div>
@@ -48,6 +87,20 @@
 	<div
 		class="grid grid-flow-rows lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 	>
+		{#if loadingHearts}
+			Loading...
+		{:else if lovedApps.length !== 0}
+			{#each lovedApps as game}
+				<Box
+					title={game['name']}
+					image={game['image']}
+					description={game['description']}
+					id={game['id']}
+					color="#FF0000"
+					category="Loved"
+				/>
+			{/each}
+		{/if}
 		{#each apps as app}
 			<Box
 				title={app['name']}
