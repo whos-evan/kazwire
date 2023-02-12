@@ -63,7 +63,7 @@
 				/>
 			</div>
 			<div class="pl-5 pr-5">
-				<h1 class="font-bold text-2xl break-words" style="color: {color};">{title}</h1>
+				<h1 class="font-bold text-2xl break-words text-black dark:text-white" style="color: {color};">{title}</h1>
 			</div>
 		</div>
 	</a>

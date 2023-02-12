@@ -146,7 +146,7 @@
 				/>
 			</div>
 			<div class="pl-5 pr-5">
-				<h1 class="font-bold text-2xl dark:text-white" style="color: {color};">{title}</h1>
+				<h1 class="font-bold text-2xl text-black dark:text-white" style="color: {color};">{title}</h1>
 				{#if category != undefined}
 					<p class="text-black text-sm dark:text-white">Category: {category}</p>
 				{/if}
