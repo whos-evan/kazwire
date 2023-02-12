@@ -68,7 +68,7 @@
             "developer": "Miniclip",
             "id": "basketball-stars",
             "image": "basketball-stars.png",
-            "platform": "Mobie",
+            "platform": "Mobile",
             "name": "Basketball Stars"
         },
         {
@@ -236,6 +236,7 @@
             "image": "fortnite.png",
             "name": "Fortnite",
             "platform": "PC",
+            "error": "GeForce NOW is currently not accessible through the proxy.",
             "releaseDate": "2017-07-25"
         },
         {
@@ -264,6 +265,7 @@
             "image": "geforce-now.png",
             "name": "GeForce NOW",
             "platform": "PC",
+            "error": "GeForce NOW is currently not accessible through the proxy.",
             "releaseDate": "?"
         },
         {
@@ -370,6 +372,7 @@
             "image": "run-3.png",
             "name": "Run 3",
             "platform": "PC",
+            "error": "Poor performance recorded by some users.",
             "releaseDate": "2014-06-05"
         },
         {
@@ -428,6 +431,7 @@
             "id": "tf2",
             "image": "tf2.png",
             "platform": "PC",
+            "error": "GeForce NOW is currently not accessible through the proxy.",
             "name": "Team Fortress 2"
         },
         {
@@ -496,7 +500,8 @@
             "developer": "Valve",
             "platform": "PC",
             "description": "Portal is a new single player game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
-            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=df05c1d5-60a1-4969-a73a-2fef74a8dde8&utm_source=shortcut"
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=df05c1d5-60a1-4969-a73a-2fef74a8dde8&utm_source=shortcut",
+            "error": "GeForce NOW is currently not accessible through the proxy."
         },
         {
             "name": "Portal 2",
@@ -505,6 +510,7 @@
             "developer": "Valve",
             "platform": "PC",
             "description": "Portal 2 is a new single player and multiplayer game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
+            "error": "GeForce NOW is currently not accessible through the proxy.",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=749ab5aa-eded-4616-965e-fae5f9b6c7f1&utm_source=shortcut"
         },
         {
@@ -619,6 +625,7 @@
             "developer": "Studio Minus",
             "description": "Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls. This game is for people who enjoy throwing around ragdolls.",
             "platform": "PC",
+            "error": "GeForce NOW is currently not accessible through the proxy.",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=17f2bd78-5423-4946-afc4-08f92380ef97&utm_source=shortcut"
         },
         {

@@ -255,6 +255,8 @@
 					image={game['image']}
 					description={game['description']}
 					id={game['id']}
+					platformSupport={game['platform']}
+					gameError={game['error']}
 					color="#000000"
 					category={getCategory(game)}
 				/>
