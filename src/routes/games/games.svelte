@@ -254,7 +254,6 @@
 					id={game['id']}
 					platformSupport={game['platform']}
 					gameError={game['error']}
-					color="#000000"
 					category={getCategory(game)}
 				/>
 			{/each}
@@ -272,8 +271,8 @@
 							title={game['name']}
 							image={game['image']}
 							id={game['id']}
-							color="#FF0000"
 							category="Loved"
+							color="red"
 						/>
 					{/each}
 				{:else}
@@ -294,7 +293,6 @@
 					title={game['name']}
 					image={game['image']}
 					id={game['id']}
-					color="#000000"
 					category={getCategory(game)}
 				/>
 			{/each}

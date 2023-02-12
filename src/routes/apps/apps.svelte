@@ -107,7 +107,6 @@
 				image={app['image']}
 				description={app['description']}
 				id={app['id']}
-				color="#000000"
 			/>
 		{/each}
 	</div>

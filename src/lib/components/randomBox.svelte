@@ -85,14 +85,12 @@
 				image={randomGame1['image']}
 				description={randomGame1['description']}
 				id={randomGame1['id']}
-				color="black"
 			/>
 			<Box
 				title={randomGame2['name']}
 				image={randomGame2['image']}
 				description={randomGame2['description']}
 				id={randomGame2['id']}
-				color="black"
 			/>
 		{:else if lovedGames.length == 1}
 			<Box

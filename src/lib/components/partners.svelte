@@ -57,7 +57,7 @@
 					image="moonlight.png"
 					description="Browse tons of fun games for free with Moonlight. The cure to boredom at your fingertips."
 					href="https://moonlight.silvereen.net/"
-					color="#000449"
+					color="#0011b3"
 				/>
 				<Box
 					title="Partner with us!"

@@ -37,19 +37,19 @@
 
 <a class="partner p-10" id={title} href={href}>
 	<div
-		class="background-game bg-white hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl w-full h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
+		class="background-game bg-white dark:bg-zinc-900 hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl w-full h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 		style="box-shadow: 5px 5px 20px 0px {shine};"
 	>
 		<div class="p-5 w-full justify-center flex">
 			<img
 				src="./assets/partners/{image}"
-				class="img bg-white w-auto max-h-[5rem]"
+				class="img w-auto max-h-[5rem]"
 				alt={description}
 			/>
 		</div>
 		<div class="pl-5 pr-5">
 			<h1 class="font-bold text-2xl text-center break-words" style="color: {color};">{title}</h1>
-			<p class="text-black break-words">{description}</p>
+			<p class="text-black dark:text-white break-words">{description}</p>
 		</div>
 	</div>
 </a>

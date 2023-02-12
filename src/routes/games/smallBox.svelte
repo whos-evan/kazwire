@@ -35,13 +35,13 @@
 {#if popular != undefined}
 	<a class="game" id={title} href={'/games/' + id}>
 		<div
-			class="background-game bg-white shadow-lg hover:bg-gray-200 shadow-gray-200 dark:shadow-orange-300 hover:cursor-pointer w-full h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
+			class="background-game bg-white dark:bg-zinc-900 shadow-lg hover:bg-gray-200 shadow-gray-200 dark:shadow-orange-300 hover:cursor-pointer w-full h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 		>
 			<div class="p-5 w-full justify-center flex">
 				<img
 					loading="lazy"
 					src={'/game/img/' + image}
-					class="img bg-white w-auto max-h-[10rem]"
+					class="img w-auto max-h-[10rem]"
 				/>
 			</div>
 			<div class="pl-5 pr-5">
@@ -52,14 +52,14 @@
 {:else}
 	<a class="game" id={title} href={'/games/' + id}>
 		<div
-			class="background-game bg-white hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
+			class="background-game bg-white dark:bg-zinc-900 hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 			style={`box-shadow: 0 10px 15px -3px ${shine}`}
 		>
 			<div class="p-5 w-full justify-center flex">
 				<img
 					loading="lazy"
 					src={'/game/img/' + image}
-					class="img bg-white w-auto max-h-[10rem]"
+					class="img w-auto max-h-[10rem]"
 				/>
 			</div>
 			<div class="pl-5 pr-5">

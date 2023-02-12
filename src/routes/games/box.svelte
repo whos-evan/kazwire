@@ -38,7 +38,7 @@
 {#if popular != undefined}
 	<a class="game" id={title} href={'/games/' + id}>
 		<div
-			class="background-game bg-white shadow-lg hover:bg-gray-200 shadow-gray-200 dark:shadow-orange-300 relative hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
+			class="background-game bg-white dark:bg-zinc-900 shadow-lg hover:bg-gray-200 shadow-gray-200 dark:shadow-orange-300 relative hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 		>
 			<div class="absolute opacity-50 hover:opacity-100 transition-opacity h-6 w-6 right-0 m-4">
 				{#if gameError != undefined}
@@ -88,15 +88,15 @@
 			</div>
 			<div class="pl-5 pr-5">
 				<h1 class="font-bold text-2xl" style="color: {color};">{title}</h1>
-				<p class="text-black text-sm">Category: Popular</p>
-				<p class="text-black">{description}</p>
+				<p class="text-black dark:text-white text-sm">Category: Popular</p>
+				<p class="text-black dark:text-white">{description}</p>
 			</div>
 		</div>
 	</a>
 {:else}
 	<a class="game" id={title} href={'/games/' + id}>
 		<div
-			class="background-game relative bg-white hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
+			class="background-game relative bg-white dark:bg-zinc-900 hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 			style={`box-shadow: 0 10px 15px -3px ${shine}`}
 		>
 			<div class="absolute opacity-50 hover:opacity-100 transition-opacity h-6 w-6 right-0 m-4">
@@ -141,16 +141,16 @@
 				<img
 					loading="lazy"
 					src={'/game/img/' + image}
-					class="img bg-white w-auto max-h-[10rem]"
+					class="img w-auto max-h-[10rem]"
 					alt={description}
 				/>
 			</div>
 			<div class="pl-5 pr-5">
-				<h1 class="font-bold text-2xl" style="color: {color};">{title}</h1>
+				<h1 class="font-bold text-2xl dark:text-white" style="color: {color};">{title}</h1>
 				{#if category != undefined}
-					<p class="text-black text-sm">Category: {category}</p>
+					<p class="text-black text-sm dark:text-white">Category: {category}</p>
 				{/if}
-				<p class="text-black">{description}</p>
+				<p class="text-black dark:text-white">{description}</p>
 			</div>
 		</div>
 	</a>
