@@ -7,6 +7,17 @@
 
 	let slug = $page.url.pathname.substr($page.url.pathname.lastIndexOf('/') + 1);
 
+	function removeGame() {
+		let games = JSON.parse(localStorage.getItem('localGames'));
+		for (let i = 0; i < games.length; i++) {
+			if (games[i]['id'] == slug) {
+				games.splice(i, 1);
+				localStorage.setItem('localGames', JSON.stringify(games));
+				window.location.href = '/community';
+			}
+		}
+	};
+
 	onMount(() => {
 		function getGame() {
 			let game = JSON.parse(localStorage.getItem('localGames'));
@@ -43,13 +54,25 @@
 		{#if loading}
 			Loading...
 		{:else}
-			<Embed title={gameName} description={gameDescription} developer={'you :)'} embedURL={gameURL} loadHeart={false} />
+			<Embed
+				title={gameName}
+				description={gameDescription}
+				developer={'you :)'}
+				embedURL={gameURL}
+				loadHeart={false}
+			/>
 		{/if}
 	</div>
 	<div
 		class="w-full max-w-[280px] hidden xl:flex flex-col justify-center items-center gap-y-2 px-3 bg-opacity-50 backdrop-blur-md"
 		align="middle"
 	>
+		<button
+			class="text-white bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 font-bold transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg hover:scale-[105%]"
+			on:click={removeGame}
+		>
+			Remove Game (Locally)
+		</button>
 		<VertAd />
 	</div>
 </div>
