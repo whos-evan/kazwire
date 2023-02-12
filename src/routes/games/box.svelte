@@ -40,7 +40,7 @@
 		<div
 			class="background-game bg-white shadow-lg hover:bg-gray-200 shadow-gray-200 dark:shadow-orange-300 relative hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 		>
-			<div class="absolute opacity-50 hover:opacity-100 transition-opacity h-4 w-4 right-0 m-4">
+			<div class="absolute opacity-50 hover:opacity-100 transition-opacity h-6 w-6 right-0 m-4">
 				{#if gameError != undefined}
 					<span title={gameError}>
 						<svg class="fill-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
@@ -99,7 +99,7 @@
 			class="background-game relative bg-white hover:bg-gray-200 hover:cursor-pointer hover:shadow-2xl h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 			style={`box-shadow: 0 10px 15px -3px ${shine}`}
 		>
-			<div class="absolute opacity-50 hover:opacity-100 transition-opacity h-4 w-4 right-0 m-4">
+			<div class="absolute opacity-50 hover:opacity-100 transition-opacity h-6 w-6 right-0 m-4">
 				{#if gameError != undefined}
 					<span title={gameError}>
 						<svg class="fill-red-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
