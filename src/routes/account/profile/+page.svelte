@@ -1,5 +1,5 @@
 <script>
-	import { auth, googleProvider, user } from '../../../firebase';
+	import { auth, googleProvider, user } from '$lib/firebase';
 
 	let loggedIn = false;
 	let localUser = null;
@@ -24,8 +24,8 @@
 		window.location.reload();
 	}
 
-	import Nav from '../../../components/nav.svelte';
-	import Footer from '../../../components/footer.svelte';
+	import Nav from '$lib/components/nav.svelte';
+	import Footer from '$lib/components/footer.svelte';
 </script>
 
 <Nav />

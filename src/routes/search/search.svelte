@@ -78,12 +78,12 @@
 		}
 	}
 
-	import VertAd from '../../components/vert-ad.svelte';
+	import VertAd from '$lib/components/vert-ad.svelte';
 </script>
 
 <script>
-	import Back from '../../components/buttons/back.svelte';
-	import Minimize from '../../components/buttons/minimize.svelte';
+	import Back from '$lib/components/buttons/back.svelte';
+	import Minimize from '$lib/components/buttons/minimize.svelte';
 	let maximized = false;
 
 	function minimize() {

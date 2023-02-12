@@ -20,8 +20,8 @@
 	let description = getGame()['description'];
 	let developer = getGame()['developer'];
 
-	import VertAd from '../../../components/vert-ad.svelte';
-	import Embed from '../../../components/embed.svelte';
+	import VertAd from '$lib/components/vert-ad.svelte';
+	import Embed from '$lib/components/embed.svelte';
 </script>
 
 <div class="flex flex-row relative justify-center">

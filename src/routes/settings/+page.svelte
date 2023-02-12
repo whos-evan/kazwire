@@ -1,6 +1,6 @@
 <script>
-	import Nav from '../../components/nav.svelte';
-	import Footer from '../../components/footer.svelte';
+	import Nav from '$lib/components/nav.svelte';
+	import Footer from '$lib/components/footer.svelte';
 
 	function changeTitle() {
 		document.title = document.getElementById('title').value;
@@ -40,18 +40,19 @@
 		);
 	}
 
-	import HorzAd from '../../components/horz-ad.svelte';
+	import HorzAd from '$lib/components/horz-ad.svelte';
 </script>
+
 <Nav />
 <div class="md:block sm:hidden">
 	<HorzAd />
 </div>
-<div class="h-[65vh] w-full mt-10 text-center text-white">
+<div class="h-auto min-h-[65vh] w-full mt-10 text-center text-white">
 	<h1 class="text-3xl">Settings</h1>
 	<div class="grid grid-cols-1 gap-10 mt-5">
 		<div class="row-start-1 col-start-1">
 			Preset Cloaks:
-			<select id="presetCloaks" class="text-black p-3 rounded-md" bind:value={presetCloaks}>
+			<select id="presetCloaks" class="text-black p-3 rounded-md mr-2" bind:value={presetCloaks}>
 				<option value="/favicon.ico" selected>Kazwire</option>
 				<option value="https://google.com/favicon.ico">Google</option>
 				<option value="https://ssl.gstatic.com/classroom/ic_product_classroom_144.png"
@@ -60,7 +61,10 @@
 				<option value="https://drive.google.com/favicon.ico">Google Drive</option>
 				<option value="https://canvas.instructure.com/favicon.ico">Canvas</option>
 			</select>
-			<button class="bg-white text-black py-2 px-4 rounded-lg" on:click={changePresetCloaks}>
+			<button
+				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
+				on:click={changePresetCloaks}
+			>
 				Save
 			</button>
 		</div>
@@ -69,10 +73,13 @@
 			<input
 				id="title"
 				type="text"
-				class="text-black rounded-lg p-2"
+				class="text-black rounded-lg p-2 mr-2"
 				placeholder="Enter title here..."
 			/>
-			<button class="bg-white text-black py-2 px-4 rounded-lg" on:click={changeTitle}>
+			<button
+				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
+				on:click={changeTitle}
+			>
 				Save
 			</button>
 		</div>
@@ -81,10 +88,13 @@
 			<input
 				id="favicon"
 				type="text"
-				class="text-black rounded-lg p-2 w-[18rem]"
+				class="text-black rounded-lg p-2 w-[18rem] mr-2"
 				placeholder="https://google.com/favicon.ico"
 			/>
-			<button class="bg-white text-black py-2 px-4 rounded-lg" on:click={changeFavicon}>
+			<button
+				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
+				on:click={changeFavicon}
+			>
 				Save
 			</button>
 		</div>
