@@ -41,14 +41,6 @@
 			].text
 		);
 	}
-	
-	function changeBareServer() {
-		if (document.getElementById('bareServer').value == '') {
-			localStorage.removeItem('bareServer');
-		} else {
-			localStorage.setItem('bareServer', document.getElementById('bareServer').value);
-		}
-	}
 
 	import HorzAd from '$lib/components/horz-ad.svelte';
 </script>
@@ -104,21 +96,6 @@
 			<button
 				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
 				on:click={changeFavicon}
-			>
-				Save
-			</button>
-		</div>
-		<div class="row-start-4 col-start-1">
-			Custom Bareserver:
-			<input
-				id="bareServer"
-				type="text"
-				class="text-black rounded-lg p-2 w-[18rem] mr-2"
-				placeholder="https://uv.kazwire.com/bare/ or /bare/"
-			/>
-			<button
-				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
-				on:click={changeBareServer}
 			>
 				Save
 			</button>
