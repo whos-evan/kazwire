@@ -1,8 +1,8 @@
 // get bareServer from localStorage
 var urls = [];
 // add 'uv' as a subdomain to the current domain
-urls.push('https://uv.' + location.hostname.split('.').reverse().splice(0,2).reverse().join('.')) + '/bare/';
-urls.push('https://uv2.' + location.hostname.split('.').reverse().splice(0,2).reverse().join('.')) + '/bare/';
+urls.push('https://uv.' + location.hostname.split('.').reverse().splice(0,2).reverse().join('.') + '/bare/');
+urls.push('https://uv2.' + location.hostname.split('.').reverse().splice(0,2).reverse().join('.') + '/bare/');
 
 /*global Ultraviolet*/
 self.__uv$config = {
