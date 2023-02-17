@@ -7,7 +7,8 @@ urls.push('https://uv2.' + location.hostname.split('.').reverse().splice(0,2).re
 /*global Ultraviolet*/
 self.__uv$config = {
 	prefix: '/search/',
-	bare: urls[Math.floor(Math.random() * urls.length)],
+	// bare: urls[Math.floor(Math.random() * urls.length)],
+	bare: "https://uv2.kazwire.com/bare/",
 	encodeUrl: Ultraviolet.codec.xor.encode,
 	decodeUrl: Ultraviolet.codec.xor.decode,
 	handler: '/uv/uv.handler.js',
