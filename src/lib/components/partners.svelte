@@ -60,6 +60,13 @@
 					color="#0011b3"
 				/>
 				<Box
+					title="Phantom Games"
+					image="phantom.png"
+					description="Where simplicity and unblocked fun collide!"
+					href="https://join.texasmath.org/"
+					color="#2c7ffc"
+				/>
+				<Box
 					title="Partner with us!"
 					image="kazwire.png"
 					description="We would love to partner with you and have you showcased here! Click the box to join our Discord server!"
