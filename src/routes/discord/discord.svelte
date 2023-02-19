@@ -1,7 +1,7 @@
 <script>
 	import Embed from "$lib/components/embed.svelte";
 
-	let embedURL = "https://discord.gg/kazwire"
+	let embedURL = "https://discord.com/servers/kazchat-785577600219086881"
 	let title = "Kazwire Discord"
 	let description = "Kazwire Discord"
 	let developer = "Kazwire (⚠️ Must be 13 years or older to join)"
