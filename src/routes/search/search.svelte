@@ -29,36 +29,13 @@
 	}
 
 	async function iframeSearch() {
-		startLoad();
+		document.getElementById('search-iframe').style.display = 'none';
 		await registerSW();
 
 		let input = document.getElementById('uv-address').value;
 		let iframe = document.getElementById('search-iframe');
 
 		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(search(input));
-	}
-	// shows a loading animation
-	function startLoad() {
-		let searchFrame = document.getElementById('search-iframe');
-		// background transparent
-		searchFrame.src = 'about:blank';
-		searchFrame.style.background =
-			'rgba(31, 41, 55, 100) url(/assets/loading.gif) no-repeat center';
-		searchFrame.style.backgroundSize = '100px';
-		searchFrame.style.backgroundRepeat = 'no-repeat';
-		searchFrame.style.backgroundPosition = 'center';
-	}
-
-	// watch for title change in iframe
-	function checkTitle() {
-		let iframe = document.getElementById('search-iframe');
-		let contentTitle = iframe.contentDocument.title;
-		let title = document.getElementById('title').innerHTML;
-
-		if (contentTitle !== title) {
-			document.getElementById('title').innerHTML = contentTitle;
-		}
-		return contentTitle;
 	}
 
 	function fullScreen() {
@@ -85,6 +62,7 @@
 	import Back from '$lib/components/buttons/back.svelte';
 	import Minimize from '$lib/components/buttons/minimize.svelte';
 	let maximized = false;
+	let loading = false;
 
 	function minimize() {
 		// make the iframe back to normal
@@ -120,6 +98,29 @@
 		maximized = true;
 	}
 
+	function startLoad() {
+		document.getElementById('search-iframe').style.display = 'none';
+		loading = true;
+	}
+
+	function loaded() {
+		checkTitle();
+		document.getElementById('search-iframe').style.display = 'block';
+		loading = false;
+	}
+
+	// watch for title change in iframe
+	function checkTitle() {
+		let iframe = document.getElementById('search-iframe');
+		let contentTitle = iframe.contentDocument.title;
+		let title = document.getElementById('title').innerHTML;
+
+		if (contentTitle !== title) {
+			document.getElementById('title').innerHTML = contentTitle;
+		}
+		return contentTitle;
+	}
+
 	function hideMessage() {
 		let message = document.getElementById('message');
 		message.style.display = 'none';
@@ -133,7 +134,7 @@
 			Search is currently disabled due to server issues. Please be patient while we fix it over the coming days.
 	</button>
 	</div> -->
-	<form id="uv-form" class="flex-center" on:submit={iframeSearch}>
+	<form id="uv-form" class="flex-center" on:submit={iframeSearch} on:submit={startLoad}>
 		<input
 			id="uv-address"
 			type="text"
@@ -148,6 +149,21 @@
 	<div class="flex h-[calc(90vh-132px)] md:w-[80vw] sm:w-full float-left pl-5 pr-5 pb-5">
 		<div class="flex-grow mb-14 align-center">
 			<div id="search-frame" class="w-full h-full">
+				{#if loading}
+					<div class="flex flex-col items-center justify-center w-full h-full bg-zinc-900 rounded-t-lg">
+						<div>
+							<img src="/logo.png" class="h-24 p-3 inline-block" alt="Kazwire Logo" />
+							<span
+								class="hidden lg:inline-block text-4xl font-semibold whitespace-nowrap text-white align-middle"
+								>Kazwire</span
+							>
+						</div>
+						<div class="flex flex-col items-center">
+							<img src="/assets/loading.gif" class="h-20 w-20 mt-4" alt="Loading..." />
+						</div>
+					</div>
+				{/if}
+
 				<!-- <Back /> -->
 				<!-- Removed due to complaints -->
 				{#if maximized}
@@ -157,8 +173,9 @@
 				{/if}
 				<iframe
 					id="search-iframe"
-					on:load={checkTitle}
-					class="w-full h-full rounded-t-lg bg-black"
+					on:load={loaded}
+					title="Search"
+					class="hidden w-full h-full rounded-t-lg bg-black"
 				/>
 			</div>
 
