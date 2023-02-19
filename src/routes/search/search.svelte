@@ -63,6 +63,7 @@
 	import Minimize from '$lib/components/buttons/minimize.svelte';
 	let maximized = false;
 	let loading = false;
+	let initialLaunch = true;
 
 	function minimize() {
 		// make the iframe back to normal
@@ -101,6 +102,7 @@
 	function startLoad() {
 		document.getElementById('search-iframe').style.display = 'none';
 		loading = true;
+		initialLaunch = false;
 	}
 
 	function loaded() {
@@ -149,8 +151,22 @@
 	<div class="flex h-[calc(90vh-132px)] md:w-[80vw] sm:w-full float-left pl-5 pr-5 pb-5">
 		<div class="flex-grow mb-14 align-center">
 			<div id="search-frame" class="w-full h-full">
-				{#if loading}
-					<div class="flex flex-col items-center justify-center w-full h-full bg-zinc-900 rounded-t-lg">
+				{#if initialLaunch}
+					<div
+						class="flex flex-col items-center justify-center w-full h-full bg-zinc-900 rounded-t-lg"
+					>
+						<div>
+							<img src="/logo.png" class="h-24 p-3 inline-block" alt="Kazwire Logo" />
+							<span
+								class="hidden lg:inline-block text-4xl font-semibold whitespace-nowrap text-white align-middle"
+								>Kazwire</span
+							>
+						</div>
+					</div>
+				{:else if loading}
+					<div
+						class="flex flex-col items-center justify-center w-full h-full bg-zinc-900 rounded-t-lg"
+					>
 						<div>
 							<img src="/logo.png" class="h-24 p-3 inline-block" alt="Kazwire Logo" />
 							<span
