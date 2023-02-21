@@ -838,6 +838,14 @@
             "developer": "MarketJS",
             "description": "Swing Monkey is a one-button monkey swinging game to reach the finish line successfully.",
             "platform": "Mobile"
+        },
+        {
+            "name": "Conway's Game Of Life",
+            "id": "gameoflife",
+            "image": "gameoflife.png",
+            "developer": "John Horton Conway, pmav (Github repo)",
+            "description": "A infinitly long 2D sandbox game.",
+            "platform": "PC"
         }
     ]
 }
