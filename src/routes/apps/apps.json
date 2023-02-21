@@ -62,6 +62,15 @@
 			"name": "GeForce NOW",
 			"releaseDate": "?",
 			"embedURL": "https://play.geforcenow.com/"
+		},
+		{
+			"description": "Reddit is a forum platform where you can make posts about anything you want!",
+			"developer": "Reddit",
+			"id": "reddit",
+			"image": "reddit.png",
+			"name": "Reddit",
+			"releaseDate": "?",
+			"embedURL": "https://reddit.com"
 		}
 	]
 }
