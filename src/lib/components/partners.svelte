@@ -63,7 +63,7 @@
 					title="Phantom Games"
 					image="phantom.png"
 					description="Where simplicity and unblocked fun collide!"
-					href="https://join.texasmath.org/"
+					href="https://phantom.delusionz.xyz/"
 					color="#2c7ffc"
 				/>
 				<Box
