@@ -71,6 +71,15 @@
 			"name": "Reddit",
 			"releaseDate": "?",
 			"embedURL": "https://reddit.com"
+		},
+		{
+			"description": "Mathway is a math problem solver.",
+			"developer": "Mathway",
+			"id": "mathway",
+			"image": "mathway.png",
+			"name": "Mathway",
+			"releaseDate": "?",
+			"embedURL": "https://mathway.com"
 		}
 	]
 }
