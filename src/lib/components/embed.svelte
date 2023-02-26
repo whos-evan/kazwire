@@ -389,12 +389,12 @@
 							<Minimize />
 						</button>
 					{/if}
-					<iframe id="iframe" class="w-full h-full rounded-t-lg bg-black" {title} />
+					<iframe id="iframe" class="w-full h-full rounded-t-lg bg-white" {title} />
 				</div>
 			{:else if getGame()['emulator'] == 'ruffle'}
 				<script src="/game/ruffle/ruffle.js"></script>
 				<div class="w-full h-full">
-					<div id="frame" class="w-full h-full rounded-t-lg bg-black">
+					<div id="frame" class="w-full h-full rounded-t-lg bg-white">
 						<button class="absolute" on:click={minimize}>
 							<Back />
 						</button>
@@ -408,7 +408,7 @@
 				</div>
 			{:else}
 				<div class="flex w-full h-full">
-					<div id="frame" class="w-full h-full rounded-t-lg bg-black">
+					<div id="frame" class="w-full h-full rounded-t-lg bg-white">
 						<button class="absolute" on:click={minimize}>
 							<Back />
 						</button>
@@ -419,7 +419,7 @@
 						{/if}
 						<iframe
 							src="/game/{slug}/index.html"
-							class="w-full h-full rounded-t-lg bg-black"
+							class="w-full h-full rounded-t-lg bg-white"
 							id="iframe"
 							{title}
 						/>
@@ -427,13 +427,13 @@
 				</div>
 			{/if}
 		{:else if embedURL != undefined}
-			<div id="frame" class="w-full h-full rounded-t-lg bg-black">
+			<div id="frame" class="w-full h-full rounded-t-lg bg-white">
 				{#if maximized}
 					<button class="absolute" on:click={minimize}>
 						<Minimize />
 					</button>
 				{/if}
-				<iframe class="w-full h-full rounded-t-lg bg-black" id="iframe" {title} />
+				<iframe class="w-full h-full rounded-t-lg bg-white" id="iframe" {title} />
 			</div>
 		{/if}
 
