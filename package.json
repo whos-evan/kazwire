@@ -15,7 +15,7 @@
 		"@sveltejs/adapter-auto": "next",
 		"@sveltejs/kit": "^1.7.2",
 		"autoprefixer": "^10.4.13",
-		"eslint": "^8.28.0",
+		"eslint": "^8.35.0",
 		"eslint-config-prettier": "^8.5.0",
 		"eslint-plugin-svelte3": "^4.0.0",
 		"postcss": "^8.4.19",
