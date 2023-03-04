@@ -1,0 +1,23 @@
+{
+	"changelog": [
+		{
+			"name": "Title of the first log.",
+			"date": "2023-03-04",
+			"additions": [
+				"Added changelogs.",
+				"Added Vex 3",
+				"Added Vex 4",
+				"Added Vex 5",
+				"Added FNAF.",
+				"Added Conway's Game of Life."
+			],
+			"changes": [
+				"Updated platform support."
+			],
+			"removals": [
+				"Removed news.",
+				"Removed questionable messages."
+			]
+		}
+	]
+}
