@@ -1,18 +1,21 @@
 {
 	"changelog": [
 		{
-			"name": "Title of the first log.",
+			"name": "Massive updates!",
 			"date": "2023-03-04",
 			"additions": [
-				"Added changelogs.",
+				"Added changelogs",
+				"Added way more tags",
+				"Added query support",
 				"Added Vex 3",
 				"Added Vex 4",
 				"Added Vex 5",
-				"Added FNAF.",
-				"Added Conway's Game of Life."
+				"Added FNAF",
+				"Added Conway's Game of Life"
 			],
 			"changes": [
-				"Updated platform support."
+				"Updated platform support.",
+				"Updated tags for all games."
 			],
 			"removals": [
 				"Removed news.",

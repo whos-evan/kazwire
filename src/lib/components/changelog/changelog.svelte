@@ -7,7 +7,8 @@
 	<div class="overflow-scroll max-h-[25rem] min-h-[20rem]">
 		{#each changeLog['changelog'] as change}
 			<div class="text-xl md:text-left sm:text-center">
-				<h2 class="text-2xl font-bold mb-2 mt-4">Date: {change.date}</h2>
+				<h2 class="text-2xl font-bold mt-4">{change.name}</h2>
+				<h2 class="text-xl mb-2">Date: {change.date}</h2>
 				<div class="grid grid-flow-row gap-4">
 					{#each change.changes as change}
 						<!-- Create a small icon next to it to let users know its a change. -->
