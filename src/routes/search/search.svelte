@@ -61,6 +61,20 @@
 <script>
 	import Back from '$lib/components/buttons/back.svelte';
 	import Minimize from '$lib/components/buttons/minimize.svelte';
+	import { onMount } from 'svelte';
+
+	let searchInput = '';
+
+	onMount(async () => {
+		let url = new URL(window.location.href);
+		let search = url.searchParams.get('s');
+		if (search) {
+			searchInput = search;
+			startLoad();
+			iframeSearch();
+		}
+	});
+
 	let maximized = false;
 	let loading = false;
 	let initialLaunch = true;
@@ -143,6 +157,7 @@
 			class="md:w-[35vw] sm:w-[70vw] h-10 p-6 rounded-lg mt-5 text-black placeholder:text-gray-500"
 			placeholder="Search here..."
 			autocomplete="off"
+			bind:value={searchInput}
 		/>
 	</form>
 </div>
