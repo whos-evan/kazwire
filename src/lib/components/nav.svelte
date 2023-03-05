@@ -4,8 +4,13 @@
 
 	import { auth, googleProvider, user } from '$lib/firebase';
 
+	import logos from '$lib/components/logos.json';
+
 	let loggedIn = false;
 	let localUser = null;
+
+	let author = 'Kazwire';
+	let logoAuthor = 'Kazwire';
 
 	auth.onAuthStateChanged(function (user) {
 		if (user) {
@@ -19,6 +24,16 @@
 	});
 
 	onMount(() => {
+		// have a random chance to run the following function
+		function changeLogo() {
+			let numOfLogos = logos['logos'].length;
+			let randomNum = Math.floor(Math.random() * numOfLogos);
+			logoAuthor = logos['logos'][randomNum]['author'];
+			document.getElementById('logo').src = '/' + logos['logos'][randomNum]['filename'];
+		}
+
+		changeLogo();
+
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register(window.location.origin + '/sw.js');
 		}
@@ -96,9 +111,22 @@
 >
 	<div class="mt-auto mb-auto flex-col align-items-center">
 		<a href="/">
-			<img src="/logo.png" class="h-16 p-3 inline-block" alt="Kazwire Logo" />
-			<span class="hidden lg:inline-block text-2xl font-semibold whitespace-nowrap text-white align-middle"
-				>Kazwire</span
+			<img
+				id="logo"
+				src="/logo.png"
+				class="h-16 p-3 inline-block"
+				alt="Kazwire Logo"
+				on:mouseenter={() => {
+					author = logoAuthor;
+				}}
+				on:mouseleave={() => {
+					author = 'Kazwire'
+				}}
+			/>
+			<span
+				class="hidden lg:inline-block text-2xl font-semibold whitespace-nowrap text-white align-middle"
+				contenteditable="true"
+				bind:innerHTML={author}>Kazwire</span
 			>
 		</a>
 	</div>

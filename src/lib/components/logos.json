@@ -1,0 +1,14 @@
+{
+    "logos": [
+        {
+            "name": "Main Logo",
+            "author": "Author 1",
+            "filename": "logo.png"
+        },
+        {
+            "name": "Main Logo 2",
+            "author": "Author 2",
+            "filename": "logo2.png"
+        }
+    ]
+}
