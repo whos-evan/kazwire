@@ -25,8 +25,11 @@
 					<li class="mb-4">
 						<a href="/request" class="hover:underline">Request a Game</a>
 					</li>
-					<li>
+					<li class="mb-4">
 						<a href="/discord" class="hover:underline">Get Support</a>
+					</li>
+					<li>
+						<a href="/faq" class="hover:underline">FAQ</a>
 					</li>
 				</ul>
 			</div>

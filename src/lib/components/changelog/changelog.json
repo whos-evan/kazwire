@@ -1,6 +1,17 @@
 {
 	"changelog": [
 		{
+			"name": "FAQ and more!",
+			"date": "2023-03-05",
+			"additions": [
+				"Added FAQ page"
+			],
+			"changes": [
+				"Updated the colors on the changelog page."
+			],
+			"removals": []
+		},
+		{
 			"name": "Massive updates!",
 			"date": "2023-03-04",
 			"additions": [

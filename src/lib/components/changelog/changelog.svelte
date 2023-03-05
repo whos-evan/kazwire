@@ -1,20 +1,25 @@
 <script>
 	import changeLog from './changelog.json';
+
+	let numToShow = 1;
+
+	// only show the latest changelog
+	let changeLogEntries = changeLog['changelog'].slice(0, numToShow);
 </script>
 
 <div class="text-white w-full text-center pl-8 sm:pl-0">
 	<h1 class="text-4xl font-bold mb-5">📜 Changelog:</h1>
 	<div class="overflow-scroll max-h-[25rem] min-h-[20rem]">
-		{#each changeLog['changelog'] as change}
+		{#each changeLogEntries as change}
 			<div class="text-xl md:text-left sm:text-center">
-				<h2 class="text-2xl font-bold mt-4">{change.name}</h2>
+				<h2 class="text-2xl font-bold mt-4 from-green-500 via-blue-500 to-red-500 text-transparent w-fit bg-clip-text bg-gradient-to-tr">{change.name}</h2>
 				<h2 class="text-xl mb-2">Date: {change.date}</h2>
 				<div class="grid grid-flow-row gap-4">
 					{#each change.changes as change}
 						<!-- Create a small icon next to it to let users know its a change. -->
 						<div class="inline-flex">
 							<span
-								class="text-sm font-semibold px-3 py-2 max-h-9 rounded-lg bg-green-700 whitespace-nowrap text-white align-middle"
+								class="text-sm font-semibold px-3 py-2 max-h-9 rounded-lg from-green-700 to-green-400 bg-gradient-to-tr whitespace-nowrap text-white align-middle"
 								>Change</span
 							>
 							<span class="pl-2 items-center break-words text-white align-middle">{change}</span
@@ -25,7 +30,7 @@
 						<!-- Create a small icon next to it to let users know its an addition. -->
 						<div class="inline-flex">
 							<span
-								class="text-sm font-semibold px-3 py-2 max-h-9 rounded-lg bg-blue-700 whitespace-nowrap text-white align-middle"
+								class="text-sm font-semibold px-3 py-2 max-h-9 rounded-lg from-blue-700 to-blue-400 bg-gradient-to-tr whitespace-nowrap text-white align-middle"
 								>Addition</span
 							>
 							<span class="pl-2 items-center break-words text-white align-middle"
@@ -38,7 +43,7 @@
 							<!-- Create a small icon next to it to let users know its a fix. -->
 
 							<span
-								class="text-sm font-semibold px-3 py-2 max-h-9 rounded-lg bg-red-700 whitespace-nowrap text-white align-middle"
+								class="text-sm font-semibold px-3 py-2 max-h-9 rounded-lg from-red-700 to-red-400 bg-gradient-to-tr whitespace-nowrap text-white align-middle"
 								>Removal</span
 							>
 							<span class="pl-2 items-center break-all text-white align-middle"
