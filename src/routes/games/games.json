@@ -7,7 +7,11 @@
             "image": "2048.png",
             "name": "2048",
             "platform": "Mobile",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "casual",
+                "strategy"
+            ]
         },
         {
             "description": "A Dark Room is a text-based adventure game where you have to survive in a dark room. The game is simple, but it's hard to master.",
@@ -15,7 +19,12 @@
             "id": "a-dark-room",
             "image": "a-dark-room.png",
             "platform": "Mobile",
-            "name": "A Dark Room"
+            "name": "A Dark Room",
+            "tags": [
+                "adventure",
+                "casual",
+                "simulation"
+            ]
         },
         {
             "description": "A hybrid of Mastermind and the Android pattern lock. A game you gonna love to hate.",
@@ -23,7 +32,10 @@
             "id": "breaklock",
             "image": "breaklock.png",
             "platform": "Mobile",
-            "name": "Breaklock"
+            "name": "Breaklock",
+            "tags": [
+                "strategy"
+            ]
         },
         {
             "description": "A real-time, real-fun multiplayer game. Play together in teams, upgrade your mighty battleship and destroy the enemy base.",
@@ -32,7 +44,11 @@
             "id": "battle-boats",
             "image": "battle-boats.png",
             "platform": "PC",
-            "name": "Battleboats.io"
+            "name": "Battleboats.io",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Agar.io is a massively multiplayer online action game.",
@@ -42,7 +58,11 @@
             "image": "agar.png",
             "name": "agar.io",
             "platform": "Mobile",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "casual",
+                "multiplayer"
+            ]
         },
         {
             "description": "An easy to get into fully moddable First Person Shooter with advanced movement mechanics.",
@@ -52,7 +72,11 @@
             "image": "krunker.png",
             "name": "Krunker.io",
             "platform": "PC",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "An idle version of classic Breakout. Use multiple balls of different strength, speed and special abilities to smash a million bricks!",
@@ -61,7 +85,11 @@
             "id": "idle-breakout",
             "image": "idle-breakout.png",
             "platform": "Mobile",
-            "name": "Idle Breakout"
+            "name": "Idle Breakout",
+            "tags": [
+                "casual",
+                "indie"
+            ]
         },
         {
             "description": "Basketball Stars is a fun and addictive game where you have to control a basketball player and score as many points as you can. The game is simple, but it's hard to master.",
@@ -69,7 +97,11 @@
             "id": "basketball-stars",
             "image": "basketball-stars.png",
             "platform": "Mobile",
-            "name": "Basketball Stars"
+            "name": "Basketball Stars",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi.",
@@ -79,7 +111,10 @@
             "image": "bloons-td2.webp",
             "name": "Bloons Tower Defense 2",
             "platform": "Mobile",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "action"
+            ]
         },
         {
             "description": "Bowman is an archery game where you and an opponent take shots at each other. You win when you've hit the opponent fatally.",
@@ -88,7 +123,12 @@
             "id": "bow-man",
             "image": "bow-man.png",
             "platform": "PC",
-            "name": "Bow Man"
+            "name": "Bow Man",
+            "tags": [
+                "casual",
+                "indie",
+                "strategy"
+            ]
         },
         {
             "description": "Build Royale.io is a 2D shooter IO game where you must build and loot to upgrade your weapons to defeat all your enemies.",
@@ -97,7 +137,11 @@
             "id": "buildroyale",
             "image": "buildroyale.png",
             "platform": "PC",
-            "name": "BuildRoyale.io"
+            "name": "BuildRoyale.io",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "COLORON is a fun and well-designed platformer. The goal is to match the color of the tower to the bouncing ball. Keep it going for as long as you can, just don't get mad.",
@@ -105,7 +149,11 @@
             "id": "coloron",
             "image": "coloron.png",
             "platform": "Mobile",
-            "name": "Coloron"
+            "name": "Coloron",
+            "tags": [
+                "action",
+                "indie"
+            ]
         },
         {
             "description": "Combines.io is a crazy blend of action and farming where you drive a combine, harvest crops and destroy other players in heated online battles.",
@@ -115,7 +163,11 @@
             "image": "combines.png",
             "name": "Combines.io",
             "platform": "Mobile",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Cookie Clicker is a free-to-play incremental clicker game developed by Orteil.",
@@ -124,7 +176,11 @@
             "image": "cookie-clicker.png",
             "name": "Cookie Clicker",
             "platform": "Mobile",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "casual",
+                "simulation"
+            ]
         },
         {
             "description": "Core Ball is a fun and addictive game where you have to control a ball and avoid the obstacles. The game is simple, but it's hard to master.",
@@ -132,7 +188,10 @@
             "id": "core-ball",
             "image": "core-ball.png",
             "platform": "Mobile",
-            "name": "Core Ball"
+            "name": "Core Ball",
+            "tags": [
+                "casual"
+            ]
         },
         {
             "description": "Crazy Taxi is a series of racing video games that was developed by Hitmaker and published by Sega.",
@@ -142,7 +201,10 @@
             "image": "crazy-taxi.png",
             "name": "Crazy Taxi",
             "platform": "PC",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "racing"
+            ]
         },
         {
             "description": "Cubefield is a simple but addictive game, there are only two controls \u2013 left and right. Use the arrow keys on your keyboard to guide your ship through an endless field of ominous looking coloured cubes \u2013 if you hit one, it\u2019s game over.",
@@ -150,7 +212,10 @@
             "id": "cubefield",
             "image": "cubefield.png",
             "platform": "Mobile",
-            "name": "Cubefield"
+            "name": "Cubefield",
+            "tags": [
+                "strategy"
+            ]
         },
         {
             "description": "Diep.io is a multiplayer action game where players control tanks and earn points by destroying shapes and killing other players in a 2D arena.",
@@ -159,7 +224,12 @@
             "id": "diep",
             "image": "diep.png",
             "platform": "Mobile",
-            "name": "Diep.io"
+            "name": "Diep.io",
+            "tags": [
+                "action",
+                "casual",
+                "multiplayer"
+            ]
         },
         {
             "description": "Drift Hunters is a fun and addictive game where you have to control a car and drift around the track. The game is simple, but it's hard to master.",
@@ -168,7 +238,10 @@
             "image": "drift-hunters.png",
             "name": "Drift Hunters",
             "platform": "PC",
-            "popular": true
+            "popular": true,
+            "tags": [
+                "racing"
+            ]
         },
         {
             "description": "Duck Life is a game series where you train your duck for races and/or battles.",
@@ -178,7 +251,12 @@
             "image": "ducklife1.png",
             "name": "Duck Life 1",
             "platform": "PC",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "adventure",
+                "casual",
+                "strategy"
+            ]
         },
         {
             "description": "Duck Life is a game series where you train your duck for races and/or battles.",
@@ -188,7 +266,12 @@
             "image": "ducklife2.png",
             "name": "Duck Life 2",
             "platform": "PC",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "adventure",
+                "casual",
+                "strategy"
+            ]
         },
         {
             "description": "Duck Life is a game series where you train your duck for races and/or battles.",
@@ -198,7 +281,12 @@
             "image": "ducklife3-evolution.png",
             "name": "Duck Life 3 - Evolution",
             "platform": "PC",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "adventure",
+                "casual",
+                "strategy"
+            ]
         },
         {
             "description": "Duck Life is a game series where you train your duck for races and/or battles.",
@@ -209,7 +297,12 @@
             "name": "Duck Life 4",
             "platform": "PC",
             "releaseDate": "?",
-            "popular": true
+            "popular": true,
+            "tags": [
+                "adventure",
+                "casual",
+                "strategy"
+            ]
         },
         {
             "description": "Fight to survive in this epic multiplayer battle royale build battle where only the last player standing wins and achieves the long-awaited master victory.",
@@ -218,7 +311,11 @@
             "id": "1v1-lol",
             "image": "1v1-lol.png",
             "platform": "PC",
-            "name": "1v1.lol"
+            "name": "1v1.lol",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Fireboy and Watergirl: Forest Temple is a fun and addictive game where you have to control two characters at the same time. The game is simple, but it's hard to master.",
@@ -226,7 +323,13 @@
             "id": "fireboy-and-watergirl-forest-temple",
             "image": "fireboy-and-watergirl-forest-temple.png",
             "platform": "Mobile",
-            "name": "Fireboy and Watergirl Forest Temple"
+            "name": "Fireboy and Watergirl Forest Temple",
+            "tags": [
+                "action",
+                "adventure",
+                "casual",
+                "multiplayer"
+            ]
         },
         {
             "description": "Fortnite is a co-op sandbox survival game developed by Epic Games and People Can Fly, with the former publishing it.",
@@ -237,7 +340,11 @@
             "name": "Fortnite",
             "platform": "PC",
             "error": "GeForce NOW is currently not accessible through the proxy.",
-            "releaseDate": "2017-07-25"
+            "releaseDate": "2017-07-25",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Friday Night Funkin' Vs Ex is a mod of Friday Night Funkin' that adds a new character, Ex Boyfriend, and a new week, Ex Week.",
@@ -245,7 +352,10 @@
             "id": "fnf-vs-ex",
             "image": "fnf-vs-ex.png",
             "platform": "PC",
-            "name": "Friday Night Funkin: Vs Ex"
+            "name": "Friday Night Funkin: Vs Ex",
+            "tags": [
+                "indie"
+            ]
         },
         {
             "description": "Frogger is either single-player or two players alternating. The frog starts at the bottom of the screen, which contains a horizontal road occupied by speeding cars, trucks, and bulldozers.",
@@ -255,7 +365,10 @@
             "image": "frogger.png",
             "name": "Frogger",
             "platform": "PC",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "casual"
+            ]
         },
         {
             "description": "GeForce NOW is a cloud gaming service developed by Nvidia.",
@@ -266,7 +379,8 @@
             "name": "GeForce NOW",
             "platform": "PC",
             "error": "GeForce NOW is currently not accessible through the proxy.",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": []
         },
         {
             "description": "In Basket Random game, try to score a basket by using only one key with different variations from each other!",
@@ -274,7 +388,12 @@
             "id": "basket-random",
             "image": "basket-random.png",
             "platform": "Mobile",
-            "name": "Basket Random"
+            "name": "Basket Random",
+            "tags": [
+                "action",
+                "multiplayer",
+                "sports"
+            ]
         },
         {
             "description": "JKLM.fun is a fun and fast-paced multiplayer game where you have to press the right keys at the right time to win.",
@@ -284,7 +403,11 @@
             "image": "jklm.png",
             "name": "JKLM.fun",
             "platform": "PC",
-            "releaseDate": "?"
+            "releaseDate": "?",
+            "tags": [
+                "casual",
+                "multiplayer"
+            ]
         },
         {
             "description": "Let's travel with the cartoon character as high as possible!",
@@ -292,7 +415,11 @@
             "id": "doodle-jump",
             "image": "doodle-jump.png",
             "platform": "Mobile",
-            "name": "Doodle Jump"
+            "name": "Doodle Jump",
+            "tags": [
+                "adventure",
+                "casual"
+            ]
         },
         {
             "description": "Mope.io is a game in which you play as an animal who eats food and water to survive.",
@@ -301,7 +428,12 @@
             "id": "mope",
             "image": "mope.png",
             "platform": "PC",
-            "name": "Mope.io"
+            "name": "Mope.io",
+            "tags": [
+                "adventure",
+                "casual",
+                "multiplayer"
+            ]
         },
         {
             "description": "Papa's Pizzeria is the first game in the Papa Louie time-management restaurant series, and was officially released on August 7, 2007.",
@@ -311,7 +443,12 @@
             "image": "papas-pizzeria.jpg",
             "name": "Papas Pizzeria",
             "platform": "PC",
-            "releaseDate": "2007-08-07"
+            "releaseDate": "2007-08-07",
+            "tags": [
+                "casual",
+                "simulation",
+                "strategy"
+            ]
         },
         {
             "description": "Pokemon Stadium 2 is a strategy video game developed by Nintendo EAD and published by Nintendo for the Nintendo 64. It features all 251 Pok\u00e9mon from the first and second generations of the franchise.",
@@ -320,7 +457,13 @@
             "id": "pokemon-stadium-2",
             "image": "pokemon-stadium-2.png",
             "platform": "PC",
-            "name": "Pokemon Stadium 2"
+            "name": "Pokemon Stadium 2",
+            "tags": [
+                "action",
+                "adventure",
+                "rpg",
+                "strategy"
+            ]
         },
         {
             "description": "REPULS is a fast-paced multiplayer FPS game featuring various maps, weapons, and game modes. The pace and style of the game make it perfect for fans of the Halo series.",
@@ -329,7 +472,11 @@
             "id": "repuls",
             "image": "repuls.png",
             "platform": "PC",
-            "name": "Repuls.io"
+            "name": "Repuls.io",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Race at lightning speeds across seven classic zones as Sonic the Hedgehog.",
@@ -338,7 +485,11 @@
             "id": "sonic-original",
             "image": "sonic-original.png",
             "platform": "PC",
-            "name": "Sonic The Hedgehog (Original)"
+            "name": "Sonic The Hedgehog (Original)",
+            "tags": [
+                "action",
+                "racing"
+            ]
         },
         {
             "description": "Retro Bowl emulates the gameplay of American football and was heavily influenced by the Tecmo Bowl series.",
@@ -347,7 +498,13 @@
             "image": "retro-bowl.png",
             "name": "Retro Bowl",
             "platform": "PC",
-            "popular": true
+            "popular": true,
+            "tags": [
+                "casual",
+                "simulation",
+                "sports",
+                "strategy"
+            ]
         },
         {
             "description": "Ride your bike through the bumpy and challenging tracks. Do not hit the ground and show your skill!",
@@ -355,7 +512,11 @@
             "id": "bike-mania",
             "image": "bike-mania.png",
             "platform": "PC",
-            "name": "Bike Mania"
+            "name": "Bike Mania",
+            "tags": [
+                "action",
+                "sports"
+            ]
         },
         {
             "description": "Rooftop Snipers is a chaotic two-button two-player sniper game.",
@@ -363,7 +524,11 @@
             "id": "rooftop-snipers",
             "image": "rooftop-snipers.png",
             "platform": "PC",
-            "name": "Rooftop Snipers"
+            "name": "Rooftop Snipers",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Run 3 is the first Run game to introduce a storyline, mainly told through cutscenes.",
@@ -372,7 +537,12 @@
             "image": "run-3.png",
             "name": "Run 3",
             "platform": "PC",
-            "releaseDate": "2014-06-05"
+            "releaseDate": "2014-06-05",
+            "tags": [
+                "action",
+                "indie",
+                "racing"
+            ]
         },
         {
             "description": "Slope 2, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way.",
@@ -380,7 +550,11 @@
             "id": "slope-2",
             "image": "slope-2.png",
             "platform": "PC",
-            "name": "Slope 2"
+            "name": "Slope 2",
+            "tags": [
+                "action",
+                "casual"
+            ]
         },
         {
             "description": "Slope, a new arcade game from Y8 games, engage you in a simple yet deadly challenge: roll down the slope for as long as possible without falling off the edge or hitting any obstacles along the way.",
@@ -388,7 +562,11 @@
             "id": "slope",
             "image": "slope.png",
             "platform": "PC",
-            "name": "Slope"
+            "name": "Slope",
+            "tags": [
+                "action",
+                "casual"
+            ]
         },
         {
             "description": "Sonic 1 is a platform video game developed by Sonic Team and published by Sega.",
@@ -396,7 +574,11 @@
             "id": "sonic-1",
             "image": "sonic-1.png",
             "platform": "PC",
-            "name": "Sonic 1"
+            "name": "Sonic 1",
+            "tags": [
+                "action",
+                "racing"
+            ]
         },
         {
             "description": "Sonic 2 is a platform video game developed by Sonic Team and published by Sega.",
@@ -404,7 +586,11 @@
             "id": "sonic-2",
             "image": "sonic-2.png",
             "platform": "PC",
-            "name": "Sonic 2"
+            "name": "Sonic 2",
+            "tags": [
+                "action",
+                "racing"
+            ]
         },
         {
             "description": "Subway Surfers is an endless runner mobile game co-developed by Kiloo, a private company based in Denmark and SYBO Games.",
@@ -412,7 +598,11 @@
             "id": "subway-surfers",
             "image": "subway-surfers.png",
             "platform": "Mobile",
-            "name": "Subway Surfers"
+            "name": "Subway Surfers",
+            "tags": [
+                "action",
+                "racing"
+            ]
         },
         {
             "description": "Super Mario 64 is a 1996 platform game for the Nintendo 64, developed by Nintendo EAD and published by Nintendo. The first Super Mario game to feature 3D gameplay!",
@@ -421,7 +611,11 @@
             "id": "super-mario-64",
             "image": "super-mario-64.png",
             "platform": "PC",
-            "name": "Super Mario 64"
+            "name": "Super Mario 64",
+            "tags": [
+                "action",
+                "adventure"
+            ]
         },
         {
             "description": "Team Fortress 2 is a 2007 multiplayer first-person shooter game developed and published by Valve Corporation.",
@@ -431,7 +625,11 @@
             "image": "tf2.png",
             "platform": "PC",
             "error": "GeForce NOW is currently not accessible through the proxy.",
-            "name": "Team Fortress 2"
+            "name": "Team Fortress 2",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Tetris, video game created by Russian designer Alexey Pajitnov in 1985 that allows players to rotate falling blocks strategically to clear levels.",
@@ -439,7 +637,11 @@
             "id": "tetris",
             "image": "tetris.png",
             "platform": "PC",
-            "name": "Tetris"
+            "name": "Tetris",
+            "tags": [
+                "casual",
+                "strategy"
+            ]
         },
         {
             "description": "The Achromats have taken the worlds color offline! Raid their colorless lair and vanquish them all, restoring the world to it's technicolor glory.",
@@ -447,7 +649,11 @@
             "id": "chroma",
             "image": "chroma.png",
             "platform": "PC",
-            "name": "The Chroma Incident"
+            "name": "The Chroma Incident",
+            "tags": [
+                "adventure",
+                "indie"
+            ]
         },
         {
             "description": "The Dough-Nutter 4000 has malfunctioned! It's up to you, Donut Boy, to rescue the employees and donuts that were scattered around town from the resulting explosion.",
@@ -455,7 +661,11 @@
             "id": "donut-boy",
             "image": "donut-boy.png",
             "platform": "PC",
-            "name": "Donut Boy"
+            "name": "Donut Boy",
+            "tags": [
+                "adventure",
+                "indie"
+            ]
         },
         {
             "description": "The goal of the game is to stack the moving blocks over each other as high as you can.",
@@ -463,7 +673,10 @@
             "id": "stack",
             "image": "stack.png",
             "platform": "Mobile",
-            "name": "Stack"
+            "name": "Stack",
+            "tags": [
+                "casual"
+            ]
         },
         {
             "description": "Wings.io is a Massive multiplayer online game. Control your plane and shoot down other players!",
@@ -472,7 +685,11 @@
             "id": "wings",
             "image": "wings.png",
             "platform": "PC",
-            "name": "Wings.io"
+            "name": "Wings.io",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "description": "Your goal is become the biggest and longest snake in the world.If your head touches another player, you will explode and then it's game over. But if others run into YOU, then THEY will explode, and you can eat their remains!",
@@ -481,7 +698,11 @@
             "id": "supersnake",
             "image": "supersnake.png",
             "platform": "PC",
-            "name": "SuperSnake.io"
+            "name": "SuperSnake.io",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "name": "Sparebeat",
@@ -490,7 +711,11 @@
             "developer": "suzukibakery",
             "description": "A fun 4K rhythm game desinged to be played in browsers",
             "platform": "PC",
-            "embedURL": "https://sparebeat.com/"
+            "embedURL": "https://sparebeat.com/",
+            "tags": [
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Portal",
@@ -500,7 +725,11 @@
             "platform": "PC",
             "description": "Portal is a new single player game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
             "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=df05c1d5-60a1-4969-a73a-2fef74a8dde8&utm_source=shortcut",
-            "error": "GeForce NOW is currently not accessible through the proxy."
+            "error": "GeForce NOW is currently not accessible through the proxy.",
+            "tags": [
+                "adventure",
+                "strategy"
+            ]
         },
         {
             "name": "Portal 2",
@@ -510,7 +739,12 @@
             "platform": "PC",
             "description": "Portal 2 is a new single player and multiplayer game from Valve. Portal has been called one of the most innovative new games on the horizon and will offer gamers hours of unique gameplay.",
             "error": "GeForce NOW is currently not accessible through the proxy.",
-            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=749ab5aa-eded-4616-965e-fae5f9b6c7f1&utm_source=shortcut"
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=749ab5aa-eded-4616-965e-fae5f9b6c7f1&utm_source=shortcut",
+            "tags": [
+                "adventure",
+                "multiplayer",
+                "strategy"
+            ]
         },
         {
             "name": "Tube Jumpers",
@@ -518,7 +752,11 @@
             "image": "tube-jumpers.png",
             "developer": "Dahoh Bolesta",
             "platform": "PC",
-            "description": "Tube Jumpers is a local multiplayer that can be played with up to 4 people. In the game you have to make sure to stay on your floating tube."
+            "description": "Tube Jumpers is a local multiplayer that can be played with up to 4 people. In the game you have to make sure to stay on your floating tube.",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "name": "Jetpack Joyride",
@@ -526,7 +764,10 @@
             "image": "jetpack-joyride.png",
             "developer": "Halfbrick Studios",
             "platform": "Mobile",
-            "description": "Jetpack Joyride is a 2011 side-scrolling endless runner action video game developed by Halfbrick Studios and published by Halfbrick Studios."
+            "description": "Jetpack Joyride is a 2011 side-scrolling endless runner action video game developed by Halfbrick Studios and published by Halfbrick Studios.",
+            "tags": [
+                "action"
+            ]
         },
         {
             "name": "World's Hardest Game",
@@ -534,7 +775,11 @@
             "image": "worlds-hardest-game.png",
             "developer": "Stephen Critoph",
             "platform": "PC",
-            "description": "The World's Hardest Game is an addictive puzzle game consisting of 30 incredibly challenging levels."
+            "description": "The World's Hardest Game is an addictive puzzle game consisting of 30 incredibly challenging levels.",
+            "tags": [
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Temple Run 2",
@@ -542,7 +787,10 @@
             "image": "temple-run-2.png",
             "developer": "Imangi Studios",
             "platform": "Mobile",
-            "description": "Temple Run 2 is an endless running video game developed and published by Imangi Studios."
+            "description": "Temple Run 2 is an endless running video game developed and published by Imangi Studios.",
+            "tags": [
+                "action"
+            ]
         },
         {
             "name": "Fruit Ninja",
@@ -550,7 +798,10 @@
             "image": "fruit-ninja.png",
             "developer": "Halfbrick Studios",
             "platform": "Mobile",
-            "description": "In Fruit Ninja the player must slice fruit that is thrown into the air by swiping the device's touch screen with their finger or the player's arms and hands, and must not slice bombs."
+            "description": "In Fruit Ninja the player must slice fruit that is thrown into the air by swiping the device's touch screen with their finger or the player's arms and hands, and must not slice bombs.",
+            "tags": [
+                "casual"
+            ]
         },
         {
             "name": "BitLife",
@@ -559,7 +810,11 @@
             "developer": "CandyWriter",
             "description": "BitLife, is a mobile life simulator game.",
             "platform": "Mobile",
-            "popular": true
+            "popular": true,
+            "tags": [
+                "rpg",
+                "simulation"
+            ]
         },
         {
             "name": "Crossy Road",
@@ -567,7 +822,11 @@
             "image": "crossy-road.png",
             "developer": "Hipster Whale",
             "platform": "Mobile",
-            "description": "Crossy Road is the 8-bit endless arcade hopper that started it all. Collect custom characters and navigate freeways, railroads, rivers and much more."
+            "description": "Crossy Road is the 8-bit endless arcade hopper that started it all. Collect custom characters and navigate freeways, railroads, rivers and much more.",
+            "tags": [
+                "adventure",
+                "casual"
+            ]
         },
         {
             "name": "Giant Hamster Run",
@@ -575,7 +834,12 @@
             "image": "giant-hamster-run.png",
             "developer": "FLGames",
             "platform": "Mobile",
-            "description": "Tiny the Hamster as he stampedes through the city is this classic endless-runner."
+            "description": "Tiny the Hamster as he stampedes through the city is this classic endless-runner.",
+            "tags": [
+                "action",
+                "adventure",
+                "casual"
+            ]
         },
         {
             "name": "Impossible Quiz",
@@ -584,7 +848,11 @@
             "developer": "Glenn Rhodes",
             "description": "The Impossible Quiz is an online trivia quiz that features only very hard questions.",
             "platform": "PC",
-            "emulator": "ruffle"
+            "emulator": "ruffle",
+            "tags": [
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Dadish",
@@ -592,14 +860,23 @@
             "image": "dadish.png",
             "developer": "Thomas K Young and CatCup Games",
             "platform": "Mobile",
-            "description": "Dadish is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch."
+            "description": "Dadish is a platform game where you're a radish daddy who's in charge of finding his kids who have gone missing from the vegetable patch.",
+            "tags": [
+                "action",
+                "adventure",
+                "indie"
+            ]
         },
         {
             "name": "Tiny Fishing",
             "id": "tiny-fishing",
             "image": "tiny-fishing.png",
             "developer": "appdz and Mad Buffer",
-            "description": "Catch fish and sell them for money to buy upgrades and new fishing rods!"
+            "description": "Catch fish and sell them for money to buy upgrades and new fishing rods!",
+            "tags": [
+                "casual",
+                "simulation"
+            ]
         },
         {
             "name": "Geometry Dash (Scratch)",
@@ -607,7 +884,10 @@
             "image": "geometry-dash.png",
             "developer": "Robert Topala and RobTop Games",
             "platform": "Mobile",
-            "description": "Geometry Dash is a rhythm-based platform game developed and published by RobTop Games."
+            "description": "Geometry Dash is a rhythm-based platform game developed and published by RobTop Games.",
+            "tags": [
+                "action"
+            ]
         },
         {
             "name": "Dadish 2",
@@ -615,7 +895,12 @@
             "image": "dadish-2.png",
             "developer": "Thomas K Young and CatCup Games",
             "platform": "Mobile",
-            "description": "Help reunite Dadish with his missing kids in this charming and challenging platforming adventure."
+            "description": "Help reunite Dadish with his missing kids in this charming and challenging platforming adventure.",
+            "tags": [
+                "action",
+                "adventure",
+                "indie"
+            ]
         },
         {
             "name": "People Playground",
@@ -625,7 +910,12 @@
             "description": "Shoot, stab, burn, poison, tear, vaporise, or crush ragdolls. This game is for people who enjoy throwing around ragdolls.",
             "platform": "PC",
             "error": "GeForce NOW is currently not accessible through the proxy.",
-            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=17f2bd78-5423-4946-afc4-08f92380ef97&utm_source=shortcut"
+            "embedURL": "https://play.geforcenow.com/mall/#/deeplink?game-id=17f2bd78-5423-4946-afc4-08f92380ef97&utm_source=shortcut",
+            "tags": [
+                "action",
+                "indie",
+                "simulation"
+            ]
         },
         {
             "name": "Krew.io",
@@ -634,7 +924,12 @@
             "developer": "m0de",
             "description": "A fast paced pirate game where you compete against other players for treasure.",
             "platform": "PC",
-            "embedURL": "https://krew.io"
+            "embedURL": "https://krew.io",
+            "tags": [
+                "action",
+                "adventure",
+                "multiplayer"
+            ]
         },
         {
             "name": "Bloxorz",
@@ -642,7 +937,11 @@
             "image": "bloxorz.png",
             "developer": "Damien Clarke and CoolMathGames.com",
             "platform": "PC",
-            "description": "Bloxorz is a puzzle game, very challenging. It is a great block awesome game that gets harder at each progressive level."
+            "description": "Bloxorz is a puzzle game, very challenging. It is a great block awesome game that gets harder at each progressive level.",
+            "tags": [
+                "casual",
+                "strategy"
+            ]
         },
         {
             "name": "Cat Ninja the Quest for the Magical Energy Crystals",
@@ -650,7 +949,11 @@
             "image": "cat-ninja.png",
             "developer": "Richman Stewart",
             "platform": "PC",
-            "description": "Cat Ninja is one of the best new platform-adventure games online."
+            "description": "Cat Ninja is one of the best new platform-adventure games online.",
+            "tags": [
+                "action",
+                "indie"
+            ]
         },
         {
             "name": "Kirka.io",
@@ -659,7 +962,11 @@
             "developer": "AwesomeSam",
             "description": "Kirka.io is a multiplayer online slow-paced competitive FPS game on the browser.",
             "platform": "PC",
-            "embedURL": "https://kirka.io/"
+            "embedURL": "https://kirka.io/",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "name": "Kopanito All-Stars Soccer",
@@ -667,7 +974,10 @@
             "image": "kopanito-all-stars-soccer.png",
             "developer": "Merixgames",
             "platform": "PC",
-            "description": "Fast-paced football game without a referee on the pitch and with crazy super-powers!"
+            "description": "Fast-paced football game without a referee on the pitch and with crazy super-powers!",
+            "tags": [
+                "sports"
+            ]
         },
         {
             "name": "Riddle School",
@@ -676,7 +986,13 @@
             "developer": "Jonochrome",
             "description": "Riddle School is a 2006 flash based puzzle-solving game.",
             "platform": "PC",
-            "emulator": "ruffle"
+            "emulator": "ruffle",
+            "tags": [
+                "adventure",
+                "casual",
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Riddle School 2",
@@ -685,7 +1001,13 @@
             "developer": "Jonochrome",
             "description": "Riddle School 2 is a Flash-based point-and-click puzzle game by Jonochrome.",
             "platform": "PC",
-            "emulator": "ruffle"
+            "emulator": "ruffle",
+            "tags": [
+                "adventure",
+                "casual",
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Riddle School 3",
@@ -694,7 +1016,13 @@
             "developer": "Jonochrome",
             "description": "Riddle School 3 is a Flash-based point-and-click puzzle game by Jonochrome.",
             "platform": "PC",
-            "emulator": "ruffle"
+            "emulator": "ruffle",
+            "tags": [
+                "adventure",
+                "casual",
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Riddle School 4",
@@ -703,7 +1031,13 @@
             "developer": "Jonochrome",
             "description": "Riddle School 4 is a Flash-based point-and-click puzzle game by Jonochrome.",
             "platform": "PC",
-            "emulator": "ruffle"
+            "emulator": "ruffle",
+            "tags": [
+                "adventure",
+                "casual",
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Riddle School 5",
@@ -712,7 +1046,13 @@
             "developer": "Jonochrome",
             "description": "Riddle School 5 is a Flash-based point-and-click puzzle game by Jonochrome.",
             "platform": "PC",
-            "emulator": "ruffle"
+            "emulator": "ruffle",
+            "tags": [
+                "adventure",
+                "casual",
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "A Dance of Fire and Ice",
@@ -720,7 +1060,10 @@
             "image": "a-dance-of-fire-and-ice.png",
             "developer": "fizzd, Kyle, giacomopc",
             "platform": "Mobile",
-            "description": "A Dance of Fire and Ice is a simple one-button rhythm game."
+            "description": "A Dance of Fire and Ice is a simple one-button rhythm game.",
+            "tags": [
+                "strategy"
+            ]
         },
         {
             "name": "OvO",
@@ -728,7 +1071,10 @@
             "image": "ovo.png",
             "developer": "Dedra Games",
             "platform": "Mobile",
-            "description": "OvO is a 2D platformer game where the objective is to go through levels and complete them."
+            "description": "OvO is a 2D platformer game where the objective is to go through levels and complete them.",
+            "tags": [
+                "casual"
+            ]
         },
         {
             "name": "Gun Mayhem 2",
@@ -737,7 +1083,10 @@
             "developer": "Kevin Gu",
             "description": "Defeat your powerful enemies by shooting them or blasting them off the platform with dynamite.",
             "platform": "PC",
-            "emulator": "ruffle"
+            "emulator": "ruffle",
+            "tags": [
+                "action"
+            ]
         },
         {
             "name": "FeedVid Live",
@@ -745,7 +1094,12 @@
             "image": "feedvid-live.png",
             "developer": "Varun R.",
             "platform": "Mobile",
-            "description": "FeedVid Live is a short puzzle game taking place in an unusual livestreaming app."
+            "description": "FeedVid Live is a short puzzle game taking place in an unusual livestreaming app.",
+            "tags": [
+                "adventure",
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Universal Paperclips",
@@ -753,7 +1107,11 @@
             "image": "universal-paperclips.png",
             "developer": "Frank Lantz",
             "platform": "Mobile",
-            "description": "An idle game where you produce paperclips while trying to deal with public demand"
+            "description": "An idle game where you produce paperclips while trying to deal with public demand",
+            "tags": [
+                "casual",
+                "indie"
+            ]
         },
         {
             "name": "Chrome Dino",
@@ -761,7 +1119,10 @@
             "image": "dinogame.png",
             "developer": "Google",
             "platform": "Mobile",
-            "description": "The Chrome Dino game is a simple, browser-based game that can be played when a user's internet connection is offline"
+            "description": "The Chrome Dino game is a simple, browser-based game that can be played when a user's internet connection is offline",
+            "tags": [
+                "casual"
+            ]
         },
         {
             "name": "Wordle",
@@ -769,7 +1130,11 @@
             "image": "wordle.png",
             "developer": "Josh Wardle and DharMesh",
             "platform": "Mobile",
-            "description": "Wordle is a type of word puzzle in which a user is presented with a jumble of letters, and they must rearrange them to form words."
+            "description": "Wordle is a type of word puzzle in which a user is presented with a jumble of letters, and they must rearrange them to form words.",
+            "tags": [
+                "casual",
+                "strategy"
+            ]
         },
         {
             "name": "XX142-B2.EXE",
@@ -777,7 +1142,11 @@
             "image": "xx142-b2exe.png",
             "developer": "Ben Clark and Salvatore Previti",
             "platform": "Mobile",
-            "description": "You are an AI weaponized virus built to infiltrate the alien network and deactivate all power generators and weapon systems."
+            "description": "You are an AI weaponized virus built to infiltrate the alien network and deactivate all power generators and weapon systems.",
+            "tags": [
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "PACKABUNCHAS",
@@ -785,7 +1154,11 @@
             "image": "packabunchas.png",
             "developer": "Mattia Fortunati",
             "platform": "Mobile",
-            "description": "In this game, you try to fix tetris like shapes, into a rocket ship."
+            "description": "In this game, you try to fix tetris like shapes, into a rocket ship.",
+            "tags": [
+                "indie",
+                "strategy"
+            ]
         },
         {
             "name": "Pizza Tower",
@@ -793,7 +1166,12 @@
             "image": "pizza-tower.jpeg",
             "developer": "Tour De Pizza",
             "platform": "PC",
-            "description": "Pizza Tower is a fast paced 2D platformer inspired by the Wario Land series, with an emphasis on movement, exploration and score attack. Featuring highly stylized pixel art inspired by the cartoons from the '90s, and a highly energetic soundtrack."
+            "description": "Pizza Tower is a fast paced 2D platformer inspired by the Wario Land series, with an emphasis on movement, exploration and score attack. Featuring highly stylized pixel art inspired by the cartoons from the '90s, and a highly energetic soundtrack.",
+            "tags": [
+                "action",
+                "adventure",
+                "indie"
+            ]
         },
         {
             "name": "Drift Boss",
@@ -802,7 +1180,11 @@
             "id": "drift-boss",
             "image": "drift-boss.png",
             "platform": "Mobile",
-            "description": "Drift boss is a drifting game played by pressing one button. Drive your vehicle around tricky corners and over bumps until you fall off the platform. Keep playing to earn rewards and unlock better cars!"
+            "description": "Drift boss is a drifting game played by pressing one button. Drive your vehicle around tricky corners and over bumps until you fall off the platform. Keep playing to earn rewards and unlock better cars!",
+            "tags": [
+                "action",
+                "racing"
+            ]
         },
         {
             "name": "Typing Test",
@@ -810,7 +1192,10 @@
             "image": "typing-test.png",
             "developer": "salmannotkhan",
             "platform": "PC",
-            "description": "Type as fast as you possibly can! Test yourself and see how much you can improve."
+            "description": "Type as fast as you possibly can! Test yourself and see how much you can improve.",
+            "tags": [
+                "casual"
+            ]
         },
         {
             "name": "Bonk.io",
@@ -819,7 +1204,11 @@
             "developer": "Chaz",
             "description": "Bonk.io is a multiplayer physics game, for up to eight players at once. Push your opponents off the edge of the level, the last man standing wins!",
             "platform": "PC",
-            "embedURL": "https://bonk.io"
+            "embedURL": "https://bonk.io",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
         },
         {
             "name": "Chess.com",
@@ -828,7 +1217,12 @@
             "developer": "Chess.com",
             "description": "Chess.com is an internet chess server, news website and social networking website.",
             "platform": "Mobile",
-            "embedURL": "https://chess.com"
+            "embedURL": "https://chess.com",
+            "tags": [
+                "casual",
+                "multiplayer",
+                "strategy"
+            ]
         },
         {
             "name": "Swing Monkey",
@@ -836,7 +1230,10 @@
             "image": "swing-monkey.png",
             "developer": "MarketJS",
             "description": "Swing Monkey is a one-button monkey swinging game to reach the finish line successfully.",
-            "platform": "Mobile"
+            "platform": "Mobile",
+            "tags": [
+                "casual"
+            ]
         },
         {
             "name": "Conway's Game Of Life",
@@ -844,7 +1241,12 @@
             "image": "gameoflife.png",
             "developer": "John Horton Conway, pmav (Github repo)",
             "description": "A infinitly long 2D sandbox game.",
-            "platform": "PC"
+            "platform": "PC",
+            "tags": [
+                "casual",
+                "indie",
+                "simulation"
+            ]
         },
         {
             "name": "Vex 3",
@@ -852,7 +1254,11 @@
             "image": "vex-3.png",
             "developer": "Amazing Adam",
             "description": "Vex 3 is the third platform game in the Vex series. The game is full of twists and turns, with a labyrinth of deadly devices and traps to navigate on each level. Avoid the spinning blades, spikes, and traps to make your way to the next act!",
-            "platform": "PC"
+            "platform": "PC",
+            "tags": [
+                "action",
+                "strategy"
+            ]
         },
         {
             "name": "Vex 4",
@@ -860,7 +1266,11 @@
             "image": "vex-4.png",
             "developer": "Amazing Adam",
             "description": "Vex 4 is an amazing stick platformer in which you climb, jump, swim, and fly your way through 9 challenging acts. It is the sequel of Vex 3, a massive hit, and will be equally fun and challenging for players of all ages.",
-            "platform": "PC"
+            "platform": "PC",
+            "tags": [
+                "action",
+                "strategy"
+            ]
         },
         {
             "name": "Vex 5",
@@ -868,7 +1278,11 @@
             "image": "vex-5.png",
             "developer": "Amazing Adam",
             "description": "Vex 5 is the fifth platform game in the Vex series. Each level is a labyrinth of deadly devices and traps. You have to outsmart these obstacles to reach the end. Expect some of the toughest challenges yet in this fifth installment.",
-            "platform": "PC"
+            "platform": "PC",
+            "tags": [
+                "action",
+                "strategy"
+            ]
         },
         {
             "name": "Five Nights at Freddy's",
@@ -876,7 +1290,12 @@
             "image": "fnaf.png",
             "developer": "Wendell Sousa",
             "description": "A web version I've made of the popular horror game Five Nights at Freddy's.",
-            "platform": "PC"
+            "platform": "PC",
+            "tags": [
+                "action",
+                "adventure",
+                "strategy"
+            ]
         }
     ]
 }

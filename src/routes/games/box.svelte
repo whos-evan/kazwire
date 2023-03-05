@@ -7,6 +7,7 @@
 
 	export let color;
 
+	export let tags;
 	export let category;
 
 	export let popular;
@@ -89,6 +90,17 @@
 			<div class="pl-5 pr-5">
 				<h1 class="font-bold text-2xl" style="color: {color};">{title}</h1>
 				<p class="text-black dark:text-white text-sm">Category: Popular</p>
+				{#if tags.length > 0}
+					{#each tags as tag}
+						<a href="/games?c={tag}" data-sveltekit-reload>
+							<div
+								class="bg-orange-600 hover:bg-orange-800 dark:bg-black dark:hover:bg-gray-700 transition-colors rounded-lg px-2 py-1 m-1 w-min inline-block text-white text-sm"
+							>
+								{tag}
+							</div>
+						</a>
+					{/each}
+				{/if}
 				<p class="text-black dark:text-white">{description}</p>
 			</div>
 		</div>
@@ -146,9 +158,22 @@
 				/>
 			</div>
 			<div class="pl-5 pr-5">
-				<h1 class="font-bold text-2xl text-black dark:text-white" style="color: {color};">{title}</h1>
+				<h1 class="font-bold text-2xl text-black dark:text-white" style="color: {color};">
+					{title}
+				</h1>
 				{#if category != undefined}
 					<p class="text-black text-sm dark:text-white">Category: {category}</p>
+				{/if}
+				{#if tags.length > 0}
+					{#each tags as tag}
+						<a href="/games?c={tag}" data-sveltekit-reload>
+							<div
+								class="bg-orange-600 hover:bg-orange-800 dark:bg-black dark:hover:bg-gray-700 transition-colors rounded-lg px-2 py-1 m-1 w-min inline-block text-white text-sm"
+							>
+								{tag}
+							</div>
+						</a>
+					{/each}
 				{/if}
 				<p class="text-black dark:text-white">{description}</p>
 			</div>

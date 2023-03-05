@@ -2,7 +2,7 @@
 	import changeLog from './changelog.json';
 </script>
 
-<div class="text-white w-full text-center">
+<div class="text-white w-full text-center pl-8 sm:pl-0">
 	<h1 class="text-4xl font-bold mb-5">📜 Changelog:</h1>
 	<div class="overflow-scroll max-h-[25rem] min-h-[20rem]">
 		{#each changeLog['changelog'] as change}

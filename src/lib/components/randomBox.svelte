@@ -83,12 +83,14 @@
 			<Box
 				title={randomGame1['name']}
 				image={randomGame1['image']}
+				tags={randomGame1['tags']}
 				description={randomGame1['description']}
 				id={randomGame1['id']}
 			/>
 			<Box
 				title={randomGame2['name']}
 				image={randomGame2['image']}
+				tags={randomGame2['tags']}
 				description={randomGame2['description']}
 				id={randomGame2['id']}
 			/>
@@ -96,6 +98,7 @@
 			<Box
 				title={lovedGames[0]['name']}
 				image={lovedGames[0]['image']}
+				tags={lovedGames[0]['tags']}
 				description={lovedGames[0]['description']}
 				id={lovedGames[0]['id']}
 				category="Loved"
@@ -107,12 +110,14 @@
 				image={lovedGames[0]['image']}
 				description={lovedGames[0]['description']}
 				id={lovedGames[0]['id']}
+				tags={lovedGames[0]['tags']}
 				category="Loved"
 				color="red"
 			/>
 			<Box
 				title={lovedGames[1]['name']}
 				image={lovedGames[1]['image']}
+				tags={lovedGames[1]['tags']}
 				description={lovedGames[1]['description']}
 				id={lovedGames[1]['id']}
 				category="Loved"

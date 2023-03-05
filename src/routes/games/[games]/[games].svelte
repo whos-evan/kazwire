@@ -14,11 +14,11 @@
 		}
 	}
 
-	
 	let gameId = getGame()['id'];
 	let title = getGame()['name'];
 	let description = getGame()['description'];
 	let developer = getGame()['developer'];
+	let tags = getGame()['tags'];
 
 	import VertAd from '$lib/components/vert-ad.svelte';
 	import Embed from '$lib/components/embed.svelte';
@@ -28,7 +28,7 @@
 	<div
 		class="flex h-[calc(100vh-132px)] xl:w-full lg:w-[1000px] md:w-[820px] sm:w-full float-left pl-5 pr-5 pb-5"
 	>
-		<Embed gameId={gameId} title={title} description={description} developer={developer} />
+		<Embed {gameId} {title} {description} {developer} />
 	</div>
 	<div
 		class="w-full max-w-[280px] hidden xl:flex flex-col justify-center items-center gap-y-2 px-3 bg-opacity-50 backdrop-blur-md"
@@ -36,4 +36,28 @@
 	>
 		<VertAd />
 	</div>
+</div>
+
+<div class="mr-10 ml-10 bg-secondary text-white rounded-lg p-5 align-middle">
+	<h1 class="text-3xl font-bold">{title}</h1>
+	<b>Description:</b>
+	<br />
+	{description}
+	<br />
+	<b>Developer(s):</b>
+	<br />
+	{developer}
+	{#if tags.length > 0}
+		<br />
+		<b>Tags:</b>
+		<div class="flex flex-row flex-wrap gap-2 mt-1">
+			{#each tags as tag}
+				<a href="/games?c={tag}">
+					<div class="bg-orange-600 hover:bg-orange-800 dark:bg-black dark:hover:bg-gray-700 transition-colors rounded-lg px-2 py-1">
+						{tag}
+					</div>
+				</a>
+			{/each}
+		</div>
+	{/if}
 </div>

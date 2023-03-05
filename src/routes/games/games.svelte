@@ -11,7 +11,22 @@
 	let lovedGames = [];
 	let loadingHearts = true;
 
+	let query;
+
 	onMount(async () => {
+		// get the url and check if the user has ?c=category or ?s=search expect both at the same time
+		let url = new URL(window.location.href);
+		let category = url.searchParams.get('c');
+		let search = url.searchParams.get('s');
+		if (category) {
+			filter = category;
+		} else if (search) {
+			query = search;
+			searchGames();
+		} else {
+			games = allGames;
+		}
+
 		// check if the user minimized
 		let minimized = localStorage.getItem('smallGames') === 'true';
 		if (minimized) {
@@ -66,6 +81,48 @@
 			return games
 				.filter((game) => game['embedURL'] !== undefined)
 				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'action') {
+			return games
+				.filter((game) => game['tags'].includes('action'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'adventure') {
+			return games
+				.filter((game) => game['tags'].includes('adventure'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'indie') {
+			return games
+				.filter((game) => game['tags'].includes('indie'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'casual') {
+			return games
+				.filter((game) => game['tags'].includes('casual'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'multiplayer') {
+			return games
+				.filter((game) => game['tags'].includes('multiplayer'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'racing') {
+			return games
+				.filter((game) => game['tags'].includes('racing'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'rpg') {
+			return games
+				.filter((game) => game['tags'].includes('rpg'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'simulation') {
+			return games
+				.filter((game) => game['tags'].includes('simulation'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'sports') {
+			return games
+				.filter((game) => game['tags'].includes('sports'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else if (filter === 'strategy') {
+			return games
+				.filter((game) => game['tags'].includes('strategy'))
+				.sort((a, b) => a['name'].localeCompare(b['name']));
+		} else {
+			return games.sort((a, b) => a['name'].localeCompare(b['name']));
 		}
 	}
 
@@ -77,16 +134,16 @@
 	}
 
 	function searchGames() {
-		let input = document.getElementById('search');
-		let search = input.value.toUpperCase();
+		console.log(query)
+		let queryUpper = query.toUpperCase();
 		games = [];
 		allGames = gamesJson['games']
-			.filter((game) => game['name'].toUpperCase().indexOf(search) > -1)
+			.filter((game) => game['name'].toUpperCase().indexOf(queryUpper) > -1)
 			.sort((a, b) => a['id'] - b['id']);
 		loadMore();
 		loadMore();
 
-		if (search === '') {
+		if (query === '') {
 			popularGames = allGames
 				.filter((game) => game['popular'] === true)
 				.sort((a, b) => a['id'] - b['id']);
@@ -126,7 +183,6 @@
 	}
 
 	import HorzAd from '$lib/components/horz-ad.svelte';
-	import { json } from '@sveltejs/kit';
 
 	loadMore();
 	loadMore();
@@ -148,6 +204,7 @@
 			class="md:col-span-7 sm:col-span-7 h-12 p-6 rounded-lg mb-5 text-black placeholder:text-gray-500"
 			placeholder="Search for a game..."
 			autocomplete="off"
+			bind:value={query}
 			on:input={searchGames}
 		/>
 		<select
@@ -159,6 +216,16 @@
 			<option value="static">Static</option>
 			<option value="emulated">Emulated</option>
 			<option value="embeded">Embeded</option>
+			<option value="action">Action</option>
+			<option value="adventure">Adventure</option>
+			<option value="casual">Casual</option>
+			<option value="indie">Indie</option>
+			<option value="multiplayer">Multiplayer</option>
+			<option value="racing">Racing</option>
+			<option value="rpg">RPG</option>
+			<option value="simulation">Simulation</option>
+			<option value="sports">Sports</option>
+			<option value="strategy">Strategy</option>
 		</select>
 		{#if smallGames == false}
 			<button
@@ -230,6 +297,7 @@
 							id={game['id']}
 							color="#FF0000"
 							category="Loved"
+							tags={game['tags']}
 						/>
 					{/each}
 				{:else}
@@ -242,6 +310,7 @@
 							color="#d4af37"
 							category="Popular"
 							popular="true"
+							tags={game['tags']}
 						/>
 					{/each}
 				{/if}
@@ -255,6 +324,7 @@
 					platformSupport={game['platform']}
 					gameError={game['error']}
 					category={getCategory(game)}
+					tags={game['tags']}
 				/>
 			{/each}
 		</div>
