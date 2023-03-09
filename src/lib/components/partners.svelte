@@ -71,7 +71,7 @@
 					image="TN.png"
 					description="Titanium Network is an organization dedicated to providing services related to bypassing internet censorship."
 					href="https://titaniumnetwork.org/"
-					color="#29043a"
+					color="#7e0040"
 				/>
 				<Box
 					title="Partner with us!"
