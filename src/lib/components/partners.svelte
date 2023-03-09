@@ -67,6 +67,13 @@
 					color="#2c7ffc"
 				/>
 				<Box
+					title="Titanium Network"
+					image="TN.png"
+					description="Titanium Network is an organization dedicated to providing services related to bypassing internet censorship."
+					href="https://titaniumnetwork.org/"
+					color="#29043a"
+				/>
+				<Box
 					title="Partner with us!"
 					image="kazwire.png"
 					description="We would love to partner with you and have you showcased here! Click the box to join our Discord server!"
