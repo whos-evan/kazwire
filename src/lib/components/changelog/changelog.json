@@ -1,6 +1,18 @@
 {
 	"changelog": [
 		{
+			"name": "2K Members!",
+			"date": "2023-03-18",
+			"additions": [
+				"Added logo easter egg"
+			],
+			"changes": [
+				"Hit 2K members on Discord!",
+				"Updated GIF on homepage."
+			],
+			"removals": []
+		},
+		{
 			"name": "FAQ and more!",
 			"date": "2023-03-05",
 			"additions": [

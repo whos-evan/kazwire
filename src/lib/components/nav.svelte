@@ -32,7 +32,10 @@
 			document.getElementById('logo').src = '/' + logos['logos'][randomNum]['filename'];
 		}
 
-		changeLogo();
+		// have a 1/10 chance to run the function
+		if (Math.floor(Math.random() * 10) === 1) {
+			changeLogo();
+		}
 
 		if ('serviceWorker' in navigator) {
 			navigator.serviceWorker.register(window.location.origin + '/sw.js');
@@ -120,13 +123,12 @@
 					author = logoAuthor;
 				}}
 				on:mouseleave={() => {
-					author = 'Kazwire'
+					author = 'Kazwire';
 				}}
 			/>
 			<span
 				class="hidden lg:inline-block text-2xl font-semibold whitespace-nowrap text-white align-middle"
-				contenteditable="true"
-				bind:innerHTML={author}>Kazwire</span
+				>{author}</span
 			>
 		</a>
 	</div>
