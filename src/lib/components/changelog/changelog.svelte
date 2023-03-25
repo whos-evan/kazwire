@@ -13,7 +13,7 @@
 		{#each changeLogEntries as change}
 			<div class="text-xl md:text-left sm:text-center">
 				<h2 class="text-2xl font-bold mt-4 from-green-500 via-blue-500 to-red-500 text-transparent w-fit bg-clip-text bg-gradient-to-tr">{change.name}</h2>
-				<h2 class="text-xl mb-2">Date: {change.date}</h2>
+				<h2 class="text-xl mb-2 w-fit">Date: {change.date}</h2>
 				<div class="grid grid-flow-row gap-4">
 					{#each change.changes as change}
 						<!-- Create a small icon next to it to let users know its a change. -->
