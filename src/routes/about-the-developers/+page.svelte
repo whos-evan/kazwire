@@ -16,6 +16,7 @@
 			target="_blank">his GitHub</a
 		>.
 	</p>
+	<br />
 	<p class="text-xl">
 		harmthebees#4148 - Chief Marketing Officer | Founded the Kazwire brand 
 		and manages the brand and its image as a whole as well as makes 
