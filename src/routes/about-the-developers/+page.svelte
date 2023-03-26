@@ -8,15 +8,18 @@
 	<h1 class="text-3xl">About the Developers</h1>
 	<br />
 	<p class="text-xl">
-		Evan - Coded this site and did the bulk of the work. He has many years of experience in
-		developing web projects and his other sites and works can be found on <a
+		evan#9000 - Chief Developer | He launched the Kazwire site as it's known today and 
+		has many years of experience in developing web projects. 
+		His other sites and works can be found on <a
 			class="hover:cursor-pointer hover:underline"
 			href="https://github.com/whos-evan"
 			target="_blank">his GitHub</a
 		>.
 	</p>
 	<p class="text-xl">
-		Zachary - Made the name and whatnot and promotes the site by making videos. His YouTube channel
+		harmthebees#4148 - Chief Marketing Officer | Founded the Kazwire brand 
+		and manages the brand and its image as a whole as well as makes 
+		smaller contributions to development. His YouTube channel
 		can be found at <a
 			class="hover:cursor-pointer hover:underline"
 			href="https://www.youtube.com/channel/UCWjGQfoEddPru_KC9zYfLig"
