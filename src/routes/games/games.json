@@ -383,6 +383,18 @@
             "tags": []
         },
         {
+            "description": "HexGL",
+            "developer": "BKcore",
+            "id": "HexGL",
+            "image": "icon_256.png",
+            "platform": "PC",
+            "name": "HexGL",
+            "tags": [
+                "action",
+                "racing"
+            ]
+        },
+        {
             "description": "In Basket Random game, try to score a basket by using only one key with different variations from each other!",
             "developer": "Unknown",
             "id": "basket-random",
