@@ -386,7 +386,7 @@
             "description": "HexGL is a futuristic, fast-paced racing game built by Thibaut Despoulain using HTML5, Javascript and WebGL and a tribute to the original Wipeout and F-Zero series.",
             "developer": "BKcore",
             "id": "hexGL",
-            "image": "icon_256.png",
+            "image": "hexgl",
             "platform": "PC",
             "name": "HexGL",
             "tags": [
