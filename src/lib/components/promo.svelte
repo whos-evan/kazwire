@@ -68,13 +68,13 @@
 				</div>
 				<a href="/search">
 					<button
-						class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 font-bold transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] pr-5 pl-5 pt-3 pb-3 mt-5 mr-5 rounded-lg text-lg hover:scale-[105%]"
+						class="btn-primary"
 						>Start Browsing</button
 					>
 				</a>
 				<a href="/games">
 					<button
-						class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 font-bold pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
+						class="btn-primary ml-4"
 						>Start Playing</button
 					>
 				</a>

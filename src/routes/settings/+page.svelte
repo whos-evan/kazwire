@@ -64,7 +64,7 @@
 				<option value="https://canvas.instructure.com/favicon.ico">Canvas</option>
 			</select>
 			<button
-				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
+				class="btn-primary"
 				on:click={changePresetCloaks}
 			>
 				Save
@@ -79,7 +79,7 @@
 				placeholder="Enter title here..."
 			/>
 			<button
-				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
+				class="btn-primary"
 				on:click={changeTitle}
 			>
 				Save
@@ -94,7 +94,7 @@
 				placeholder="https://google.com/favicon.ico"
 			/>
 			<button
-				class="bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 pr-5 pl-5 pt-2 pb-2 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]"
+				class="btn-primary"
 				on:click={changeFavicon}
 			>
 				Save
