@@ -12,6 +12,11 @@
 	let author = 'Kazwire';
 	let logoAuthor = 'Kazwire';
 
+	let logoSrc = '/logo.png';
+	let menuIsHidden = true;
+
+	let themeSelectorText = '☀️';
+
 	auth.onAuthStateChanged(function (user) {
 		if (user) {
 			// User is signed in.
@@ -29,7 +34,7 @@
 			let numOfLogos = logos['logos'].length;
 			let randomNum = Math.floor(Math.random() * numOfLogos);
 			logoAuthor = logos['logos'][randomNum]['author'];
-			document.getElementById('logo').src = '/' + logos['logos'][randomNum]['filename'];
+			logoSrc = '/' + logos['logos'][randomNum]['filename'];
 		}
 
 		// have a 1/100 chance to run the function
@@ -41,18 +46,12 @@
 			navigator.serviceWorker.register(window.location.origin + '/sw.js');
 		}
 
-
 		// gets the theme and sets it
-		let themeSelector = document.getElementById('theme-selector') || undefined;
 		if (darkMode() === false) {
-			if (themeSelector) {
-				themeSelector.innerHTML = '🌙';
-			}
+			themeSelectorText = '🌙';
 			document.documentElement.classList.toggle('dark');
 		} else {
-			if (themeSelector) {
-				themeSelector.innerHTML = '☀️';
-			}
+			themeSelectorText = '☀️';
 		}
 
 		// gets the title and sets it
@@ -63,7 +62,7 @@
 
 		let favicon = localStorage.getItem('favicon') || undefined;
 		if (favicon) {
-			var link = document.querySelector("link[rel~='icon']");
+			let link = document.querySelector("link[rel~='icon']");
 			if (!link) {
 				link = document.createElement('link');
 				link.rel = 'icon';
@@ -80,20 +79,11 @@
 		);
 		document.documentElement.classList.toggle('dark');
 
-		let themeSelector = document.getElementById('theme-selector') || undefined;
-		if (darkMode() === false) {
-			if (themeSelector) {
-				themeSelector.innerHTML = '🌙';
-			}
-		} else {
-			if (themeSelector) {
-				themeSelector.innerHTML = '☀️';
-			}
-		}
+		themeSelectorText = darkMode() ? '☀️' : '🌙';
 	}
-	
+
 	function toggleMenu() {
-		document.getElementById('menu')?.classList.toggle('hidden');
+		menuIsHidden = !menuIsHidden;
 	}
 </script>
 
@@ -118,7 +108,7 @@
 		<a href="/">
 			<img
 				id="logo"
-				src="/logo.png"
+				src={logoSrc}
 				class="h-16 p-3 inline-block"
 				alt="Kazwire Logo"
 				on:mouseenter={() => {
@@ -197,7 +187,7 @@
 					class="transition duration-100 hover:scale-[105%] bg-secondary text-white font-bold py-2 px-4 rounded-full"
 					on:click={toggle}
 				>
-					☀️
+					{themeSelectorText}
 				</button>
 			</li>
 		</ul>
