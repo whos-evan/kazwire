@@ -142,54 +142,55 @@
 			/>
 		</svg>
 	</button>
-
-	<div class="hidden w-full md:flex md:items-center md:w-auto" id="menu">
-		<ul
-			class="
+	{#if !menuIsHidden}
+		<div class="w-full md:flex md:items-center md:w-auto" id="menu">
+			<ul
+				class="
               pt-4
               text-base text-white
               md:flex
               md:justify-between
               md:pt-0"
-		>
-			<li class="m-auto">
-				<a class="md:p-4 py-2 block hover:text-primary" href="/search">Search</a>
-			</li>
-			<li class="m-auto">
-				<a class="md:p-4 py-2 block hover:text-primary" href="/games">Games</a>
-			</li>
-			<li class="m-auto">
-				<a class="md:p-4 py-2 block hover:text-primary" href="/apps">Apps</a>
-			</li>
-			<li class="m-auto">
-				<a class="md:p-4 py-2 block hover:text-primary" href="/settings">Settings</a>
-			</li>
-			<li class="m-auto">
-				<a class="md:p-4 py-2 block hover:text-primary" href="/discord">Support/Discord</a>
-			</li>
-			<li class="m-auto">
-				{#if localUser}
-					<a href="/account/profile">
-						<img
-							src={localUser.photoURL}
-							class="transition duration-100 hover:scale-[105%] h-16 p-4 rounded-full"
-							alt="Profile"
-							referrerpolicy="no-referrer"
-						/>
-					</a>
-				{:else}
-					<a class="md:p-4 py-2 block hover:text-primary" href="/account">Sign Up</a>
-				{/if}
-			</li>
-			<li class="m-auto">
-				<button
-					id="theme-selector"
-					class="transition duration-100 hover:scale-[105%] bg-secondary text-white font-bold py-2 px-4 rounded-full"
-					on:click={toggle}
-				>
-					{themeSelectorText}
-				</button>
-			</li>
-		</ul>
-	</div>
+			>
+				<li class="m-auto">
+					<a class="md:p-4 py-2 block hover:text-primary" href="/search">Search</a>
+				</li>
+				<li class="m-auto">
+					<a class="md:p-4 py-2 block hover:text-primary" href="/games">Games</a>
+				</li>
+				<li class="m-auto">
+					<a class="md:p-4 py-2 block hover:text-primary" href="/apps">Apps</a>
+				</li>
+				<li class="m-auto">
+					<a class="md:p-4 py-2 block hover:text-primary" href="/settings">Settings</a>
+				</li>
+				<li class="m-auto">
+					<a class="md:p-4 py-2 block hover:text-primary" href="/discord">Support/Discord</a>
+				</li>
+				<li class="m-auto">
+					{#if localUser}
+						<a href="/account/profile">
+							<img
+								src={localUser.photoURL}
+								class="transition duration-100 hover:scale-[105%] h-16 p-4 rounded-full"
+								alt="Profile"
+								referrerpolicy="no-referrer"
+							/>
+						</a>
+					{:else}
+						<a class="md:p-4 py-2 block hover:text-primary" href="/account">Sign Up</a>
+					{/if}
+				</li>
+				<li class="m-auto">
+					<button
+						id="theme-selector"
+						class="transition duration-100 hover:scale-[105%] bg-secondary text-white font-bold py-2 px-4 rounded-full"
+						on:click={toggle}
+					>
+						{themeSelectorText}
+					</button>
+				</li>
+			</ul>
+		</div>
+	{/if}
 </nav>
