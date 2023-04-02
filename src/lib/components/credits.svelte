@@ -21,7 +21,7 @@
 		<p>
 			We would like to thank the following developers and publishers for their games:
 			<br />
-			<span class="font-bold text-xs">{developers}</span>
+			<span class="text-xs">{developers}</span>
 		</p>
 		<br />
 	</div>
@@ -29,7 +29,7 @@
 		<p>
 			We would also like to thank the following people for contributing to the site:
 			<br />
-			<span class="font-bold text-sm"
+			<span class="text-sm"
 				><a class="hover:underline" href="https://github.com/silvereengames">kclive</a> and <a class="hover:underline" href="https://github.com/duckmob">zeno</a> for
 				contributing to the GitHub, nev#0069 for providing domain(s),
 				<a class="hover:underline" href="https://www.youtube.com/watch?v=qtC_-8FRgzM">Blazer</a> for
