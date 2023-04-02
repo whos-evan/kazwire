@@ -13,7 +13,7 @@
 	let logoAuthor = 'Kazwire';
 
 	let logoSrc = '/logo.png';
-	let menuIsHidden = true;
+	let menuIsHidden = false;
 
 	let themeSelectorText = '☀️';
 
@@ -85,9 +85,13 @@
 	function toggleMenu() {
 		menuIsHidden = !menuIsHidden;
 	}
+
+	let windowWidth = 0;
 </script>
 
 <!-- https://codepen.io/hulyak/pen/yLbwXvB -->
+
+<svelte:window bind:innerWidth={windowWidth} />
 
 <nav
 	class="
@@ -142,7 +146,7 @@
 			/>
 		</svg>
 	</button>
-	{#if !menuIsHidden}
+	{#if menuIsHidden || windowWidth > 768}
 		<div class="w-full md:flex md:items-center md:w-auto" id="menu">
 			<ul
 				class="
