@@ -32,8 +32,8 @@
 			document.getElementById('logo').src = '/' + logos['logos'][randomNum]['filename'];
 		}
 
-		// have a 1/10 chance to run the function
-		if (Math.floor(Math.random() * 10) === 1) {
+		// have a 1/100 chance to run the function
+		if (Math.floor(Math.random() * 100) === 1) {
 			changeLogo();
 		}
 
@@ -41,12 +41,14 @@
 			navigator.serviceWorker.register(window.location.origin + '/sw.js');
 		}
 
+
 		// gets the theme and sets it
 		let themeSelector = document.getElementById('theme-selector') || undefined;
-		if (darkMode() === true) {
+		if (darkMode() === false) {
 			if (themeSelector) {
 				themeSelector.innerHTML = '🌙';
 			}
+			document.documentElement.classList.toggle('dark');
 		} else {
 			if (themeSelector) {
 				themeSelector.innerHTML = '☀️';
@@ -79,7 +81,7 @@
 		document.documentElement.classList.toggle('dark');
 
 		let themeSelector = document.getElementById('theme-selector') || undefined;
-		if (darkMode() === true) {
+		if (darkMode() === false) {
 			if (themeSelector) {
 				themeSelector.innerHTML = '🌙';
 			}
@@ -89,7 +91,7 @@
 			}
 		}
 	}
-
+	
 	function toggleMenu() {
 		document.getElementById('menu')?.classList.toggle('hidden');
 	}
