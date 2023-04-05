@@ -46,13 +46,6 @@
 					color="#e77e7e"
 				/>
 				<Box
-					title="Bigfoot's Game Shack"
-					image="bigfoot.png"
-					description="Built for real gamers. 100+ Games, Apps (Discord, etc), Tab Cloaking, and Game Cloaking!"
-					href="https://bgs.pages.dev/"
-					color="#774e24"
-				/>
-				<Box
 					title="Moonlight"
 					image="moonlight.png"
 					description="Browse tons of fun games for free with Moonlight. The cure to boredom at your fingertips."
