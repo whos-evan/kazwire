@@ -117,6 +117,14 @@
 		document.getElementById('search-iframe').style.display = 'none';
 		loading = true;
 		initialLaunch = false;
+
+		// wait 2 seconds and if the page hasn't loaded, remove the loading animation
+		setTimeout(() => {
+			if (loading) {
+				loading = false;
+				document.getElementById('search-iframe').style.display = 'block';
+			}
+		}, 2000);
 	}
 
 	function loaded() {

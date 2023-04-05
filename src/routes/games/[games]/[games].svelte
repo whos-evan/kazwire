@@ -40,20 +40,21 @@
 
 <div class="mr-10 ml-10 bg-secondary text-white rounded-lg p-5 align-middle">
 	<h1 class="text-3xl font-bold">{title}</h1>
-	<b>Description:</b>
-	<br />
-	{description}
-	<br />
-	<b>Developer(s):</b>
-	<br />
-	{developer}
+	<p class="text-[#b6e1fc]">
+		{developer}
+	</p>
+	<!-- line -->
+	<div class="h-[2px] w-10 bg-gray-300 dark:bg-gray-700 rounded-lg my-2"></div>
+	<p>
+		{description}
+	</p>
 	{#if tags.length > 0}
-		<br />
-		<b>Tags:</b>
 		<div class="flex flex-row flex-wrap gap-2 mt-1">
 			{#each tags as tag}
 				<a href="/games?c={tag}">
-					<div class="bg-orange-600 hover:bg-orange-800 dark:bg-black dark:hover:bg-gray-700 transition-colors rounded-lg px-2 py-1">
+					<div
+						class="bg-orange-600 hover:bg-orange-800 dark:bg-black dark:hover:bg-gray-700 transition-colors rounded-lg px-2 py-1"
+					>
 						{tag}
 					</div>
 				</a>
