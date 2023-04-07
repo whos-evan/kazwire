@@ -330,7 +330,7 @@
 		</div>
 	{:else}
 		<div
-			class="grid grid-flow-rows lg:grid-cols-5 md:grid-cols-4 sm:grid-cols-1 auto-rows-auto gap-10"
+			class="grid grid-flow-rows lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-1 auto-rows-auto gap-10"
 		>
 			{#if filter === 'all'}
 				{#if loadingHearts}
