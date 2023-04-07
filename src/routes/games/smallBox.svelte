@@ -32,7 +32,7 @@
 </script>
 
 {#if popular != undefined}
-	<a class="game w-[12rem] h-[12rem]" id={title} href={'/games/' + id}>
+	<a class="game w-[12rem] h-[12rem] m-auto" id={title} href={'/games/' + id}>
 		<!-- have the background have a gradient over the image based on the shine rgb value that is dark enough to be read over white text  -->
 		<div
 			class="background-game hover:cursor-pointer w-[12rem] h-[12rem] mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
@@ -46,7 +46,7 @@
 		</div>
 	</a>
 {:else}
-	<a class="game w-[12rem] h-[12rem]" id={title} href={'/games/' + id}>
+	<a class="game w-[12rem] h-[12rem] m-auto" id={title} href={'/games/' + id}>
 		<!-- have the background have a gradient over the image based on the shine rgb value that is dark enough to be read over white text  -->
 		<div
 			class="background-game hover:cursor-pointer w-[12rem] h-[12rem] mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
