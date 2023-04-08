@@ -67,6 +67,13 @@
 					color="#7e0040"
 				/>
 				<Box
+					title="Totally Science"
+					image="ts.png"
+					description="Totally Science - your one-stop destination for free online games and unblocked content! Youtube, multiplayer games, Minecraft, and more."
+					href="https://totallyscience.co/"
+					color="#f75dfc"
+				/>
+				<Box
 					title="Partner with us!"
 					image="kazwire.png"
 					description="We would love to partner with you and have you showcased here! Click the box to join our Discord server!"
