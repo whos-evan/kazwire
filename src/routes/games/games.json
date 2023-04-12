@@ -49,6 +49,15 @@
             "releaseDate": "?"
         },
         {
+            "description": "Shoot asteroids and enemies to collect crystals. With your crystals, upgrade your ship, buy new ships and buy extra lives for your existing ship.",
+            "developer": "Neuronality",
+            "embedURL": "https://starblast.io",
+            "id": "starblaster",
+            "image": "starblaster.png",
+            "name": "Starblaster.io",
+            "releaseDate": "?"
+        },
+        {
             "description": "An idle version of classic Breakout. Use multiple balls of different strength, speed and special abilities to smash a million bricks!",
             "developer": "Kodiqi",
             "embedURL": "https://idlebreakout.io/",
