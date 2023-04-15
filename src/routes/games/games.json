@@ -58,6 +58,15 @@
             "releaseDate": "???"
         },
         {
+            "description": "Grab your motorbike, strap on your helmet and grab some airtime over obstacles to beat the clock on amazing off road circuits.",
+            "developer": "Mad Puffers",
+            "embedURL": "https://mountain658.github.io/zMotoX3M.html",
+            "id": "motox3m",
+            "image": "moto-x3m.webp",
+            "name": "Moto X3M",
+            "releaseDate": "???"
+        },
+        {
             "description": "An idle version of classic Breakout. Use multiple balls of different strength, speed and special abilities to smash a million bricks!",
             "developer": "Kodiqi",
             "embedURL": "https://idlebreakout.io/",
