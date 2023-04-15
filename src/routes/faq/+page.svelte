@@ -11,11 +11,11 @@
     <p class="font-medium text-white">
         Here you can find all the frequently asked questions about the site.
     </p>
-    <div class="grid grid-flow-rows auto-rows-auto gap-10 grid-cols-2 mt-5">
+    <div class="grid grid-flow-rows auto-rows-auto gap-10 md:grid-cols-2 sm:grid-cols-1 mt-5">
         {#each faqJSON['faq'] as faq}
             <div class="bg-secondary rounded-md p-5">
                 <h1 class="text-2xl font-bold text-white">{faq['question']}</h1>
-                <p class="font-medium text-white">{faq['answer']}</p>
+                <p class="font-medium text-white break-words">{faq['answer']}</p>
             </div>
         {/each}
     </div>
