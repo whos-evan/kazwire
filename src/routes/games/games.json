@@ -1296,6 +1296,19 @@
                 "adventure",
                 "strategy"
             ]
+        },
+        {
+            "name": "There Is No Game",
+            "id": "there-is-no-game",
+            "image": "there-is-no-game.png",
+            "developer": "Kamizoto",
+            "description": "There is No Game is a 10-15 minute title that won the deception category in the 2015 Newgrounds Construct Jam.",
+            "platform": "PC",
+            "tags": [
+                "casual",
+                "indie",
+                "strategy"
+            ]
         }
     ]
 }
