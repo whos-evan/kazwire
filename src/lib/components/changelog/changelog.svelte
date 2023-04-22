@@ -11,7 +11,7 @@
 	<h1 class="text-4xl font-bold mb-5">📜 Changelog:</h1>
 	<div class="overflow-scroll max-h-[25rem] min-h-[20rem]">
 		{#each changeLogEntries as change}
-			<div class="text-xl md:text-left sm:text-center">
+			<div class="text-xl text-left">
 				<h2 class="text-2xl font-bold mt-4 from-green-500 via-blue-500 to-red-500 text-transparent w-fit bg-clip-text bg-gradient-to-tr">{change.name}</h2>
 				<h2 class="text-xl mb-2 w-fit">Date: {change.date}</h2>
 				<div class="grid grid-flow-row gap-4">

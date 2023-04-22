@@ -1,6 +1,22 @@
 {
 	"changelog": [
 		{
+			"name": "Minor tweaks and bug fixes.",
+			"date": "2023-04-22",
+			"additions": [
+				"Add There is No Game to site.",
+				"Redesign of the game page.",
+				"Added cleaner design for small games on game search page.",
+				"Added more FAQs."
+			],
+			"changes": [
+				"Fix button margin on homepage.",
+				"Adjust wording on About the Developers page.",
+				"Fixed FAQ page for mobile users."
+			],
+			"removals": []
+		},
+		{
 			"name": "2K Members!",
 			"date": "2023-03-18",
 			"additions": [
