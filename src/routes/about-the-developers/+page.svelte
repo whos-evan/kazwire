@@ -5,22 +5,26 @@
 
 <Nav />
 <div id="home" class="h-[80vh] w-full pl-10 pt-10 pr-10 text-white">
-	<h1 class="text-3xl">About the Developers</h1>
+	<h1 class="text-3xl font-bold">About the Developers</h1>
 	<br />
 	<p class="text-xl">
-		evan#9000 - Chief Developer | He launched the Kazwire site as it's known today and 
-		has many years of experience in developing web projects. 
-		His other sites and works can be found on <a
+		evan#9000 - Chief Developer | He launched the Kazwire site as it's known today and has many
+		years of experience in developing web projects. His other sites and works can be found on <a
 			class="hover:cursor-pointer hover:underline"
 			href="https://github.com/whos-evan"
 			target="_blank">his GitHub</a
+		>
+		or his personal site at
+		<a
+			class="hover:cursor-pointer hover:underline"
+			href="https://3van.dev"
+			target="_blank">3van.dev</a
 		>.
 	</p>
 	<br />
 	<p class="text-xl">
-		harmthebees#4148 - Chief Marketing Officer | Founded the Kazwire brand 
-		and manages the brand and its image as a whole as well as makes 
-		smaller contributions to development. His YouTube channel
+		harmthebees#4148 - Chief Marketing Officer | Founded the Kazwire brand and manages the brand and
+		its image as a whole as well as makes smaller contributions to development. His YouTube channel
 		can be found at <a
 			class="hover:cursor-pointer hover:underline"
 			href="https://www.youtube.com/channel/UCWjGQfoEddPru_KC9zYfLig"
