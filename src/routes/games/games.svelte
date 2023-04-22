@@ -318,7 +318,7 @@
 			{/if}
 			{#each games as game}
 				<!-- randomly show an ad -->
-				{#if Math.random() > 0.96}
+				{#if Math.random() > 0.98}
 					<SquareAd />
 				{/if}
 				<Box
