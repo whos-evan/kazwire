@@ -1176,7 +1176,6 @@
         {
             "name": "Drift Boss",
             "developer": "White Label Games",
-            "embedURL": "https://www.mathplayground.com/pg_drift_boss.html",
             "id": "drift-boss",
             "image": "drift-boss.png",
             "platform": "Mobile",
