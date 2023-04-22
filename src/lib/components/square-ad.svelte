@@ -1,6 +1,8 @@
 <script>
 	import { onMount } from 'svelte';
 
+	let dataAdSlots = [9769993248, 5020229448, 3093490980, 8154245977, 5528082635];
+
 	onMount(() => {
 		var isAdsenseNotLoaded =
 			typeof adsbygoogle === 'undefined' || typeof adsbygoogle.loaded === 'undefined';
@@ -36,7 +38,7 @@
 			class="adsbygoogle"
 			style="display:block"
 			data-ad-client="ca-pub-7648886706850999"
-			data-ad-slot="5020229448"
+			data-ad-slot="{dataAdSlots[Math.floor(Math.random() * dataAdSlots.length)]}"
 			data-ad-format="auto"
 			data-full-width-responsive="true"
 		/>
