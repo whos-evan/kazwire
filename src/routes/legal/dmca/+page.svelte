@@ -6,7 +6,7 @@
 <Nav />
 
 <div id="home" class="h-full w-full pl-10 pt-10 pr-10 text-white">
-	<h1 class="text-3xl">DMCA policy</h1>
+	<h1 class="text-3xl font-bold">DMCA policy</h1>
 	<br />
 	<p>
 		This Digital Millennium Copyright Act policy (&#8220;Policy&#8221;) applies to the <a

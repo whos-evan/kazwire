@@ -5,7 +5,7 @@
 
 <Nav />
 <div id="home" class="h-full w-full pl-10 pt-10 pr-10 text-white">
-	<h1 class="text-3xl">Privacy Policy for Kazwire</h1>
+	<h1 class="text-3xl font-bold">Privacy Policy for Kazwire</h1>
 	<br />
 	<p>
 		At Kazwire, accessible from https://kazwire.com, one of our main priorities is the privacy of
