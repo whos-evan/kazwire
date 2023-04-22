@@ -30,14 +30,14 @@
 	});
 </script>
 
-<div class="Vert w-full h-full">
+<div class="Square w-full h-full align-center">
 	<div id="GoogleAds" align="center" class="w-full h-full">
 		<ins
 			class="adsbygoogle"
 			style="display:block"
 			data-ad-client="ca-pub-7648886706850999"
-			data-ad-slot="8673868840"
-			data-ad-format="vertical"
+			data-ad-slot="5020229448"
+			data-ad-format="auto"
 			data-full-width-responsive="true"
 		/>
 	</div>

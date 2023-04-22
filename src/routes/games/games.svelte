@@ -183,6 +183,7 @@
 	}
 
 	import HorzAd from '$lib/components/horz-ad.svelte';
+	import SquareAd from '$lib/components/square-ad.svelte';
 
 	loadMore();
 	loadMore();
@@ -316,6 +317,10 @@
 				{/if}
 			{/if}
 			{#each games as game}
+				<!-- randomly show an ad -->
+				{#if Math.random() > 0.95}
+					<SquareAd />
+				{/if}
 				<Box
 					title={game['name']}
 					image={game['image']}
