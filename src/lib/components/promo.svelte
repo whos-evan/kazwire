@@ -68,13 +68,13 @@
 				</div>
 				<a href="/search">
 					<button
-						class="btn-primary"
+						class="btn-primary mr-4"
 						>Start Browsing</button
 					>
 				</a>
 				<a href="/games">
 					<button
-						class="btn-primary ml-4"
+						class="btn-primary"
 						>Start Playing</button
 					>
 				</a>
