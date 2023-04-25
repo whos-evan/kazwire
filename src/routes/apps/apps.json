@@ -80,6 +80,15 @@
 			"name": "Mathway",
 			"releaseDate": "?",
 			"embedURL": "https://mathway.com"
+		},
+		{
+			"description": "Snapchat is a place to talk to friends.",
+			"developer": "Snapchat",
+			"id": "snapchat",
+			"image": "snapchat.png",
+			"name": "Snapchat",
+			"releaseDate": "?",
+			"embedURL": "https://web.snapchat.com"
 		}
 	]
 }
