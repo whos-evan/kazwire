@@ -86,7 +86,9 @@
 			"developer": "Snapchat",
 			"id": "snapchat",
 			"image": "snapchat.png",
-			"name":
+			"name": "Snapchat",
+			"releaseDate": "?",
+			"embedURL": "https://web.snapchat.com"
 		}
 	]
 }
