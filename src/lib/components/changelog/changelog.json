@@ -2,6 +2,16 @@
 	"changelog": [
 		{
 			"name": "Minor tweaks and bug fixes.",
+			"date": "2023-04-25",
+			"additions": [
+				"Add Ball Dodge",
+				"Add a link to the GitHub in the credits"
+			],
+			"changes": [],
+			"removals": []
+		},
+		{
+			"name": "Minor tweaks and bug fixes.",
 			"date": "2023-04-22",
 			"additions": [
 				"Add There is No Game to site.",
