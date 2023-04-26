@@ -30,7 +30,7 @@
 			We would also like to thank the following people for contributing to the site:
 			<br />
 			<span class="text-sm"
-				><a class="hover:underline" href="https://github.com/silvereengames">kclive</a> and <a class="hover:underline" href="https://github.com/duckmob">zeno</a> for
+				><a class="hover:underline" href="https://github.com/silvereengames">kclive (silvereen)</a> and <a class="hover:underline" href="https://github.com/duckmob">zeno</a> for
 				contributing to the GitHub, nev#0069 for providing domain(s),
 				<a class="hover:underline" href="https://www.youtube.com/watch?v=qtC_-8FRgzM">Blazer</a> for
 				creating content about the site, and to everyone who suggested games on our Discord. If you would
