@@ -34,7 +34,7 @@
 				contributing to the GitHub, nev#0069 for providing domain(s),
 				<a class="hover:underline" href="https://www.youtube.com/watch?v=qtC_-8FRgzM">Blazer</a> for
 				creating content about the site, and to everyone who suggested games on our Discord. If you would
-				like to see your name here just contribute to the site!</span
+				like to see your name here just contribute to the site <a href="https://github.com/whos-evan/kazwire">here</a>!</span
 			>
 		</p>
 	</div>
