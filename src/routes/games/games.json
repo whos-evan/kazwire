@@ -1308,6 +1308,18 @@
                 "indie",
                 "strategy"
             ]
+        },
+        {
+            "name": "Ball Dodge",
+            "id": "ball-dodge",
+            "image": "ball-dodge.png",
+            "developer": "Silvereen Games - Moonlight (silvereen.net)",
+            "description": "Try or die to dodge all the floating red balls for some reason.",
+            "platoform": "PC",
+            "tags": [
+                "simulation",
+                "indie"
+            ]
         }
     ]
 }
