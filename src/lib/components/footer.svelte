@@ -11,7 +11,7 @@
 	<div class="md:flex md:justify-between">
 		<div class="mb-6 md:mb-0">
 			<a href="https://kazwire.com/" class="flex items-center mb-2">
-				<img src="/logo.png" class="h-8 mr-3" alt="Kazwire Logo" />
+				<img src="/newlogo.png" class="h-8 mr-3" alt="Meowflow Logo" />
 				<span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Kazwire</span>
 			</a>
 			<a href="/about-the-developers" class="self-center text-md text-white hover:underline">
@@ -66,7 +66,7 @@
 	<hr class="my-6 border-gray-300 sm:mx-auto lg:my-8" />
 	<div class="sm:flex sm:items-center sm:justify-between">
 		<span class="text-sm text-white sm:text-center"
-			>© 2023 <a href="https://kazwire.com/" class="hover:underline">Kazwire</a>
+			>© 2023 <a href="https://kazwire.com/" class="hover:underline">Meowflow</a>
 		</span>
 		<div class="flex mt-4 space-x-6 sm:justify-center sm:mt-0">
 			<a

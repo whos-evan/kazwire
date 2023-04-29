@@ -9,10 +9,10 @@
 	let loggedIn = false;
 	let localUser = null;
 
-	let author = 'Kazwire';
+	let author = 'Meowflow';
 	let logoAuthor = 'Kazwire';
 
-	let logoSrc = '/logo.png';
+	let logoSrc = '/newlogo.png';
 	let menuIsHidden = false;
 
 	let themeSelectorText = '☀️';
@@ -124,7 +124,7 @@
 			/>
 			<span
 				class="hidden lg:inline-block text-2xl font-semibold whitespace-nowrap text-white align-middle"
-				>{author}</span
+				>Meowflow</span
 			>
 		</a>
 	</div>
@@ -182,7 +182,7 @@
 							/>
 						</a>
 					{:else}
-						<a class="md:p-4 py-2 block hover:text-primary" href="/account">Sign Up</a>
+						<a class="md:p-4 py-2 block hover:text-primary" href="https://sites.google.com/mypisd.net/unblockedgames121/">Unblocked Games 121</a>
 					{/if}
 				</li>
 				<li class="m-auto">

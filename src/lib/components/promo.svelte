@@ -39,8 +39,8 @@
 			<div class="lg:col-start-1 lg:row-start-1">
 				<div class="font-bold lg:text-7xl md:text-5xl sm:text-3xl">
 					<h1>
-						<span class="pb-1 block">Your favorites</span>
-						<span class="text-secondaryLight dark:text-secondaryDark">all in one place!</span>
+						<span class="pb-1 block">Your fur-vorites</span>
+						<span class="text-secondaryLight dark:text-secondaryDark">all in one purr-lace!</span>
 					</h1>
 				</div>
 				<div class="mt-2 lg:text-2xl sm:text-md wrap break-normal md:w-[32vw] sm:w-full">
