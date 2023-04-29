@@ -55,7 +55,7 @@
 		<div class="row-start-1 col-start-1">
 			Preset Cloaks:
 			<select id="presetCloaks" class="text-black p-3 rounded-md mr-2" bind:value={presetCloaks}>
-				<option value="/favicon.ico" selected>Kazwire</option>
+				<option value="/newlogo.png" selected>Meowflow</option>
 				<option value="https://google.com/favicon.ico">Google</option>
 				<option value="https://ssl.gstatic.com/classroom/ic_product_classroom_144.png"
 					>Google Classroom</option

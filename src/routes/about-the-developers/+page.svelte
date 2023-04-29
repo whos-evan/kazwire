@@ -5,7 +5,32 @@
 
 <Nav />
 <div id="home" class="h-[80vh] w-full pl-10 pt-10 pr-10 text-white">
-	<h1 class="text-3xl">About the Developers</h1>
+	<h1 class="text-3xl">The Team</h1>
+	<br />
+	<p class="text-xl">
+		Jonathan - Owner | He launched the orignel Unblocked Games 121 as a google site, then made his new site called Meowflow. Unblocked Games 121 can be found through <a
+			class="hover:cursor-pointer hover:underline"
+			href="https://sites.google.com/mypisd.net/unblockedgames121/"
+			target="_blank"> here</a
+			>.
+	</p>
+	<br />
+	<p class="text-xl">
+		Maxwell - CoOwner and Promoter | He was responsible for Unblocked Games 121 getting popular.
+	</p>
+	<br />
+	<p class="text-xl">
+		If you would like to join our team you can apply on our <a
+			class="hover:cursor-pointer hover:underline"
+			href="https://discord.gg/FEkFSWRFM9"
+			target="_blank">Discord server</a
+		>!
+	</p>
+</div>
+
+
+<div id="home" class="h-[80vh] w-full pl-10 pt-10 pr-10 text-white">
+	<h1 class="text-3xl">The Kazwire Developers</h1>
 	<br />
 	<p class="text-xl">
 		evan#9000 - Chief Developer | He launched the Kazwire site as it's known today and 

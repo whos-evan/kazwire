@@ -10,7 +10,7 @@
 	let localUser = null;
 
 	let author = 'Meowflow';
-	let logoAuthor = 'Kazwire';
+	let logoAuthor = 'Meowflow';
 
 	let logoSrc = '/newlogo.png';
 	let menuIsHidden = false;
@@ -114,12 +114,12 @@
 				id="logo"
 				src={logoSrc}
 				class="h-16 p-3 inline-block"
-				alt="Kazwire Logo"
+				alt="Meowflow Logo"
 				on:mouseenter={() => {
 					author = logoAuthor;
 				}}
 				on:mouseleave={() => {
-					author = 'Kazwire';
+					author = 'Meowflow';
 				}}
 			/>
 			<span
