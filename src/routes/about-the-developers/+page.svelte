@@ -49,7 +49,7 @@
 		can be found at <a
 			class="hover:cursor-pointer hover:underline"
 			href="https://www.youtube.com/channel/UCWjGQfoEddPru_KC9zYfLig"
-			target="_blank">Kazwire</a
+			target="_blank">Meowflow</a
 		>.
 	</p>
 	<br />

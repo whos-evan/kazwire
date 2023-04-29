@@ -182,7 +182,6 @@
 							/>
 						</a>
 					{:else}
-						<a class="md:p-4 py-2 block hover:text-primary" href="https://sites.google.com/mypisd.net/unblockedgames121/">Unblocked Games 121</a>
 					{/if}
 				</li>
 				<li class="m-auto">

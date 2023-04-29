@@ -1,8 +1,8 @@
 {
 	"faq": [
 		{
-			"question": "Who made Kazwire?",
-			"answer": "Kazwire was made by students who were fed up with the cumbersome and annoying games sites that most students are forced to use. Our goal is to provide the best unblocked games/proxy experience for free."
+			"question": "Who made Meowflow?",
+			"answer": "Meowflow was made by students who were fed up with the cumbersome and annoying games sites that most students are forced to use. Our goal is to provide the best unblocked games/proxy experience for free."
 		},
 		{
 			"question": "How do I get new links if they all get blocked?",
@@ -17,16 +17,16 @@
             "answer": "Yes! Your sensitive info is not logged with us and we only collect basic data for analytics and other essential purposes."
         },
         {
-            "question": "How can I contribute to Kazwire?",
+            "question": "How can I contribute to Meowflow?",
             "answer": "You can make pull requests on our GitHub page or join our Discord server and help us out there. Join the Discord if you have any questions or concerns."
         },
         {
             "question": "I found an issue with the site. What do I do?",
-            "answer": "Please report it to us on our Discord server or send an email to contact@kazwire.com."
+            "answer": "Please report it to us on our Discord server or send an email to contact@Meowflow.com."
         },
         {
-            "question": "How can I add my game to Kazwire?",
-            "answer": "Contact us! We are always looking for new games to add to our site. You can contact us on our Discord server or send an email to contact@kazwire.com."
+            "question": "How can I add my game to Meowflow?",
+            "answer": "Contact us! We are always looking for new games to add to our site. You can contact us on our Discord server or send an email to contact@Meowflow.com."
         }
 	]
 }
