@@ -1320,6 +1320,18 @@
                 "simulation",
                 "indie"
             ]
+        },
+        {
+            "name": "Moto X3M",
+            "id": "moto-x3m",
+            "image": "moto-x3m.png",
+            "developer": "MadPuffers and AceViral",
+            "description": "Moto X3M is an awesome bike game with 22 challenging levels. Choose a bike, put your helmet on, pass obstacles and get ready to beat the time on tons of off-road circuits. Have fun with Moto X3M!",
+            "platform": "Mobile",
+            "tags": [
+                "action",
+                "racing"
+            ]
         }
     ]
 }
