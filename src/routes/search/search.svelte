@@ -179,10 +179,10 @@
 						class="flex flex-col items-center justify-center w-full h-full bg-zinc-900 rounded-t-lg"
 					>
 						<div>
-							<img src="/newlogo.png" class="h-24 p-3 inline-block" alt="Kazwire Logo" />
+							<img src="/newlogo.png" class="h-24 p-3 inline-block" alt="Meowflow Logo" />
 							<span
 								class="hidden lg:inline-block text-4xl font-semibold whitespace-nowrap text-white align-middle"
-								>Kazwire</span
+								>Meowflow</span
 							>
 						</div>
 					</div>
@@ -194,7 +194,7 @@
 							<img src="/newlogo.png" class="h-24 p-3 inline-block" alt="Kazwire Logo" />
 							<span
 								class="hidden lg:inline-block text-4xl font-semibold whitespace-nowrap text-white align-middle"
-								>Kazwire</span
+								>Meowflow</span
 							>
 						</div>
 						<div class="flex flex-col items-center">

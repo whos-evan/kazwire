@@ -12,10 +12,10 @@
 		<div class="mb-6 md:mb-0">
 			<a href="https://kazwire.com/" class="flex items-center mb-2">
 				<img src="/newlogo.png" class="h-8 mr-3" alt="Meowflow Logo" />
-				<span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Kazwire</span>
+				<span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Meowflow</span>
 			</a>
 			<a href="/about-the-developers" class="self-center text-md text-white hover:underline">
-				Made with ❤️ by evan
+				Made with ❤️ by jon
 			</a>
 		</div>
 		<div class="grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">

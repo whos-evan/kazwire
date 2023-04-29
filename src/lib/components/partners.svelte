@@ -39,17 +39,17 @@
 					>
 				</button>
 				<Box
-					title="WebLFG"
-					image="weblfg.png"
-					description="From internet classics to present-day favorites, it's online entertainment right at your fingertips."
+					title="Goofy Games"
+					image="goofygames.png"
+					description="Goofy Games profides you exellent games and more, play some of the most Goofy Games on the planet."
 					href="https://weblfg.com"
 					color="#e77e7e"
 				/>
 				<Box
-					title="Moonlight"
-					image="moonlight.png"
-					description="Browse tons of fun games for free with Moonlight. The cure to boredom at your fingertips."
-					href="https://moonlight.silvereen.net/"
+					title="Unblocked Games 121"
+					image="unblockedgames121.png"
+					description="Browse tons of fun games for free with Unblocked Games 121, and get unlimited links to mostly any proxy. The cure to boredom at your paws."
+					href="https://sites.google.com/mypisd.net/unblockedgames121/"
 					color="#0011b3"
 				/>
 				<Box
@@ -75,9 +75,9 @@
 				/>
 				<Box
 					title="Partner with us!"
-					image="kazwire.png"
+					image="meowflow.png"
 					description="We would love to partner with you and have you showcased here! Click the box to join our Discord server!"
-					href="https://discord.gg/kazwire"
+					href="https://forms.gle/BbmSd6EbLkBBUpKs5"
 					color="#f49724"
 				/>
 			</Carousel>

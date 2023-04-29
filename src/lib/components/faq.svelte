@@ -17,7 +17,7 @@
 
 <div class="Faq w-full pl-10 pr-10">
 	<div class="text-white grid grid-rows-5 mt-5">
-		<h1 class="text-4xl text-white font-bold row-span-1 text-center mb-5">What is Kazwire?</h1>
+		<h1 class="text-4xl text-white font-bold row-span-1 text-center mb-5">What is Meowflow?</h1>
 		<div class="text-xl row-span-4 ml-10 mr-10">
 			<p>
 				Are you looking for a new place to play your favorite online games? Look no further! Our
@@ -31,10 +31,10 @@
 			</p>
 			<br />
 			<p>
-				We also give you the ability to browse the entire internet if you don't like what you see!
-				If you ever need help please join our <a
+				We also give you the ability to browse the entire internet, and Meowflow is and pawsome and the fastest Kazwire alternitive. if you don't like what you see!
+				If you ever need help please go to our <a
 					class="hover:cursor-pointer hover:underline"
-					href="https://discord.gg/KRNy7EpXFD">Discord</a
+					href="https://discord.gg/KRNy7EpXFD">Form</a
 				> and let us know!
 			</p>
 			<br />

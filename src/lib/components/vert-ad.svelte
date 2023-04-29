@@ -8,7 +8,7 @@
 			document.getElementById('GoogleAds').style.cssText =
 				'display:block !important; padding: 20px !important;';
 			document.getElementById('GoogleAds').innerHTML =
-				'<img src="/logo.png" width="75"/><p class="text-2xl text-white">Please disable your ad blocker to help support the site and keep it lightning fast!</p>';
+				'<img src="/newlogo.png" width="75"/><p class="text-2xl text-white">Please disable your ad blocker to help support the site and keep it lightning fast!</p>';
 		} else {
 			(adsbygoogle = window.adsbygoogle || []).push({});
 		}
@@ -22,7 +22,7 @@
 				document.getElementById('GoogleAds').style.cssText =
 					'display:block !important; padding: 20px !important;';
 				document.getElementById('GoogleAds').innerHTML =
-					'<img src="/logo.png" width="75"/><p class="text-2xl text-white">Please disable your ad blocker to help support the site and keep it lightning fast!</p>';
+					'<img src="/newlogo.png" width="75"/><p class="text-2xl text-white">Please disable your ad blocker to help support the site and keep it lightning fast!</p>';
 			}
 		}, 3000);
 	});
