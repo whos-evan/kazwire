@@ -48,7 +48,7 @@
 				<Box
 					title="Unblocked Games 121"
 					image="unblockedgames121.png"
-					description="Browse tons of fun games for free with Unblocked Games 121, Get unlimited links to mostly any proxy and watch lots of entertaining. The cure to boredom at your paws."
+					description="Browse tons of fun games for free with Unblocked Games 121, Get unlimited links to mostly any proxy and watch lots of entertaining movies. The cure to boredom at your paws."
 					href="https://sites.google.com/mypisd.net/unblockedgames121/"
 					color="#0011b3"
 				/>
