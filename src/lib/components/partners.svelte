@@ -42,22 +42,22 @@
 					title="Goofy Games"
 					image="goofygames.png"
 					description="Goofy Games profides you exellent games and more, play some of the most Goofy Games on the planet."
-					href="https://weblfg.com"
+					href="https://sites.google.com/mypisd.net/baldisgames/"
 					color="#e77e7e"
 				/>
 				<Box
 					title="Unblocked Games 121"
 					image="unblockedgames121.png"
-					description="Browse tons of fun games for free with Unblocked Games 121, and get unlimited links to mostly any proxy. The cure to boredom at your paws."
+					description="Browse tons of fun games for free with Unblocked Games 121, Get unlimited links to mostly any proxy and watch lots of entertaining. The cure to boredom at your paws."
 					href="https://sites.google.com/mypisd.net/unblockedgames121/"
 					color="#0011b3"
 				/>
 				<Box
-					title="Phantom Games"
-					image="phantom.png"
-					description="Where simplicity and unblocked fun collide!"
-					href="https://phantom.delusionz.xyz/"
-					color="#2c7ffc"
+					title="Ninja Games"
+					image="ninjagames.png"
+					description="Browse tons of fun games for free with Ninja Games, and get links to mostly any proxy."
+					href="https://sites.google.com/mypisd.net/ninjagames/"
+					color="#00000"
 				/>
 				<Box
 					title="Titanium Network"
@@ -65,13 +65,6 @@
 					description="Titanium Network is an organization dedicated to providing services related to bypassing internet censorship."
 					href="https://titaniumnetwork.org/"
 					color="#7e0040"
-				/>
-				<Box
-					title="Totally Science"
-					image="ts.png"
-					description="Totally Science - your one-stop destination for free online games and unblocked content! Youtube, multiplayer games, Minecraft, and more."
-					href="https://totallyscience.co/"
-					color="#f75dfc"
 				/>
 				<Box
 					title="Partner with us!"
