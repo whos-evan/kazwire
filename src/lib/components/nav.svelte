@@ -103,7 +103,6 @@
           py-4
           md:py-0
           px-4
-		  mb-10
 		  rounded-lg
           text-lg text-white
           bg-secondary
