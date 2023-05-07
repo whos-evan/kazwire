@@ -1,6 +1,15 @@
 {
 	"changelog": [
 		{
+			"name": "UI change.",
+			"date": "2023-05-07",
+			"additions": [
+				"New navigation bar design."
+			],
+			"changes": [],
+			"removals": []
+		},
+		{
 			"name": "Minor tweaks and bug fixes.",
 			"date": "2023-04-25",
 			"additions": [
