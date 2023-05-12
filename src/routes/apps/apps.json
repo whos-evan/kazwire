@@ -80,6 +80,15 @@
 			"name": "Mathway",
 			"releaseDate": "?",
 			"embedURL": "https://mathway.com"
+		},
+		{
+			"description": "Eclipse is a retro emulator.",
+			"develepor": "Eclipse Team",
+			"id": "eclipse",
+			"image": "eclipse.jpg",
+			"name": "Eclipse",
+			"releaseDate": "?",
+			"embedURL": "https://eclipseemu.me/play/"
 		}
 	]
 }
