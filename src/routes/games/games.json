@@ -103,6 +103,23 @@
                 "multiplayer"
             ]
         },
+	{
+	
+            "description": "Bemuse is a web based rhythm game, a BMS player.",
+	    "developer": "dtinth and Nachanok",
+	    "id": "bemuse",
+	    "image": "bemuse.png",
+	    "name": "Bemuse",
+	    "embedURL": "https://bemuse.ninja",
+	    "releaseDate": "?",
+	    "popular": "false",
+	    "tags": [
+		    "casual",
+		    "indie",
+		    "strategy"
+
+	    ]
+	},
         {
             "description": "Bloons TD Battles 2, also known as Battles 2 or BTDB2, is a competitive tower defense game developed and published by Ninja Kiwi.",
             "developer": "Ninja Kiwi",

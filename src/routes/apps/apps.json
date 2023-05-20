@@ -80,6 +80,25 @@
 			"name": "Mathway",
 			"releaseDate": "?",
 			"embedURL": "https://mathway.com"
+		},
+		{
+			"description": "Eclipse is a retro emulator.",
+			"developer": "Eclipse Team",
+			"id": "eclipse",
+			"image": "eclipse.jpeg",
+			"name": "Eclipse",
+			"releaseDate": "?",
+			"embedURL": "https://eclipseemu.me"
+		},
+		{
+			"description": "Twitch is a live streaming service.",
+			"developer": "Justin Kan, Emmett Shear, Micheal Seibel, Kyle Vogt",
+			"id": "twitch",
+			"image": "twitch.png",
+			"name": "Twitch",
+			"releaseDate": "?",
+			"embedURL": "https://twitch.tv"
 		}
+
 	]
 }
