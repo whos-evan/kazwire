@@ -243,34 +243,11 @@
 					<!-- Below will be refactored soon -->
 					<div class="float-right mr-5">
 						<button class="mt-[1.1rem] h-5 w-5 fill-white" id="refresh">
-							<svg
-								width="25px"
-								height="25px"
-								viewBox="0 0 512 512"
-								version="1.1"
-								xmlns="http://www.w3.org/2000/svg"
-								xmlns:xlink="http://www.w3.org/1999/xlink"
-								fill="#ffffff"
-								stroke="#ffffff"
-								style="margin-top:-2px;"
+							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"
+								><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path
+									d="M463.5 224H472c13.3 0 24-10.7 24-24V72c0-9.7-5.8-18.5-14.8-22.2s-19.3-1.7-26.2 5.2L413.4 96.6c-87.6-86.5-228.7-86.2-315.8 1c-87.5 87.5-87.5 229.3 0 316.8s229.3 87.5 316.8 0c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0c-62.5 62.5-163.8 62.5-226.3 0s-62.5-163.8 0-226.3c62.2-62.2 162.7-62.5 225.3-1L327 183c-6.9 6.9-8.9 17.2-5.2 26.2s12.5 14.8 22.2 14.8H463.5z"
+								/></svg
 							>
-								<g id="SVGRepo_bgCarrier" stroke-width="0" />
-								<g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" />
-								<g id="SVGRepo_iconCarrier">
-									<title>reload</title>
-									<g id="Page-1" stroke-width="19.968" fill="none" fill-rule="evenodd">
-										<g
-											id="Combined-Shape"
-											fill="#ffffff"
-											transform="translate(64.000000, 64.000000)"
-										>
-											<path
-												d="M234.666667,149.333333 L234.666667,106.666667 L314.564847,106.664112 C287.579138,67.9778918 242.745446,42.6666667 192,42.6666667 C109.525477,42.6666667 42.6666667,109.525477 42.6666667,192 C42.6666667,274.474523 109.525477,341.333333 192,341.333333 C268.201293,341.333333 331.072074,284.258623 340.195444,210.526102 L382.537159,215.817985 C370.807686,310.617565 289.973536,384 192,384 C85.961328,384 1.42108547e-14,298.038672 1.42108547e-14,192 C1.42108547e-14,85.961328 85.961328,1.42108547e-14 192,1.42108547e-14 C252.316171,1.42108547e-14 306.136355,27.8126321 341.335366,71.3127128 L341.333333,1.42108547e-14 L384,1.42108547e-14 L384,149.333333 L234.666667,149.333333 Z"
-											/>
-										</g>
-									</g>
-								</g>
-							</svg>
 						</button>
 					</div>
 					<script>
