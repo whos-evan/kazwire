@@ -258,11 +258,11 @@
 						</button>
 					</div>
 					<script>
-						document.querySelector("#refresh").onclick = function() {
-							if(!document.querySelector('#search-frame > div')){
-								document.getElementById('search-iframe').contentWindow.location.reload();
-							}
+					document.querySelector("#refresh").onclick = function() {
+						if(!document.querySelector('#search-frame > div')){
+							document.getElementById('search-iframe').contentWindow.location.reload();
 						}
+					}
 					function makeAutofillWork(autofill) {
 						let googleLink = "https://www.google.com/search?q=%s";
 						try {
@@ -280,9 +280,9 @@
 						searching(document.querySelector("#uv-address").value);
 					}
 
-					var s = document.createElement("style");
-					s.textContent = "#autofill:hover {text-decoration: underline}";
-					document.head.appendChild(s);
+					var styleElement = document.createElement("style");
+					styleElement.textContent = "#autofill:hover {text-decoration: underline}";
+					document.head.appendChild(styleElement);
 
 					document.body.addEventListener('click', async (e) => {
 						if(e.target.id == "uv-address") {
@@ -296,15 +296,15 @@
 							}
 						} else{
 							if (e.target.id == "autofill") {
-								var f = document.getElementById("search-iframe");
+								var searchFrame = document.getElementById("search-iframe");
 								await registerSW();
-								let c = e.target.innerText;
+								let autofillValue = e.target.innerText;
 								if(document.querySelector("#search-frame > div")) {
-									f.onload = () => {
+									searchFrame.onload = () => {
 										document.querySelector("#search-frame > div").remove();
 									}
 								}
-								f.src = __uv$config.prefix + __uv$config.encodeUrl(makeAutofillWork(c));
+								searchFrame.src = __uv$config.prefix + __uv$config.encodeUrl(makeAutofillWork(autofillValue));
 							}
 							document.querySelector("#uv-address").style.borderRadius = ".5rem";
 							if(document.querySelectorAll("#autofill")){
@@ -315,42 +315,42 @@
 						}
 					});
 
-					async function searching(q) {
-					var rawResponse = await fetch('https://cors.zimjs.com/https://duckduckgo.com/ac/?q=' + q + '&type=list', {
-						method: 'POST',
-						headers: {
-						'Accept': 'application/json',
-						'Content-Type': 'application/json'
-						}
-					});
-					var l = await rawResponse.json();
-					var l = l[1];
-					document.querySelector("#uv-address").style.borderRadius = ".5rem .5rem 0 0";
-
-					if(document.querySelectorAll("#autofill")){
-						var a = document.querySelectorAll("#autofill");
-						for(var i=0;i<a.length;i++){
-							a[i].remove();
-						}
-					}
-
-					if(q != "") {
-						for(var i=0;i<l.length;i++){
-							var newEl = document.createElement("div");
-							newEl.id = "autofill";
-							newEl.className = "md:w-[35vw] sm:w-[70vw] text-black placeholder:text-gray-500";
-							newEl.style = "background:white;padding:calc(1.5rem / 2);cursor:pointer;position:absolute;left: 0; right: 0; margin-left: auto; margin-right: auto;z-index:999;";
-							newEl.style.width = document.querySelector("#uv-address").offsetWidth;
-							newEl.style.marginTop = 2.5*i + "rem";
-							if(i >= l.length - 1){
-								newEl.style.borderRadius = "0 0 .5rem .5rem";
+					async function searching(query) {
+						var rawResponse = await fetch('https://cors.zimjs.com/https://duckduckgo.com/ac/?q=' + query + '&type=list', {
+							method: 'POST',
+							headers: {
+							'Accept': 'application/json',
+							'Content-Type': 'application/json'
 							}
-							newEl.innerText = l[i];
-							document.querySelector("#uv-form").appendChild(newEl);
+						});
+						var jsonResult = await rawResponse.json();
+						var jsonResult = jsonResult[1];
+						document.querySelector("#uv-address").style.borderRadius = ".5rem .5rem 0 0";
+
+						if(document.querySelectorAll("#autofill")){
+							var allAutofillElements = document.querySelectorAll("#autofill");
+							for(var i=0;i<allAutofillElements.length;i++){
+								allAutofillElements[i].remove();
+							}
 						}
-					} else {
-						document.querySelector("#uv-address").style.borderRadius = ".5rem";
-					}
+
+						if(query != "") {
+							for(var i=0;i<jsonResult.length;i++){
+								var newEl = document.createElement("div");
+								newEl.id = "autofill";
+								newEl.className = "md:w-[35vw] sm:w-[70vw] text-black placeholder:text-gray-500";
+								newEl.style = "background:white;padding:calc(1.5rem / 2);cursor:pointer;position:absolute;left: 0; right: 0; margin-left: auto; margin-right: auto;z-index:999;";
+								newEl.style.width = document.querySelector("#uv-address").offsetWidth;
+								newEl.style.marginTop = 2.5*i + "rem";
+								if(i >= jsonResult.length - 1){
+									newEl.style.borderRadius = "0 0 .5rem .5rem";
+								}
+								newEl.innerText = jsonResult[i];
+								document.querySelector("#uv-form").appendChild(newEl);
+							}
+						} else {
+							document.querySelector("#uv-address").style.borderRadius = ".5rem";
+						}
 					}
 					</script>
 					<div id="title" class="ml-5">Nothing here...</div>
