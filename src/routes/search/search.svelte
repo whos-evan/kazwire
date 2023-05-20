@@ -263,17 +263,17 @@
 								document.getElementById('search-iframe').contentWindow.location.reload();
 							}
 						}
-					function He(c) {
-						let e = "https://www.google.com/search?q=%s";
+					function makeAutofillWork(autofill) {
+						let googleLink = "https://www.google.com/search?q=%s";
 						try {
-							return new URL(c).toString()
+							return new URL(autofill).toString()
 						} catch {}
 						try {
-							const t = new URL(`http://${c}`);
-							if (t.hostname.includes("."))
-								return t.toString()
+							const autofillUrl = new URL(`http://${autofill}`);
+							if (autofillUrl.hostname.includes("."))
+								return autofillUrl.toString()
 						} catch {}
-						return e.replace("%s", encodeURIComponent(c))
+						return googleLink.replace("%s", encodeURIComponent(autofill))
 					}
 
 					document.querySelector("#uv-address").onkeyup = () => {
@@ -304,7 +304,7 @@
 										document.querySelector("#search-frame > div").remove();
 									}
 								}
-								f.src = __uv$config.prefix + __uv$config.encodeUrl(He(c));
+								f.src = __uv$config.prefix + __uv$config.encodeUrl(makeAutofillWork(c));
 							}
 							document.querySelector("#uv-address").style.borderRadius = ".5rem";
 							if(document.querySelectorAll("#autofill")){
