@@ -13,6 +13,7 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 
+	// Turns a search into a valid URL
 	function search(input: string) {
 		let template: string = 'https://www.google.com/search?q=%s&hl=en';
 		try {
@@ -41,6 +42,7 @@
 	}
 
 	onMount(async () => {
+		// Register the service worker
 		if (!navigator.serviceWorker) throw new Error("Your browser doesn't support service workers.");
 
 		await navigator.serviceWorker.register('/uv.js', {
@@ -48,9 +50,10 @@
 		});
 
 		let game: Game;
-
+		//  Get the game from the api
 		await getGame(slug).then((data) => {
 			game = data;
+			// If the game has an embedURL search for it using the iframeSearch function
 			if (game.embedURL != null) {
 				iframeSearch(game.embedURL);
 			}
@@ -83,6 +86,7 @@
 		iframe.requestFullscreen();
 	}
 
+	// Expand the iframe to fill the screen
 	function expandiFrame() {
 		const document: Document = window.document;
 		const frame: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
@@ -124,6 +128,7 @@
 		>
 			<div class="align-center mb-14 flex-grow">
 				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
+					<!-- Static game -->
 					{#if game.embedURL == null && game.emulatorType == null}
 						<iframe
 							src={'/game/static/' + game.id + '/index.html'}
@@ -131,6 +136,8 @@
 							id="iframe"
 							title={game.name}
 						/>
+					<!-- Ruffle game -->
+					<!-- TODO: NOT COMPLETE -->
 					{:else if game.emulatorType == 'ruffle'}
 						<iframe
 							src={'/games/ruffle/' + game.id}
@@ -138,6 +145,7 @@
 							id="iframe"
 							title={game.name}
 						/>
+					<!-- Proxied game -->
 					{:else if game.embedURL != null}
 						<iframe
 							class="h-full w-full rounded-t-lg bg-white"
@@ -180,6 +188,7 @@
 		</div>
 	</div>
 
+	<!-- Bottom area for displaying more information about the game -->
 	<div
 		class="rounded-lg bg-tertiary p-5 align-middle text-black dark:bg-tertiaryDark dark:text-white"
 	>

@@ -8,6 +8,7 @@
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
 	let tagQuery: string = $page.url.searchParams.get('tag') || '';
+	// Fetch all games based on the search query and tag query
 	async function getGames() {
 		const response: Response = await fetch('/api/games?search=' + searchQuery + '&tag=' + tagQuery);
 		const games: Game[] = await response.json();
@@ -50,6 +51,7 @@
 		{/each}
 	{:then games}
 		{#each games as game}
+			<!-- After loading it will display each game in a box -->
 			<DefaultBox
 				image={'/game/img/' + game.image}
 				name={game.name}

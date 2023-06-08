@@ -37,6 +37,7 @@
 	}
 
 	onMount(async () => {
+		// Register the service worker
 		if (!navigator.serviceWorker) throw new Error("Your browser doesn't support service workers.");
 
 		await navigator.serviceWorker.register('/uv.js', {
@@ -45,8 +46,10 @@
 	});
 
 	async function iframeSearch() {
+		// Get the iframe
 		let iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 
+		// Set the iframe source to the search query
 		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(search(searchQuery));
 	}
 

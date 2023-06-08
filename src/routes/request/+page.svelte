@@ -1,3 +1,4 @@
+<!-- Simple google form iframe for suggesting games -->
 <iframe
 	class="h-[80vh] w-full bg-white"
 	src="https://docs.google.com/forms/d/e/1FAIpQLSc9PL6_BVtyG2_f7dzmcwa41-ZEHux5Pq_UwGyTvKntm3J_2g/viewform?embedded=true"

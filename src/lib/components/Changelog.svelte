@@ -1,6 +1,7 @@
 <script lang="ts">
 	import type { Changelog } from '$lib/types';
 
+	// Fetches the first changelog from the API
 	async function loadFirst() {
 		const response = await fetch('/api/changelogs');
 		const changelogs: Changelog[] = await response.json();

@@ -7,6 +7,7 @@
 	import DefaultBoxLoading from '$lib/components/Box/DefaultBoxLoading.svelte';
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
+	// Fetch all apps based on the search query
 	async function getApps() {
 		const response: Response = await fetch('/api/apps?search=' + searchQuery);
 		const apps: Game[] = await response.json();
@@ -49,6 +50,7 @@
 		{/each}
 	{:then apps}
 		{#each apps as app}
+			<!-- After loading it will display each game in a box -->
 			<DefaultBox
 				image={'/app/img/' + app.image}
 				name={app.name}
