@@ -1,10 +1,8 @@
-<script>
-	import Footer from '$lib/components/footer.svelte';
-	import Nav from '$lib/components/nav.svelte';
-</script>
+<svelte:head>
+	<title>Kazwire - Privacy Policy</title>
+</svelte:head>
 
-<Nav />
-<div id="home" class="h-full w-full pl-10 pt-10 pr-10 text-white">
+<div id="home" class="h-full w-full text-white">
 	<h1 class="text-3xl font-bold">Privacy Policy for Kazwire</h1>
 	<br />
 	<p>
@@ -192,4 +190,3 @@
 		remove such information from our records.
 	</p>
 </div>
-<Footer />

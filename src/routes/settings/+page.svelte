@@ -1,7 +1,5 @@
-<script>
-	import Nav from '$lib/components/nav.svelte';
-	import Footer from '$lib/components/footer.svelte';
-
+<script lang="ts">
+	// TODO: Function to change title, favicon, and preset cloaks
 	function changeTitle() {
 		document.title = document.getElementById('title').value;
 		localStorage.setItem('title', document.getElementById('title').value);
@@ -41,20 +39,14 @@
 			].text
 		);
 	}
-
-	import HorzAd from '$lib/components/horz-ad.svelte';
 </script>
 
-<Nav />
-<div class="md:block sm:hidden">
-	<HorzAd />
-</div>
-<div class="h-auto min-h-[65vh] w-full mt-10 text-center text-white">
+<div class="mt-10 h-auto min-h-[65vh] w-full text-center text-white">
 	<h1 class="text-3xl">Settings</h1>
-	<div class="grid grid-cols-1 gap-10 mt-5">
-		<div class="row-start-1 col-start-1">
+	<div class="mt-5 grid grid-cols-1 gap-10">
+		<div class="col-start-1 row-start-1">
 			Preset Cloaks:
-			<select id="presetCloaks" class="text-black p-3 rounded-md mr-2" bind:value={presetCloaks}>
+			<select id="presetCloaks" class="mr-2 rounded-md p-3 text-black" bind:value={presetCloaks}>
 				<option value="/favicon.ico" selected>Kazwire</option>
 				<option value="https://google.com/favicon.ico">Google</option>
 				<option value="https://ssl.gstatic.com/classroom/ic_product_classroom_144.png"
@@ -63,43 +55,27 @@
 				<option value="https://drive.google.com/favicon.ico">Google Drive</option>
 				<option value="https://canvas.instructure.com/favicon.ico">Canvas</option>
 			</select>
-			<button
-				class="btn-primary"
-				on:click={changePresetCloaks}
-			>
-				Save
-			</button>
+			<button class="rounded-xl bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700" on:click={changePresetCloaks}> Save </button>
 		</div>
-		<div class="row-start-2 col-start-1">
+		<div class="col-start-1 row-start-2">
 			Tab Cloak:
 			<input
 				id="title"
 				type="text"
-				class="text-black rounded-lg p-2 mr-2"
+				class="mr-2 rounded-lg p-2 text-black"
 				placeholder="Enter title here..."
 			/>
-			<button
-				class="btn-primary"
-				on:click={changeTitle}
-			>
-				Save
-			</button>
+			<button class="rounded-xl bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700" on:click={changeTitle}> Save </button>
 		</div>
-		<div class="row-start-3 col-start-1">
+		<div class="col-start-1 row-start-3">
 			Custom Favicon:
 			<input
 				id="favicon"
 				type="text"
-				class="text-black rounded-lg p-2 w-[18rem] mr-2"
+				class="mr-2 w-[18rem] rounded-lg p-2 text-black"
 				placeholder="https://google.com/favicon.ico"
 			/>
-			<button
-				class="btn-primary"
-				on:click={changeFavicon}
-			>
-				Save
-			</button>
+			<button class="rounded-xl bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700" on:click={changeFavicon}> Save </button>
 		</div>
 	</div>
 </div>
-<Footer />

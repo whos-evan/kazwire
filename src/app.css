@@ -1,28 +1,11 @@
+/* Inter font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-    @variants responsive {
-        .text-shadow {
-          text-shadow: 2px 2px 4px #0875bb;
-        }
-        .text-shadow-md {
-          text-shadow: 4px 4px 8px #0875bb;
-        }
-        .text-shadow-lg {
-          text-shadow: 15px 15px 30px #0875bb;
-        }
-        .text-shadow-none {
-          text-shadow: none;
-        }
-    } 
-}
-
-@layer components {
-  .btn-primary {
-    @apply bg-secondaryLight dark:bg-secondaryDark hover:bg-sky-700 dark:hover:bg-sky-700 font-bold pr-5 pl-5 pt-3 pb-3 mt-5 rounded-lg text-lg transition ease-in-out duration-300 hover:drop-shadow-none drop-shadow-[5px_5px_0_rgba(1,55,84,1)] hover:scale-[105%]
-  }
+/* Apply to site */
+body {
+  font-family: 'Inter', sans-serif;
 }

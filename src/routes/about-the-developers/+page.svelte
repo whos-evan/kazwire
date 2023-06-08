@@ -1,10 +1,11 @@
-<script>
-	import Footer from '$lib/components/footer.svelte';
-	import Nav from '$lib/components/nav.svelte';
-</script>
+<svelte:head>
+	<title>Kazwire - About the Developers</title>
+	<meta name="description" content="Developers of Kazwire." />
+	<meta property="og:description" content="Developers of Kazwire!" />
+</svelte:head>
 
-<Nav />
-<div id="home" class="h-[80vh] w-full pl-10 pt-10 pr-10 text-white">
+
+<div id="home" class="text-white">
 	<h1 class="text-3xl font-bold">About the Developers</h1>
 	<br />
 	<p class="text-xl">
@@ -15,10 +16,8 @@
 			target="_blank">his GitHub</a
 		>
 		or his personal site at
-		<a
-			class="hover:cursor-pointer hover:underline"
-			href="https://3van.dev"
-			target="_blank">3van.dev</a
+		<a class="hover:cursor-pointer hover:underline" href="https://3van.dev" target="_blank"
+			>3van.dev</a
 		>.
 	</p>
 	<br />
@@ -40,5 +39,3 @@
 		>!
 	</p>
 </div>
-
-<Footer />

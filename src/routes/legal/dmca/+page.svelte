@@ -1,11 +1,9 @@
-<script>
-	import Footer from '$lib/components/footer.svelte';
-	import Nav from '$lib/components/nav.svelte';
-</script>
+<svelte:head>
+	<title>Kazwire - DMCA</title>
+</svelte:head>
 
-<Nav />
 
-<div id="home" class="h-full w-full pl-10 pt-10 pr-10 text-white">
+<div id="home" class="h-full w-full text-white">
 	<h1 class="text-3xl font-bold">DMCA policy</h1>
 	<br />
 	<p>
@@ -154,4 +152,3 @@
 	<br />
 	<p>This document was last updated on December 16, 2022</p>
 </div>
-<Footer />

@@ -1,84 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-	<meta charset="utf-8" />
-	<link rel="icon" href="/favicon.ico" />
-	<meta name="viewport" content="width=device-width" />
-
-	<!-- SEO -->
-	<meta name="theme-color" content="#f49625" />
-	
-	<meta property="og:title" content="Kazwire" />
-	
-	<meta name="description" content="From the gaming classics to the internet, access YouTube, TikTok, and even your favorite games freely and securely." />
-	<meta property="og:description" content="From the gaming classics to the internet, access YouTube, TikTok, and even your favorite games freely and securely." />
-	
-	<meta property="og:image" content="https://kazwire.com/logo.png" />
-
-	<meta name="robots" content="index, follow" />
-	<meta name="revisit-after" content="7 days" />
-	<!-- End of SEO -->
-
-	<link rel="manifest" href="/assets/manifest.json" />
-	<title>Kazwire</title>
-
-	<!-- Stuff for other domains -->
-
-	<!-- End of stuff for other domains -->
-
-	%sveltekit.head%
-	<!-- Ads for main domain -->
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7648886706850999"
-		crossorigin="anonymous"></script>
-	<!-- End of ads for main domain -->
-
-	<!-- UV stuff & service workers -->
-	<script src="/uv/uv.bundle.js" defer></script>
-	<script src="/uv/uv.config.js?3" defer></script>
-	<script src="/sw.js" defer></script>
-	<script src="/register-sw.js" defer></script>
-	<!-- End of UV stuff & service workers -->
-
-	<!-- Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=G-FLBJ64LGWV"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() {
-			dataLayer.push(arguments);
-		}
-		gtag('js', new Date());
-
-		gtag('config', 'G-FLBJ64LGWV');
-
-			// (adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
-	<!-- End of analytics -->
-</head>
-<style>
-	*::-webkit-scrollbar {
-		width: 16px;
-	}
-
-	*::-webkit-scrollbar-track {
-		border-radius: 8px;
-	}
-
-	*::-webkit-scrollbar-thumb {
-		height: 56px;
-		border-radius: 8px;
-		border: 4px solid transparent;
-		background-clip: content-box;
-		background-color: #fff;
-	}
-
-	*::-webkit-scrollbar-thumb:hover {
-		background-color: rgb(200, 200, 200);
-	}
-</style>
-
-<body class="bg-light dark:bg-dark" data-sveltekit-preload-data="hover">
-	<div style="display: contents">%sveltekit.body%</div>
-</body>
-
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" href="%sveltekit.assets%/favicon.ico" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="title" content="Kazwire" />
+		<meta name="description" content="Play and search for all your favorite games and sites!" />
+		<meta name="keywords" content="search, play, fun" />
+		<meta name="robots" content="index, follow" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="language" content="English" />
+		%sveltekit.head%
+	</head>
+	<body data-sveltekit-preload-data="hover">
+		<div style="display: contents">%sveltekit.body%</div>
+	</body>
 </html>
