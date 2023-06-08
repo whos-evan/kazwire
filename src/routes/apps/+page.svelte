@@ -29,7 +29,7 @@
 			class="focus:shadow-outline h-10 w-96 rounded-lg border px-3 text-base placeholder-gray-600"
 			type="text"
 			name="search"
-			placeholder="Search for a app..."
+			placeholder="Search for an app..."
 			bind:value={searchQuery}
 		/>
 		<button
