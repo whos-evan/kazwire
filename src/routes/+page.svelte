@@ -2,6 +2,7 @@
 	import Hero from '$lib/components/Hero.svelte';
 	import Showoff from '$lib/components/Showoff.svelte';
 	import Faq from '$lib/components/Faq.svelte';
+	import Partners from '$lib/components/Partners.svelte';
 
 	import Changelog from '$lib/components/Changelog.svelte';
 	import RandomGame from '$lib/components/RandomGame.svelte';
@@ -37,5 +38,8 @@
 	</grid>
 	<grid class="col-span-2 row-start-3">
 		<Faq />
+	</grid>
+	<grid class="col-span-2 row-start-4 max-w-full">
+		<Partners />
 	</grid>
 </div>
