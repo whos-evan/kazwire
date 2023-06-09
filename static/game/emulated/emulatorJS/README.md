@@ -8,7 +8,7 @@
 
 All files ending in `.data` have been compiled with **[RetroArch]**.
 
-_Check my **[Fork]** for changes made to the original software._
+*Check my **[Fork]** for changes made to the original software.*
 
 <br>
 <br>
@@ -16,7 +16,7 @@ _Check my **[Fork]** for changes made to the original software._
 
 ## Building
 
-_Instructions have only been confirmed working for **Ubuntu**._
+*Instructions have only been confirmed working for **Ubuntu**.*
 
 <br>
 
@@ -36,7 +36,7 @@ sudo apt install -y         \
     build-essential         \
     pkgconf                 \
     python3                 \
-    git
+    git 
 ```
 
 <br>
@@ -46,11 +46,11 @@ sudo apt install -y         \
 
 1. **Clone** the repository.
 
-   ```sh
-   git clone https://github.com/ethanaobrien/RetroArch.git
-   ```
-
-<br>
+    ```sh
+    git clone https://github.com/ethanaobrien/RetroArch.git
+    ```
+    
+<br>    
 
 2. Navigate to `/dist-scripts/`
 
@@ -58,9 +58,9 @@ sudo apt install -y         \
 
 3. Build with:
 
-   ```sh
-   emmake ./dist-cores.sh emscripten
-   ```
+    ```sh
+    emmake ./dist-cores.sh emscripten
+    ```
 
 <br>
 <br>
@@ -69,38 +69,38 @@ sudo apt install -y         \
 
 1. **Clone** the repository.
 
-   ```sh
-   git clone https://github.com/libretro/libretro-fceumm.git
-   ```
+    ```sh
+    git clone https://github.com/libretro/libretro-fceumm.git
+    ```
 
 <br>
 
 2. The next steps depend on whether or <br>
    not you have a `Makefile.libretro` .
-
+   
    <br>
-
+   
    #### With
-
+   
    - Navigate to the folder with the makefile.
-
+   
    - Build with:
-
-     ```sh
-     emmake make -f Makefile.libretro platform=emscripten
-     ```
-
+   
+       ```sh
+       emmake make -f Makefile.libretro platform=emscripten
+       ```
+   
    <br>
-
+   
    #### Without
-
+   
    - Stay in the base directory of the project.
-
+   
    - Build with:
-
-     ```sh
-     emmake make platform=emscripten
-     ```
+   
+       ```sh
+       emmake make platform=emscripten
+       ```
 
 <br>
 
@@ -108,10 +108,12 @@ sudo apt install -y         \
 
 <br>
 
+
 <!----------------------------------------------------------------------------->
 
 [RetroArch]: https://github.com/libretro/RetroArch
 [Fork]: https://github.com/ethanaobrien/RetroArch
+
 [GPLv3]: cores/LICENSE
 
 <!-------------------------------{ Dependencies }------------------------------>
