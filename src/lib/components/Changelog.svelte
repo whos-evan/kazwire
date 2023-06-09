@@ -16,7 +16,7 @@
 		<h1 class="text-center text-4xl font-bold">Latest Change!</h1>
 		<div class="mt-10 flex flex-row items-center justify-center">
 			<h2 class="text-center text-2xl font-bold mr-2">{changelog.title}</h2>
-			<chip class="bg-red-500 px-2 py-1 rounded-full">
+			<chip class="bg-red-500 px-2 py-1 rounded-full text-white">
 				{changelog.version}
 			</chip>
 		</div>
