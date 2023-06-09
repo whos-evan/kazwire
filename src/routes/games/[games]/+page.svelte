@@ -136,8 +136,7 @@
 							id="iframe"
 							title={game.name}
 						/>
-					<!-- Ruffle game -->
-					<!-- TODO: NOT COMPLETE -->
+						<!-- Ruffle game -->
 					{:else if game.emulatorType == 'ruffle'}
 						<iframe
 							src={'/games/ruffle/' + game.id}
@@ -145,7 +144,15 @@
 							id="iframe"
 							title={game.name}
 						/>
-					<!-- Proxied game -->
+						<!-- EmulatorJS game -->
+					{:else if game.emulatorType == 'emulatorjs'}
+						<iframe
+							src={'/games/emulator/' + game.id}
+							class="h-full w-full rounded-t-lg bg-white"
+							id="iframe"
+							title={game.name}
+						/>
+						<!-- Proxied game -->
 					{:else if game.embedURL != null}
 						<iframe
 							class="h-full w-full rounded-t-lg bg-white"
