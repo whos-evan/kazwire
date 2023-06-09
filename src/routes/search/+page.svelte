@@ -79,6 +79,20 @@
 		frame.classList.toggle('rounded-t-lg');
 	}
 
+	function reloadiFrame() {
+		const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+		// add the spin animation to the button
+		const reloadButton: HTMLButtonElement = document.getElementById('reload') as HTMLButtonElement;
+		reloadButton.classList.add('animate-spin');
+
+		iframe.contentWindow?.location.reload();
+
+		// remove the spin animation from the button after 1 second
+		setTimeout(() => {
+			reloadButton.classList.remove('animate-spin');
+		}, 500);
+	}
+
 	// Updates the title of the page to the title of the iframe
 	function checkTitle() {
 		const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
@@ -145,10 +159,8 @@
 					</button>
 				</div>
 				<div class="float-right mr-5">
-					<button id="heart" class="mt-4 fill-white">
-						<!-- Heart -->
-						<!-- TODO: Setup heart functionality using localStorage -->
-						<Icon class="h-6 w-6" icon="pixelarticons:heart" />
+					<button id="reload" class="mt-4 fill-white active:animate-spin" on:click={() => reloadiFrame()}>
+						<Icon class="h-6 w-6" icon="pixelarticons:reload" />
 					</button>
 				</div>
 				<div class="flex">
