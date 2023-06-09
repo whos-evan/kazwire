@@ -138,13 +138,13 @@
 									data-sveltekit-reload>Support/Discord</a
 								>
 							</li>
-							<li class="m-auto">
+							<!-- <li class="m-auto">
 								<a
 									class="block py-2 hover:text-primary md:p-4"
 									href="/account"
 									data-sveltekit-reload>Sign Up</a
 								>
-							</li>
+							</li> -->
 							<li class="m-auto">
 								<button
 									id="theme-selector"
