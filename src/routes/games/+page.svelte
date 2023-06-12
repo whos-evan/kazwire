@@ -14,6 +14,8 @@
 		const games: Game[] = await response.json();
 		return games;
 	}
+
+	import GoogleAds from '$lib/components/GoogleAds.svelte';
 </script>
 
 <svelte:head>
@@ -21,6 +23,8 @@
 	<meta name="description" content="Play freely with Kazwire!" />
 	<meta property="og:description" content="Play freely with Kazwire!" />
 </svelte:head>
+
+<GoogleAds slot="6262246352" />
 
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">
@@ -34,9 +38,9 @@
 			bind:value={searchQuery}
 		/>
 		<button
-			class="focus:shadow-outline h-10 rounded-lg bg-blue-600 px-5 text-white transition-colors duration-150 hover:bg-blue-700"
+			class="focus:shadow-outline h-10 rounded-lg bg-secondary px-5 text-white transition-colors duration-150"
 			type="submit"
-			on:click={() => location.href = '/games?search=' + searchQuery}
+			on:click={() => (location.href = '/games?search=' + searchQuery)}
 		>
 			Search
 		</button>
@@ -50,20 +54,25 @@
 			<DefaultBoxLoading />
 		{/each}
 	{:then games}
-		{#each games as game}
-			<!-- After loading it will display each game in a box -->
-			<DefaultBox
-				image={'/game/img/' + game.image}
-				name={game.name}
-				description={game.description}
-				developer={game.developer}
-				link={'/games/' + game.id}
-				tags={game.tags || []}
-				popular={game.popular || false}
-				errorMessage={game.errorMessage || undefined}
-				platformSupport={game.platform}
-			/>
-		{/each}
+		{#if games.length === 0}
+			<!-- If there are no games it will display a message -->
+			<h1 class="text-center text-white col-span-12 text-3xl">No results found.</h1>
+		{:else}
+			{#each games as game}
+				<!-- After loading it will display each game in a box -->
+				<DefaultBox
+					image={'/game/img/' + game.image}
+					name={game.name}
+					description={game.description}
+					developer={game.developer}
+					link={'/games/' + game.id}
+					tags={game.tags || []}
+					popular={game.popular || false}
+					errorMessage={game.errorMessage || undefined}
+					platformSupport={game.platform}
+				/>
+			{/each}
+		{/if}
 	{:catch error}
 		<p>{error.message}</p>
 	{/await}

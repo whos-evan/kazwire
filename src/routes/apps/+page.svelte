@@ -5,13 +5,13 @@
 
 	import DefaultBox from '$lib/components/Box/DefaultBox.svelte';
 	import DefaultBoxLoading from '$lib/components/Box/DefaultBoxLoading.svelte';
+	import GoogleAds from '$lib/components/GoogleAds.svelte';
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
 	// Fetch all apps based on the search query
 	async function getApps() {
 		const response: Response = await fetch('/api/apps?search=' + searchQuery);
 		const apps: Game[] = await response.json();
-		console.log(apps[0].image);
 		return apps;
 	}
 </script>
@@ -21,6 +21,8 @@
 	<meta name="description" content="Search freely with Kazwire!" />
 	<meta property="og:description" content="Search freely with Kazwire!" />
 </svelte:head>
+
+<GoogleAds slot="6262246352" />
 
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">
@@ -33,7 +35,7 @@
 			bind:value={searchQuery}
 		/>
 		<button
-			class="focus:shadow-outline ml-2 h-10 rounded-lg bg-blue-600 px-5 text-white transition-colors duration-150 hover:bg-blue-700"
+			class="focus:shadow-outline ml-2 h-10 rounded-lg bg-secondary px-5 text-white transition-colors duration-150"
 			type="submit"
 			on:click={() => (window.location.href = '/apps?search=' + searchQuery)}
 		>

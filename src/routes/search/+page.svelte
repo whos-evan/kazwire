@@ -98,6 +98,8 @@
 		const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 		contentTitle = iframe.contentDocument?.title || 'Nothing yet...';
 	}
+
+	import GoogleAds from '$lib/components/GoogleAds.svelte';
 </script>
 
 <svelte:head>
@@ -120,7 +122,7 @@
 			bind:value={searchQuery}
 		/>
 		<button
-			class="focus:shadow-outline h-10 rounded-lg bg-blue-600 px-5 text-white transition-colors duration-150 hover:bg-blue-700"
+			class="focus:shadow-outline h-10 rounded-lg bg-secondary px-5 text-white transition-colors duration-150 hover:bg-blue-700"
 			type="submit"
 			on:click={async () => await iframeSearch()}
 		>
@@ -159,7 +161,11 @@
 					</button>
 				</div>
 				<div class="float-right mr-5">
-					<button id="reload" class="mt-4 fill-white active:animate-spin" on:click={() => reloadiFrame()}>
+					<button
+						id="reload"
+						class="mt-4 fill-white active:animate-spin"
+						on:click={() => reloadiFrame()}
+					>
 						<Icon class="h-6 w-6" icon="pixelarticons:reload" />
 					</button>
 				</div>
@@ -171,4 +177,5 @@
 			</div>
 		</div>
 	</div>
+	<GoogleAds slot="8673868840" />
 </div>

@@ -116,6 +116,7 @@
 	<script src="/uv.js" defer></script>
 </svelte:head>
 
+
 {#await getGame(slug) then game}
 	<head>
 		<title>Kazwire - {game.name}</title>

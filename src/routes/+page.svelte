@@ -8,6 +8,8 @@
 	import RandomGame from '$lib/components/RandomGame.svelte';
 
 	let innerWidth: number;
+
+	import GoogleAds from '$lib/components/GoogleAds.svelte';
 </script>
 
 <svelte:window bind:innerWidth />
@@ -39,7 +41,10 @@
 	<grid class="col-span-2 row-start-3">
 		<Faq />
 	</grid>
-	<grid class="col-span-2 row-start-4 max-w-full">
+	<grid class="col-span-2 row-start-4">
+		<GoogleAds slot="6262246352" />
+	</grid>
+	<grid class="col-span-2 row-start-5 max-w-full">
 		<Partners />
 	</grid>
 </div>

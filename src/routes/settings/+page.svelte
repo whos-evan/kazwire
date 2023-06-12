@@ -86,9 +86,13 @@
 		getTitle();
 		getFavicon();
 	});
+
+	import GoogleAds from '$lib/components/GoogleAds.svelte';
 </script>
 
-<div class="mt-10 h-auto min-h-[65vh] w-full text-center text-white">
+<GoogleAds slot="6262246352"/>
+
+<div class="mt-10 h-auto w-full text-center text-white">
 	<h1 class="text-3xl">Settings</h1>
 	<div class="mt-5 grid grid-cols-1 gap-10">
 		<div class="col-start-1 row-start-1">
@@ -103,7 +107,7 @@
 				<option value="https://canvas.instructure.com/favicon.ico">Canvas</option>
 			</select>
 			<button
-				class="rounded-xl bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700"
+				class="rounded-xl bg-secondary px-4 py-2 font-bold text-white"
 				on:click={changePresetCloaks}
 			>
 				Save
@@ -119,7 +123,7 @@
 				bind:value={title}
 			/>
 			<button
-				class="rounded-xl bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700"
+				class="rounded-xl bg-secondary px-4 py-2 font-bold text-white"
 				on:click={changeTitle}
 			>
 				Save
@@ -135,7 +139,7 @@
 				bind:value={favicon}
 			/>
 			<button
-				class="rounded-xl bg-blue-600 px-4 py-2 font-bold text-white hover:bg-blue-700"
+				class="rounded-xl bg-secondary px-4 py-2 font-bold text-white"
 				on:click={changeFavicon}
 			>
 				Save

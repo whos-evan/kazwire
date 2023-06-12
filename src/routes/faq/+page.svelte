@@ -1,5 +1,7 @@
 <script lang="ts">
 	import faqJSON from './faq.json';
+
+	import GoogleAds from '$lib/components/GoogleAds.svelte';
 </script>
 
 <svelte:head>
@@ -7,6 +9,8 @@
 	<meta name="description" content="Frequently asked questions about Kazwire." />
 	<meta property="og:description" content="Frequently asked questions about Kazwire!" />
 </svelte:head>
+
+<GoogleAds slot="6262246352" />
 
 <div class="min-h-[70vh]">
 	<h1 class="text-4xl font-bold text-white">FAQ</h1>
