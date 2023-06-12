@@ -1,4 +1,4 @@
-<div class="mx-auto w-full max-w-sm rounded-md border border-gray-300 p-4 shadow">
+<div class="mx-auto relative rounded-md border border-gray-300 p-4 shadow">
 	<div class="flex animate-pulse flex-col">
 		<!-- Image -->
 		<div class="min-h-[12rem] w-full rounded-lg bg-tertiary dark:bg-tertiarydark" />
