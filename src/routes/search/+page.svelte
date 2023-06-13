@@ -106,7 +106,12 @@
 	}
 
 	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	let outerWidth: number = 0;
+
+	
 </script>
+
+<svelte:window bind:outerWidth={outerWidth} />
 
 <svelte:head>
 	<title>Kazwire - Search Freely</title>
@@ -183,5 +188,7 @@
 			</div>
 		</div>
 	</div>
-	<GoogleAds slot="8673868840" />
+	{#if outerWidth > 824}
+		<GoogleAds slot="8673868840" />
+	{/if}
 </div>
