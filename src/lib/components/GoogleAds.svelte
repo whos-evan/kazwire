@@ -14,7 +14,9 @@
 </svelte:head>
 
 <div class="p-4">
-    <h3 class="text-xs tracking-widest uppercase text-center text-gray-500 opacity-40">Advertizement</h3>
+	<h3 class="min-w-[14rem] text-center text-xs uppercase tracking-widest dark:text-gray-400 text-gray-600 opacity-40">
+		Advertisement
+	</h3>
 	<ins
 		class="adsbygoogle"
 		style="display:block"
