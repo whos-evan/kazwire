@@ -8,6 +8,7 @@
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
 	let tagQuery: string = $page.url.searchParams.get('tag') || '';
+
 	// Fetch all games based on the search query and tag query
 	async function getGames() {
 		const response: Response = await fetch('/api/games?search=' + searchQuery + '&tag=' + tagQuery);
@@ -56,21 +57,37 @@
 	{:then games}
 		{#if games.length === 0}
 			<!-- If there are no games it will display a message -->
-			<h1 class="text-center text-white col-span-12 text-3xl">No results found.</h1>
+			<h1 class="col-span-12 text-center text-3xl text-white">No results found.</h1>
 		{:else}
 			{#each games as game}
-				<!-- After loading it will display each game in a box -->
-				<DefaultBox
-					image={'/game/img/' + game.image}
-					name={game.name}
-					description={game.description}
-					developer={game.developer}
-					link={'/games/' + game.id}
-					tags={game.tags || []}
-					popular={game.popular || false}
-					errorMessage={game.errorMessage || undefined}
-					platformSupport={game.platform}
-				/>
+				{#if game.popular}
+					<DefaultBox
+						image={'/game/img/' + game.image}
+						name={game.name}
+						description={game.description}
+						developer={game.developer}
+						link={'/games/' + game.id}
+						tags={game.tags || []}
+						popular={game.popular || false}
+						errorMessage={game.errorMessage || undefined}
+						platformSupport={game.platform}
+					/>
+				{/if}
+			{/each}
+			{#each games as game}
+				{#if !game.popular}
+					<DefaultBox
+						image={'/game/img/' + game.image}
+						name={game.name}
+						description={game.description}
+						developer={game.developer}
+						link={'/games/' + game.id}
+						tags={game.tags || []}
+						popular={game.popular || false}
+						errorMessage={game.errorMessage || undefined}
+						platformSupport={game.platform}
+					/>
+				{/if}
 			{/each}
 		{/if}
 	{:catch error}
