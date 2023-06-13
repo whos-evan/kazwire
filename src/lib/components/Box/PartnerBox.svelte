@@ -6,7 +6,7 @@
     export let color: string
 </script>
 
-<a class="partner p-10 max-w-fit" id={title} href={href}>
+<a class="partner py-10 px-2 max-w-fit" id={title} href={href}>
 	<div
 		class="background-game bg-white dark:bg-zinc-900 hover:cursor-pointer hover:shadow-xl w-full h-full mb-5 rounded-xl transition duration-100 hover:scale-[102.5%]"
 	>

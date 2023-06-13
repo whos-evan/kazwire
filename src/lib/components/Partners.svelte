@@ -2,7 +2,7 @@
 	import Box from '$lib/components/Box/PartnerBox.svelte';
 
 	import Carousel from 'svelte-carousel';
-    import Icon from '@iconify/svelte';
+	import Icon from '@iconify/svelte';
 	import { browser } from '$app/environment';
 
 	let carousel; // for calling methods of the carousel instance
@@ -11,10 +11,12 @@
 
 <svelte:window bind:innerWidth={outerWidth} />
 
-<div class="rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white max-w-[calc(100vw-5rem)]">
-	<h1 class="text-4xl font-bold text-center">Partners</h1>
+<div
+	class="max-w-[calc(100vw-5rem)] rounded-3xl bg-tertiary py-8 text-black dark:bg-tertiaryDark dark:text-white"
+>
+	<h1 class="text-center text-4xl font-bold">Partners</h1>
 	{#if browser}
-		<div class="pl-14 pr-14 sm:pr-4 sm:pl-4">
+		<div class="pl-4 pr-4">
 			<Carousel
 				bind:this={carousel}
 				particlesToShow={outerWidth > 768 ? 3 : 1}
@@ -25,10 +27,10 @@
 				let:showPrevPage
 				let:showNextPage
 			>
-				<button class="m-auto" slot="prev" on:click={showPrevPage}>
+				<button class="m-auto hidden sm:block" slot="prev" on:click={showPrevPage}>
 					<Icon icon="pixelarticons:arrow-left" class="h-8 w-8" />
 				</button>
-				<button class="m-auto" slot="next" on:click={showNextPage}>
+				<button class="m-auto hidden sm:block" slot="next" on:click={showNextPage}>
 					<Icon icon="pixelarticons:arrow-right" class="h-8 w-8" />
 				</button>
 				<Box
