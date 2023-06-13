@@ -59,10 +59,10 @@
 				description={app.description}
 				developer={app.developer}
 				link={'/apps/' + app.id}
-				tags={app.tags || []}
-				popular={app.popular || false}
-				errorMessage={app.errorMessage || undefined}
-				platformSupport={app.platform}
+				tags={[]}
+				popular={false}
+				errorMessage={undefined}
+				platformSupport={undefined}
 			/>
 		{/each}
 	{:catch error}

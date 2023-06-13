@@ -8,9 +8,11 @@
 	export let developer: string;
 	export let tags: string[];
 	export let popular: boolean;
-	export let platformSupport: string;
 	export let link: string;
 
+	// Optional platformSupport prop
+	export let platformSupport: string | undefined = undefined;
+	
 	// Optional errorMessage prop
 	export let errorMessage: string | undefined = undefined;
 </script>
@@ -31,7 +33,7 @@
 				<span title="This game is supported on mobile and PC devices.">
 					<Icon icon="mdi:cellphone" class="h-6 w-6 text-green-500" />
 				</span>
-			{:else}
+			{:else if platformSupport == 'PC'}
 				<span title="This game is only supported on PC devices.">
 					<Icon icon="mdi:desktop-classic" class="h-6 w-6 text-blue-500" />
 				</span>
