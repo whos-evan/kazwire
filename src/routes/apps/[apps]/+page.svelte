@@ -41,12 +41,18 @@
 	}
 
 	onMount(async () => {
-		if (!navigator.serviceWorker) throw new Error("Your browser doesn't support service workers.");
-
-		await navigator.serviceWorker.register('/uv.js', {
-			scope: __uv$config.prefix
+		// Register the service worker
+		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
+			if (reg.installing) {
+				const sw = reg.installing || reg.waiting;
+				sw.onstatechange = function () {
+					if (sw.state === 'installed') {
+						// SW installed.  Refresh page so SW can respond with SW-enabled page.
+						window.location.reload();
+					}
+				};
+			}
 		});
-
 		let app: App;
 
 		await getApp(slug).then((data) => {

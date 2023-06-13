@@ -43,10 +43,16 @@
 
 	onMount(async () => {
 		// Register the service worker
-		if (!navigator.serviceWorker) throw new Error("Your browser doesn't support service workers.");
-
-		await navigator.serviceWorker.register('/uv.js', {
-			scope: __uv$config.prefix
+		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
+			if (reg.installing) {
+				const sw = reg.installing || reg.waiting;
+				sw.onstatechange = function () {
+					if (sw.state === 'installed') {
+						// SW installed.  Refresh page so SW can respond with SW-enabled page.
+						window.location.reload();
+					}
+				};
+			}
 		});
 
 		let game: Game;
@@ -115,7 +121,6 @@
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
 </svelte:head>
-
 
 {#await getGame(slug) then game}
 	<head>
