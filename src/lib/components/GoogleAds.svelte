@@ -1,5 +1,10 @@
 <script lang="ts">
 	export let slot: string;
+
+	import { onMount } from "svelte";
+	onMount(() => {
+		(window.adsbygoogle = window.adsbygoogle || []).push({});
+	});
 </script>
 
 <svelte:head>
@@ -8,9 +13,6 @@
 		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7648886706850999"
 		crossorigin="anonymous"
 	></script>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
 </svelte:head>
 
 <div class="p-4">
