@@ -106,12 +106,10 @@
 	}
 
 	import GoogleAds from '$lib/components/GoogleAds.svelte';
-	let outerWidth: number = 0;
-
-	
+	let innerWidth: number = 0;
 </script>
 
-<svelte:window bind:outerWidth={outerWidth} />
+<svelte:window bind:innerWidth />
 
 <svelte:head>
 	<title>Kazwire - Search Freely</title>
@@ -132,13 +130,7 @@
 			placeholder="Search for your favorites..."
 			bind:value={searchQuery}
 		/>
-		<button
-			class="focus:shadow-outline h-10 rounded-lg bg-secondary px-5 text-white transition-colors duration-150 hover:bg-blue-700"
-			type="submit"
-			on:click={async () => await iframeSearch()}
-		>
-			Search
-		</button>
+		<button class="btn" type="submit" on:click={async () => await iframeSearch()}> Search </button>
 	</form>
 </div>
 
@@ -188,7 +180,7 @@
 			</div>
 		</div>
 	</div>
-	{#if outerWidth > 824}
+	{#if innerWidth > 824}
 		<GoogleAds slot="8673868840" />
 	{/if}
 </div>

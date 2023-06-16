@@ -109,8 +109,11 @@
 	}
 
 	import Icon from '@iconify/svelte';
-	import Tag from '$lib/components/Tag.svelte';
+	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	let innerWidth: number = 0;
 </script>
+
+<svelte:window bind:innerWidth />
 
 <svelte:head>
 	<script src="/uv/uv.bundle.js" defer></script>
@@ -170,6 +173,9 @@
 				</div>
 			</div>
 		</div>
+		{#if innerWidth > 824}
+			<GoogleAds slot="8673868840" />
+		{/if}
 	</div>
 
 	<div
