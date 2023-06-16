@@ -81,8 +81,8 @@
 {#if resetLayout}
 	<slot />
 {:else}
-	<div class="bg-primary dark:bg-black">
-		<div class="fixed z-20 w-full px-5 py-5">
+	<div class="bg-primary dark:bg-black z-50">
+		<div class="fixed z-50 w-full px-5 py-5">
 			<nav
 				class="flex w-full flex-wrap items-center justify-between rounded-lg bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white shadow-md shadow-black dark:shadow-white md:py-0"
 			>
@@ -106,7 +106,7 @@
 				{/if}
 
 				{#if menuIsHidden || windowWidth > 784}
-					<div class="w-full md:flex md:w-auto md:items-center" id="menu">
+					<div class="w-full md:flex md:w-auto md:items-center z-50" id="menu">
 						<ul class="pt-4 text-base text-white md:flex md:justify-between md:pt-0">
 							<li class="m-auto">
 								<a class="block py-2 hover:text-primary md:p-4" href="/search" data-sveltekit-reload
