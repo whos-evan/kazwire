@@ -54,16 +54,6 @@
 				};
 			}
 		});
-
-		let game: Game;
-		//  Get the game from the api
-		await getGame(slug).then((data) => {
-			game = data;
-			// If the game has an embedURL search for it using the iframeSearch function
-			if (game.embedURL != null) {
-				iframeSearch(game.embedURL);
-			}
-		});
 	});
 
 	async function iframeSearch(embedURL: string) {
@@ -120,9 +110,24 @@
 
 	let loadedFrame: boolean = false;
 	let loadingGame: boolean = false;
-	function loadFrame() {
+	async function loadFrame() {
 		loadedFrame = true;
 		loadingGame = true;
+
+		let game: Game;
+		//  Get the game from the api
+		await getGame(slug).then((data) => {
+			game = data;
+			// If the game has an embedURL search for it using the iframeSearch function
+			if (game.embedURL != null) {
+				iframeSearch(game.embedURL);
+			}
+		});
+
+		// Just in case wait 5 seconds before removing the loading screen
+		setTimeout(() => {
+			loadedGame();
+		}, 5000);
 	}
 	function loadedGame() {
 		// Wait 0.5 second before removing the loading screen
