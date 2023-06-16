@@ -107,7 +107,7 @@
 				<option value="https://canvas.instructure.com/favicon.ico">Canvas</option>
 			</select>
 			<button
-				class="rounded-xl bg-secondary px-4 py-2 font-bold text-white"
+				class="btn"
 				on:click={changePresetCloaks}
 			>
 				Save
@@ -123,7 +123,7 @@
 				bind:value={title}
 			/>
 			<button
-				class="rounded-xl bg-secondary px-4 py-2 font-bold text-white"
+				class="btn"
 				on:click={changeTitle}
 			>
 				Save
@@ -139,7 +139,7 @@
 				bind:value={favicon}
 			/>
 			<button
-				class="rounded-xl bg-secondary px-4 py-2 font-bold text-white"
+				class="btn"
 				on:click={changeFavicon}
 			>
 				Save

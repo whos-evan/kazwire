@@ -39,7 +39,7 @@
 			bind:value={searchQuery}
 		/>
 		<button
-			class="focus:shadow-outline h-10 rounded-lg bg-secondary px-5 text-white transition-colors duration-150"
+			class="btn"
 			type="submit"
 			on:click={() => (location.href = '/games?search=' + searchQuery)}
 		>

@@ -11,13 +11,13 @@
 	<div class="flex flex-col gap-3 pt-8 text-center sm:flex-row sm:text-left">
 		<a
 			href="/search"
-			class="rounded-xl bg-secondary px-4 py-4 font-bold text-white hover:bg-blue-700"
+			class="btn-large"
 		>
 			Start Browsing
 		</a>
 		<a
 			href="/games"
-			class="rounded-xl bg-secondary px-4 py-4 font-bold text-white hover:bg-blue-700"
+			class="btn-large"
 		>
 			Start Playing
 		</a>

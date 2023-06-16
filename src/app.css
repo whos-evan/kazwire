@@ -7,5 +7,15 @@
 
 /* Apply to site */
 body {
-  font-family: 'Inter', sans-serif;
+	font-family: 'Inter', sans-serif;
+}
+
+/* Apply to all buttons */
+@layer components {
+	.btn {
+		@apply rounded-lg bg-secondary px-4 py-2 text-white transition-transform ease-in-out hover:scale-110;
+	}
+	.btn-large {
+		@apply rounded-xl bg-secondary px-4 py-4 font-bold text-white transition-transform ease-in-out hover:scale-110;
+	}
 }
