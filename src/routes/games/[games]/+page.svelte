@@ -156,17 +156,19 @@
 			<div class="align-center mb-14 flex-grow">
 				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 					{#if !loadedFrame}
-						<div class="relative flex h-full items-center justify-center">
+						<div class="relative flex h-full items-center justify-center overflow-hidden">
 							<img
 								class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg"
 								src="/game/img/{game.image}"
 								alt="Game"
 							/>
-							<div class="absolute z-10 h-full w-full bg-black rounded-t-lg" />
+							<div class="absolute z-10 h-full w-full rounded-t-lg bg-black" />
 
 							<!-- Content on top of the image -->
 							<div class="absolute z-30 flex flex-col items-center justify-center">
-								<h1 class="lg:text-8xl md:text-5xl sm:text-5xl text-3xl font-bold text-white">{game.name}</h1>
+								<h1 class="text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl">
+									{game.name}
+								</h1>
 
 								<!-- Play now button -->
 								<button class="lg:btn-xl btn mt-8" on:click={() => loadFrame()}>
@@ -178,7 +180,9 @@
 					{:else}
 						{#if loadingGame}
 							<!-- Loading animation -->
-							<div class="relative flex h-full items-center justify-center bg-black rounded-t-lg transition-all">
+							<div
+								class="relative flex h-full items-center justify-center rounded-t-lg bg-black transition-all"
+							>
 								<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
 									<div class="flex items-center gap-8">
 										<img src="/logo.png" alt="Loading" class="h-24 w-24" />
