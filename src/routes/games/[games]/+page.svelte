@@ -114,6 +114,25 @@
 
 	import Icon from '@iconify/svelte';
 	import Tag from '$lib/components/Tag.svelte';
+
+	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	let innerWidth: number = 0;
+
+	let loadedFrame: boolean = false;
+	let loadingGame: boolean = false;
+	function loadFrame() {
+		loadedFrame = true;
+		loadingGame = true;
+	}
+	function loadedGame() {
+		// Wait 0.5 second before removing the loading screen
+		setTimeout(() => {
+			loadingGame = false;
+			// Remove the hidden class from the iframe
+			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+			iframe.classList.remove('hidden');
+		}, 500);
+	}
 </script>
 
 <svelte:head>
@@ -121,6 +140,8 @@
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
 </svelte:head>
+
+<svelte:window bind:innerWidth />
 
 {#await getGame(slug) then game}
 	<head>
@@ -134,38 +155,73 @@
 		>
 			<div class="align-center mb-14 flex-grow">
 				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
-					<!-- Static game -->
-					{#if game.embedURL == null && game.emulatorType == null}
-						<iframe
-							src={'/game/static/' + game.id + '/index.html'}
-							class="h-full w-full rounded-t-lg bg-white"
-							id="iframe"
-							title={game.name}
-						/>
-						<!-- Ruffle game -->
-					{:else if game.emulatorType == 'ruffle'}
-						<iframe
-							src={'/games/ruffle/' + game.id}
-							class="h-full w-full rounded-t-lg bg-white"
-							id="iframe"
-							title={game.name}
-						/>
-						<!-- EmulatorJS game -->
-					{:else if game.emulatorType == 'emulatorjs'}
-						<iframe
-							src={'/games/emulator/' + game.id}
-							class="h-full w-full rounded-t-lg bg-white"
-							id="iframe"
-							title={game.name}
-						/>
-						<!-- Proxied game -->
-					{:else if game.embedURL != null}
-						<iframe
-							class="h-full w-full rounded-t-lg bg-white"
-							id="iframe"
-							title={game.name}
-							src="about:blank"
-						/>
+					{#if !loadedFrame}
+						<div class="relative flex h-full items-center justify-center">
+							<img
+								class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg"
+								src="/game/img/{game.image}"
+								alt="Game"
+							/>
+							<div class="absolute z-10 h-full w-full bg-black rounded-t-lg" />
+
+							<!-- Content on top of the image -->
+							<div class="absolute z-30 flex flex-col items-center justify-center">
+								<h1 class="lg:text-8xl md:text-5xl sm:text-5xl text-3xl font-bold text-white">{game.name}</h1>
+
+								<!-- Play now button -->
+								<button class="lg:btn-xl btn mt-8" on:click={() => loadFrame()}>
+									Play Now
+									<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
+								</button>
+							</div>
+						</div>
+					{:else}
+						{#if loadingGame}
+							<!-- Loading animation -->
+							<div class="relative flex h-full items-center justify-center bg-black rounded-t-lg transition-all">
+								<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+									<div class="flex items-center gap-8">
+										<img src="/logo.png" alt="Loading" class="h-24 w-24" />
+										<h1 class="text-6xl font-bold text-white">Kazwire</h1>
+									</div>
+									<Icon icon="line-md:loading-alt-loop" class="animate-spin text-6xl text-white" />
+								</div>
+							</div>
+						{/if}
+						<!-- Static game -->
+						{#if game.embedURL == null && game.emulatorType == null}
+							<iframe
+								src={'/game/static/' + game.id + '/index.html'}
+								class="hidden h-full w-full rounded-t-lg bg-white"
+								id="iframe"
+								title={game.name}
+								on:load={() => loadedGame()}
+							/>
+							<!-- Ruffle game -->
+						{:else if game.emulatorType == 'ruffle'}
+							<iframe
+								src={'/games/ruffle/' + game.id}
+								class="hidden h-full w-full rounded-t-lg bg-white"
+								id="iframe"
+								title={game.name}
+							/>
+							<!-- EmulatorJS game -->
+						{:else if game.emulatorType == 'emulatorjs'}
+							<iframe
+								src={'/games/emulator/' + game.id}
+								class="h-full w-full rounded-t-lg bg-white"
+								id="iframe"
+								title={game.name}
+							/>
+							<!-- Proxied game -->
+						{:else if game.embedURL != null}
+							<iframe
+								class="hidden h-full w-full rounded-t-lg bg-white"
+								id="iframe"
+								title={game.name}
+								src="about:blank"
+							/>
+						{/if}
 					{/if}
 				</div>
 
@@ -199,6 +255,9 @@
 				</div>
 			</div>
 		</div>
+		{#if innerWidth > 824}
+			<GoogleAds slot="8673868840" />
+		{/if}
 	</div>
 
 	<!-- Bottom area for displaying more information about the game -->
