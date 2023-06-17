@@ -172,7 +172,9 @@
 
 							<!-- Content on top of the image -->
 							<div class="absolute z-30 flex flex-col items-center justify-center">
-								<h1 class="text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl">
+								<h1
+									class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+								>
 									{game.name}
 								</h1>
 
@@ -214,12 +216,13 @@
 								class="hidden h-full w-full rounded-t-lg bg-white"
 								id="iframe"
 								title={game.name}
+								on:load={() => loadedGame()}
 							/>
 							<!-- EmulatorJS game -->
 						{:else if game.emulatorType == 'emulatorjs'}
 							<iframe
 								src={'/games/emulator/' + game.id}
-								class="h-full w-full rounded-t-lg bg-white"
+								class="hidden h-full w-full rounded-t-lg bg-white"
 								id="iframe"
 								title={game.name}
 							/>
@@ -230,6 +233,7 @@
 								id="iframe"
 								title={game.name}
 								src="about:blank"
+								on:load={() => loadedGame()}
 							/>
 						{/if}
 					{/if}
