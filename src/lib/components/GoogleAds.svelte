@@ -15,9 +15,9 @@
 	></script>
 </svelte:head>
 
-<div class="p-4 justify-center items-center">
+<div class="p-4 justify-center items-center [text-align-last:center]">
 	<h3
-		class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400"
+		class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400 "
 	>
 		Advertisement
 	</h3>
