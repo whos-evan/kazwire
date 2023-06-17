@@ -9,6 +9,7 @@
 	// 3. If the game is emulated determine what emulator is required and use the required path (i.e. /emulators/super-mario-64, /ruffle/duck-life)
 
 	import type { Game } from '@prisma/client';
+	import { PUBLIC_API_BASE_URL } from '$env/static/public';
 
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
@@ -67,7 +68,7 @@
 
 	// Get the games from the api
 	async function getGame(id: string) {
-		const response: Response = await fetch('/api/games/' + id);
+		const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/games/' + id);
 		if (response.status === 404) {
 			// Redirect to 404 page
 			window.location.href = '/games/';

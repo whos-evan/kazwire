@@ -4,9 +4,11 @@
 
 	import type { Game } from '@prisma/client';
 
+	import { PUBLIC_API_BASE_URL } from '$env/static/public';
+
 	// Fetch the random game from the api
 	async function getRandomGame() {
-		const response = await fetch('/api/games/random');
+		const response = await fetch(PUBLIC_API_BASE_URL + '/api/games/random');
 		const game: Game = await response.json();
 		return game;
 	}

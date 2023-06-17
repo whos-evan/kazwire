@@ -1,5 +1,6 @@
 <script lang="ts">
 	import type { Game } from '@prisma/client';
+	import { PUBLIC_API_BASE_URL } from '$env/static/public';
 
 	import { page } from '$app/stores';
 
@@ -10,7 +11,7 @@
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
 	// Fetch all apps based on the search query
 	async function getApps() {
-		const response: Response = await fetch('/api/apps?search=' + searchQuery);
+		const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/apps?search=' + searchQuery);
 		const apps: Game[] = await response.json();
 		return apps;
 	}

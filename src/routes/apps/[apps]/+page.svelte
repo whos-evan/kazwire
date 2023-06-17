@@ -9,6 +9,7 @@
 	// 3. If the app is emulated determine what emulator is required and use the required path (i.e. /emulators/super-mario-64, /ruffle/duck-life)
 
 	import type { App } from '@prisma/client';
+	import { PUBLIC_API_BASE_URL } from '$env/static/public';
 
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
@@ -74,7 +75,7 @@
 
 	// Get the apps from the api
 	async function getApp(id: string) {
-		const response: Response = await fetch('/api/apps/' + id);
+		const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/apps/' + id);
 		if (response.status === 404) {
 			// Redirect to 404 page
 			window.location.href = '/apps/';
