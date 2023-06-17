@@ -1,0 +1,32 @@
+[info]
+title=Clear the Corners
+par=14
+hint=Make some stairs and then use them over again to get to the can in the opposite corner.
+
+
+[background]
+backdrop=bkg3
+decals=68;319;door,67;261;sign_no_access,459;49;computer_matrix
+decals=457;330;terminal_chart,519;263;fusebox_pipes_r,480;276;fusebox
+decals=69;35;window
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_06,BRICK_03,BRICK_04,MINIFIG
+types=flag
+colors=GRAY,blue,green,YELLOW
+parts=28;20;3;1;0;0;,1;20;3;1;0;0;,1;5;3;1;0;0;,28;5;3;1;0;0;
+parts=16;12;4;1;0;0;,21;11;5;2;0;0;,17;11;6;3;0;0;,14;11;5;2;0;0;
+parts=14;13;5;2;0;0;,17;13;6;3;0;0;,21;13;5;2;0;0;,22;12;6;4;0;0;
+parts=12;12;6;4;0;0;,21;10;7;4;walk_l;1;,34;19;8;4;0;0;,1;19;8;4;0;0;
+parts=34;4;8;4;0;0;,1;4;8;4;0;0;
+
+
+
+

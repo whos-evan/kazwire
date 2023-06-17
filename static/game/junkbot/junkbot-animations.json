@@ -1,0 +1,298 @@
+{
+	"walk_l": [
+		{
+			"sprite": "minifig_walk_l_1",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_l_2",
+			"offset": {
+				"x": 0,
+				"y": 4
+			}
+		},
+		{
+			"sprite": "minifig_walk_l_3",
+			"offset": {
+				"x": 0,
+				"y": 6
+			}
+		},
+		{
+			"sprite": "minifig_walk_l_4",
+			"offset": {
+				"x": 6,
+				"y": 3
+			}
+		},
+		{
+			"emit_event": true,
+			"sprite": "minifig_walk_l_5",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_l_6",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_l_6",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_l_8",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_l_9",
+			"offset": {
+				"x": 5,
+				"y": 0
+			}
+		},
+		{
+			"emit_event": true,
+			"sprite": "minifig_walk_l_10",
+			"offset": {
+				"x": 0,
+				"y": 1
+			}
+		}
+	],
+	"walk_r": [
+		{
+			"sprite": "minifig_walk_r_1",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_r_2",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_r_3",
+			"offset": {
+				"x": 0,
+				"y": 1
+			}
+		},
+		{
+			"sprite": "minifig_walk_r_4",
+			"offset": {
+				"x": 3,
+				"y": 3
+			}
+		},
+		{
+			"emit_event": true,
+			"sprite": "minifig_walk_r_5",
+			"offset": {
+				"x": 8,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_r_6",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_r_7",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_r_8",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_walk_r_9",
+			"offset": {
+				"x": 7,
+				"y": 3
+			}
+		},
+		{
+			"emit_event": true,
+			"sprite": "minifig_walk_r_10",
+			"offset": {
+				"x": 11,
+				"y": 3
+			}
+		}
+	],
+	"shield_walk_l": [
+		{
+			"sprite": "minifig_shield_walk_l_1",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_l_2",
+			"offset": {
+				"x": 0,
+				"y": 4
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_l_3",
+			"offset": {
+				"x": 0,
+				"y": 6
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_l_4",
+			"offset": {
+				"x": 6,
+				"y": 3
+			}
+		},
+		{
+			"emit_event": true,
+			"sprite": "minifig_shield_walk_l_5",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_l_6",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_l_6",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_l_8",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_l_9",
+			"offset": {
+				"x": 5,
+				"y": 0
+			}
+		},
+		{
+			"emit_event": true,
+			"sprite": "minifig_shield_walk_l_10",
+			"offset": {
+				"x": 0,
+				"y": 1
+			}
+		}
+	],
+	"shield_walk_r": [
+		{
+			"sprite": "minifig_shield_walk_r_1",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_r_2",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_r_3",
+			"offset": {
+				"x": 0,
+				"y": 1
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_r_4",
+			"offset": {
+				"x": 3,
+				"y": 3
+			}
+		},
+		{
+			"emit_event": true,
+			"sprite": "minifig_shield_walk_r_5",
+			"offset": {
+				"x": 8,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_r_6",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_r_7",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_r_8",
+			"offset": {
+				"x": 0,
+				"y": 0
+			}
+		},
+		{
+			"sprite": "minifig_shield_walk_r_9",
+			"offset": {
+				"x": 7,
+				"y": 3
+			}
+		},
+		{
+			"emit_event": true,
+			"sprite": "minifig_shield_walk_r_10",
+			"offset": {
+				"x": 11,
+				"y": 3
+			}
+		}
+	]
+}

@@ -1,0 +1,30 @@
+[info]
+title=Hazardous Waste
+par=5
+hint=Build a bridge over the gearbot and then quickly use its bricks to block the laser.
+
+
+[background]
+backdrop=bkg1
+decals=64;351;door,121;336;A1_pipebox,469;363;safetystrip_vert
+decals=410;364;safetystrip_vert,64;281;A1_vent,241;289;word_danger
+decals=316;290;arrowr,439;327;sign_skull
+bgdecals=445;157;A1_bkg_1,143;261;A1_bkg_3
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_03,MINIFIG,haz_walker,haz_slickLaser_R
+types=BRICK_01,BRICK_02,flag
+colors=GRAY,blue
+parts=1;22;3;1;0;0;0,28;22;3;1;0;0;0,20;22;3;1;0;0;0,9;22;3;1;0;0;0
+parts=17;22;4;1;0;0;0,4;21;5;1;WALK_R;1;0,15;21;6;2;walk_l;1;0
+parts=34;20;7;2;on;1;0,35;21;8;1;0;0;0,35;19;8;1;0;0;0,23;21;9;2;0;0;0
+parts=22;20;9;2;0;0;0,21;19;9;2;0;0;0,14;18;3;2;0;0;0,13;19;9;2;0;0;0
+parts=12;20;9;2;0;0;0,11;21;9;2;0;0;0,29;21;10;1;None;0;0
+

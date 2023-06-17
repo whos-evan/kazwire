@@ -1,0 +1,40 @@
+{
+	"version": 0.1,
+	"format": "janitorial-android",
+	"entities": [
+		{
+			"type": "brick",
+			"x": 315,
+			"y": 270,
+			"widthInStuds": 6,
+			"width": 90,
+			"height": 18,
+			"colorName": "gray",
+			"fixed": true
+		},
+		{
+			"type": "junkbot",
+			"x": 315,
+			"y": 198,
+			"width": 30,
+			"height": 72,
+			"facing": 1,
+			"armored": false,
+			"timer": 773,
+			"animationFrame": 184,
+			"headLoaded": false,
+			"collectingBin": false
+		},
+		{
+			"type": "climbbot",
+			"x": 390,
+			"y": 234,
+			"width": 30,
+			"height": 36,
+			"facing": 1,
+			"facingY": 0,
+			"animationFrame": 4,
+			"energy": 2
+		}
+	]
+}

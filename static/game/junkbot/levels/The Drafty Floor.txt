@@ -1,0 +1,23 @@
+﻿[info]
+title=The Drafty Floor
+par=2
+hint=Bots moving over a fan will cut off its breeze momentarily.
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_04,HAZ_SLICKFAN,BRICK_03
+types=haz_walker,BRICK_01,flag,MINIFIG
+colors=GRAY,WHITE,red
+parts=1;11;3;1;0;0,9;11;4;1;0;0,12;22;5;1;none;1,4;22;3;1;0;0
+parts=16;22;3;1;0;0,28;22;3;1;0;0,14;11;3;1;0;0,22;11;3;1;0;0
+parts=1;22;6;1;0;0,33;11;6;1;0;0,30;11;6;1;0;0,24;22;4;1;0;0,29;21;7;1;walk_l;1
+parts=12;10;8;3;0;0,14;10;8;3;0;0,2;10;9;3;0;0,34;10;10;3;walk_l;1
+
+
+
+

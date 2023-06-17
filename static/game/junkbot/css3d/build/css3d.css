@@ -1,0 +1,553 @@
+.scene *,
+.scene *:after,
+.scene *:before {
+  box-sizing: border-box;
+  transform-style: preserve-3d;
+}
+:root {
+  --perspective: 1200;
+  --rotate-x: -31;
+  --rotate-y: -119;
+  --body-one: #ff962e;
+  --body-two: #e88c30;
+  --body-three: #cf7317;
+  --body-four: #ff8c1a;
+  --body-five: #73400d;
+  --body-detail: #a15912;
+  --hat-one: #f2d98c;
+  --hat-two: #e8d630;
+  --hat-three: #cfa117;
+  --hat-four: #a17d12;
+  --hat-five: #73590d;
+  --legs-one: #bfbfbf;
+  --legs-two: #8c8c8c;
+  --legs-three: #737373;
+  --legs-four: #595959;
+  --legs-five: #404040;
+  --leg-detail: #808080;
+  --leg-width: 9.5;
+  --wireframe: 0;
+}
+body {
+  min-height: 100vh;
+  background: #333;
+  color: #fff;
+  overflow: hidden;
+}
+a {
+  color: #ffa500;
+}
+.scene {
+  perspective: calc(var(--perspective, 800) * 1px);
+  transform-style: preserve-3d;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(var(--zoom, 1));
+}
+.plane {
+  position: absolute;
+  height: calc(var(--plane-height, 25) * 1vmin);
+  width: calc(var(--plane-width, 25) * 1vmin);
+  transform-style: preserve-3d;
+}
+.scene > .plane {
+  transform: rotateX(calc(var(--rotate-x, -24) * 1deg)) rotateY(calc(var(--rotate-y, -24) * 1deg)) rotateX(90deg) translate3d(0, 0, 0);
+}
+.cuboid {
+  --width: var(--cuboid-width, 15);
+  --height: var(--cuboid-height, 10);
+  --depth: var(--cuboid-depth, 4);
+  height: calc(var(--depth) * 1vmin);
+  width: calc(var(--width) * 1vmin);
+  position: absolute;
+  transform: translate3d(calc(var(--x, 0) * 1vmin), calc(var(--y, 0) * 1vmin), calc(var(--z, 0) * 1vmin)) rotateX(calc(var(--rotate-cuboid-x, 0) * 1deg)) rotateY(calc(var(--rotate-cuboid-y, 0) * 1deg)) rotateZ(calc(var(--rotate-cuboid-z, 0) * 1deg));
+  transform-style: preserve-3d;
+}
+.cuboid__side {
+  transform-style: preserve-3d;
+  border: calc(var(--wireframe) * 1vmin) solid rgba(179,77,77,0.75);
+}
+.cuboid > .cuboid__side:nth-of-type(1) {
+  height: calc(var(--height) * 1vmin);
+  width: 100%;
+  transform-origin: 50% 50%;
+  transform: rotateX(-90deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(-90deg) translate3d(0, 0, calc((var(--depth) / 2) * 1vmin));
+}
+.cuboid > .cuboid__side:nth-of-type(2) {
+  height: calc(var(--height) * 1vmin);
+  width: 100%;
+  transform-origin: 50% 50%;
+  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(180deg) translate3d(0, 0, calc((var(--depth) / 2) * 1vmin));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.cuboid > .cuboid__side:nth-of-type(3) {
+  height: calc(var(--height) * 1vmin);
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(90deg) translate3d(0, 0, calc((var(--width) / 2) * 1vmin));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.cuboid > .cuboid__side:nth-of-type(4) {
+  height: calc(var(--height) * 1vmin);
+  width: calc(var(--depth) * 1vmin);
+  transform: translate(-50%, -50%) rotateX(-90deg) rotateY(-90deg) translate3d(0, 0, calc((var(--width) / 2) * 1vmin));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.cuboid > .cuboid__side:nth-of-type(5) {
+  height: calc(var(--depth) * 1vmin);
+  width: calc(var(--width) * 1vmin);
+  transform: translate(-50%, -50%) translate3d(0, 0, calc((var(--height) / 2) * 1vmin));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.cuboid > .cuboid__side:nth-of-type(6) {
+  height: calc(var(--depth) * 1vmin);
+  width: calc(var(--width) * 1vmin);
+  transform: translate(-50%, -50%) translate3d(0, 0, calc((var(--height) / 2) * -1vmin)) rotateX(180deg);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+.cylinder {
+  --depth: var(--cylinder-depth, 4);
+  width: calc(var(--radius) * 2 * 1vmin);
+  height: calc(var(--radius) * 2 * 1vmin);
+  position: absolute;
+  top: calc(var(--radius) * -1vmin);
+  left: calc(var(--radius) * -1vmin);
+  transform: translate3d(calc(var(--x, 0) * 1vmin), calc(var(--y, 0) * 1vmin), calc(var(--z, 0) * 1vmin)) rotateX(calc(var(--rotate-cylinder-x, 0) * 1deg)) rotateY(calc(var(--rotate-cylinder-y, 0) * 1deg)) rotateZ(calc(var(--rotate-cylinder-z, 0) * 1deg));
+  transform-style: preserve-3d;
+}
+.cylinder__side {
+  transform-style: preserve-3d;
+  border: calc(var(--wireframe) * 1vmin) solid rgba(179,77,77,0.75);
+  height: calc(var(--depth) * 1vmin);
+  width: calc(var(--side-length) * 1vmin);
+  transform-origin: -50% 0;
+  transform: rotateX(90deg) translateX(calc(var(--side-length) * 0.5vmin)) rotateY(calc(var(--angle) * 1deg)) translateZ(calc(var(--radius) * 1vmin)) rotateY(calc(var(--angle-per-side) * 1deg));
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  background: #f00;
+}
+.cylinder__end {
+  transform-style: preserve-3d;
+  background: #0f0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: calc(var(--radius) * 2 * 1vmin);
+  height: calc(var(--radius) * 2 * 1vmin);
+  border-radius: 50%;
+}
+.cylinder__end.top {
+  transform: translateZ(calc(var(--depth) * 1vmin));
+}
+.forehead {
+  --width: 20;
+  --height: 10;
+  --depth: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 5vmin);
+}
+.forehead .cuboid__side {
+  background: var(--body-one);
+}
+.forehead .cuboid__side:nth-of-type(1) {
+  background: transparent;
+}
+.forehead .cuboid__side:nth-of-type(1):after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: calc(1 - (var(--wireframe) * 0.5));
+  -webkit-clip-path: polygon(0 0, 50% 0, 100% 80%, 100% 100%, 0 100%);
+  clip-path: polygon(0 0, 50% 0, 100% 80%, 100% 100%, 0 100%);
+  background: var(--body-five);
+}
+.forehead .cuboid__side:nth-of-type(2) {
+  background: transparent;
+}
+.forehead .cuboid__side:nth-of-type(2):after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  opacity: calc(1 - (var(--wireframe) * 0.5));
+  -webkit-clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 80%);
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 80%);
+  background: var(--body-one);
+}
+.forehead .cuboid__side:nth-of-type(4),
+.forehead .cuboid__side:nth-of-type(6) {
+  background: var(--body-three);
+  opacity: calc(1 - (var(--wireframe) * 0.5));
+}
+.forehead .cuboid__side:nth-of-type(5) {
+  background: transparent;
+}
+.forehead .cuboid__side:nth-of-type(5):after {
+  content: '';
+  background: var(--body-two);
+  opacity: calc(1 - (var(--wireframe) * 0.5));
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  -webkit-clip-path: inset(0 50% 0 0);
+  clip-path: inset(0 50% 0 0);
+}
+.forehead .cuboid__side:nth-of-type(3) {
+  background: transparent;
+}
+.forehead .cuboid__side:nth-of-type(3):after,
+.forehead .cuboid__side:nth-of-type(3):before {
+  content: '';
+  position: absolute;
+  width: 100%;
+}
+.forehead .cuboid__side:nth-of-type(3):before {
+  opacity: calc(1 - (var(--wireframe) * 0.5));
+  height: 12.8vmin;
+  background: linear-gradient(var(--body-detail), var(--body-detail) 30%, var(--body-four) 30%, var(--body-four)) 50% 25%/75% 13%;
+  background-position: 0 calc(var(--lid-open, 0) * -100% + 18%);
+  clip-path: inset(0% 0% calc(var(--lid-open, 0) * 91% + 15%) 0%);
+  transition: background-position 0.5s ease-in-out, clip-path 0.5s ease-in-out;
+  bottom: 20%;
+  transform-origin: 50% 100%;
+  transform: rotateX(calc(var(--rotate, 1) * 51.75deg));
+}
+.forehead .cuboid__side:nth-of-type(3):after {
+  opacity: calc(1 - (var(--wireframe) * 0.5));
+  height: 12.8vmin;
+  box-shadow: 0 0 0 0.5vmin var(--body-detail) inset;
+  border: 3vmin solid var(--body-four);
+  border-top-width: 2vmin;
+  border-bottom-width: 2vmin;
+  bottom: 20%;
+  transform-origin: 50% 100%;
+  transform: rotateX(calc(var(--rotate, 1) * 51.75deg));
+}
+.hat {
+  --width: 10;
+  --height: 3.3;
+  --depth: 20;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-100%, -50%, 11.600000000000001vmin);
+}
+.hat .cuboid__side {
+  background: var(--hat-one);
+}
+.hat .cuboid__side:nth-of-type(1) {
+  background: var(--hat-five);
+}
+.hat .cuboid__side:nth-of-type(2) {
+  background: var(--hat-one);
+}
+.hat .cuboid__side:nth-of-type(4),
+.hat .cuboid__side:nth-of-type(6) {
+  background: var(--hat-three);
+}
+.hat .cuboid__side:nth-of-type(5) {
+  background: var(--hat-two);
+}
+.hat .cuboid__side:nth-of-type(3) {
+  background: var(--hat-four);
+}
+.body {
+  --width: 20;
+  --height: 10;
+  --depth: 20;
+  --eye-y: 0%;
+  --eye-height: 10%;
+  --pupil-width: 20%;
+  --eye-look-x: 1;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, -5vmin);
+}
+.body .cuboid__side {
+  background: var(--body-one);
+}
+.body .cuboid__side:nth-of-type(1) {
+  background: var(--body-five);
+}
+.body .cuboid__side:nth-of-type(2) {
+  background: var(--body-one);
+}
+.body .cuboid__side:nth-of-type(4),
+.body .cuboid__side:nth-of-type(6) {
+  background: var(--body-three);
+}
+.body .cuboid__side:nth-of-type(5) {
+  background: var(--body-two);
+}
+.body .cuboid__side:nth-of-type(3) {
+  background: transparent;
+}
+.body .cuboid__side:nth-of-type(1)::after,
+.body .cuboid__side:nth-of-type(2)::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform: translateZ(0.1vmin);
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 15.875 15.875' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:hsl(30, 80%, 35%);stroke:none' d='m78.052 88.635-2.646-2.645 2.646-2.646v1.323h1.323V82.02h2.646v5.291h-3.969zm5.292-10.583-2.646 2.646-2.646-2.646h1.323V76.73h-2.646v-2.646h5.292v3.97zM72.76 72.76l2.646 2.646-2.646 2.646V76.73h-1.323v2.646h-2.645v-5.292h3.968zM67.47 83.344l2.646-2.646 2.645 2.646h-1.323v1.323h2.646v2.645h-5.291v-3.968z' transform='translate(-67.469 -72.76)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 9vmin;
+}
+.body .cuboid__side:nth-of-type(1)::after {
+  filter: brightness(40%);
+}
+.leg-plane {
+  position: absolute;
+  transform: translate3d(-5vmin, 0, -16vmin) rotateX(calc(var(--leg-rotate-x, 0) * 1deg)) rotateY(calc(var(--leg-rotate-y, 0) * 1deg)) translate3d(-40%, var(--left-right-translation), -20vmin) translate3d(5vmin, 0, 16vmin) rotateY(90deg) skew(0, var(--leg-skew-specific-to-this-leg, 0deg)) rotateY(-90deg);
+}
+.leg-plane.left {
+  --left-right-translation: -40%;
+  --leg-skew-specific-to-this-leg: calc(var(--leg-skew) * -1);
+  --leg-rotate-x: var(--left-leg-rotate-x);
+  --leg-rotate-y: var(--left-leg-rotate-y);
+}
+.leg-plane.right {
+  --left-right-translation: calc(10vmin - var(--leg-width) * 1vmin);
+  --leg-skew-specific-to-this-leg: var(--leg-skew);
+  --leg-rotate-x: var(--right-leg-rotate-x);
+  --leg-rotate-y: var(--right-leg-rotate-y);
+}
+.left .leg .cuboid__side:nth-of-type(2)::after,
+.right .leg .cuboid__side:nth-of-type(1)::after {
+  content: "";
+  position: absolute;
+  top: -4.5vmin;
+  width: 10vmin;
+  height: 15vmin;
+  transform: translateZ(0.2vmin);
+  background: radial-gradient(circle at 50% 30%, transparent 10%, var(--leg-detail) 10%, var(--leg-detail) 15%, transparent 15%, transparent 20%, var(--leg-detail) 20%, var(--leg-detail) 25%, transparent 25%), linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 70%/30% 5% no-repeat, linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 80%/30% 5% no-repeat, linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 90%/30% 5% no-repeat, linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 100%/30% 5% no-repeat, linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 95%/7% 48% no-repeat;
+}
+.left .leg .cuboid__side:nth-of-type(2)::after {
+  right: 0;
+}
+.right .leg .cuboid__side:nth-of-type(1)::after {
+  left: 0;
+  filter: brightness(30%);
+}
+.leg .cuboid__side,
+.foot .cuboid__side,
+.hip-socket .cuboid__side {
+  background: var(--legs-one);
+}
+.leg .cuboid__side:nth-of-type(1),
+.foot .cuboid__side:nth-of-type(1),
+.hip-socket .cuboid__side:nth-of-type(1) {
+  background: var(--legs-five);
+}
+.leg .cuboid__side:nth-of-type(2),
+.foot .cuboid__side:nth-of-type(2),
+.hip-socket .cuboid__side:nth-of-type(2) {
+  background: var(--legs-one);
+}
+.leg .cuboid__side:nth-of-type(4),
+.foot .cuboid__side:nth-of-type(4),
+.hip-socket .cuboid__side:nth-of-type(4),
+.leg .cuboid__side:nth-of-type(6),
+.foot .cuboid__side:nth-of-type(6),
+.hip-socket .cuboid__side:nth-of-type(6) {
+  background: var(--legs-three);
+}
+.leg .cuboid__side:nth-of-type(5),
+.foot .cuboid__side:nth-of-type(5),
+.hip-socket .cuboid__side:nth-of-type(5) {
+  background: var(--legs-two);
+}
+.leg .cuboid__side:nth-of-type(3),
+.foot .cuboid__side:nth-of-type(3),
+.hip-socket .cuboid__side:nth-of-type(3) {
+  background: var(--legs-four);
+}
+.hip-socket {
+  --width: 10;
+  --height: 2;
+  --depth: 20;
+  top: 10%;
+  left: 10%;
+  transform: translate3d(0, 0, -11vmin);
+}
+.leg {
+  --width: 8;
+  --height: 13;
+  --depth: var(--leg-width);
+  --z: -2.5;
+  top: 50%;
+  left: 50%;
+}
+.leg .cuboid__side:nth-of-type(3) {
+  clip-path: inset(30% 0% 0% 0%);
+}
+.leg .cuboid__side:nth-of-type(5) {
+  display: none;
+}
+.foot {
+  --width: 10;
+  --height: 2;
+  --depth: var(--leg-width);
+  top: 50%;
+  left: 50%;
+  transform: translate3d(0, 0, -9.2vmin);
+}
+.hip {
+  transform: translateY(calc(var(--leg-width) * 1vmin + 12.5vmin)) rotateX(90deg) translate3d(17.5vmin, 4vmin, 0);
+  --depth: var(--leg-width);
+}
+.hip .cylinder__side {
+  background: var(--legs-three);
+}
+.hip .cylinder__end {
+  background: var(--legs-five);
+}
+.hip .cylinder__end.top {
+  background: var(--legs-one);
+}
+
+.hip.cylinder .cylinder__side:not(:nth-last-child(-n+6)),.crotch.cylinder .cylinder__side:not(:nth-child(-n+9)) {
+  background: hsl(0, 0%, var(--lightness));
+  --lightness: calc(var(--angle) / 360 * 60% + 20%)
+}
+.crotch.cylinder .cylinder__side {
+  background: hsl(0, 0%, var(--lightness));
+  --lightness: calc((.1 - var(--angle) / 360) * 50% + 20%)
+}
+.crotch {
+  transform: translateY(calc(12.5vmin + var(--depth) * 1vmin / 2)) rotateX(90deg) translate3d(7.5vmin, -16vmin, 0);
+  --depth: calc(20 - var(--leg-width) * 2 + 0.5);
+}
+.crotch .cylinder__side {
+  background: var(--legs-three);
+}
+.crotch .cylinder__end {
+  background: var(--legs-five);
+}
+.crotch .cylinder__end.top {
+  background: var(--legs-one);
+}
+.face-decal {
+  transform: rotateY(90deg) translate3d(0, 0, 10vmin) rotateZ(-90deg);
+  border: calc(var(--wireframe) * 1vmin) solid rgba(0,102,153,0.75);
+  background: var(--body-four);
+  clip-path: inset(41% 10% 10% 10%);
+}
+.mouth {
+  position: absolute;
+  top: 60%;
+  left: 20%;
+  right: 20%;
+  height: 0.5vmin;
+  background: var(--body-detail);
+}
+.mouth::after,
+.mouth::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0.5vmin;
+  height: calc(var(--smile, 0) * 2vmin);
+  background: inherit;
+}
+.mouth::before {
+  left: 0;
+}
+.mouth::after {
+  right: 0;
+}
+.eye {
+  width: 5vmin;
+  height: 1vmin;
+  background: #fff;
+  position: absolute;
+  top: 45%;
+}
+.eye.right {
+  right: 20%;
+}
+.eye.left {
+  left: 20%;
+}
+.eye::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: calc(var(--eye-x, 0) * (5vmin - 2vmin));
+  width: 2vmin;
+  height: 1vmin;
+  background: #000;
+}
+.bin {
+  transform: translate3d(10vmin, -10vmin, -30vmin);
+}
+.bin .cylinder {
+  --depth: 27;
+}
+.bin .cylinder__side {
+  background-color: #00f;
+}
+.bin .cylinder__end {
+  background-color: #000080;
+}
+.bin .cylinder__end.top {
+  background: radial-gradient(circle at center, transparent 60%, #000080 60%);
+}
+.bin .thick-cylinder__outer .cylinder__side {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 15.875 15.875' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:white;stroke:none' d='m78.052 88.635-2.646-2.645 2.646-2.646v1.323h1.323V82.02h2.646v5.291h-3.969zm5.292-10.583-2.646 2.646-2.646-2.646h1.323V76.73h-2.646v-2.646h5.292v3.97zM72.76 72.76l2.646 2.646-2.646 2.646V76.73h-1.323v2.646h-2.645v-5.292h3.968zM67.47 83.344l2.646-2.646 2.645 2.646h-1.323v1.323h2.646v2.645h-5.291v-3.968z' transform='translate(-67.469 -72.76)'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: calc(var(--angle) / 360 * 800%) 50%;
+  background-size: 10vmin;
+}
+.bin .thick-cylinder__inner .cylinder__side {
+  background-color: #0000c8;
+}
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(15),
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(1),
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(7),
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(8) {
+  background-color: #0000dc;
+}
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(22),
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(6) {
+  background-color: #2d41ff;
+}
+.bin .thick-cylinder__inner .cylinder__side:nth-of-type(15),
+.bin .thick-cylinder__inner .cylinder__side:nth-of-type(23) {
+  background-color: #0000dc;
+}
+.papers {
+  transform: translate3d(10vmin, -10vmin, -30vmin);
+  transform-style: preserve-3d;
+}
+.papers .paper {
+  background: #fff;
+  width: 2vmin;
+  height: 3vmin;
+  position: absolute;
+}

@@ -1,0 +1,33 @@
+[info]
+title=Bridge Builder
+par=3
+hint=Put bricks under or over other bricks to build bridges. Try sticking the yellow bricks under the grey ones.
+
+
+
+[background]
+backdrop=bkg1
+decals=367;86;window,406;86;window,444;86;window,111;134;word_danger
+decals=56;191;safetystrip_vert,161;191;safetystrip_vert,251;191;safetystrip_vert
+decals=430;192;safetystrip_vert,336;335;door,335;274;sign_no_access
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_03,flag,BRICK_04,BRICK_02
+types=MINIFIG
+colors=GRAY,blue,YELLOW
+parts=1;22;3;1;0;0;,9;22;3;1;0;0;,17;22;3;1;0;0;,28;22;3;1;0;0;
+parts=25;22;4;1;0;0;,28;11;3;1;0;0;,32;10;5;2;0;0;,7;21;3;3;0;0;
+parts=1;21;6;3;0;0;,15;21;6;3;0;0;,32;21;6;3;0;0;,5;21;7;3;0;0;
+parts=19;21;7;3;0;0;,29;21;4;3;0;0;,1;11;6;1;0;0;,10;11;3;1;0;0;
+parts=13;10;5;2;0;0;,21;21;3;3;0;0;,2;10;8;2;WALK_R;1;,3;12;4;3;0;0;0
+
+
+
+

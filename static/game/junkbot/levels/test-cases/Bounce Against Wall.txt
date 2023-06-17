@@ -1,0 +1,20 @@
+[info]
+title=Bounce Against Wall (1)
+par=0
+hint=
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg5
+decals=425;283;safetystrip_horiz,454;283;safetystrip_horiz,439;260;word_danger,96;310;arrowr,45;309;sign_skull,305;95;window,341;95;window
+bgdecals=
+
+[partslist]
+types=brick_08,flag,haz_slickjump,minifig,brick_02
+colors=white,red,green,blue,yellow,gray
+parts=9;16;1;6;;1;,9;15;2;2;;1;,17;16;3;2;dormant;1;,17;10;4;2;walk_r;1;,19;16;5;6;;1;,19;15;5;6;;1;,19;14;5;6;;1;,19;13;5;6;;1;,19;12;5;6;;1;
+

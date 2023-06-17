@@ -1,0 +1,20 @@
+[info]
+title=Custom Level
+par=0
+hint=Give a clue here.
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=minifig,flag,brick_06
+colors=white,red,green,blue,yellow,gray
+parts=15;12;1;2;walk_r;1;,19;12;2;2;;1;,15;13;3;6;;1;
+

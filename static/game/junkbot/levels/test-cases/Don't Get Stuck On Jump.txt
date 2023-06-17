@@ -1,0 +1,20 @@
+[info]
+title=Don't Get Stuck On Jump
+par=0
+hint=
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=brick_02,brick_04,flag,minifig,haz_slickjump
+colors=white,red,green,blue,yellow,gray
+parts=8;16;1;6;;1;,11;17;2;6;;1;,7;15;1;6;;1;,7;14;1;6;;1;,8;13;1;6;;1;,12;16;3;2;;1;,11;12;1;6;;1;,15;17;2;6;;1;,13;12;2;6;;1;,17;16;4;2;walk_r;1;,19;17;2;6;;1;,17;12;2;6;;1;,23;17;5;2;dormant;1;,21;12;2;6;;1;,26;16;1;6;;1;,27;15;1;6;;1;,27;14;1;6;;1;,26;13;1;6;;1;
+

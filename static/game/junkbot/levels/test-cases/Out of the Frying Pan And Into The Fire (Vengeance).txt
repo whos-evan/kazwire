@@ -1,0 +1,20 @@
+[info]
+title=Out of the Frying Pan And Into The Fire (With Justice)
+par=2
+hint=Justice is served (and also eggs)
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=haz_slickfire,brick_02,flag,brick_04,brick_08,haz_climber,haz_slickcrate,brick_01,minifig,brick_06,brick_03
+colors=white,red,green,blue,yellow,gray
+parts=6;20;1;2;on;1;switch1,14;20;1;2;on;1;switch1,4;18;2;6;;1;,4;17;3;2;;1;,16;18;4;6;;1;,15;17;2;6;;1;,14;16;2;6;;1;,1;3;5;6;;1;,1;2;6;2;walk_r;1;,14;15;7;2;norm;1;,22;20;1;2;on;1;switch1,30;20;1;2;on;1;switch1,17;17;8;1;;1;,20;18;4;6;;1;,15;13;9;2;walk_l;1;,18;17;4;1;;1;,18;16;2;5;;1;,20;16;9;2;walk_r;1;,23;17;2;6;;1;,24;16;10;6;;1;,9;3;5;6;;1;,27;6;11;6;;1;,30;6;2;6;;1;,17;3;5;6;;1;,25;3;11;6;;1;,30;5;2;6;;1;,30;4;2;6;;1;,30;3;10;6;;1;
+

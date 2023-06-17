@@ -1,0 +1,20 @@
+[info]
+title=Jump Stair Case
+par=0
+hint=Based on "The Think Tank"
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg5
+decals=425;283;safetystrip_horiz,454;283;safetystrip_horiz,439;260;word_danger,96;310;arrowr,45;309;sign_skull,305;95;window,341;95;window,378;95;window
+bgdecals=
+
+[partslist]
+types=brick_03,minifig,brick_04,haz_slickjump,flag
+colors=white,red,green,blue,yellow,gray
+parts=1;21;1;6;;1;,1;20;2;2;walk_r;1;,4;21;3;6;;1;,8;21;4;2;dormant;1;,12;19;4;2;dormant;1;,16;17;4;2;dormant;1;,20;15;4;2;dormant;1;,24;13;3;6;;1;,26;12;5;2;;1;
+

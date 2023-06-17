@@ -1,0 +1,20 @@
+[info]
+title=Trash Fire Fall
+par=0
+hint=Junkbot should only animate death once!
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=haz_slickfire,flag,minifig
+colors=white,red,green,blue,yellow,gray
+parts=3;17;1;2;on;1;switch1,3;16;2;2;;1;,5;11;3;2;walk_r;1;
+

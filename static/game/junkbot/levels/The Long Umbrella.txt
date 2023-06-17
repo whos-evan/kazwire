@@ -1,0 +1,30 @@
+﻿[info]
+title=The Long Umbrella
+par=8
+hint=Make a stack of bricks behind the trashcan. Then build a roof that extends underneath the leaky pipes.
+
+
+[background]
+backdrop=bkg1
+decals=204;313;sign_acid,235;313;sign_voltage,42;207;door,33;160;fusebox_pipes_l
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,flag,BRICK_04,MINIFIG,HAZ_SLICKPIPE
+colors=GRAY,blue,green,WHITE
+parts=17;20;3;1;0;0;,25;20;3;1;0;0;,28;19;4;3;0;0;,8;21;5;4;0;0;
+parts=17;21;5;4;0;0;,21;21;5;4;0;0;,25;21;5;4;0;0;,29;21;5;4;0;0;
+parts=6;19;5;2;0;0;,5;18;5;2;0;0;,4;17;5;2;0;0;,3;16;5;2;0;0;
+parts=2;15;5;2;0;0;,1;14;5;2;0;0;,7;20;5;1;0;0;,2;13;6;1;WALK_R;1;
+parts=15;7;7;2;DRY;1;,19;7;7;2;DRY;1;,23;7;7;2;DRY;1;,27;7;7;2;DRY;1;
+parts=31;7;7;2;DRY;1;
+
+
+
+

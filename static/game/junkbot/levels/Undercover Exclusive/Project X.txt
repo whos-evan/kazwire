@@ -1,0 +1,30 @@
+[info]
+title=Project X
+par=20
+hint=Build a two-brick wide staircase on the left for Junkbot, removing bricks as Junkbot descends.
+
+
+[background]
+backdrop=bkg4
+decals=117;119;door
+bgdecals=
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,MINIFIG,BRICK_08,BRICK_03,flag,HAZ_FLOAT
+types=BRICK_02,BRICK_04,HAZ_CLIMBER
+colors=GRAY,blue,red
+parts=6;8;3;1;WALK_R;1;0,1;22;4;1;0;0;0,28;22;4;1;0;0;0,9;22;4;1;0;0;0
+parts=20;22;4;1;0;0;0,17;22;5;1;0;0;0,32;21;6;1;None;0;0,31;7;7;3;inactive;1;0
+parts=4;3;4;3;0;0;0,10;4;8;3;0;0;0,10;5;8;3;0;0;0,10;6;8;3;0;0;0
+parts=10;7;8;3;0;0;0,8;10;9;3;0;0;0,4;10;9;3;0;0;0,6;9;9;1;0;0;0
+parts=4;9;8;3;0;0;0,4;8;8;3;0;0;0,4;6;8;3;0;0;0,4;7;8;3;0;0;0
+parts=4;5;8;3;0;0;0,4;4;8;3;0;0;0,10;8;8;3;0;0;0,10;9;8;3;0;0;0
+parts=23;21;10;1;WALK_R;1;0
+

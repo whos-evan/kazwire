@@ -1,0 +1,20 @@
+[info]
+title=Don't Walk Over Gearbot
+par=0
+hint=don't tread on me i have teeths
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=brick_06,brick_02,brick_08,flag,minifig,haz_walker,haz_slickfire
+colors=white,red,green,blue,yellow,gray
+parts=18;16;1;6;;1;,18;15;2;6;;1;,12;14;3;6;;1;,12;13;4;2;;1;,16;13;5;2;walk_r;1;,20;15;6;2;walk_r;1;,22;15;2;6;;1;,22;14;2;6;;1;,24;14;7;2;on;1;switch1
+

@@ -1,0 +1,32 @@
+[info]
+title=Hot Air
+par=8
+hint=Start building from the center brick to reach both sides.
+
+
+[background]
+backdrop=bkg4
+decals=363;341;arrowu,153;339;arrowu,98;347;sign_fire,211;347;sign_fire
+decals=305;347;sign_fire,423;347;sign_fire,442;78;computer2dial
+decals=112;78;computer_matrix,277;114;terminal_circuit
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,HAZ_SLICKFIRE,HAZ_SLICKFAN,BRICK_02,flag
+types=BRICK_04,BRICK_03,BRICK_01,BRICK_06,BRICK_08,MINIFIG
+colors=GRAY,blue,green
+parts=5;22;3;1;on;1;,9;22;4;1;on;1;,13;22;3;1;on;1;,17;22;5;1;0;0;
+parts=19;22;3;1;on;1;,23;22;4;1;on;1;,27;22;3;1;on;1;,33;21;6;2;0;0;
+parts=1;22;7;1;0;0;,31;22;8;1;0;0;,34;22;5;1;0;0;,4;21;9;3;0;0;
+parts=4;20;9;3;0;0;,5;9;10;1;0;0;,16;9;10;1;0;0;,27;9;10;1;0;0;
+parts=15;8;11;3;0;0;,6;8;7;3;0;0;,6;7;7;3;0;0;,6;6;7;3;0;0;,28;8;5;3;0;0;
+parts=30;8;5;3;0;0;,30;7;5;3;0;0;,28;7;5;3;0;0;,28;6;5;3;0;0;
+parts=30;6;5;3;0;0;,1;21;12;3;WALK_R;1;
+
+

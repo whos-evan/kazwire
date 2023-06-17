@@ -1,0 +1,33 @@
+﻿[info]
+title=Portable Boost
+par=5
+hint=The yellow jump brick can be moved. Use it to get Junkbot from platform to platform.
+
+
+[background]
+backdrop=bkg2
+decals=109;304;arrowur,103;232;arrowul,111;152;arrowur,429;119;arrowrd
+decals=408;78;word_danger
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_01,BRICK_04,flag,MINIFIG
+types=BRICK_02,BRICK_SLICKJUMP
+colors=GRAY,blue
+parts=1;22;3;1;0;0;0,10;22;3;1;0;0;0,9;22;4;1;0;0;0,18;22;4;1;0;0;0
+parts=32;22;5;1;0;0;0,33;21;6;2;0;0;0,19;22;5;1;0;0;0,31;22;4;1;0;0;0
+parts=9;18;4;1;0;0;0,11;18;4;1;0;0;0,13;18;4;1;0;0;0,27;22;5;1;0;0;0
+parts=5;14;4;1;0;0;0,3;14;4;1;0;0;0,1;14;4;1;0;0;0,9;10;4;1;0;0;0
+parts=11;10;4;1;0;0;0,13;10;4;1;0;0;0,19;9;5;1;0;0;0,23;9;5;1;0;0;0
+parts=3;21;7;2;WALK_R;1;0,23;22;5;1;0;0;0,22;10;8;1;0;0;0,22;11;8;1;0;0;0
+parts=22;12;8;1;0;0;0,22;13;8;1;0;0;0,22;14;8;1;0;0;0,22;15;8;1;0;0;0
+parts=22;16;8;1;0;0;0,22;17;8;1;0;0;0,22;18;8;1;0;0;0,22;19;8;1;0;0;0
+parts=22;20;8;1;0;0;0,22;21;8;1;0;0;0,16;21;9;2;dormant;1;0
+
+

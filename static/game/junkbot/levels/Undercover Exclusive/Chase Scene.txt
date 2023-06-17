@@ -1,0 +1,37 @@
+[info]
+title=Chase Scene
+par=13
+hint=Quickly block the eyebot on the second level.
+
+
+[background]
+backdrop=bkg2
+decals=289;284;arrowu,445;373;arrowu,473;179;arrowu,94;76;A1_vent
+bgdecals=
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_04,BRICK_03,MINIFIG,BRICK_06
+types=HAZ_SLICKTELEPORT,HAZ_FLOAT,BRICK_01,BRICK_02,flag
+colors=GRAY,blue,red
+parts=1;22;3;1;0;0;0,9;22;3;1;0;0;0,32;22;4;1;0;0;0,17;22;5;1;0;0;0
+parts=20;22;3;1;0;0;0,19;21;6;1;WALK_R;1;0,28;17;3;1;0;0;0,22;17;7;1;0;0;0
+parts=1;12;3;1;0;0;0,9;12;3;1;0;0;0,28;12;3;1;0;0;0,20;12;3;1;0;0;0
+parts=17;12;5;1;0;0;0,28;22;8;1;on;1;tele1,2;20;9;1;inactive;1;0
+parts=33;15;9;1;inactive;1;0,18;17;8;1;on;1;tele2,12;17;7;1;0;0;0
+parts=9;17;5;1;0;0;0,1;17;10;1;0;0;0,2;17;8;1;on;1;tele1,6;17;5;1;0;0;0
+parts=1;1;3;1;0;0;0,9;1;3;1;0;0;0,28;1;3;1;0;0;0,20;1;3;1;0;0;0
+parts=17;1;5;1;0;0;0,33;4;9;1;inactive;1;0,1;6;3;1;0;0;0,9;6;3;1;0;0;0
+parts=28;6;3;1;0;0;0,26;6;11;1;0;0;0,17;6;4;1;0;0;0,21;6;10;1;0;0;0
+parts=3;11;8;1;on;1;tele2,34;11;11;1;0;0;0,1;11;11;1;0;0;0,7;11;3;1;0;0;0
+parts=22;11;3;1;0;0;0,15;11;5;1;0;0;0,19;11;5;1;0;0;0,18;11;10;1;0;0;0
+parts=2;5;11;3;0;0;0,2;4;11;3;0;0;0,6;5;12;1;None;0;0,10;5;11;3;0;0;0
+parts=10;4;11;3;0;0;0,22;6;8;1;on;1;tele3,30;11;8;1;on;1;tele3
+
+

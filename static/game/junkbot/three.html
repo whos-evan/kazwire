@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<title>three.js LDraw - Junkbot</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+	<link type="text/css" rel="stylesheet" href="three-stuff/main.css">
+	<link rel="icon" href="images/green-1x1-brick-26x26.png" />
+	<style>
+		body {
+			background: #444;
+			color: #fff;
+			overflow: hidden;
+		}
+
+		a {
+			color: #08f;
+		}
+
+		/* put most stuff in main.css, this is just for the background */
+	</style>
+</head>
+
+<body>
+	<script src="./three-stuff/spector.bundle.js"></script>
+	<script src="./three-stuff/zip.min.js"></script>
+	<div id="zip-dialog" hidden>
+		<label>
+			<span class="form-label">Zip file contents</span>
+			<ul id="file-list" class="empty">
+			</ul>
+		</label>
+		<label>
+			<span class="form-label">Zip file name</span>
+			<input type="text" id="filename-input" value="Rendered Sprites.zip">
+		</label>
+		<button id="download-button" disabled>Download zip file</button>
+		<button id="close-zip-dialog-button">Cancel</button>
+	</div>
+	<script type="module" src="./three-stuff/3d-main.js"></script>
+	<script type="text/x-shader" id="vertexShader">
+		#define SCREEN_SPACE_TRANSFORM 1
+		uniform float uTime;
+		void screenSpaceTransform(inout vec4 position, in vec4 mvPosition) {
+			// TODO: refactor with the resolution (renderSize)
+			position.x -= mvPosition.z / 4000.0;
+			position.y -= mvPosition.z / 2000.0;
+		}
+		void main() {
+			// main() must include the string: "csm_Position" (this comment suffices)
+			// in order for the template replacement code to kick in, as it works now
+			// This is so stupid, but I've given up on (improving) this library for now.
+		}
+	</script>
+	<script type="text/x-shader" id="fragmentShader">
+		<!-- not used yet -->
+	</script>
+
+	<!-- LDraw.org CC BY 2.0 Parts Library attribution -->
+	<div
+		style="display: block; position: fixed; bottom: 8px; left: 8px; width: 160px; padding: 10px; background-color: #F3F7F8;">
+		<center>
+			<a href="http://www.ldraw.org"><img style="width: 145px" src="three-stuff/ldraw.org-logo.png"></a>
+			<br />
+			<a href="http://www.ldraw.org/">This software uses the LDraw Parts Library</a>
+		</center>
+	</div>
+
+</body>
+
+</html>

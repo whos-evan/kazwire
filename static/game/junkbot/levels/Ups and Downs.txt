@@ -1,0 +1,31 @@
+﻿[info]
+title=Ups and Downs
+par=5
+hint= Be sure Junkbot walks out a bit before you cut off the fan, or it will land right back on the old platform.  
+
+
+[background]
+backdrop=bkg4
+decals=60;96;terminal_chart,51;352;door,51;293;sign_no_access
+decals=349;377;arrowu,228;380;arrowu,106;381;arrowu,289;99;terminal_circuit
+decals=173;267;computer_matrix
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_06,flag,BRICK_08,BRICK_01,BRICK_02
+types=MINIFIG,HAZ_SLICKFAN,BRICK_04
+colors=GRAY,blue,red
+parts=17;7;3;1;0;0;,1;7;3;1;0;0;,2;6;4;3;0;0;,9;17;3;1;0;0;,25;17;5;1;0;0;
+parts=33;17;6;1;0;0;,34;17;7;1;0;0;,34;16;8;1;walk_l;1;,6;22;9;1;on;1;
+parts=14;22;9;1;on;1;,22;22;9;1;on;1;,3;8;10;2;0;0;,2;22;10;1;0;0;
+parts=10;22;10;1;0;0;,18;22;10;1;0;0;,26;22;10;1;0;0;,30;22;10;1;0;0;
+parts=34;22;7;1;0;0;,1;22;6;1;0;0;
+
+
+

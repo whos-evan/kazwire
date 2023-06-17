@@ -1,0 +1,626 @@
+.scene *
+.scene *:after
+.scene *:before
+  box-sizing border-box
+  transform-style preserve-3d
+
+:root
+  --perspective 1200
+  --rotate-x -31
+  --rotate-y -119
+  --body-one hsl(30, 100%, 59%)
+  --body-two hsl(30, 80%, 55%)
+  --body-three hsl(30, 80%, 45%)
+  --body-four hsl(30, 100%, 55%)
+  --body-five hsl(30, 80%, 25%)
+  --body-detail hsl(30, 80%, 35%) // duplicated (WET) in recycling symbol (side note: recycling symbol is sometimes depicted as green)
+  --hat-one hsl(45, 80%, 75%)
+  --hat-two hsl(54, 80%, 55%)
+  --hat-three hsl(45, 80%, 45%)
+  --hat-four hsl(45, 80%, 35%)
+  --hat-five hsl(45, 80%, 25%)
+  --legs-one hsl(0, 0%, 75%)
+  --legs-two hsl(0, 0%, 55%)
+  --legs-three hsl(0, 0%, 45%)
+  --legs-four hsl(0, 0%, 35%)
+  --legs-five hsl(0, 0%, 25%)
+  --leg-detail gray
+  --leg-width 9.5
+  --wireframe 0
+
+body
+  min-height 100vh
+  // overflow hidden
+  background hsl(0, 0%, 20%)
+  color: white
+  overflow hidden
+
+a
+  color orange
+
+.scene
+  perspective calc(var(--perspective, 800) * 1px)
+  transform-style preserve-3d
+  height 100vh
+  width 100vw
+  display flex
+  align-items center
+  justify-content center
+  transform scale(var(--zoom, 1))
+
+.plane
+  position: absolute
+  height calc(var(--plane-height, 25) * 1vmin)
+  width calc(var(--plane-width, 25) * 1vmin)
+  transform-style preserve-3d
+
+.scene > .plane
+  transform rotateX(calc(var(--rotate-x, -24) * 1deg)) rotateY(calc(var(--rotate-y, -24) * 1deg)) rotateX(90deg) translate3d(0, 0, 0)
+
+
+.cuboid
+  --width var(--cuboid-width, 15)
+  --height var(--cuboid-height, 10)
+  --depth var(--cuboid-depth, 4)
+  height calc(var(--depth) * 1vmin)
+  width calc(var(--width) * 1vmin)
+  position absolute
+  transform translate3d(calc(var(--x, 0) * 1vmin), calc(var(--y, 0) * 1vmin), calc(var(--z, 0) * 1vmin)) rotateX(calc(var(--rotate-cuboid-x, 0) * 1deg)) rotateY(calc(var(--rotate-cuboid-y, 0) * 1deg)) rotateZ(calc(var(--rotate-cuboid-z, 0) * 1deg))
+  transform-style preserve-3d
+
+  &__side
+    transform-style preserve-3d
+    border calc(var(--wireframe) * 1vmin) solid hsla(0, 40%, 50%, 0.75)
+
+  & > .cuboid__side:nth-of-type(1)
+    height calc(var(--height) * 1vmin)
+    width 100%
+    transform-origin 50% 50%
+    transform rotateX(-90deg)
+    position absolute
+    top 50%
+    left 50%
+    transform translate(-50%, -50%) rotateX(-90deg) translate3d(0, 0, calc((var(--depth) / 2) * 1vmin))
+
+  & > .cuboid__side:nth-of-type(2)
+    height calc(var(--height) * 1vmin)
+    width 100%
+    transform-origin 50% 50%
+    transform translate(-50%, -50%) rotateX(-90deg) rotateY(180deg) translate3d(0, 0, calc((var(--depth) / 2) * 1vmin))
+    position absolute
+    top 50%
+    left 50%
+
+  & > .cuboid__side:nth-of-type(3)
+    height calc(var(--height) * 1vmin)
+    width calc(var(--depth) * 1vmin)
+    transform translate(-50%, -50%) rotateX(-90deg) rotateY(90deg) translate3d(0, 0, calc((var(--width) / 2) * 1vmin))
+    position absolute
+    top 50%
+    left 50%
+
+  & > .cuboid__side:nth-of-type(4)
+    height calc(var(--height) * 1vmin)
+    width calc(var(--depth) * 1vmin)
+    transform translate(-50%, -50%) rotateX(-90deg) rotateY(-90deg) translate3d(0, 0, calc((var(--width) / 2) * 1vmin))
+    position absolute
+    top 50%
+    left 50%
+
+  & > .cuboid__side:nth-of-type(5)
+    height calc(var(--depth) * 1vmin)
+    width calc(var(--width) * 1vmin)
+    transform translate(-50%, -50%) translate3d(0, 0, calc((var(--height) / 2) * 1vmin))
+    position absolute
+    top 50%
+    left 50%
+
+  & > .cuboid__side:nth-of-type(6)
+    height calc(var(--depth) * 1vmin)
+    width calc(var(--width) * 1vmin)
+    transform translate(-50%, -50%) translate3d(0, 0, calc((var(--height) / 2) * -1vmin)) rotateX(180deg)
+    position absolute
+    top 50%
+    left 50%
+
+.cylinder
+  // --radius is specified as an inline style
+  --depth var(--cylinder-depth, 4)
+  // height calc(var(--depth) * 1vmin)
+  width calc(var(--radius) * 2 * 1vmin)
+  height calc(var(--radius) * 2 * 1vmin)
+  position absolute
+  top calc(var(--radius) * -1vmin)
+  left calc(var(--radius) * -1vmin)
+  transform translate3d(calc(var(--x, 0) * 1vmin), calc(var(--y, 0) * 1vmin), calc(var(--z, 0) * 1vmin)) rotateX(calc(var(--rotate-cylinder-x, 0) * 1deg)) rotateY(calc(var(--rotate-cylinder-y, 0) * 1deg)) rotateZ(calc(var(--rotate-cylinder-z, 0) * 1deg))
+  transform-style preserve-3d
+  // background: rgba(255,255,0,0.5)
+
+  &__side
+    // --angle, --side-length, and --angle-per-side are specified as inline styles
+    transform-style preserve-3d
+    border calc(var(--wireframe) * 1vmin) solid hsla(0, 40%, 50%, 0.75)
+    height calc(var(--depth) * 1vmin)
+    width calc(var(--side-length) * 1vmin)
+    transform-origin -50% 0
+    transform rotateX(90deg) translateX(calc(var(--side-length) * .5vmin)) rotateY(calc(var(--angle) * 1deg)) translateZ(calc(var(--radius) * 1vmin)) rotateY(calc(var(--angle-per-side) * 1deg))
+    position absolute
+    top 50%
+    left 50%
+    background: red
+  
+  &__end
+    transform-style preserve-3d
+    background lime
+    // border 1vmin solid green
+    position: absolute
+    // transform-origin 0 50%
+    top 0//calc(var(--depth) * 1vmin)
+    left 0//calc(var(--radius) * 1vmin)
+    width calc(var(--radius) * 2 * 1vmin)
+    height calc(var(--radius) * 2 * 1vmin)
+    border-radius 50%
+    
+    // transform translate(-50%, -50%) rotateX(-90deg) translate3d(0, 0, calc((var(--width) / 2) * 1vmin))
+    // transform translate(-50%, -50%) rotateX(90deg)
+    // &.bottom
+    //   transform translate(-50%, -50%) rotateX(90deg) translateZ(calc(var(--depth) * -1vmin))
+    &.top
+      transform translateZ(calc(var(--depth) * 1vmin))
+ 
+.forehead
+  --width 20
+  --height 10
+  --depth 20
+
+  top 50%
+  left 50%
+  transform translate3d(-50%, -50%, 5vmin)
+
+  // shadow:
+  // &:after
+  //   content ''
+  //   position absolute
+  //   top 0
+  //   left 0
+  //   width 100%
+  //   height 150%
+  //   background linear-gradient(hsla(0, 0%, 0%, 0.25) 50%, transparent)
+  //   // filter blur(10px)
+  //   transform translate3d(0, 0, -5vmin)
+  //   $clip = polygon(0 0, 0 100%, 50% 100%, 100% 66%, 100% 0)
+  //   -webkit-clip-path $clip
+  //   clip-path $clip
+
+
+  .cuboid__side
+    background var(--body-one)
+
+    &:nth-of-type(1)
+      background transparent
+      &:after
+        content ''
+        position absolute
+        left 0
+        top 0
+        height 100%
+        width 100%
+        opacity calc(1 - (var(--wireframe) * 0.5))
+        $clip = polygon(0 0, 50% 0, 100% 80%, 100% 100%, 0 100%)
+        -webkit-clip-path $clip
+        clip-path $clip
+        background var(--body-five)
+
+    &:nth-of-type(2)
+      background transparent
+      &:after
+        content ''
+        position absolute
+        left 0
+        top 0
+        height 100%
+        width 100%
+        opacity calc(1 - (var(--wireframe) * 0.5))
+        $clip = polygon(50% 0, 100% 0, 100% 100%, 0 100%, 0 80%)
+        -webkit-clip-path $clip
+        clip-path $clip
+        background var(--body-one)
+
+    &:nth-of-type(4)
+    &:nth-of-type(6)
+      background var(--body-three)
+      opacity calc(1 - (var(--wireframe) * 0.5))
+
+    &:nth-of-type(5)
+      background transparent
+      &:after
+        content ''
+        background var(--body-two)
+        opacity calc(1 - (var(--wireframe) * 0.5))
+        position absolute
+        left 0
+        top 0
+        height 100%
+        width 100%
+        $clip = inset(0 50% 0 0)
+        -webkit-clip-path $clip
+        clip-path $clip
+
+    &:nth-of-type(3)
+      background transparent
+
+      &:after
+      &:before
+        content ''
+        position absolute
+        width 100%
+
+      // the lid (sliding panel)
+      &:before
+        opacity calc(1 - (var(--wireframe) * 0.5))
+        height 12.8vmin
+        background linear-gradient(var(--body-detail), var(--body-detail) 30%, var(--body-four) 30%, var(--body-four)) 50% 25% / 75% 13%
+        background-position 0 calc(var(--lid-open, 0)*-100%+18%)
+        clip-path inset(0% 0% calc(var(--lid-open, 0)*91%+15%) 0%)
+        transition background-position .5s ease-in-out, clip-path .5s ease-in-out
+        bottom 20%
+        transform-origin 50% 100%
+        transform rotateX(calc(var(--rotate, 1) * 51.75deg))
+
+      // the forehead around the lid
+      &:after
+        opacity calc(1 - (var(--wireframe) * 0.5))
+        height 12.8vmin
+        // box-shadow 0 0 0 2vmin var(--body-four) inset, 0 0 0 2.5vmin var(--body-detail) inset // wouldn't allow separate x/y inset easily
+        box-shadow 0 0 0 .5vmin var(--body-detail) inset
+        border 3vmin solid var(--body-four)
+        border-top-width 2vmin
+        border-bottom-width 2vmin
+        bottom 20%
+        transform-origin 50% 100%
+        transform rotateX(calc(var(--rotate, 1) * 51.75deg))
+        
+//       &:before
+//         height 20%
+//         background var(--body-four)
+//         bottom 0
+//         opacity calc(1 - (var(--wireframe) * 0.5))
+
+//       &:after
+//         opacity calc(1 - (var(--wireframe) * 0.5))
+//         height 12.8vmin
+//         background linear-gradient(var(--body-detail), var(--body-detail)) 50% 25% / 75% 5% no-repeat,
+//                   linear-gradient(var(--body-detail), var(--body-detail)) 50% 38% / 75% 5% no-repeat,
+//                   linear-gradient(var(--body-detail), var(--body-detail)) 50% 51% / 75% 5% no-repeat,
+//                   linear-gradient(var(--body-detail), var(--body-detail)) 50% 64% / 75% 5% no-repeat,
+//                   linear-gradient(var(--body-detail), var(--body-detail)) 50% 77% / 75% 5% no-repeat,
+//                   linear-gradient(var(--body-four), var(--body-four)) 50% center / 70% 70% no-repeat,
+//                   linear-gradient(var(--body-detail), var(--body-detail)) center center / 75% 78% no-repeat,
+//                   var(--body-four)
+//         bottom 20%
+//         transform-origin 50% 100%
+//         transform rotateX(calc(var(--rotate, 1) * 51.75deg))
+
+
+        
+.hat
+  --width 10
+  --height 3.3
+  --depth 20
+
+  top 50%
+  left 50%
+  transform translate3d(-100%, -50%, 5vmin +132%)
+
+  .cuboid__side
+    background var(--hat-one)
+
+    &:nth-of-type(1)
+      background var(--hat-five)
+    &:nth-of-type(2)
+      background var(--hat-one)
+    &:nth-of-type(4)
+    &:nth-of-type(6)
+      background var(--hat-three)
+    &:nth-of-type(5)
+      background var(--hat-two)
+    &:nth-of-type(3)
+      background var(--hat-four)
+
+        
+.body
+  --width 20
+  --height 10
+  --depth 20
+  
+  --eye-y 0%
+  --eye-height 10%
+  --pupil-width 20%
+  --eye-look-x 1
+
+  top 50%
+  left 50%
+  transform translate3d(-50%, -50%, 5vmin - 200%)
+
+  .cuboid__side
+    background var(--body-one)
+
+    &:nth-of-type(1)
+      background var(--body-five)
+    &:nth-of-type(2)
+      background var(--body-one)
+    &:nth-of-type(4)
+    &:nth-of-type(6)
+      background var(--body-three)
+    &:nth-of-type(5)
+      background var(--body-two)
+    &:nth-of-type(3)
+      // background var(--body-four)
+      // original face code (not flexible enough to (want to) animate like this):
+      // background linear-gradient(black, black) 90% var(--eye-y) / 12% var(--eye-height) no-repeat,
+      //            linear-gradient(black, black) 30% var(--eye-y) / 12% var(--eye-height) no-repeat,
+      //            linear-gradient(white, white) 85% var(--eye-y) / 22% var(--eye-height) no-repeat,
+      //            linear-gradient(white, white) 20% var(--eye-y) / 22% var(--eye-height) no-repeat,
+      //            linear-gradient(var(--body-detail), var(--body-detail)) 50% 50% / 60% 6% no-repeat,
+      //            linear-gradient(var(--body-detail), var(--body-detail)) 20% 44% / 3% 16% no-repeat,
+      //            linear-gradient(var(--body-detail), var(--body-detail)) 80% 44% / 3% 16% no-repeat,
+      //            var(--body-one)
+      background transparent // I ended up making the face decal solid, and so this avoids z-fighting without the decal needing to be outset
+
+    // recycling symbol decal
+    &:nth-of-type(1)
+    &:nth-of-type(2)
+      &::after
+        content: ""
+        position: absolute
+        width: 100%
+        height: 100%
+        transform translateZ(.1vmin)
+        background-image url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 15.875 15.875' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:hsl(30, 80%, 35%);stroke:none' d='m78.052 88.635-2.646-2.645 2.646-2.646v1.323h1.323V82.02h2.646v5.291h-3.969zm5.292-10.583-2.646 2.646-2.646-2.646h1.323V76.73h-2.646v-2.646h5.292v3.97zM72.76 72.76l2.646 2.646-2.646 2.646V76.73h-1.323v2.646h-2.645v-5.292h3.968zM67.47 83.344l2.646-2.646 2.645 2.646h-1.323v1.323h2.646v2.645h-5.291v-3.968z' transform='translate(-67.469 -72.76)'/%3E%3C/svg%3E")
+        background-repeat no-repeat
+        background-position center
+        background-size 9vmin
+    &:nth-of-type(1)::after
+      filter brightness(40%)
+.leg-plane
+  // background: red
+  position: absolute
+  // undoubtedly this could be simplified
+  
+  // transform translate3d(-5vmin, 0, -16vmin) // change axis for animation
+  //   rotateX(calc(var(--leg-rotate-x, 0) * 1deg))
+  //   rotateY(calc(var(--leg-rotate-y, 0) * 1deg))
+  //   translate3d(-40%, var(--left-right-translation), 5vmin - 500%)
+  //   translate3d(5vmin, 0, 16vmin) // restore from changing axis for animation 
+  //   // skew
+  //   // rotateY(90deg) skew(0, var(--leg-skew-specific-to-this-leg, 0deg)) rotateY(-90deg)
+  transform translate3d(-5vmin, 0, -16vmin) rotateX(calc(var(--leg-rotate-x, 0) * 1deg)) rotateY(calc(var(--leg-rotate-y, 0) * 1deg)) translate3d(-40%, var(--left-right-translation), 5vmin - 500%) translate3d(5vmin, 0, 16vmin) rotateY(90deg) skew(0, var(--leg-skew-specific-to-this-leg, 0deg)) rotateY(-90deg)
+  
+  &.left
+    --left-right-translation -40%
+    --leg-skew-specific-to-this-leg calc(var(--leg-skew) * -1)
+    --leg-rotate-x var(--left-leg-rotate-x)
+    --leg-rotate-y var(--left-leg-rotate-y)
+  &.right
+    --left-right-translation calc(10vmin - var(--leg-width) * 1vmin)
+    --leg-skew-specific-to-this-leg var(--leg-skew)
+    --leg-rotate-x var(--right-leg-rotate-x)
+    --leg-rotate-y var(--right-leg-rotate-y)
+
+// leg decals
+.left .leg .cuboid__side:nth-of-type(2)::after
+.right .leg .cuboid__side:nth-of-type(1)::after
+  content: ""
+  position: absolute
+  top: -4.5vmin
+  width: 10vmin
+  height: 15vmin
+  transform translateZ(.2vmin)
+  background radial-gradient(circle at 50% 30%,transparent 10%,var(--leg-detail) 10%,var(--leg-detail) 15%,transparent 15%,transparent 20%,var(--leg-detail) 20%,var(--leg-detail) 25%,transparent 25%),
+                  linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 70% / 30% 5% no-repeat,
+                  linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 80% / 30% 5% no-repeat,
+                  linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 90% / 30% 5% no-repeat,
+                  linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 100% / 30% 5% no-repeat,
+                  linear-gradient(var(--leg-detail), var(--leg-detail)) 50% 95% / 7% 48% no-repeat
+
+.left .leg .cuboid__side:nth-of-type(2)::after
+  right: 0
+.right .leg .cuboid__side:nth-of-type(1)::after
+  left: 0
+  filter brightness(30%)
+
+.leg
+.foot
+.hip-socket
+  .cuboid__side
+    background var(--legs-one)
+
+    &:nth-of-type(1)
+      background var(--legs-five)
+    &:nth-of-type(2)
+      background var(--legs-one)
+    &:nth-of-type(4)
+    &:nth-of-type(6)
+      background var(--legs-three)
+    &:nth-of-type(5)
+      background var(--legs-two)
+    &:nth-of-type(3)
+      background var(--legs-four)
+ 
+// upper hips
+.hip-socket
+  --width 10
+  --height 2
+  --depth 20
+
+  top 10%
+  left 10%
+
+  transform translate3d(0, 0, -11vmin)
+
+.leg
+  --width 8
+  --height 13
+  --depth var(--leg-width)
+  --z -2.5
+
+  top 50%
+  left 50%
+  
+// just avoiding a bit of line showing through to the circular part
+.leg .cuboid__side:nth-of-type(3)
+  clip-path inset(30% 0% 0% 0%)
+.leg .cuboid__side:nth-of-type(5)
+  display none
+
+.foot
+  --width 10
+  --height 2
+  --depth var(--leg-width)
+
+  top 50%
+  left 50%
+
+  transform translate3d(0, 0, -9.2vmin)
+
+.hip
+  transform translateY(calc(var(--leg-width) * 1vmin + 12.5vmin)) rotateX(90deg) translate3d(17.5vmin, 4vmin, 0)
+  --depth var(--leg-width)
+  & .cylinder__side
+    background var(--legs-three)
+    // background hsl(0, 0, calc(var(--angle) * 10% - 50%))
+    // background hsl(var(--angle), 100%, 50%)
+  & .cylinder__end
+    background var(--legs-five)
+    // clip-path: polygon(0vmin 5vmin, 50vmin 5vmin, 50vmin 0vmin, 0vmin 0vmin)
+  & .cylinder__end.top
+    background var(--legs-one)
+
+// Stylus doesn't support calc() or var() inside hsl()
+@css {
+  .hip.cylinder .cylinder__side:not(:nth-last-child(-n+6)),
+  .crotch.cylinder .cylinder__side:not(:nth-child(-n+9)) {
+    background: hsl(0, 0%, var(--lightness));
+    --lightness: calc(var(--angle) / 360 * 60% + 20%)
+  }
+  .crotch.cylinder .cylinder__side {
+    background: hsl(0, 0%, var(--lightness));
+    --lightness: calc((.1 - var(--angle) / 360) * 50% + 20%)
+  }
+}
+
+.crotch
+  transform translateY(calc(12.5vmin + var(--depth) * 1vmin / 2)) rotateX(90deg) translate3d(7.5vmin, -16vmin, 0)
+  --depth calc(20 - var(--leg-width) * 2 + 0.5)
+  & .cylinder__side
+    background var(--legs-three)
+  & .cylinder__end
+    background var(--legs-five)
+    // clip-path: polygon(0vmin 5vmin, 50vmin 5vmin, 50vmin 0vmin, 0vmin 0vmin)
+  & .cylinder__end.top
+    background var(--legs-one)
+
+.face-decal
+  // transform rotateY(90deg) translate3d(0, 0, 10.3vmin) rotateZ(-90deg) // don't need to avoid z-fighting like this anymore; I hid the faces that would be behind this (well, actually I REPURPOSED one of them, which is why I changed to doing the face decal as a solid background; if I'd done it from the beginning I would've made sure the dimensions were right instead of doing a stupid inset clip-path)
+  transform rotateY(90deg) translate3d(0, 0, 10vmin) rotateZ(-90deg)
+  // background rgba(0,0,255,0.1)
+  // border 2px solid blue
+  border calc(var(--wireframe) * 1vmin) solid hsla(200, 100%, 30%, 0.75)
+  background var(--body-four)
+  clip-path inset(41% 10% 10% 10%)
+
+.mouth
+  position absolute
+  top 60%
+  left 20%
+  right 20%
+  height: .5vmin
+  background: var(--body-detail)
+  &::after
+  &::before
+    content: ""
+    position: absolute
+    bottom: 0
+    width: .5vmin
+    height: calc(var(--smile, 0) * 2vmin)
+    background: inherit
+  &::before
+    left: 0
+  &::after
+    right: 0
+
+.eye
+  width: 5vmin
+  height: 1vmin
+  background: white
+  position: absolute
+  top: 45%
+  &.right
+    right: 20%
+  &.left
+    left: 20%
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: calc(var(--eye-x, 0) * (5vmin - 2vmin))
+    width: 2vmin
+    height: 1vmin
+    background: black
+
+.bin
+  transform translate3d(10vmin, -10vmin, -30vmin)
+  .cylinder
+    --depth 27
+  .cylinder__side
+    background-color blue
+  .cylinder__end
+    background-color navy
+  .cylinder__end.top
+    background radial-gradient(circle at center, transparent 60%, navy 60%)
+
+.bin .thick-cylinder__outer .cylinder__side
+  background-image url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 15.875 15.875' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath style='fill:white;stroke:none' d='m78.052 88.635-2.646-2.645 2.646-2.646v1.323h1.323V82.02h2.646v5.291h-3.969zm5.292-10.583-2.646 2.646-2.646-2.646h1.323V76.73h-2.646v-2.646h5.292v3.97zM72.76 72.76l2.646 2.646-2.646 2.646V76.73h-1.323v2.646h-2.645v-5.292h3.968zM67.47 83.344l2.646-2.646 2.645 2.646h-1.323v1.323h2.646v2.645h-5.291v-3.968z' transform='translate(-67.469 -72.76)'/%3E%3C/svg%3E")
+  background-repeat no-repeat
+  background-position calc(var(--angle) / 360 * 800%) 50%
+  background-size 10vmin
+
+.bin .thick-cylinder__inner .cylinder__side
+  background-color rgb(0, 0, 200)
+
+// some highlights/shadows
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(15)
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(1)
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(7)
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(8)
+  background-color rgb(0, 0, 220)
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(22)
+.bin .thick-cylinder__outer .cylinder__side:nth-of-type(6)
+  background-color rgb(45, 65, 255)
+.bin .thick-cylinder__inner .cylinder__side:nth-of-type(15)
+.bin .thick-cylinder__inner .cylinder__side:nth-of-type(23)
+  background-color rgb(0, 0, 220)
+
+.papers
+  transform translate3d(10vmin, -10vmin, -30vmin)
+  transform-style preserve-3d
+  .paper
+    background white
+    width 2vmin
+    height 3vmin
+    position: absolute
+    
+  
+// .cylinder
+//   animation: rotateTest 2s linear infinite
+
+// @keyframes rotateTest {
+//   0% {
+//     // --rotate-cylinder-x 0
+//     transform rotateX(0)
+//   }
+//   100% {
+//     // --rotate-cylinder-x 360
+//     transform rotateX(1turn)
+//   }
+// }

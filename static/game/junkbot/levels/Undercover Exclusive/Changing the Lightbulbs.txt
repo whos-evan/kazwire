@@ -1,0 +1,36 @@
+[info]
+title=changing the lightbulbs
+par=23
+hint=Block the flybots to the right of the screen and then climb up the nearest ledge.
+
+
+[background]
+backdrop=bkg2
+decals=199;44;door,93;352;A1_vent
+bgdecals=
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,HAZ_DUMBFLOAT,BRICK_08,BRICK_03,BRICK_06
+types=BRICK_02,MINIFIG,BRICK_01,flag
+colors=GRAY,blue,green,white
+parts=3;8;3;1;L;1;0,8;5;3;1;L;1;0,16;19;3;1;L;1;0,29;15;3;1;L;1;0
+parts=4;2;3;1;L;1;0,31;4;3;1;L;1;0,1;22;4;1;0;0;0,9;22;4;1;0;0;0
+parts=28;22;4;1;0;0;0,20;22;4;1;0;0;0,17;22;5;1;0;0;0,11;5;6;1;0;0;0
+parts=14;15;5;1;0;0;0,30;18;5;1;0;0;0,2;21;7;3;0;0;0,2;20;7;3;0;0;0
+parts=2;19;7;3;0;0;0,2;18;7;3;0;0;0,24;12;3;1;L;1;0,9;21;7;3;0;0;0
+parts=9;20;7;3;0;0;0,9;19;7;3;0;0;0,9;18;7;3;0;0;0,5;21;8;3;WALK_R;1;0
+parts=9;17;7;3;0;0;0,27;9;5;1;0;0;0,18;10;5;1;0;0;0,22;5;3;1;L;1;0
+parts=2;10;5;1;0;0;0,13;13;3;1;L;1;0,18;11;5;4;0;0;0,14;16;5;4;0;0;0
+parts=2;11;5;4;0;0;0,30;19;5;4;0;0;0,12;6;9;1;0;0;0,15;6;9;1;0;0;0
+parts=15;4;10;1;None;0;0,2;17;7;3;0;0;0,2;16;7;3;0;0;0,9;16;7;3;0;0;0
+parts=27;10;5;4;0;0;0,3;15;7;3;0;0;0,8;15;7;3;0;0;0,7;16;7;3;0;0;0
+parts=4;16;7;3;0;0;0
+
+

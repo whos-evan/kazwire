@@ -1,0 +1,20 @@
+[info]
+title=Don't Step Down Onto Climbbot
+par=0
+hint=
+
+[playfield]
+
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=brick_08,flag,brick_06,minifig,haz_climber
+colors=white,red,green,blue,yellow,gray
+parts=14;16;1;6;;1;,16;15;2;2;;1;,22;16;3;6;;1;,22;15;4;2;walk_r;184;,27;15;5;2;walk_r;4;
+
