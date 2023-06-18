@@ -132,12 +132,12 @@
 	}
 	function loadedGame() {
 		// Wait 0.5 second before removing the loading screen
-		setTimeout(() => {
-			loadingGame = false;
-			// Remove the hidden class from the iframe
-			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
-			iframe.classList.remove('hidden');
-		}, 500);
+		// setTimeout(() => {
+		// 	loadingGame = false;
+		// 	// Remove the hidden class from the iframe
+		// 	const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+		// 	iframe.classList.remove('hidden');
+		// }, 500);
 
 		// Add to the views
 		fetch(PUBLIC_API_BASE_URL + '/api/games/' + slug + '/views', {
@@ -197,9 +197,9 @@
 								class="relative flex h-full items-center justify-center rounded-t-lg bg-black transition-all"
 							>
 								<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
-									<div class="flex items-center gap-8">
-										<img src="/logo.png" alt="Loading" class="h-24 w-24" />
-										<h1 class="text-6xl font-bold text-white">Kazwire</h1>
+									<div class="flex flex-col sm:flex-row items-center gap-8">
+										<img src="/logo.png" alt="Loading" class="h-16 w-16" />
+										<h1 class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl">Kazwire</h1>
 									</div>
 									<Icon icon="line-md:loading-alt-loop" class="animate-spin text-6xl text-white" />
 								</div>
