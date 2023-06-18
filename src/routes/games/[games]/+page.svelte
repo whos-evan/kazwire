@@ -138,6 +138,11 @@
 			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 			iframe.classList.remove('hidden');
 		}, 500);
+
+		// Add to the views
+		fetch(PUBLIC_API_BASE_URL + '/api/games/' + slug + '/views', {
+			method: 'POST'
+		});
 	}
 </script>
 
@@ -261,7 +266,9 @@
 						</button>
 					</div>
 					<div class="flex">
+						<!-- Logo -->
 						<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
+						<!-- Name -->
 						<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
 							{game.name}
 						</div>
@@ -282,11 +289,16 @@
 		<p class="text-gray-800 dark:text-gray-200">
 			{game.developer}
 		</p>
-		<!-- line -->
-		<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
-		<p>
+		<p class="mt-1">
 			{game.description}
 		</p>
+		<!-- Line -->
+		<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
+		<div class="flex">
+			<p class="text-gray-600 dark:text-gray-300">
+				{game.views} Plays
+			</p>
+		</div>
 		{#if game.tags.length > 0}
 			<div class="mt-1 flex flex-row flex-wrap gap-2">
 				{#each game.tags as tag}

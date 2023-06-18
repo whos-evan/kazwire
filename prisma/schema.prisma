@@ -25,6 +25,8 @@ model Game {
   emulatorType String?
   emulatorFile String?
   emulatorCore String?
+
+  views Int @default(0)
 }
 
 model App {
