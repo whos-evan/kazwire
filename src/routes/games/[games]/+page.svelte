@@ -132,12 +132,12 @@
 	}
 	function loadedGame() {
 		// Wait 0.5 second before removing the loading screen
-		// setTimeout(() => {
-		// 	loadingGame = false;
-		// 	// Remove the hidden class from the iframe
-		// 	const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
-		// 	iframe.classList.remove('hidden');
-		// }, 500);
+		setTimeout(() => {
+			loadingGame = false;
+			// Remove the hidden class from the iframe
+			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+			iframe.classList.remove('hidden');
+		}, 500);
 
 		// Add to the views
 		fetch(PUBLIC_API_BASE_URL + '/api/games/' + slug + '/views', {
