@@ -44,17 +44,17 @@
 
 	onMount(async () => {
 		// Register the service worker
-		// navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
-		// 	if (reg.installing) {
-		// 		const sw = reg.installing || reg.waiting;
-		// 		sw.onstatechange = function () {
-		// 			if (sw.state === 'installed') {
-		// 				// SW installed.  Refresh page so SW can respond with SW-enabled page.
-		// 				window.location.reload();
-		// 			}
-		// 		};
-		// 	}
-		// });
+		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
+			if (reg.installing) {
+				const sw = reg.installing || reg.waiting;
+				sw.onstatechange = function () {
+					if (sw.state === 'installed') {
+						// SW installed.  Refresh page so SW can respond with SW-enabled page.
+						window.location.reload();
+					}
+				};
+			}
+		});
 	});
 
 	async function iframeSearch(embedURL: string) {
