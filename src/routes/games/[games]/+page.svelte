@@ -44,17 +44,17 @@
 
 	onMount(async () => {
 		// Register the service worker
-		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
-			if (reg.installing) {
-				const sw = reg.installing || reg.waiting;
-				sw.onstatechange = function () {
-					if (sw.state === 'installed') {
-						// SW installed.  Refresh page so SW can respond with SW-enabled page.
-						window.location.reload();
-					}
-				};
-			}
-		});
+		// navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
+		// 	if (reg.installing) {
+		// 		const sw = reg.installing || reg.waiting;
+		// 		sw.onstatechange = function () {
+		// 			if (sw.state === 'installed') {
+		// 				// SW installed.  Refresh page so SW can respond with SW-enabled page.
+		// 				window.location.reload();
+		// 			}
+		// 		};
+		// 	}
+		// });
 	});
 
 	async function iframeSearch(embedURL: string) {
@@ -197,9 +197,13 @@
 								class="relative flex h-full items-center justify-center rounded-t-lg bg-black transition-all"
 							>
 								<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
-									<div class="flex flex-col sm:flex-row items-center gap-8">
+									<div class="flex flex-col items-center gap-8 sm:flex-row">
 										<img src="/logo.png" alt="Loading" class="h-16 w-16" />
-										<h1 class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl">Kazwire</h1>
+										<h1
+											class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+										>
+											Kazwire
+										</h1>
 									</div>
 									<Icon icon="line-md:loading-alt-loop" class="animate-spin text-6xl text-white" />
 								</div>
@@ -296,7 +300,7 @@
 		<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
 		<div class="flex">
 			<p class="text-gray-600 dark:text-gray-300">
-				{game.views} Plays
+				{game.views} Play{#if game.views != 1}s{/if}
 			</p>
 		</div>
 		{#if game.tags.length > 0}
