@@ -3,11 +3,6 @@
 </script>
 
 <script lang="ts">
-	// TODO: Dynamicly determine how to access the game:
-	// 1. If the game is hosted locally just use the path
-	// 2. If the game is hosted on another server use the proxied path
-	// 3. If the game is emulated determine what emulator is required and use the required path (i.e. /emulators/super-mario-64, /ruffle/duck-life)
-
 	import type { Game } from '@prisma/client';
 	import { PUBLIC_API_BASE_URL } from '$env/static/public';
 
@@ -42,8 +37,13 @@
 		return template.replace('%s', encodeURIComponent(input));
 	}
 
-	onMount(async () => {
+	function registerServiceWorker() {
 		// Register the service worker
+		if (__uv$config.prefix === undefined) {
+			console.error('Service worker prefix is undefined');
+			// wait 5 seconds and try again
+			setTimeout(registerServiceWorker, 5000);
+		}
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
 				const sw = reg.installing || reg.waiting;
@@ -55,10 +55,23 @@
 				};
 			}
 		});
+	}
+
+	onMount(() => {
+		registerServiceWorker();
 	});
 
 	async function iframeSearch(embedURL: string) {
+		// Get the iframe element
 		let iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+
+		// check if the service worker is installed
+		navigator.serviceWorker.getRegistrations().then((registrations) => {
+			if (registrations.length === 0) {
+				// Service worker is not installed so register it
+				registerServiceWorker();
+			}
+		});
 
 		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(search(embedURL));
 	}

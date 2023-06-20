@@ -17,7 +17,7 @@
 	export let errorMessage: string | undefined = undefined;
 </script>
 
-<a id={name} href={link}>
+<a id={name} href={link} data-sveltekit-reload>
 	<div
 		class="relative mb-5 h-full rounded-xl bg-tertiary shadow-lg shadow-gray-200 transition duration-100 hover:scale-[102.5%] hover:cursor-pointer hover:shadow-xl dark:bg-tertiaryDark {popular ===
 		true

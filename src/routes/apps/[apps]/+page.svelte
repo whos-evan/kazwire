@@ -3,17 +3,13 @@
 </script>
 
 <script lang="ts">
-	// TODO: Dynamicly determine how to access the app:
-	// 1. If the app is hosted locally just use the path
-	// 2. If the app is hosted on another server use the proxied path
-	// 3. If the app is emulated determine what emulator is required and use the required path (i.e. /emulators/super-mario-64, /ruffle/duck-life)
-
 	import type { App } from '@prisma/client';
 	import { PUBLIC_API_BASE_URL } from '$env/static/public';
 
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 
+	// Turns a search into a valid URL
 	function search(input: string) {
 		let template: string = 'https://www.google.com/search?q=%s&hl=en';
 		try {
@@ -41,8 +37,13 @@
 		return template.replace('%s', encodeURIComponent(input));
 	}
 
-	onMount(async () => {
+	function registerServiceWorker() {
 		// Register the service worker
+		if (__uv$config.prefix === undefined) {
+			console.error('Service worker prefix is undefined');
+			// wait 5 seconds and try again
+			setTimeout(registerServiceWorker, 5000);
+		}
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
 				const sw = reg.installing || reg.waiting;
@@ -54,18 +55,23 @@
 				};
 			}
 		});
-		let app: App;
+	}
 
-		await getApp(slug).then((data) => {
-			app = data;
-			if (app.embedURL != null) {
-				iframeSearch(app.embedURL);
-			}
-		});
+	onMount(() => {
+		registerServiceWorker();
 	});
 
 	async function iframeSearch(embedURL: string) {
+		// Get the iframe element
 		let iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+
+		// check if the service worker is installed
+		navigator.serviceWorker.getRegistrations().then((registrations) => {
+			if (registrations.length === 0) {
+				// Service worker is not installed so register it
+				registerServiceWorker();
+			}
+		});
 
 		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(search(embedURL));
 	}
@@ -90,6 +96,7 @@
 		iframe.requestFullscreen();
 	}
 
+	// Expand the iframe to fill the screen
 	function expandiFrame() {
 		const document: Document = window.document;
 		const frame: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
@@ -110,17 +117,55 @@
 	}
 
 	import Icon from '@iconify/svelte';
+	import Tag from '$lib/components/Tag.svelte';
+
 	import GoogleAds from '$lib/components/GoogleAds.svelte';
 	let innerWidth: number = 0;
-</script>
 
-<svelte:window bind:innerWidth />
+	let loadedFrame: boolean = false;
+	let loadingApp: boolean = false;
+	async function loadFrame() {
+		loadedFrame = true;
+		loadingApp = true;
+
+		let app: App;
+		//  Get the app from the api
+		await getApp(slug).then((data) => {
+			app = data;
+			// If the app has an embedURL search for it using the iframeSearch function
+			if (app.embedURL != null) {
+				iframeSearch(app.embedURL);
+			}
+		});
+
+		// Just in case wait 5 seconds before removing the loading screen
+		setTimeout(() => {
+			loadedApp();
+		}, 5000);
+	}
+	function loadedApp() {
+		// Wait 0.5 second before removing the loading screen
+		setTimeout(() => {
+			loadingApp = false;
+			// Remove the hidden class from the iframe
+			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+			iframe.classList.remove('hidden');
+		}, 500);
+
+		// Add to the views
+		fetch(PUBLIC_API_BASE_URL + '/api/apps/' + slug + '/views', {
+			method: 'POST'
+		});
+	}
+</script>
 
 <svelte:head>
 	<script src="/uv/uv.bundle.js" defer></script>
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
 </svelte:head>
+
+<svelte:window bind:innerWidth />
 
 {#await getApp(slug) then app}
 	<head>
@@ -134,12 +179,55 @@
 		>
 			<div class="align-center mb-14 flex-grow">
 				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
-					{#if app.embedURL != null}
+					{#if !loadedFrame}
+						<div class="relative flex h-full items-center justify-center overflow-hidden">
+							<img
+								class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg"
+								src="/app/img/{app.image}"
+								alt="App"
+							/>
+							<div class="absolute z-10 h-full w-full rounded-t-lg bg-black" />
+
+							<!-- Content on top of the image -->
+							<div class="absolute z-30 flex flex-col items-center justify-center">
+								<h1
+									class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+								>
+									{app.name}
+								</h1>
+
+								<!-- Play now button -->
+								<button class="lg:btn-xl btn mt-8" on:click={() => loadFrame()}>
+									Play Now
+									<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
+								</button>
+							</div>
+						</div>
+					{:else}
+						{#if loadingApp}
+							<!-- Loading animation -->
+							<div
+								class="relative flex h-full items-center justify-center rounded-t-lg bg-black transition-all"
+							>
+								<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+									<div class="flex flex-col items-center gap-8 sm:flex-row">
+										<img src="/logo.png" alt="Loading" class="h-16 w-16" />
+										<h1
+											class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+										>
+											Kazwire
+										</h1>
+									</div>
+									<Icon icon="line-md:loading-alt-loop" class="animate-spin text-6xl text-white" />
+								</div>
+							</div>
+						{/if}
 						<iframe
-							class="h-full w-full rounded-t-lg bg-white"
+							class="hidden h-full w-full rounded-t-lg bg-white"
 							id="iframe"
 							title={app.name}
 							src="about:blank"
+							on:load={() => loadedApp()}
 						/>
 					{/if}
 				</div>
@@ -166,7 +254,9 @@
 						</button>
 					</div>
 					<div class="flex">
+						<!-- Logo -->
 						<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
+						<!-- Name -->
 						<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
 							{app.name}
 						</div>
@@ -179,6 +269,7 @@
 		{/if}
 	</div>
 
+	<!-- Bottom area for displaying more information about the app -->
 	<div
 		class="rounded-lg bg-tertiary p-5 align-middle text-black dark:bg-tertiaryDark dark:text-white"
 	>
@@ -186,11 +277,16 @@
 		<p class="text-gray-800 dark:text-gray-200">
 			{app.developer}
 		</p>
-		<!-- line -->
-		<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
-		<p>
+		<p class="mt-1">
 			{app.description}
 		</p>
+		<!-- Line -->
+		<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
+		<div class="flex">
+			<p class="text-gray-600 dark:text-gray-300">
+				{app.views} Play{#if app.views != 1}s{/if}
+			</p>
+		</div>
 	</div>
 {:catch error}
 	<p>{error.message}</p>
