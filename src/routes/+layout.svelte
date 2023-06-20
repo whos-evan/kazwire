@@ -197,8 +197,11 @@
 							<li class="mb-4">
 								<a href="/discord" class="hover:underline">Get Support</a>
 							</li>
-							<li>
+							<li class="mb-4">
 								<a href="/faq" class="hover:underline">FAQ</a>
+							</li>
+							<li>
+								<a href="/final-grade" class="hover:underline">Final Grade Calculator</a>
 							</li>
 						</ul>
 					</div>
@@ -214,6 +217,7 @@
 							<li>
 								<a href="/apps" class="hover:underline">Apps</a>
 							</li>
+							
 						</ul>
 					</div>
 					<div>
