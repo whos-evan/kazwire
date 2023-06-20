@@ -81,18 +81,24 @@
 {#if resetLayout}
 	<slot />
 {:else}
-	<div class="bg-primary dark:bg-black z-50">
+	<div class="z-50 bg-primary dark:bg-black">
 		<div class="fixed z-50 w-full px-5 py-5">
 			<nav
 				class="flex w-full flex-wrap items-center justify-between rounded-lg bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white shadow-md shadow-black dark:shadow-white md:py-0"
 			>
 				<div class="align-items-center mb-auto mt-auto flex-col">
-					<a href="/">
+					<a href="/" class="flex items-center justify-center">
 						<img id="logo" src="/logo.png" class="inline-block h-16 p-3" alt="Kazwire Logo" />
-						<span
-							class="hidden whitespace-nowrap align-middle text-2xl font-semibold text-white lg:inline-block"
-							>Kazwire</span
-						>
+						<div class="flex items-center gap-[6px]">
+							<span
+								class="hidden whitespace-nowrap align-middle text-2xl font-semibold text-white lg:inline-block"
+								>Kazwire</span
+							>
+							<!-- Beta icon -->
+							<span class="text-xs mt-1 tracking-widest uppercase font-semibold text-gray-300 inline-block"
+								>Beta</span
+							>
+						</div>
 					</a>
 				</div>
 
@@ -106,7 +112,7 @@
 				{/if}
 
 				{#if menuIsHidden || windowWidth > 784}
-					<div class="w-full md:flex md:w-auto md:items-center z-50" id="menu">
+					<div class="z-50 w-full md:flex md:w-auto md:items-center" id="menu">
 						<ul class="pt-4 text-base text-white md:flex md:justify-between md:pt-0">
 							<li class="m-auto">
 								<a class="block py-2 hover:text-primary md:p-4" href="/search" data-sveltekit-reload
@@ -217,7 +223,6 @@
 							<li>
 								<a href="/apps" class="hover:underline">Apps</a>
 							</li>
-							
 						</ul>
 					</div>
 					<div>
