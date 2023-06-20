@@ -196,9 +196,9 @@
 									{app.name}
 								</h1>
 
-								<!-- Search now button -->
+								<!-- Access now button -->
 								<button class="lg:btn-xl btn mt-8" on:click={() => loadFrame()}>
-									Search Now
+									Access Now
 									<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
 								</button>
 							</div>
