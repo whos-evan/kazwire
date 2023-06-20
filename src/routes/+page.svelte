@@ -11,7 +11,7 @@
 
 	let innerWidth: number;
 
-	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 </script>
 
 <svelte:window bind:innerWidth />
@@ -44,7 +44,7 @@
 		<Faq />
 	</grid>
 	<grid class="col-span-2 row-start-4">
-		<GoogleAds slot="6262246352" />
+		<HorzAd />
 	</grid>
 	<grid class="col-span-2 row-start-5 max-w-full">
 		<Partners />

@@ -119,7 +119,9 @@
 	import Icon from '@iconify/svelte';
 	import Tag from '$lib/components/Tag.svelte';
 
-	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	import VertAd from '$lib/components/GoogleAds/VertAd.svelte';
+	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
+	import LeaderboardAd from '$lib/components/GoogleAds/LeaderboardAd.svelte';
 	let innerWidth: number = 0;
 
 	let loadedFrame: boolean = false;
@@ -178,7 +180,7 @@
 			class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 		>
 			{#if innerWidth > 1224}
-				<GoogleAds slot="8673868840" />
+				<VertAd />
 			{/if}
 			<div class="align-center mb-14 flex-grow">
 				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
@@ -297,11 +299,11 @@
 			</div>
 		</div>
 		{#if innerWidth > 824}
-			<GoogleAds slot="8673868840" />
+			<VertAd />
 		{/if}
 	</div>
 
-	<GoogleAds slot="4023379916" />
+	<LeaderboardAd />
 
 	<!-- Bottom area for displaying more information about the game -->
 	<div

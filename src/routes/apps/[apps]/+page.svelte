@@ -119,7 +119,7 @@
 	import Icon from '@iconify/svelte';
 	import Tag from '$lib/components/Tag.svelte';
 
-	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	import VertAd from '$lib/components/GoogleAds/VertAd.svelte';
 	let innerWidth: number = 0;
 
 	let loadedFrame: boolean = false;
@@ -265,7 +265,7 @@
 			</div>
 		</div>
 		{#if innerWidth > 824}
-			<GoogleAds slot="8673868840" />
+			<VertAd />
 		{/if}
 	</div>
 

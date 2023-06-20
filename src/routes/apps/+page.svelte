@@ -6,7 +6,7 @@
 
 	import DefaultBox from '$lib/components/Box/DefaultBox.svelte';
 	import DefaultBoxLoading from '$lib/components/Box/DefaultBoxLoading.svelte';
-	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
 	// Fetch all apps based on the search query
@@ -23,7 +23,7 @@
 	<meta property="og:description" content="Search freely with Kazwire!" />
 </svelte:head>
 
-<GoogleAds slot="6262246352" />
+<HorzAd />
 
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">

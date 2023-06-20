@@ -1,12 +1,3 @@
-<script lang="ts">
-	export let slot: string;
-
-	import { onMount } from 'svelte';
-	onMount(() => {
-		(window.adsbygoogle = window.adsbygoogle || []).push({});
-	});
-</script>
-
 <svelte:head>
 	<script
 		async
@@ -21,12 +12,5 @@
 	>
 		Advertisement
 	</h3>
-	<ins
-		class="adsbygoogle"
-		style="display:block"
-		data-ad-client="ca-pub-7648886706850999"
-		data-ad-slot={slot}
-		data-ad-format="auto"
-		data-full-width-responsive="true"
-	/>
+	<slot />
 </div>

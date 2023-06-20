@@ -17,7 +17,7 @@
 		return games;
 	}
 
-	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 </script>
 
 <svelte:head>
@@ -26,7 +26,7 @@
 	<meta property="og:description" content="Play freely with Kazwire!" />
 </svelte:head>
 
-<GoogleAds slot="6262246352" />
+<HorzAd />
 
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">

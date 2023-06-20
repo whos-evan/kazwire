@@ -55,17 +55,17 @@
 	function getPresetCloak() {
 		const storedPresetCloak: string = localStorage.getItem('presetCloak') || '';
 		if (storedPresetCloak == 'Kazwire') {
-			title = ''
-			favicon = ''
-			changeTitle()
-			changeFavicon()
+			title = '';
+			favicon = '';
+			changeTitle();
+			changeFavicon();
 		} else if (storedPresetCloak) {
 			presetCloaks = storedPresetCloak;
 			const options = document.getElementById('presetCloaks') as HTMLSelectElement;
 			title = options.selectedOptions[0].innerText;
 			favicon = options.value;
-			changeTitle()
-			changeFavicon()
+			changeTitle();
+			changeFavicon();
 		} else {
 			presetCloaks = '';
 		}
@@ -87,10 +87,10 @@
 		getFavicon();
 	});
 
-	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 </script>
 
-<GoogleAds slot="6262246352"/>
+<HorzAd />
 
 <div class="mt-10 h-auto w-full text-center text-white">
 	<h1 class="text-3xl">Settings</h1>
@@ -106,12 +106,7 @@
 				<option value="https://drive.google.com/favicon.ico">Google Drive</option>
 				<option value="https://canvas.instructure.com/favicon.ico">Canvas</option>
 			</select>
-			<button
-				class="btn"
-				on:click={changePresetCloaks}
-			>
-				Save
-			</button>
+			<button class="btn" on:click={changePresetCloaks}> Save </button>
 		</div>
 		<div class="col-start-1 row-start-2">
 			Tab Cloak:
@@ -122,12 +117,7 @@
 				placeholder="Enter title here..."
 				bind:value={title}
 			/>
-			<button
-				class="btn"
-				on:click={changeTitle}
-			>
-				Save
-			</button>
+			<button class="btn" on:click={changeTitle}> Save </button>
 		</div>
 		<div class="col-start-1 row-start-3">
 			Custom Favicon:
@@ -138,12 +128,7 @@
 				placeholder="https://google.com/favicon.ico"
 				bind:value={favicon}
 			/>
-			<button
-				class="btn"
-				on:click={changeFavicon}
-			>
-				Save
-			</button>
+			<button class="btn" on:click={changeFavicon}> Save </button>
 		</div>
 	</div>
 </div>

@@ -1,7 +1,7 @@
 <script lang="ts">
 	import faqJSON from './faq.json';
 
-	import GoogleAds from '$lib/components/GoogleAds.svelte';
+	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 </script>
 
 <svelte:head>
@@ -10,7 +10,7 @@
 	<meta property="og:description" content="Frequently asked questions about Kazwire!" />
 </svelte:head>
 
-<GoogleAds slot="6262246352" />
+<HorzAd />
 
 <div class="min-h-[70vh]">
 	<h1 class="text-4xl font-bold text-white">FAQ</h1>
