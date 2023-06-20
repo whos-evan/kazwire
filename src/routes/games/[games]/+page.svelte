@@ -175,8 +175,11 @@
 	</head>
 	<div class="relative flex flex-row justify-center">
 		<div
-			class="float-left flex h-[calc(100vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
+			class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 		>
+			{#if innerWidth > 1224}
+				<GoogleAds slot="8673868840" />
+			{/if}
 			<div class="align-center mb-14 flex-grow">
 				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 					{#if !loadedFrame}
@@ -297,6 +300,8 @@
 			<GoogleAds slot="8673868840" />
 		{/if}
 	</div>
+
+	<GoogleAds slot="4023379916" />
 
 	<!-- Bottom area for displaying more information about the game -->
 	<div
