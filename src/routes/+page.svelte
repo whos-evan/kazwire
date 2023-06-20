@@ -4,6 +4,8 @@
 	import Faq from '$lib/components/Faq.svelte';
 	import Partners from '$lib/components/Partners.svelte';
 
+	// import FinalGrade from '$lib/components/FinalGrade.svelte';
+
 	import Changelog from '$lib/components/Changelog.svelte';
 	import RandomGame from '$lib/components/RandomGame.svelte';
 
@@ -26,7 +28,7 @@
 		{/if}
 	</grid>
 	<grid class="col-span-2 row-start-2 flex gap-8">
-		<div class="grid grid-cols-1 space-y-8 lg:space-y-0 lg:grid-cols-3 lg:gap-8">
+		<div class="grid w-full grid-cols-1 space-y-8 lg:grid-cols-3 lg:gap-8 lg:space-y-0">
 			<div class="col-span-2">
 				<h1 class="pb-8 text-center text-4xl font-bold text-white">Random Games!</h1>
 				<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
