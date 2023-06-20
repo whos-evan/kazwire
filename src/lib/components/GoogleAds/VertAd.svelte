@@ -5,11 +5,14 @@
 	});
 
 	const AD_SLOT_ID = '8673868840';
-
-	import AdvertSlot from './AdvertSlot.svelte';
 </script>
 
-<AdvertSlot>
+<div class="items-center justify-center p-4 [text-align-last:center]">
+	<h3
+		class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400"
+	>
+		Advertisement
+	</h3>
 	<ins
 		class="adsbygoogle"
 		style="display:block"
@@ -18,4 +21,4 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	/>
-</AdvertSlot>
+</div>
