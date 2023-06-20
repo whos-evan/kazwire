@@ -36,4 +36,6 @@ model App {
   developer   String
   image       String
   embedURL    String
+
+  views Int @default(0)
 }
