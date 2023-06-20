@@ -170,8 +170,8 @@
 {#await getApp(slug) then app}
 	<head>
 		<title>Kazwire - {app.name}</title>
-		<meta name="description" content="Play {app.name} for free now on Kazwire!" />
-		<meta property="og:description" content="Play {app.name} for free now on Kazwire!" />
+		<meta name="description" content="Access {app.name} for free now on Kazwire!" />
+		<meta property="og:description" content="Access {app.name} for free now on Kazwire!" />
 	</head>
 	<div class="relative flex flex-row justify-center">
 		<div
@@ -196,9 +196,9 @@
 									{app.name}
 								</h1>
 
-								<!-- Play now button -->
+								<!-- Search now button -->
 								<button class="lg:btn-xl btn mt-8" on:click={() => loadFrame()}>
-									Play Now
+									Search Now
 									<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
 								</button>
 							</div>
