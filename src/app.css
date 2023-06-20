@@ -15,10 +15,10 @@ body {
 	.btn {
 		@apply rounded-lg bg-secondary px-4 py-2 text-white transition-transform ease-in-out hover:scale-110;
 	}
-	.btn-large {
+	.btn-lg {
 		@apply rounded-xl bg-secondary px-4 py-4 font-bold text-white transition-transform ease-in-out hover:scale-110;
 	}
-  .btn-xl {
-    @apply rounded-full bg-secondary px-6 py-4 font-bold text-white text-2xl transition-transform ease-in-out hover:scale-110;
-  }
+	.btn-xl {
+		@apply rounded-full bg-secondary px-6 py-4 text-2xl font-bold text-white transition-transform ease-in-out hover:scale-110;
+	}
 }
