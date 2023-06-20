@@ -122,6 +122,7 @@
 	import VertAd from '$lib/components/GoogleAds/VertAd.svelte';
 	import VertAd2 from '$lib/components/GoogleAds/VertAd2.svelte';
 	import LeaderboardAd from '$lib/components/GoogleAds/LeaderboardAd.svelte';
+	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 	let innerWidth: number = 0;
 
 	let loadedFrame: boolean = false;
@@ -303,7 +304,11 @@
 		{/if}
 	</div>
 
-	<LeaderboardAd />
+	{#if innerWidth > 730}
+		<LeaderboardAd />
+	{:else}
+		<HorzAd />
+	{/if}
 
 	<!-- Bottom area for displaying more information about the game -->
 	<div
