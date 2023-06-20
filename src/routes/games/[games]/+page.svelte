@@ -120,7 +120,7 @@
 	import Tag from '$lib/components/Tag.svelte';
 
 	import VertAd from '$lib/components/GoogleAds/VertAd.svelte';
-	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
+	import VertAd2 from '$lib/components/GoogleAds/VertAd2.svelte';
 	import LeaderboardAd from '$lib/components/GoogleAds/LeaderboardAd.svelte';
 	let innerWidth: number = 0;
 
@@ -299,7 +299,7 @@
 			</div>
 		</div>
 		{#if innerWidth > 824}
-			<VertAd />
+			<VertAd2 />
 		{/if}
 	</div>
 
