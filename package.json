@@ -44,6 +44,7 @@
 		"@prisma/client": "^4.15.0",
 		"@sveltejs/adapter-node": "^1.2.4",
 		"iconify-icon": "^1.0.7",
-		"svelte-carousel": "^1.0.25"
+		"svelte-carousel": "^1.0.25",
+		"svelte-simple-modal": "^1.5.2"
 	}
 }
