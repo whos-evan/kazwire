@@ -15,9 +15,9 @@
 	/>
 {:then changelog}
 	<div class="w-full rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white">
-		<h1 class="text-center text-4xl font-bold">Latest Change!</h1>
-		<div class="mt-10 flex flex-row items-center justify-center">
-			<h2 class="mr-2 text-center text-2xl font-bold">{changelog.title}</h2>
+		<h1 class="text-left text-4xl font-bold">Latest Change!</h1>
+		<div class="mt-10 flex flex-row text-center">
+			<h2 class="mr-2 text-2xl font-bold">{changelog.title}</h2>
 			<chip class="rounded-full bg-red-500 px-2 py-1 text-white">
 				{changelog.version}
 			</chip>

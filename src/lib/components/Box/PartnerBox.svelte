@@ -19,7 +19,7 @@
 		</div>
 		<div class="pl-5 pr-5">
 			<h1 class="font-bold text-2xl text-center break-words" style="color: {color};">{title}</h1>
-			<p class="text-black dark:text-white break-words">{description}</p>
+			<p class="text-black dark:text-white break-words text-center">{description}</p>
 		</div>
 	</div>
 </a>

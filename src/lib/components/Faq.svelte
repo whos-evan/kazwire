@@ -1,5 +1,5 @@
 <div class="rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white">
-	<h1 class="text-center text-4xl font-bold">What is Kazwire?</h1>
+	<h1 class="text-4xl font-bold">What is Kazwire?</h1>
 	<div class="mt-4 text-xl">
 		<p>
 			Are you looking for a new place to play your favorite online games? Look no further! Our
