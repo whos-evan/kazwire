@@ -1,6 +1,4 @@
-<script lang="ts">
-	import { onMount } from 'svelte';
-
+<script lang="ts">s
 	const AD_SLOT_ID = '4414262154';
 </script>
 

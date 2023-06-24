@@ -42,6 +42,8 @@
 	onMount(() => {
 		getTitle();
 		getFavicon();
+
+		(window.adsbygoogle = window.adsbygoogle || []).push({});
 	});
 
 	let darkMode = true;
@@ -95,7 +97,8 @@
 								>Kazwire</span
 							>
 							<!-- Beta icon -->
-							<span class="text-xs mt-1 tracking-widest uppercase font-semibold text-gray-300 inline-block"
+							<span
+								class="mt-1 inline-block text-xs font-semibold uppercase tracking-widest text-gray-300"
 								>Beta</span
 							>
 						</div>

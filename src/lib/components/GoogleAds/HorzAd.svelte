@@ -1,9 +1,4 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	onMount(() => {
-		(window.adsbygoogle = window.adsbygoogle || []).push({});
-	});
-
 	const AD_SLOT_ID = '4023379916';
 </script>
 
