@@ -28,10 +28,10 @@
 				let:showNextPage
 			>
 				<button class="m-auto hidden sm:block" slot="prev" on:click={showPrevPage}>
-					<Icon icon="pixelarticons:arrow-left" class="h-8 w-8" />
+					<Icon icon="mdi:arrow-left" class="h-8 w-8" />
 				</button>
 				<button class="m-auto hidden sm:block" slot="next" on:click={showNextPage}>
-					<Icon icon="pixelarticons:arrow-right" class="h-8 w-8" />
+					<Icon icon="mdi:arrow-right" class="h-8 w-8" />
 				</button>
 				<Box
 					title="WebLFG"
