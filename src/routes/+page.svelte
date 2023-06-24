@@ -7,11 +7,23 @@
 	// import FinalGrade from '$lib/components/FinalGrade.svelte';
 
 	import Changelog from '$lib/components/Changelog.svelte';
+
 	import RandomGame from '$lib/components/RandomGame.svelte';
+	import LovedGame from '$lib/components/LovedGame.svelte';
+	import LovedApp from '$lib/components/LovedApp.svelte';
 
 	let innerWidth: number;
 
 	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
+	let likedGames: string[] = [];
+	let likedApps: string[] = [];
+	import { appLike, gameLike } from '$lib/likeContent';
+	import { onMount } from 'svelte';
+
+	onMount(() => {
+		likedApps = appLike.fetchLikes();
+		likedGames = gameLike.fetchLikes();
+	});
 </script>
 
 <svelte:window bind:innerWidth />
@@ -30,12 +42,24 @@
 	<grid class="col-span-2 row-start-2 flex gap-8">
 		<div class="grid w-full grid-cols-1 space-y-8 lg:grid-cols-3 lg:gap-8 lg:space-y-0">
 			<div class="col-span-2">
-				<h1 class="pb-8 text-center text-4xl font-bold text-white">Random Games!</h1>
-				<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-					{#each Array(2) as _}
-						<RandomGame />
-					{/each}
-				</div>
+				{#if likedGames.length > 0}
+					<h1 class="pb-8 text-center text-4xl font-bold text-white">Loved Games!</h1>
+					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+						<LovedGame />
+					</div>
+				{:else if likedApps.length > 0}
+					<h1 class="pb-8 text-center text-4xl font-bold text-white">Loved Apps!</h1>
+					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+						<LovedApp />
+					</div>
+				{:else}
+					<h1 class="pb-8 text-center text-4xl font-bold text-white">Random Games!</h1>
+					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+						{#each [1, 2] as _}
+							<RandomGame />
+						{/each}
+					</div>
+				{/if}
 			</div>
 			<Changelog />
 		</div>

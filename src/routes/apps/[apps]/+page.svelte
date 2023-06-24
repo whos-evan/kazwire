@@ -59,6 +59,13 @@
 
 	onMount(() => {
 		registerServiceWorker();
+
+		// Check if the game is liked and set the isLiked store
+		if (appLike.isLiked(slug)) {
+			isLiked.set(true);
+		} else {
+			isLiked.set(false);
+		}
 	});
 
 	async function iframeSearch(embedURL: string) {
@@ -116,10 +123,15 @@
 		frame.classList.toggle('rounded-t-lg');
 	}
 
+	import { appLike } from '$lib/likeContent';
+	import { isLiked } from '$lib/stores';
+
 	import Icon from '@iconify/svelte';
-	import Tag from '$lib/components/Tag.svelte';
 
 	import VertAd from '$lib/components/GoogleAds/VertAd.svelte';
+	import VertAd2 from '$lib/components/GoogleAds/VertAd2.svelte';
+	import LeaderboardAd from '$lib/components/GoogleAds/LeaderboardAd.svelte';
+	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 	let innerWidth: number = 0;
 
 	let loadedFrame: boolean = false;
@@ -170,13 +182,16 @@
 {#await getApp(slug) then app}
 	<head>
 		<title>Kazwire - {app.name}</title>
-		<meta name="description" content="Access {app.name} for free now on Kazwire!" />
-		<meta property="og:description" content="Access {app.name} for free now on Kazwire!" />
+		<meta name="description" content="Play {app.name} for free now on Kazwire!" />
+		<meta property="og:description" content="Play {app.name} for free now on Kazwire!" />
 	</head>
 	<div class="relative flex flex-row justify-center">
 		<div
-			class="float-left flex h-[calc(100vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
+			class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 		>
+			{#if innerWidth > 1224}
+				<VertAd />
+			{/if}
 			<div class="align-center mb-14 flex-grow">
 				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 					{#if !loadedFrame}
@@ -222,6 +237,7 @@
 								</div>
 							</div>
 						{/if}
+
 						<iframe
 							class="hidden h-full w-full rounded-t-lg bg-white"
 							id="iframe"
@@ -238,19 +254,23 @@
 					<div class="float-right mr-5">
 						<button class="mt-4 fill-white" on:click={() => fullScreen()}>
 							<!-- Full screen -->
-							<Icon class="h-6 w-6" icon="pixelarticons:aspect-ratio" />
+							<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
 						</button>
 					</div>
 					<div class="float-right mr-5">
-						<button class="mt-4 fill-white" on:click={() => expandiFrame()}>
+						<button class="mt-4" on:click={() => expandiFrame()}>
 							<!-- Fill screen -->
-							<Icon class="h-6 w-6" icon="pixelarticons:arrows-vertical" />
+							<Icon class="h-6 w-6" icon="ic:round-expand" />
 						</button>
 					</div>
 					<div class="float-right mr-5">
-						<button id="heart" class="mt-4 fill-white">
+						<button id="heart" class="mt-4" on:click={() => appLike.toggle(app.id)}>
 							<!-- Heart -->
-							<Icon class="h-6 w-6" icon="pixelarticons:heart" />
+							{#if $isLiked}
+								<Icon class="h-6 w-6 text-red-500" icon="mdi:heart" />
+							{:else}
+								<Icon class="h-6 w-6" icon="mdi:heart-outline" />
+							{/if}
 						</button>
 					</div>
 					<div class="flex">
@@ -265,9 +285,15 @@
 			</div>
 		</div>
 		{#if innerWidth > 824}
-			<VertAd />
+			<VertAd2 />
 		{/if}
 	</div>
+
+	{#if innerWidth > 730}
+		<LeaderboardAd />
+	{:else}
+		<HorzAd />
+	{/if}
 
 	<!-- Bottom area for displaying more information about the app -->
 	<div
@@ -284,7 +310,7 @@
 		<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
 		<div class="flex">
 			<p class="text-gray-600 dark:text-gray-300">
-				{app.views} Play{#if app.views != 1}s{/if}
+				{app.views} View{#if app.views != 1}s{/if}
 			</p>
 		</div>
 	</div>

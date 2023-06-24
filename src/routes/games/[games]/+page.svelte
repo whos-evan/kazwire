@@ -59,6 +59,13 @@
 
 	onMount(() => {
 		registerServiceWorker();
+
+		// Check if the game is liked and set the isLiked store
+		if (gameLike.isLiked(slug)) {
+			isLiked.set(true);
+		} else {
+			isLiked.set(false);
+		}
 	});
 
 	async function iframeSearch(embedURL: string) {
@@ -115,6 +122,9 @@
 
 		frame.classList.toggle('rounded-t-lg');
 	}
+
+	import { gameLike } from '$lib/likeContent';
+	import { isLiked } from '$lib/stores';
 
 	import Icon from '@iconify/svelte';
 	import Tag from '$lib/components/Tag.svelte';
@@ -273,19 +283,23 @@
 					<div class="float-right mr-5">
 						<button class="mt-4 fill-white" on:click={() => fullScreen()}>
 							<!-- Full screen -->
-							<Icon class="h-6 w-6" icon="pixelarticons:aspect-ratio" />
+							<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
 						</button>
 					</div>
 					<div class="float-right mr-5">
-						<button class="mt-4 fill-white" on:click={() => expandiFrame()}>
+						<button class="mt-4" on:click={() => expandiFrame()}>
 							<!-- Fill screen -->
-							<Icon class="h-6 w-6" icon="pixelarticons:arrows-vertical" />
+							<Icon class="h-6 w-6" icon="ic:round-expand" />
 						</button>
 					</div>
 					<div class="float-right mr-5">
-						<button id="heart" class="mt-4 fill-white">
+						<button id="heart" class="mt-4" on:click={() => gameLike.toggle(game.id)}>
 							<!-- Heart -->
-							<Icon class="h-6 w-6" icon="pixelarticons:heart" />
+							{#if $isLiked}
+								<Icon class="h-6 w-6 text-red-500" icon="mdi:heart" />
+							{:else}
+								<Icon class="h-6 w-6" icon="mdi:heart-outline" />
+							{/if}
 						</button>
 					</div>
 					<div class="flex">
