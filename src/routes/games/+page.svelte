@@ -46,6 +46,24 @@
 		>
 			Search
 		</button>
+
+		<select
+			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
+			bind:value={tagQuery}
+			on:change={() => (location.href = '/games?tag=' + tagQuery)}
+		>
+			<option value="">All</option>
+			<option value="action">Action</option>
+			<option value="adventure">Adventure</option>
+			<option value="casual">Casual</option>
+			<option value="indie">Indie</option>
+			<option value="multiplayer">Multiplayer</option>
+			<option value="racing">Racing</option>
+			<option value="rpg">RPG</option>
+			<option value="simulation">Simulation</option>
+			<option value="sports">Sports</option>
+			<option value="strategy">Strategy</option>
+		</select>
 	</form>
 </div>
 
