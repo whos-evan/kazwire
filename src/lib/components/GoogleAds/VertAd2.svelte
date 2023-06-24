@@ -1,4 +1,4 @@
-<script lang="ts">s
+<script lang="ts">
 	const AD_SLOT_ID = '4414262154';
 </script>
 
