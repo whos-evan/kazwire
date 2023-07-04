@@ -4,7 +4,7 @@
 	<div class="text-5xl font-bold tracking-tighter md:text-7xl">
 		<h1>
 			<span class="block pb-1">Your favorites</span>
-			<span class="text-blue-800 dark:text-blue-400">all in one place!</span>
+			<span class="text-secondary">all in one place!</span>
 		</h1>
 	</div>
 	<p class="text-md pt-2 tracking-tight md:text-3xl">
