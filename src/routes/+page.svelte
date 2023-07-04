@@ -43,17 +43,17 @@
 		<div class="grid w-full grid-cols-1 space-y-8 lg:grid-cols-3 lg:gap-8 lg:space-y-0">
 			<div class="col-span-2">
 				{#if likedGames.length > 0}
-					<h1 class="pb-8 text-center text-4xl font-bold text-secondary">Loved Games!</h1>
+					<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">Loved Games!</h1>
 					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 						<LovedGame />
 					</div>
 				{:else if likedApps.length > 0}
-					<h1 class="pb-8 text-center text-4xl font-bold text-secondary">Loved Apps!</h1>
+					<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">Loved Apps!</h1>
 					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 						<LovedApp />
 					</div>
 				{:else}
-					<h1 class="pb-8 text-center text-4xl font-bold text-secondary">Random Games!</h1>
+					<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">Random Games!</h1>
 					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
 						{#each [1, 2] as _}
 							<RandomGame />
