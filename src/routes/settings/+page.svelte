@@ -1,5 +1,16 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
+	import { experiments } from '$lib/experiments';
+
+	interface Experiment {
+		endDate: string;
+		description: string;
+		percentage: number;
+		enabled: boolean;
+		forceEnable: boolean;
+	}
+
+	let experimentData: Experiment[] = [];
 
 	let presetCloaks: string = '';
 	let title: string = '';
@@ -85,19 +96,27 @@
 	onMount(() => {
 		getTitle();
 		getFavicon();
+
+		experimentData = experiments.getExperiments();
 	});
 
 	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 </script>
 
 <HorzAd />
-
-<div class="mt-10 h-auto w-full text-center text-white">
-	<h1 class="text-3xl">Settings</h1>
-	<div class="mt-5 grid grid-cols-1 gap-10">
+<div class="rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white">
+	<h1 class="text-left text-4xl font-bold">Settings</h1>
+	<div class="mt-2 text-xl">
+		<p>
+			Adjust settings on Kazwire as you see fit. These settings are stored in your browser's local
+			storage, so they will persist across sessions.
+		</p>
+	</div>
+	<div class="mt-10 grid grid-cols-1 gap-10">
 		<div class="col-start-1 row-start-1">
-			Preset Cloaks:
-			<select id="presetCloaks" class="mr-2 rounded-md p-3 text-black">
+			<h3 class="text-2xl font-bold">Preset Cloaks</h3>
+			<p class="text-sm text-gray-500">Select a preset cloak:</p>
+			<select id="presetCloaks" class="mr-2 w-full max-w-xs rounded-lg p-2 text-black sm:max-w-md">
 				<option value="/favicon.ico" selected>Kazwire</option>
 				<option value="https://google.com/favicon.ico">Google</option>
 				<option value="https://ssl.gstatic.com/classroom/ic_product_classroom_144.png"
@@ -106,29 +125,72 @@
 				<option value="https://drive.google.com/favicon.ico">Google Drive</option>
 				<option value="https://canvas.instructure.com/favicon.ico">Canvas</option>
 			</select>
-			<button class="btn" on:click={changePresetCloaks}> Save </button>
+			<button class="btn" on:click={changePresetCloaks}>Save</button>
 		</div>
 		<div class="col-start-1 row-start-2">
-			Tab Cloak:
+			<h3 class="text-2xl font-bold">Tab Cloak</h3>
+			<p class="text-sm text-gray-500">Enter a title:</p>
 			<input
 				id="title"
 				type="text"
-				class="mr-2 rounded-lg p-2 text-black"
+				class="mr-2 w-full max-w-xs rounded-lg p-2 text-black sm:max-w-md"
 				placeholder="Enter title here..."
 				bind:value={title}
 			/>
-			<button class="btn" on:click={changeTitle}> Save </button>
+			<button class="btn" on:click={changeTitle}>Save</button>
 		</div>
 		<div class="col-start-1 row-start-3">
-			Custom Favicon:
+			<h3 class="text-2xl font-bold">Custom Favicon</h3>
+			<p class="text-sm text-gray-500">Enter a custom favicon URL:</p>
 			<input
 				id="favicon"
 				type="text"
-				class="mr-2 w-[18rem] rounded-lg p-2 text-black"
+				class="mr-2 w-full max-w-xs rounded-lg p-2 text-black sm:max-w-md"
 				placeholder="https://google.com/favicon.ico"
 				bind:value={favicon}
 			/>
-			<button class="btn" on:click={changeFavicon}> Save </button>
+			<button class="btn" on:click={changeFavicon}>Save</button>
+		</div>
+		<!-- Line break -->
+		<div class="col-start-1 row-start-4">
+			<hr class="border-gray-300 dark:border-gray-700" />
+		</div>
+
+		<!-- View experiments -->
+		<div class="col-start-1 row-start-5">
+			<h3 class="text-2xl font-bold">Experiments</h3>
+			<p class="text-md text-gray-500">
+				You may come across some experiments while visiting the site. If you do manage to come
+				across an experiment then it will appear here with some options for you to manage it.
+				<br />
+				You may have to refresh the page for the experiment to appear here or for the changes to take
+				effect.
+			</p>
+			<!-- Go through each one -->
+			{#each Object.keys(experimentData) as experiment}
+				<div class="mt-4 flex max-w-sm flex-col gap-2">
+					<div class="flex flex-col">
+						<h4 class="font-mono text-xl font-bold">{experiment}</h4>
+						<!-- Status -->
+						{#if experiments.shouldShow(experiment)}
+							<p class="text-sm font-bold text-green-500">Enabled</p>
+						{:else}
+							<p class="text-sm font-bold text-red-500">Disabled</p>
+						{/if}
+					</div>
+					<p class="text-sm text-gray-500">{experimentData[experiment].description}</p>
+					<p class="text-sm text-gray-500">
+						End Date: {experimentData[experiment].endDate}
+					</p>
+
+					<button class="btn" on:click={() => experiments.forceEnableToggle(experiment)}>
+						Force Enable
+					</button>
+					<button class="btn" on:click={() => experiments.forceDisableToggle(experiment)}>
+						Force Disable
+					</button>
+				</div>
+			{/each}
 		</div>
 	</div>
 </div>
