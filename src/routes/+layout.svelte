@@ -48,7 +48,7 @@
 
 		experiments.fetchOrCreateExperimentData(
 			'whiteTheme',
-			'2023-07-05',
+			'2023-07-09',
 			'Removes the Kazwire bright orange as the default background color.',
 			25,
 			true
