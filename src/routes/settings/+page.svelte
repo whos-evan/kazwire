@@ -103,6 +103,12 @@
 	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
 </script>
 
+<svelte:head>
+	<title>Kazwire - Settings</title>
+	<meta name="description" content="Adjust settings for Kazwire!" />
+	<meta property="og:description" content="Adjust settings for Kazwire!" />
+</svelte:head>
+
 <HorzAd />
 <div class="rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white">
 	<h1 class="text-left text-4xl font-bold">Settings</h1>
