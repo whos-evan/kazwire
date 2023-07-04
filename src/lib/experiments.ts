@@ -1,54 +1,59 @@
-class experiment {
-    // Set a cookie with a large random number for 30 days.
-    // This is used to determine if the user is in the experiment or not.
-    setCookie() {
-        const randomNumber = Math.random()
-        const expires = new Date()
-        expires.setMonth(expires.getMonth() + 1)
-        document.cookie = `experiment=${randomNumber};expires=${expires.toUTCString()}`
+class Experiment {
+    setCookie(): void {
+        const randomNumber: number = Math.random();
+        const expires: Date = new Date();
+        expires.setMonth(expires.getMonth() + 1);
+        document.cookie = `experiment=${randomNumber};expires=${expires.toUTCString()}`;
     }
 
-    // Get the cookie's number value
-    getCookie() {
-        const cookie = document.cookie
+    getCookie(): number {
+        const cookie: string | undefined = document.cookie
             .split('; ')
-            .find((row) => row.startsWith('experiment'))
+            .find((row: string) => row.startsWith('experiment'));
         if (cookie) {
-            return Number(cookie.split('=')[1])
+            return Number(cookie.split('=')[1]);
         } else {
-            this.setCookie()
-            return this.getCookie()
+            this.setCookie();
+            return this.getCookie();
         }
     }
 
-    getExperiments() {
-        const experiments = JSON.parse(localStorage.getItem('experiments'))
+    getExperiments(): Record<string, any> {
+        const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
         if (!experiments) {
-            localStorage.setItem('experiments', JSON.stringify({}))
-            return {}
+            localStorage.setItem('experiments', JSON.stringify({}));
+            return {};
         }
-        return experiments
+        return experiments;
     }
 
-    // Fetch the expierment data from the localStorage and return it
-    getExperimentData(id: string) {
-        const experiments = JSON.parse(localStorage.getItem('experiments'))
-        return experiments[id]
+    getExperimentData(id: string): any {
+        const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
+        return experiments[id];
     }
 
-    // Fetch or create the expierment data from the localStorage and return it
-    fetchOrCreateExperimentData(id: string, endDate: string, description: string, percentage: number, enabled: boolean) {
-        const experiments = JSON.parse(localStorage.getItem('experiments'))
+    fetchOrCreateExperimentData(
+        id: string,
+        endDate: string,
+        description: string,
+        percentage: number,
+        enabled: boolean
+    ): any {
+        const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
 
-        // If the end date has past then don't bother saving it
         if (new Date(endDate) < new Date()) {
-            return
+            return;
         }
 
-        // Check to make sure that they don't differ at all
-        // If they do, then we need to update the localStorage
-        if (experiments && experiments[id] && experiments[id].endDate === endDate && experiments[id].description === description && experiments[id].percentage === percentage && experiments[id].enabled === enabled) {
-            return experiments[id]
+        if (
+            experiments &&
+            experiments[id] &&
+            experiments[id].endDate === endDate &&
+            experiments[id].description === description &&
+            experiments[id].percentage === percentage &&
+            experiments[id].enabled === enabled
+        ) {
+            return experiments[id];
         } else {
             experiments[id] = {
                 endDate,
@@ -57,81 +62,76 @@ class experiment {
                 enabled,
                 forceEnable: false,
                 forceDisable: false,
-            }
-            localStorage.setItem('experiments', JSON.stringify(experiments))
-            return experiments[id]
+            };
+            localStorage.setItem('experiments', JSON.stringify(experiments));
+            return experiments[id];
         }
     }
 
-    removeExperiment(id: string) {
-        const experiments = JSON.parse(localStorage.getItem('experiments'))
+    removeExperiment(id: string): void {
+        const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
         if (!experiments) {
-            return
+            return;
         }
         if (!experiments[id]) {
-            return
+            return;
         }
-        delete experiments[id]
-        localStorage.setItem('experiments', JSON.stringify(experiments))
+        delete experiments[id];
+        localStorage.setItem('experiments', JSON.stringify(experiments));
     }
 
-    // Force enable toggle an experiment
-    forceEnableToggle(id: string) {
-        const experiments = JSON.parse(localStorage.getItem('experiments'))
+    forceEnableToggle(id: string): void {
+        const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
         if (!experiments) {
-            return
+            return;
         }
         if (!experiments[id]) {
-            return
+            return;
         }
-        experiments[id].forceEnable = true
-        experiments[id].forceDisable = false
-        localStorage.setItem('experiments', JSON.stringify(experiments))
+        experiments[id].forceEnable = true;
+        experiments[id].forceDisable = false;
+        localStorage.setItem('experiments', JSON.stringify(experiments));
     }
 
-    forceDisableToggle(id: string) {
-        const experiments = JSON.parse(localStorage.getItem('experiments'))
+    forceDisableToggle(id: string): void {
+        const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
         if (!experiments) {
-            return
+            return;
         }
         if (!experiments[id]) {
-            return
+            return;
         }
-        experiments[id].forceDisable = true
-        experiments[id].forceEnable = false
-        localStorage.setItem('experiments', JSON.stringify(experiments))
+        experiments[id].forceDisable = true;
+        experiments[id].forceEnable = false;
+        localStorage.setItem('experiments', JSON.stringify(experiments));
     }
 
+    shouldShow(id: string): boolean {
+        const experimentData: any = this.getExperimentData(id);
 
-    // Check if the user should see the experiment or not
-    // Takes into account the percent chance of seeing it, the end date, and if it is enabled 
-    shouldShow(id: string) {
-        // If the percentage, end date, and enabled are all in order, return true
-        // The percentage should be converted to a decimal to align with the random number
-        const experimentData = this.getExperimentData(id)
-
-        // If the end date has past then remove it
         if (experimentData && new Date(experimentData.endDate) < new Date()) {
-            const experiments = JSON.parse(localStorage.getItem('experiments'))
-            delete experiments[id]
-            localStorage.setItem('experiments', JSON.stringify(experiments))
-            return false
+            const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
+            delete experiments[id];
+            localStorage.setItem('experiments', JSON.stringify(experiments));
+            return false;
         }
 
         if (experimentData) {
             if (experimentData.forceDisable) {
-                return false
+                return false;
             }
             if (experimentData.forceEnable) {
-                return true
+                return true;
             }
-            const { percentage, endDate, enabled } = experimentData
-            const randomNumber = this.getCookie()
+            const { percentage, endDate, enabled } = experimentData;
+            const randomNumber: number = this.getCookie();
             if (randomNumber <= percentage / 100 && new Date(endDate) > new Date() && enabled) {
-                return true
+                return true;
             }
         }
+
+        return false;
     }
 }
 
-export const experiments = new experiment()
+export const experiments: Experiment = new Experiment();  
