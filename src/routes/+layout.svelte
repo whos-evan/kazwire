@@ -39,9 +39,21 @@
 		}
 	}
 
+	import { experiments } from '$lib/experiments';
+
+	let showWhite: boolean;
 	onMount(() => {
 		getTitle();
 		getFavicon();
+
+		experiments.fetchOrCreateExperimentData(
+			'whiteTheme',
+			'2023-07-05',
+			'Removes the Kazwire bright orange as the default background color.',
+			25,
+			true
+		);
+		showWhite = experiments.shouldShow('whiteTheme');
 
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
 	});
@@ -83,7 +95,7 @@
 {#if resetLayout}
 	<slot />
 {:else}
-	<div class="z-50 bg-primary dark:bg-black">
+	<div class="z-50 dark:bg-black" class:bg-white={showWhite} class:bg-primary={!showWhite}>
 		<div class="fixed z-50 w-full px-5 py-5">
 			<nav
 				class="flex w-full flex-wrap items-center justify-between rounded-lg bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white shadow-md shadow-black dark:shadow-white md:py-0"

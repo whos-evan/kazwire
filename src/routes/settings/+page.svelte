@@ -189,6 +189,9 @@
 					<button class="btn" on:click={() => experiments.forceDisableToggle(experiment)}>
 						Force Disable
 					</button>
+					<button class="btn bg-red-500" on:click={() => experiments.removeExperiment(experiment)}>
+						Remove Experiment
+					</button>
 				</div>
 			{/each}
 		</div>

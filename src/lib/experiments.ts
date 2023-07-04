@@ -16,7 +16,8 @@ class experiment {
         if (cookie) {
             return Number(cookie.split('=')[1])
         } else {
-            return 0
+            this.setCookie()
+            return this.getCookie()
         }
     }
 
@@ -60,6 +61,18 @@ class experiment {
             localStorage.setItem('experiments', JSON.stringify(experiments))
             return experiments[id]
         }
+    }
+
+    removeExperiment(id: string) {
+        const experiments = JSON.parse(localStorage.getItem('experiments'))
+        if (!experiments) {
+            return
+        }
+        if (!experiments[id]) {
+            return
+        }
+        delete experiments[id]
+        localStorage.setItem('experiments', JSON.stringify(experiments))
     }
 
     // Force enable toggle an experiment
