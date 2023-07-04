@@ -183,10 +183,16 @@
 						End Date: {experimentData[experiment].endDate}
 					</p>
 
-					<button class="btn bg-green-500" on:click={() => experiments.forceEnableToggle(experiment)}>
+					<button
+						class="btn bg-green-500"
+						on:click={() => experiments.forceEnableToggle(experiment)}
+					>
 						Force Enable
 					</button>
-					<button class="btn bg-red-500" on:click={() => experiments.forceDisableToggle(experiment)}>
+					<button
+						class="btn bg-red-500"
+						on:click={() => experiments.forceDisableToggle(experiment)}
+					>
 						Force Disable
 					</button>
 					<button class="btn bg-red-400" on:click={() => experiments.removeExperiment(experiment)}>
@@ -194,6 +200,12 @@
 					</button>
 				</div>
 			{/each}
+			<!-- Reset cookie -->
+			<div class="w-full text-center">
+				<button class="btn-lg mt-4 self-center" on:click={() => experiments.setCookie()}>
+					Reset Experiment Cookie
+				</button>
+			</div>
 		</div>
 	</div>
 </div>
