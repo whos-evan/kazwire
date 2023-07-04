@@ -183,13 +183,13 @@
 						End Date: {experimentData[experiment].endDate}
 					</p>
 
-					<button class="btn" on:click={() => experiments.forceEnableToggle(experiment)}>
+					<button class="btn bg-green-500" on:click={() => experiments.forceEnableToggle(experiment)}>
 						Force Enable
 					</button>
-					<button class="btn" on:click={() => experiments.forceDisableToggle(experiment)}>
+					<button class="btn bg-red-500" on:click={() => experiments.forceDisableToggle(experiment)}>
 						Force Disable
 					</button>
-					<button class="btn bg-red-500" on:click={() => experiments.removeExperiment(experiment)}>
+					<button class="btn bg-red-400" on:click={() => experiments.removeExperiment(experiment)}>
 						Remove Experiment
 					</button>
 				</div>
