@@ -2,6 +2,8 @@
 	import { experiments } from '$lib/experiments';
 	import { onMount } from 'svelte';
 
+
+	let showFaq: boolean = true;
 	onMount(() => {
 		experiments.fetchOrCreateExperimentData(
 			'shortenedFaq',
@@ -10,6 +12,8 @@
 			75,
 			true
 		);
+
+		showFaq = experiments.shouldShow('shortenedFaq');
 	});
 </script>
 
@@ -20,7 +24,7 @@
 			Are you looking for a new place to play your favorite online games? Look no further! Our
 			online gaming site is the perfect destination for gamers of all levels and interests.
 		</p>
-		{#if !experiments.shouldShow('shortenedFaq')}
+		{#if !showFaq}
 			<br />
 			<p>
 				With a wide variety of games to choose from, including popular titles like Run 3, Slope, and
