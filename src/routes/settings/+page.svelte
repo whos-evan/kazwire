@@ -179,7 +179,7 @@
 						{/if}
 					</div>
 					<p class="text-sm text-gray-500">{experimentData[experiment].description}</p>
-					<p class="text-sm text-gray-500">
+					<p class="text-sm text-black dark:text-white">
 						End Date: {experimentData[experiment].endDate}
 					</p>
 
