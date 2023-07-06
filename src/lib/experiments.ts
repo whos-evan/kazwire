@@ -132,6 +132,24 @@ class Experiment {
 
         return false;
     }
+
+    getNumberOfShownExperiments(): number {
+        let number = 0;
+        const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
+        if (!experiments) {
+            return 0;
+        }
+
+        // run shouldShow() on all experiments to see how many are shown
+        Object.keys(experiments).forEach((id: string) => {
+            if (this.shouldShow(id)) {
+                number++;
+            }
+            
+        });
+
+        return number;
+    }
 }
 
 export const experiments: Experiment = new Experiment();  

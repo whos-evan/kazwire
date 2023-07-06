@@ -40,11 +40,16 @@
 	}
 
 	import { experiments } from '$lib/experiments';
+	import Changelog from '$lib/components/Changelog.svelte';
+
+	let numOfExperiments = 0;
 
 	let showWhite: boolean;
 	onMount(() => {
 		getTitle();
 		getFavicon();
+
+		numOfExperiments = experiments.getNumberOfShownExperiments();
 
 		experiments.fetchOrCreateExperimentData(
 			'whiteTheme',
@@ -204,9 +209,20 @@
 							>Kazwire</span
 						>
 					</a>
-					<a href="/about-the-developers" class="text-md self-center text-white hover:underline">
+					<a
+						href="/about-the-developers"
+						class="text-md flex self-center text-white hover:underline"
+					>
 						Made with ❤️ by evan
 					</a>
+					{#if numOfExperiments > 0}
+						<a
+							href="/settings#experiments"
+							class="text-md flex flex-col self-center text-white hover:underline bg-green-500 px-2 py-1 rounded-lg mt-2"
+						>
+							{numOfExperiments} experiment{#if numOfExperiments > 1}s{/if} running
+						</a>
+					{/if}
 				</div>
 				<div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
 					<div>
