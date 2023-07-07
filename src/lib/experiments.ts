@@ -39,7 +39,12 @@ class Experiment {
         percentage: number,
         enabled: boolean
     ): any {
-        const experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
+        let experiments: Record<string, any> | null = JSON.parse(localStorage.getItem('experiments'));
+
+        if (!experiments) {
+            localStorage.setItem('experiments', JSON.stringify({}));
+            experiments = {};
+        }
 
         if (new Date(endDate) < new Date()) {
             return;
