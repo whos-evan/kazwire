@@ -22,6 +22,8 @@ In this version we are excited to bring actually readable code with type checkin
 * Loading animation for boxes while the api is fetching games/apps
 * Changelog blog
 * Improved heart system (localStorage and through the db using user auth)
+* View counter for games/apps
+* AB testing for certain features which can be manually disabled by the user
 
 ### Here's what is coming soon:
 * Account system with roles (admin, mod, dev, normal user)
