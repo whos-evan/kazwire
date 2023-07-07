@@ -36,6 +36,10 @@
 		return template.replace('%s', encodeURIComponent(input));
 	}
 
+	import { experiments } from '$lib/experiments';
+
+	let searchAds: boolean;
+
 	onMount(async () => {
 		// Register the service worker
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
@@ -49,6 +53,16 @@
 				};
 			}
 		});
+
+		// Ads experiment
+		experiments.fetchOrCreateExperimentData(
+			'searchAds',
+			'2023-08-01',
+			'Adjusts the level of ads shown on the search page.',
+			85,
+			true
+		);
+		searchAds = experiments.shouldShow('searchAds');
 	});
 
 	async function iframeSearch() {
@@ -106,6 +120,8 @@
 	}
 
 	import Vert from '$lib/components/Google/Vert.svelte';
+	import Horz from '$lib/components/Google/Horz.svelte';
+	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 	let innerWidth: number = 0;
 </script>
 
@@ -136,8 +152,11 @@
 
 <div class="relative flex flex-row justify-center">
 	<div
-		class="float-left flex h-[calc(100vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
+		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 	>
+		{#if innerWidth > 1300 && searchAds}
+			<Vert />
+		{/if}
 		<div class="align-center mb-14 flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 				<iframe
@@ -154,13 +173,13 @@
 				<div class="float-right mr-5">
 					<button class="mt-4 fill-white" on:click={() => fullScreen()}>
 						<!-- Full screen -->
-						<Icon class="h-6 w-6" icon="pixelarticons:aspect-ratio" />
+						<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
 					</button>
 				</div>
 				<div class="float-right mr-5">
-					<button class="mt-4 fill-white" on:click={() => expandiFrame()}>
+					<button class="mt-4" on:click={() => expandiFrame()}>
 						<!-- Fill screen -->
-						<Icon class="h-6 w-6" icon="pixelarticons:arrows-vertical" />
+						<Icon class="h-6 w-6" icon="ic:round-expand" />
 					</button>
 				</div>
 				<div class="float-right mr-5">
@@ -169,7 +188,7 @@
 						class="mt-4 fill-white active:animate-spin"
 						on:click={() => reloadiFrame()}
 					>
-						<Icon class="h-6 w-6" icon="pixelarticons:reload" />
+						<Icon class="h-6 w-6" icon="mdi:reload" />
 					</button>
 				</div>
 				<div class="flex">
@@ -180,7 +199,13 @@
 			</div>
 		</div>
 	</div>
-	{#if innerWidth > 824}
+	{#if innerWidth > 824 && searchAds}
 		<Vert />
 	{/if}
 </div>
+
+{#if innerWidth > 730 && searchAds}
+	<Leaderboard />
+{:else}
+	<Horz />
+{/if}
