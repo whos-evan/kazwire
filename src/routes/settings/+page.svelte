@@ -35,7 +35,6 @@
 
 	function getFavicon() {
 		const storedFavicon: string = localStorage.getItem('favicon') || '';
-		console.log(storedFavicon);
 		if (storedFavicon) {
 			// Change favicon by creating a new link element
 			let link = document.querySelector("link[rel~='icon']") as HTMLLinkElement;
