@@ -113,7 +113,7 @@
 	<h1 class="text-left text-4xl font-bold">Settings</h1>
 	<div class="mt-2 text-xl">
 		<p>
-			just settings on Kazwire as you see fit. These settings are stored in your browser's local
+			Adjust settings on Kazwire as you see fit. These settings are stored in your browser's local
 			storage, so they will persist across sessions.
 		</p>
 	</div>
