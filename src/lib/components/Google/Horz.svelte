@@ -1,7 +1,3 @@
-<script lang="ts">
-	const AD_SLOT_ID = '4023379916';
-</script>
-
 <svelte:head>
 	<script
 		async
@@ -20,7 +16,7 @@
 		class="adsbygoogle"
 		style="display:block"
 		data-ad-client="ca-pub-7648886706850999"
-		data-ad-slot="{AD_SLOT_ID}"
+		data-ad-slot="4023379916"
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	/>

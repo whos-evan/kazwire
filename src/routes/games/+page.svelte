@@ -17,7 +17,7 @@
 		return games;
 	}
 
-	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
+	import Horz from '$lib/components/Google/Horz.svelte';
 </script>
 
 <svelte:head>
@@ -26,7 +26,7 @@
 	<meta property="og:description" content="Play freely with Kazwire!" />
 </svelte:head>
 
-<HorzAd />
+<Horz />
 
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">
@@ -54,7 +54,7 @@
 		>
 			<option value="">All</option>
 			<option value="action">Action</option>
-			<option value="adventure">Adventure</option>
+			<option value="adventure">venture</option>
 			<option value="casual">Casual</option>
 			<option value="indie">Indie</option>
 			<option value="multiplayer">Multiplayer</option>

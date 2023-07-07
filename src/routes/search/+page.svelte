@@ -105,7 +105,7 @@
 		contentTitle = iframe.contentDocument?.title || 'Nothing yet...';
 	}
 
-	import VertAd from '$lib/components/GoogleAds/VertAd.svelte';
+	import Vert from '$lib/components/Google/Vert.svelte';
 	let innerWidth: number = 0;
 </script>
 
@@ -181,6 +181,6 @@
 		</div>
 	</div>
 	{#if innerWidth > 824}
-		<VertAd />
+		<Vert />
 	{/if}
 </div>

@@ -99,21 +99,21 @@
 		experimentData = experiments.getExperiments();
 	});
 
-	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
+	import Horz from '$lib/components/Google/Horz.svelte';
 </script>
 
 <svelte:head>
 	<title>Kazwire - Settings</title>
-	<meta name="description" content="Adjust settings for Kazwire!" />
-	<meta property="og:description" content="Adjust settings for Kazwire!" />
+	<meta name="description" content="just settings for Kazwire!" />
+	<meta property="og:description" content="just settings for Kazwire!" />
 </svelte:head>
 
-<HorzAd />
+<Horz />
 <div class="rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white">
 	<h1 class="text-left text-4xl font-bold">Settings</h1>
 	<div class="mt-2 text-xl">
 		<p>
-			Adjust settings on Kazwire as you see fit. These settings are stored in your browser's local
+			just settings on Kazwire as you see fit. These settings are stored in your browser's local
 			storage, so they will persist across sessions.
 		</p>
 	</div>

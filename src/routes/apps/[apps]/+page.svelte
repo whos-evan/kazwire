@@ -128,10 +128,10 @@
 
 	import Icon from '@iconify/svelte';
 
-	import VertAd from '$lib/components/GoogleAds/VertAd.svelte';
-	import VertAd2 from '$lib/components/GoogleAds/VertAd2.svelte';
-	import LeaderboardAd from '$lib/components/GoogleAds/LeaderboardAd.svelte';
-	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
+	import Vert from '$lib/components/Google/Vert.svelte';
+	import Vert2 from '$lib/components/Google/Vert2.svelte';
+	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
+	import Horz from '$lib/components/Google/Horz.svelte';
 	let innerWidth: number = 0;
 
 	let loadedFrame: boolean = false;
@@ -164,7 +164,7 @@
 			iframe.classList.remove('hidden');
 		}, 500);
 
-		// Add to the views
+		// d to the views
 		fetch(PUBLIC_API_BASE_URL + '/api/apps/' + slug + '/views', {
 			method: 'POST'
 		});
@@ -190,7 +190,7 @@
 			class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 		>
 			{#if innerWidth > 1224}
-				<VertAd />
+				<Vert />
 			{/if}
 			<div class="align-center mb-14 flex-grow">
 				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
@@ -285,14 +285,14 @@
 			</div>
 		</div>
 		{#if innerWidth > 824}
-			<VertAd2 />
+			<Vert2 />
 		{/if}
 	</div>
 
 	{#if innerWidth > 730}
-		<LeaderboardAd />
+		<Leaderboard />
 	{:else}
-		<HorzAd />
+		<Horz />
 	{/if}
 
 	<!-- Bottom area for displaying more information about the app -->

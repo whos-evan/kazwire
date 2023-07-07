@@ -14,7 +14,7 @@
 
 	let innerWidth: number;
 
-	import HorzAd from '$lib/components/GoogleAds/HorzAd.svelte';
+	import Horz from '$lib/components/Google/Horz.svelte';
 	let likedGames: string[] = [];
 	let likedApps: string[] = [];
 	import { appLike, gameLike } from '$lib/likeContent';
@@ -68,7 +68,7 @@
 		<Faq />
 	</grid>
 	<grid class="col-span-2 row-start-4">
-		<HorzAd />
+		<Horz />
 	</grid>
 	<grid class="col-span-2 row-start-5 max-w-full">
 		<Partners />
