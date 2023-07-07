@@ -8,6 +8,9 @@
 		src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7648886706850999"
 		crossorigin="anonymous"
 	></script>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>
 </svelte:head>
 
 <div class="items-center justify-center p-4 [text-align-last:center]">
