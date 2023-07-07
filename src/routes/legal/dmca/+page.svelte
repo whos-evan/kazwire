@@ -3,7 +3,7 @@
 </svelte:head>
 
 
-<div id="home" class="h-full w-full text-white">
+<div id="home" class="h-full w-full text-black dark:text-white">
 	<h1 class="text-3xl font-bold">DMCA policy</h1>
 	<br />
 	<p>

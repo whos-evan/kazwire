@@ -2,7 +2,7 @@
 	<title>Kazwire - Privacy Policy</title>
 </svelte:head>
 
-<div id="home" class="h-full w-full text-white">
+<div id="home" class="h-full w-full text-black dark:text-white">
 	<h1 class="text-3xl font-bold">Privacy Policy for Kazwire</h1>
 	<br />
 	<p>

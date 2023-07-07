@@ -2,7 +2,7 @@
 	<title>Kazwire - TOS</title>
 </svelte:head>
 
-<div id="home" class="h-full w-full text-white">
+<div id="home" class="h-full w-full text-black dark:text-white">
 	<h1 class="text-3xl font-bold">Website Terms and Conditions of Use</h1>
 	<br />
 	<h2 class="text-2xl">1. Terms</h2>
