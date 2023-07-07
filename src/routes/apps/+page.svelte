@@ -13,6 +13,8 @@
 	async function getApps() {
 		const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/apps?search=' + searchQuery);
 		const apps: Game[] = await response.json();
+		// sort games by view count
+		apps.sort((a, b) => b.views - a.views);
 		return apps;
 	}
 </script>
