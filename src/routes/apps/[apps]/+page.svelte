@@ -155,6 +155,14 @@
 			loadedApp();
 		}, 5000);
 	}
+
+	function addView() {
+		// add to the views
+		fetch(PUBLIC_API_BASE_URL + '/api/apps/' + slug + '/views', {
+			method: 'POST'
+		});
+	}
+
 	function loadedApp() {
 		// Wait 0.5 second before removing the loading screen
 		setTimeout(() => {
@@ -163,11 +171,6 @@
 			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 			iframe.classList.remove('hidden');
 		}, 500);
-
-		// d to the views
-		fetch(PUBLIC_API_BASE_URL + '/api/apps/' + slug + '/views', {
-			method: 'POST'
-		});
 	}
 </script>
 
@@ -212,7 +215,11 @@
 								</h1>
 
 								<!-- Access now button -->
-								<button class="lg:btn-xl btn mt-8" on:click={() => loadFrame()}>
+								<button
+									class="lg:btn-xl btn mt-8"
+									on:click={() => addView()}
+									on:click={() => loadFrame()}
+								>
 									Access Now
 									<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
 								</button>

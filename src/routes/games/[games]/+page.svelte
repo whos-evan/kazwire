@@ -156,6 +156,14 @@
 			loadedGame();
 		}, 5000);
 	}
+
+	function addView() {
+		// Add to the views
+		fetch(PUBLIC_API_BASE_URL + '/api/games/' + slug + '/views', {
+			method: 'POST'
+		});
+	}
+
 	function loadedGame() {
 		// Wait 0.5 second before removing the loading screen
 		setTimeout(() => {
@@ -164,11 +172,6 @@
 			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 			iframe.classList.remove('hidden');
 		}, 500);
-
-		// Add to the views
-		fetch(PUBLIC_API_BASE_URL + '/api/games/' + slug + '/views', {
-			method: 'POST'
-		});
 	}
 </script>
 
@@ -213,7 +216,11 @@
 								</h1>
 
 								<!-- Play now button -->
-								<button class="lg:btn-xl btn mt-8" on:click={() => loadFrame()}>
+								<button
+									class="lg:btn-xl btn mt-8"
+									on:click={() => addView()}
+									on:click={() => loadFrame()}
+								>
 									Play Now
 									<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
 								</button>
