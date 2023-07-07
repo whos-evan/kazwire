@@ -41,6 +41,16 @@
 	let searchAds: boolean;
 
 	onMount(async () => {
+		// Ads experiment
+		experiments.fetchOrCreateExperimentData(
+			'searchAds',
+			'2023-08-01',
+			'Adjusts the level of ads shown on the search page.',
+			85,
+			true
+		);
+		searchAds = experiments.shouldShow('searchAds');
+
 		// Register the service worker
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
@@ -53,16 +63,6 @@
 				};
 			}
 		});
-
-		// Ads experiment
-		experiments.fetchOrCreateExperimentData(
-			'searchAds',
-			'2023-08-01',
-			'Adjusts the level of ads shown on the search page.',
-			85,
-			true
-		);
-		searchAds = experiments.shouldShow('searchAds');
 	});
 
 	async function iframeSearch() {
