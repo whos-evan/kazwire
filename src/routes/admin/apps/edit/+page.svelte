@@ -10,6 +10,27 @@
 		apps = await res.json();
 	});
 
+	function deleteApp() {
+		// POST /api/admin/delete/app
+		fetch(PUBLIC_API_BASE_URL + '/api/admin/delete/app', {
+			method: 'POST',
+			headers: {
+				'Content-Type': 'application/json'
+			},
+			body: JSON.stringify(selectedApp)
+		})
+			.then((res) => {
+				if (res.status === 200) {
+					alert('Successfully deleted app!');
+				} else {
+					alert('Failed to delete app!');
+				}
+			})
+			.catch((err) => {
+				alert('Failed to delete app!');
+			});
+	}
+
 	function updateApp() {
 		// POST /api/admin/edit/app
 		fetch(PUBLIC_API_BASE_URL + '/api/admin/edit/app', {
@@ -122,6 +143,7 @@
 					</div>
 				</div>
 				<button class="btn-lg mt-2" on:click={() => updateApp()}>Update App</button>
+				<button class="btn-lg mt-2 bg-red-500" on:click={() => deleteApp()}>Delete Game</button>
 			{/if}
 		</div>
 	</div>
