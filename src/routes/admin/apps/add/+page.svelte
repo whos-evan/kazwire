@@ -14,6 +14,9 @@
 		// Remove all values from the selected app
 		for (const key in selectedApp) {
 			if (Object.prototype.hasOwnProperty.call(selectedApp, key)) {
+				if (selectedApp[key] == null) {
+					continue;
+				}
 				// Replace based on the type
 				switch (typeof selectedApp[key]) {
 					case 'string':

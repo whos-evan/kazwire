@@ -14,6 +14,9 @@
 		// Remove all values from the selected game
 		for (const key in selectedGame) {
 			if (Object.prototype.hasOwnProperty.call(selectedGame, key)) {
+				if (selectedGame[key] == null) {
+					continue;
+				}
 				// Replace based on the type
                 switch (typeof selectedGame[key]) {
                     case 'string':
