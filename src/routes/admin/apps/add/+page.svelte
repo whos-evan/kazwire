@@ -59,10 +59,10 @@
 </script>
 
 <div class="rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white">
-	<h1 class="text-left text-4xl font-bold">App Editor</h1>
+	<h1 class="text-left text-4xl font-bold">App Adder</h1>
 	<div class="mt-2 text-xl">
 		<p>
-			You can edit apps as needed, but please be careful. If you are unsure of what you are doing,
+			You can add apps as needed, but please be careful. If you are unsure of what you are doing,
 			please ask for help.
 		</p>
 	</div>
@@ -70,12 +70,8 @@
 	<div class="mt-10 grid grid-cols-1 gap-10">
 		<div class="col-start-1 row-start-1">
 			<h3 class="text-2xl font-bold">Apps</h3>
-			<p class="text-sm text-gray-500">Select a app you wish to modify:</p>
-			<div class="mt-2 grid w-full columns-2 align-middle">
-				<div class="col-start-1 row-start-1">
-					<h3 class="text-2xl font-bold">App Details</h3>
-					<p class="text-sm text-gray-500">Modify the app details:</p>
-				</div>
+			<p class="text-sm text-gray-500">Input the vital information for the app you wish to add:</p>
+			<div class="mt-2 w-full align-middle">
 				{#if selectedApp}
 					<div class="col-start-2 row-start-1">
 						<div class="flex flex-col gap-2">
@@ -136,7 +132,7 @@
 					</div>
 				{/if}
 			</div>
-			<button class="btn-lg" on:click={() => updateApp()}>Add App</button>
+			<button class="btn-lg mt-2" on:click={() => updateApp()}>Add App</button>
 		</div>
 	</div>
 </div>

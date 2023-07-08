@@ -44,26 +44,28 @@
 	</div>
 
 	<div class="mt-10 grid grid-cols-1 gap-10">
-		<div class="col-start-1 row-start-1">
-			<h3 class="text-2xl font-bold">Games</h3>
-			<p class="text-sm text-gray-500">Select a game you wish to modify:</p>
-			<select
-				id="selectGame"
-				class="mr-2 w-full max-w-xs rounded-lg p-2 text-black sm:max-w-md"
-				bind:value={selectedGame}
-			>
-				{#each games as game}
-					<option value={game}>{game.name}</option>
-				{/each}
-			</select>
+		<div class="mt-2 grid w-full gap-4 align-middle">
+			<div>
+				<h3 class="text-2xl font-bold">Game Selector</h3>
+				<p class="text-sm text-gray-500">Select the game you wish to edit:</p>
+				<select
+					id="selectGame"
+					class="mr-2 w-full mt-2 max-w-xs rounded-lg p-2 text-black sm:max-w-md"
+					bind:value={selectedGame}
+				>
+					{#each games as game}
+						<option value={game}>{game.name}</option>
+					{/each}
+				</select>
+			</div>
 
 			{#if selectedGame}
-				<div class="mt-2 grid w-full columns-2 align-middle">
-					<div class="col-start-1 row-start-1">
+				<div class="">
+					<div>
 						<h3 class="text-2xl font-bold">Game Details</h3>
 						<p class="text-sm text-gray-500">Modify the game details:</p>
 					</div>
-					<div class="col-start-2 row-start-1">
+					<div>
 						<div class="flex flex-col gap-2">
 							<div class="flex flex-col">
 								<label for="name" class="text-sm text-gray-500"> Name </label>
@@ -206,7 +208,7 @@
 						</div>
 					</div>
 				</div>
-				<button class="btn-lg" on:click={() => updateGame()}>Update Game</button>
+				<button class="btn-lg mt-2" on:click={() => updateGame()}>Update Game</button>
 			{/if}
 		</div>
 	</div>

@@ -49,7 +49,7 @@
 			<p class="text-sm text-gray-500">Select a app you wish to modify:</p>
 			<select
 				id="selectApp"
-				class="mr-2 w-full max-w-xs rounded-lg p-2 text-black sm:max-w-md"
+				class="mr-2 mt-2 w-full max-w-xs rounded-lg p-2 text-black sm:max-w-md"
 				bind:value={selectedApp}
 			>
 				{#each apps as app}
@@ -58,12 +58,12 @@
 			</select>
 
 			{#if selectedApp}
-				<div class="mt-2 grid w-full columns-2 align-middle">
-					<div class="col-start-1 row-start-1">
+				<div class="mt-2 grid w-full align-middle">
+					<div>
 						<h3 class="text-2xl font-bold">App Details</h3>
 						<p class="text-sm text-gray-500">Modify the app details:</p>
 					</div>
-					<div class="col-start-2 row-start-1">
+					<div>
 						<div class="flex flex-col gap-2">
 							<div class="flex flex-col">
 								<label for="name" class="text-sm text-gray-500"> Name </label>
@@ -121,7 +121,7 @@
 						</div>
 					</div>
 				</div>
-				<button class="btn-lg" on:click={() => updateApp()}>Update App</button>
+				<button class="btn-lg mt-2" on:click={() => updateApp()}>Update App</button>
 			{/if}
 		</div>
 	</div>
