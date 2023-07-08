@@ -31,6 +31,10 @@
 			});
 	}
 
+	function setNull(key: string) {
+		selectedGame[key] = null;
+	}
+
 	let selectedGame: Game | null = null;
 </script>
 
@@ -50,7 +54,7 @@
 				<p class="text-sm text-gray-500">Select the game you wish to edit:</p>
 				<select
 					id="selectGame"
-					class="mr-2 w-full mt-2 max-w-xs rounded-lg p-2 text-black sm:max-w-md"
+					class="mr-2 mt-2 w-full max-w-xs rounded-lg p-2 text-black sm:max-w-md"
 					bind:value={selectedGame}
 				>
 					{#each games as game}
@@ -92,6 +96,19 @@
 									type="text"
 									bind:value={selectedGame.developer}
 								/>
+							</div>
+							<div class="flex flex-col">
+								<label for="embedURL" class="text-sm text-gray-500"> embedURL </label>
+								<input
+									id="embedURL"
+									type="text"
+									class="rounded-lg p-2 text-black"
+									bind:value={selectedGame.embedURL}
+								/>
+								<!-- Checkmark to set null -->
+								<button class="btn" on:click={() => setNull('embedURL')}>
+									Null embedURL
+								</button>
 							</div>
 							<div class="flex flex-col">
 								<label for="developer" class="text-sm text-gray-500"> Platform </label>
@@ -177,6 +194,9 @@
 									type="text"
 									bind:value={selectedGame.errorMessage}
 								/>
+								<button class="btn" on:click={() => setNull('errorMessage')}>
+									Null errorMessage
+								</button>
 							</div>
 							<div class="flex flex-col">
 								<label for="tags" class="text-sm text-gray-500"> emulatorType </label>
@@ -186,6 +206,9 @@
 									type="text"
 									bind:value={selectedGame.emulatorType}
 								/>
+								<button class="btn" on:click={() => setNull('emulatorType')}>
+									Null emulatorType
+								</button>
 							</div>
 							<div class="flex flex-col">
 								<label for="tags" class="text-sm text-gray-500"> emulatorFile </label>
@@ -195,6 +218,9 @@
 									type="text"
 									bind:value={selectedGame.emulatorFile}
 								/>
+								<button class="btn" on:click={() => setNull('emulatorFile')}>
+									Null emulatorFile
+								</button>
 							</div>
 							<div class="flex flex-col">
 								<label for="tags" class="text-sm text-gray-500"> emulatorCore </label>
@@ -204,6 +230,9 @@
 									type="text"
 									bind:value={selectedGame.emulatorCore}
 								/>
+								<button class="btn" on:click={() => setNull('emulatorCore')}>
+									Null emulatorCore
+								</button>
 							</div>
 						</div>
 					</div>
