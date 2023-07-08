@@ -168,6 +168,15 @@
 								/>
 							</div>
 							<div class="flex flex-col">
+								<label for="tags" class="text-sm text-gray-500"> errorMessage </label>
+								<input
+									id="errorMessage"
+									class="rounded-lg p-2 text-black"
+									type="text"
+									bind:value={selectedGame.errorMessage}
+								/>
+							</div>
+							<div class="flex flex-col">
 								<label for="tags" class="text-sm text-gray-500"> emulatorType </label>
 								<input
 									id="emulatorType"
