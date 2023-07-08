@@ -1,5 +1,7 @@
 import prisma from '$lib/prisma';
 
+import type { Game } from '@prisma/client';
+
 interface Opts {
 	request: Request;
 }
@@ -7,7 +9,7 @@ interface Opts {
 // Post request
 export async function POST({ request }: Opts): Promise<Response> {
 	// Edit the game given the new data sent as a json object which provides the id and all the new data
-	const data = await request.json();
+	const data: Game = await request.json();
 
 	if (data.id) {
 		const game = await prisma.game.findUnique({
