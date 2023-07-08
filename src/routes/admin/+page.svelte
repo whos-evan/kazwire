@@ -46,11 +46,19 @@
 
 	<div class="mt-10 grid grid-cols-1 gap-10">
 		<div class="col-start-1 row-start-1">
-            <a href="/admin/add">
+            <a href="/admin/games/add">
 				<button class="btn"> Add Games </button>
 			</a>
-			<a href="/admin/edit">
+			<a href="/admin/games/edit">
 				<button class="btn"> Edit Games </button>
+			</a>
+		</div>
+		<div class="col-start-1 row-start-2">
+            <a href="/admin/apps/add">
+				<button class="btn"> Add Apps </button>
+			</a>
+			<a href="/admin/apps/edit">
+				<button class="btn"> Edit Apps </button>
 			</a>
 		</div>
 	</div>
