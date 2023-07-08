@@ -36,6 +36,11 @@
                         break;
                 }
 			}
+
+			const NULLABLE_VALUES = ['embedURL', 'emulatorCore', 'emulatorFile', 'emulatorType']
+			if (NULLABLE_VALUES.includes(key)) {
+				selectedGame[key] = null;
+			}
 		}
 	});
 
@@ -114,6 +119,15 @@
 									<option value="PC">PC</option>
 									<option value="Mobile">Mobile</option>
 								</select>
+							</div>
+							<div class="flex flex-col">
+								<label for="embedURL" class="text-sm text-gray-500"> embedURL </label>
+								<input
+									id="embedURL"
+									class="rounded-lg p-2 text-black"
+									type="text"
+									bind:value={selectedGame.embedURL}
+								/>
 							</div>
 							<div class="flex flex-col">
 								<label for="image" class="text-sm text-gray-500"> Image </label>
