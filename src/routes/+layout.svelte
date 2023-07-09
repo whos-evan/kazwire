@@ -5,6 +5,8 @@
 	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
 
+	import Analytics from '$lib/components/Google/Analytics.svelte';
+
 	// Reset the layout for certain pages containing the url path
 	const layoutResetPaths = ['/games/ruffle', '/games/emulator'];
 	let resetLayout = false;
@@ -96,6 +98,8 @@
 <!-- https://codepen.io/hulyak/pen/yLbwXvB -->
 
 <svelte:window bind:innerWidth={windowWidth} />
+
+<Analytics />
 
 {#if resetLayout}
 	<slot />
