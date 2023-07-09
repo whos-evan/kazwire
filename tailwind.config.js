@@ -7,10 +7,10 @@ export default {
 				primary: '#f49625',
 				secondary: '#1f79ad',
 				tertiary: '#e5e7eb',
-				tertiaryDark: '#202124',
+				tertiaryDark: '#202124'
 			}
 		}
 	},
-	plugins: [],
+	plugins: [require('tailwindcss-inner-border')],
 	darkMode: 'class'
 };

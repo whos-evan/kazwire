@@ -20,9 +20,23 @@
 	import { appLike, gameLike } from '$lib/likeContent';
 	import { onMount } from 'svelte';
 
+	import { experiments } from '$lib/experiments';
+	import AlternateHome from '$lib/components/AlternateHome.svelte';
+	let alterateHome: boolean = false;
+
 	onMount(() => {
 		likedApps = appLike.fetchLikes();
 		likedGames = gameLike.fetchLikes();
+
+		experiments.fetchOrCreateExperimentData(
+			'alterateHome',
+			'2023-07-15',
+			'Alternate home page for Kazwire.',
+			25,
+			true
+		);
+
+		alterateHome = experiments.shouldShow('alterateHome');
 	});
 </script>
 
@@ -32,45 +46,55 @@
 	<title>Kazwire</title>
 </head>
 
-<div class="grid max-w-max grid-flow-col gap-8">
-	<grid class="col-span-2 flex gap-8">
-		<Hero />
-		{#if innerWidth > 1000}
-			<Showoff />
-		{/if}
-	</grid>
-	<grid class="col-span-2 row-start-2 flex gap-8">
-		<div class="grid w-full grid-cols-1 space-y-8 lg:grid-cols-3 lg:gap-8 lg:space-y-0">
-			<div class="col-span-2">
-				{#if likedGames.length > 0}
-					<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">Loved Games!</h1>
-					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-						<LovedGame />
-					</div>
-				{:else if likedApps.length > 0}
-					<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">Loved Apps!</h1>
-					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-						<LovedApp />
-					</div>
-				{:else}
-					<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">Random Games!</h1>
-					<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-						{#each [1, 2] as _}
-							<RandomGame />
-						{/each}
-					</div>
-				{/if}
+{#if !alterateHome}
+	<div class="grid max-w-max grid-flow-col gap-8">
+		<grid class="col-span-2 flex gap-8">
+			<Hero />
+			{#if innerWidth > 1000}
+				<Showoff />
+			{/if}
+		</grid>
+		<grid class="col-span-2 row-start-2 flex gap-8">
+			<div class="grid w-full grid-cols-1 space-y-8 lg:grid-cols-3 lg:gap-8 lg:space-y-0">
+				<div class="col-span-2">
+					{#if likedGames.length > 0}
+						<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">
+							Loved Games!
+						</h1>
+						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+							<LovedGame />
+						</div>
+					{:else if likedApps.length > 0}
+						<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">
+							Loved Apps!
+						</h1>
+						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+							<LovedApp />
+						</div>
+					{:else}
+						<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">
+							Random Games!
+						</h1>
+						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
+							{#each [1, 2] as _}
+								<RandomGame />
+							{/each}
+						</div>
+					{/if}
+				</div>
+				<Changelog />
 			</div>
-			<Changelog />
-		</div>
-	</grid>
-	<grid class="col-span-2 row-start-3">
-		<Faq />
-	</grid>
-	<grid class="col-span-2 row-start-4">
-		<Horz />
-	</grid>
-	<grid class="col-span-2 row-start-5 max-w-full">
-		<Partners />
-	</grid>
-</div>
+		</grid>
+		<grid class="col-span-2 row-start-3">
+			<Faq />
+		</grid>
+		<grid class="col-span-2 row-start-4">
+			<Horz />
+		</grid>
+		<grid class="col-span-2 row-start-5 max-w-full">
+			<Partners />
+		</grid>
+	</div>
+{:else}
+	<AlternateHome />
+{/if}
