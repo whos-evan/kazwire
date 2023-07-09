@@ -92,6 +92,22 @@
 		getPresetCloak();
 	}
 
+	function disableExperimentAnalytics(experiment: string) {
+		console.log('Sending analytics for experiment: ' + experiment);
+		gtag('event', 'experiment_disable', {
+			event_category: 'experiment_disable',
+			event_label: experiment,
+		});
+	}
+
+	function enableExperimentAnalytics(experiment: string) {
+		console.log('Sending analytics for experiment: ' + experiment);
+		gtag('event', 'experiment_enable', {
+			event_category: 'experiment_enable',
+			event_label: experiment,
+		});
+	}
+
 	onMount(() => {
 		getTitle();
 		getFavicon();
@@ -191,16 +207,22 @@
 					<button
 						class="btn bg-green-500"
 						on:click={() => experiments.forceEnableToggle(experiment)}
+						on:click={() => enableExperimentAnalytics(experiment)}
 					>
 						Force Enable
 					</button>
 					<button
 						class="btn bg-red-500"
 						on:click={() => experiments.forceDisableToggle(experiment)}
+						on:click={() => disableExperimentAnalytics(experiment)}
 					>
 						Force Disable
 					</button>
-					<button class="btn bg-red-400" on:click={() => experiments.removeExperiment(experiment)}>
+					<button
+						class="btn bg-red-400"
+						on:click={() => experiments.removeExperiment(experiment)}
+						on:click={() => disableExperimentAnalytics(experiment)}
+					>
 						Remove Experiment
 					</button>
 				</div>
