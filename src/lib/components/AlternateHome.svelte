@@ -70,11 +70,11 @@
 	<grid class="row-start-1">
 		<Hero />
 	</grid>
-	<grid class="row-start-2">
-		<grid class="grid grid-cols-6 gap-x-4">
+	<grid class="row-start-2 bg-tertiary dark:bg-tertiaryDark rounded-3xl p-8">
+		<grid class="grid grid-cols-6 gap-4">
 			{#each tags as tag}
 				<!-- Header for tag -->
-				<grid class="col-span-6 my-4">
+				<grid class="col-span-6">
 					{#if tag.length > 3}
 						<h2 class="text-xl font-bold capitalize text-black dark:text-white">{tag} Games</h2>
 					{:else}
@@ -100,7 +100,7 @@
 			{/each}
 		</grid>
 	</grid>
-	<grid class="row-start-3">
+	<grid class="row-start-3 bg-tertiary dark:bg-tertiaryDark rounded-3xl p-8">
 		<!-- Games header -->
 		<h1 class="mb-4 text-xl font-bold text-black dark:text-white">Apps</h1>
 		<grid class="grid grid-cols-6 gap-x-4">
