@@ -1,0 +1,32 @@
+[info]
+title=Slide and Seek
+par=10
+hint=Block the crate and build the stairs up to the can.  Scare the can down and catch it on the ground.
+
+
+[background]
+backdrop=bkg4
+decals=48;352;door,49;299;A4_panel_8,414;349;A4_panel_5,465;349;A4_panel_4
+decals=377;201;A4_panel_7,65;42;A4_panel_sm,201;42;A4_panel_sm
+decals=336;43;A4_panel_sm,471;43;A4_panel_sm,88;329;lite_number_2
+bgdecals=
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_03,SCAREDY,BRICK_02,HAZ_SLICKCRATE
+types=MINIFIG
+colors=GRAY,blue,white,YELLOW
+parts=1;22;3;1;0;0;0,28;22;3;1;0;0;0,20;22;3;1;0;0;0,9;22;3;1;0;0;0
+parts=17;22;4;1;0;0;0,20;13;3;1;0;0;0,1;5;3;1;0;0;0,9;5;3;1;0;0;0
+parts=28;5;3;1;0;0;0,20;5;3;1;0;0;0,17;5;4;1;0;0;0,22;12;5;1;REST;1;0
+parts=14;16;6;1;0;0;0,6;21;6;1;0;0;0,22;21;6;1;0;0;0,8;21;7;3;norm;0;0
+parts=4;6;6;4;0;0;0,31;6;6;4;0;0;0,13;6;6;4;0;0;0,22;6;6;4;0;0;0
+parts=1;21;8;1;WALK_R;1;0
+
+

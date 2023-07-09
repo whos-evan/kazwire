@@ -1,0 +1,32 @@
+[info]
+title=SURVEILLANCE SYSTEM
+par=12
+hint=Close the gap at the top to stop the eyebots from seeing you.
+
+
+
+[background]
+backdrop=bkg1
+decals=50;244;door,57;366;fusebox_pipes_d,502;331;A1_web,114;239;sign_no_access
+bgdecals=324;157;A1_bkg_1,184;328;A1_bkg_4,408;341;A1_bkg_2
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_04,MINIFIG,BRICK_03,flag
+types=BRICK_06,HAZ_FLOAT
+colors=GRAY,blue
+parts=1;8;3;1;0;0;0,9;8;4;1;0;0;0,28;8;3;1;0;0;0,24;8;4;1;0;0;0
+parts=1;22;3;1;0;0;0,9;22;3;1;0;0;0,28;22;3;1;0;0;0,20;22;3;1;0;0;0
+parts=28;16;3;1;0;0;0,1;16;3;1;0;0;0,3;15;5;1;WALK_R;1;0,17;22;6;1;0;0;0
+parts=33;15;7;1;None;0;0,33;21;7;1;None;0;0,24;4;4;2;0;0;0,9;4;4;2;0;0;0
+parts=7;5;8;2;0;0;0,24;5;8;2;0;0;0,7;6;8;2;0;0;0,24;6;8;2;0;0;0
+parts=7;7;8;2;0;0;0,24;7;8;2;0;0;0,3;3;9;1;inactive;1;0,33;3;9;2;inactive;1;0
+parts=9;3;4;2;0;0;0,24;3;4;2;0;0;0
+
+

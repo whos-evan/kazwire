@@ -1,0 +1,30 @@
+[info]
+title=Junkbot is Brave
+par=3
+hint=It's all in the timing. You'll have to use the jump brick more than once.
+
+
+[background]
+backdrop=bkg1
+decals=50;214;computer_matrix,71;173;fusebox_pipes_d,429;117;sign_keepout
+decals=75;362;safetystrip_horiz,349;395;safetystrip_horiz,342;223;sign_fire
+decals=280;223;word_danger,223;224;sign_fire
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_03,BRICK_04,MINIFIG,HAZ_SLICKSHIELD
+types=HAZ_SLICKFIRE,BRICK_SLICKJUMP,BRICK_06,flag,BRICK_02
+colors=GRAY,blue,green
+parts=1;17;3;1;0;0;0,9;17;3;1;0;0;0,28;17;3;1;0;0;0,20;17;3;1;0;0;0
+parts=17;17;4;1;0;0;0,1;16;5;1;0;0;0,1;15;6;1;WALK_R;1;0,5;16;4;1;0;0;0
+parts=8;16;7;1;on;1;0,12;16;8;1;on;1;switch1,18;16;8;1;on;1;switch1
+parts=24;16;8;1;on;1;switch1,28;16;9;3;dormant;1;0,30;16;10;1;0;0;0
+parts=33;15;11;3;0;0;0,5;15;12;1;0;0;0,5;14;12;1;0;0;0
+
+

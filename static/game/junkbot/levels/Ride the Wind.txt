@@ -1,0 +1,32 @@
+﻿[info]
+title=Ride the Wind
+par=7
+hint=Uncover the fans to give Junkbot a lift. Block the fans to make Junkbot drop.
+
+
+[background]
+backdrop=bkg1
+decals=422;351;arrowu,257;352;arrowu,78;353;arrowu,332;44;window
+decals=296;44;window,369;44;window,257;304;safetystrip_horiz,420;301;safetystrip_horiz
+decals=81;306;safetystrip_horiz
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,HAZ_SLICKFAN,BRICK_03,BRICK_02,BRICK_06
+types=MINIFIG,BRICK_04,flag
+colors=GRAY,blue,green
+parts=27;22;3;1;on;1;,4;22;3;1;on;1;,1;22;4;1;0;0;,8;22;4;1;0;0;
+parts=11;22;4;1;0;0;,34;22;5;1;0;0;,2;21;5;3;0;0;,8;21;5;3;0;0;
+parts=25;21;5;3;0;0;,31;21;5;3;0;0;,14;21;5;3;0;0;,16;22;3;1;on;1;
+parts=20;21;5;3;0;0;,22;22;4;1;0;0;,31;22;4;1;0;0;,14;22;5;1;0;0;
+parts=20;22;5;1;0;0;,25;22;5;1;0;0;,3;20;6;3;0;0;,15;20;6;3;0;0;
+parts=26;20;6;3;0;0;,5;19;7;3;WALK_R;1;,8;10;8;1;0;0;,31;9;8;1;0;0;
+parts=9;9;9;2;0;0;,32;8;9;2;0;0;,12;5;8;1;0;0;,13;4;9;2;0;0;
+
+

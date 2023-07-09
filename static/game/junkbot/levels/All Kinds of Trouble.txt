@@ -1,0 +1,33 @@
+[info]
+title=All Kinds of Trouble
+par=17
+hint=Trap the troublemakers in the lower right corner, and use the fan to help you on the way down.
+
+
+[background]
+backdrop=bkg2
+decals=56;246;window,93;246;window,132;246;window,122;96;terminal_chart
+decals=471;351;door,422;132;terminal_1dial,424;148;safetystrip_horiz
+decals=238;330;word_danger,157;355;sign_fire,316;343;arrowu
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,HAZ_SLICKFIRE,flag,BRICK_06,BRICK_01
+types=HAZ_SLICKFAN,BRICK_03,haz_walker,HAZ_CLIMBER,BRICK_02,BRICK_04
+types=MINIFIG
+colors=GRAY,blue,red
+parts=1;22;3;1;0;0;,9;22;4;1;on;1;,2;21;5;2;0;0;,14;22;6;1;0;0;
+parts=13;22;7;1;0;0;,20;22;8;1;on;1;,24;22;9;1;0;0;,15;21;10;1;walk_l;1;
+parts=28;22;3;1;0;0;,27;22;7;1;0;0;,26;9;3;1;0;0;,11;7;3;1;0;0;
+parts=3;7;3;1;0;0;,32;8;5;2;0;0;,4;6;5;2;0;0;,11;6;11;2;WALK_R;1;
+parts=17;6;12;3;0;0;,17;5;12;3;0;0;,17;4;12;3;0;0;,17;3;12;3;0;0;
+parts=5;21;13;3;0;0;,5;20;13;3;0;0;,5;19;13;3;0;0;,24;21;13;3;0;0;
+parts=24;20;13;3;0;0;,34;21;14;3;walk_l;1;
+
+

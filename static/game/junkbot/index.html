@@ -1,0 +1,1101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8" />
+	<link rel="icon" href="images/bin-thicker-outline-32x32.png" />
+	<title>Janitorial Android (HTML5 Junkbot remake)</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+	<meta name="description" content="A remake of Junkbot and Junkbot Undercover LEGO games">
+	<style>
+		html,
+		body {
+			overflow: hidden;
+			margin: 0;
+			padding: 0;
+			border: 0;
+			width: 100%;
+			height: 100%;
+			user-select: none;
+		}
+
+		/* CONTROL BARS (AKA TOOLBARS) */
+		:root {
+			--control-bar-height: 46px;
+		}
+
+		/* needs :not([hidden]) because `display` overrides `hidden` */
+		#main-controls:not([hidden]),
+		#editor-controls:not([hidden]) {
+			position: fixed;
+			left: 0;
+			right: 0;
+			z-index: 2;
+			background-color: #a0a0a4;
+			color: black;
+			border-bottom: 2px solid #666666;
+			display: flex;
+			padding: 2px;
+			gap: 2px;
+			justify-content: flex-end;
+		}
+
+		#main-controls:not([hidden]) {
+			top: 0;
+		}
+
+		#editor-controls:not([hidden]) {
+			top: var(--control-bar-height);
+		}
+
+		#main-controls button,
+		#editor-controls button {
+			height: 32px;
+			width: 32px;
+			padding: 0;
+			box-sizing: content-box;
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			margin-bottom: 4px;
+		}
+
+		.sprited-icon {
+			width: 20px;
+			height: 20px;
+			background-image: url("images/icons/editor-icons-20px.png");
+			background-position: calc(var(--icon-index) * -20px) 0;
+		}
+
+		.spacer {
+			/* flex-basis: 10px;
+			flex-shrink: 1;
+			flex-grow: 0; */
+			/* should completely collapse before other things shrink */
+			max-width: 10px;
+			flex: 1;
+		}
+
+		#volume-slider {
+			min-width: 60px;
+			max-width: 100px;
+			flex: 1;
+		}
+
+		/* INFO PANEL */
+
+		#info {
+			position: fixed;
+			right: 0;
+			top: var(--control-bar-height);
+			z-index: 3;
+			max-width: 800px;
+			max-height: calc(100% - var(--control-bar-height));
+			box-sizing: border-box;
+			background-color: #a0a0a4;
+			color: black;
+			padding: 15px;
+			line-height: 1.5;
+			overflow: auto;
+			user-select: text;
+		}
+
+		table {
+			border-spacing: 0;
+			border-collapse: collapse;
+			margin-top: 0;
+			margin-bottom: 16px;
+		}
+
+		td {
+			height: 2em;
+		}
+
+		th {
+			text-align: left;
+		}
+
+		th:not(:first-of-type) {
+			padding-left: 10px;
+		}
+
+		kbd:not(.grouping-kbd) {
+			display: inline-block;
+			padding: 3px 5px;
+			font: 11px SFMono-Regular, Consolas, Liberation Mono, Menlo, monospace;
+			line-height: 10px;
+			color: #444d56;
+			vertical-align: middle;
+			background-color: #dddddd;
+			border: 1px solid #fefbf0;
+			border-left-color: #dddddd;
+			border-bottom-color: #dddddd;
+			border-radius: 6px;
+			box-shadow: 1px -1px 0 #fefbf0, 3px 2px 0 #808080;
+			margin-right: 2px;
+		}
+
+		.grouping-kbd {
+			border-radius: 6px;
+			border: 1px solid #c0c0c0;
+			padding: 5px;
+		}
+
+		td button {
+			text-align: left;
+			margin-left: 10px;
+		}
+
+		/* DIALOGS AND BUTTONS */
+
+		.dialog-container {
+			position: fixed;
+			z-index: 100;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			pointer-events: none;
+		}
+
+		.dialog {
+			min-width: 300px;
+			max-width: 90vw;
+			z-index: 100;
+			padding: 20px;
+			background: #a0a0a4;
+			color: black;
+			pointer-events: all;
+			user-select: text;
+		}
+
+		.metal-border {
+			border-style: solid;
+			border-image-slice: 20 22 22 21;
+			border-top-width: 20px;
+			border-right-width: 22px;
+			border-bottom-width: 22px;
+			border-left-width: 21px;
+			border-image-width: 20px 22px 22px 21px;
+			border-image-repeat: stretch stretch;
+			border-image-source: url("images/menus/dBox_sm.png");
+		}
+
+		.dialog .generic-button {
+			min-width: 100px;
+		}
+
+		.dialog .generic-button:not(.default-button) {
+			color: #808080;
+		}
+
+		.generic-button {
+			border-image-slice: 6 17 8 9 fill;
+			border-image-width: 6px 17px 8px 9px;
+			border-image-outset: 0px 5px 5px 0px;
+			border-image-repeat: repeat repeat;
+			border-image-source: url("images/menus/custom/generic_button_default.png");
+			background: none;
+			padding: 2px 10px;
+			min-height: 20px;
+			line-height: 12px;
+		}
+
+		/* additive padding-top for generic buttons, to balance the border */
+		.generic-button::before {
+			content: "";
+			display: block;
+			height: 3px;
+		}
+
+		.generic-button:hover {
+			border-image-source: url("images/menus/custom/generic_button_hover.png");
+		}
+
+		.image-button {
+			border: 0;
+			background-color: transparent;
+			color: transparent;
+		}
+
+		.message-content {
+			max-height: 70vh;
+			overflow-y: auto;
+		}
+
+		.button-group {
+			display: flex;
+			flex-direction: row;
+			justify-content: flex-end;
+			align-items: center;
+		}
+
+		button img,
+		a img {
+			pointer-events: none;
+		}
+
+		button {
+			user-select: none;
+		}
+
+		.level-lose {
+			padding: 5px;
+		}
+
+		.level-lose-image {
+			margin-left: 4px;
+		}
+
+		.level-lose-message {
+			color: white;
+			position: absolute;
+			left: 56px;
+			top: 34px;
+			margin: 0;
+		}
+
+		.level-lose .generic-button {
+			font-size: 16px;
+			width: 77px;
+			min-width: 0;
+			height: 34px;
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		.hint-dialog {
+			max-width: 300px;
+		}
+
+		.hint-dialog .button-group {
+			justify-content: center;
+		}
+
+		.ok-button {
+			font-size: 24px;
+			min-width: 0 !important;
+			width: 56px;
+			height: 30px;
+		}
+
+		/* TEST RUNNER UI */
+
+		#tests-ui:not([hidden]) {
+			position: fixed;
+			right: 0px;
+			top: calc(var(--control-bar-height) * 2);
+			bottom: 0px;
+			background-color: #a0a0a4;
+			color: black;
+			display: flex;
+			flex-direction: column;
+			padding: 10px;
+		}
+
+		#tests {
+			overflow: auto;
+			flex: 1;
+			border: 5px inset lightgray;
+			background-color: white;
+			color: black;
+		}
+
+		/* EDITOR UI */
+
+		#editor-ui:not([hidden]) {
+			position: fixed;
+			left: 0px;
+			top: calc(var(--control-bar-height) * 2);
+			bottom: 0px;
+			/* background-color: #224; */
+			/* color: white; */
+			background-color: #a0a0a4;
+			color: black;
+			display: flex;
+			flex-direction: column;
+		}
+
+		#entities-scroll-container {
+			/* assuming scrollbar takes up less than 20px */
+			width: 320px;
+			overflow-y: auto;
+			background-color: black;
+			flex: 1;
+			border: 5px inset lightgray;
+			align-self: center;
+			margin-top: 10px;
+		}
+
+		#entities-palette {
+			width: 300px;
+		}
+
+		.controls>*,
+		.level>*,
+		#level-dropdown {
+			margin: 10px;
+		}
+
+		#level-dropdown {
+			margin-top: 2px;
+			max-width: 300px;
+		}
+
+		#open-world {
+			margin-left: 0px;
+		}
+
+		.level {
+			display: flex;
+			flex-direction: column;
+		}
+
+		.label-input-row {
+			display: flex;
+			flex-direction: row;
+		}
+
+		#editor-ui .label-input-row label {
+			width: 64px;
+			align-self: center;
+		}
+
+		/* TITLE SCREEN */
+
+		#title-screen {
+			background-image: url("images/menus/neo_title.png");
+			width: 650px;
+			height: 420px;
+			z-index: 3;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			/* cover up a few pixels of the title screen level outside its frame, and forms basically a page background */
+			outline: 5000px solid black;
+			/* allows interaction with the title screen level through the frame's cutout */
+			pointer-events: none;
+		}
+
+		#title-screen>*:not([hidden]) {
+			pointer-events: all;
+		}
+
+		#junkbot-undercover-logo {
+			position: absolute;
+			/* position's not very good because the sequel has a different title screen layout which I haven't implemented */
+			top: 71px;
+			left: 190px;
+			z-index: 5;
+			transform: scale(0.8);
+		}
+
+		#title-screen:not(.title-screen-level-loaded) {
+			background-color: #7c857c;
+		}
+
+		#start-game {
+			position: absolute;
+			left: 139px;
+			top: 148px;
+			background-image: url("images/menus/play_default.png");
+			width: 116px;
+			height: 45px;
+		}
+
+		#start-game:hover {
+			background-image: url("images/menus/play_hover.png");
+		}
+
+		#show-credits {
+			position: absolute;
+			left: 310px;
+			top: 159px;
+			background-image: url("images/menus/credit_up.png");
+			width: 96px;
+			height: 26px;
+		}
+
+		#show-credits:hover {
+			background-image: url("images/menus/credit_up_x.png");
+		}
+
+		#skip-intro {
+			position: absolute;
+			left: 508px;
+			top: 367px;
+			background-image: url("images/menus/skip_intro.png");
+			width: 96px;
+			height: 26px;
+		}
+
+		#skip-intro:hover {
+			background-image: url("images/menus/skip_intro_x.png");
+		}
+
+		#replay-intro {
+			position: absolute;
+			left: 508px;
+			top: 337px;
+			background-image: url("images/menus/replay_intro.png");
+			width: 96px;
+			height: 26px;
+		}
+
+		#replay-intro:hover {
+			background-image: url("images/menus/replay_intro_x.png");
+		}
+
+		#reset-screen {
+			position: absolute;
+			left: 508px;
+			top: 367px;
+			background-image: url("images/menus/clear_screen.png");
+			width: 96px;
+			height: 26px;
+		}
+
+		#reset-screen:hover {
+			background-image: url("images/menus/clear_screen_x.png");
+		}
+
+		#load-status-loaded {
+			position: absolute;
+			left: 512px;
+			top: 24px;
+			background-image: url("images/menus/ready_to_play.png");
+			width: 92px;
+			height: 25px;
+			color: transparent;
+		}
+
+		#load-status-loading {
+			position: absolute;
+			left: 496px;
+			top: 24px;
+			background-image: url("images/menus/download_in_progress.png");
+			width: 124px;
+			height: 25px;
+			color: transparent;
+		}
+
+		#load-progress {
+			position: absolute;
+			left: 506px;
+			top: 50px;
+			width: 100px;
+			height: 265px;
+			flex-direction: column-reverse;
+			display: flex;
+			align-items: center;
+		}
+
+		.load-progress-brick {
+			animation: fall-into-place 0.6s linear forwards;
+			height: 18px;
+		}
+
+		@keyframes fall-into-place {
+			from {
+				transform: translateY(-500px);
+			}
+
+			to {
+				transform: translateY(0px);
+			}
+		}
+
+		.load-progress-brick::after {
+			height: 32px;
+		}
+
+		.load-progress-brick:nth-child(even)::after {
+			content: url("images/sprites/brick_immobile_2.png");
+			width: 41px;
+		}
+
+		.load-progress-brick:nth-child(odd)::after {
+			content: url("images/sprites/brick_immobile_4.png");
+			width: 71px;
+		}
+
+		.title-screen-arrow {
+			position: absolute;
+			top: 152px;
+			background-image: url("images/menus/arrow.png");
+			width: 45px;
+			height: 37px;
+			opacity: 20%;
+		}
+
+		.title-screen-arrow.pointing-left {
+			transform: scaleX(-1);
+		}
+
+		#intro-container ruffle-player {
+			position: absolute;
+			left: 41px;
+			top: 5px;
+			width: 369px;
+			height: 369px;
+			box-sizing: content-box;
+			z-index: 4;
+			box-shadow: #000 -1px 0 0 12px;
+		}
+
+		#intro-container.undercover-intro ruffle-player {
+			/* the sequel's intro has a different aspect ratio */
+			width: 548px;
+			height: 401px;
+			/* scale that down for now; @TODO: Junkbot Undercover's title screen layout */
+			transform: scale(0.9);
+			transform-origin: left top;
+			left: 0;
+			top: 30px;
+		}
+
+		/* LEVEL SELECT SCREEN */
+
+		#level-select-screen {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			z-index: 3;
+			background-color: #7c857c;
+			color: #000;
+			overflow: auto;
+		}
+
+		#level-list {
+			background-color: #808080;
+			color: #000;
+			list-style: none;
+			margin: 0;
+			padding: 13px 11px;
+			/* border-top: 1px solid #000; */
+			box-shadow: 0 0 0 1px #000;
+		}
+
+		.level-list-item {
+			font-weight: bold;
+			box-sizing: content-box;
+			min-height: 20px;
+			line-height: 20px;
+			position: relative;
+			border-bottom: 1px solid #CCCCCC;
+		}
+
+		.level-list-item:first-of-type {
+			border-top: 1px solid #CCCCCC;
+		}
+
+		.level-list-item:hover {
+			background-color: #BFC0BF;
+			border-color: #DFE0DF;
+			color: #000;
+		}
+
+		.level-list-item a {
+			color: inherit;
+			text-decoration: none;
+			display: block;
+		}
+
+		.level-list-item-ordinal {
+			position: absolute;
+			left: 2px;
+		}
+
+		.level-list-item-completed-indicator,
+		.level-list-item-gold-award {
+			/* measured 5px to bottom border */
+			bottom: 5px;
+			position: absolute;
+		}
+
+		.level-list-item-completed-indicator {
+			left: 35px;
+		}
+
+		.level-list-item-gold-award {
+			left: 48px;
+		}
+
+		.level-list-item-title {
+			margin-left: 63px;
+			display: inline-block;
+		}
+
+		.level-list-item-score {
+			float: right;
+			margin-right: 5px;
+		}
+
+		#junkbot-level-group-tabs:not([hidden]) {
+			background: #33CCFF;
+			box-shadow: inset 0 -32px 0 0 #33CC33;
+			color: #000;
+			height: 74px;
+			line-height: 74px;
+			display: flex;
+			align-items: flex-end;
+		}
+
+		.level-group-tab {
+			display: inline-block;
+			vertical-align: bottom;
+			background-image: url("images/menus/custom/tab.png");
+			/* measured image size: 124x22 */
+			width: 124px;
+			flex-shrink: 0;
+			background-position: bottom;
+			background-repeat: no-repeat;
+			margin-right: -15px;
+			/* for z-index */
+			position: relative;
+			/* prevent weirdly shaped touch callout (tap highlight) with relative-positioned .tab-text-image */
+			overflow: hidden;
+			/* for text-only tabs (placeholder for the sequel) */
+			text-align: center;
+			line-height: 24px;
+			font-size: 8px;
+			text-decoration: none;
+			color: white;
+		}
+
+		@media (max-width: 450px) {
+			.level-group-tab {
+				margin-right: -30px;
+			}
+
+			.level-group-tab:first-child {
+				margin-left: -20px;
+			}
+
+			.tab-text-image {
+				clip-path: inset(0 0 0 75px);
+				position: relative;
+				left: -40px;
+			}
+		}
+
+		.level-group-tab:not(.selected) {
+			/* border-bottom: 1px solid #000; */
+			box-shadow: inset 0 -1px 0 0 #000;
+		}
+
+		.level-group-tab.selected {
+			z-index: 1;
+		}
+
+		.tab-text-image {
+			display: block;
+			margin: auto;
+			margin-bottom: 2px;
+		}
+
+		.level-group-tab:not(.selected) .tab-text-image {
+			opacity: 0.5;
+		}
+
+		.building-image {
+			display: block;
+			margin: 0 auto;
+			margin-bottom: 12px;
+		}
+
+		#back-to-title {
+			background-image: url("images/menus/lv_quit.png");
+			width: 96px;
+			height: 26px;
+			/* not measured, not a similar layout to the original for now */
+			margin: 15px;
+		}
+
+		#back-to-title:hover {
+			background-image: url("images/menus/lv_quit_X.png");
+		}
+
+		/* LEVEL START TOAST */
+
+		.level-info-building-text-image {
+			/* not measured */
+			margin-left: 10px;
+		}
+
+		.level-info-header {
+			margin: 0;
+			color: white;
+			font-family: sans-serif;
+			font-size: 24px;
+		}
+
+		.level-info-title {
+			margin: 0;
+			color: white;
+		}
+
+		/* FONT */
+
+		@font-face {
+			font-family: "04B_08";
+			font-weight: normal;
+			src:
+				url("font/04B_08__.woff2") format("woff2"),
+				url("font/04B_08__.TTF") format("truetype");
+		}
+
+		@font-face {
+			/* disable faux-bolding */
+			font-family: "04B_08";
+			font-weight: bold;
+			src:
+				url("font/04B_08__.woff2") format("woff2"),
+				url("font/04B_08__.TTF") format("truetype");
+		}
+
+		body,
+		button,
+		select,
+		input,
+		.dialog h2 {
+			font-family: "04B_08";
+			font-size: 16px;
+		}
+
+		.dialog h1 {
+			font-family: "04B_08";
+			font-size: 32px;
+		}
+
+		button {
+			font-size: 8px;
+		}
+
+		/* NETWORK ORDER */
+
+		#preload {
+			display: none;
+		}
+	</style>
+</head>
+
+<body>
+	<div id="preload">
+		<!-- loader -->
+		<img src="images/sprites/brick_immobile_2.png" width="1" height="1" alt="" />
+		<img src="images/sprites/brick_immobile_4.png" width="1" height="1" alt="" />
+		<!-- intro -->
+		<img src="images/menus/dBox_sm.png" width="1" height="1" alt="" />
+		<!-- title screen button hover images -->
+		<img src="images/menus/play_hover.png" width="1" height="1" alt="" />
+		<img src="images/menus/credit_up_x.png" width="1" height="1" alt="" />
+		<img src="images/menus/skip_intro_x.png" width="1" height="1" alt="" />
+		<img src="images/menus/replay_intro_x.png" width="1" height="1" alt="" />
+		<img src="images/menus/clear_screen_x.png" width="1" height="1" alt="" />
+		<!-- title screen button normal images, because buttons are hidden and thus don't load the images -->
+		<img src="images/menus/play_default.png" width="1" height="1" alt="" />
+		<img src="images/menus/credit_up.png" width="1" height="1" alt="" />
+		<img src="images/menus/skip_intro.png" width="1" height="1" alt="" />
+		<img src="images/menus/replay_intro.png" width="1" height="1" alt="" />
+		<img src="images/menus/clear_screen.png" width="1" height="1" alt="" />
+		<!-- generic buttons for dialogs -->
+		<img src="images/menus/custom/generic_button_default.png" width="1" height="1" alt="" />
+		<img src="images/menus/custom/generic_button_hover.png" width="1" height="1" alt="" />
+	</div>
+	<div id="title-screen">
+		<div id="intro-container" hidden></div>
+		<img id="junkbot-undercover-logo" alt="Undercover" draggable="false" hidden
+			src="images/menus/Undercover Exclusive/title_UC.png" />
+		<button class="image-button generic-sound" id="start-game" hidden>Play</button>
+		<button class="image-button generic-sound" id="show-credits" hidden>Credits</button>
+		<button class="image-button generic-sound" id="replay-intro" hidden>Replay Intro</button>
+		<button class="image-button generic-sound" id="skip-intro" hidden>Skip Intro</button>
+		<button class="image-button generic-sound" id="reset-screen" hidden>Reset Screen</button>
+		<span id="load-status-loaded" hidden>Ready to play</span>
+		<span id="load-status-loading">Download in progress</span>
+		<div id="load-progress"></div>
+		<div class="title-screen-arrow" style="left: 34px;"></div>
+		<div class="title-screen-arrow" style="left: 85px;"></div>
+		<div class="title-screen-arrow pointing-left" style="left: 260px;"></div>
+		<div class="title-screen-arrow pointing-left" style="left: 407px;"></div>
+	</div>
+	<div id="level-select-screen" hidden>
+		<div id="junkbot-level-group-tabs">
+			<a href="#junkbot/levels/building-1" class="level-group-tab">
+				<img class="building-image" alt="Unlocked" src="images/menus/building_icon_1.png">
+				<img class="tab-text-image" alt="Building 1" src="images/menus/buidling_tab_1.png">
+			</a>
+			<a href="#junkbot/levels/building-2" class="level-group-tab">
+				<img class="building-image" alt="Unlocked" src="images/menus/building_icon_2.png">
+				<img class="tab-text-image" alt="Building 2" src="images/menus/buidling_tab_2.png">
+			</a>
+			<a href="#junkbot/levels/building-3" class="level-group-tab">
+				<img class="building-image" alt="Unlocked" src="images/menus/building_icon_3.png">
+				<img class="tab-text-image" alt="Building 3" src="images/menus/buidling_tab_3.png">
+			</a>
+			<a href="#junkbot/levels/building-4" class="level-group-tab">
+				<img class="building-image" alt="Unlocked" src="images/menus/building_icon_4.png">
+				<img class="tab-text-image" alt="Building 4" src="images/menus/buidling_tab_4.png">
+			</a>
+		</div>
+		<div id="junkbot-undercover-level-group-tabs" hidden>
+			<a href="#junkbot2/levels/basement-1" class="level-group-tab">Basement 1</a>
+			<a href="#junkbot2/levels/basement-2" class="level-group-tab">Basement 2</a>
+			<a href="#junkbot2/levels/basement-3" class="level-group-tab">Basement 3</a>
+			<a href="#junkbot2/levels/basement-4" class="level-group-tab">Basement 4</a>
+		</div>
+		<ol id="level-list"></ol>
+		<button class="image-button generic-sound" id="back-to-title">Main</button>
+	</div>
+	<div id="main-controls">
+		<!-- aria-keyshortcuts doesn't technically allow for modifiers on their own, but what are you gonna do? -->
+		<button class="generic-button" id="rewind" aria-label="Rewind" aria-keyshortcuts="Shift"
+			title="Rewind (hold Shift)">
+			<!-- @TODO: maybe invent a dynamic control for rewind/fast-forward -->
+			<span class="sprited-icon" style="--icon-index: 13;"></span>
+		</button>
+		<button class="generic-button generic-sound" id="back-to-level-select">Select Level</button>
+		<button class="generic-button generic-sound" id="toggle-editing" aria-label="Edit level" aria-pressed="false"
+			aria-keyshortcuts="E" title="Edit level (E)">
+			<!-- NOTE: src dynamically changed with JS -->
+			<img src="images/icons/toggle-editing-play-mode.png" alt="" width="32" height="32">
+		</button>
+		<div class="spacer"></div>
+		<button class="generic-button" id="toggle-mute" aria-label="Mute" aria-pressed="false" aria-keyshortcuts="M"
+			title="Mute sound effects (M)">
+			<!-- NOTE: --icon-index dynamically updated with JS -->
+			<span class="sprited-icon" style="--icon-index: 20;"></span>
+		</button>
+		<input id="volume-slider" type="range" min="0" max="1" step="0.01" value="0.5" aria-label="Volume">
+		<div class="spacer"></div>
+		<button class="generic-button generic-sound" id="toggle-fullscreen" aria-label="Toggle Fullscreen"
+			aria-pressed="false" aria-keyshortcuts="Alt+Enter F11" title="Toggle Fullscreen (Alt+Enter or F11)">
+			<span class="sprited-icon" style="--icon-index: 12;"></span>
+		</button>
+		<button class="generic-button generic-sound" id="zoom-in" aria-label="Zoom In" aria-keyshortcuts="Plus"
+			title="Zoom In (Plus key, or mouse wheel, or pinch on a touch screen)">
+			<span class="sprited-icon" style="--icon-index: 18;"></span>
+		</button>
+		<button class="generic-button generic-sound" id="zoom-out" aria-label="Zoom Out" aria-keyshortcuts="Minus"
+			title="Zoom Out (Minus, or mouse wheel, or pinch on a touch screen)">
+			<span class="sprited-icon" style="--icon-index: 17;"></span>
+		</button>
+		<div class="spacer"></div>
+		<button class="generic-button generic-sound" id="toggle-info" aria-label="Toggle Info" aria-expanded="false"
+			title="Toggle Info">
+			<span class="sprited-icon" style="--icon-index: 26;"></span>
+		</button>
+	</div>
+	<div id="info" class="metal-border" hidden>
+		<h1>Janitorial Android (HTML5 Junkbot remake)</h1>
+		<a href="https://github.com/1j01/janitorial-android">Source Code on GitHub</a>
+		<p>Drag bricks with the mouse. You don't control Junkbot directly. Junkbot moves on his own.</p>
+		<p>Use the arrow keys
+			<span style="display: inline-block;">
+				<kbd style="margin-left: calc(1.2em + 4px);margin-bottom:-7px">↑</kbd><br aria-hidden="true">
+				<kbd>←</kbd><kbd>↓</kbd><kbd>→</kbd>
+			</span>
+			or
+			<span style="display: inline-block;">
+				<kbd style="margin-left: calc(1.2em + 4px);margin-bottom:-7px">W</kbd><br aria-hidden="true">
+				<kbd>A</kbd><kbd>S</kbd><kbd>D</kbd>
+			</span>
+			(or similar patterns of keys on layouts other than QWERTY) to pan the view.
+		</p>
+		<table>
+			<tr>
+				<th scope="col">Shortcut</th>
+				<th scope="col">Action</th>
+			</tr>
+			<tr>
+				<td><kbd>E</kbd></td>
+				<td>Toggle edit mode</td>
+			</tr>
+			<!-- <tr>
+				<td><kbd>P</kbd> or <kbd>Spacebar</kbd></td>
+				<td>Pause / unpause</td>
+			</tr> -->
+			<tr>
+				<td><kbd>M</kbd></td>
+				<td>Mute / unmute</td>
+			</tr>
+			<tr>
+				<td><kbd>+</kbd></td>
+				<td>Zoom in</td>
+			</tr>
+			<tr>
+				<td><kbd>-</kbd></td>
+				<td>Zoom out</td>
+			</tr>
+			<tr>
+				<td><kbd>`</kbd></td>
+				<td>Toggle debug information (including collision and NaN detection)</td>
+			</tr>
+		</table>
+		<p>When in editor mode:</p>
+		<p>Click on the background and drag to select objects within a rectangle.</p>
+		<p>Hold <kbd>Ctrl</kbd> and click to drag an individual object.</p>
+		<table>
+			<tr>
+				<th scope="col">Shortcut</th>
+				<th scope="col">Action</th>
+			</tr>
+			<tr>
+				<td><kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>C</kbd></kbd></td>
+				<td>Copy selected to clipboard</td>
+			</tr>
+			<tr>
+				<td><kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>X</kbd></kbd></td>
+				<td>Cut selected to clipboard</td>
+			</tr>
+			<tr>
+				<td><kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>V</kbd></kbd></td>
+				<td>Paste from clipboard</td>
+			</tr>
+			<tr>
+				<td><kbd>Delete</kbd></td>
+				<td>Delete selected</td>
+			</tr>
+			<tr>
+				<td><kbd>F</kbd></td>
+				<td>Flip selected horizontally</td>
+			</tr>
+			<tr>
+				<td><kbd>T</kbd></td>
+				<td>Toggle selected switches/things</td>
+			</tr>
+			<tr>
+				<td><kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>Z</kbd></kbd></td>
+				<td>Undo</td>
+			</tr>
+			<tr>
+				<td>
+					<kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>Z</kbd></kbd> or
+					<kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>Y</kbd></kbd>
+				</td>
+				<td>Redo</td>
+			</tr>
+			<tr>
+				<td><kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>A</kbd></kbd></td>
+				<td>Select all</td>
+			</tr>
+			<tr>
+				<td><kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>S</kbd></kbd></td>
+				<td>Save world to a file</td>
+			</tr>
+			<tr>
+				<td><kbd class="grouping-kbd"><kbd>Ctrl</kbd>+<kbd>O</kbd></kbd></td>
+				<td>Open a saved world file</td>
+			</tr>
+		</table>
+	</div>
+	<div id="tests-ui" class="metal-border" hidden>
+		<div class="label-input-row">
+			<label for="test-speed">Simulation Speed:</label>
+			<input type="range" min="1" max="100" step="1" id="test-speed">
+		</div>
+		<!-- <button class="generic-button generic-sound" id="start-tests">Start/Restart Tests</button> -->
+		<div id="tests-info"></div>
+		<ul id="tests"></ul>
+	</div>
+	<div id="editor-controls" hidden>
+		<button class="generic-button" id="editor-undo" aria-keyshortcuts="Ctrl+Z" aria-label="Undo"
+			title="Undo (Ctrl+Z)">
+			<span class="sprited-icon" style="--icon-index: 3;"></span>
+		</button>
+		<button class="generic-button" id="editor-redo" aria-keyshortcuts="Ctrl+Shift+Z Ctrl+Y" aria-label="Redo"
+			title="Redo (Ctrl+Shift+Z, or Ctrl+Y)">
+			<span class="sprited-icon" style="--icon-index: 4;"></span>
+		</button>
+		<div class="spacer"></div>
+		<button class="generic-button generic-sound" id="editor-save" aria-keyshortcuts="Ctrl+S" aria-label="Save"
+			title="Save (Ctrl+S)">
+			<span class="sprited-icon" style="--icon-index: 8;"></span>
+		</button>
+		<button class="generic-button generic-sound" id="editor-open" aria-keyshortcuts="Ctrl+O" aria-label="Open"
+			title="Open (Ctrl+O)">
+			<span class="sprited-icon" style="--icon-index: 7;"></span>
+		</button>
+		<div class="spacer"></div>
+		<button class="generic-button" id="editor-copy" aria-keyshortcuts="Ctrl+C" aria-label="Copy"
+			title="Copy to clipboard (Ctrl+C)">
+			<span class="sprited-icon" style="--icon-index: 1;"></span>
+		</button>
+		<button class="generic-button" id="editor-cut" aria-keyshortcuts="Ctrl+X" aria-label="Cut"
+			title="Cut to clipboard (Ctrl+X)">
+			<span class="sprited-icon" style="--icon-index: 0;"></span>
+		</button>
+		<button class="generic-button" id="editor-paste" aria-keyshortcuts="Ctrl+V" aria-label="Paste"
+			title="Paste from clipboard (Ctrl+V)">
+			<span class="sprited-icon" style="--icon-index: 2;"></span>
+		</button>
+		<button class="generic-button" id="editor-delete" aria-keyshortcuts="Delete" aria-label="Delete"
+			title="Delete selection (Delete)">
+			<span class="sprited-icon" style="--icon-index: 5;"></span>
+		</button>
+		<button class="generic-button" id="editor-flip-horizontal" aria-keyshortcuts="F" aria-label="Flip Horizontal"
+			title="Flip selection horizontally (F)">
+			<img src="images/icons/flip-horizontally.png" alt="" width="32" height="32">
+		</button>
+		<button class="generic-button" id="editor-toggle-switch" aria-keyshortcuts="T" aria-label="Toggle On/Off"
+			title="Toggle selected switches and switch-controlled entities on or off (T)">
+			<img src="images/icons/toggle-on-off.png" alt="" width="32" height="32">
+		</button>
+		<button class="generic-button generic-sound" id="editor-select-all" aria-keyshortcuts="Ctrl+A"
+			aria-label="Select All" title="Select all (Ctrl+A)">
+			<span class="sprited-icon" style="--icon-index: 25;"></span>
+		</button>
+		<div class="spacer"></div>
+		<button class="generic-button generic-sound" id="editor-debug" aria-keyshortcuts="`" aria-label="Toggle Debug"
+			title="Toggle debug mode (`)">
+			<span class="sprited-icon" style="--icon-index: 19;"></span>
+		</button>
+	</div>
+	<div id="editor-ui" hidden class="metal-border">
+		<!-- wrapper to make layout consistent regardless of scrollbar, without using overflow: auto -->
+		<div id="entities-scroll-container">
+			<div id="entities-palette"></div>
+		</div>
+		<div class="controls">
+			<div class="level">
+				<div class="label-input-row">
+					<label for="level-title-input">Title:</label>
+					<input type="text" id="level-title-input" />
+				</div>
+				<div class="label-input-row">
+					<label for="level-hint-input">Hint:</label>
+					<input type="text" id="level-hint-input" />
+				</div>
+				<div class="label-input-row">
+					<label for="level-par-input">Par:</label>
+					<input type="number" id="level-par-input" min="0" step="1" />
+				</div>
+				<div>
+					<label for="level-bounds-checkbox">
+						<input type="checkbox" id="level-bounds-checkbox">
+						Level Bounds
+					</label>
+				</div>
+			</div>
+			<button class="generic-button generic-sound" id="save-world" class="generic-button">Save World</button>
+			<button class="generic-button generic-sound" id="open-world" class="generic-button">Open World</button>
+			<br>
+			<label>
+				Choose Level:<br>
+				<select id="level-dropdown"></select>
+			</label>
+		</div>
+	</div>
+	<script src="lib/jsondiffpatch.umd.js"></script>
+	<script src="lib/ruffle-nightly-2022_01_30/ruffle.js"></script>
+	<script src="src/game.js"></script>
+</body>
+
+</html>

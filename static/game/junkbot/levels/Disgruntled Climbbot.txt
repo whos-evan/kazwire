@@ -1,0 +1,33 @@
+[info]
+title=Disgruntled Climbbot
+par=8
+hint=Open the door for the Climbbot on one side, and then climb up on the other.
+
+
+[background]
+backdrop=bkg4
+decals=261;351;door,263;99;sign_acid,295;99;sign_fire,327;99;sign_voltage
+decals=232;99;sign_skull,201;99;sign_fire,76;366;terminal_chart
+decals=132;365;fusebox_pipes_d,407;352;computer_matrix,472;352;computer2dial
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_03,BRICK_02,flag,MINIFIG
+types=HAZ_CLIMBER,BRICK_04
+colors=GRAY,blue,red
+parts=1;22;3;1;0;0;,9;22;3;1;0;0;,28;22;3;1;0;0;,20;22;3;1;0;0;
+parts=17;22;4;1;0;0;,14;14;3;1;0;0;,14;13;5;2;0;0;,14;12;5;2;0;0;
+parts=14;11;5;2;0;0;,14;10;5;2;0;0;,14;9;5;2;0;0;,14;8;5;2;0;0;
+parts=15;7;5;2;0;0;,20;13;5;2;0;0;,20;12;5;2;0;0;,20;11;5;2;0;0;
+parts=20;10;5;2;0;0;,20;9;5;2;0;0;,20;8;5;2;0;0;,19;7;5;2;0;0;
+parts=17;13;6;2;0;0;,17;21;7;2;WALK_R;1;,17;10;8;2;WALK_R;1;,12;15;9;3;0;0;
+parts=20;15;9;3;0;0;
+
+
+

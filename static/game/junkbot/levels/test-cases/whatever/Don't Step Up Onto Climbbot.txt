@@ -1,0 +1,20 @@
+[info]
+title=Don't Step Up Onto Climbbot
+par=0
+hint=That's not what the "Climb" in Climbbot means.
+
+[playfield]
+
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=brick_08,flag,brick_06,minifig,haz_climber
+colors=white,red,green,blue,yellow,gray
+parts=14;16;1;6;;1;,16;15;2;2;;1;,22;16;3;6;;1;,23;15;4;2;walk_r;382;,28;15;5;2;walk_r;1;
+

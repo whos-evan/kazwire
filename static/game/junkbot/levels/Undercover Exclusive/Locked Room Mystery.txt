@@ -1,0 +1,35 @@
+[info]
+title=locked room mystery
+par=10
+hint=Build a set of stairs to the can.  Be sure to block the other side of the teleporter to keep it inactive.
+
+
+[background]
+backdrop=bkg3
+decals=329;264;door,451;286;A1_vent,303;168;A1_web,288;127;A1_pipebox
+decals=327;127;A1_pipebox
+bgdecals=
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_01,BRICK_02,HAZ_SLICKTELEPORT
+types=MINIFIG,haz_slickLaser_R,BRICK_03,BRICK_04,flag
+colors=GRAY,blue,red
+parts=18;18;3;1;0;0;0,19;11;3;1;0;0;0,18;17;4;1;0;0;0,18;16;4;1;0;0;0
+parts=18;14;4;1;0;0;0,18;13;4;1;0;0;0,18;11;4;1;0;0;0,26;12;4;1;0;0;0
+parts=26;13;4;1;0;0;0,26;14;4;1;0;0;0,26;16;4;1;0;0;0,26;18;4;1;0;0;0
+parts=18;12;5;1;0;0;0,25;17;5;1;0;0;0,19;17;6;1;on;1;tele1,23;17;5;1;0;0;0
+parts=24;16;7;1;walk_l;1;0,10;18;3;1;0;0;0,2;18;3;1;0;0;0,27;18;3;1;0;0;0
+parts=17;15;8;1;on;1;0,4;17;6;1;on;1;tele1,2;17;5;1;0;0;0,8;17;5;1;0;0;0
+parts=5;12;4;3;0;0;0,6;12;4;3;0;0;0,4;13;5;3;0;0;0,6;13;5;3;0;0;0
+parts=3;14;9;3;0;0;0,6;14;9;3;0;0;0,2;15;10;3;0;0;0,6;15;10;3;0;0;0
+parts=2;16;5;3;0;0;0,8;16;5;3;0;0;0,26;15;4;1;0;0;0,4;19;5;1;0;0;0
+parts=30;19;5;1;0;0;0,33;17;11;1;None;0;0,23;10;11;1;None;0;0
+
+

@@ -1,0 +1,20 @@
+[info]
+title=Jump At The Trash
+par=-1
+hint=I don't know what should happen, but it looks ugly currently.
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=brick_08,minifig,brick_slickjump,flag
+colors=white,red,green,blue,yellow,gray
+parts=7;13;1;6;;1;,7;12;2;2;walk_r;1;,11;12;3;2;dormant;1;,13;12;4;2;;1;
+

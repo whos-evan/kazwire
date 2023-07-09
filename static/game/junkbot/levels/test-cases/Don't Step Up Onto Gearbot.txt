@@ -1,0 +1,20 @@
+[info]
+title=Don't Step Up Onto Gearbot
+par=0
+hint=I'm not your stepping spool!
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=brick_06,brick_08,flag,minifig,haz_walker,brick_02,haz_slickfire
+colors=white,red,green,blue,yellow,gray
+parts=18;15;1;6;;1;,12;14;2;6;;1;,12;13;3;2;;1;,16;13;4;2;walk_r;1;,20;14;5;2;walk_r;1;,22;14;6;6;;1;,24;14;7;2;on;1;switch1
+

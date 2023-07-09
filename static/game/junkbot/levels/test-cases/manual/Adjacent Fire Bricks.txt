@@ -1,0 +1,20 @@
+[info]
+title=Adjacent Fire Bricks
+par=0
+hint=Should junkbot die?
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=haz_slickfire,brick_03,minifig
+colors=white,red,green,blue,yellow,gray
+parts=14;14;1;2;on;1;switch1,14;13;2;6;;1;,14;12;3;2;walk_r;1;,18;14;1;2;on;1;switch1,19;13;2;6;;1;
+

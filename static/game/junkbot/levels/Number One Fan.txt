@@ -1,0 +1,33 @@
+﻿[info]
+title=Number One Fan
+par=3
+hint=When Junkbot is in the air, putting bricks over the fan will bring him back down.
+
+
+[background]
+backdrop=bkg5
+decals=361;322;arrowu,399;322;arrowu,53;64;window,88;64;window
+decals=122;64;window,59;311;sign_no_access,380;169;window
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,HAZ_SLICKFAN,BRICK_04,BRICK_03
+types=BRICK_01,BRICK_06,flag,BRICK_02,MINIFIG
+colors=GRAY,blue,green
+parts=1;21;3;1;0;0;,9;21;4;1;on;1;,28;21;3;1;0;0;,24;21;4;1;on;1;
+parts=13;21;5;1;0;0;,20;21;5;1;0;0;,17;21;6;1;0;0;,7;20;7;3;0;0;
+parts=8;20;7;3;0;0;,13;20;7;3;0;0;,14;20;7;3;0;0;,8;19;8;3;0;0;
+parts=1;11;8;1;0;0;,30;11;8;1;0;0;,17;20;9;2;0;0;,31;20;9;2;0;0;
+parts=1;10;8;3;0;0;,30;10;8;3;0;0;,1;9;10;3;0;0;,3;9;10;3;0;0;
+parts=5;9;10;3;0;0;,30;9;10;3;0;0;,32;9;10;3;0;0;,34;9;10;3;0;0;
+parts=1;8;7;3;0;0;,2;8;7;3;0;0;,3;8;7;3;0;0;,5;8;7;3;0;0;,4;8;7;3;0;0;
+parts=6;8;7;3;0;0;,30;8;7;3;0;0;,31;8;7;3;0;0;,32;8;7;3;0;0;,33;8;7;3;0;0;
+parts=34;8;7;3;0;0;,35;8;7;3;0;0;,3;20;11;3;WALK_R;1;
+
+

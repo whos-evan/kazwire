@@ -1,6 +1,19 @@
 {
     "games": [
         {
+            "description": "A lego inspired game where you are a trash eating robot. You have to eat all the trash in the level to win.",
+            "developer": "N/A",
+            "id": "junkbot",
+            "image": "junkbot.png",
+            "name": "Junkbot",
+            "platform": "Web",
+            "releaseDate": "2001",
+            "tags": [
+                "rpg",
+                "strategy"
+            ]
+        },
+        {
             "description": "2048 is a single-player sliding block puzzle game designed by Italian web developer Gabriele Cirulli.",
             "developer": "Gabriele Cirulli",
             "id": "2048",

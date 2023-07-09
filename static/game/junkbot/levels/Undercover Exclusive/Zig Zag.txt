@@ -1,0 +1,37 @@
+[info]
+title=Zig zag
+par=5
+hint=Building a bridge over the bottom right teleporter.  Then use the teleporters to collect the remaining cans.
+
+
+[background]
+backdrop=bkg2
+decals=71;179;computer_matrix,138;313;arrowd,318;308;arrowu,445;114;word_danger
+decals=485;351;computer2dial,25;39;A1_web,24;179;sign_voltage
+decals=59;351;door
+bgdecals=
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,HAZ_SLICKTELEPORT,BRICK_03,flag
+types=BRICK_02,MINIFIG
+colors=GRAY,blue
+parts=1;22;3;1;0;0;0,9;22;3;1;0;0;0,17;22;3;1;0;0;0,25;22;3;1;0;0;0
+parts=8;21;4;1;on;1;tele1,33;22;5;1;0;0;0,20;21;4;1;on;1;tele2
+parts=1;13;3;1;0;0;0,8;12;4;1;on;1;tele1,15;12;6;1;None;0;0,9;13;3;1;0;0;0
+parts=20;12;4;1;on;1;tele2,17;13;3;1;0;0;0,30;9;7;2;0;0;0,29;10;7;2;0;0;0
+parts=31;10;7;2;0;0;0,28;11;7;2;0;0;0,30;11;7;2;0;0;0,32;11;7;2;0;0;0
+parts=27;12;7;2;0;0;0,29;12;7;2;0;0;0,31;12;7;2;0;0;0,33;12;7;2;0;0;0
+parts=25;13;3;1;0;0;0,33;13;5;1;0;0;0,28;21;6;2;None;0;0,2;21;6;1;None;0;0
+parts=25;12;7;2;0;0;0,26;11;7;2;0;0;0,27;10;7;2;0;0;0,28;9;7;2;0;0;0
+parts=29;8;7;2;0;0;0,3;12;8;1;WALK_R;1;0
+
+
+
+

@@ -1,0 +1,21 @@
+{
+	"name": "css3d-junkbot",
+	"version": "1.0.0",
+	"description": "LEGO Junkbot rendered from DOM elements",
+	"author": "Isaiah Odhner <isaiahodhner@gmail.com>",
+	"private": true,
+	"scripts": {
+		"build": "pug src -o build --pretty && stylus src -o build",
+		"start": "run-p live-server watch:\\*\\*",
+		"watch": "run-p watch:\\*\\*",
+		"watch:pug": "pug src -o build --pretty --watch",
+		"watch:stylus": "stylus src -o build --watch",
+		"live-server": "live-server --open=build/css3d.html --ignore=\\*\\*/node_modules/\\*\\*,\\*\\*/src/\\*\\*.styl,\\*\\*/src/\\*\\*.pug"
+	},
+	"devDependencies": {
+		"live-server": "^1.2.1",
+		"npm-run-all": "^4.1.5",
+		"pug-cli": "^1.0.0-alpha6",
+		"stylus": "^0.56.0"
+	}
+}

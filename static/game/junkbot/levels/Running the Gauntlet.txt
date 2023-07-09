@@ -1,0 +1,22 @@
+﻿[info]
+title=Running  the Gauntlet
+par=8
+hint=Move as fast as you can, and keep bricks between you and the Eyebots!
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,HAZ_FLOAT,BRICK_08,BRICK_03,BRICK_01,MINIFIG
+types=flag
+colors=GRAY,WHITE,red,RED
+parts=19;4;3;1;inactive;1,32;3;3;1;inactive;1,1;22;4;1;0;0,9;22;4;1;0;0
+parts=17;22;4;1;0;0,28;22;4;1;0;0,25;22;5;1;0;0,1;16;6;1;0;0,1;21;7;1;WALK_R;1
+parts=7;16;6;1;0;0,15;16;6;1;0;0,33;21;8;3;0;0,11;16;6;1;0;0,19;16;6;1;0;0
+parts=23;16;6;1;0;0,27;16;6;1;0;0,3;3;3;1;inactive;1,6;7;3;1;inactive;1
+parts=26;2;3;1;inactive;1,23;6;3;1;inactive;1,4;21;6;3;0;0,4;20;6;3;0;0
+parts=1;14;5;4;0;0,1;13;5;4;0;0,1;15;5;1;0;0
+
+

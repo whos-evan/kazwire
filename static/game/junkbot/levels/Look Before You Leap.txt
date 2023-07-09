@@ -1,0 +1,32 @@
+﻿[info]
+title=Look Before You Leap
+par=6
+hint=Get Junkbot to the lower platform, and then use the jumps to cross the gaps.
+
+
+[background]
+backdrop=bkg5
+decals=391;272;lite_number_4,234;354;arrowr,119;272;lite_number_1
+decals=33;71;number_0,212;271;number_2,305;270;number_3,444;50;window
+decals=408;50;window,505;204;lite_number_5
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_01,HAZ_SLICKFAN,BRICK_02
+types=BRICK_03,BRICK_04,BRICK_SLICKJUMP,MINIFIG,flag
+colors=GRAY,blue
+parts=10;22;3;1;0;0;0,28;22;3;1;0;0;0,19;22;3;1;0;0;0,18;22;4;1;0;0;0
+parts=27;22;4;1;0;0;0,4;22;5;1;on;1;switch1,8;22;6;1;0;0;0,1;22;7;1;0;0;0
+parts=1;6;8;1;0;0;0,1;7;7;2;0;0;0,7;13;7;1;0;0;0,14;13;6;1;0;0;0
+parts=20;13;6;1;0;0;0,26;13;6;1;0;0;0,32;13;8;1;0;0;0,20;20;3;1;0;0;0
+parts=26;21;4;1;0;0;0,21;21;4;1;0;0;0,20;19;9;2;dormant;1;0,22;19;9;2;dormant;1;0
+parts=24;19;9;2;dormant;1;0,26;19;9;2;dormant;1;0,2;5;10;1;WALK_R;1;0
+parts=33;12;11;2;0;0;0
+
+

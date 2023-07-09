@@ -1,0 +1,34 @@
+﻿[info]
+title=Windy Bridge
+par=10
+hint= Go under the bridge using the fans. Make a half bridge from one side and then move it to the other.
+
+
+[background]
+backdrop=bkg5
+decals=253;368;safetystrip_horiz,56;74;window,160;73;window,267;74;window
+decals=375;75;window,481;75;window,41;315;door,495;331;fusebox_pipes_d
+decals=491;318;computer_matrix
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,HAZ_SLICKFAN,haz_walker,BRICK_03,BRICK_08
+types=BRICK_06,BRICK_01,HAZ_SLICKSWITCH,HAZ_DUMBFLOAT,MINIFIG
+types=BRICK_02,flag
+colors=GRAY,blue,red
+parts=12;22;3;1;off;1;switch1,16;22;3;1;off;1;switch1,20;22;3;1;off;1;switch1
+parts=19;21;4;1;walk_l;1;0,9;22;5;1;0;0;0,9;21;5;1;0;0;0,9;20;5;1;0;0;0
+parts=24;21;5;1;0;0;0,24;22;5;1;0;0;0,24;20;5;1;0;0;0,1;20;6;1;0;0;0
+parts=27;20;7;1;0;0;0,33;20;8;1;0;0;0,34;20;9;2;off;1;switch1
+parts=29;4;10;3;L;1;0,24;19;11;2;walk_l;1;0,5;19;5;2;0;0;0,6;18;12;2;0;0;0
+parts=7;17;8;2;0;0;0,28;19;5;2;0;0;0,28;18;12;2;0;0;0,28;17;8;2;0;0;0
+parts=14;8;8;1;0;0;0,16;8;8;1;0;0;0,18;8;8;1;0;0;0,20;8;8;1;0;0;0
+parts=2;19;13;2;0;0;0
+
+

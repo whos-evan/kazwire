@@ -1,0 +1,31 @@
+﻿[info]
+title=Pardon Me
+par=7
+hint=If Junkbot can't go over the Gearbot, move the Gearbot instead.  Gearbots will roll over flat surfaces only.
+
+
+
+[background]
+backdrop=bkg1
+decals=274;189;word_danger,69;119;door,454;93;window,418;93;window
+decals=382;93;window
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_06,MINIFIG,haz_walker,BRICK_03
+types=flag
+colors=GRAY,blue,green
+parts=1;9;3;1;0;0;,30;14;4;1;0;0;,33;13;5;1;walk_l;1;,28;19;3;1;0;0;
+parts=20;19;3;1;0;0;,16;13;6;1;walk_l;1;,24;18;7;3;0;0;,27;18;7;3;0;0;
+parts=30;18;7;3;0;0;,29;17;7;3;0;0;,26;17;7;3;0;0;,16;14;4;1;0;0;
+parts=1;14;4;1;0;0;,7;14;4;1;0;0;,2;8;8;3;0;0;
+
+
+
+

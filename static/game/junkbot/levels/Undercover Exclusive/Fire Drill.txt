@@ -1,0 +1,35 @@
+[info]
+title=FIRE DRILL
+par=4
+hint=Use the jumps instead of stairs to get down to the can.
+
+
+
+[background]
+backdrop=bkg1
+decals=448;130;arrowrd,306;355;sign_fire,187;356;sign_fire,67;352;door
+decals=344;115;word_danger
+bgdecals=91;88;A1_bkg_4
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_03,HAZ_SLICKFIRE,BRICK_02
+types=BRICK_04,BRICK_01,flag,MINIFIG,BRICK_SLICKJUMP
+colors=GRAY,blue,red,YELLOW
+parts=1;22;3;1;0;0;0,33;22;4;1;0;0;0,25;22;3;1;0;0;0,11;22;5;3;on;1;switch1
+parts=9;22;6;1;0;0;0,19;22;5;1;on;1;switch1,23;22;6;1;0;0;0,15;22;7;1;0;0;0
+parts=25;22;3;1;0;0;0,27;21;8;3;0;0;0,27;20;7;3;0;0;0,30;21;8;3;0;0;0
+parts=27;19;8;3;0;0;0,30;19;8;3;0;0;0,27;17;8;3;0;0;0,30;17;8;3;0;0;0
+parts=30;15;8;3;0;0;0,27;15;8;3;0;0;0,27;13;8;3;0;0;0,30;13;8;3;0;0;0
+parts=27;11;8;3;0;0;0,30;11;8;3;0;0;0,27;18;7;3;0;0;0,27;16;7;3;0;0;0
+parts=27;14;7;3;0;0;0,27;12;7;3;0;0;0,18;10;3;1;0;0;0,12;9;3;1;0;0;0
+parts=1;9;3;1;0;0;0,2;21;9;3;None;0;0,2;8;10;1;WALK_R;1;0,8;8;11;4;dormant;1;0
+parts=33;21;11;2;dormant;1;0
+
+

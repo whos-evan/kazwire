@@ -1,0 +1,32 @@
+[info]
+title=A New Kind of Gearbot
+par=2
+hint=Climbbots can go up and down walls. Use the yellow stairs to trap the climbbot underneath Junkbot.
+
+
+[background]
+backdrop=bkg5
+decals=485;224;door,31;165;fusebox_pipes_l,83;165;terminal_chart
+decals=397;218;sign_keepout,53;56;window,121;56;window,87;56;window
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_03,BRICK_08,BRICK_04,BRICK_06,MINIFIG
+types=flag,BRICK_02,HAZ_CLIMBER
+colors=GRAY,blue,YELLOW,green
+parts=1;22;3;1;0;0;,4;22;4;1;0;0;,12;22;4;1;0;0;,20;22;5;1;0;0;
+parts=24;22;4;1;0;0;,32;22;5;1;0;0;,1;11;4;1;0;0;,8;10;5;3;0;0;
+parts=10;9;5;3;0;0;,12;8;5;3;0;0;,30;15;6;1;0;0;,34;14;7;1;walk_l;1;
+parts=16;7;4;1;0;0;,22;6;5;3;0;0;,24;5;5;3;0;0;,17;19;5;1;0;0;
+parts=28;4;4;1;0;0;,1;21;4;1;0;0;,1;19;5;1;0;0;,1;18;8;4;0;0;
+parts=1;20;4;1;0;0;,9;21;9;1;0;0;,5;19;10;1;WALK_R;1;,18;20;3;1;0;0;
+parts=16;20;9;1;0;0;,15;21;6;1;0;0;,26;21;6;1;0;0;,26;20;3;1;0;0;
+parts=29;20;9;1;0;0;,26;19;5;1;0;0;
+
+

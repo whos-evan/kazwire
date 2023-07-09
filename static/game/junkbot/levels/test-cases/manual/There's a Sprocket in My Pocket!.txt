@@ -1,0 +1,20 @@
+[info]
+title=There's a Sprocket in My Pocket!
+par=-1
+hint=And a Nook Case in my Schnook Pace
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=brick_08,brick_03,haz_climber
+colors=white,red,green,blue,yellow,gray
+parts=15;15;1;6;;1;,13;14;2;1;;1;,12;13;2;1;;1;,12;12;2;1;;1;,13;11;2;1;;1;,18;14;3;2;walk_r;1;,22;14;2;1;;1;,23;13;2;1;;1;,23;12;2;1;;1;,22;11;2;1;;1;
+

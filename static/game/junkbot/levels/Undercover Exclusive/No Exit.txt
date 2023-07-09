@@ -1,0 +1,31 @@
+[info]
+title=no exit
+par=8
+hint=Get the higher can first and then time the flybot's movement to get the second can.
+
+
+[background]
+backdrop=bkg1
+decals=257;154;door,61;365;A1_vent,256;95;sign_no_access,482;351;lite_number_1
+decals=511;303;fusebox_pipes_r,502;319;A1_pipebox,493;351;lite_number_9
+decals=506;350;lite_number_4,519;350;lite_number_4
+bgdecals=146;168;A1_bkg_4,73;220;A1_bkg_3,416;328;A1_bkg_4
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_03,MINIFIG,HAZ_SLICKLASER_L
+types=BRICK_04,HAZ_SLICKFAN,flag,BRICK_06,HAZ_DUMBFLOAT
+colors=GRAY,blue,red
+parts=1;22;3;1;0;0;0,9;22;3;1;0;0;0,17;22;3;1;0;0;0,25;22;4;1;0;0;0
+parts=1;21;5;1;WALK_R;1;0,1;7;6;3;on;1;0,15;21;3;1;0;0;0,15;12;3;1;0;0;0
+parts=23;21;4;3;0;0;0,12;21;4;3;0;0;0,32;22;7;1;0;0;0,28;22;8;1;on;1;switch1
+parts=15;13;3;1;0;0;0,34;7;9;1;None;0;0,30;8;10;1;0;0;0,15;7;11;1;L;1;0
+parts=15;11;3;1;0;0;0,17;14;7;3;0;0;0,17;20;7;3;0;0;0,20;10;9;3;None;0;0
+
+

@@ -1,0 +1,20 @@
+[info]
+title=Flying Death
+par=0
+hint=Junkbot should play an animation when dying!
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg2
+decals=369;316;arrowl,248;322;arrowur,139;321;arrowr,53;259;lite_word_level,95;259;lite_number_1,56;316;door
+bgdecals=
+
+[partslist]
+types=brick_04,brick_02,haz_dumbfloat,brick_slickjump,minifig,brick_03,brick_01,flag
+colors=white,red,green,blue,yellow,gray
+parts=1;22;1;6;;1;,1;21;2;6;;1;,5;22;1;6;;1;,3;21;1;6;;1;,9;22;1;6;;1;,1;20;1;6;;1;,7;21;1;6;;1;,5;20;1;6;;1;,5;13;3;2;R;1;,13;22;1;6;;1;,11;21;1;6;;1;,17;22;1;6;;1;,9;20;1;6;;1;,15;21;1;6;;1;,13;20;1;6;;1;,21;22;1;6;;1;,19;21;1;6;;1;,17;20;1;6;;1;,25;22;1;6;;1;,23;21;1;6;;1;,18;19;4;2;dormant;1;,21;20;1;6;;1;,22;19;5;2;walk_l;1;,29;22;1;6;;1;,27;21;1;6;;1;,33;22;6;6;;1;,25;20;1;6;;1;,31;21;1;6;;1;,29;20;1;6;;1;,35;21;7;6;;1;,33;20;6;6;;1;,32;19;8;2;;1;
+

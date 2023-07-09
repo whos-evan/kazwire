@@ -1,0 +1,36 @@
+[info]
+title=BLOW UP
+par=4
+hint=Use the fans to carry Junkbot up to the ceiling, and then put bricks beneath Junkbot to bring it down.
+
+
+[background]
+backdrop=bkg1
+decals=35;384;safetystrip_horiz,95;384;safetystrip_horiz,153;386;safetystrip_horiz
+decals=322;384;safetystrip_horiz,381;384;safetystrip_horiz,440;384;safetystrip_horiz
+decals=499;384;safetystrip_horiz,213;384;safetystrip_horiz,73;269;computer2dial
+decals=220;86;arrowul,503;121;arrowul,52;240;lite_number_1,64;240;lite_number_9
+decals=79;240;lite_number_6,94;240;lite_number_6
+bgdecals=329;260;A1_bkg_3,149;301;A1_bkg_2
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_06,MINIFIG,HAZ_SLICKFAN,BRICK_03,BRICK_08
+types=flag,BRICK_04
+colors=GRAY,blue,YELLOW
+parts=1;17;3;1;0;0;0,2;16;4;1;WALK_R;1;0,1;22;5;1;on;1;switch1
+parts=5;22;5;1;on;1;switch1,9;22;5;1;on;1;switch1,13;22;5;1;on;1;switch1
+parts=32;22;5;1;on;1;switch1,28;22;5;1;on;1;switch1,24;22;5;1;on;1;switch1
+parts=20;22;5;1;on;1;switch1,17;22;6;1;0;0;0,17;21;6;1;0;0;0,17;20;6;1;0;0;0
+parts=17;19;6;1;0;0;0,19;18;3;1;0;0;0,5;18;3;1;0;0;0,27;16;3;1;0;0;0
+parts=23;17;3;1;0;0;0,24;8;7;1;0;0;0,26;7;8;1;None;0;0,3;6;7;1;0;0;0
+parts=5;5;8;1;None;0;0,3;7;7;3;0;0;0,24;9;7;3;0;0;0,11;18;9;1;0;0;0
+parts=17;18;8;1;None;0;0
+
+

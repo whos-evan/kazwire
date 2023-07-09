@@ -1,0 +1,93 @@
+//- Front
+//- Back
+//- Right
+//- Left
+//- Top
+//- Bottom
+mixin cuboid(className)
+  .cuboid(class=className)
+    - let s = 0
+    while s < 6
+      .cuboid__side
+      - s++
+
+mixin cylinder(className, sides, startAngle, endAngle, radius, closed)
+  - const anglePerSide = (endAngle - startAngle) / sides
+  - const lengthPerSide = radius * 2 * Math.tan(Math.PI * anglePerSide/360)
+  .cylinder(class=className, style={
+    "--radius": radius,
+  })
+    - let s = 0
+    - let angle = startAngle-anglePerSide/2
+    while s < sides
+      //- transform: `rotateY(${angle}deg) translateZ(${radius}vmin) rotateY(${anglePerSide}deg)`,
+      .cylinder__side(style={
+        "--side-length": lengthPerSide,
+        "--angle": angle,
+        "--angle-per-side": anglePerSide,
+      })
+      - s++
+      - angle += anglePerSide
+    if closed
+      .cylinder__end.top
+      .cylinder__end.bottom
+
+mixin thickCylinder(className, sides, startAngle, endAngle, innerRadius, outerRadius, closed)
+  .thick-cylinder(class=className)
+    +cylinder("thick-cylinder__inner", sides, startAngle, endAngle, innerRadius, false)
+    +cylinder("thick-cylinder__outer", sides, startAngle, endAngle, outerRadius, closed)
+
+mixin leg(className)
+  .plane.leg-plane(class=className)
+    +cuboid('leg')
+    +cuboid('foot')
+    +cylinder('hip', 20, 0, 270+5, 5, true)
+
+doctype html
+html(lang="en")
+  head
+    meta(charset="utf-8")
+    title CSS3D LEGO Junkbot
+    link(rel="stylesheet" href="./css3d.css")
+
+  body
+    .scene
+      //- Plane that all the 3D stuff sits on (uh... TODO: make this be the ground! right now it's the bottom of the slanted piece)
+      .plane
+        +cuboid('hat')
+        +cuboid('forehead')
+        +cuboid('body')
+        .plane.face-decal
+          .eye.left
+          .eye.right
+          .mouth
+        +cuboid('hip-socket')
+        +cylinder('crotch', 20, -150, 150, 5, false)
+        +leg('left')
+        +leg('right')
+        +thickCylinder('bin', 24, 0, 360, 9, 10, true)
+        .papers
+          - let i = 0
+          while i < 1
+            .paper(style={
+              transform: `translate3d(5vmin, 0, 0)`
+            })
+            - i += 1
+        //- Test cylinders:
+        //- +cylinder('hoop', 24, 0, 360, 40, true)
+        //- +cylinder('hoop', 5, 0, 360, 15, true)
+        //- +cylinder('hoop', 6, 90, 90, 20, true) // ?
+
+    div(style={position: "absolute", left: 0, top: 0, "z-index": 50, border: "5px solid orange", padding: "20px"})
+      p See also:
+      ul
+        li
+          a(href="https://www.shadertoy.com/view/wdcfDH", target="_blank").
+            Animated 3D Junkbot in GLSL
+        li
+          a(href="https://github.com/1j01/janitorial-android", target="_blank").
+            Playable Junkbot remake in JavaScript
+      p both by yours truly, <a href="https://isaiahodhner.io" target="_blank">Isaiah Odhner</a>
+
+    script(src="../lib/dat.gui.min.js")
+    script(src="../src/css3d.js")

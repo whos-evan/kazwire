@@ -1,0 +1,20 @@
+[info]
+title=Switch Off At Edge Case II
+par=0
+hint=
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=haz_slickswitch,brick_03,minifig,haz_slickfire,brick_06,flag
+colors=white,red,green,blue,yellow,gray
+parts=2;11;1;2;on;1;switch1,4;11;2;6;;1;,5;10;3;2;walk_l;1;,7;12;4;2;on;1;switch1,11;11;5;6;;1;,15;10;6;2;;1;,20;11;5;6;;1;,20;10;6;2;;1;,26;12;4;2;on;1;switch2,30;11;2;6;;1;,30;10;3;2;walk_r;1;,33;11;1;2;on;1;switch2
+

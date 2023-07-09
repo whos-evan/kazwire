@@ -1,0 +1,36 @@
+[info]
+title=Artificial Intelligence
+par=12
+hint=Hit the switches to turn off the laser, but be careful when you approach the can.
+
+
+[background]
+backdrop=bkg4
+decals=379;318;A4_panel_2,174;166;A4_panel_5,225;166;A4_panel_4
+bgdecals=
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,BRICK_03,MINIFIG,BRICK_01,BRICK_04
+types=SCAREDY,BRICK_02,BRICK_06,HAZ_SLICKSWITCH,HAZ_SLICKLASER_L
+types=haz_slickLaser_R
+colors=GRAY,blue,YELLOW,white,WHITE
+parts=1;20;3;1;0;0;0,9;20;3;1;0;0;0,28;20;3;1;0;0;0,20;20;3;1;0;0;0
+parts=17;20;4;1;0;0;0,18;19;5;3;WALK_R;1;0,1;1;3;1;0;0;0,9;1;3;1;0;0;0
+parts=20;1;3;1;0;0;0,18;1;6;1;0;0;0,19;1;6;1;0;0;0,17;1;6;1;0;0;0
+parts=17;13;7;1;0;0;0,18;12;8;1;REST;1;0,3;21;4;4;0;0;0,1;21;9;4;0;0;0
+parts=34;21;9;4;0;0;0,6;21;4;2;0;0;0,17;21;4;2;0;0;0,20;21;3;4;0;0;0
+parts=28;21;4;2;0;0;0,31;21;4;4;0;0;0,2;19;4;4;0;0;0,3;18;9;4;0;0;0
+parts=9;18;9;4;0;0;0,9;19;4;4;0;0;0,3;16;9;4;0;0;0,9;16;9;4;0;0;0
+parts=4;15;10;4;0;0;0,5;14;7;4;0;0;0,3;17;3;4;0;0;0,29;19;7;4;0;0;0
+parts=30;18;6;4;0;0;0,31;18;6;4;0;0;0,30;17;9;4;0;0;0,30;16;6;4;0;0;0
+parts=31;16;6;4;0;0;0,30;15;9;4;0;0;0,29;14;7;4;0;0;0,13;13;7;1;0;0;0
+parts=21;13;7;1;0;0;0,28;1;3;1;0;0;0,13;19;11;1;on;1;switch1,1;11;12;1;on;1;switch1
+parts=34;19;11;1;on;1;switch2,34;11;13;1;on;1;switch2,9;21;7;4;0;0;0
+

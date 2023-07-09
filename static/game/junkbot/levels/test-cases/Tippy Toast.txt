@@ -1,0 +1,20 @@
+[info]
+title=Tippy Toast
+par=0
+hint=Tip-toe lest you become toast!
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=haz_slickfire,flag,minifig,haz_slickswitch
+colors=white,red,green,blue,yellow,gray
+parts=7;19;1;2;on;1;switch1,6;18;2;2;;1;,8;18;1;2;on;1;switch1,9;17;1;2;on;1;switch1,10;16;1;2;on;1;switch1,9;15;3;2;walk_r;1;,23;17;1;2;on;1;switch1,11;15;1;2;on;1;switch1,12;14;1;2;on;1;switch1,23;16;4;2;on;1;switch1,20;15;1;2;on;1;switch1,27;17;1;2;on;1;switch1,13;13;1;2;on;1;switch1,14;12;4;2;on;1;switch1,20;14;4;2;on;1;switch1,17;13;1;2;on;1;switch1,29;16;2;2;;1;
+

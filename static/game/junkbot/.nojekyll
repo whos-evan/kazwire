@@ -1,0 +1,3 @@
+https://github.blog/2009-12-29-bypassing-jekyll-on-github-pages/
+
+This file is a fix to allow underscores at start of file names, used to alphabetize them before other files in a folder.

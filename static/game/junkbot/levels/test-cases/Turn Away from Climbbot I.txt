@@ -1,0 +1,20 @@
+[info]
+title=Turn Away from Climbbot I
+par=0
+hint=Run, Junkbot, run!
+
+[playfield]
+
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=brick_03,brick_08,brick_02,brick_04,flag,minifig,brick_06,haz_climber
+colors=white,red,green,blue,yellow,gray
+parts=2;23;1;6;;1;,5;23;2;6;;1;,2;22;2;6;;1;,2;21;2;6;;1;,10;22;3;6;;1;,13;23;2;6;;1;,2;20;4;6;;1;,2;19;5;2;;1;,14;22;6;2;walk_r;1;,21;23;4;6;;1;,16;22;7;6;;1;,17;21;3;6;;1;,25;23;2;6;;1;,19;21;1;6;;1;,18;20;4;6;;1;,18;15;8;2;walk_r;4.5;,22;22;7;6;;1;,22;21;4;6;;1;,33;23;4;6;;1;
+

@@ -1,0 +1,35 @@
+[info]
+title=chute to kill
+par=13
+hint=Get the shield on top to reach the first can, and then use the moveable shields to get the other.
+
+
+[background]
+backdrop=bkg4
+decals=448;353;door,449;302;A4_panel_8,490;329;lite_number_5,123;327;A4_panel_7
+decals=123;205;A4_panel_6,124;44;A4_panel_6,374;91;A4_panel_3
+bgdecals=
+
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+
+[partslist]
+types=BLOCK01,BLOCK02,BRICK_08,HAZ_SLICKFAN,BRICK_06,BRICK_04
+types=BRICK_01,HAZ_SLICKLASER_L,flag,haz_slickLaser_R,BRICK_02
+types=HAZ_SLICKSHIELD,MINIFIG,BRICK_SLICKSHIELD
+colors=GRAY,blue,green
+parts=1;22;3;1;0;0;0,28;22;3;1;0;0;0,15;22;4;2;on;1;switch1,19;22;4;2;on;1;switch1
+parts=9;22;5;1;0;0;0,23;22;6;1;0;0;0,27;22;7;1;0;0;0,14;12;8;1;on;1;0
+parts=2;21;9;1;None;0;0,33;21;9;1;None;0;0,22;12;10;1;on;1;0,22;13;10;1;on;1;0
+parts=22;10;10;1;on;1;0,22;11;10;1;on;1;0,14;10;8;1;on;1;0,14;11;8;1;on;1;0
+parts=14;13;8;1;on;1;0,14;14;8;1;on;1;0,22;14;10;1;on;1;0,22;9;11;1;0;0;0
+parts=22;8;11;1;0;0;0,14;9;11;1;0;0;0,14;8;11;1;0;0;0,24;8;6;3;0;0;0
+parts=23;7;5;1;0;0;0,28;8;7;3;0;0;0,29;7;5;1;0;0;0,35;7;7;1;0;0;0
+parts=1;7;5;1;0;0;0,10;8;6;3;0;0;0,7;7;3;1;0;0;0,9;8;7;3;0;0;0
+parts=31;6;12;1;on;1;0,3;6;13;1;WALK_R;1;0,25;21;14;3;on;1;0,11;21;14;3;on;1;0
+
+

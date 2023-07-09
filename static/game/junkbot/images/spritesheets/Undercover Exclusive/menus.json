@@ -1,0 +1,9 @@
+{
+	"images": ["menus.png"],
+	"frames": [
+		[0, 0, 362, 93]
+	],
+	"animations": {
+		"title_UC": [0]
+	}
+}

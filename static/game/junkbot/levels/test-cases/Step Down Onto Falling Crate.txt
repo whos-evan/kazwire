@@ -1,0 +1,20 @@
+[info]
+title=Step Down Onto Falling Crate?
+par=0
+hint=I'm not sure if Junkbot should step down or not.
+
+[playfield]
+size=35,22
+spacing=15,18
+scale=1
+
+[background]
+backdrop=bkg1
+decals=
+bgdecals=
+
+[partslist]
+types=haz_slickfire,brick_04,flag,brick_01,minifig,haz_slickcrate
+colors=white,red,green,blue,yellow,gray
+parts=3;18;1;2;on;1;switch1,3;17;2;6;;1;,3;16;3;2;;1;,5;12;4;6;;1;,5;11;5;2;walk_r;1;,7;10;6;2;norm;1;
+
