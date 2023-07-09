@@ -1,5 +1,7 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+    import { experiments } from '$lib/experiments';
+	import { onMount } from 'svelte';
 
 	$: {
 		if (typeof gtag !== 'undefined') {
@@ -9,6 +11,25 @@
 			});
 		}
 	}
+
+    onMount(() => {
+        const experimentData = experiments.getExperiments();
+        // Go through each experiment and check if it is active
+        // If it is active, then run an event to track it
+
+        // For loop through the objects
+        for (const [key, value] of Object.entries(experimentData)) {
+            // If the experiment is active, then run the event
+            if (experiments.shouldShow(key)) {
+                console.log('Experiment is active', key)
+                gtag('event', 'experiment', {
+                    event_category: 'experiment',
+                    event_label: key,
+                    value: 1
+                });
+            }
+        }
+    });
 </script>
 
 <svelte:head>
