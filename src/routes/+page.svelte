@@ -22,21 +22,21 @@
 
 	import { experiments } from '$lib/experiments';
 	import AlternateHome from '$lib/components/AlternateHome.svelte';
-	let alterateHome: boolean = false;
+	let alternateHome: boolean = false;
 
 	onMount(() => {
 		likedApps = appLike.fetchLikes();
 		likedGames = gameLike.fetchLikes();
 
 		experiments.fetchOrCreateExperimentData(
-			'alterateHome',
+			'alternateHome',
 			'2023-07-15',
 			'Alternate home page for Kazwire.',
 			25,
 			true
 		);
 
-		alterateHome = experiments.shouldShow('alterateHome');
+		alternateHome = experiments.shouldShow('alternateHome');
 	});
 </script>
 
@@ -46,7 +46,7 @@
 	<title>Kazwire</title>
 </head>
 
-{#if !alterateHome}
+{#if !alternateHome}
 	<div class="grid max-w-max grid-flow-col gap-8">
 		<grid class="col-span-2 flex gap-8">
 			<Hero />
