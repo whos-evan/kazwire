@@ -48,7 +48,6 @@
 						}
 					}
 				}
-				console.log(tags);
 			});
 
 		fetch(PUBLIC_API_BASE_URL + '/api/apps')
