@@ -21,7 +21,7 @@
 			}
 		}
 
-		return true;
+		return false;
 	}
 
 	// import Changelog from '$lib/components/Changelog.svelte';
