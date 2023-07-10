@@ -3,9 +3,7 @@
 	import { isLoading } from 'svelte-i18n';
 </script>
 
-{#if $isLoading}
-	Please wait...
-{:else}
+{#if !$isLoading}
 	<div
 		class="flex h-full w-full flex-col justify-center rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white"
 	>
