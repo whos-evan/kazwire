@@ -73,7 +73,7 @@
 
 	import Icon from '@iconify/svelte';
 
-	let name = "Kazwire's Discord";
+	let name = "Kazwire's Discord - .gg/tPynKdd3nv";
 
 	onMount(async () => {
 		iframeSearch('https://discord.com/servers/kazchat-785577600219086881');
