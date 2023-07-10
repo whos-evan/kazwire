@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
+	import Icon from '@iconify/svelte';
 	// import Showoff from '$lib/components/Showoff.svelte';
 	import Faq from '$lib/components/Faq.svelte';
 	import Partners from '$lib/components/Partners.svelte';
@@ -40,6 +41,7 @@
 	let likedApps: string[] = [];
 
 	let games: Game[] = [];
+	let popularGames: Game[] = [];
 	let apps: App[] = [];
 	let tags: string[] = [];
 
@@ -64,6 +66,25 @@
 						if (!tags.includes(tag)) {
 							tags = [...tags, tag];
 						}
+					}
+				}
+			})
+			.then(() => {
+				// see if the game is popular
+				for (const game of games) {
+					if (game.popular) {
+						popularGames = [...popularGames, game];
+					}
+				}
+				// sort games by views
+				games.sort((a, b) => b.views - a.views);
+				// then add more based on the top 12 most viewed games
+				for (const game of games) {
+					if (popularGames.length >= 12) {
+						break;
+					}
+					if (!popularGames.includes(game)) {
+						popularGames = [...popularGames, game];
 					}
 				}
 			});
@@ -97,6 +118,26 @@
 	</grid>
 	<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
 		<grid class="grid grid-cols-6 gap-4">
+			<grid class="col-span-6 flex flex-row justify-start">
+				<h1 class="text-3xl font-bold text-black dark:text-white">Popular Games</h1>
+				<Icon
+					icon="mdi:fire"
+					class="text-3xl ml-1 mt-1 text-red-500 transition hover:text-orange-500"
+				/>
+			</grid>
+			<grid class="col-span-6 grid grid-flow-col-dense justify-start gap-x-4 overflow-x-auto">
+				{#each popularGames as game}
+					<SmallBox
+						image={'/game/img/' + game.image}
+						name={game.name}
+						developer={game.developer}
+						link={'/games/' + game.id}
+						popular={game.popular || false}
+						errorMessage={game.errorMessage || undefined}
+						platformSupport={game.platform}
+					/>
+				{/each}
+			</grid>
 			{#each tags as tag}
 				<!-- Header for tag -->
 				<grid class="col-span-6">
@@ -127,7 +168,7 @@
 	</grid>
 	<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
 		<!-- Games header -->
-		<h1 class="mb-4 text-xl font-bold text-black dark:text-white">Apps</h1>
+		<h1 class="mb-4 text-3xl font-bold text-black dark:text-white">Apps</h1>
 		<grid class="grid grid-cols-6 gap-x-4">
 			<!-- Scrollable div for the small boxes -->
 			<grid class="col-span-6 grid grid-flow-col-dense justify-start gap-x-4 overflow-x-auto">
