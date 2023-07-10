@@ -3,5 +3,21 @@
 	"hero_part_2": "all in one place!",
 	"description": "Say goodbye to slow internet speeds and hello to lightning-fast browsing with Kazwire.",
 	"start_browsing_button": "Start Browsing",
-	"start_playing_button": "Start Playing"
+	"start_playing_button": "Start Playing",
+	"games": "Games",
+	"search": "Search",
+	"apps": "Apps",
+	"settings": "Settings",
+	"support": "Support/Discord",
+	"credit": "Made with ❤️ by evan",
+	"resources": "Resources",
+	"request_a_game": "Request a Game",
+	"get_support": "Get Support",
+	"faq": "FAQ",
+	"final_grade_calculator": "Final Grade Calculator",
+    "online_services": "Online Services",
+    "legal": "Legal",
+	"privacy_policy": "Privacy Policy",
+	"terms_and_conditions": "Terms and Conditions",
+	"dmca": "DMCA"
 }

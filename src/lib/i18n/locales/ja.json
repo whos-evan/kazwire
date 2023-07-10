@@ -1,7 +1,23 @@
 {
 	"hero_part_1": "あなたのお気に入りすべて",
-	"hero_part_2": "すべてが 1 か所に!",
+	"hero_part_2": "すべてが 一 か所に!",
 	"description": "遅いインターネット速度に別れを告げ、Kazwire による超高速ブラウジングにこんにちは。",
 	"start_browsing_button": "ブラウジングを開始",
-	"start_playing_button": "再生を開始"
+	"start_playing_button": "再生を開始",
+	"games": "ゲーム",
+	"search": "検索",
+	"apps": "アプリ",
+	"settings": "設定",
+	"support": "サポート/Discord",
+	"credit": "エヴァンが愛情を込めて作りました。",
+	"resources": "リソース",
+	"request_a_game": "ゲームをリクエスト",
+	"get_support": "サポートを受ける",
+	"faq": "よくある質問",
+	"final_grade_calculator": "最終成績計算ツール",
+    "online_services": "オンラインサービス",
+	"legal": "合法的",
+	"privacy_policy": "プライバシー ポリシー",
+	"terms_and_conditions": "利用規約",
+	"dmca": "デジタルミレニアム著作権法"
 }

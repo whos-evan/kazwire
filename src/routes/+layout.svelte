@@ -7,6 +7,8 @@
 
 	import '$lib/i18n'; // Import to initialize. Important :)
 	import { locale, waitLocale } from 'svelte-i18n';
+	import { _ } from 'svelte-i18n';
+	import { isLoading } from 'svelte-i18n';
 
 	export const load = async () => {
 		if (browser) {
@@ -124,7 +126,7 @@
 
 {#if resetLayout}
 	<slot />
-{:else}
+{:else if !$isLoading}
 	<div class="z-50 dark:bg-black" class:bg-white={showWhite} class:bg-primary={!showWhite}>
 		<div class="fixed z-50 w-full px-5 py-5">
 			<nav
@@ -161,31 +163,31 @@
 						<ul class="pt-4 text-base text-white md:flex md:justify-between md:pt-0">
 							<li class="m-auto">
 								<a class="block py-2 hover:text-primary md:p-4" href="/search" data-sveltekit-reload
-									>Search</a
+									>{$_('search')}</a
 								>
 							</li>
 							<li class="m-auto">
 								<a class="block py-2 hover:text-primary md:p-4" href="/games" data-sveltekit-reload
-									>Games</a
+									>{$_('games')}</a
 								>
 							</li>
 							<li class="m-auto">
 								<a class="block py-2 hover:text-primary md:p-4" href="/apps" data-sveltekit-reload
-									>Apps</a
+									>{$_('apps')}</a
 								>
 							</li>
 							<li class="m-auto">
 								<a
 									class="block py-2 hover:text-primary md:p-4"
 									href="/settings"
-									data-sveltekit-reload>Settings</a
+									data-sveltekit-reload>{$_('settings')}</a
 								>
 							</li>
 							<li class="m-auto">
 								<a
 									class="block py-2 hover:text-primary md:p-4"
 									href="/discord"
-									data-sveltekit-reload>Support/Discord</a
+									data-sveltekit-reload>{$_('support')}</a
 								>
 							</li>
 							<!-- <li class="m-auto">
@@ -238,7 +240,7 @@
 						href="/about-the-developers"
 						class="text-md flex self-center text-white hover:underline"
 					>
-						Made with ❤️ by evan
+						{$_('credit')}
 					</a>
 					{#if numOfExperiments > 0}
 						<a
@@ -251,47 +253,47 @@
 				</div>
 				<div class="grid grid-cols-2 gap-8 sm:grid-cols-3 sm:gap-6">
 					<div>
-						<h2 class="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
+						<h2 class="mb-6 text-sm font-semibold uppercase text-white">{$_('resources')}</h2>
 						<ul class="text-white">
 							<li class="mb-4">
-								<a href="/request" class="hover:underline">Request a Game</a>
+								<a href="/request" class="hover:underline">{$_('request_a_game')}</a>
 							</li>
 							<li class="mb-4">
-								<a href="/discord" class="hover:underline">Get Support</a>
+								<a href="/discord" class="hover:underline">{$_('get_support')}</a>
 							</li>
 							<li class="mb-4">
-								<a href="/faq" class="hover:underline">FAQ</a>
+								<a href="/faq" class="hover:underline">{$_('faq')}</a>
 							</li>
 							<li>
-								<a href="/final-grade" class="hover:underline">Final Grade Calculator</a>
+								<a href="/final-grade" class="hover:underline">{$_('final_grade_calculator')}</a>
 							</li>
 						</ul>
 					</div>
 					<div>
-						<h2 class="mb-6 text-sm font-semibold uppercase text-white">Online Services</h2>
+						<h2 class="mb-6 text-sm font-semibold uppercase text-white">{$_('online_services')}</h2>
 						<ul class="text-white">
 							<li class="mb-4">
-								<a href="/search" class="hover:underline">Search</a>
+								<a href="/search" class="hover:underline">{$_('search')}</a>
 							</li>
 							<li class="mb-4">
-								<a href="/games" class="hover:underline">Games</a>
+								<a href="/games" class="hover:underline">{$_('games')}</a>
 							</li>
 							<li>
-								<a href="/apps" class="hover:underline">Apps</a>
+								<a href="/apps" class="hover:underline">{$_('apps')}</a>
 							</li>
 						</ul>
 					</div>
 					<div>
-						<h2 class="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
+						<h2 class="mb-6 text-sm font-semibold uppercase text-white">{$_('legal')}</h2>
 						<ul class="text-white">
 							<li class="mb-4">
-								<a href="/legal/privacy-policy" class="hover:underline">Privacy Policy</a>
+								<a href="/legal/privacy-policy" class="hover:underline">{$_('privacy_policy')}</a>
 							</li>
 							<li class="mb-4">
-								<a href="/legal/tos" class="hover:underline">Terms &amp; Conditions</a>
+								<a href="/legal/tos" class="hover:underline">{$_('terms_and_conditions')}</a>
 							</li>
 							<li>
-								<a href="/legal/dmca" class="hover:underline">DMCA</a>
+								<a href="/legal/dmca" class="hover:underline">{$_('dmca')}</a>
 							</li>
 						</ul>
 					</div>
