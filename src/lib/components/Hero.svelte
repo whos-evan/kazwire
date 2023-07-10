@@ -1,5 +1,5 @@
 <div
-	class="flex h-full flex-col justify-center rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white"
+	class="flex w-full h-full flex-col justify-center rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white"
 >
 	<div class="text-5xl font-bold tracking-tighter md:text-7xl">
 		<h1>

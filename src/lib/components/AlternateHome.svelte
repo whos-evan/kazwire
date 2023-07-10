@@ -5,6 +5,24 @@
 	import Partners from '$lib/components/Partners.svelte';
 
 	// import FinalGrade from '$lib/components/FinalGrade.svelte';
+	import SchoolRescue from '$lib/components/SchoolRescue.svelte';
+	import { neverShowSchoolRescue } from '$lib/stores';
+
+	function checkIfShowSchoolRescue() {
+		const date = new Date();
+		const month = date.getMonth();
+		const day = date.getDate();
+
+		// if it's july 15th or later, or august 15th or earlier, show the school rescue
+		// ensure that the time is in school hours
+		if (month >= 6 && month <= 7 && day >= 15 && day <= 15) {
+			if (date.getHours() >= 8 && date.getHours() <= 15) {
+				return true;
+			}
+		}
+
+		return true;
+	}
 
 	// import Changelog from '$lib/components/Changelog.svelte';
 
@@ -68,9 +86,16 @@
 
 <div class="grid-rows-auto grid max-w-max grid-cols-1 gap-8">
 	<grid class="row-start-1">
-		<Hero />
+		<grid class="flex gap-8">
+			<Hero />
+			{#if innerWidth > 1000}
+				{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
+					<SchoolRescue />
+				{/if}
+			{/if}
+		</grid>
 	</grid>
-	<grid class="row-start-2 bg-tertiary dark:bg-tertiaryDark rounded-3xl p-8">
+	<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
 		<grid class="grid grid-cols-6 gap-4">
 			{#each tags as tag}
 				<!-- Header for tag -->
@@ -100,7 +125,7 @@
 			{/each}
 		</grid>
 	</grid>
-	<grid class="row-start-3 bg-tertiary dark:bg-tertiaryDark rounded-3xl p-8">
+	<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
 		<!-- Games header -->
 		<h1 class="mb-4 text-xl font-bold text-black dark:text-white">Apps</h1>
 		<grid class="grid grid-cols-6 gap-x-4">
