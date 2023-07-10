@@ -16,10 +16,19 @@
 
 		// You might ask why the fuck would you do this.
 		// Simple answer: whenever the width of the window gets updated these
-        // values get updated allowing for a smooth experience where the button
-        // appears no matter what.
+		// values get updated allowing for a smooth experience where the button
+		// appears no matter what.
 		innerWidth = innerWidth;
 	}
+
+	import { onMount } from 'svelte';
+	onMount(() => {
+		setTimeout(() => {
+			scrollWidth = scrollableDiv.scrollWidth;
+			clientWidth = scrollableDiv.clientWidth;
+			scrollX = scrollableDiv.scrollLeft;
+		}, 500);
+	});
 </script>
 
 <svelte:window bind:innerWidth />
