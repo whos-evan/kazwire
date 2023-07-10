@@ -5,6 +5,16 @@
 	import { onMount } from 'svelte';
 	import Icon from '@iconify/svelte';
 
+	import '$lib/i18n'; // Import to initialize. Important :)
+	import { locale, waitLocale } from 'svelte-i18n';
+
+	export const load = async () => {
+		if (browser) {
+			locale.set(window.navigator.language);
+		}
+		await waitLocale();
+	};
+
 	import Analytics from '$lib/components/Google/Analytics.svelte';
 
 	// Reset the layout for certain pages containing the url path

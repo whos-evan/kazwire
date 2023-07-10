@@ -1,6 +1,7 @@
 import type { Handle } from '@sveltejs/kit';
 import { env } from '$env/dynamic/private';
 import { sequence } from '@sveltejs/kit/hooks';
+import { locale } from 'svelte-i18n';
 
 const admin: Handle = async ({ event, resolve }) => {
 	// Apply basic login for admin route
@@ -58,4 +59,13 @@ export const api: Handle = async ({ resolve, event }) => {
 	return response;
 };
 
-export const handle: Handle = sequence(admin, api);
+export const locales: Handle = async ({ resolve, event }) => {
+	const lang = event.request.headers.get('accept-language')?.split(',')[0];
+	if (lang) {
+		locale.set(lang);
+	}
+	const response = await resolve(event);
+	return response;
+};
+
+export const handle: Handle = sequence(admin, api, locales);

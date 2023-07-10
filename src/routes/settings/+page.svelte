@@ -96,7 +96,7 @@
 		console.log('Sending analytics for experiment: ' + experiment);
 		gtag('event', 'experiment_disable', {
 			event_category: 'experiment_disable',
-			event_label: experiment,
+			event_label: experiment
 		});
 	}
 
@@ -104,13 +104,22 @@
 		console.log('Sending analytics for experiment: ' + experiment);
 		gtag('event', 'experiment_enable', {
 			event_category: 'experiment_enable',
-			event_label: experiment,
+			event_label: experiment
 		});
+	}
+
+	let locale: string = 'en';
+
+	function changeLocale() {
+		localStorage.setItem('locale', locale);
+		window.location.reload();
 	}
 
 	onMount(() => {
 		getTitle();
 		getFavicon();
+
+		locale = localStorage.getItem('locale') || 'en';
 
 		experimentData = experiments.getExperiments();
 	});
@@ -177,8 +186,27 @@
 			<hr class="border-gray-300 dark:border-gray-700" />
 		</div>
 
-		<!-- View experiments -->
 		<div class="col-start-1 row-start-5">
+			<h3 class="text-2xl font-bold">Change Locale</h3>
+			<p class="text-sm text-gray-500">Set your preferred language:</p>
+			<select
+				id="locale"
+				class="mr-2 w-full max-w-xs rounded-lg p-2 text-black sm:max-w-md"
+				bind:value={locale}
+			>
+				<option value="en">English</option>
+				<option value="ja">日本語</option>
+			</select>
+			<button class="btn" on:click={changeLocale}>Save</button>
+		</div>
+
+		<!-- Line break -->
+		<div class="col-start-1 row-start-6">
+			<hr class="border-gray-300 dark:border-gray-700" />
+		</div>
+
+		<!-- View experiments -->
+		<div class="col-start-1 row-start-7">
 			<h3 class="text-2xl font-bold">Experiments</h3>
 			<p class="text-md text-gray-500">
 				You may come across some experiments while visiting the site. If you do manage to come
