@@ -138,17 +138,41 @@
 				/>
 			{/each}
 		</Carousel>
-		<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
-			<grid class="flex flex-col gap-4">
-				<grid class="mb-4 flex flex-row justify-start">
-					<h1 class="text-3xl font-bold text-black dark:text-white">Popular Games</h1>
-					<Icon
-						icon="mdi:fire"
-						class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-orange-500"
-					/>
-				</grid>
-				<Carousel {SCROLL_AMOUNT}>
-					{#each popularGames as game}
+	</grid>
+	<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
+		<grid class="mb-4 flex flex-row justify-start">
+			<h1 class="text-3xl font-bold text-black dark:text-white">Popular Games</h1>
+			<Icon
+				icon="mdi:fire"
+				class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-orange-500"
+			/>
+		</grid>
+		<Carousel {SCROLL_AMOUNT}>
+			{#each popularGames as game}
+				<SmallBox
+					image={'/game/img/' + game.image}
+					name={game.name}
+					developer={game.developer}
+					link={'/games/' + game.id}
+					popular={game.popular || false}
+					errorMessage={game.errorMessage || undefined}
+					platformSupport={game.platform}
+				/>
+			{/each}
+		</Carousel>
+		{#each tags as tag}
+			<!-- Header for tag -->
+			{#if tag.length > 3}
+				<h2 class="text-xl font-bold capitalize text-black dark:text-white">{tag} Games</h2>
+			{:else}
+				<h2 class="text-xl font-bold text-black dark:text-white">
+					{tag.toUpperCase()} Games
+				</h2>
+			{/if}
+			<!-- Scrollable div for the small boxes -->
+			<Carousel {SCROLL_AMOUNT}>
+				{#each games as game}
+					{#if game.tags.includes(tag)}
 						<SmallBox
 							image={'/game/img/' + game.image}
 							name={game.name}
@@ -158,45 +182,19 @@
 							errorMessage={game.errorMessage || undefined}
 							platformSupport={game.platform}
 						/>
-					{/each}
-				</Carousel>
-				{#each tags as tag}
-					<!-- Header for tag -->
-					{#if tag.length > 3}
-						<h2 class="text-xl font-bold capitalize text-black dark:text-white">{tag} Games</h2>
-					{:else}
-						<h2 class="text-xl font-bold text-black dark:text-white">
-							{tag.toUpperCase()} Games
-						</h2>
 					{/if}
-					<!-- Scrollable div for the small boxes -->
-					<Carousel {SCROLL_AMOUNT}>
-						{#each games as game}
-							{#if game.tags.includes(tag)}
-								<SmallBox
-									image={'/game/img/' + game.image}
-									name={game.name}
-									developer={game.developer}
-									link={'/games/' + game.id}
-									popular={game.popular || false}
-									errorMessage={game.errorMessage || undefined}
-									platformSupport={game.platform}
-								/>
-							{/if}
-						{/each}
-					</Carousel>
 				{/each}
-			</grid>
-		</grid>
+			</Carousel>
+		{/each}
+	</grid>
 
-		<grid class="row-start-4">
-			<Faq />
-		</grid>
-		<grid class="row-start-5">
-			<Horz />
-		</grid>
-		<grid class="row-start-6 max-w-full">
-			<Partners />
-		</grid>
+	<grid class="row-start-4">
+		<Faq />
+	</grid>
+	<grid class="row-start-5">
+		<Horz />
+	</grid>
+	<grid class="row-start-6 max-w-full">
+		<Partners />
 	</grid>
 </div>
