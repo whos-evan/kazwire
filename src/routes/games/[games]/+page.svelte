@@ -167,10 +167,11 @@
 	function loadedGame() {
 		// Wait 0.5 second before removing the loading screen
 		setTimeout(() => {
-			loadingGame = false;
 			// Remove the hidden class from the iframe
 			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
-			iframe.classList.remove('hidden');
+			iframe.classList.remove('opacity-0');
+
+			loadingGame = false;
 		}, 500);
 	}
 </script>
@@ -249,7 +250,7 @@
 						{#if game.embedURL == null && game.emulatorType == null}
 							<iframe
 								src={'/game/static/' + game.id + '/index.html'}
-								class="hidden h-full w-full rounded-t-lg bg-white"
+								class="opacity-0 h-full w-full rounded-t-lg bg-white"
 								id="iframe"
 								title={game.name}
 								on:load={() => loadedGame()}
