@@ -259,7 +259,7 @@
 						{:else if game.emulatorType == 'ruffle'}
 							<iframe
 								src={'/games/ruffle/' + game.id}
-								class="hidden h-full w-full rounded-t-lg bg-white"
+								class="opacity-0 h-full w-full rounded-t-lg bg-white"
 								id="iframe"
 								title={game.name}
 								on:load={() => loadedGame()}
@@ -268,14 +268,14 @@
 						{:else if game.emulatorType == 'emulatorjs'}
 							<iframe
 								src={'/games/emulator/' + game.id}
-								class="hidden h-full w-full rounded-t-lg bg-white"
+								class="opacity-0 h-full w-full rounded-t-lg bg-white"
 								id="iframe"
 								title={game.name}
 							/>
 							<!-- Proxied game -->
 						{:else if game.embedURL != null}
 							<iframe
-								class="hidden h-full w-full rounded-t-lg bg-white"
+								class="opacity-0 h-full w-full rounded-t-lg bg-white"
 								id="iframe"
 								title={game.name}
 								src="about:blank"
