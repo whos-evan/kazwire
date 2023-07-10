@@ -68,8 +68,7 @@
 		document.addEventListener('keydown', (event) => {
 			if (event.ctrlKey && event.key === '5') {
 				if (window.location.href.includes('/school')) {
-					// go back to their previous page
-					window.history.back();
+					window.location.href = '/';
 				} else {
 					window.location.href = '/school';
 				}
