@@ -9,6 +9,34 @@
 	import SchoolRescue from '$lib/components/SchoolRescue.svelte';
 	import { neverShowSchoolRescue } from '$lib/stores';
 
+	// import Changelog from '$lib/components/Changelog.svelte';
+
+	// import RandomGame from '$lib/components/RandomGame.svelte';
+	// import LovedGame from '$lib/components/LovedGame.svelte';
+	// import LovedApp from '$lib/components/LovedApp.svelte';
+	import SmallBox from '$lib/components/Box/SmallBox.svelte';
+	import type { Game, App } from '@prisma/client';
+	import { PUBLIC_API_BASE_URL } from '$env/static/public';
+
+	import Horz from '$lib/components/Google/Horz.svelte';
+
+	import Carousel from '$lib/components/Carousel.svelte';
+
+	import { appLike, gameLike } from '$lib/likeContent';
+	import { onMount } from 'svelte';
+
+	let innerWidth: number;
+
+	let likedGames: string[] = [];
+	let likedApps: string[] = [];
+
+	let games: Game[] = [];
+	let popularGames: Game[] = [];
+	let apps: App[] = [];
+	let tags: string[] = [];
+
+	const SCROLL_AMOUNT: number = 256 * 3;
+
 	function checkIfShowSchoolRescue() {
 		const date = new Date();
 		const month = date.getMonth();
@@ -24,29 +52,6 @@
 
 		return false;
 	}
-
-	// import Changelog from '$lib/components/Changelog.svelte';
-
-	// import RandomGame from '$lib/components/RandomGame.svelte';
-	// import LovedGame from '$lib/components/LovedGame.svelte';
-	// import LovedApp from '$lib/components/LovedApp.svelte';
-	import SmallBox from '$lib/components/Box/SmallBox.svelte';
-	import type { Game, App } from '@prisma/client';
-	import { PUBLIC_API_BASE_URL } from '$env/static/public';
-
-	let innerWidth: number;
-
-	import Horz from '$lib/components/Google/Horz.svelte';
-	let likedGames: string[] = [];
-	let likedApps: string[] = [];
-
-	let games: Game[] = [];
-	let popularGames: Game[] = [];
-	let apps: App[] = [];
-	let tags: string[] = [];
-
-	import { appLike, gameLike } from '$lib/likeContent';
-	import { onMount } from 'svelte';
 
 	onMount(() => {
 		likedApps = appLike.fetchLikes();
@@ -119,81 +124,79 @@
 	<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
 		<!-- Games header -->
 		<h1 class="mb-4 text-3xl font-bold text-black dark:text-white">Apps</h1>
-		<grid class="grid grid-cols-6 gap-x-4">
-			<!-- Scrollable div for the small boxes -->
-			<grid class="col-span-6 grid grid-flow-col-dense justify-start gap-x-4 overflow-x-auto">
-				{#each apps as app}
-					<SmallBox
-						image={'/app/img/' + app.image}
-						name={app.name}
-						developer={app.developer}
-						link={'/apps/' + app.id}
-						popular={false}
-						errorMessage={undefined}
-						platformSupport={undefined}
-					/>
-				{/each}
-			</grid>
-		</grid>
-	</grid>
-	<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
-		<grid class="grid grid-cols-6 gap-4">
-			<grid class="col-span-6 flex flex-row justify-start">
-				<h1 class="text-3xl font-bold text-black dark:text-white">Popular Games</h1>
-				<Icon
-					icon="mdi:fire"
-					class="text-3xl ml-1 mt-1 text-red-500 transition hover:text-orange-500"
+		<!-- Buttons to scroll the div on the left and right-->
+		<Carousel {SCROLL_AMOUNT}>
+			{#each apps as app}
+				<SmallBox
+					image={'/app/img/' + app.image}
+					name={app.name}
+					developer={app.developer}
+					link={'/apps/' + app.id}
+					popular={false}
+					errorMessage={undefined}
+					platformSupport={undefined}
 				/>
-			</grid>
-			<grid class="col-span-6 grid grid-flow-col-dense justify-start gap-x-4 overflow-x-auto">
-				{#each popularGames as game}
-					<SmallBox
-						image={'/game/img/' + game.image}
-						name={game.name}
-						developer={game.developer}
-						link={'/games/' + game.id}
-						popular={game.popular || false}
-						errorMessage={game.errorMessage || undefined}
-						platformSupport={game.platform}
+			{/each}
+		</Carousel>
+		<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
+			<grid class="flex flex-col gap-4">
+				<grid class="mb-4 flex flex-row justify-start">
+					<h1 class="text-3xl font-bold text-black dark:text-white">Popular Games</h1>
+					<Icon
+						icon="mdi:fire"
+						class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-orange-500"
 					/>
-				{/each}
-			</grid>
-			{#each tags as tag}
-				<!-- Header for tag -->
-				<grid class="col-span-6">
+				</grid>
+				<Carousel {SCROLL_AMOUNT}>
+					{#each popularGames as game}
+						<SmallBox
+							image={'/game/img/' + game.image}
+							name={game.name}
+							developer={game.developer}
+							link={'/games/' + game.id}
+							popular={game.popular || false}
+							errorMessage={game.errorMessage || undefined}
+							platformSupport={game.platform}
+						/>
+					{/each}
+				</Carousel>
+				{#each tags as tag}
+					<!-- Header for tag -->
 					{#if tag.length > 3}
 						<h2 class="text-xl font-bold capitalize text-black dark:text-white">{tag} Games</h2>
 					{:else}
-						<h2 class="text-xl font-bold text-black dark:text-white">{tag.toUpperCase()} Games</h2>
+						<h2 class="text-xl font-bold text-black dark:text-white">
+							{tag.toUpperCase()} Games
+						</h2>
 					{/if}
-				</grid>
-				<!-- Scrollable div for the small boxes -->
-				<grid class="col-span-6 grid grid-flow-col-dense justify-start gap-x-4 overflow-x-auto">
-					{#each games as game}
-						{#if game.tags.includes(tag)}
-							<SmallBox
-								image={'/game/img/' + game.image}
-								name={game.name}
-								developer={game.developer}
-								link={'/games/' + game.id}
-								popular={game.popular || false}
-								errorMessage={game.errorMessage || undefined}
-								platformSupport={game.platform}
-							/>
-						{/if}
-					{/each}
-				</grid>
-			{/each}
+					<!-- Scrollable div for the small boxes -->
+					<Carousel {SCROLL_AMOUNT}>
+						{#each games as game}
+							{#if game.tags.includes(tag)}
+								<SmallBox
+									image={'/game/img/' + game.image}
+									name={game.name}
+									developer={game.developer}
+									link={'/games/' + game.id}
+									popular={game.popular || false}
+									errorMessage={game.errorMessage || undefined}
+									platformSupport={game.platform}
+								/>
+							{/if}
+						{/each}
+					</Carousel>
+				{/each}
+			</grid>
 		</grid>
-	</grid>
 
-	<grid class="row-start-4">
-		<Faq />
-	</grid>
-	<grid class="row-start-5">
-		<Horz />
-	</grid>
-	<grid class="row-start-6 max-w-full">
-		<Partners />
+		<grid class="row-start-4">
+			<Faq />
+		</grid>
+		<grid class="row-start-5">
+			<Horz />
+		</grid>
+		<grid class="row-start-6 max-w-full">
+			<Partners />
+		</grid>
 	</grid>
 </div>

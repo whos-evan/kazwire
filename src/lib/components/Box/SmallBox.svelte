@@ -14,9 +14,9 @@
 	export let errorMessage: string | undefined = undefined;
 </script>
 
-<a id={name} href={link} class="mb-5 w-[15rem] justify-self-start" data-sveltekit-reload>
+<a id={name} href={link} class="w-[15rem] pb-4 justify-self-start" data-sveltekit-reload>
 	<div
-		class="relative h-full w-[15rem] border-collapse rounded-xl bg-tertiaryDark shadow-gray-200 duration-100 inner-border-secondary shadow-md hover:cursor-pointer hover:inner-border-4 hover:shadow-lg {popular ===
+		class="relative h-full w-[15rem] border-collapse rounded-xl bg-tertiaryDark shadow-gray-200 duration-100 inner-border-secondary shadow-sm hover:cursor-pointer hover:inner-border-4 hover:shadow-md {popular ===
 		true
 			? 'dark:shadow-orange-300'
 			: 'dark:shadow-white'}"
