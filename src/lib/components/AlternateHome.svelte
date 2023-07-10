@@ -117,6 +117,26 @@
 		</grid>
 	</grid>
 	<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
+		<!-- Games header -->
+		<h1 class="mb-4 text-3xl font-bold text-black dark:text-white">Apps</h1>
+		<grid class="grid grid-cols-6 gap-x-4">
+			<!-- Scrollable div for the small boxes -->
+			<grid class="col-span-6 grid grid-flow-col-dense justify-start gap-x-4 overflow-x-auto">
+				{#each apps as app}
+					<SmallBox
+						image={'/app/img/' + app.image}
+						name={app.name}
+						developer={app.developer}
+						link={'/apps/' + app.id}
+						popular={false}
+						errorMessage={undefined}
+						platformSupport={undefined}
+					/>
+				{/each}
+			</grid>
+		</grid>
+	</grid>
+	<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
 		<grid class="grid grid-cols-6 gap-4">
 			<grid class="col-span-6 flex flex-row justify-start">
 				<h1 class="text-3xl font-bold text-black dark:text-white">Popular Games</h1>
@@ -166,26 +186,7 @@
 			{/each}
 		</grid>
 	</grid>
-	<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
-		<!-- Games header -->
-		<h1 class="mb-4 text-3xl font-bold text-black dark:text-white">Apps</h1>
-		<grid class="grid grid-cols-6 gap-x-4">
-			<!-- Scrollable div for the small boxes -->
-			<grid class="col-span-6 grid grid-flow-col-dense justify-start gap-x-4 overflow-x-auto">
-				{#each apps as app}
-					<SmallBox
-						image={'/app/img/' + app.image}
-						name={app.name}
-						developer={app.developer}
-						link={'/apps/' + app.id}
-						popular={false}
-						errorMessage={undefined}
-						platformSupport={undefined}
-					/>
-				{/each}
-			</grid>
-		</grid>
-	</grid>
+
 	<grid class="row-start-4">
 		<Faq />
 	</grid>
