@@ -5,6 +5,24 @@
 	import Partners from '$lib/components/Partners.svelte';
 
 	// import FinalGrade from '$lib/components/FinalGrade.svelte';
+	import SchoolRescue from '$lib/components/SchoolRescue.svelte';
+	import { neverShowSchoolRescue } from '$lib/stores';
+
+	function checkIfShowSchoolRescue() {
+		const date = new Date();
+		const month = date.getMonth();
+		const day = date.getDate();
+
+		// if it's july 15th or later, or august 15th or earlier, show the school rescue
+		// ensure that the time is in school hours
+		if (month >= 6 && month <= 7 && day >= 15 && day <= 15) {
+			if (date.getHours() >= 8 && date.getHours() <= 15) {
+				return true;
+			}
+		}
+
+		return false;
+	}
 
 	import Changelog from '$lib/components/Changelog.svelte';
 
@@ -51,7 +69,11 @@
 		<grid class="col-span-2 flex gap-8">
 			<Hero />
 			{#if innerWidth > 1000}
-				<Showoff />
+				{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
+					<SchoolRescue />
+				{:else}
+					<Showoff />
+				{/if}
 			{/if}
 		</grid>
 		<grid class="col-span-2 row-start-2 flex gap-8">

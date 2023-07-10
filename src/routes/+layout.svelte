@@ -8,7 +8,7 @@
 	import Analytics from '$lib/components/Google/Analytics.svelte';
 
 	// Reset the layout for certain pages containing the url path
-	const layoutResetPaths = ['/games/ruffle', '/games/emulator'];
+	const layoutResetPaths = ['/games/ruffle', '/games/emulator', '/school'];
 	let resetLayout = false;
 	for (const path of layoutResetPaths) {
 		if ($page.url.pathname.includes(path)) {
@@ -42,7 +42,6 @@
 	}
 
 	import { experiments } from '$lib/experiments';
-	import Changelog from '$lib/components/Changelog.svelte';
 
 	let numOfExperiments = 0;
 
@@ -63,6 +62,19 @@
 		showWhite = experiments.shouldShow('whiteTheme');
 
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
+
+		// Add an event listener to see if the user presses control + 5
+		// If they do redirect
+		document.addEventListener('keydown', (event) => {
+			if (event.ctrlKey && event.key === '5') {
+				if (window.location.href.includes('/school')) {
+					// go back to their previous page
+					window.history.back();
+				} else {
+					window.location.href = '/school';
+				}
+			}
+		});
 	});
 
 	let darkMode = true;
@@ -107,7 +119,7 @@
 	<div class="z-50 dark:bg-black" class:bg-white={showWhite} class:bg-primary={!showWhite}>
 		<div class="fixed z-50 w-full px-5 py-5">
 			<nav
-				class="flex w-full flex-wrap items-center justify-between rounded-lg bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white shadow-md shadow-black dark:shadow-white md:py-0"
+				class="flex w-full flex-wrap items-center justify-between rounded-lg bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white shadow-black shadow-md dark:shadow-white md:py-0"
 			>
 				<div class="align-items-center mb-auto mt-auto flex-col">
 					<a href="/" class="flex items-center justify-center">
@@ -222,7 +234,7 @@
 					{#if numOfExperiments > 0}
 						<a
 							href="/settings#experiments"
-							class="text-md flex flex-col self-center text-white hover:underline bg-green-500 px-2 py-1 rounded-lg mt-2"
+							class="text-md mt-2 flex flex-col self-center rounded-lg bg-green-500 px-2 py-1 text-white hover:underline"
 						>
 							{numOfExperiments} experiment{#if numOfExperiments > 1}s{/if} running
 						</a>
