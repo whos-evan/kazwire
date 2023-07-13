@@ -5,7 +5,7 @@
 		directly.
 	</p>
 	<div class="mt-4 flex sm:flex-row flex-col gap-4">
-		<a href="/discord/browser">
+		<a href="/discord/browser" data-sveltekit-reload>
 			<button class="btn-lg"> Access through Kazwire </button>
 		</a>
         <a href="/discord/link">
