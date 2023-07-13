@@ -116,7 +116,7 @@
 
 <div class="relative flex flex-row justify-center">
 	<div
-		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
+		class="float-left flex h-[85vh] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 	>
 		<div class="align-center mb-14 flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
