@@ -48,9 +48,9 @@
 
 		experiments.fetchOrCreateExperimentData(
 			'alternateHome',
-			'2023-07-15',
+			'2023-08-01',
 			'Alternate home page for Kazwire.',
-			25,
+			50,
 			true
 		);
 
