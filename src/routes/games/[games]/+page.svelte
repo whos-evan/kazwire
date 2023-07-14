@@ -9,6 +9,8 @@
 	import { page } from '$app/stores';
 	import { onMount } from 'svelte';
 
+	import { suggest } from '$lib/gameAlgorithm';
+
 	// Turns a search into a valid URL
 	function search(input: string) {
 		let template: string = 'https://www.google.com/search?q=%s&hl=en';
@@ -162,6 +164,9 @@
 		fetch(PUBLIC_API_BASE_URL + '/api/games/' + slug + '/views', {
 			method: 'POST'
 		});
+
+		// Add to played games
+		suggest.PlayGame(slug);
 	}
 
 	function loadedGame() {
