@@ -24,6 +24,8 @@
 
 	import { suggest } from '$lib/gameAlgorithm';
 
+	import { _, isLoading } from 'svelte-i18n';
+
 	import { appLike, gameLike } from '$lib/likeContent';
 	import { onMount } from 'svelte';
 
@@ -112,119 +114,123 @@
 	<title>Kazwire</title>
 </head>
 
-<div class="grid-rows-auto grid max-w-max grid-cols-1 gap-8">
-	<grid class="row-start-1">
-		<grid class="flex gap-8">
-			<Hero />
-			{#if innerWidth > 1000}
-				{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
-					<SchoolRescue />
+{#if !$isLoading}
+	<div class="grid-rows-auto grid max-w-max grid-cols-1 gap-8">
+		<grid class="row-start-1">
+			<grid class="flex gap-8">
+				<Hero />
+				{#if innerWidth > 1000}
+					{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
+						<SchoolRescue />
+					{/if}
 				{/if}
-			{/if}
-		</grid>
-	</grid>
-	<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
-		<!-- Games header -->
-		<h1 class="mb-4 text-3xl font-bold text-black dark:text-white">Apps</h1>
-		<!-- Buttons to scroll the div on the left and right-->
-		<Carousel {SCROLL_AMOUNT}>
-			{#each apps as app}
-				<SmallBox
-					image={'/app/img/' + app.image}
-					name={app.name}
-					developer={app.developer}
-					link={'/apps/' + app.id}
-					popular={false}
-					errorMessage={undefined}
-					platformSupport={undefined}
-				/>
-			{/each}
-		</Carousel>
-	</grid>
-	<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
-		<grid class="flex flex-col gap-2">
-			{#await suggest.Games() then suggestedGames}
-				{#if suggestedGames.length > 0}
-					<grid class="mb-4 flex flex-row justify-start">
-						<h1 class="text-3xl font-bold text-black dark:text-white">Suggested Games</h1>
-						<Icon
-							icon="mdi:controller"
-							class="ml-1 mt-1 text-3xl text-green-500 transition hover:text-blue-500"
-						/>
-					</grid>
-					<Carousel {SCROLL_AMOUNT}>
-						{#each suggestedGames as game}
-							<SmallBox
-								image={'/game/img/' + game.image}
-								name={game.name}
-								developer={game.developer}
-								link={'/games/' + game.id}
-								popular={game.popular || false}
-								errorMessage={game.errorMessage || undefined}
-								platformSupport={game.platform}
-							/>
-						{/each}
-					</Carousel>
-				{/if}
-			{/await}
-
-			<grid class="mb-4 flex flex-row justify-start">
-				<h1 class="text-3xl font-bold text-black dark:text-white">Popular Games</h1>
-				<Icon
-					icon="mdi:fire"
-					class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-orange-500"
-				/>
 			</grid>
+		</grid>
+		<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
+			<!-- Games header -->
+			<h1 class="mb-4 text-3xl font-bold text-black dark:text-white">{$_('apps')}</h1>
+			<!-- Buttons to scroll the div on the left and right-->
 			<Carousel {SCROLL_AMOUNT}>
-				{#each popularGames as game}
+				{#each apps as app}
 					<SmallBox
-						image={'/game/img/' + game.image}
-						name={game.name}
-						developer={game.developer}
-						link={'/games/' + game.id}
-						popular={game.popular || false}
-						errorMessage={game.errorMessage || undefined}
-						platformSupport={game.platform}
+						image={'/app/img/' + app.image}
+						name={app.name}
+						developer={app.developer}
+						link={'/apps/' + app.id}
+						popular={false}
+						errorMessage={undefined}
+						platformSupport={undefined}
 					/>
 				{/each}
 			</Carousel>
-
-			{#each tags as tag}
-				<!-- Header for tag -->
-				{#if tag.length > 3}
-					<h2 class="mt-2 text-xl font-bold capitalize text-black dark:text-white">{tag} Games</h2>
-				{:else}
-					<h2 class="text-xl font-bold text-black dark:text-white">
-						{tag.toUpperCase()} Games
-					</h2>
-				{/if}
-				<!-- Scrollable div for the small boxes -->
-				<Carousel {SCROLL_AMOUNT}>
-					{#each games as game}
-						{#if game.tags.includes(tag)}
-							<SmallBox
-								image={'/game/img/' + game.image}
-								name={game.name}
-								developer={game.developer}
-								link={'/games/' + game.id}
-								popular={game.popular || false}
-								errorMessage={game.errorMessage || undefined}
-								platformSupport={game.platform}
+		</grid>
+		<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
+			<grid class="flex flex-col gap-2">
+				{#await suggest.Games() then suggestedGames}
+					{#if suggestedGames.length > 0}
+						<grid class="mb-4 flex flex-row justify-start">
+							<h1 class="text-3xl font-bold text-black dark:text-white">{$_('suggested_games')}</h1>
+							<Icon
+								icon="mdi:controller"
+								class="ml-1 mt-1 text-3xl text-green-500 transition hover:text-blue-500"
 							/>
-						{/if}
+						</grid>
+						<Carousel {SCROLL_AMOUNT}>
+							{#each suggestedGames as game}
+								<SmallBox
+									image={'/game/img/' + game.image}
+									name={game.name}
+									developer={game.developer}
+									link={'/games/' + game.id}
+									popular={game.popular || false}
+									errorMessage={game.errorMessage || undefined}
+									platformSupport={game.platform}
+								/>
+							{/each}
+						</Carousel>
+					{/if}
+				{/await}
+
+				<grid class="mb-4 flex flex-row justify-start">
+					<h1 class="text-3xl font-bold text-black dark:text-white">{$_('popular_games')}</h1>
+					<Icon
+						icon="mdi:fire"
+						class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-orange-500"
+					/>
+				</grid>
+				<Carousel {SCROLL_AMOUNT}>
+					{#each popularGames as game}
+						<SmallBox
+							image={'/game/img/' + game.image}
+							name={game.name}
+							developer={game.developer}
+							link={'/games/' + game.id}
+							popular={game.popular || false}
+							errorMessage={game.errorMessage || undefined}
+							platformSupport={game.platform}
+						/>
 					{/each}
 				</Carousel>
-			{/each}
-		</grid>
-	</grid>
 
-	<grid class="row-start-4">
-		<Faq />
-	</grid>
-	<grid class="row-start-5">
-		<Horz />
-	</grid>
-	<grid class="row-start-6 max-w-full">
-		<Partners />
-	</grid>
-</div>
+				{#each tags as tag}
+					<!-- Header for tag -->
+					{#if tag.length > 3}
+						<h2 class="mt-2 text-xl font-bold capitalize text-black dark:text-white">
+							{tag} {$_('games')}
+						</h2>
+					{:else}
+						<h2 class="text-xl font-bold text-black dark:text-white">
+							{tag.toUpperCase()} {$_('games')}
+						</h2>
+					{/if}
+					<!-- Scrollable div for the small boxes -->
+					<Carousel {SCROLL_AMOUNT}>
+						{#each games as game}
+							{#if game.tags.includes(tag)}
+								<SmallBox
+									image={'/game/img/' + game.image}
+									name={game.name}
+									developer={game.developer}
+									link={'/games/' + game.id}
+									popular={game.popular || false}
+									errorMessage={game.errorMessage || undefined}
+									platformSupport={game.platform}
+								/>
+							{/if}
+						{/each}
+					</Carousel>
+				{/each}
+			</grid>
+		</grid>
+
+		<grid class="row-start-4">
+			<Faq />
+		</grid>
+		<grid class="row-start-5">
+			<Horz />
+		</grid>
+		<grid class="row-start-6 max-w-full">
+			<Partners />
+		</grid>
+	</div>
+{/if}
