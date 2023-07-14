@@ -1,5 +1,6 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+	import { send } from 'vite';
 
 	export let image: string;
 	export let name: string;
@@ -12,9 +13,26 @@
 
 	// Optional errorMessage prop
 	export let errorMessage: string | undefined = undefined;
+
+	export let GA_EVENT: string | undefined = undefined;
+
+	function sendEvent() {
+		if (GA_EVENT != undefined) {
+			console.log('Sending event: ' + GA_EVENT);
+			gtag('event', GA_EVENT, {
+				event_label: name
+			});
+		}
+	}
 </script>
 
-<a id={name} href={link} class="w-[15rem] pb-4 justify-self-start" data-sveltekit-reload>
+<a
+	id={name}
+	class="w-[15rem] justify-self-start pb-4"
+	on:click={sendEvent}
+	href={link}
+	data-sveltekit-reload
+>
 	<div
 		class="relative h-full w-[15rem] border-collapse rounded-xl bg-tertiaryDark shadow-gray-200 duration-100 inner-border-secondary shadow-sm hover:cursor-pointer hover:inner-border-4 hover:shadow-md {popular ===
 		true
@@ -36,7 +54,7 @@
 				</span>
 			{/if}
 		</div>
-		<img class="h-40 w-full rounded-xl object-cover opacity-50 bg-white" src={image} alt={name} />
+		<img class="h-40 w-full rounded-xl bg-white object-cover opacity-50" src={image} alt={name} />
 		<!-- Name overlayed on the bottom left -->
 		<div class="absolute bottom-0 left-0 max-h-24 w-4/5 p-2">
 			<h1 class="truncate text-xl font-bold text-white">{name}</h1>

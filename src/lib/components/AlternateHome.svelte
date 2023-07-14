@@ -165,6 +165,7 @@
 									popular={game.popular || false}
 									errorMessage={game.errorMessage || undefined}
 									platformSupport={game.platform}
+									GA_EVENT="click_suggested_game"
 								/>
 							{/each}
 						</Carousel>
@@ -188,6 +189,7 @@
 							popular={game.popular || false}
 							errorMessage={game.errorMessage || undefined}
 							platformSupport={game.platform}
+							GA_EVENT="click_popular_games"
 						/>
 					{/each}
 				</Carousel>
@@ -215,6 +217,7 @@
 									popular={game.popular || false}
 									errorMessage={game.errorMessage || undefined}
 									platformSupport={game.platform}
+									GA_EVENT={"click_tag_" + tag.toLowerCase()}
 								/>
 							{/if}
 						{/each}
