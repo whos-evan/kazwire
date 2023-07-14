@@ -1,6 +1,5 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
-	import { send } from 'vite';
 
 	export let image: string;
 	export let name: string;
