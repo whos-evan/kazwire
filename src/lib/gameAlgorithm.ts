@@ -26,9 +26,11 @@ class Suggest {
 		localStorage.setItem("playedGames", JSON.stringify(playedGames));
 	}
 
-	Games(): Promise<Game[]> {
-		let games = kazwireAPI.fetchGames();
+	Games(): Promise<Game[] | undefined> {
+		// Record how long it takes to complete the algorithm
+		let startTime = new Date().getTime();
 
+		let games = kazwireAPI.fetchGames();
 		let likes = gameLike.fetchLikes();
 
 		let playedGames = localStorage.getItem("playedGames");
@@ -169,7 +171,7 @@ class Suggest {
 					// Add PLAYED_EMULATOR_SCORE to the score of each game with the same emulator
 					for (let j = 0; j < gamesWithEmulator.length; j++) {
 						let gameWithEmulator = gamesWithEmulator[j];
-						
+
 						score[gameWithEmulator.id] += PLAYED_EMULATOR_SCORE;
 					}
 				}
@@ -187,12 +189,18 @@ class Suggest {
 
 			const MAX_GAMES = 10;
 			if (sortedGames.length > MAX_GAMES) {
+				let endTime = new Date().getTime();
 				console.log("Suggesting games");
-				console.log(sortedGames.slice(0, MAX_GAMES));
+				if (endTime - startTime > 300) {
+					console.warn("Time taken: " + (endTime - startTime) + "ms", "This is longer than expected");
+				} else {
+					console.log("Time taken: " + (endTime - startTime) + "ms");
+				}
 				return sortedGames.slice(0, MAX_GAMES);
 			} else {
+				let endTime = new Date().getTime();
 				console.log("Suggesting games");
-				console.log(sortedGames);
+				console.log("Time taken: " + (endTime - startTime) + "ms");
 				return sortedGames;
 			}
 		});
