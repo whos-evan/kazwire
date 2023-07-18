@@ -1,20 +1,20 @@
 class Experiment {
-	setCookie(): void {
+	setCookie(experimentName: string): void {
 		const randomNumber: number = Math.random();
 		const expires: Date = new Date();
 		expires.setMonth(expires.getMonth() + 1);
-		document.cookie = `experiment=${randomNumber};expires=${expires.toUTCString()}`;
+		document.cookie = `${experimentName}_experiment=${randomNumber};expires=${expires.toUTCString()}`;
 	}
 
-	getCookie(): number {
+	getCookie(experimentName: string): number {
 		const cookie: string | undefined = document.cookie
 			.split('; ')
-			.find((row: string) => row.startsWith('experiment'));
+			.find((row: string) => row.startsWith(experimentName + '_experiment'));
 		if (cookie) {
 			return Number(cookie.split('=')[1]);
 		} else {
-			this.setCookie();
-			return this.getCookie();
+			this.setCookie(experimentName);
+			return this.getCookie(experimentName);
 		}
 	}
 
@@ -131,7 +131,7 @@ class Experiment {
 				return true;
 			}
 			const { percentage, endDate, enabled } = experimentData;
-			const randomNumber: number = this.getCookie();
+			const randomNumber: number = this.getCookie(id);
 			if (randomNumber <= percentage / 100 && new Date(endDate) > new Date() && enabled) {
 				return true;
 			}
