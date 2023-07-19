@@ -11,13 +11,13 @@ export const load = (async ({ params, fetch }) => {
 	const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/apps/' + slug);
 	if (response.status === 404) {
 		// Redirect to game page
-		throw redirect(307, '/apps/');
+		throw redirect(307, '/apps/')
 	}
 
 	const app: App = await response.json();
 
 	return {
-		// Return the game
-		app: app
-	};
+        // Return the game
+        app: app,
+    };
 }) satisfies PageLoad;
