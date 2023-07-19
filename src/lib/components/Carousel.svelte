@@ -1,37 +1,42 @@
 <script lang="ts">
 	import Icon from '@iconify/svelte';
+	import { onMount } from 'svelte';
 
 	export let SCROLL_AMOUNT: number;
-	let scrollableDiv: HTMLDivElement;
+  let scrollableDiv: HTMLDivElement;
 
-	let clientWidth: number = 1000;
-	let scrollWidth: number = 1000;
-	let scrollX: number = 0;
-	let innerWidth: number;
+  let clientWidth: number = 1000;
+  let scrollWidth: number = 1000;
+  let scrollX: number = 0;
+  let innerWidth: number;
 
-	$: if (scrollableDiv !== undefined) {
-		scrollWidth = scrollableDiv.scrollWidth;
-		clientWidth = scrollableDiv.clientWidth;
-		scrollX = scrollableDiv.scrollLeft;
+  // Function to calculate the zoom level
+  function calculateZoomLevel() {
+    const zoomLevel = window.innerWidth / window.outerWidth;
+    return zoomLevel;
+  }
 
-		// You might ask why the fuck would you do this.
-		// Simple answer: whenever the width of the window gets updated these
-		// values get updated allowing for a smooth experience where the button
-		// appears no matter what.
-		innerWidth = innerWidth;
-	}
+  // Update the scroll values when the window is resized
+  function handleWindowResize() {
+    innerWidth = window.innerWidth;
+    const zoomLevel = calculateZoomLevel();
+    scrollWidth = scrollableDiv.scrollWidth / zoomLevel;
+    clientWidth = scrollableDiv.clientWidth / zoomLevel;
+    scrollX = scrollableDiv.scrollLeft / zoomLevel;
+  }
 
-	import { onMount } from 'svelte';
-	onMount(() => {
-		setTimeout(() => {
-			scrollWidth = scrollableDiv.scrollWidth;
-			clientWidth = scrollableDiv.clientWidth;
-			scrollX = scrollableDiv.scrollLeft;
-		}, 500);
-	});
+  onMount(() => {
+    // Initial setup
+    handleWindowResize();
+
+    // Update the scroll values after a delay to ensure DOM is updated
+    setTimeout(() => {
+      handleWindowResize();
+    }, 500);
+  });
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window on:resize={handleWindowResize} />
 
 <div class="relative">
 	<!-- Scrollable div for the small boxes -->
@@ -59,6 +64,7 @@
 			class:hover:opacity-100={scrollX > 0 && scrollWidth > 0 && clientWidth > 0}
 			class:pointer-events-auto={scrollX > 0 && scrollWidth > 0 && clientWidth > 0}
 			class:pointer-events-none={scrollX == 0 && scrollWidth > 0 && clientWidth > 0}
+			class:opacity-50={scrollX > 0 && scrollWidth > 0 && clientWidth > 0}
 			aria-label="Scroll left"
 			on:click={() => scrollableDiv.scrollBy(-SCROLL_AMOUNT, 0)}
 		>
@@ -76,6 +82,7 @@
 			class:pointer-events-none={scrollX == scrollWidth - clientWidth &&
 				scrollWidth > 0 &&
 				clientWidth > 0}
+			class:opacity-50={scrollX < scrollWidth - clientWidth && scrollWidth > 0 && clientWidth > 0}
 			aria-label="Scroll right"
 			on:click={() => scrollableDiv.scrollBy(SCROLL_AMOUNT, 0)}
 		>
