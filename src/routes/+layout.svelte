@@ -78,7 +78,7 @@
 		// Add an event listener to see if the user presses control + 5
 		// If they do redirect
 		document.addEventListener('keydown', (event) => {
-			if (event.ctrlKey && event.key === '5') {
+			if (event.ctrlKey && event.shiftKey && event.key === '5') {
 				if (window.location.href.includes('/school')) {
 					window.location.href = '/';
 				} else {
