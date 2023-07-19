@@ -257,8 +257,8 @@
 			{/each}
 			<!-- Reset cookie -->
 			<div class="w-full text-center">
-				<button class="btn-lg mt-4 self-center" on:click={() => experiments.setCookie()}>
-					Reset Experiment Cookie
+				<button class="btn-lg mt-4 self-center" on:click={() => experiments.resetAllCookies()}>
+					Reset Experiment Cookie(s)
 				</button>
 			</div>
 		</div>

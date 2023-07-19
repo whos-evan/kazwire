@@ -6,6 +6,16 @@ class Experiment {
 		document.cookie = `${experimentName}_experiment=${randomNumber};expires=${expires.toUTCString()}`;
 	}
 
+	resetAllCookies(): void {
+		const cookies: string[] = document.cookie.split('; ');
+		cookies.forEach((cookie: string) => {
+			const cookieName: string = cookie.split('=')[0];
+			if (cookieName.endsWith('_experiment')) {
+				this.setCookie(cookieName.split('_experiment')[0]);
+			}
+		});
+	}
+
 	getCookie(experimentName: string): number {
 		const cookie: string | undefined = document.cookie
 			.split('; ')
