@@ -3,7 +3,7 @@ import type { Game } from '@prisma/client';
 import type { PageLoad } from './$types';
 import { redirect } from '@sveltejs/kit';
 
-export const load = (async ({ params }) => {
+export const load = (async ({ params, fetch }) => {
 	// Get the slug of the URL
 	const slug: string = params.id;
 

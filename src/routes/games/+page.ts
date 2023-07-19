@@ -2,7 +2,7 @@ import { PUBLIC_API_BASE_URL } from '$env/static/public';
 import type { Game } from '@prisma/client';
 import type { PageLoad } from './$types';
 
-export const load = (async ({url}) => {
+export const load = (async ({ url, fetch }) => {
 
 
 	let searchQuery: string = url.searchParams.get('search') || '';
