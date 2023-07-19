@@ -1,26 +1,18 @@
 <script lang="ts">
-	import type { Game } from '@prisma/client';
-	import { PUBLIC_API_BASE_URL } from '$env/static/public';
-
 	import { page } from '$app/stores';
 
 	import DefaultBox from '$lib/components/Box/DefaultBox.svelte';
-	import DefaultBoxLoading from '$lib/components/Box/DefaultBoxLoading.svelte';
-	import Horz from '$lib/components/Google/Horz.svelte';
+
+	import type { PageData } from './$types';
+	export let data: PageData;
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
-	// Fetch all apps based on the search query
-	async function getApps() {
-		const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/apps?search=' + searchQuery);
-		const apps: Game[] = await response.json();
-		// sort games by view count
-		apps.sort((a, b) => b.views - a.views);
-		return apps;
-	}
+
+	import Horz from '$lib/components/Google/Horz.svelte';
 </script>
 
 <svelte:head>
-	<title>Kazwire - Apps</title>
+	<title>Kazwire - Search Freely</title>
 	<meta name="description" content="Search freely with Kazwire!" />
 	<meta property="og:description" content="Search freely with Kazwire!" />
 </svelte:head>
@@ -48,33 +40,23 @@
 	</form>
 </div>
 
-<div class="grid-flow-rows grid auto-rows-auto gap-10 min-h-[50vh] sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-	{#await getApps()}
-		<!-- While loading it will show 12 template loading boxes. -->
-		{#each Array(12) as _}
-			<DefaultBoxLoading />
+<div class="grid-flow-rows grid auto-rows-auto gap-10 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
+	{#if data.apps.length === 0}
+		<!-- If there are no games it will display a message -->
+		<h1 class="col-span-12 text-center text-3xl text-white">No results found.</h1>
+	{:else}
+		{#each data.apps as game}
+			<DefaultBox
+				image={'/app/img/' + game.image}
+				name={game.name}
+				description={game.description}
+				developer={game.developer}
+				link={'/apps/' + game.id}
+				tags={[]}
+				popular={false}
+				errorMessage={undefined}
+				platformSupport={undefined}
+			/>
 		{/each}
-	{:then apps}
-		{#if apps.length === 0}
-			<!-- If there are no games it will display a message -->
-			<h1 class="col-span-12 text-center text-3xl text-white">No results found.</h1>
-		{:else}
-			{#each apps as app}
-				<!-- After loading it will display each game in a box -->
-				<DefaultBox
-					image={'/app/img/' + app.image}
-					name={app.name}
-					description={app.description}
-					developer={app.developer}
-					link={'/apps/' + app.id}
-					tags={[]}
-					popular={false}
-					errorMessage={undefined}
-					platformSupport={undefined}
-				/>
-			{/each}
-		{/if}
-	{:catch error}
-		<p>{error.message}</p>
-	{/await}
+	{/if}
 </div>
