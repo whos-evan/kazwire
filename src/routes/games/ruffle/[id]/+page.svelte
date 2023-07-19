@@ -7,41 +7,20 @@
 	import type { Game } from '@prisma/client';
 	import { PUBLIC_API_BASE_URL } from '$env/static/public';
 
-	import { page } from '$app/stores';
-
-	// Get the slug of the URL
-	const slug: string = $page.params.id;
-	
-	// Get the games from the api
-	async function getGame(id: string) {
-		const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/games/' + id);
-		if (response.status === 404) {
-			// Redirect to 404 page
-			window.location.href = '/games/';
-		}
-		const game: Game = await response.json();
-
-        if (game.emulatorType != 'ruffle') {
-            console.error('Game is not a ruffle game')
-            // Redirect to 404 page
-            window.location.href = '/games/';
-        }
-
-		return game;
-	}
+	import type { PageData } from './$types';
+	export let data: PageData;
 </script>
 
-{#await getGame(slug) then game}
-	{#if game.emulatorType == 'ruffle'}
-		<head>
-			<title>Kazwire - {game.name}</title>
-			<meta name="description" content="Play {game.name} for free now on Kazwire!" />
-			<meta property="og:description" content="Play {game.name} for free now on Kazwire!" />
-			<script src="/game/ruffle/ruffle/ruffle.js"></script>
-		</head>
+<svelte:head>
+	<title>Kazwire - {data.game.name}</title>
+	<meta name="description" content="Play {data.game.name} for free now on Kazwire!" />
+	<meta property="og:description" content="Play {data.game.name} for free now on Kazwire!" />
+	<script src="/game/ruffle/ruffle/ruffle.js"></script>
+</svelte:head>
 
-		<embed src="/game/ruffle/{game.id}/{game.id}.swf" class="absolute h-[100vh] w-[100vw]"/>
-	{/if}
-{:catch error}
-	{error.message}
-{/await}
+{#if data.game.emulatorType == 'ruffle'}
+	<embed
+		src="/game/ruffle/{data.game.id}/{data.game.id}.swf"
+		class="absolute h-[100vh] w-[100vw]"
+	/>
+{/if}

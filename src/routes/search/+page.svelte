@@ -135,6 +135,7 @@
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
 </svelte:head>
+
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">
 	<form

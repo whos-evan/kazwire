@@ -1,21 +1,13 @@
 <script lang="ts">
-	import type { Game } from '@prisma/client';
-	import { PUBLIC_API_BASE_URL } from '$env/static/public';
-
 	import { page } from '$app/stores';
 
 	import DefaultBox from '$lib/components/Box/DefaultBox.svelte';
-	import DefaultBoxLoading from '$lib/components/Box/DefaultBoxLoading.svelte';
+
+	import type { PageData } from './$types';
+	export let data: PageData;
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
 	let tagQuery: string = $page.url.searchParams.get('tag') || '';
-
-	// Fetch all games based on the search query and tag query
-	async function getGames() {
-		const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/games?search=' + searchQuery + '&tag=' + tagQuery);
-		const games: Game[] = await response.json();
-		return games;
-	}
 
 	import Horz from '$lib/components/Google/Horz.svelte';
 </script>
@@ -68,48 +60,39 @@
 </div>
 
 <div class="grid-flow-rows grid auto-rows-auto gap-10 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-4">
-	{#await getGames()}
-		<!-- While loading it will show 12 template loading boxes. -->
-		{#each Array(12) as _}
-			<DefaultBoxLoading />
+	{#if data.games.length === 0}
+		<!-- If there are no games it will display a message -->
+		<h1 class="col-span-12 text-center text-3xl text-white">No results found.</h1>
+	{:else}
+		{#each data.games as game}
+			{#if game.popular}
+				<DefaultBox
+					image={'/game/img/' + game.image}
+					name={game.name}
+					description={game.description}
+					developer={game.developer}
+					link={'/games/' + game.id}
+					tags={game.tags || []}
+					popular={game.popular || false}
+					errorMessage={game.errorMessage || undefined}
+					platformSupport={game.platform}
+				/>
+			{/if}
 		{/each}
-	{:then games}
-		{#if games.length === 0}
-			<!-- If there are no games it will display a message -->
-			<h1 class="col-span-12 text-center text-3xl text-white">No results found.</h1>
-		{:else}
-			{#each games as game}
-				{#if game.popular}
-					<DefaultBox
-						image={'/game/img/' + game.image}
-						name={game.name}
-						description={game.description}
-						developer={game.developer}
-						link={'/games/' + game.id}
-						tags={game.tags || []}
-						popular={game.popular || false}
-						errorMessage={game.errorMessage || undefined}
-						platformSupport={game.platform}
-					/>
-				{/if}
-			{/each}
-			{#each games as game}
-				{#if !game.popular}
-					<DefaultBox
-						image={'/game/img/' + game.image}
-						name={game.name}
-						description={game.description}
-						developer={game.developer}
-						link={'/games/' + game.id}
-						tags={game.tags || []}
-						popular={game.popular || false}
-						errorMessage={game.errorMessage || undefined}
-						platformSupport={game.platform}
-					/>
-				{/if}
-			{/each}
-		{/if}
-	{:catch error}
-		<p>{error.message}</p>
-	{/await}
+		{#each data.games as game}
+			{#if !game.popular}
+				<DefaultBox
+					image={'/game/img/' + game.image}
+					name={game.name}
+					description={game.description}
+					developer={game.developer}
+					link={'/games/' + game.id}
+					tags={game.tags || []}
+					popular={game.popular || false}
+					errorMessage={game.errorMessage || undefined}
+					platformSupport={game.platform}
+				/>
+			{/if}
+		{/each}
+	{/if}
 </div>
