@@ -89,8 +89,13 @@
 		iframe.requestFullscreen();
 	}
 
+	let expanded: boolean = false;
 	// Expand the iframe to fill the screen
-	function expandiFrame() {
+	function expandiFrame(): void {
+		if (!loadedFrame) {
+			return;
+		}
+
 		const document: Document = window.document;
 		const frame: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 
@@ -103,10 +108,33 @@
 		frame.style.right = '0px';
 		frame.style.height = '100%';
 		frame.style.width = '100%';
+		frame.style.zIndex = '500';
+		frame.style.border = 'none';
+
+		frame.classList.toggle('rounded-t-lg');
+
+		expanded = true;
+	}
+
+	function shrinkiFrame() {
+		const document: Document = window.document;
+		const frame: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+
+		document.body.style.overflow = 'auto';
+		// Settings required for the frame to fill the screen
+		frame.style.position = 'relative';
+		frame.style.top = '0px';
+		frame.style.bottom = '0px';
+		frame.style.left = '0px';
+		frame.style.right = '0px';
+		frame.style.height = '100%';
+		frame.style.width = '100%';
 		frame.style.zIndex = '9999';
 		frame.style.border = 'none';
 
 		frame.classList.toggle('rounded-t-lg');
+
+		expanded = false;
 	}
 
 	import { gameLike } from '$lib/likeContent';
@@ -164,6 +192,13 @@
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
 </svelte:head>
+
+{#if expanded}
+	<!-- Button to shrink the iframe -->
+	<button class="absolute m-4 left-0 top-0 z-[5000] bg-secondary p-2 opacity-40 rounded-full" on:click={() => shrinkiFrame()}>
+		<Icon class="h-6 w-6 text-white" icon="ic:round-compress" />
+	</button>
+{/if}
 
 <div class="relative flex flex-row justify-center">
 	<div
