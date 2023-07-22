@@ -3,5 +3,6 @@
         "src/lib/i18n",
         "src/lib/i18n/locales",
         "static/game/static/a-dark-room/lang"
-    ]
+    ],
+    "i18n-ally.keystyle": "nested"
 }

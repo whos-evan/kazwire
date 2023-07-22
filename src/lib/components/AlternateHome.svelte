@@ -31,8 +31,10 @@
 
 	let innerWidth: number;
 
-	let likedGames: string[] = [];
-	let likedApps: string[] = [];
+	let likedGamesIds: string[] = [];
+	let likedGames: Game[] = [];
+	let likedAppsIds: string[] = [];
+	let likedApps: App[] = [];
 
 	let games: Game[] = [];
 	let popularGames: Game[] = [];
@@ -58,8 +60,8 @@
 	}
 
 	onMount(() => {
-		likedApps = appLike.fetchLikes();
-		likedGames = gameLike.fetchLikes();
+		likedAppsIds = appLike.fetchLikes();
+		likedGamesIds = gameLike.fetchLikes();
 
 		fetch(PUBLIC_API_BASE_URL + '/api/games')
 			.then((res) => res.json())
@@ -96,6 +98,16 @@
 						popularGames = [...popularGames, game];
 					}
 				}
+			})
+			.then(() => {
+				// go through each likedgameid and find the game with that id
+				for (const id of likedGamesIds) {
+					for (const game of games) {
+						if (game.id === id) {
+							likedGames = [...likedGames, game];
+						}
+					}
+				}
 			});
 
 		fetch(PUBLIC_API_BASE_URL + '/api/apps')
@@ -104,6 +116,16 @@
 				apps = res;
 				// sort the apps by views
 				apps.sort((a, b) => b.views - a.views);
+			})
+			.then(() => {
+				// go through each likedappid and find the app with that id
+				for (const id of likedAppsIds) {
+					for (const app of apps) {
+						if (app.id === id) {
+							likedApps = [...likedApps, app];
+						}
+					}
+				}
 			});
 	});
 </script>
@@ -129,7 +151,7 @@
 		<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
 			<!-- Games header -->
 			<h1 class="mb-4 text-3xl font-bold text-black dark:text-white">{$_('apps')}</h1>
-			<!-- Buttons to scroll the div on the left and right-->
+
 			<Carousel {SCROLL_AMOUNT}>
 				{#each apps as app}
 					<SmallBox
@@ -143,6 +165,30 @@
 					/>
 				{/each}
 			</Carousel>
+
+			{#if likedApps.length > 0}
+				<grid class="mb-4 flex flex-row justify-start mt-2">
+					<h1 class="text-3xl font-bold text-black dark:text-white">{$_('loved_apps')}</h1>
+					<Icon
+						icon="mdi:heart"
+						class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-pink-500"
+					/>
+				</grid>
+
+				<Carousel {SCROLL_AMOUNT}>
+					{#each likedApps as app}
+						<SmallBox
+							image={'/app/img/' + app.image}
+							name={app.name}
+							developer={app.developer}
+							link={'/apps/' + app.id}
+							popular={false}
+							errorMessage={undefined}
+							platformSupport={undefined}
+						/>
+					{/each}
+				</Carousel>
+			{/if}
 		</grid>
 		<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
 			<grid class="flex flex-col gap-2">
@@ -172,6 +218,30 @@
 					{/if}
 				{/await}
 
+				{#if likedGames.length > 0}
+					<grid class="mb-4 flex flex-row justify-start">
+						<h1 class="text-3xl font-bold text-black dark:text-white">{$_('loved_games')}</h1>
+						<Icon
+							icon="mdi:heart"
+							class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-pink-500"
+						/>
+					</grid>
+					<Carousel {SCROLL_AMOUNT}>
+						{#each likedGames as game}
+							<SmallBox
+								image={'/game/img/' + game.image}
+								name={game.name}
+								developer={game.developer}
+								link={'/games/' + game.id}
+								popular={game.popular || false}
+								errorMessage={game.errorMessage || undefined}
+								platformSupport={game.platform}
+								GA_EVENT="click_popular_games"
+							/>
+						{/each}
+					</Carousel>
+				{/if}
+
 				<grid class="mb-4 flex flex-row justify-start">
 					<h1 class="text-3xl font-bold text-black dark:text-white">{$_('popular_games')}</h1>
 					<Icon
@@ -198,11 +268,13 @@
 					<!-- Header for tag -->
 					{#if tag.length > 3}
 						<h2 class="mt-2 text-xl font-bold capitalize text-black dark:text-white">
-							{tag} {$_('games')}
+							{tag}
+							{$_('games')}
 						</h2>
 					{:else}
 						<h2 class="text-xl font-bold text-black dark:text-white">
-							{tag.toUpperCase()} {$_('games')}
+							{tag.toUpperCase()}
+							{$_('games')}
 						</h2>
 					{/if}
 					<!-- Scrollable div for the small boxes -->
@@ -217,7 +289,7 @@
 									popular={game.popular || false}
 									errorMessage={game.errorMessage || undefined}
 									platformSupport={game.platform}
-									GA_EVENT={"click_tag_" + tag.toLowerCase()}
+									GA_EVENT={'click_tag_' + tag.toLowerCase()}
 								/>
 							{/if}
 						{/each}
