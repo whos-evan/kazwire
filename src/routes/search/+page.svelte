@@ -36,21 +36,7 @@
 		return template.replace('%s', encodeURIComponent(input));
 	}
 
-	import { experiments } from '$lib/experiments';
-
-	let searchAds: boolean;
-
 	onMount(async () => {
-		// Ads experiment
-		experiments.fetchOrCreateExperimentData(
-			'searchAds',
-			'2023-08-01',
-			'Adjusts the level of ads shown on the search page.',
-			85,
-			true
-		);
-		searchAds = experiments.shouldShow('searchAds');
-
 		// Register the service worker
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
@@ -155,7 +141,7 @@
 	<div
 		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 	>
-		{#if innerWidth > 1300 && searchAds}
+		{#if innerWidth > 1300}
 			<Vert />
 		{/if}
 		<div class="align-center mb-14 flex-grow">
@@ -200,12 +186,12 @@
 			</div>
 		</div>
 	</div>
-	{#if innerWidth > 824 && searchAds}
+	{#if innerWidth > 824}
 		<Vert />
 	{/if}
 </div>
 
-{#if innerWidth > 730 && searchAds}
+{#if innerWidth > 730}
 	<Leaderboard />
 {:else}
 	<Horz />

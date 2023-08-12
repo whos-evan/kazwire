@@ -57,21 +57,11 @@
 
 	let numOfExperiments = 0;
 
-	let showWhite: boolean;
 	onMount(() => {
 		getTitle();
 		getFavicon();
 
 		numOfExperiments = experiments.getNumberOfShownExperiments();
-
-		experiments.fetchOrCreateExperimentData(
-			'whiteTheme',
-			'2023-08-01',
-			'Removes the Kazwire bright orange as the default background color.',
-			25,
-			true
-		);
-		showWhite = experiments.shouldShow('whiteTheme');
 
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
 
@@ -127,7 +117,7 @@
 {#if resetLayout}
 	<slot />
 {:else if !$isLoading}
-	<div class="z-50 dark:bg-black" class:bg-white={showWhite} class:bg-primary={!showWhite}>
+	<div class="z-50 bg-white dark:bg-black">
 		<div class="fixed z-50 w-full px-5 py-5">
 			<nav
 				class="flex w-full flex-wrap items-center justify-between rounded-lg bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white shadow-black shadow-md dark:shadow-white md:py-0"

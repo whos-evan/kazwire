@@ -44,4 +44,26 @@
 		gtag('js', new Date());
 		gtag('config', 'G-FLBJ64LGWV');
 	</script>
+
+	<link rel="dns-prefetch" href="https://universal.wgplayer.com" /><script
+		type="text/javascript"
+		async
+	>
+		!(function (e, t) {
+			(a = e.createElement('script')),
+				(m = e.getElementsByTagName('script')[0]),
+				(a.async = 1),
+				(a.src = t),
+				(a.fetchPriority = 'high'),
+				m.parentNode.insertBefore(a, m);
+		})(
+			document,
+			'https://universal.wgplayer.com/tag/?lh=' +
+				window.location.hostname +
+				'&wp=' +
+				window.location.pathname +
+				'&ws=' +
+				window.location.search
+		);
+	</script>
 </svelte:head>

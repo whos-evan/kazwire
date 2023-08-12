@@ -174,6 +174,7 @@
 	<title>Kazwire - {data.app.name}</title>
 	<meta name="description" content="Play {data.app.name} for free now on Kazwire!" />
 	<meta property="og:description" content="Play {data.app.name} for free now on Kazwire!" />
+	<meta property="og:image" content="/app/img/{data.app.image}" />
 
 	<script src="/uv/uv.bundle.js" defer></script>
 	<script src="/uv/uv.config.js" defer></script>

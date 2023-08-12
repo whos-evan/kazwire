@@ -187,6 +187,7 @@
 	<title>Kazwire - {data.game.name}</title>
 	<meta name="description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:description" content="Play {data.game.name} for free now on Kazwire!" />
+	<meta property="og:image" content="/game/img/{data.game.image}" />
 
 	<script src="/uv/uv.bundle.js" defer></script>
 	<script src="/uv/uv.config.js" defer></script>
