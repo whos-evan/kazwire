@@ -65,14 +65,17 @@
 
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
 
-		// Add an event listener to see if the user presses control + 5
-		// If they do redirect
-		document.addEventListener('keydown', (event) => {
-			if (event.ctrlKey && event.shiftKey && event.key === '5') {
-				if (window.location.href.includes('/school')) {
-					window.location.href = '/';
-				} else {
+		// Add an event listener to see if the user presses control + shift + i
+		document.addEventListener('keydown', (e) => {
+			if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+				// Prevent default
+				e.preventDefault();
+				// Redirect the user if they are not already on the school page
+				if (!window.location.href.includes('/school')) {
 					window.location.href = '/school';
+				} else {
+					// Otherwise, just reload the page
+					window.location.href = '/';
 				}
 			}
 		});

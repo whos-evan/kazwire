@@ -81,7 +81,7 @@
 		</h3>
 		<br />
 		<h3>
-			Also! Enter the key combo <code>Control + Shift + 5</code> your keyboard to show a fake Google Doc!
+			Also! Enter the key combo <code>Control + Shift + I</code> your keyboard to show a fake Google Doc!
 		</h3>
 		<div class="mt-4 flex flex-row gap-4">
 			<a href="/settings">
