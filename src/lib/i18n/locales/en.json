@@ -15,8 +15,8 @@
 	"get_support": "Get Support",
 	"faq": "FAQ",
 	"final_grade_calculator": "Final Grade Calculator",
-    "online_services": "Online Services",
-    "legal": "Legal",
+	"online_services": "Online Services",
+	"legal": "Legal",
 	"privacy_policy": "Privacy Policy",
 	"terms_and_conditions": "Terms and Conditions",
 	"dmca": "DMCA",
@@ -24,5 +24,27 @@
 	"popular_games": "Popular Games",
 	"loved_games": "Loved Games",
 	"loved_apps": "Loved Apps",
-	"see_more": "See More"
+	"see_more": "See More",
+	"pages": {
+		"settings": {
+			"settings": "Settings",
+			"description": "Adjust settings on Kazwire as you see fit. These settings are stored in your browser's local storage, so they will persist across sessions.",
+			"select_preset_cloaks": "Select a preset cloak:",
+			"preset_cloaks": "Preset Cloaks",
+			"save": "Save",
+			"tab_cloak": "Tab Cloak",
+			"enter_title": "Enter a title:",
+			"custom_favicon": "Custom Favicon",
+			"enter_custom_favicon": "Enter a custom favicon URL:",
+			"change_locale": "Change Locale",
+			"set_language": "Set your preferred language:",
+			"experiments": "Experiments",
+			"enabled": "Enabled",
+			"disabled": "disabled",
+			"force_enable": "Force Enable",
+			"force_disable": "Force Disable",
+			"remove_experiment": "Remove Experiment",
+			"reset_experiment_cookies": "Reset Experiment Cookie(s)"
+		}
+	}
 }
