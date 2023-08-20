@@ -129,13 +129,41 @@
 		contentTitle = iframe.contentDocument?.title || 'Nothing yet...';
 	}
 
+	function moveShrinkButton(e: MouseEvent) {
+		// Wait 2 seconds before moving the button
+		console.log(e);
+		setTimeout(() => {
+			// grab the current cursor position
+			
+			// Check if the button is still being hovered over by grabbing the event x, y and comparing it to the current x, y
+			if (e.x == mousePos.x && e.y == mousePos.y) {
+				// Move the button to the bottom right
+				const button: HTMLButtonElement = document.getElementById(
+					'shrinkButton'
+				) as HTMLButtonElement;
+				button.classList.remove('m-4');
+				button.classList.add('ml-16');
+				button.classList.add('mt-4');
+
+				// Return it to the top left after 4 seconds
+				setTimeout(() => {
+					button.classList.remove('ml-16');
+					button.classList.remove('mt-4');
+					button.classList.add('m-4');
+				}, 4000);
+			}
+		}, 2000);
+	}
+
 	import Vert from '$lib/components/Google/Vert.svelte';
 	import Horz from '$lib/components/Google/Horz.svelte';
 	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 	let innerWidth: number = 0;
+
+	let mousePos: { x: number; y: number } = { x: 0, y: 0 };
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.clientX, y: e.clientY })} />
 
 <svelte:head>
 	<title>Kazwire - Search Freely</title>
@@ -162,6 +190,19 @@
 	</form>
 </div>
 
+{#if expanded}
+	<!-- Button to shrink the iframe -->
+	<!-- if the user hovers over the button for two seconds move it so that they can access stuff below it send the event every 0.1 seconds -->
+	<button
+		id="shrinkButton"
+		class="absolute left-0 top-0 z-[10000] m-4 rounded-full bg-secondary p-2 opacity-40"
+		on:click={() => shrinkiFrame()}
+		on:mouseover={(e) => moveShrinkButton(e)}
+	>
+		<Icon class="h-6 w-6 text-white" icon="ic:round-compress" />
+	</button>
+{/if}
+
 <div class="relative flex flex-row justify-center">
 	<div
 		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
@@ -171,15 +212,6 @@
 		{/if}
 		<div class="align-center mb-14 flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
-				{#if expanded}
-					<!-- Button to shrink the iframe -->
-					<button
-						class="absolute left-0 top-0 z-[5000] m-4 rounded-full bg-secondary p-2 opacity-40"
-						on:click={() => shrinkiFrame()}
-					>
-						<Icon class="h-6 w-6 text-white" icon="ic:round-compress" />
-					</button>
-				{/if}
 				<iframe
 					class="h-full w-full rounded-t-lg bg-white"
 					id="iframe"

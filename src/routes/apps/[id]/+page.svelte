@@ -151,6 +151,34 @@
 		});
 	}
 
+	function moveShrinkButton(e: MouseEvent) {
+		// Wait 2 seconds before moving the button
+		console.log(e);
+		setTimeout(() => {
+			// grab the current cursor position
+			
+			// Check if the button is still being hovered over by grabbing the event x, y and comparing it to the current x, y
+			if (e.x == mousePos.x && e.y == mousePos.y) {
+				// Move the button to the bottom right
+				const button: HTMLButtonElement = document.getElementById(
+					'shrinkButton'
+				) as HTMLButtonElement;
+				button.classList.remove('m-4');
+				button.classList.add('ml-16');
+				button.classList.add('mt-4');
+
+				// Return it to the top left after 4 seconds
+				setTimeout(() => {
+					button.classList.remove('ml-16');
+					button.classList.remove('mt-4');
+					button.classList.add('m-4');
+				}, 4000);
+			}
+		}, 2000);
+	}
+
+	let mousePos = { x: 0, y: 0 };
+
 	function loadedApp() {
 		// Wait 0.5 second before removing the loading screen
 		setTimeout(() => {
@@ -163,7 +191,7 @@
 	}
 </script>
 
-<svelte:window bind:innerWidth />
+<svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
 <svelte:head>
 	<title>Kazwire - {data.app.name}</title>
 	<meta name="description" content="Play {data.app.name} for free now on Kazwire!" />
@@ -175,10 +203,15 @@
 	<script src="/uv.js" defer></script>
 </svelte:head>
 
-
 {#if expanded}
 	<!-- Button to shrink the iframe -->
-	<button class="absolute m-4 left-0 top-0 z-[5000] bg-secondary p-2 opacity-40 rounded-full" on:click={() => shrinkiFrame()}>
+	<!-- if the user hovers over the button for two seconds move it so that they can access stuff below it send the event every 0.1 seconds -->
+	<button
+		id="shrinkButton"
+		class="absolute left-0 top-0 z-[5000] m-4 rounded-full bg-secondary p-2 opacity-40"
+		on:click={() => shrinkiFrame()}
+		on:mouseover={(e) => moveShrinkButton(e)}
+	>
 		<Icon class="h-6 w-6 text-white" icon="ic:round-compress" />
 	</button>
 {/if}
