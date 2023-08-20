@@ -96,6 +96,15 @@
 								/>
 							</div>
 							<div class="flex flex-col">
+								<label for="embedURL" class="text-sm text-gray-500"> embedURL </label>
+								<input
+									id="embedURL"
+									class="rounded-lg p-2 text-black"
+									type="text"
+									bind:value={selectedApp.embedURL}
+								/>
+							</div>
+							<div class="flex flex-col">
 								<label for="description" class="text-sm text-gray-500"> Description </label>
 								<textarea
 									id="description"
