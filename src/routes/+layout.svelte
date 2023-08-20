@@ -120,7 +120,7 @@
 {#if resetLayout}
 	<slot />
 {:else if !$isLoading}
-	<div class="z-50 bg-white dark:bg-black">
+	<div class="z-[10000] bg-white dark:bg-black">
 		<div class="fixed z-50 w-full">
 			<nav
 				class="flex w-full flex-wrap items-center justify-between bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white md:py-0"
