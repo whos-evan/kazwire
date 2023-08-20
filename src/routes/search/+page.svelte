@@ -150,31 +150,17 @@
 <div class="mb-6 flex justify-center">
 	<form
 		class="flex flex-col justify-center space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0"
+		on:submit|preventDefault={() => iframeSearch()}
 	>
 		<input
 			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
 			type="text"
 			placeholder="Search for your favorites..."
 			bind:value={searchQuery}
-			on:keydown={(e) => {
-				if (e.key === 'Enter') {
-					iframeSearch();
-				}
-			}}
 		/>
-		<button class="btn" type="submit" on:submit={async () => await iframeSearch()}> Search </button>
+		<button class="btn" type="submit"> Search </button>
 	</form>
 </div>
-
-{#if expanded}
-	<!-- Button to shrink the iframe -->
-	<button
-		class="absolute left-0 top-0 z-[1000000] m-4 rounded-full bg-secondary p-2 opacity-40"
-		on:click={() => shrinkiFrame()}
-	>
-		<Icon class="h-6 w-6 text-white" icon="ic:round-compress" />
-	</button>
-{/if}
 
 <div class="relative flex flex-row justify-center">
 	<div
@@ -185,6 +171,15 @@
 		{/if}
 		<div class="align-center mb-14 flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
+				{#if expanded}
+					<!-- Button to shrink the iframe -->
+					<button
+						class="absolute left-0 top-0 z-[5000] m-4 rounded-full bg-secondary p-2 opacity-40"
+						on:click={() => shrinkiFrame()}
+					>
+						<Icon class="h-6 w-6 text-white" icon="ic:round-compress" />
+					</button>
+				{/if}
 				<iframe
 					class="h-full w-full rounded-t-lg bg-white"
 					id="iframe"
