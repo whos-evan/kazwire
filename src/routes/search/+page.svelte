@@ -150,15 +150,19 @@
 <div class="mb-6 flex justify-center">
 	<form
 		class="flex flex-col justify-center space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0"
-		on:submit={async () => await iframeSearch()}
 	>
 		<input
 			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
 			type="text"
 			placeholder="Search for your favorites..."
 			bind:value={searchQuery}
+			on:keydown={(e) => {
+				if (e.key === 'Enter') {
+					iframeSearch();
+				}
+			}}
 		/>
-		<button class="btn" type="submit"> Search </button>
+		<button class="btn" type="submit" on:submit={async () => await iframeSearch()}> Search </button>
 	</form>
 </div>
 
