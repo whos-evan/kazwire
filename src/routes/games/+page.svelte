@@ -24,6 +24,7 @@
 <div class="mb-6 flex justify-center">
 	<form
 		class="flex flex-col justify-center space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0"
+		on:submit|preventDefault={() => (location.href = '/games?search=' + searchQuery)}
 	>
 		<input
 			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
@@ -34,7 +35,6 @@
 		<button
 			class="btn"
 			type="submit"
-			on:click={() => (location.href = '/games?search=' + searchQuery)}
 		>
 			Search
 		</button>
