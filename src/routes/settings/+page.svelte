@@ -130,8 +130,8 @@
 
 <svelte:head>
 	<title>Kazwire - Settings</title>
-	<meta name="description" content="just settings for Kazwire!" />
-	<meta property="og:description" content="just settings for Kazwire!" />
+	<meta name="description" content="Settings for Kazwire!" />
+	<meta property="og:description" content="Settings for Kazwire!" />
 </svelte:head>
 
 <Horz />
