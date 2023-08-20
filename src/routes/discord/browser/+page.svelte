@@ -49,6 +49,13 @@
 			}
 		});
 
+		navigator.serviceWorker.getRegistrations().then((registrations) => {
+			if (registrations.length === 0) {
+				// No service worker registered yet.  Reload page so SW can respond with SW-enabled page.
+				window.location.reload();
+			}
+		});
+		
 		iframeSearch();
 	});
 
