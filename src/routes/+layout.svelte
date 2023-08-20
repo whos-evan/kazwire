@@ -133,11 +133,11 @@
 								class="hidden whitespace-nowrap align-middle text-2xl font-semibold text-white lg:inline-block"
 								>Kazwire</span
 							>
-							<!-- Beta icon -->
+							<!-- Beta icon
 							<span
 								class="mt-1 inline-block text-xs font-semibold uppercase tracking-widest text-gray-300"
 								>Beta</span
-							>
+							> -->
 						</div>
 					</a>
 				</div>
