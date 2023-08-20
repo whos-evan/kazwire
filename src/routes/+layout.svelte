@@ -123,7 +123,7 @@
 	<div class="z-50 bg-white dark:bg-black">
 		<div class="fixed z-50 w-full">
 			<nav
-				class="flex w-full flex-wrap items-center justify-between bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white shadow-black shadow-md dark:shadow-white md:py-0"
+				class="flex w-full flex-wrap items-center justify-between bg-secondary bg-opacity-90 px-4 py-4 text-lg text-white md:py-0"
 			>
 				<div class="align-items-center mb-auto mt-auto flex-col">
 					<a href="/" class="flex items-center justify-center">
@@ -210,9 +210,9 @@
 		</div>
 
 		{#if windowWidth > 768}
-			<padding class="flex h-28 w-full" />
+			<padding class="flex h-20 w-full" />
 		{:else}
-			<padding class="flex h-36 w-full" />
+			<padding class="flex h-28 w-full" />
 		{/if}
 
 		<div class="mx-8 min-h-[90vh]">
