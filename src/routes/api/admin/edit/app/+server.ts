@@ -8,18 +8,18 @@ interface Opts {
 
 // Post request
 export async function POST({ request }: Opts): Promise<Response> {
-	// Edit the game given the new data sent as a json object which provides the id and all the new data
+	// Edit the app given the new data sent as a json object which provides the id and all the new data
 	const data: App = await request.json();
 
 	if (data.id) {
-		const game = await prisma.game.findUnique({
+		const app = await prisma.app.findUnique({
 			where: {
 				id: data.id
 			}
 		});
 
-		if (!game) {
-			return new Response(JSON.stringify({ error: 'Game not found' }), {
+		if (!app) {
+			return new Response(JSON.stringify({ error: 'App not found' }), {
 				status: 404
 			});
 		}
@@ -52,7 +52,7 @@ export async function POST({ request }: Opts): Promise<Response> {
 			});
 		}
 
-		await prisma.game.update({
+		await prisma.app.update({
 			where: {
 				id: data.id
 			},
