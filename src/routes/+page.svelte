@@ -1,12 +1,48 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
-	import Showoff from '$lib/components/Showoff.svelte';
+	import Icon from '@iconify/svelte';
+	// import Showoff from '$lib/components/Showoff.svelte';
 	import Faq from '$lib/components/Faq.svelte';
 	import Partners from '$lib/components/Partners.svelte';
 
 	// import FinalGrade from '$lib/components/FinalGrade.svelte';
 	import SchoolRescue from '$lib/components/SchoolRescue.svelte';
 	import { neverShowSchoolRescue } from '$lib/stores';
+
+	// import Changelog from '$lib/components/Changelog.svelte';
+
+	// import RandomGame from '$lib/components/RandomGame.svelte';
+	// import LovedGame from '$lib/components/LovedGame.svelte';
+	// import LovedApp from '$lib/components/LovedApp.svelte';
+	import SmallBox from '$lib/components/Box/SmallBox.svelte';
+	import type { Game, App } from '@prisma/client';
+	import { PUBLIC_API_BASE_URL } from '$env/static/public';
+
+	import Horz from '$lib/components/Google/Horz.svelte';
+
+	import Carousel from '$lib/components/Carousel.svelte';
+
+	import { suggest } from '$lib/gameAlgorithm';
+
+	import { _, isLoading } from 'svelte-i18n';
+
+	import { appLike, gameLike } from '$lib/likeContent';
+	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+
+	let innerWidth: number;
+
+	let likedGamesIds: string[] = [];
+	let likedGames: Game[] = [];
+	let likedAppsIds: string[] = [];
+	let likedApps: App[] = [];
+
+	let games: Game[] = [];
+	let popularGames: Game[] = [];
+	let apps: App[] = [];
+	let tags: string[] = [];
+
+	const SCROLL_AMOUNT: number = 256 * 3;
 
 	function checkIfShowSchoolRescue() {
 		const date = new Date();
@@ -24,99 +60,278 @@
 		return false;
 	}
 
-	import Changelog from '$lib/components/Changelog.svelte';
-
-	import RandomGame from '$lib/components/RandomGame.svelte';
-	import LovedGame from '$lib/components/LovedGame.svelte';
-	import LovedApp from '$lib/components/LovedApp.svelte';
-
-	let innerWidth: number;
-
-	import Horz from '$lib/components/Google/Horz.svelte';
-	let likedGames: string[] = [];
-	let likedApps: string[] = [];
-	import { appLike, gameLike } from '$lib/likeContent';
-	import { onMount } from 'svelte';
-
-	import { experiments } from '$lib/experiments';
-	import AlternateHome from '$lib/components/AlternateHome.svelte';
-	let alternateHome: boolean = false;
-
 	onMount(() => {
-		likedApps = appLike.fetchLikes();
-		likedGames = gameLike.fetchLikes();
+		likedAppsIds = appLike.fetchLikes();
+		likedGamesIds = gameLike.fetchLikes();
 
-		experiments.fetchOrCreateExperimentData(
-			'alternateHome',
-			'2023-09-01',
-			'Alternate home page for Kazwire.',
-			50,
-			true
-		);
+		fetch(PUBLIC_API_BASE_URL + '/api/games')
+			.then((res) => res.json())
+			.then((res) => {
+				games = res;
+				// scramble the games
+				games.sort(() => Math.random() - 0.5);
+			})
+			.then(() => {
+				// find all unique tags from games
+				for (const game of games) {
+					for (const tag of game.tags) {
+						if (!tags.includes(tag)) {
+							tags = [...tags, tag];
+						}
+					}
+				}
+			})
+			.then(() => {
+				// see if the game is popular
+				for (const game of games) {
+					if (game.popular) {
+						popularGames = [...popularGames, game];
+					}
+				}
+				// sort games by views
+				games.sort((a, b) => b.views - a.views);
+				// then add more based on the top 12 most viewed games
+				for (const game of games) {
+					if (popularGames.length >= 12) {
+						break;
+					}
+					if (!popularGames.includes(game)) {
+						popularGames = [...popularGames, game];
+					}
+				}
+			})
+			.then(() => {
+				// go through each likedgameid and find the game with that id
+				for (const id of likedGamesIds) {
+					for (const game of games) {
+						if (game.id === id) {
+							likedGames = [...likedGames, game];
+						}
+					}
+				}
+			});
 
-		alternateHome = experiments.shouldShow('alternateHome');
+		fetch(PUBLIC_API_BASE_URL + '/api/apps')
+			.then((res) => res.json())
+			.then((res) => {
+				apps = res;
+				// sort the apps by views
+				apps.sort((a, b) => b.views - a.views);
+			})
+			.then(() => {
+				// go through each likedappid and find the app with that id
+				for (const id of likedAppsIds) {
+					for (const app of apps) {
+						if (app.id === id) {
+							likedApps = [...likedApps, app];
+						}
+					}
+				}
+			});
 	});
 </script>
 
 <svelte:window bind:innerWidth />
 
-<head>
+<svelte:head>
 	<title>Kazwire</title>
-</head>
+</svelte:head>
 
-{#if !alternateHome}
-	<div class="grid max-w-max grid-flow-col gap-8">
-		<grid class="col-span-2 flex gap-8">
-			<Hero />
-			{#if innerWidth > 1000}
-				{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
-					<SchoolRescue />
-				{:else}
-					<Showoff />
+{#if !$isLoading}
+	<div class="grid-rows-auto grid max-w-max grid-cols-1 gap-8">
+		<grid class="row-start-1">
+			<grid class="flex gap-8">
+				<Hero />
+				{#if innerWidth > 1000}
+					{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
+						<SchoolRescue />
+					{/if}
 				{/if}
+			</grid>
+		</grid>
+		<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
+			<grid class="flex flex-col gap-2">
+				{#if browser}
+					{#await suggest.Games() then suggestedGames}
+						{#if suggestedGames.length > 0}
+							<grid class="mb-4 flex flex-row justify-start">
+								<h1 class="text-3xl font-bold text-black dark:text-white">
+									{$_('suggested_games')}
+								</h1>
+								<Icon
+									icon="mdi:controller"
+									class="ml-1 mt-1 text-3xl text-green-500 transition hover:text-blue-500"
+								/>
+							</grid>
+							<Carousel {SCROLL_AMOUNT}>
+								{#each suggestedGames as game}
+									<SmallBox
+										image={'/game/img/' + game.image}
+										name={game.name}
+										developer={game.developer}
+										link={'/games/' + game.id}
+										popular={game.popular || false}
+										errorMessage={game.errorMessage || undefined}
+										platformSupport={game.platform}
+										GA_EVENT="click_suggested_game"
+									/>
+								{/each}
+							</Carousel>
+						{/if}
+					{/await}
+				{/if}
+
+				{#if likedGames.length > 0}
+					<grid class="mb-4 flex flex-row justify-start">
+						<h1 class="text-3xl font-bold text-black dark:text-white">{$_('loved_games')}</h1>
+						<Icon
+							icon="mdi:heart"
+							class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-pink-500"
+						/>
+					</grid>
+					<Carousel {SCROLL_AMOUNT}>
+						{#each likedGames as game}
+							<SmallBox
+								image={'/game/img/' + game.image}
+								name={game.name}
+								developer={game.developer}
+								link={'/games/' + game.id}
+								popular={game.popular || false}
+								errorMessage={game.errorMessage || undefined}
+								platformSupport={game.platform}
+								GA_EVENT="click_popular_games"
+							/>
+						{/each}
+					</Carousel>
+				{/if}
+
+				<grid class="mb-4 flex flex-row justify-start">
+					<h1 class="text-3xl font-bold text-black dark:text-white">{$_('popular_games')}</h1>
+					<Icon
+						icon="mdi:fire"
+						class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-orange-500"
+					/>
+				</grid>
+				<Carousel {SCROLL_AMOUNT}>
+					{#each popularGames as game}
+						<SmallBox
+							image={'/game/img/' + game.image}
+							name={game.name}
+							developer={game.developer}
+							link={'/games/' + game.id}
+							popular={game.popular || false}
+							errorMessage={game.errorMessage || undefined}
+							platformSupport={game.platform}
+							GA_EVENT="click_popular_games"
+						/>
+					{/each}
+				</Carousel>
+
+				{#each tags as tag}
+					<!-- Header for tag -->
+					<div class="flex flex-col">
+						{#if tag.length > 3}
+							<h2 class="mt-2 text-xl font-bold capitalize text-black dark:text-white">
+								{tag}
+								{$_('games')}
+							</h2>
+						{:else}
+							<h2 class="text-xl font-bold text-black dark:text-white">
+								{tag.toUpperCase()}
+								{$_('games')}
+							</h2>
+						{/if}
+
+						<!-- See more -->
+						<a
+							href={'/games?tag=' + tag}
+							class="w-fit text-sm text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+						>
+							{$_('see_more')}
+						</a>
+					</div>
+					<!-- Scrollable div for the small boxes -->
+					<Carousel {SCROLL_AMOUNT}>
+						<!-- randomly sort games -->
+						{#each games.sort(() => Math.random() - 0.5) as game}
+							{#if game.tags.includes(tag)}
+								<SmallBox
+									image={'/game/img/' + game.image}
+									name={game.name}
+									developer={game.developer}
+									link={'/games/' + game.id}
+									popular={game.popular || false}
+									errorMessage={game.errorMessage || undefined}
+									platformSupport={game.platform}
+									GA_EVENT={'click_tag_' + tag.toLowerCase()}
+								/>
+							{/if}
+						{/each}
+					</Carousel>
+				{/each}
+			</grid>
+		</grid>
+
+		<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
+			<div class="flex flex-col mb-4">
+				<!-- Games header -->
+				<h1 class="text-3xl font-bold text-black dark:text-white">{$_('apps')}</h1>
+				<!-- See more -->
+				<a
+					href="/apps"
+					class="w-fit text-sm text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+				>
+					{$_('see_more')}
+				</a>
+			</div>
+
+			<Carousel {SCROLL_AMOUNT}>
+				{#each apps as app}
+					<SmallBox
+						image={'/app/img/' + app.image}
+						name={app.name}
+						developer={app.developer}
+						link={'/apps/' + app.id}
+						popular={false}
+						errorMessage={undefined}
+						platformSupport={undefined}
+					/>
+				{/each}
+			</Carousel>
+
+			{#if likedApps.length > 0}
+				<grid class="mb-4 mt-2 flex flex-row justify-start">
+					<h1 class="text-3xl font-bold text-black dark:text-white">{$_('loved_apps')}</h1>
+					<Icon
+						icon="mdi:heart"
+						class="ml-1 mt-1 text-3xl text-red-500 transition hover:text-pink-500"
+					/>
+				</grid>
+
+				<Carousel {SCROLL_AMOUNT}>
+					{#each likedApps as app}
+						<SmallBox
+							image={'/app/img/' + app.image}
+							name={app.name}
+							developer={app.developer}
+							link={'/apps/' + app.id}
+							popular={false}
+							errorMessage={undefined}
+							platformSupport={undefined}
+						/>
+					{/each}
+				</Carousel>
 			{/if}
 		</grid>
-		<grid class="col-span-2 row-start-2 flex gap-8">
-			<div class="grid w-full grid-cols-1 space-y-8 lg:grid-cols-3 lg:gap-8 lg:space-y-0">
-				<div class="col-span-2">
-					{#if likedGames.length > 0}
-						<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">
-							Loved Games!
-						</h1>
-						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-							<LovedGame />
-						</div>
-					{:else if likedApps.length > 0}
-						<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">
-							Loved Apps!
-						</h1>
-						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-							<LovedApp />
-						</div>
-					{:else}
-						<h1 class="pb-8 text-center text-4xl font-bold text-secondary dark:text-white">
-							Random Games!
-						</h1>
-						<div class="grid grid-cols-1 gap-8 lg:grid-cols-2">
-							{#each [1, 2] as _}
-								<RandomGame />
-							{/each}
-						</div>
-					{/if}
-				</div>
-				<Changelog />
-			</div>
-		</grid>
-		<grid class="col-span-2 row-start-3">
+
+		<grid class="row-start-4">
 			<Faq />
 		</grid>
-		<grid class="col-span-2 row-start-4">
+		<grid class="row-start-5">
 			<Horz />
 		</grid>
-		<grid class="col-span-2 row-start-5 max-w-full">
+		<grid class="row-start-6 max-w-full">
 			<Partners />
 		</grid>
 	</div>
-{:else}
-	<AlternateHome />
 {/if}

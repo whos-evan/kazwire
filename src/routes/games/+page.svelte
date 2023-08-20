@@ -46,7 +46,7 @@
 		>
 			<option value="">All</option>
 			<option value="action">Action</option>
-			<option value="adventure">venture</option>
+			<option value="adventure">Adventure</option>
 			<option value="casual">Casual</option>
 			<option value="indie">Indie</option>
 			<option value="multiplayer">Multiplayer</option>

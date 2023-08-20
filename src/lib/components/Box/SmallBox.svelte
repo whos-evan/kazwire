@@ -33,12 +33,12 @@
 	data-sveltekit-reload
 >
 	<div
-		class="relative h-full w-[15rem] border-collapse rounded-xl bg-tertiaryDark shadow-gray-200 duration-100 inner-border-secondary shadow-sm hover:cursor-pointer hover:inner-border-4 hover:shadow-md {popular ===
+		class="group relative h-full w-[15rem] border-collapse rounded-xl bg-tertiaryDark shadow-gray-200 duration-100 inner-border-secondary shadow-sm hover:cursor-pointer hover:inner-border-4 hover:shadow-md {popular ===
 		true
 			? 'dark:shadow-orange-300'
 			: 'dark:shadow-white'}"
 	>
-		<div class="absolute right-0 m-4 h-6 w-6 opacity-50 transition-opacity hover:opacity-100">
+		<div class="absolute right-0 m-4 h-6 w-6 z-20 opacity-50 transition-opacity hover:opacity-100">
 			{#if errorMessage != undefined}
 				<span title={errorMessage}>
 					<Icon icon="mdi:alert-circle" class="h-6 w-6 text-red-500" />
@@ -53,9 +53,9 @@
 				</span>
 			{/if}
 		</div>
-		<img class="h-40 w-full rounded-xl bg-white object-cover opacity-50" src={image} alt={name} />
+		<img class="h-40 w-full rounded-xl bg-white object-cover group-hover:opacity-50 opacity-90 transition-opacity" src={image} alt={name} />
 		<!-- Name overlayed on the bottom left -->
-		<div class="absolute bottom-0 left-0 max-h-24 w-4/5 p-2">
+		<div class="absolute bottom-0 left-0 max-h-24 w-4/5 p-2 group-hover:block hidden transition-transform">
 			<h1 class="truncate text-xl font-bold text-white">{name}</h1>
 			<!-- developer -->
 			<p class="truncate text-sm text-white">{developer}</p>
