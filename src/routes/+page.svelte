@@ -330,7 +330,7 @@
 		<grid class="row-start-5">
 			<Horz />
 		</grid>
-		<grid class="row-start-6 max-w-full">
+		<grid class="row-start-6 max-w-full" dir="ltr">
 			<Partners />
 		</grid>
 	</div>

@@ -22,15 +22,15 @@
 	"dmca": "DMCA",
 	"suggested_games": "ألعاب مقترحة",
 	"popular_games": "ألعاب شائعة",
-	"loved_games": "ألعاب محبوبة",
+	"loved_games": "العابك المفضلة",
 	"loved_apps": "تطبيقات محبوبة",
 	"see_more": "رؤية المزيد",
 	"pages": {
 		"settings": {
 			"settings": "إعدادات",
 			"description": "ضبط الإعدادات في Kazwire كما تراه مناسبًا. تخزن هذه الإعدادات في تخزين المتصفح المحلي، لذا ستستمر عبر الجلسات.",
-			"select_preset_cloaks": "اختر غطاء مسبق التعيين:",
-			"preset_cloaks": "أغطية مسبقة التعيين",
+			"select_preset_cloaks": "اختر ثيم مسبق التعيين",
+			"preset_cloaks": "ثيمات مسبقة التعيين",
 			"save": "حفظ",
 			"tab_cloak": "غطاء التبويب",
 			"enter_title": "أدخل عنوانًا:",
