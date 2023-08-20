@@ -60,7 +60,7 @@
 		class="pointer-events-none absolute bottom-0 left-0 right-0 top-0 flex items-center justify-between"
 	>
 		<button
-			class="pointer-events-auto block h-full opacity-0 transition-opacity"
+			class="pointer-events-auto block h-full opacity-0 transition-opacity z-[100]"
 			class:hover:opacity-100={scrollX > 0 && scrollWidth > 0 && clientWidth > 0}
 			class:pointer-events-auto={scrollX > 0 && scrollWidth > 0 && clientWidth > 0}
 			class:pointer-events-none={scrollX == 0 && scrollWidth > 0 && clientWidth > 0}
@@ -72,7 +72,7 @@
 		</button>
 
 		<button
-			class="block h-full opacity-0 transition-all"
+			class="block h-full opacity-0 transition-all z-[100]"
 			class:hover:opacity-100={scrollX < scrollWidth - clientWidth &&
 				scrollWidth > 0 &&
 				clientWidth > 0}
