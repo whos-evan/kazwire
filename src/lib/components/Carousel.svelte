@@ -38,7 +38,7 @@
 
 <svelte:window on:resize={handleWindowResize} />
 
-<div class="relative">
+<div class="relative" dir="ltr">
 	<!-- Scrollable div for the small boxes -->
 	<grid
 		class="no-scrollbar col-span-6 grid grid-flow-col-dense justify-start gap-x-4 overflow-x-auto scroll-smooth"

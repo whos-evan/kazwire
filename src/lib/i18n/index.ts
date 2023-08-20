@@ -7,6 +7,7 @@ register('en', () => import('$lib/i18n/locales/en.json'));
 register('es', () => import('$lib/i18n/locales/es.json'));
 register('fr', () => import('$lib/i18n/locales/fr.json'));
 register('de', () => import('$lib/i18n/locales/de.json'));
+register('ar', () => import('$lib/i18n/locales/ar.json'));
 register('ja', () => import('$lib/i18n/locales/ja.json'));
 
 

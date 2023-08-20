@@ -215,9 +215,15 @@
 			<padding class="flex h-28 w-full" />
 		{/if}
 
-		<div class="mx-8 min-h-[90vh]">
-			<slot />
-		</div>
+		{#if $locale == 'ar'}
+			<div class="mx-8 min-h-[90vh]" dir="rtl">
+				<slot />
+			</div>
+		{:else}
+			<div class="mx-8 min-h-[90vh]">
+				<slot />
+			</div>
+		{/if}
 
 		<!-- https://flowbite.com/docs/components/footer/ -->
 		<footer class="mt-10 bg-secondary p-4 sm:p-6">

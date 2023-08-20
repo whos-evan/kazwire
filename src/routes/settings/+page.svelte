@@ -203,6 +203,7 @@
 					<option value="fr">Français</option>
 					<option value="de">Deutsch</option>
 					<option value="ja">日本語</option>
+					<option value="ar">العربية</option>
 				</select>
 				<button class="btn" on:click={changeLocale}>{$_('pages.settings.save')}</button>
 			</div>

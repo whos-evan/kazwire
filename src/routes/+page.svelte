@@ -245,7 +245,7 @@
 						<!-- See more -->
 						<a
 							href={'/games?tag=' + tag}
-							class="w-fit text-sm text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+							class="text-sm w-fit text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
 						>
 							{$_('see_more')}
 						</a>
