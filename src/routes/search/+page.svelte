@@ -66,6 +66,7 @@
 	}
 
 	// Expand the iframe to fill the screen
+	let expanded: boolean = false;
 	function expandiFrame() {
 		const document: Document = window.document;
 		const frame: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
@@ -83,6 +84,29 @@
 		frame.style.border = 'none';
 
 		frame.classList.toggle('rounded-t-lg');
+
+		expanded = true;
+	}
+
+	function shrinkiFrame() {
+		const document: Document = window.document;
+		const frame: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+
+		document.body.style.overflow = 'auto';
+		// Settings required for the frame to fill the screen
+		frame.style.position = 'relative';
+		frame.style.top = '0px';
+		frame.style.bottom = '0px';
+		frame.style.left = '0px';
+		frame.style.right = '0px';
+		frame.style.height = '100%';
+		frame.style.width = '100%';
+		frame.style.zIndex = '9999';
+		frame.style.border = 'none';
+
+		frame.classList.toggle('rounded-t-lg');
+
+		expanded = false;
 	}
 
 	function reloadiFrame() {
@@ -126,6 +150,7 @@
 <div class="mb-6 flex justify-center">
 	<form
 		class="flex flex-col justify-center space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0"
+		on:submit={async () => await iframeSearch()}
 	>
 		<input
 			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
@@ -133,9 +158,19 @@
 			placeholder="Search for your favorites..."
 			bind:value={searchQuery}
 		/>
-		<button class="btn" type="submit" on:click={async () => await iframeSearch()}> Search </button>
+		<button class="btn" type="submit"> Search </button>
 	</form>
 </div>
+
+{#if expanded}
+	<!-- Button to shrink the iframe -->
+	<button
+		class="absolute left-0 top-0 z-[1000000] m-4 rounded-full bg-secondary p-2 opacity-40"
+		on:click={() => shrinkiFrame()}
+	>
+		<Icon class="h-6 w-6 text-white" icon="ic:round-compress" />
+	</button>
+{/if}
 
 <div class="relative flex flex-row justify-center">
 	<div
