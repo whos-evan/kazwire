@@ -183,7 +183,7 @@
 					placeholder="https://google.com/favicon.ico"
 					bind:value={favicon}
 				/>
-				<button class="btn" on:click={changeFavicon}>Save</button>
+				<button class="btn" on:click={changeFavicon}>{$_('pages.settings.save')}</button>
 			</div>
 			<!-- Line break -->
 			<div class="col-start-1 row-start-4">
@@ -200,6 +200,8 @@
 				>
 					<option value="en">English</option>
 					<option value="es">Español</option>
+					<option value="fr">Français</option>
+					<option value="de">Deutsch</option>
 					<option value="ja">日本語</option>
 				</select>
 				<button class="btn" on:click={changeLocale}>{$_('pages.settings.save')}</button>
