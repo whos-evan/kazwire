@@ -1,9 +1,11 @@
 class Experiment {
-	setCookie(experimentName: string): void {
+	setCookie(experimentName: string): number {
 		const randomNumber: number = Math.random();
 		const expires: Date = new Date();
 		expires.setMonth(expires.getMonth() + 1);
 		document.cookie = `${experimentName}_experiment=${randomNumber};expires=${expires.toUTCString()}`;
+
+		return randomNumber;
 	}
 
 	resetAllCookies(): void {
@@ -23,8 +25,7 @@ class Experiment {
 		if (cookie) {
 			return Number(cookie.split('=')[1]);
 		} else {
-			this.setCookie(experimentName);
-			return this.getCookie(experimentName);
+			return this.setCookie(experimentName);
 		}
 	}
 
