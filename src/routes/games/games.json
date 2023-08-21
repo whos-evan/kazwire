@@ -331,6 +331,19 @@
                 "multiplayer"
             ]
         },
+         {
+            "description": "Florr.io is a basic survival/exploration game where you control a flower in a large map to defeat mobs and obtain petals. ",
+            "developer": "Matheus Valadares",
+            "embedURL": "https://florr.io/",
+            "id": "florr",
+            "image": "florr.png",
+            "platform": "PC",
+            "name": "florr.io",
+            "tags": [
+                "action",
+                "multiplayer"
+            ]
+        },
         {
             "description": "Fortnite is a co-op sandbox survival game developed by Epic Games and People Can Fly, with the former publishing it.",
             "developer": "Epic Games",
