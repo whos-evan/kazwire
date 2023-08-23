@@ -135,6 +135,20 @@
 
 <svelte:head>
 	<title>Kazwire</title>
+
+	<!-- Open Graph / Facebook -->
+	<meta property="og:type" content="website" />
+	<meta property="og:url" content="https://kazwire.com/" />
+	<meta property="og:title" content="Kazwire" />
+	<meta property="og:description" content="Play and search for all your favorite games and sites!" />
+	<meta property="og:image" content="/assets/background.png" />
+
+	<!-- Twitter -->
+	<meta property="twitter:card" content="summary_large_image" />
+	<meta property="twitter:url" content="https://kazwire.com/" />
+	<meta property="twitter:title" content="Kazwire" />
+	<meta property="twitter:description" content="Play and search for all your favorite games and sites!" />
+	<meta property="twitter:image" content="/assets/background.png" />
 </svelte:head>
 
 {#if !$isLoading}
