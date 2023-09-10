@@ -10,8 +10,7 @@
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
 	let contentTitle: string = $page.url.searchParams.get('title') || '';
-	// Ensure no XSS by only allowing alphanumeric characters
-	searchQuery = searchQuery.replace(/[^a-zA-Z0-9 ]/g, '');
+	// Ensure no XSS by only allowing alphanumeric characters and spaces
 	contentTitle = contentTitle.replace(/[^a-zA-Z0-9 ]/g, '');
 
 	function search(input: string) {
