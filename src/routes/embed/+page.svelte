@@ -38,7 +38,7 @@
 		return template.replace('%s', encodeURIComponent(input));
 	}
 
-	onMount(async () => {
+	function registerServiceWorker() {
 		// Register the service worker
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
@@ -51,6 +51,10 @@
 				};
 			}
 		});
+	}
+
+	onMount(async () => {
+		registerServiceWorker();
 	});
 
 	function loadContent() {
@@ -78,6 +82,13 @@
 	}
 
 	async function iframeSearch() {
+		navigator.serviceWorker.getRegistrations().then((registrations) => {
+			if (registrations.length === 0) {
+				// Service worker is not installed so register it
+				registerServiceWorker();
+			}
+		});
+
 		// Get the iframe
 		let iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 
@@ -162,9 +173,12 @@
 							</h1>
 						</div>
 						<p class="text-center text-2xl text-white">Browse for free now with Kazwire!</p>
-						<div class="w-full bg-gray-100 rounded-full h-2.5">
-							<div class="bg-secondary h-2.5 rounded-full transition-all" style="width: {percentDone}%"></div>
-						  </div>
+						<div class="h-2.5 w-full rounded-full bg-gray-100">
+							<div
+								class="h-2.5 rounded-full bg-secondary transition-all"
+								style="width: {percentDone}%"
+							/>
+						</div>
 					</div>
 				</div>
 			{/if}
