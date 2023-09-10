@@ -9,7 +9,10 @@
 	import { page } from '$app/stores';
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
-	let contentTitle: string = 'Nothing yet...';
+	let contentTitle: string = $page.url.searchParams.get('title') || '';
+	// Ensure no XSS by only allowing alphanumeric characters
+	searchQuery = searchQuery.replace(/[^a-zA-Z0-9 ]/g, '');
+	contentTitle = contentTitle.replace(/[^a-zA-Z0-9 ]/g, '');
 
 	function search(input: string) {
 		let template: string = 'https://www.google.com/search?q=%s&hl=en';
@@ -205,6 +208,9 @@
 
 					<!-- Content on top of the image -->
 					<div class="absolute z-30 flex flex-col items-center justify-center">
+						<h1 class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl">
+							{contentTitle}
+						</h1>
 						<!-- Play now button -->
 						<button class="lg:btn-xl btn mt-8" on:click={() => loadContent()}>
 							Start Now
