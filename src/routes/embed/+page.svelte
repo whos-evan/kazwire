@@ -158,6 +158,47 @@
 						<p class="text-center text-2xl text-white">An error occured while loading the page.</p>
 					</div>
 				</div>
+			{:else if searchQuery == ''}
+				<!-- Tutorial on how to embed this on any site-->
+				<div class="relative flex h-full items-center justify-center bg-primary">
+					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+						<div class="flex flex-col items-center gap-8 sm:flex-row">
+							<img src="/logo.png" alt="Loading" class="h-24 w-24" />
+							<h1
+								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+							>
+								Kazwire
+							</h1>
+						</div>
+						<p class="text-center text-2xl text-white">
+							To embed this on your site, add this code to your site:
+						</p>
+						<div class="rounded-lg bg-white p-4">
+							<div
+								style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
+							>
+								<pre style="margin: 0; line-height: 125%"><span style="color: #007700"
+										>&lt;iframe</span
+									>
+<span style="color: #0000CC">src=</span><span style="background-color: #fff0f0"
+										>&quot;https://kazwire.com/embed?search=SEARCH_QUERY_HERE&quot;</span
+									>
+<span style="color: #0000CC">width=</span><span style="background-color: #fff0f0"
+										>&quot;100%&quot;</span
+									>
+<span style="color: #0000CC">height=</span><span style="background-color: #fff0f0"
+										>&quot;100%&quot;</span
+									>
+<span style="color: #0000CC">frameborder=</span><span style="background-color: #fff0f0"
+										>&quot;0&quot;</span
+									>
+<span style="color: #0000CC">allowfullscreen</span>
+<span style="color: #007700">/&gt;</span>
+</pre>
+							</div>
+						</div>
+					</div>
+				</div>
 			{:else if !showScreen}
 				<div class="relative flex h-full items-center justify-center overflow-hidden">
 					<img class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg" alt="Game" />
