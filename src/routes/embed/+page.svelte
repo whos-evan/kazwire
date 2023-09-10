@@ -230,8 +230,10 @@
 					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
 						<!-- Loading text -->
 						<h3 class="text-center text-2xl text-gray-100">
-							Browse for free now on <a class="hover:underline" href="https://kazwire.com"
-								>Kazwire.com</a
+							Browse for free now on <a
+								class="hover:underline"
+								target="_blank"
+								href="https://kazwire.com">Kazwire.com</a
 							>!
 						</h3>
 						<div class="h-2.5 w-full min-w-[20rem] rounded-full bg-gray-100">
