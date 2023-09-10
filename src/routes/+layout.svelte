@@ -20,7 +20,7 @@
 	import Analytics from '$lib/components/Google/Analytics.svelte';
 
 	// Reset the layout for certain pages containing the url path
-	const layoutResetPaths = ['/games/ruffle', '/games/emulator', '/school'];
+	const layoutResetPaths = ['/games/ruffle', '/games/emulator', '/school', '/embed'];
 	let resetLayout = false;
 	for (const path of layoutResetPaths) {
 		if ($page.url.pathname.includes(path)) {
