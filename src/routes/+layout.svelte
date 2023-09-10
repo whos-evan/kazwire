@@ -255,6 +255,9 @@
 						<h2 class="mb-6 text-sm font-semibold uppercase text-white">{$_('resources')}</h2>
 						<ul class="text-white">
 							<li class="mb-4">
+								<a href="/embed" data-sveltekit-reload class="hover:underline">{$_('embed_kazwire')}</a>
+							</li>
+							<li class="mb-4">
 								<a href="/request" class="hover:underline">{$_('request_a_game')}</a>
 							</li>
 							<li class="mb-4">
