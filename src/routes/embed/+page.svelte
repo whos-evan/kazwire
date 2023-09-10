@@ -207,7 +207,9 @@
 
 					<!-- Content on top of the image -->
 					<div class="absolute z-30 flex flex-col items-center justify-center">
-						<h1 class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl">
+						<h1
+							class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+						>
 							{contentTitle}
 						</h1>
 						<!-- Play now button -->
@@ -216,15 +218,22 @@
 							<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
 						</button>
 					</div>
-					<p class="text-md mb-4 z-40 mt-auto text-center text-gray-200">
-						Made in partnership with <a class="hover:underline" href="https://kazwire.com">Kazwire.com</a>.
+					<p class="text-md z-40 mb-4 mt-auto text-center text-gray-200">
+						<!-- open link in new tab -->
+
+						Made in partnership with
+						<a class="hover:underline" target="_blank" href="https://kazwire.com">Kazwire.com</a>
 					</p>
 				</div>
 			{:else if showLoadingScreen}
 				<div class="relative flex h-full items-center justify-center bg-primary transition-all">
 					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
 						<!-- Loading text -->
-						<h3 class="text-center text-2xl text-gray-100">Browse for free now on <a class="hover:underline" href="https://kazwire.com">Kazwire.com</a>!</h3>
+						<h3 class="text-center text-2xl text-gray-100">
+							Browse for free now on <a class="hover:underline" href="https://kazwire.com"
+								>Kazwire.com</a
+							>!
+						</h3>
 						<div class="h-2.5 w-full min-w-[20rem] rounded-full bg-gray-100">
 							<div
 								class="h-2.5 rounded-full bg-secondary transition-all"
@@ -233,7 +242,11 @@
 						</div>
 					</div>
 					<p class="text-md mb-4 mt-auto text-center text-gray-200">
-						Made in partnership with <a class="hover:underline" href="https://kazwire.com">Kazwire.com</a>
+						Made in partnership with <a
+							class="hover:underline"
+							target="_blank"
+							href="https://kazwire.com">Kazwire.com</a
+						>
 					</p>
 				</div>
 			{/if}
@@ -263,7 +276,9 @@
 				<div class="flex">
 					<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
 					<!-- TODO: Setup dynamic title change based on iFrame's content title -->
-					<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]"><a class="hover:underline" href="https://kazwire.com">Kazwire.com</a></div>
+					<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
+						<a class="hover:underline" target="_blank" href="https://kazwire.com">Kazwire.com</a>
+					</div>
 				</div>
 			</div>
 		</div>
