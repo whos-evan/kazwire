@@ -54,6 +54,11 @@
 	}
 
 	onMount(async () => {
+		// Check if they are using brave
+		if (navigator.brave) {
+			showErrorScreen = true;
+		}
+
 		registerServiceWorker();
 	});
 
@@ -119,6 +124,7 @@
 	let innerWidth: number = 0;
 	let showScreen: boolean = false;
 	let showLoadingScreen: boolean = false;
+	let showErrorScreen: boolean = false;
 	let percentDone: number = 0;
 
 	let mousePos: { x: number; y: number } = { x: 0, y: 0 };
@@ -138,7 +144,21 @@
 <div class="relative flex flex-row justify-center">
 	<div class="float-left flex h-[100vh] w-full pb-2">
 		<div class="align-center mb-14 flex-grow">
-			{#if !showScreen}
+			{#if showErrorScreen}
+				<div class="relative flex h-full items-center justify-center">
+					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+						<div class="flex flex-col items-center gap-8 sm:flex-row">
+							<img src="/logo.png" alt="Loading" class="h-24 w-24" />
+							<h1
+								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+							>
+								Kazwire
+							</h1>
+						</div>
+						<p class="text-center text-2xl text-white">An error occured while loading the page.</p>
+					</div>
+				</div>
+			{:else if !showScreen}
 				<div class="relative flex h-full items-center justify-center overflow-hidden">
 					<img class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg" alt="Game" />
 					<div class="absolute z-10 h-full w-full bg-primary" />
