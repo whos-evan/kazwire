@@ -201,46 +201,35 @@
 				</div>
 			{:else if !showScreen}
 				<div class="relative flex h-full items-center justify-center overflow-hidden">
-					<img class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg" alt="Game" />
 					<div class="absolute z-10 h-full w-full bg-primary" />
 
 					<!-- Content on top of the image -->
 					<div class="absolute z-30 flex flex-col items-center justify-center">
-						<div class="flex flex-col items-center gap-8 sm:flex-row">
-							<img src="/logo.png" alt="Loading" class="h-24 w-24" />
-							<h1
-								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-							>
-								Kazwire
-							</h1>
-						</div>
-
 						<!-- Play now button -->
 						<button class="lg:btn-xl btn mt-8" on:click={() => loadContent()}>
 							Start Now
 							<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
 						</button>
 					</div>
+					<p class="text-md mb-4 z-40 mt-auto text-center text-gray-200">
+						Made in partnership with <a class="hover:underline" href="https://kazwire.com">Kazwire.com</a>.
+					</p>
 				</div>
 			{:else if showLoadingScreen}
 				<div class="relative flex h-full items-center justify-center bg-primary transition-all">
 					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
-						<div class="flex flex-col items-center gap-8 sm:flex-row">
-							<img src="/logo.png" alt="Loading" class="h-24 w-24" />
-							<h1
-								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-							>
-								Kazwire
-							</h1>
-						</div>
-						<p class="text-center text-2xl text-white">Browse for free now with Kazwire!</p>
-						<div class="h-2.5 w-full rounded-full bg-gray-100">
+						<!-- Loading text -->
+						<h3 class="text-center text-2xl text-gray-100">Browse for free now on <a class="hover:underline" href="https://kazwire.com">Kazwire.com</a>!</h3>
+						<div class="h-2.5 w-full min-w-[20rem] rounded-full bg-gray-100">
 							<div
 								class="h-2.5 rounded-full bg-secondary transition-all"
 								style="width: {percentDone}%"
 							/>
 						</div>
 					</div>
+					<p class="text-md mb-4 mt-auto text-center text-gray-200">
+						Made in partnership with <a class="hover:underline" href="https://kazwire.com">Kazwire.com</a>
+					</p>
 				</div>
 			{/if}
 
@@ -269,7 +258,7 @@
 				<div class="flex">
 					<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
 					<!-- TODO: Setup dynamic title change based on iFrame's content title -->
-					<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">Kazwire.com</div>
+					<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]"><a class="hover:underline" href="https://kazwire.com">Kazwire.com</a></div>
 				</div>
 			</div>
 		</div>
