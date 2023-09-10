@@ -88,7 +88,7 @@
 
 		experiments.fetchOrCreateExperimentData(
 			'showSuggestedGames',
-			'2023-09-01',
+			'2023-10-01',
 			'Shows suggested games instead of ads.',
 			25,
 			true
