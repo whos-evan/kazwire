@@ -145,7 +145,7 @@
 	<div class="float-left flex h-[100vh] w-full pb-2">
 		<div class="align-center mb-14 flex-grow">
 			{#if showErrorScreen}
-				<div class="relative flex h-full items-center justify-center">
+				<div class="relative flex h-full items-center justify-center bg-primary">
 					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
 						<div class="flex flex-col items-center gap-8 sm:flex-row">
 							<img src="/logo.png" alt="Loading" class="h-24 w-24" />
