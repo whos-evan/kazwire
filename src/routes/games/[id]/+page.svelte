@@ -94,6 +94,16 @@
 			true
 		);
 		showSuggestedGames = experiments.shouldShow('showSuggestedGames');
+
+		// Fire event when its finished rendering
+		const event = new CustomEvent('rendered', {
+			detail: {
+				name: 'game',
+				id: data.game.id
+			}
+		});
+
+		window.dispatchEvent(event);
 	});
 
 	// Fullscreen the iframe
