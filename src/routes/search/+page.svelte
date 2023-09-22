@@ -173,9 +173,9 @@
 	<title>Kazwire - Search Freely</title>
 	<meta name="description" content="Search freely with Kazwire!" />
 	<meta property="og:description" content="Search freely with Kazwire!" />
-	<script src="/uv/uv.bundle.js" defer></script>
-	<script src="/uv/uv.config.js" defer></script>
-	<script src="/uv.js" defer></script>
+	<script src="/uv/uv.bundle.js" async={false}></script>
+	<script src="/uv/uv.config.js" async={false}></script>
+	<script src="/uv.js" async={false}></script>
 </svelte:head>
 
 <!-- Search bar -->
