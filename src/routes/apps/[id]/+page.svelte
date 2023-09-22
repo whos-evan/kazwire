@@ -58,7 +58,7 @@
 				sw.onstatechange = function () {
 					if (sw.state === 'installed') {
 						// Instead of refreshing the page, reload the service worker
-						sw.postMessage({ type: 'SKIP_WAITING' });
+						window.location.reload();
 					}
 				};
 			}
