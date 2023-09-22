@@ -54,10 +54,13 @@
 
 	function registerServiceWorker() {
 		// Register the service worker
-		if (__uv$config.prefix === undefined) {
+		if (typeof __uv$config.prefix === "undefined") {
 			console.error('Service worker prefix is undefined');
-			// wait 5 seconds and try again
-			setTimeout(registerServiceWorker, 5000);
+			// Wait 5 seconds before trying again
+			setTimeout(() => {
+				registerServiceWorker();
+			}, 5000);
+			return;
 		}
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
