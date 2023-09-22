@@ -41,13 +41,7 @@ class Suggest {
 		}
 
 		// Create algorithm to suggest games
-		// A value (0 [will not like the game at all] to 1 [will love the game]) will be assigned to each game based on the following:
-		// Priority 1: Liked games
-		// Priority 2: Played games
-		// Priority 3: Games with similar tags to liked games
-		// Priority 4: Games with similar tags to played games
-		// Priority 5: Games with similar emulator to liked games
-		// Priority 6: Games with similar emulator to played games
+		// A value (0 [will not like the game at all] to 1 [will love the game])
 
 		// Go through each game and assign a score after the promise is resolved
 		return Promise.all([games, likes]).then((values) => {
