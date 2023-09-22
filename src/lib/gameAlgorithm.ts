@@ -177,27 +177,28 @@ class Suggest {
 				}
 			}
 
-			// Assign a score based on similarity between developers
+			// Assign a score based on similarity between developers (played games)
 			const SAME_DEV_SCORE = 0.1;
-			for (let i = 0; i < promiseLikes.length; i++) {
-				let like = promiseLikes[i];
+			for (let i = 0; i < playedGames.length; i++) {
+				let playedGame = playedGames[i];
 
-				// Get the developer of the liked game
-				let likeDeveloper = promiseGames.find((game) => game.id == like)?.developer;
+				// Get the developer of the played game
+				let playedGameDev = promiseGames.find((game) => game.id == playedGame)?.developer;
 
 				// If the game has a developer, add SAME_DEV_SCORE to the score of each game with the same developer
-				if (likeDeveloper != null) {
+				if (playedGameDev != null) {
 					// Get the games with the same developer
-					let gamesWithDeveloper = promiseGames.filter((game) => game.developer == likeDeveloper);
-
+					let gamesWithDev = promiseGames.filter((game) => game.developer == playedGameDev);
+					
 					// Add SAME_DEV_SCORE to the score of each game with the same developer
-					for (let j = 0; j < gamesWithDeveloper.length; j++) {
-						let gameWithDeveloper = gamesWithDeveloper[j];
+					for (let j = 0; j < gamesWithDev.length; j++) {
+						let gameWithDev = gamesWithDev[j];
 
-						score[gameWithDeveloper.id] += SAME_DEV_SCORE;
+						score[gameWithDev.id] += SAME_DEV_SCORE;
 					}
 				}
 			}
+			
 
 			// Sort the games by score
 			let sortedGames = promiseGames.sort((a, b) => {
