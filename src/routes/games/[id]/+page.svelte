@@ -54,21 +54,17 @@
 
 	function registerServiceWorker() {
 		// Register the service worker
-		if (typeof __uv$config === 'undefined') {
-			console.error('Service worker prefix is undefined');
-		} else {
-			navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
-				if (reg.installing) {
-					const sw = reg.installing || reg.waiting;
-					sw.onstatechange = function () {
-						if (sw.state === 'installed') {
-							// SW installed.  Refresh page so SW can respond with SW-enabled page.
-							window.location.reload();
-						}
-					};
-				}
-			});
-		}
+		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
+			if (reg.installing) {
+				const sw = reg.installing || reg.waiting;
+				sw.onstatechange = function () {
+					if (sw.state === 'installed') {
+						// Instead of refreshing the page, reload the service worker
+						sw.postMessage({ type: 'SKIP_WAITING' });
+					}
+				};
+			}
+		});
 	}
 
 	import { experiments } from '$lib/experiments';
@@ -234,17 +230,17 @@
 
 <svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
 <svelte:head>
+	<script src="/uv/uv.bundle.js" defer></script>
+
 	<title>Kazwire - {data.game.name}</title>
 	<meta name="description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:image" content="/game/img/{data.game.image}" />
-</svelte:head>
 
-<head>
-	<script src="/uv/uv.bundle.js" defer></script>
+	
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
-</head>
+</svelte:head>
 
 {#if expanded}
 	<!-- Button to shrink the iframe -->

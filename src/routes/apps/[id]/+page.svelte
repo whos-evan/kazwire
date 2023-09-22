@@ -51,13 +51,14 @@
 	}
 
 	function registerServiceWorker() {
+		// Register the service worker
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
 				const sw = reg.installing || reg.waiting;
 				sw.onstatechange = function () {
 					if (sw.state === 'installed') {
-						// SW installed.  Refresh page so SW can respond with SW-enabled page.
-						window.location.reload();
+						// Instead of refreshing the page, reload the service worker
+						sw.postMessage({ type: 'SKIP_WAITING' });
 					}
 				};
 			}
@@ -206,12 +207,13 @@
 
 <svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
 <svelte:head>
+	<script src="/uv/uv.bundle.js" defer></script>
+
 	<title>Kazwire - {data.app.name}</title>
 	<meta name="description" content="Play {data.app.name} for free now on Kazwire!" />
 	<meta property="og:description" content="Play {data.app.name} for free now on Kazwire!" />
 	<meta property="og:image" content="/app/img/{data.app.image}" />
 
-	<script src="/uv/uv.bundle.js" defer></script>
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
 </svelte:head>

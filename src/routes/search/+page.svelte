@@ -36,19 +36,23 @@
 		return template.replace('%s', encodeURIComponent(input));
 	}
 
-	onMount(async () => {
+	function registerServiceWorker() {
 		// Register the service worker
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
 				const sw = reg.installing || reg.waiting;
 				sw.onstatechange = function () {
 					if (sw.state === 'installed') {
-						// SW installed.  Refresh page so SW can respond with SW-enabled page.
-						window.location.reload();
+						// Instead of refreshing the page, reload the service worker
+						sw.postMessage({ type: 'SKIP_WAITING' });
 					}
 				};
 			}
 		});
+	}
+
+	onMount(async () => {
+		registerServiceWorker();
 	});
 
 	async function iframeSearch() {
