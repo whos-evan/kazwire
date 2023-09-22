@@ -54,7 +54,7 @@
 
 	function registerServiceWorker() {
 		// Register the service worker
-		if (typeof __uv$config.prefix === 'undefined') {
+		if (typeof __uv$config === 'undefined') {
 			console.error('Service worker prefix is undefined');
 		} else {
 			navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
