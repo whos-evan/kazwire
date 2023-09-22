@@ -53,6 +53,20 @@
 	}
 
 	function registerServiceWorker() {
+		if (typeof __uv$config === 'undefined') {
+			// Add the script to the head
+			const script = document.createElement('script');
+			script.src = '/uv.bundle.js';
+			script.defer = true;
+			document.head.appendChild(script);
+
+			// Add the script to the head
+			const script2 = document.createElement('script');
+			script2.src = '/uv.config.js';
+			script2.defer = true;
+			document.head.appendChild(script2);
+		}
+
 		// Register the service worker
 		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
 			if (reg.installing) {
@@ -230,14 +244,14 @@
 
 <svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
 <svelte:head>
-	<script src="/uv/uv.bundle.js" defer></script>
+
 
 	<title>Kazwire - {data.game.name}</title>
 	<meta name="description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:image" content="/game/img/{data.game.image}" />
 
-	
+	<script src="/uv/uv.bundle.js" defer></script>
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
 </svelte:head>
