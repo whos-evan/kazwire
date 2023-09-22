@@ -238,11 +238,13 @@
 	<meta name="description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:image" content="/game/img/{data.game.image}" />
+</svelte:head>
 
+<head>
 	<script src="/uv/uv.bundle.js" defer></script>
 	<script src="/uv/uv.config.js" defer></script>
 	<script src="/uv.js" defer></script>
-</svelte:head>
+</head>
 
 {#if expanded}
 	<!-- Button to shrink the iframe -->
