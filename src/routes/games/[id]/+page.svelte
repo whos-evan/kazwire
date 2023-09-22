@@ -56,13 +56,13 @@
 		if (typeof __uv$config === 'undefined') {
 			// Add the script to the head
 			const script = document.createElement('script');
-			script.src = '/uv.bundle.js';
+			script.src = '/uv/uv.bundle.js';
 			script.defer = true;
 			document.head.appendChild(script);
 
 			// Add the script to the head
 			const script2 = document.createElement('script');
-			script2.src = '/uv.config.js';
+			script2.src = '/uv/uv.config.js';
 			script2.defer = true;
 			document.head.appendChild(script2);
 		}
