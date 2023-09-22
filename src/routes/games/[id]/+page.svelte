@@ -54,25 +54,21 @@
 
 	function registerServiceWorker() {
 		// Register the service worker
-		if (typeof __uv$config.prefix === "undefined") {
+		if (typeof __uv$config.prefix === 'undefined') {
 			console.error('Service worker prefix is undefined');
-			// Wait 5 seconds before trying again
-			setTimeout(() => {
-				registerServiceWorker();
-			}, 5000);
-			return;
+		} else {
+			navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
+				if (reg.installing) {
+					const sw = reg.installing || reg.waiting;
+					sw.onstatechange = function () {
+						if (sw.state === 'installed') {
+							// SW installed.  Refresh page so SW can respond with SW-enabled page.
+							window.location.reload();
+						}
+					};
+				}
+			});
 		}
-		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
-			if (reg.installing) {
-				const sw = reg.installing || reg.waiting;
-				sw.onstatechange = function () {
-					if (sw.state === 'installed') {
-						// SW installed.  Refresh page so SW can respond with SW-enabled page.
-						window.location.reload();
-					}
-				};
-			}
-		});
 	}
 
 	import { experiments } from '$lib/experiments';
