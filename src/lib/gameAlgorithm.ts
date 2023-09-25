@@ -41,13 +41,7 @@ class Suggest {
 		}
 
 		// Create algorithm to suggest games
-		// A value (0 [will not like the game at all] to 1 [will love the game]) will be assigned to each game based on the following:
-		// Priority 1: Liked games
-		// Priority 2: Played games
-		// Priority 3: Games with similar tags to liked games
-		// Priority 4: Games with similar tags to played games
-		// Priority 5: Games with similar emulator to liked games
-		// Priority 6: Games with similar emulator to played games
+		// A value (0 [will not like the game at all] to 1 [will love the game])
 
 		// Go through each game and assign a score after the promise is resolved
 		return Promise.all([games, likes]).then((values) => {
@@ -176,6 +170,29 @@ class Suggest {
 					}
 				}
 			}
+
+			// Assign a score based on similarity between developers (played games)
+			const SAME_DEV_SCORE = 0.1;
+			for (let i = 0; i < playedGames.length; i++) {
+				let playedGame = playedGames[i];
+
+				// Get the developer of the played game
+				let playedGameDev = promiseGames.find((game) => game.id == playedGame)?.developer;
+
+				// If the game has a developer, add SAME_DEV_SCORE to the score of each game with the same developer
+				if (playedGameDev != null) {
+					// Get the games with the same developer
+					let gamesWithDev = promiseGames.filter((game) => game.developer == playedGameDev);
+					
+					// Add SAME_DEV_SCORE to the score of each game with the same developer
+					for (let j = 0; j < gamesWithDev.length; j++) {
+						let gameWithDev = gamesWithDev[j];
+
+						score[gameWithDev.id] += SAME_DEV_SCORE;
+					}
+				}
+			}
+			
 
 			// Sort the games by score
 			let sortedGames = promiseGames.sort((a, b) => {

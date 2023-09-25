@@ -59,8 +59,8 @@
 				const sw = reg.installing || reg.waiting;
 				sw.onstatechange = function () {
 					if (sw.state === 'installed') {
-						// Instead of refreshing the page, reload the service worker
-						sw.postMessage({ type: 'SKIP_WAITING' });
+						// Reload page
+						window.location.reload();
 					}
 				};
 			}
