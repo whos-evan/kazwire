@@ -69,6 +69,13 @@
 					color="#f75dfc"
 				/>
 				<Box
+					title="Ehab Games"
+					image="ehab-games.png"
+					description="Unlock Hundreds of Games and Break Through Internet Barriers with our Built-in Proxy!"
+					href="https://ehabgames.com/"
+					color="#9460e2"
+				/>
+				<Box
 					title="Partner with us!"
 					image="kazwire.png"
 					description="We would love to partner with you and have you showcased here! Click the box to join our Discord server!"
