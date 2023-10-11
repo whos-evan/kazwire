@@ -22,7 +22,7 @@
 		data-ad-client="ca-pub-7648886706850999"
 		data-ad-slot="{AD_SLOT_ID}"
 	/>
-	<script>
+	<!-- <script>
 		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
+	</script> -->
 </div>
