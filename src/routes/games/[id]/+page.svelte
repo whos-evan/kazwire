@@ -83,9 +83,9 @@
 
 		experiments.fetchOrCreateExperimentData(
 			'showSuggestedGames',
-			'2023-10-01',
+			'2023-12-01',
 			'Shows suggested games instead of ads.',
-			25,
+			35,
 			true
 		);
 		showSuggestedGames = experiments.shouldShow('showSuggestedGames');
@@ -257,7 +257,7 @@
 
 <div class="relative flex flex-row justify-center">
 	<div
-		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
+		class="float-left flex h-[calc(80vh-132px)] min-h-[calc(24rem+120px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 	>
 		{#if innerWidth > 1224}
 			{#if showSuggestedGames}
@@ -296,7 +296,7 @@
 				<Vert />
 			{/if}
 		{/if}
-		<div class="align-center mb-14 flex-grow">
+		<div class="align-center mb-14 flex-grow min-h-[24rem] h-[calc(80vh-200px)]">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 				{#if !loadedFrame}
 					<div class="relative flex h-full items-center justify-center overflow-hidden">

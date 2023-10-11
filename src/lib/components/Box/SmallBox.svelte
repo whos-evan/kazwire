@@ -72,7 +72,7 @@
 				{/if}
 			</div>
 			<img
-				class="h-40 w-full rounded-xl bg-white opacity-90 object-cover transition-opacity group-hover:opacity-50"
+				class="h-36 w-full rounded-xl bg-white opacity-90 object-cover transition-opacity group-hover:opacity-50"
 				src={image}
 				alt={name}
 			/>
