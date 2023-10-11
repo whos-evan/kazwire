@@ -24,7 +24,7 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	/>
-	<!-- <script>
+	<script async={false}>
 		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script> -->
+	</script>
 </div>
