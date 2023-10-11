@@ -1,5 +1,9 @@
 <script lang="ts">
 	const AD_SLOT_ID = '8673868840';
+
+	function loadAd() {
+		(window.adsbygoogle = window.adsbygoogle || []).push({});
+	}
 </script>
 
 <svelte:head>
@@ -17,6 +21,7 @@
 		Advertisement
 	</h3>
 	<ins
+		use:loadAd
 		class="adsbygoogle"
 		style="display:block"
 		data-ad-client="ca-pub-7648886706850999"
@@ -24,7 +29,4 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	/>
-	<script>
-		(adsbygoogle = window.adsbygoogle || []).push({});
-	</script>
 </div>
