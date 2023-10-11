@@ -73,6 +73,6 @@
 		// wait 2 seconds before loading ads
 		setTimeout(function () {
 			(adsbygoogle = window.adsbygoogle || []).push({});
-		}, 2000);
+		}, 5000);
 	</script>
 </svelte:head>
