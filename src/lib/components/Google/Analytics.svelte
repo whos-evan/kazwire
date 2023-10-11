@@ -68,11 +68,4 @@
 				window.location.search
 		);
 	</script>
-
-	<script>
-		// wait 2 seconds before loading ads
-		setTimeout(function () {
-			(adsbygoogle = window.adsbygoogle || []).push({});
-		}, 5000);
-	</script>
 </svelte:head>
