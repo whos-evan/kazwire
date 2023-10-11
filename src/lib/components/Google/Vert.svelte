@@ -1,7 +1,7 @@
 <script lang="ts">
 	const AD_SLOT_ID = '8673868840';
 
-	function loadAd() {
+	function loadAd(node: HTMLElement) {
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
 	}
 </script>
