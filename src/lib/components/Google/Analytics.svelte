@@ -43,6 +43,8 @@
 
 		gtag('js', new Date());
 		gtag('config', 'G-FLBJ64LGWV');
+
+		
 	</script>
 
 	<link rel="dns-prefetch" href="https://universal.wgplayer.com" /><script
@@ -65,5 +67,12 @@
 				'&ws=' +
 				window.location.search
 		);
+	</script>
+
+	<script>
+		// wait 2 seconds before loading ads
+		setTimeout(function () {
+			(adsbygoogle = window.adsbygoogle || []).push({});
+		}, 2000);
 	</script>
 </svelte:head>
