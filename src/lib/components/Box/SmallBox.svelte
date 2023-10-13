@@ -80,9 +80,9 @@
 			<div
 				class="absolute bottom-0 left-0 hidden max-h-24 w-4/5 p-2 transition-transform group-hover:block"
 			>
-				<h1 class="truncate text-xl font-bold text-white">{name}</h1>
+				<h1 class="truncate text-sm font-bold text-white">{name}</h1>
 				<!-- developer -->
-				<p class="truncate text-sm text-white">{developer}</p>
+				<p class="truncate text-xs text-white">{developer}</p>
 			</div>
 		</div>
 	</a>
