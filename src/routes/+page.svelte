@@ -46,18 +46,17 @@
 
 	function checkIfShowSchoolRescue() {
 		const date = new Date();
-		const month = date.getMonth();
 		const day = date.getDate();
 
-		// if it's july 15th or later, or august 15th or earlier, show the school rescue
-		// ensure that the time is in school hours
-		if (month >= 6 && month <= 7 && day >= 15 && day <= 15) {
+		if (day >= 1 && day <= 5) {
+			// if it is between 8am and 3pm
 			if (date.getHours() >= 8 && date.getHours() <= 15) {
 				return true;
 			}
 		}
 
 		return false;
+		
 	}
 
 	onMount(() => {
@@ -140,14 +139,20 @@
 	<meta property="og:type" content="website" />
 	<meta property="og:url" content="https://kazwire.com/" />
 	<meta property="og:title" content="Kazwire" />
-	<meta property="og:description" content="Play and search for all your favorite games and sites!" />
+	<meta
+		property="og:description"
+		content="Play and search for all your favorite games and sites!"
+	/>
 	<meta property="og:image" content="/assets/background.png" />
 
 	<!-- Twitter -->
 	<meta property="twitter:card" content="summary_large_image" />
 	<meta property="twitter:url" content="https://kazwire.com/" />
 	<meta property="twitter:title" content="Kazwire" />
-	<meta property="twitter:description" content="Play and search for all your favorite games and sites!" />
+	<meta
+		property="twitter:description"
+		content="Play and search for all your favorite games and sites!"
+	/>
 	<meta property="twitter:image" content="/assets/background.png" />
 </svelte:head>
 
@@ -259,7 +264,7 @@
 						<!-- See more -->
 						<a
 							href={'/games?tag=' + tag}
-							class="text-sm w-fit text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
+							class="w-fit text-sm text-gray-500 transition hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300"
 						>
 							{$_('see_more')}
 						</a>
@@ -287,7 +292,7 @@
 		</grid>
 
 		<grid class="row-start-3 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
-			<div class="flex flex-col mb-4">
+			<div class="mb-4 flex flex-col">
 				<!-- Games header -->
 				<h1 class="text-3xl font-bold text-black dark:text-white">{$_('apps')}</h1>
 				<!-- See more -->
