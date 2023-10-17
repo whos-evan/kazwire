@@ -1,3 +1,7 @@
+<svelte:head>
+	<title>Kazwire - Discord</title>
+</svelte:head>
+
 <grid class="flex flex-col rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark gap-1">
 	<h1 class="text-left text-4xl font-bold text-black dark:text-white">Discord</h1>
 	<p class="text-md text-black dark:text-white">
