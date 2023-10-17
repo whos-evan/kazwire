@@ -2,13 +2,15 @@
 	import { onMount } from 'svelte';
 
 	let showAlternate: boolean = false;
+	let imgURLs = ['discord-vert.png', 'discord-vert2.png'];
+	let imgURL = imgURLs[Math.floor(Math.random() * imgURLs.length)];
 
 	onMount(() => {
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
 
 		// Show alternative message if the ad isn't loaded
 		setTimeout(() => {
-			let element: HTMLElement | null = document.getElementById('Vert2');
+			let element: HTMLElement | null = document.getElementById('Vert');
 			if (element.childElementCount == 0) {
 				showAlternate = true;
 			}
@@ -29,7 +31,7 @@
 	</h3>
 
 	<ins
-		id="Vert2"
+		id="Vert"
 		class="adsbygoogle"
 		style="display:block"
 		data-ad-client="ca-pub-7648886706850999"
@@ -40,7 +42,7 @@
 	{#if showAlternate}
 		<a href="/discord" target="_blank">
 			<img
-				src="/assets/discord-vert.png"
+				src={imgURL}
 				style="height: 500px; margin: auto;"
 				alt="Discord promo"
 			/>

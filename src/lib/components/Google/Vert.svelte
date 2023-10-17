@@ -2,6 +2,8 @@
 	import { onMount } from 'svelte';
 
 	let showAlternate: boolean = false;
+	let imgURLs = ['discord-vert.png', 'discord-vert2.png'];
+	let imgURL = imgURLs[Math.floor(Math.random() * imgURLs.length)];
 
 	onMount(() => {
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
@@ -40,7 +42,7 @@
 	{#if showAlternate}
 		<a href="/discord" target="_blank">
 			<img
-				src="/assets/discord-vert.png"
+				src={imgURL}
 				style="height: 500px; margin: auto;"
 				alt="Discord promo"
 			/>
