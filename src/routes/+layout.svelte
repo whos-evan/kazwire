@@ -179,7 +179,7 @@
 							<li class="m-auto">
 								<a
 									class="block py-2 hover:text-primary md:p-4"
-									href="/discord"
+									href="/discord/prompt"
 									data-sveltekit-reload>{$_('support')}</a
 								>
 							</li>
@@ -261,7 +261,7 @@
 								<a href="/request" class="hover:underline">{$_('request_a_game')}</a>
 							</li>
 							<li class="mb-4">
-								<a href="/discord" class="hover:underline">{$_('get_support')}</a>
+								<a href="/discord/prompt" class="hover:underline">{$_('get_support')}</a>
 							</li>
 							<li class="mb-4">
 								<a href="/faq" class="hover:underline">{$_('faq')}</a>
