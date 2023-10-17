@@ -1,8 +1,24 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 
+	let showAlternate: boolean = false;
+
 	onMount(() => {
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
+
+		// Show alternative message if the ad isn't loaded
+		setTimeout(() => {
+			for (const element of document.querySelectorAll('ins.adsbygoogle')) {
+				if (element.childElementCount == 0) {
+					showAlternate = true;
+				}
+
+				// if data-ad-status="unfilled" then show alternate
+				if (element.getAttribute('data-ad-status') == 'unfilled') {
+					showAlternate = true;
+				}
+			}
+		}, 2000);
 	});
 </script>
 
@@ -12,6 +28,7 @@
 	>
 		Advertisement
 	</h3>
+
 	<ins
 		class="adsbygoogle"
 		style="display:block"
@@ -20,4 +37,13 @@
 		data-ad-format="auto"
 		data-full-width-responsive="true"
 	/>
+	{#if showAlternate}
+		<a href="/discord" target="_blank">
+			<img
+				src="/assets/discord-vert.png"
+				style="height: 500px; margin: auto;"
+				alt="Discord promo"
+			/>
+		</a>
+	{/if}
 </div>
