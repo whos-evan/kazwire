@@ -8,17 +8,16 @@
 
 		// Show alternative message if the ad isn't loaded
 		setTimeout(() => {
-			for (const element of document.querySelectorAll('ins.adsbygoogle')) {
-				if (element.childElementCount == 0) {
-					showAlternate = true;
-				}
-
-				// if data-ad-status="unfilled" then show alternate
-				if (element.getAttribute('data-ad-status') == 'unfilled') {
-					showAlternate = true;
-				}
+			let element: HTMLElement | null = document.getElementById('Vert2');
+			if (element.childElementCount == 0) {
+				showAlternate = true;
 			}
-		}, 2000);
+
+			// if data-ad-status="unfilled" then show alternate
+			if (element.getAttribute('data-ad-status') == 'unfilled') {
+				showAlternate = true;
+			}
+		}, 4000);
 	});
 </script>
 
@@ -30,6 +29,7 @@
 	</h3>
 
 	<ins
+		id="Vert2"
 		class="adsbygoogle"
 		style="display:block"
 		data-ad-client="ca-pub-7648886706850999"
