@@ -42,7 +42,7 @@
 	{#if showAlternate}
 		<a href="/discord" target="_blank">
 			<img
-				src={imgURL}
+				src={"/assets/" + imgURL}
 				style="height: 500px; margin: auto;"
 				alt="Discord promo"
 			/>
