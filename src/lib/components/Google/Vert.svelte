@@ -13,11 +13,13 @@
 			let element: HTMLElement | null = document.getElementById('Vert');
 			if (element.childElementCount == 0) {
 				showAlternate = true;
+				element.remove();
 			}
 
 			// if data-ad-status="unfilled" then show alternate
 			if (element.getAttribute('data-ad-status') == 'unfilled') {
 				showAlternate = true;
+				element.remove();
 			}
 		}, 4000);
 	});
