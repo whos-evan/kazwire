@@ -67,7 +67,10 @@
 			.then((res) => res.json())
 			.then((res) => {
 				games = res;
-				// scramble the games
+				// remove the entire game if it has an error message
+				games = games.filter((game) => !game.errorMessage);
+		
+				// scramble the games	
 				games.sort(() => Math.random() - 0.5);
 			})
 			.then(() => {
