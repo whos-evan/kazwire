@@ -13,8 +13,12 @@ export const load = (async ({ url, fetch }) => {
 
 	const games: Game[] = await response.json();
 
-	// Remove games with errors
-	games.filter(game => game.errorMessage);
+	// Remove all games completely if they have a an errorMessage that isn't null
+	games.forEach((game: Game, index: number) => {
+		if (game.errorMessage !== null) {
+			games.splice(index, 1);
+		}
+	});
 
 	return {
         // Return the game
