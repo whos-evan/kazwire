@@ -13,6 +13,9 @@ export const load = (async ({ url, fetch }) => {
 
 	const games: Game[] = await response.json();
 
+	// Remove games with errors
+	games.filter(game => game.errorMessage);
+
 	return {
         // Return the game
         games: games,
