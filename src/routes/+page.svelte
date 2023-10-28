@@ -1,19 +1,15 @@
 <script lang="ts">
 	import Hero from '$lib/components/Hero.svelte';
 	import Icon from '@iconify/svelte';
-	// import Showoff from '$lib/components/Showoff.svelte';
+
 	import Faq from '$lib/components/Faq.svelte';
 	import Partners from '$lib/components/Partners.svelte';
 
 	// import FinalGrade from '$lib/components/FinalGrade.svelte';
 	import SchoolRescue from '$lib/components/SchoolRescue.svelte';
-	import { neverShowSchoolRescue } from '$lib/stores';
+	import Halloween from '$lib/components/Halloween.svelte';
+	import { neverShowSchoolRescue, neverShowHalloween } from '$lib/stores';
 
-	// import Changelog from '$lib/components/Changelog.svelte';
-
-	// import RandomGame from '$lib/components/RandomGame.svelte';
-	// import LovedGame from '$lib/components/LovedGame.svelte';
-	// import LovedApp from '$lib/components/LovedApp.svelte';
 	import SmallBox from '$lib/components/Box/SmallBox.svelte';
 	import type { Game, App } from '@prisma/client';
 	import { PUBLIC_API_BASE_URL } from '$env/static/public';
@@ -57,7 +53,19 @@
 		}
 
 		return false;
-		
+	}
+
+	// max 12 days before haloween
+	function checkIfShowHalloween() {
+		const date = new Date();
+		const day = date.getDate();
+		const month = date.getMonth();
+
+		if (month === 9 && day >= 19 && day <= 31) {
+			return true;
+		}
+
+		return false;
 	}
 
 	onMount(() => {
@@ -168,6 +176,8 @@
 				{#if innerWidth > 1000}
 					{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
 						<SchoolRescue />
+					{:else if checkIfShowHalloween() && !$neverShowHalloween}
+						<Halloween />
 					{/if}
 				{/if}
 			</grid>

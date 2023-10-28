@@ -10,8 +10,8 @@
 	export let popular: boolean;
 	export let link: string;
 
-	export let height: String = '144';
-	export let width: String = '240';
+	export let height: String = '144px';
+	export let width: String = '240px';
 
 	// Optional platformSupport prop
 	export let platformSupport: string | undefined = undefined;
