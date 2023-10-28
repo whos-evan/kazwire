@@ -247,7 +247,7 @@
 									class="ml-1 mt-[3px] text-2xl text-green-500 transition hover:text-blue-500"
 								/>
 							</div>
-							<div class="flex flex-col">
+							<div class="flex flex-col gap-4">
 								<!-- Randomly sort then choose 3 -->
 								{#each suggestedGames.sort(() => Math.random() - 0.5).slice(0, 3) as game}
 									<!-- Show boxes on top of each other vertially -->

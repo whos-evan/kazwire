@@ -238,7 +238,7 @@
 					</Carousel>
 				{/if}
 
-				<grid class="mb-4 flex flex-row justify-start">
+				<grid class="mb-4 flex flex-row justify-start mt-2">
 					<h1 class="text-3xl font-bold text-black dark:text-white">{$_('popular_games')}</h1>
 					<Icon
 						icon="mdi:fire"
