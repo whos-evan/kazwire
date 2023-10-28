@@ -1,5 +1,6 @@
 <script lang="ts">
 	import { page } from '$app/stores';
+	import Icon from '@iconify/svelte';
 
 	import DefaultBox from '$lib/components/Box/DefaultBox.svelte';
 
@@ -23,24 +24,19 @@
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">
 	<form
-		class="flex flex-col justify-center space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0"
+		class="flex flex w-full max-w-[32rem] flex-col justify-center space-y-2 rounded-lg bg-none md:flex-row md:space-y-0 md:bg-white"
 		on:submit|preventDefault={() => (location.href = '/games?search=' + searchQuery)}
 	>
+		<img src="/logo.png" alt="Logo" class="my-auto ml-4 hidden h-6 w-6 md:block" />
 		<input
-			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
+			class="h-12 w-full rounded-lg px-3 text-base placeholder-gray-600 focus:outline-none md:rounded-r-none"
 			type="text"
 			placeholder="Search for your favorites..."
 			bind:value={searchQuery}
 		/>
-		<button
-			class="btn"
-			type="submit"
-		>
-			Search
-		</button>
 
 		<select
-			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
+			class="focus:shadow-outline h-12 rounded-lg px-3 text-base placeholder-gray-600 mr-2"
 			bind:value={tagQuery}
 			on:change={() => (location.href = '/games?tag=' + tagQuery)}
 		>
@@ -56,6 +52,10 @@
 			<option value="sports">Sports</option>
 			<option value="strategy">Strategy</option>
 		</select>
+
+		<button class="btn rounded-lg md:rounded-l-none" type="submit">
+			<Icon class="mx-auto h-6 w-6" icon="ic:baseline-search" />
+		</button>
 	</form>
 </div>
 

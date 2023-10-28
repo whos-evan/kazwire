@@ -46,9 +46,10 @@
 
 	function checkIfShowSchoolRescue() {
 		const date = new Date();
-		const day = date.getDate();
+		const day = date.getDay();
 
-		if (day >= 1 && day <= 5) {
+		// if it is a weekday
+		if (day !== 0 && day !== 6) {
 			// if it is between 8am and 3pm
 			if (date.getHours() >= 8 && date.getHours() <= 15) {
 				return true;
@@ -67,7 +68,10 @@
 			.then((res) => res.json())
 			.then((res) => {
 				games = res;
-				// scramble the games
+				// remove the entire game if it has an error message
+				games = games.filter((game) => !game.errorMessage);
+		
+				// scramble the games	
 				games.sort(() => Math.random() - 0.5);
 			})
 			.then(() => {

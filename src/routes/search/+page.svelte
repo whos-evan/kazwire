@@ -137,7 +137,7 @@
 		console.log(e);
 		setTimeout(() => {
 			// grab the current cursor position
-			
+
 			// Check if the button is still being hovered over by grabbing the event x, y and comparing it to the current x, y
 			if (e.x == mousePos.x && e.y == mousePos.y) {
 				// Move the button to the bottom right
@@ -180,16 +180,27 @@
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">
 	<form
-		class="flex flex-col justify-center space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0"
+		class="flex flex w-full max-w-[24rem] flex-col justify-center rounded-lg bg-none space-y-2 md:space-y-0 md:bg-white md:flex-row"
 		on:submit|preventDefault={() => iframeSearch()}
 	>
-		<input
+		<!-- Combined box with the search button on the right -->
+		<!-- <input
 			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
 			type="text"
 			placeholder="Search for your favorites..."
 			bind:value={searchQuery}
 		/>
-		<button class="btn" type="submit"> Search </button>
+		<button class="btn" type="submit"> Search </button> -->
+		<img src="/logo.png" alt="Logo" class="my-auto ml-4 hidden h-6 w-6 md:block" />
+		<input
+			class="h-12 w-full rounded-lg px-3 text-base placeholder-gray-600 focus:outline-none md:rounded-r-none"
+			type="text"
+			placeholder="Search for your favorites..."
+			bind:value={searchQuery}
+		/>
+		<button class="btn rounded-lg md:rounded-l-none" type="submit" on:click={() => iframeSearch()}>
+			<Icon class="mx-auto h-6 w-6" icon="ic:baseline-search" />
+		</button>
 	</form>
 </div>
 
