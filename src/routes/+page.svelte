@@ -215,7 +215,7 @@
 				{/if}
 
 				{#if likedGames.length > 0}
-					<grid class="mb-4 flex flex-row justify-start">
+					<grid class="mb-4 flex flex-row justify-start mt-2">
 						<h1 class="text-3xl font-bold text-black dark:text-white">{$_('loved_games')}</h1>
 						<Icon
 							icon="mdi:heart"
