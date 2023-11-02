@@ -77,7 +77,7 @@
 		const month = date.getMonth();
 
 		if (month === 10 && day >= 1 && day <= 30) {
-			if (random < 0.1) {
+			if (random < 0.4) {
 				return true;
 			} else {
 				return false;

@@ -6,6 +6,10 @@
 		neverShowHalloween.set(true);
 	}
 
+	let youtubeIds = ["aAkMkVFwAoo", "E8gmARGvPlI", "zA96AZVwvrk"]
+	let randomId = youtubeIds[Math.floor(Math.random() * youtubeIds.length)]
+	let url: string = `https://www.youtube.com/embed/${randomId}?autoplay=0&mute=0&loop=1`
+
 	let text: string = '';
 	// If thanksgiving day is today, show the thanksgiving message
 	if (new Date().getMonth() === 10 && new Date().getDate() === 25) {
@@ -23,7 +27,7 @@
 		class="pr-4"
 		width="560"
 		height="315"
-		src="https://www.youtube.com/embed/aAkMkVFwAoo?autoplay=0&mute=0&loop=1"
+		src={url}
 		title="YouTube video player"
 		frameborder="0"
 		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
