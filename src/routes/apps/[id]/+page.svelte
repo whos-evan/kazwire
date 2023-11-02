@@ -70,9 +70,9 @@
 	onMount(() => {
 		experiments.fetchOrCreateExperimentData(
 			'showSuggestedGames',
-			'2023-09-01',
+			'2023-12-01',
 			'Shows suggested games instead of ads.',
-			25,
+			75,
 			true
 		);
 		showSuggestedGames = experiments.shouldShow('showSuggestedGames');

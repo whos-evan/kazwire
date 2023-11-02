@@ -85,7 +85,7 @@
 			'showSuggestedGames',
 			'2023-12-01',
 			'Shows suggested games instead of ads.',
-			35,
+			75,
 			true
 		);
 		showSuggestedGames = experiments.shouldShow('showSuggestedGames');
