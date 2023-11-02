@@ -8,7 +8,8 @@
 	// import FinalGrade from '$lib/components/FinalGrade.svelte';
 	import SchoolRescue from '$lib/components/SchoolRescue.svelte';
 	import Halloween from '$lib/components/Halloween.svelte';
-	import { neverShowSchoolRescue, neverShowHalloween } from '$lib/stores';
+	import Thanksgiving from '$lib/components/Thanksgiving.svelte';
+	import { neverShowSchoolRescue, neverShowHalloween, neverShowThanksgiving } from '$lib/stores';
 
 	import SmallBox from '$lib/components/Box/SmallBox.svelte';
 	import type { Game, App } from '@prisma/client';
@@ -68,6 +69,24 @@
 		return false;
 	}
 
+	let random: number = Math.random();
+	// Between nov 1, and nov 30
+	function checkIfThanksgiving() {
+		const date = new Date();
+		const day = date.getDate();
+		const month = date.getMonth();
+
+		if (month === 10 && day >= 1 && day <= 30) {
+			if (random < 0.1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		return false;
+	}
+
 	onMount(() => {
 		likedAppsIds = appLike.fetchLikes();
 		likedGamesIds = gameLike.fetchLikes();
@@ -78,8 +97,8 @@
 				games = res;
 				// remove the entire game if it has an error message
 				games = games.filter((game) => !game.errorMessage);
-		
-				// scramble the games	
+
+				// scramble the games
 				games.sort(() => Math.random() - 0.5);
 			})
 			.then(() => {
@@ -176,6 +195,8 @@
 				{#if innerWidth > 1000}
 					{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
 						<SchoolRescue />
+					{:else if checkIfThanksgiving() && !$neverShowThanksgiving && innerWidth > 1224}
+						<Thanksgiving />
 					{:else if checkIfShowHalloween() && !$neverShowHalloween}
 						<Halloween />
 					{/if}
@@ -215,7 +236,7 @@
 				{/if}
 
 				{#if likedGames.length > 0}
-					<grid class="mb-4 flex flex-row justify-start mt-2">
+					<grid class="mb-4 mt-2 flex flex-row justify-start">
 						<h1 class="text-3xl font-bold text-black dark:text-white">{$_('loved_games')}</h1>
 						<Icon
 							icon="mdi:heart"
@@ -238,7 +259,7 @@
 					</Carousel>
 				{/if}
 
-				<grid class="mb-4 flex flex-row justify-start mt-2">
+				<grid class="mb-4 mt-2 flex flex-row justify-start">
 					<h1 class="text-3xl font-bold text-black dark:text-white">{$_('popular_games')}</h1>
 					<Icon
 						icon="mdi:fire"
