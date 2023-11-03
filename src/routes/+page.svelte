@@ -10,7 +10,7 @@
 	import Halloween from '$lib/components/Halloween.svelte';
 	import Thanksgiving from '$lib/components/Thanksgiving.svelte';
 	import Fortnite from '$lib/components/Fortnite.svelte';
-	import { neverShowSchoolRescue, neverShowHalloween, neverShowThanksgiving } from '$lib/stores';
+	import { neverShowSchoolRescue, neverShowHalloween, neverShowThanksgiving, neverShowFortnite } from '$lib/stores';
 
 	import SmallBox from '$lib/components/Box/SmallBox.svelte';
 	import type { Game, App } from '@prisma/client';
@@ -210,7 +210,7 @@
 				{#if innerWidth > 1000}
 					{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
 						<SchoolRescue />
-					{:else if checkIfFortniteSeason()}
+					{:else if checkIfFortniteSeason() && !$neverShowFortnite}
 						<Fortnite />
 					{:else if checkIfThanksgiving() && !$neverShowThanksgiving && innerWidth > 1224}
 						<Thanksgiving />
