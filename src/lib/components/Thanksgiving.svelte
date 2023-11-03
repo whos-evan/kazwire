@@ -1,14 +1,14 @@
 <script lang="ts">
-	import { neverShowHalloween } from '$lib/stores';
+	import { neverShowThanksgiving } from '$lib/stores';
 
 	function neverShowAgain() {
-		localStorage.setItem('neverShowHalloween', 'true');
-		neverShowHalloween.set(true);
+		localStorage.setItem('neverShowThanksgiving', 'true');
+		neverShowThanksgiving.set(true);
 	}
 
-	let youtubeIds = ["aAkMkVFwAoo", "E8gmARGvPlI", "zA96AZVwvrk"]
-	let randomId = youtubeIds[Math.floor(Math.random() * youtubeIds.length)]
-	let url: string = `https://www.youtube.com/embed/${randomId}?autoplay=0&mute=0&loop=1`
+	let youtubeIds = ['aAkMkVFwAoo', 'E8gmARGvPlI', 'zA96AZVwvrk'];
+	let randomId = youtubeIds[Math.floor(Math.random() * youtubeIds.length)];
+	let url: string = `https://www.youtube.com/embed/${randomId}?autoplay=0&mute=0&loop=1`;
 
 	let text: string = '';
 	// If thanksgiving day is today, show the thanksgiving message
