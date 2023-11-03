@@ -9,6 +9,7 @@
 	import SchoolRescue from '$lib/components/SchoolRescue.svelte';
 	import Halloween from '$lib/components/Halloween.svelte';
 	import Thanksgiving from '$lib/components/Thanksgiving.svelte';
+	import Fortnite from '$lib/components/Fortnite.svelte';
 	import { neverShowSchoolRescue, neverShowHalloween, neverShowThanksgiving } from '$lib/stores';
 
 	import SmallBox from '$lib/components/Box/SmallBox.svelte';
@@ -82,6 +83,20 @@
 			} else {
 				return false;
 			}
+		}
+
+		return false;
+	}
+
+	// Between nov, 3, 2023 and nov, 6, 2023
+	function checkIfFortniteSeason() {
+		const date = new Date();
+		const day = date.getDate();
+		const month = date.getMonth();
+		const year = date.getFullYear();
+
+		if (year === 2023 && month === 10 && day >= 3 && day <= 6) {
+			return true;
 		}
 
 		return false;
@@ -195,6 +210,8 @@
 				{#if innerWidth > 1000}
 					{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
 						<SchoolRescue />
+					{:else if checkIfFortniteSeason()}
+						<Fortnite />
 					{:else if checkIfThanksgiving() && !$neverShowThanksgiving && innerWidth > 1224}
 						<Thanksgiving />
 					{:else if checkIfShowHalloween() && !$neverShowHalloween}
