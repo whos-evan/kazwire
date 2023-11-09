@@ -5,6 +5,38 @@
 	export let image: string;
 	export let name: string;
 	export let description: string;
+	let maxLength: number = 150;
+	// If the description is more than 50 characters, then find a end of a sentence (either ?, ., or !) and cut it off there.
+	if (description.length > maxLength) {
+		// Find the nearest end of a sentence after 50 characters
+		// Either ?, ., or !
+
+		// Find the first occurence of a ? after 50 characters
+		let questionMarkIndex = description.indexOf('?', maxLength);
+
+		// Find the first occurence of a . after 50 characters
+		let periodIndex = description.indexOf('.', maxLength);
+
+		// Find the first occurence of a ! after 50 characters
+		let exclamationMarkIndex = description.indexOf('!', maxLength);
+
+		// Find the nearest end of a sentence
+		let nearestEndOfSentence = Math.min(
+			questionMarkIndex == -1 ? Infinity : questionMarkIndex,
+			periodIndex == -1 ? Infinity : periodIndex,
+			exclamationMarkIndex == -1 ? Infinity : exclamationMarkIndex
+		);
+
+		// If the nearest end of a sentence is not Infinity, then cut off the description there.
+		if (nearestEndOfSentence != Infinity) {
+			description = description.substring(0, nearestEndOfSentence + 1);
+		} else {
+			// If the nearest end of a sentence is Infinity, then cut off the description at 50 characters.
+			description = description.substring(0, maxLength);
+		}
+	}
+
+
 	export let developer: string;
 	export let tags: string[];
 	export let popular: boolean;
