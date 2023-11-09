@@ -230,10 +230,9 @@
 
 <svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
 <svelte:head>
-
-
-	<title>Kazwire - {data.game.name}</title>
-	<meta name="description" content="Play {data.game.name} for free now on Kazwire!" />
+	<title>{data.game.name} - Play it Unblocked on Kazwire!</title>
+	<meta property="og:title" content="{data.game.name}" />
+	<meta name="description" content="{data.game.description}" />
 	<meta property="og:description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:image" content="/game/img/{data.game.image}" />
 
