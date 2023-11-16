@@ -27,6 +27,7 @@
 	import { appLike, gameLike } from '$lib/likeContent';
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
+	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 
 	let innerWidth: number;
 
@@ -221,6 +222,9 @@
 			</grid>
 		</grid>
 		<grid class="row-start-2 rounded-3xl bg-tertiary p-8 dark:bg-tertiaryDark">
+			{#if innerWidth > 1000}
+				<Leaderboard />
+			{/if}
 			<grid class="flex flex-col gap-2">
 				{#if browser}
 					{#await suggest.Games() then suggestedGames}
