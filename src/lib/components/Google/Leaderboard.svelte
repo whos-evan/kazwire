@@ -2,7 +2,7 @@
 	import { onMount } from 'svelte';
 
 	let showAlternate: boolean = false;
-	let imgURLs = ['discord-leaderboard.png'];
+	let imgURLs = ['discord-lb.png'];
 	let imgURL = imgURLs[Math.floor(Math.random() * imgURLs.length)];
 
 	onMount(() => {
