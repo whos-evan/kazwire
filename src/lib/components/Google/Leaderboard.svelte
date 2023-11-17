@@ -10,7 +10,7 @@
 
 		// Show alternative message if the ad isn't loaded
 		setTimeout(() => {
-			let element: HTMLElement | null = document.getElementById('Vert');
+			let element: HTMLElement | null = document.getElementById('Leaderboard');
 			if (element.childElementCount == 0) {
 				showAlternate = true;
 				element.remove();
@@ -32,6 +32,7 @@
 		Advertisement
 	</h3>
 	<ins
+		id="Leaderboard"
 		class="adsbygoogle"
 		style="display:inline-block;width:728px;height:90px"
 		data-ad-client="ca-pub-7648886706850999"
