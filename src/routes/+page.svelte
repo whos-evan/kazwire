@@ -10,7 +10,13 @@
 	import Halloween from '$lib/components/Halloween.svelte';
 	import Thanksgiving from '$lib/components/Thanksgiving.svelte';
 	import Fortnite from '$lib/components/Fortnite.svelte';
-	import { neverShowSchoolRescue, neverShowHalloween, neverShowThanksgiving, neverShowFortnite, neverShowMidterms } from '$lib/stores';
+	import {
+		neverShowSchoolRescue,
+		neverShowHalloween,
+		neverShowThanksgiving,
+		neverShowFortnite,
+		neverShowMidterms
+	} from '$lib/stores';
 
 	import SmallBox from '$lib/components/Box/SmallBox.svelte';
 	import type { Game, App } from '@prisma/client';
@@ -220,11 +226,11 @@
 {#if !$isLoading}
 	<div class="grid-rows-auto grid max-w-max grid-cols-1 gap-8">
 		<grid class="row-start-1">
-			<grid class="flex gap-8">
+			<grid class="flex h-full gap-8">
 				<Hero />
 				{#if innerWidth > 1000}
 					{#if checkIfMidterms() && !$neverShowMidterms}
-						<FinalGrade />
+						<FinalGrade close={true} />
 					{:else if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
 						<SchoolRescue />
 					{:else if checkIfFortniteSeason() && !$neverShowFortnite}

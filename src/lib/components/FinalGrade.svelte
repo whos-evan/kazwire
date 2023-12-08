@@ -1,4 +1,7 @@
 <script lang="ts">
+	export const close: boolean = false;
+	import { neverShowMidterms } from '$lib/stores';
+
 	let currentGrade: number;
 	let desiredGrade: number;
 	let finalWeight: number;
@@ -20,6 +23,11 @@
 	let showPopup: boolean = false;
 	function closePopup() {
 		showPopup = false;
+	}
+
+	function neverShowMidtermsAgain() {
+		neverShowMidterms.set(true);
+		localStorage.setItem('neverShowMidterms', 'true');
 	}
 
 	let popupTitle: string = '';
@@ -123,15 +131,21 @@
 	</div>
 	<!-- Button to calculate the final grade -->
 	<div class="mt-10 flex flex-col items-center justify-center gap-4">
-		<button
-			class="btn-lg"
-			on:click={() => {
-				calculateFinalGrade();
-				openPopup();
-			}}
-		>
-			Calculate
-		</button>
+		<div class="flex flex-row gap-4">
+			<button
+				class="btn-lg"
+				on:click={() => {
+					calculateFinalGrade();
+					openPopup();
+				}}
+			>
+				Calculate
+			</button>
+			<!-- set the local storage variable to true so we never show the midterms again -->
+			<button class="btn-lg bg-red-500" on:click={() => neverShowMidtermsAgain()}>
+				Don't show this again
+			</button>
+		</div>
 		{#if errorMessage != ''}
 			<p class="text-sm text-red-500">{errorMessage}</p>
 		{/if}
