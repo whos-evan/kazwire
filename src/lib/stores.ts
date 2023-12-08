@@ -8,6 +8,7 @@ export const neverShowSchoolRescue = writable(false);
 export const neverShowHalloween = writable(false);
 export const neverShowThanksgiving = writable(false);
 export const neverShowFortnite = writable(false);
+export const neverShowMidterms = writable(false);
 
 // Update the store with data from local storage
 if (browser) {
@@ -25,5 +26,9 @@ if (browser) {
 
 	if (localStorage.getItem('neverShowFortnite') === 'true') {
 		neverShowFortnite.set(true);
+	}
+
+	if (localStorage.getItem('neverShowMidterms') === 'true') {
+		neverShowMidterms.set(true);
 	}
 }
