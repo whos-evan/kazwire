@@ -142,9 +142,11 @@
 				Calculate
 			</button>
 			<!-- set the local storage variable to true so we never show the midterms again -->
-			<button class="btn-lg bg-red-500" on:click={() => neverShowMidtermsAgain()}>
-				Don't show this again
-			</button>
+			{#if close}
+				<button class="btn-lg bg-red-500" on:click={() => neverShowMidtermsAgain()}>
+					Don't show this again
+				</button>
+			{/if}
 		</div>
 		{#if errorMessage != ''}
 			<p class="text-sm text-red-500">{errorMessage}</p>
