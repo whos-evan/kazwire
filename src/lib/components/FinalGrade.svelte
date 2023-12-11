@@ -1,5 +1,5 @@
 <script lang="ts">
-	export const close: boolean = false;
+	export let close: boolean = false;
 	import { neverShowMidterms } from '$lib/stores';
 
 	let currentGrade: number;
