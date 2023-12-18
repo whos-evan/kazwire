@@ -57,7 +57,7 @@
 		} else if (finalGrade > 90) {
 			funnyMessage = 'You got this, I believe in you.';
 		} else if (finalGrade > 80) {
-			funnyMessage = 'You probally want to study, maybe some LoFi beats will help?';
+			funnyMessage = 'You probably want to study, maybe some LoFi beats will help?';
 		} else if (finalGrade > 70) {
 			funnyMessage = "Why even try? You're fine, you'll get the grade you want. Probably.";
 		} else if (finalGrade > 60) {
