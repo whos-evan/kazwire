@@ -383,6 +383,18 @@
             "tags": []
         },
         {
+            "description": "HexGL is a futuristic, fast-paced racing game built by Thibaut Despoulain using HTML5, Javascript and WebGL and a tribute to the original Wipeout and F-Zero series.",
+            "developer": "BKcore",
+            "id": "hexGL",
+            "image": "hexgl.png",
+            "platform": "PC",
+            "name": "HexGL",
+            "tags": [
+                "action",
+                "racing"
+            ]
+        },
+        {
             "description": "In Basket Random game, try to score a basket by using only one key with different variations from each other!",
             "developer": "Unknown",
             "id": "basket-random",
