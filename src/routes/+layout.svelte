@@ -304,7 +304,7 @@
 			<hr class="my-6 border-gray-300 sm:mx-auto lg:my-8" />
 			<div class="sm:flex sm:items-center sm:justify-between">
 				<span class="text-sm text-white sm:text-center"
-					>© 2023 <a href="https://kazwire.com/" class="hover:underline">Kazwire</a>
+					>© 2024 <a href="https://kazwire.com/" class="hover:underline">Kazwire</a>
 				</span>
 				<div class="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
 					<a href="https://discord.gg/FEkFSWRFM9" class="text-white hover:text-primary">
