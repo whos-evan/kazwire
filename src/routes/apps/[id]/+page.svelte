@@ -57,7 +57,7 @@
 				const sw = reg.installing || reg.waiting;
 				sw.onstatechange = function () {
 					if (sw.state === 'installed') {
-						// Instead of refreshing the page, reload the service worker
+						// Reload page
 						window.location.reload();
 					}
 				};
@@ -66,18 +66,18 @@
 	}
 
 	import { experiments } from '$lib/experiments';
-	let showSuggestedGames: boolean = false;
-	onMount(() => {
-		experiments.fetchOrCreateExperimentData(
-			'showSuggestedGames',
-			'2023-12-01',
-			'Shows suggested games instead of ads.',
-			75,
-			true
-		);
-		showSuggestedGames = experiments.shouldShow('showSuggestedGames');
+	let showSuggestedApps: boolean = false;
 
+	import SmallBox from '$lib/components/Box/SmallBox.svelte';
+	onMount(() => {
 		registerServiceWorker();
+
+		// Check if the app is liked and set the isLiked store
+		if (appLike.isLiked(data.app.id)) {
+			isLiked.set(true);
+		} else {
+			isLiked.set(false);
+		}
 	});
 
 	// Fullscreen the iframe
@@ -138,13 +138,12 @@
 	import { isLiked } from '$lib/stores';
 
 	import Icon from '@iconify/svelte';
+	import Tag from '$lib/components/Tag.svelte';
 
 	import Vert from '$lib/components/Google/Vert.svelte';
 	import Vert2 from '$lib/components/Google/Vert2.svelte';
 	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 	import Horz from '$lib/components/Google/Horz.svelte';
-	import SmallBox from '$lib/components/Box/SmallBox.svelte';
-	import { suggest } from '$lib/gameAlgorithm';
 	let innerWidth: number = 0;
 
 	let loadedFrame: boolean = false;
@@ -163,6 +162,17 @@
 		fetch(PUBLIC_API_BASE_URL + '/api/apps/' + data.app.id + '/views', {
 			method: 'POST'
 		});
+	}
+
+	function loadedApp() {
+		// Wait 0.5 second before removing the loading screen
+		setTimeout(() => {
+			// Remove the hidden class from the iframe
+			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+			iframe.classList.remove('opacity-0');
+
+			loadingApp = false;
+		}, 500);
 	}
 
 	function moveShrinkButton(e: MouseEvent) {
@@ -192,24 +202,13 @@
 	}
 
 	let mousePos = { x: 0, y: 0 };
-
-	function loadedApp() {
-		// Wait 0.5 second before removing the loading screen
-		setTimeout(() => {
-			// Remove the hidden class from the iframe
-			const iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
-			iframe.classList.remove('opacity-0');
-
-			loadingApp = false;
-		}, 500);
-	}
 </script>
 
 <svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
 <svelte:head>
-
-	<title>Kazwire - {data.app.name}</title>
-	<meta name="description" content="Play {data.app.name} for free now on Kazwire!" />
+	<title>{data.app.name} - Play Unblocked on Kazwire!</title>
+	<meta property="og:title" content={data.app.name} />
+	<meta name="description" content={data.app.description} />
 	<meta property="og:description" content="Play {data.app.name} for free now on Kazwire!" />
 	<meta property="og:image" content="/app/img/{data.app.image}" />
 
@@ -232,16 +231,14 @@
 {/if}
 
 <div class="relative flex flex-row justify-center">
-	<div
-		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
-	>
+	<div class="float-left flex h-fit pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
 		{#if innerWidth > 1224}
-			{#if showSuggestedGames}
-				{#await suggest.Games() then suggestedGames}
-					{#if suggestedGames.length > 0}
+			{#if showSuggestedApps}
+				{#await suggest.Apps() then suggestedApps}
+					{#if suggestedApps.length > 0}
 						<div class="mx-4">
 							<div class="flex flex-row">
-								<h1 class="mb-2 text-xl font-bold text-black dark:text-white">Suggested Games</h1>
+								<h1 class="mb-2 text-xl font-bold text-black dark:text-white">Suggested Apps</h1>
 								<Icon
 									icon="mdi:controller"
 									class="ml-1 mt-[3px] text-2xl text-green-500 transition hover:text-blue-500"
@@ -249,17 +246,17 @@
 							</div>
 							<div class="flex flex-col gap-4">
 								<!-- Randomly sort then choose 3 -->
-								{#each suggestedGames.sort(() => Math.random() - 0.5).slice(0, 3) as game}
+								{#each suggestedApps.sort(() => Math.random() - 0.5).slice(0, 3) as app}
 									<!-- Show boxes on top of each other vertially -->
 									<SmallBox
-										image={'/game/img/' + game.image}
-										name={game.name}
-										developer={game.developer}
-										link={'/games/' + game.id}
-										popular={game.popular || false}
-										errorMessage={game.errorMessage || undefined}
-										platformSupport={game.platform}
-										GA_EVENT="click_suggested_game"
+										image={'/app/img/' + app.image}
+										name={app.name}
+										developer={app.developer}
+										link={'/apps/' + app.id}
+										popular={app.popular || false}
+										errorMessage={app.errorMessage || undefined}
+										platformSupport={app.platform}
+										GA_EVENT="click_suggested_app"
 									/>
 								{/each}
 							</div>
@@ -272,7 +269,7 @@
 				<Vert />
 			{/if}
 		{/if}
-		<div class="align-center mb-14 flex-grow">
+		<div class="align-center mb-14 h-[calc(80vh-200px)] min-h-[24rem] flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 				{#if !loadedFrame}
 					<div class="relative flex h-full items-center justify-center overflow-hidden">
@@ -291,13 +288,13 @@
 								{data.app.name}
 							</h1>
 
-							<!-- Play now button -->
+							<!-- Access now button -->
 							<button
 								class="lg:btn-xl btn mt-8"
 								on:click={() => addView()}
 								on:click={() => loadFrame()}
 							>
-								Play Now
+								Access Now
 								<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
 							</button>
 						</div>
@@ -321,13 +318,25 @@
 							</div>
 						</div>
 					{/if}
-					<iframe
-						class="h-full w-full rounded-t-lg bg-white opacity-0"
-						id="iframe"
-						title={data.app.name}
-						src={encodeURL(data.app.embedURL)}
-						on:load={() => loadedApp()}
-					/>
+					<!-- Static app -->
+					{#if data.app.embedURL == null}
+						<iframe
+							src={'/app/static/' + data.app.id + '/index.html'}
+							class="h-full w-full rounded-t-lg bg-white opacity-0"
+							id="iframe"
+							title={data.app.name}
+							on:load={() => loadedApp()}
+						/>
+						<!-- Ruffle app -->
+					{:else if data.app.embedURL != null}
+						<iframe
+							class="h-full w-full rounded-t-lg bg-white opacity-0"
+							id="iframe"
+							title={data.app.name}
+							src={encodeURL(data.app.embedURL)}
+							on:load={() => loadedApp()}
+						/>
+					{/if}
 				{/if}
 			</div>
 

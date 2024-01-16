@@ -231,8 +231,8 @@
 <svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
 <svelte:head>
 	<title>{data.game.name} - Play Unblocked on Kazwire!</title>
-	<meta property="og:title" content="{data.game.name}" />
-	<meta name="description" content="{data.game.description}" />
+	<meta property="og:title" content={data.game.name} />
+	<meta name="description" content={data.game.description} />
 	<meta property="og:description" content="Play {data.game.name} for free now on Kazwire!" />
 	<meta property="og:image" content="/game/img/{data.game.image}" />
 
@@ -255,9 +255,7 @@
 {/if}
 
 <div class="relative flex flex-row justify-center">
-	<div
-		class="float-left flex h-[calc(80vh-132px)] min-h-[calc(24rem+120px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
-	>
+	<div class="float-left flex h-fit pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
 		{#if innerWidth > 1224}
 			{#if showSuggestedGames}
 				{#await suggest.Games() then suggestedGames}
@@ -295,7 +293,7 @@
 				<Vert />
 			{/if}
 		{/if}
-		<div class="align-center mb-14 flex-grow min-h-[24rem] h-[calc(80vh-200px)]">
+		<div class="align-center mb-14 h-[calc(80vh-200px)] min-h-[24rem] flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 				{#if !loadedFrame}
 					<div class="relative flex h-full items-center justify-center overflow-hidden">

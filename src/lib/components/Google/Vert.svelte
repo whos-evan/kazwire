@@ -25,7 +25,7 @@
 	});
 </script>
 
-<div class="items-center justify-center p-4 [text-align-last:center]">
+<div class="h-fit items-center justify-center p-4 [text-align-last:center]">
 	<h3
 		class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400"
 	>
@@ -44,8 +44,8 @@
 	{#if showAlternate}
 		<a href="/discord" target="_blank">
 			<img
-				src={"/assets/" + imgURL}
-				style="height: 500px; margin: auto;"
+				src={'/assets/' + imgURL}
+				class="mx-auto h-[calc(76vh-200px)] min-h-[24rem] object-contain"
 				alt="Discord promo"
 			/>
 		</a>
