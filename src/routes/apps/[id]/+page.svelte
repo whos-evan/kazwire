@@ -402,7 +402,7 @@
 	<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
 	<div class="flex">
 		<p class="text-gray-600 dark:text-gray-300">
-			{data.app.views} Play{#if data.app.views != 1}s{/if}
+			{data.app.views} View{#if data.app.views != 1}s{/if}
 		</p>
 	</div>
 </div>
