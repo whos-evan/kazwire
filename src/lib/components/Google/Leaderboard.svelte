@@ -40,8 +40,10 @@
 	/>
 
 	{#if showAlternate}
-		<a href="/discord" target="_blank">
-			<img src={'/assets/' + imgURL} style="height: 90; margin: auto;" alt="Discord promo" />
-		</a>
+		<div class="flex justify-center">
+			<a href="/discord" target="_blank">
+				<img src={'/assets/' + imgURL} style="height: 90px;" alt="Discord promo" />
+			</a>
+		</div>
 	{/if}
 </div>

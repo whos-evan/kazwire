@@ -89,6 +89,7 @@
 			true
 		);
 		showSuggestedGames = experiments.shouldShow('showSuggestedGames');
+		console;
 
 		// Fire event when its finished rendering
 		const event = new CustomEvent('rendered', {
@@ -165,7 +166,9 @@
 	import Vert2 from '$lib/components/Google/Vert2.svelte';
 	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 	import Horz from '$lib/components/Google/Horz.svelte';
+	import SmallBoxLoading from '$lib/components/Box/SmallBoxLoading.svelte';
 	let innerWidth: number = 0;
+	let innerHeight: number = 0;
 
 	let loadedFrame: boolean = false;
 	let loadingGame: boolean = false;
@@ -228,7 +231,11 @@
 	let mousePos = { x: 0, y: 0 };
 </script>
 
-<svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
+<svelte:window
+	bind:innerWidth
+	bind:innerHeight
+	on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })}
+/>
 <svelte:head>
 	<title>{data.game.name} - Play Unblocked on Kazwire!</title>
 	<meta property="og:title" content={data.game.name} />
@@ -258,7 +265,16 @@
 	<div class="float-left flex h-fit pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
 		{#if innerWidth > 1224}
 			{#if showSuggestedGames}
-				{#await suggest.Games() then suggestedGames}
+				{#await suggest.Games()}
+					<div class="mx-4 flex animate-pulse flex-col gap-2">
+						<div class="h-[2rem] w-52 rounded-lg bg-gray-300" />
+						<div class="flex flex-col gap-2">
+							{#each Array(3) as _}
+								<SmallBoxLoading />
+							{/each}
+						</div>
+					</div>
+				{:then suggestedGames}
 					{#if suggestedGames.length > 0}
 						<div class="mx-4">
 							<div class="flex flex-row">
@@ -272,16 +288,33 @@
 								<!-- Randomly sort then choose 3 -->
 								{#each suggestedGames.sort(() => Math.random() - 0.5).slice(0, 3) as game}
 									<!-- Show boxes on top of each other vertially -->
-									<SmallBox
-										image={'/game/img/' + game.image}
-										name={game.name}
-										developer={game.developer}
-										link={'/games/' + game.id}
-										popular={game.popular || false}
-										errorMessage={game.errorMessage || undefined}
-										platformSupport={game.platform}
-										GA_EVENT="click_suggested_game"
-									/>
+									{#if innerHeight > 800}
+										<SmallBox
+											image={'/game/img/' + game.image}
+											name={game.name}
+											developer={game.developer}
+											link={'/games/' + game.id}
+											popular={game.popular || false}
+											errorMessage={game.errorMessage || undefined}
+											platformSupport={game.platform}
+											height="144px"
+											width="225px"
+											GA_EVENT="click_suggested_game"
+										/>
+									{:else}
+										<SmallBox
+											image={'/game/img/' + game.image}
+											name={game.name}
+											developer={game.developer}
+											link={'/games/' + game.id}
+											popular={game.popular || false}
+											errorMessage={game.errorMessage || undefined}
+											platformSupport={game.platform}
+											height="124px"
+											width="225px"
+											GA_EVENT="click_suggested_game"
+										/>
+									{/if}
 								{/each}
 							</div>
 						</div>

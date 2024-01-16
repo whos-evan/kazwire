@@ -233,41 +233,7 @@
 <div class="relative flex flex-row justify-center">
 	<div class="float-left flex h-fit pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
 		{#if innerWidth > 1224}
-			{#if showSuggestedApps}
-				{#await suggest.Apps() then suggestedApps}
-					{#if suggestedApps.length > 0}
-						<div class="mx-4">
-							<div class="flex flex-row">
-								<h1 class="mb-2 text-xl font-bold text-black dark:text-white">Suggested Apps</h1>
-								<Icon
-									icon="mdi:controller"
-									class="ml-1 mt-[3px] text-2xl text-green-500 transition hover:text-blue-500"
-								/>
-							</div>
-							<div class="flex flex-col gap-4">
-								<!-- Randomly sort then choose 3 -->
-								{#each suggestedApps.sort(() => Math.random() - 0.5).slice(0, 3) as app}
-									<!-- Show boxes on top of each other vertially -->
-									<SmallBox
-										image={'/app/img/' + app.image}
-										name={app.name}
-										developer={app.developer}
-										link={'/apps/' + app.id}
-										popular={app.popular || false}
-										errorMessage={app.errorMessage || undefined}
-										platformSupport={app.platform}
-										GA_EVENT="click_suggested_app"
-									/>
-								{/each}
-							</div>
-						</div>
-					{:else}
-						<Vert />
-					{/if}
-				{/await}
-			{:else}
-				<Vert />
-			{/if}
+			<Vert />
 		{/if}
 		<div class="align-center mb-14 h-[calc(80vh-200px)] min-h-[24rem] flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
