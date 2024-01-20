@@ -83,6 +83,11 @@
 			"p_3_part_2": "and let us know!",
 			"p_4": "Games shown in this website are the property of their respective owners. If you see your game here and would like it removed please refer to our",
 			"dmca_page": "DMCA page"
+		},
+		"discord": {
+			"instructions": "To access our Discord you can view it through Kazwire or you can choose to visit the URL directly.",
+			"access_through_kazwire": "Access through Kazwire",
+			"access_directly": "Access Directly"
 		}
 	}
 }

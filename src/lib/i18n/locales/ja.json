@@ -83,6 +83,11 @@
 			"p_3_part_2": "に参加してお知らせください！",
 			"p_4": "このウェブサイトに表示されるゲームはそれぞれの所有者の財産です。ここでゲームを見つけて削除してほしい場合は、当社の",
 			"dmca_page": "DMCAページ"
-		}
+		},
+		"discord": {
+			"instructions": "当社のDiscordサーバーにアクセスするには、Kazwireを介して表示するか、直接URLを訪れることができます。",
+			"access_through_kazwire": "Kazwireを介したアクセス",
+			"access_directly": "直接アクセス"
+		}		
 	}
 }

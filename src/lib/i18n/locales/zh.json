@@ -83,6 +83,11 @@
 			"p_3_part_2": "并告诉我们！",
 			"p_4": "在本网站中显示的游戏属于其各自所有者。如果您在这里看到您的游戏并希望将其移除，请参阅我们的",
 			"dmca_page": "DMCA页面"
+		},
+		"discord": {
+			"instructions": "要访问我们的Discord服务器，您可以通过Kazwire查看，或直接访问URL。",
+			"access_through_kazwire": "通过Kazwire访问",
+			"access_directly": "直接访问"
 		}
 	}
 }

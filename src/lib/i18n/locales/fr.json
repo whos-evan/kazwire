@@ -83,6 +83,11 @@
 			"p_3_part_2": "et faites-le nous savoir !",
 			"p_4": "Les jeux affichés sur ce site sont la propriété de leurs propriétaires respectifs. Si vous voyez votre jeu ici et souhaitez le supprimer, veuillez vous référer à notre",
 			"dmca_page": "page DMCA"
-		}
+		},
+		"discord": {
+			"instructions": "Pour accéder à notre serveur Discord, vous pouvez le consulter via Kazwire ou choisir de visiter l'URL directement.",
+			"access_through_kazwire": "Accéder via Kazwire",
+			"access_directly": "Accès direct"
+		}		
 	}
 }
