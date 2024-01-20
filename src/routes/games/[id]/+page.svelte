@@ -167,6 +167,8 @@
 	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 	import Horz from '$lib/components/Google/Horz.svelte';
 	import SmallBoxLoading from '$lib/components/Box/SmallBoxLoading.svelte';
+	import { isLoading, _ } from 'svelte-i18n';
+
 	let innerWidth: number = 0;
 	let innerHeight: number = 0;
 
@@ -261,229 +263,231 @@
 	</button>
 {/if}
 
-<div class="relative flex flex-row justify-center">
-	<div class="float-left flex h-fit pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
-		{#if innerWidth > 1224}
-			{#if showSuggestedGames}
-				{#await suggest.Games()}
-					<div class="mx-4 flex animate-pulse flex-col gap-2">
-						<div class="h-[2rem] w-52 rounded-lg bg-gray-300" />
-						<div class="flex flex-col gap-2">
-							{#each Array(3) as _}
-								<SmallBoxLoading />
-							{/each}
-						</div>
-					</div>
-				{:then suggestedGames}
-					{#if suggestedGames.length > 0}
-						<div class="mx-4">
-							<div class="flex flex-row">
-								<h1 class="mb-2 text-xl font-bold text-black dark:text-white">Suggested Games</h1>
-								<Icon
-									icon="mdi:controller"
-									class="ml-1 mt-[3px] text-2xl text-green-500 transition hover:text-blue-500"
-								/>
-							</div>
-							<div class="flex flex-col gap-4">
-								<!-- Randomly sort then choose 3 -->
-								{#each suggestedGames.sort(() => Math.random() - 0.5).slice(0, 3) as game}
-									<!-- Show boxes on top of each other vertially -->
-									{#if innerHeight > 800}
-										<SmallBox
-											image={'/game/img/' + game.image}
-											name={game.name}
-											developer={game.developer}
-											link={'/games/' + game.id}
-											popular={game.popular || false}
-											errorMessage={game.errorMessage || undefined}
-											platformSupport={game.platform}
-											height="144px"
-											width="225px"
-											GA_EVENT="click_suggested_game"
-										/>
-									{:else}
-										<SmallBox
-											image={'/game/img/' + game.image}
-											name={game.name}
-											developer={game.developer}
-											link={'/games/' + game.id}
-											popular={game.popular || false}
-											errorMessage={game.errorMessage || undefined}
-											platformSupport={game.platform}
-											height="124px"
-											width="225px"
-											GA_EVENT="click_suggested_game"
-										/>
-									{/if}
+{#if !$isLoading}
+	<div class="relative flex flex-row justify-center">
+		<div class="float-left flex h-fit pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
+			{#if innerWidth > 1224}
+				{#if showSuggestedGames}
+					{#await suggest.Games()}
+						<div class="mx-4 flex animate-pulse flex-col gap-2">
+							<div class="h-[2rem] w-52 rounded-lg bg-gray-300" />
+							<div class="flex flex-col gap-2">
+								{#each Array(3) as _}
+									<SmallBoxLoading />
 								{/each}
 							</div>
 						</div>
-					{:else}
-						<Vert />
-					{/if}
-				{/await}
-			{:else}
-				<Vert />
-			{/if}
-		{/if}
-		<div class="align-center mb-14 h-[calc(80vh-200px)] min-h-[24rem] flex-grow">
-			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
-				{#if !loadedFrame}
-					<div class="relative flex h-full items-center justify-center overflow-hidden">
-						<img
-							class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg"
-							src="/game/img/{data.game.image}"
-							alt="Game"
-						/>
-						<div class="absolute z-10 h-full w-full rounded-t-lg bg-black" />
-
-						<!-- Content on top of the image -->
-						<div class="absolute z-30 flex flex-col items-center justify-center">
-							<h1
-								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-							>
-								{data.game.name}
-							</h1>
-
-							<!-- Play now button -->
-							<button
-								class="lg:btn-xl btn mt-8"
-								on:click={() => addView()}
-								on:click={() => loadFrame()}
-							>
-								Play Now
-								<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
-							</button>
-						</div>
-					</div>
-				{:else}
-					{#if loadingGame}
-						<!-- Loading animation -->
-						<div
-							class="relative flex h-full items-center justify-center rounded-t-lg bg-black transition-all"
-						>
-							<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
-								<div class="flex flex-col items-center gap-8 sm:flex-row">
-									<img src="/logo.png" alt="Loading" class="h-16 w-16" />
-									<h1
-										class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-									>
-										Kazwire
-									</h1>
+					{:then suggestedGames}
+						{#if suggestedGames.length > 0}
+							<div class="mx-4">
+								<div class="flex flex-row">
+									<h1 class="mb-2 text-xl font-bold text-black dark:text-white">Suggested Games</h1>
+									<Icon
+										icon="mdi:controller"
+										class="ml-1 mt-[3px] text-2xl text-green-500 transition hover:text-blue-500"
+									/>
 								</div>
-								<Icon icon="line-md:loading-alt-loop" class="animate-spin text-6xl text-white" />
+								<div class="flex flex-col gap-4">
+									<!-- Randomly sort then choose 3 -->
+									{#each suggestedGames.sort(() => Math.random() - 0.5).slice(0, 3) as game}
+										<!-- Show boxes on top of each other vertially -->
+										{#if innerHeight > 800}
+											<SmallBox
+												image={'/game/img/' + game.image}
+												name={game.name}
+												developer={game.developer}
+												link={'/games/' + game.id}
+												popular={game.popular || false}
+												errorMessage={game.errorMessage || undefined}
+												platformSupport={game.platform}
+												height="144px"
+												width="225px"
+												GA_EVENT="click_suggested_game"
+											/>
+										{:else}
+											<SmallBox
+												image={'/game/img/' + game.image}
+												name={game.name}
+												developer={game.developer}
+												link={'/games/' + game.id}
+												popular={game.popular || false}
+												errorMessage={game.errorMessage || undefined}
+												platformSupport={game.platform}
+												height="124px"
+												width="225px"
+												GA_EVENT="click_suggested_game"
+											/>
+										{/if}
+									{/each}
+								</div>
+							</div>
+						{:else}
+							<Vert />
+						{/if}
+					{/await}
+				{:else}
+					<Vert />
+				{/if}
+			{/if}
+			<div class="align-center mb-14 h-[calc(80vh-200px)] min-h-[24rem] flex-grow">
+				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
+					{#if !loadedFrame}
+						<div class="relative flex h-full items-center justify-center overflow-hidden">
+							<img
+								class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg"
+								src="/game/img/{data.game.image}"
+								alt="Game"
+							/>
+							<div class="absolute z-10 h-full w-full rounded-t-lg bg-black" />
+
+							<!-- Content on top of the image -->
+							<div class="absolute z-30 flex flex-col items-center justify-center">
+								<h1
+									class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+								>
+									{data.game.name}
+								</h1>
+
+								<!-- Play now button -->
+								<button
+									class="lg:btn-xl btn mt-8"
+									on:click={() => addView()}
+									on:click={() => loadFrame()}
+								>
+									{$_('pages.games.play_now')}
+									<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
+								</button>
 							</div>
 						</div>
-					{/if}
-					<!-- Static game -->
-					{#if data.game.embedURL == null && data.game.emulatorType == null}
-						<iframe
-							src={'/game/static/' + data.game.id + '/index.html'}
-							class="h-full w-full rounded-t-lg bg-white opacity-0"
-							id="iframe"
-							title={data.game.name}
-							on:load={() => loadedGame()}
-						/>
-						<!-- Ruffle game -->
-					{:else if data.game.emulatorType == 'ruffle'}
-						<iframe
-							src={'/games/ruffle/' + data.game.id}
-							class="h-full w-full rounded-t-lg bg-white opacity-0"
-							id="iframe"
-							title={data.game.name}
-							on:load={() => loadedGame()}
-						/>
-						<!-- EmulatorJS game -->
-					{:else if data.game.emulatorType == 'emulatorjs'}
-						<iframe
-							src={'/games/emulator/' + data.game.id}
-							class="h-full w-full rounded-t-lg bg-white opacity-0"
-							id="iframe"
-							title={data.game.name}
-						/>
-						<!-- Proxied game -->
-					{:else if data.game.embedURL != null}
-						<iframe
-							class="h-full w-full rounded-t-lg bg-white opacity-0"
-							id="iframe"
-							title={data.game.name}
-							src={encodeURL(data.game.embedURL)}
-							on:load={() => loadedGame()}
-						/>
-					{/if}
-				{/if}
-			</div>
-
-			<div
-				class="relative mt-2 w-full items-center rounded-b-lg bg-tertiary text-black dark:bg-tertiaryDark dark:text-white"
-			>
-				<div class="float-right mr-5">
-					<button class="mt-4 fill-white" on:click={() => fullScreen()}>
-						<!-- Full screen -->
-						<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
-					</button>
-				</div>
-				<div class="float-right mr-5">
-					<button class="mt-4" on:click={() => expandiFrame()}>
-						<!-- Fill screen -->
-						<Icon class="h-6 w-6" icon="ic:round-expand" />
-					</button>
-				</div>
-				<div class="float-right mr-5">
-					<button id="heart" class="mt-4" on:click={() => gameLike.toggle(data.game.id)}>
-						<!-- Heart -->
-						{#if $isLiked}
-							<Icon class="h-6 w-6 text-red-500" icon="mdi:heart" />
-						{:else}
-							<Icon class="h-6 w-6" icon="mdi:heart-outline" />
+					{:else}
+						{#if loadingGame}
+							<!-- Loading animation -->
+							<div
+								class="relative flex h-full items-center justify-center rounded-t-lg bg-black transition-all"
+							>
+								<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+									<div class="flex flex-col items-center gap-8 sm:flex-row">
+										<img src="/logo.png" alt="Loading" class="h-16 w-16" />
+										<h1
+											class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+										>
+											Kazwire
+										</h1>
+									</div>
+									<Icon icon="line-md:loading-alt-loop" class="animate-spin text-6xl text-white" />
+								</div>
+							</div>
 						{/if}
-					</button>
+						<!-- Static game -->
+						{#if data.game.embedURL == null && data.game.emulatorType == null}
+							<iframe
+								src={'/game/static/' + data.game.id + '/index.html'}
+								class="h-full w-full rounded-t-lg bg-white opacity-0"
+								id="iframe"
+								title={data.game.name}
+								on:load={() => loadedGame()}
+							/>
+							<!-- Ruffle game -->
+						{:else if data.game.emulatorType == 'ruffle'}
+							<iframe
+								src={'/games/ruffle/' + data.game.id}
+								class="h-full w-full rounded-t-lg bg-white opacity-0"
+								id="iframe"
+								title={data.game.name}
+								on:load={() => loadedGame()}
+							/>
+							<!-- EmulatorJS game -->
+						{:else if data.game.emulatorType == 'emulatorjs'}
+							<iframe
+								src={'/games/emulator/' + data.game.id}
+								class="h-full w-full rounded-t-lg bg-white opacity-0"
+								id="iframe"
+								title={data.game.name}
+							/>
+							<!-- Proxied game -->
+						{:else if data.game.embedURL != null}
+							<iframe
+								class="h-full w-full rounded-t-lg bg-white opacity-0"
+								id="iframe"
+								title={data.game.name}
+								src={encodeURL(data.game.embedURL)}
+								on:load={() => loadedGame()}
+							/>
+						{/if}
+					{/if}
 				</div>
-				<div class="flex">
-					<!-- Logo -->
-					<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
-					<!-- Name -->
-					<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
-						{data.game.name}
+
+				<div
+					class="relative mt-2 w-full items-center rounded-b-lg bg-tertiary text-black dark:bg-tertiaryDark dark:text-white"
+				>
+					<div class="float-right mr-5">
+						<button class="mt-4 fill-white" on:click={() => fullScreen()}>
+							<!-- Full screen -->
+							<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
+						</button>
+					</div>
+					<div class="float-right mr-5">
+						<button class="mt-4" on:click={() => expandiFrame()}>
+							<!-- Fill screen -->
+							<Icon class="h-6 w-6" icon="ic:round-expand" />
+						</button>
+					</div>
+					<div class="float-right mr-5">
+						<button id="heart" class="mt-4" on:click={() => gameLike.toggle(data.game.id)}>
+							<!-- Heart -->
+							{#if $isLiked}
+								<Icon class="h-6 w-6 text-red-500" icon="mdi:heart" />
+							{:else}
+								<Icon class="h-6 w-6" icon="mdi:heart-outline" />
+							{/if}
+						</button>
+					</div>
+					<div class="flex">
+						<!-- Logo -->
+						<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
+						<!-- Name -->
+						<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
+							{data.game.name}
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		{#if innerWidth > 824}
+			<Vert2 />
+		{/if}
 	</div>
-	{#if innerWidth > 824}
-		<Vert2 />
+
+	{#if innerWidth > 730}
+		<Leaderboard />
+	{:else}
+		<Horz />
 	{/if}
-</div>
 
-{#if innerWidth > 730}
-	<Leaderboard />
-{:else}
-	<Horz />
-{/if}
-
-<!-- Bottom area for displaying more information about the game -->
-<div
-	class="rounded-lg bg-tertiary p-5 align-middle text-black dark:bg-tertiaryDark dark:text-white"
->
-	<h1 class="text-3xl font-bold">{data.game.name}</h1>
-	<p class="text-gray-800 dark:text-gray-200">
-		{data.game.developer}
-	</p>
-	<p class="mt-1">
-		{data.game.description}
-	</p>
-	<!-- Line -->
-	<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
-	<div class="flex">
-		<p class="text-gray-600 dark:text-gray-300">
-			{data.game.views} Play{#if data.game.views != 1}s{/if}
+	<!-- Bottom area for displaying more information about the game -->
+	<div
+		class="rounded-lg bg-tertiary p-5 align-middle text-black dark:bg-tertiaryDark dark:text-white"
+	>
+		<h1 class="text-3xl font-bold">{data.game.name}</h1>
+		<p class="text-gray-800 dark:text-gray-200">
+			{data.game.developer}
 		</p>
-	</div>
-	{#if data.game.tags.length > 0}
-		<div class="mt-1 flex flex-row flex-wrap gap-2">
-			{#each data.game.tags as tag}
-				<Tag {tag} />
-			{/each}
+		<p class="mt-1">
+			{data.game.description}
+		</p>
+		<!-- Line -->
+		<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
+		<div class="flex">
+			<p class="text-gray-600 dark:text-gray-300">
+				{data.game.views} Play{#if data.game.views != 1}s{/if}
+			</p>
 		</div>
-	{/if}
-</div>
+		{#if data.game.tags.length > 0}
+			<div class="mt-1 flex flex-row flex-wrap gap-2">
+				{#each data.game.tags as tag}
+					<Tag {tag} />
+				{/each}
+			</div>
+		{/if}
+	</div>
+{/if}

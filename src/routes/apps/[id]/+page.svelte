@@ -144,6 +144,8 @@
 	import Vert2 from '$lib/components/Google/Vert2.svelte';
 	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 	import Horz from '$lib/components/Google/Horz.svelte';
+
+	import { isLoading, _ } from 'svelte-i18n';
 	let innerWidth: number = 0;
 
 	let loadedFrame: boolean = false;
@@ -206,7 +208,7 @@
 
 <svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.x, y: e.y })} />
 <svelte:head>
-	<title>{data.app.name} - Play Unblocked on Kazwire!</title>
+	<title>{data.app.name} - Use Unblocked on Kazwire!</title>
 	<meta property="og:title" content={data.app.name} />
 	<meta name="description" content={data.app.description} />
 	<meta property="og:description" content="Play {data.app.name} for free now on Kazwire!" />
@@ -230,145 +232,147 @@
 	</button>
 {/if}
 
-<div class="relative flex flex-row justify-center">
-	<div class="float-left flex h-fit pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
-		{#if innerWidth > 1224}
-			<Vert />
-		{/if}
-		<div class="align-center mb-14 h-[calc(80vh-200px)] min-h-[24rem] flex-grow">
-			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
-				{#if !loadedFrame}
-					<div class="relative flex h-full items-center justify-center overflow-hidden">
-						<img
-							class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg"
-							src="/app/img/{data.app.image}"
-							alt="App"
-						/>
-						<div class="absolute z-10 h-full w-full rounded-t-lg bg-black" />
+{#if !$isLoading}
+	<div class="relative flex flex-row justify-center">
+		<div class="float-left flex h-fit pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
+			{#if innerWidth > 1224}
+				<Vert />
+			{/if}
+			<div class="align-center mb-14 h-[calc(80vh-200px)] min-h-[24rem] flex-grow">
+				<div id="frame" class="h-full w-full rounded-t-lg bg-white">
+					{#if !loadedFrame}
+						<div class="relative flex h-full items-center justify-center overflow-hidden">
+							<img
+								class="absolute z-20 h-full w-full object-cover opacity-60 blur-lg"
+								src="/app/img/{data.app.image}"
+								alt="App"
+							/>
+							<div class="absolute z-10 h-full w-full rounded-t-lg bg-black" />
 
-						<!-- Content on top of the image -->
-						<div class="absolute z-30 flex flex-col items-center justify-center">
-							<h1
-								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-							>
-								{data.app.name}
-							</h1>
+							<!-- Content on top of the image -->
+							<div class="absolute z-30 flex flex-col items-center justify-center">
+								<h1
+									class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+								>
+									{data.app.name}
+								</h1>
 
-							<!-- Access now button -->
-							<button
-								class="lg:btn-xl btn mt-8"
-								on:click={() => addView()}
-								on:click={() => loadFrame()}
-							>
-								Access Now
-								<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
-							</button>
-						</div>
-					</div>
-				{:else}
-					{#if loadingApp}
-						<!-- Loading animation -->
-						<div
-							class="relative flex h-full items-center justify-center rounded-t-lg bg-black transition-all"
-						>
-							<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
-								<div class="flex flex-col items-center gap-8 sm:flex-row">
-									<img src="/logo.png" alt="Loading" class="h-16 w-16" />
-									<h1
-										class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-									>
-										Kazwire
-									</h1>
-								</div>
-								<Icon icon="line-md:loading-alt-loop" class="animate-spin text-6xl text-white" />
+								<!-- Access now button -->
+								<button
+									class="lg:btn-xl btn mt-8"
+									on:click={() => addView()}
+									on:click={() => loadFrame()}
+								>
+									{$_('pages.apps.access_now')}
+									<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
+								</button>
 							</div>
 						</div>
-					{/if}
-					<!-- Static app -->
-					{#if data.app.embedURL == null}
-						<iframe
-							src={'/app/static/' + data.app.id + '/index.html'}
-							class="h-full w-full rounded-t-lg bg-white opacity-0"
-							id="iframe"
-							title={data.app.name}
-							on:load={() => loadedApp()}
-						/>
-						<!-- Ruffle app -->
-					{:else if data.app.embedURL != null}
-						<iframe
-							class="h-full w-full rounded-t-lg bg-white opacity-0"
-							id="iframe"
-							title={data.app.name}
-							src={encodeURL(data.app.embedURL)}
-							on:load={() => loadedApp()}
-						/>
-					{/if}
-				{/if}
-			</div>
-
-			<div
-				class="relative mt-2 w-full items-center rounded-b-lg bg-tertiary text-black dark:bg-tertiaryDark dark:text-white"
-			>
-				<div class="float-right mr-5">
-					<button class="mt-4 fill-white" on:click={() => fullScreen()}>
-						<!-- Full screen -->
-						<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
-					</button>
-				</div>
-				<div class="float-right mr-5">
-					<button class="mt-4" on:click={() => expandiFrame()}>
-						<!-- Fill screen -->
-						<Icon class="h-6 w-6" icon="ic:round-expand" />
-					</button>
-				</div>
-				<div class="float-right mr-5">
-					<button id="heart" class="mt-4" on:click={() => appLike.toggle(data.app.id)}>
-						<!-- Heart -->
-						{#if $isLiked}
-							<Icon class="h-6 w-6 text-red-500" icon="mdi:heart" />
-						{:else}
-							<Icon class="h-6 w-6" icon="mdi:heart-outline" />
+					{:else}
+						{#if loadingApp}
+							<!-- Loading animation -->
+							<div
+								class="relative flex h-full items-center justify-center rounded-t-lg bg-black transition-all"
+							>
+								<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+									<div class="flex flex-col items-center gap-8 sm:flex-row">
+										<img src="/logo.png" alt="Loading" class="h-16 w-16" />
+										<h1
+											class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+										>
+											Kazwire
+										</h1>
+									</div>
+									<Icon icon="line-md:loading-alt-loop" class="animate-spin text-6xl text-white" />
+								</div>
+							</div>
 						{/if}
-					</button>
+						<!-- Static app -->
+						{#if data.app.embedURL == null}
+							<iframe
+								src={'/app/static/' + data.app.id + '/index.html'}
+								class="h-full w-full rounded-t-lg bg-white opacity-0"
+								id="iframe"
+								title={data.app.name}
+								on:load={() => loadedApp()}
+							/>
+							<!-- Ruffle app -->
+						{:else if data.app.embedURL != null}
+							<iframe
+								class="h-full w-full rounded-t-lg bg-white opacity-0"
+								id="iframe"
+								title={data.app.name}
+								src={encodeURL(data.app.embedURL)}
+								on:load={() => loadedApp()}
+							/>
+						{/if}
+					{/if}
 				</div>
-				<div class="flex">
-					<!-- Logo -->
-					<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
-					<!-- Name -->
-					<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
-						{data.app.name}
+
+				<div
+					class="relative mt-2 w-full items-center rounded-b-lg bg-tertiary text-black dark:bg-tertiaryDark dark:text-white"
+				>
+					<div class="float-right mr-5">
+						<button class="mt-4 fill-white" on:click={() => fullScreen()}>
+							<!-- Full screen -->
+							<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
+						</button>
+					</div>
+					<div class="float-right mr-5">
+						<button class="mt-4" on:click={() => expandiFrame()}>
+							<!-- Fill screen -->
+							<Icon class="h-6 w-6" icon="ic:round-expand" />
+						</button>
+					</div>
+					<div class="float-right mr-5">
+						<button id="heart" class="mt-4" on:click={() => appLike.toggle(data.app.id)}>
+							<!-- Heart -->
+							{#if $isLiked}
+								<Icon class="h-6 w-6 text-red-500" icon="mdi:heart" />
+							{:else}
+								<Icon class="h-6 w-6" icon="mdi:heart-outline" />
+							{/if}
+						</button>
+					</div>
+					<div class="flex">
+						<!-- Logo -->
+						<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
+						<!-- Name -->
+						<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
+							{data.app.name}
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+		{#if innerWidth > 824}
+			<Vert2 />
+		{/if}
 	</div>
-	{#if innerWidth > 824}
-		<Vert2 />
+
+	{#if innerWidth > 730}
+		<Leaderboard />
+	{:else}
+		<Horz />
 	{/if}
-</div>
 
-{#if innerWidth > 730}
-	<Leaderboard />
-{:else}
-	<Horz />
-{/if}
-
-<!-- Bottom area for displaying more information about the app -->
-<div
-	class="rounded-lg bg-tertiary p-5 align-middle text-black dark:bg-tertiaryDark dark:text-white"
->
-	<h1 class="text-3xl font-bold">{data.app.name}</h1>
-	<p class="text-gray-800 dark:text-gray-200">
-		{data.app.developer}
-	</p>
-	<p class="mt-1">
-		{data.app.description}
-	</p>
-	<!-- Line -->
-	<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
-	<div class="flex">
-		<p class="text-gray-600 dark:text-gray-300">
-			{data.app.views} View{#if data.app.views != 1}s{/if}
+	<!-- Bottom area for displaying more information about the app -->
+	<div
+		class="rounded-lg bg-tertiary p-5 align-middle text-black dark:bg-tertiaryDark dark:text-white"
+	>
+		<h1 class="text-3xl font-bold">{data.app.name}</h1>
+		<p class="text-gray-800 dark:text-gray-200">
+			{data.app.developer}
 		</p>
+		<p class="mt-1">
+			{data.app.description}
+		</p>
+		<!-- Line -->
+		<div class="my-2 h-[2px] w-10 rounded-lg bg-gray-400 dark:bg-gray-700" />
+		<div class="flex">
+			<p class="text-gray-600 dark:text-gray-300">
+				{data.app.views} View{#if data.app.views != 1}s{/if}
+			</p>
+		</div>
 	</div>
-</div>
+{/if}

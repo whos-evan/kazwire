@@ -7,6 +7,7 @@
 	import { onMount } from 'svelte';
 
 	import { page } from '$app/stores';
+	import { isLoading, _ } from 'svelte-i18n';
 
 	let searchQuery: string = $page.url.searchParams.get('search') || '';
 	let contentTitle: string = $page.url.searchParams.get('title') || '';
@@ -143,146 +144,150 @@
 	<script src="/uv.js" defer></script>
 </svelte:head>
 
-<div class="relative flex flex-row justify-center">
-	<div class="float-left flex h-[100vh] w-full pb-2">
-		<div class="align-center mb-14 flex-grow">
-			{#if showErrorScreen}
-				<div class="relative flex h-full items-center justify-center bg-primary">
-					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
-						<div class="flex flex-col items-center gap-8 sm:flex-row">
-							<img src="/logo.png" alt="Loading" class="h-24 w-24" />
-							<h1
-								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-							>
-								Kazwire
-							</h1>
+{#if !$isLoading}
+	<div class="relative flex flex-row justify-center">
+		<div class="float-left flex h-[100vh] w-full pb-2">
+			<div class="align-center mb-14 flex-grow">
+				{#if showErrorScreen}
+					<div class="relative flex h-full items-center justify-center bg-primary">
+						<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+							<div class="flex flex-col items-center gap-8 sm:flex-row">
+								<img src="/logo.png" alt="Loading" class="h-24 w-24" />
+								<h1
+									class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+								>
+									Kazwire
+								</h1>
+							</div>
+							<p class="text-center text-2xl text-white">
+								{$_('pages.embed.error')}
+							</p>
 						</div>
-						<p class="text-center text-2xl text-white">An error occured while loading the page.</p>
 					</div>
-				</div>
-			{:else if searchQuery == ''}
-				<!-- Tutorial on how to embed this on any site-->
-				<div class="relative flex h-full items-center justify-center bg-primary">
-					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
-						<div class="flex flex-col items-center gap-8 sm:flex-row">
-							<img src="/logo.png" alt="Loading" class="h-24 w-24" />
-							<h1
-								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-							>
-								Kazwire
-							</h1>
-						</div>
-						<p class="text-center text-2xl text-white">
-							To embed this on your site, add this code to your site:
-						</p>
-						<div class="rounded-lg bg-white p-4">
-							<div
-								style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
-							>
-								<pre style="margin: 0; line-height: 125%"><span style="color: #007700"
-										>&lt;iframe</span
-									>
+				{:else if searchQuery == ''}
+					<!-- Tutorial on how to embed this on any site-->
+					<div class="relative flex h-full items-center justify-center bg-primary">
+						<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+							<div class="flex flex-col items-center gap-8 sm:flex-row">
+								<img src="/logo.png" alt="Loading" class="h-24 w-24" />
+								<h1
+									class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+								>
+									Kazwire
+								</h1>
+							</div>
+							<p class="text-center text-2xl text-white">
+								{$_('pages.embed.instructions')}
+							</p>
+							<div class="rounded-lg bg-white p-4">
+								<div
+									style="background: #ffffff; overflow:auto;width:auto;border:solid gray;border-width:.1em .1em .1em .8em;padding:.2em .6em;"
+								>
+									<pre style="margin: 0; line-height: 125%"><span style="color: #007700"
+											>&lt;iframe</span
+										>
 <span style="color: #0000CC">src=</span><span style="background-color: #fff0f0"
-										>&quot;https://kazwire.com/embed?search=SEARCH_QUERY_HERE&quot;</span
-									>
+											>&quot;https://kazwire.com/embed?search=SEARCH_QUERY_HERE&quot;</span
+										>
 <span style="color: #0000CC">width=</span><span style="background-color: #fff0f0"
-										>&quot;100%&quot;</span
-									>
+											>&quot;100%&quot;</span
+										>
 <span style="color: #0000CC">height=</span><span style="background-color: #fff0f0"
-										>&quot;100%&quot;</span
-									>
+											>&quot;100%&quot;</span
+										>
 <span style="color: #0000CC">frameborder=</span><span style="background-color: #fff0f0"
-										>&quot;0&quot;</span
-									>
+											>&quot;0&quot;</span
+										>
 <span style="color: #0000CC">allowfullscreen</span>
 <span style="color: #007700">/&gt;</span>
 </pre>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			{:else if !showScreen}
-				<div class="relative flex h-full items-center justify-center overflow-hidden">
-					<div class="absolute z-10 h-full w-full bg-primary" />
+				{:else if !showScreen}
+					<div class="relative flex h-full items-center justify-center overflow-hidden">
+						<div class="absolute z-10 h-full w-full bg-primary" />
 
-					<!-- Content on top of the image -->
-					<div class="absolute z-30 flex flex-col items-center justify-center">
-						<h1
-							class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
-						>
-							{contentTitle}
-						</h1>
-						<!-- Play now button -->
-						<button class="lg:btn-xl btn mt-8" on:click={() => loadContent()}>
-							Start Now
-							<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
-						</button>
+						<!-- Content on top of the image -->
+						<div class="absolute z-30 flex flex-col items-center justify-center">
+							<h1
+								class="text-center text-3xl font-bold text-white sm:text-5xl md:text-5xl lg:text-8xl"
+							>
+								{contentTitle}
+							</h1>
+							<!-- Play now button -->
+							<button class="lg:btn-xl btn mt-8" on:click={() => loadContent()}>
+								Start Now
+								<Icon icon="carbon:play-filled" class="my-auto ml-1 inline-block" />
+							</button>
+						</div>
+						<p class="text-md z-40 mb-4 mt-auto text-center text-gray-200">
+							<!-- open link in new tab -->
+
+							{$_('pages.embed.made_in_partnership')}
+							<a class="hover:underline" target="_blank" href="https://kazwire.com">Kazwire.com</a>
+						</p>
 					</div>
-					<p class="text-md z-40 mb-4 mt-auto text-center text-gray-200">
-						<!-- open link in new tab -->
-
-						Made in partnership with
-						<a class="hover:underline" target="_blank" href="https://kazwire.com">Kazwire.com</a>
-					</p>
-				</div>
-			{:else if showLoadingScreen}
-				<div class="relative flex h-full items-center justify-center bg-primary transition-all">
-					<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
-						<!-- Loading text -->
-						<h3 class="text-center text-2xl text-gray-100">
-							Browse for free now on <a
+				{:else if showLoadingScreen}
+					<div class="relative flex h-full items-center justify-center bg-primary transition-all">
+						<div class="absolute z-30 flex flex-col items-center justify-center gap-8">
+							<!-- Loading text -->
+							<h3 class="text-center text-2xl text-gray-100">
+								{$_('pages.embed.browse_for_free')} <a
+									class="hover:underline"
+									target="_blank"
+									href="https://kazwire.com">Kazwire.com</a
+								>!
+							</h3>
+							<div class="h-2.5 w-full min-w-[20rem] rounded-full bg-gray-100">
+								<div
+									class="h-2.5 rounded-full bg-secondary transition-all"
+									style="width: {percentDone}%"
+								/>
+							</div>
+						</div>
+						<p class="text-md mb-4 mt-auto text-center text-gray-200">
+							{$_('pages.embed.made_in_partnership')} <a
 								class="hover:underline"
 								target="_blank"
 								href="https://kazwire.com">Kazwire.com</a
-							>!
-						</h3>
-						<div class="h-2.5 w-full min-w-[20rem] rounded-full bg-gray-100">
-							<div
-								class="h-2.5 rounded-full bg-secondary transition-all"
-								style="width: {percentDone}%"
-							/>
-						</div>
+							>
+						</p>
 					</div>
-					<p class="text-md mb-4 mt-auto text-center text-gray-200">
-						Made in partnership with <a
-							class="hover:underline"
-							target="_blank"
-							href="https://kazwire.com">Kazwire.com</a
+				{/if}
+
+				<div id="frame" class="hidden h-full w-full bg-gray-100">
+					<iframe class="h-full w-full bg-gray-100 opacity-0" id="iframe" title="Search frame" />
+				</div>
+
+				<div
+					class="relative w-full items-center bg-tertiary py-1 text-black dark:bg-tertiaryDark dark:text-white"
+				>
+					<div class="float-right mr-5">
+						<button class="mt-4 fill-white" on:click={() => fullScreen()}>
+							<!-- Full screen -->
+							<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
+						</button>
+					</div>
+					<div class="float-right mr-5">
+						<button
+							id="reload"
+							class="mt-4 fill-white active:animate-spin"
+							on:click={() => reloadiFrame()}
 						>
-					</p>
-				</div>
-			{/if}
-
-			<div id="frame" class="hidden h-full w-full bg-gray-100">
-				<iframe class="h-full w-full bg-gray-100 opacity-0" id="iframe" title="Search frame" />
-			</div>
-
-			<div
-				class="relative w-full items-center bg-tertiary py-1 text-black dark:bg-tertiaryDark dark:text-white"
-			>
-				<div class="float-right mr-5">
-					<button class="mt-4 fill-white" on:click={() => fullScreen()}>
-						<!-- Full screen -->
-						<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
-					</button>
-				</div>
-				<div class="float-right mr-5">
-					<button
-						id="reload"
-						class="mt-4 fill-white active:animate-spin"
-						on:click={() => reloadiFrame()}
-					>
-						<Icon class="h-6 w-6" icon="mdi:reload" />
-					</button>
-				</div>
-				<div class="flex">
-					<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
-					<!-- TODO: Setup dynamic title change based on iFrame's content title -->
-					<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
-						<a class="hover:underline" target="_blank" href="https://kazwire.com">Kazwire.com</a>
+							<Icon class="h-6 w-6" icon="mdi:reload" />
+						</button>
+					</div>
+					<div class="flex">
+						<img src="/logo.png" alt="Logo" class="my-auto ml-4 h-6 w-6" />
+						<!-- TODO: Setup dynamic title change based on iFrame's content title -->
+						<div class="ml-2 truncate text-2xl font-bold leading-[3.5rem]">
+							<a class="hover:underline" target="_blank" href="https://kazwire.com">Kazwire.com</a>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-</div>
+{/if}

@@ -5,7 +5,7 @@
 </svelte:head>
 
 
-<div id="home" class="text-white">
+<div id="home" class="dark:text-white text-black">
 	<h1 class="text-3xl font-bold">About the Developers</h1>
 	<br />
 	<p class="text-xl">
