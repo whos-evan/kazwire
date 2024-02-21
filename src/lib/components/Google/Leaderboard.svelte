@@ -23,25 +23,30 @@
 			}
 		}, 4000);
 	});
+	import { isLoading, _ } from 'svelte-i18n';
 </script>
 
-<div class="items-center justify-center p-4 [text-align-last:center]">
-	<h3
-		class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400"
-	>
-		Advertisement
-	</h3>
-	<ins
-		id="Leaderboard"
-		class="adsbygoogle"
-		style="display:inline-block;width:728px;height:90px"
-		data-ad-client="ca-pub-7648886706850999"
-		data-ad-slot="4023379916"
-	/>
+{#if !$isLoading}
+	<div class="items-center justify-center p-4 [text-align-last:center]">
+		<h3
+			class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400"
+		>
+			{$_('pages.google.advertisement')}
+		</h3>
+		<ins
+			id="Leaderboard"
+			class="adsbygoogle"
+			style="display:inline-block;width:728px;height:90px"
+			data-ad-client="ca-pub-7648886706850999"
+			data-ad-slot="4023379916"
+		/>
 
-	{#if showAlternate}
-		<a href="/discord" target="_blank">
-			<img src={'/assets/' + imgURL} style="height: 90; margin: auto;" alt="Discord promo" />
-		</a>
-	{/if}
-</div>
+		{#if showAlternate}
+			<div class="flex justify-center">
+				<a href="/discord" target="_blank">
+					<img src={'/assets/' + imgURL} style="height: 90px;" alt="Discord promo" />
+				</a>
+			</div>
+		{/if}
+	</div>
+{/if}

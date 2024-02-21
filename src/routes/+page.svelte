@@ -10,7 +10,13 @@
 	import Halloween from '$lib/components/Halloween.svelte';
 	import Thanksgiving from '$lib/components/Thanksgiving.svelte';
 	import Fortnite from '$lib/components/Fortnite.svelte';
-	import { neverShowSchoolRescue, neverShowHalloween, neverShowThanksgiving, neverShowFortnite } from '$lib/stores';
+	import {
+		neverShowSchoolRescue,
+		neverShowHalloween,
+		neverShowThanksgiving,
+		neverShowFortnite,
+		neverShowMidterms
+	} from '$lib/stores';
 
 	import SmallBox from '$lib/components/Box/SmallBox.svelte';
 	import type { Game, App } from '@prisma/client';
@@ -28,6 +34,7 @@
 	import { onMount } from 'svelte';
 	import { browser } from '$app/environment';
 	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
+	import FinalGrade from '$lib/components/FinalGrade.svelte';
 
 	let innerWidth: number;
 
@@ -65,6 +72,19 @@
 		const month = date.getMonth();
 
 		if (month === 9 && day >= 19 && day <= 31) {
+			return true;
+		}
+
+		return false;
+	}
+
+	// dec 7th to jan 7th
+	function checkIfMidterms() {
+		const date = new Date();
+		const day = date.getDate();
+		const month = date.getMonth();
+
+		if (month === 11 && day >= 7 && day <= 31) {
 			return true;
 		}
 
@@ -206,10 +226,12 @@
 {#if !$isLoading}
 	<div class="grid-rows-auto grid max-w-max grid-cols-1 gap-8">
 		<grid class="row-start-1">
-			<grid class="flex gap-8">
+			<grid class="flex h-full gap-8">
 				<Hero />
 				{#if innerWidth > 1000}
-					{#if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
+					{#if checkIfMidterms() && !$neverShowMidterms}
+						<FinalGrade close={true} />
+					{:else if checkIfShowSchoolRescue() && !$neverShowSchoolRescue}
 						<SchoolRescue />
 					{:else if checkIfFortniteSeason() && !$neverShowFortnite}
 						<Fortnite />

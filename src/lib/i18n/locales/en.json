@@ -46,6 +46,48 @@
 			"force_disable": "Force Disable",
 			"remove_experiment": "Remove Experiment",
 			"reset_experiment_cookies": "Reset Experiment Cookie(s)"
+		},
+		"games": {
+			"search_placeholder": "Search for your favorites...",
+			"no_results": "No results found.",
+			"play_now": "Play Now"
+		},
+		"apps": {
+			"search_placeholder": "Search for your favorites...",
+			"no_results": "No results found.",
+			"access_now": "Access Now"
+		},
+		"embed": {
+			"error": "An error occured while loading the page.",
+			"instructions": "To embed this on your site, add this code to your site:",
+			"made_in_partnership": "Made in partnership with",
+			"browse_for_free": "Browse for free now on"
+		},
+		"google": {
+			"advertisement": "Advertisement"
+		},
+		"school_rescue": {
+			"hey": "Hey!",
+			"description": "Looks like you might be at school, so we are just checking if you would like to utilize our cloaking feature! This will make the tab appear to be from a different website, so you can use the site safely at school.",
+			"tip_part_1": "Also! Enter the key combo",
+			"tip_part_2": "your keyboard to show a fake Google Doc!",
+			"set_tab_cloak": "Set Tab Cloak",
+			"quick_set": "Quick Set",
+			"dont_show_again": "Don't Show Again"
+		},
+		"faq": {
+			"what_is_kazwire": "What is Kazwire?",
+			"p_1": "Are you looking for a new place to play your favorite online games? Look no further! Our online gaming site is the perfect destination for gamers of all levels and interests.",
+			"p_2": "With a wide variety of games to choose from, including popular titles like Run 3, Slope, and Retro Bowl, as well as many of lesser-known games in a variety of genres, there's something for everyone on our site.",
+			"p_3_part_1": "We also give you the ability to browse the entire internet if you don't like what you see! If you ever need help please join our",
+			"p_3_part_2": "and let us know!",
+			"p_4": "Games shown in this website are the property of their respective owners. If you see your game here and would like it removed please refer to our",
+			"dmca_page": "DMCA page"
+		},
+		"discord": {
+			"instructions": "To access our Discord you can view it through Kazwire or you can choose to visit the URL directly.",
+			"access_through_kazwire": "Access through Kazwire",
+			"access_directly": "Access Directly"
 		}
 	}
 }

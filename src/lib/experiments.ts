@@ -3,8 +3,9 @@ class Experiment {
 		const randomNumber: number = Math.random();
 		const expires: Date = new Date();
 		expires.setMonth(expires.getMonth() + 1);
-		document.cookie = `${experimentName}_experiment=${randomNumber};expires=${expires.toUTCString()}`;
-
+		// set path to root so that the cookie is available on all pages
+		document.cookie = `${experimentName}_experiment=${randomNumber};expires=${expires.toUTCString()};path=/`;
+		
 		return randomNumber;
 	}
 
@@ -141,9 +142,9 @@ class Experiment {
 			if (experimentData.forceEnable) {
 				return true;
 			}
-			const { percentage, endDate, enabled } = experimentData;
+			const { percentage, enabled } = experimentData;
 			const randomNumber: number = this.getCookie(id);
-			if (randomNumber <= percentage / 100 && new Date(endDate) > new Date() && enabled) {
+			if (randomNumber <= percentage / 100 && enabled) {
 				return true;
 			}
 		}

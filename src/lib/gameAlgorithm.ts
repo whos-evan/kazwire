@@ -26,7 +26,7 @@ class Suggest {
 		localStorage.setItem("playedGames", JSON.stringify(playedGames));
 	}
 
-	Games(): Promise<Game[]> {
+	async Games(): Promise<Game[]> {
 		// Record how long it takes to complete the algorithm
 		let startTime = new Date().getTime();
 

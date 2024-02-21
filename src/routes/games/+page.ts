@@ -3,8 +3,6 @@ import type { Game } from '@prisma/client';
 import type { PageLoad } from './$types';
 
 export const load = (async ({ url, fetch }) => {
-
-
 	let searchQuery: string = url.searchParams.get('search') || '';
 	let tagQuery: string = url.searchParams.get('tag') || '';
 
