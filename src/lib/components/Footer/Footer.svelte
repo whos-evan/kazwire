@@ -15,7 +15,6 @@
 	<div>
 		<span class="footer-title">Company</span>
 		<a class="link-hover link" href="/about">About Us</a>
-		<a class="link-hover link" href="/blog">Blog</a>
 		<a class="link-hover link" href="mailto:{config.branding.supportEmail}">Contact</a>
 	</div>
 	<div>
