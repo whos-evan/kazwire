@@ -10,10 +10,12 @@
 		<a class="link-hover link" href="/apps">Apps</a>
 		<a class="link-hover link" href="/search">Search</a>
 		<a class="link-hover link" href="/settings">Settings</a>
+		<a class="link-hover link" href="/links">More Links</a>
 	</div>
 	<div>
 		<span class="footer-title">Company</span>
-		<a class="link-hover link" href="/about">About us</a>
+		<a class="link-hover link" href="/about">About Us</a>
+		<a class="link-hover link" href="/blog">Blog</a>
 		<a class="link-hover link" href="mailto:{config.branding.supportEmail}">Contact</a>
 	</div>
 	<div>

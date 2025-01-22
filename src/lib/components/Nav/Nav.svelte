@@ -18,7 +18,6 @@
 			</a>
 		</div>
 	{:else}
-	
 		<div class="flex-1">
 			<a
 				class="btn btn-ghost tooltip tooltip-right normal-case"
@@ -56,6 +55,12 @@
 						/>
 					{/if}
 				</form>
+			</li>
+			<!-- Add the "More Links" icon button here -->
+			<li class="place-content-center">
+				<a class="tooltip tooltip-bottom" data-tip="More Links" href="/links">
+					<Icon icon="ri:links-fill" class="text-2xl" />
+				</a>
 			</li>
 			<li class="place-content-center">
 				<a class="tooltip tooltip-bottom" data-tip="Games" href="/games">
