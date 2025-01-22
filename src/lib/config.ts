@@ -1,14 +1,14 @@
 export const config = {
 	branding: {
-		name: 'UBG US',
-		description: 'Providing America with the best games, apps, and more at blazingly fast speeds.',
-		slogan: 'Providing America with the best since 2023.',
-		mainDomain: 'https://ubgus.net',
-		supportEmail: 'support@ubgus.net'
+		name: 'Kazwire',
+		description: 'Say goodbye to slow internet speeds and hello to lightning-fast browsing with Kazwire.',
+		slogan: 'All your favorites all in one place!',
+		mainDomain: 'https://kazwire.com',
+		supportEmail: 'contact@kazwire.com'
 	},
 	social: {
-		tiktok: 'https://www.tiktok.com/@ubg.us',
-		discord: null
+		tiktok: 'https://www.tiktok.com/@kazwire',
+		discord: 'https://discord.gg/kazchat-785577600219086881'
 	},
 	analytics: {
 		gtmID: 'GTM-KVGNDGZ7'
@@ -34,15 +34,15 @@ export const config = {
 		// Options: "boxy", "rounded"
 		contentBoxStyleType: 'rounded',
 		daisyUITheme: {
-			primary: '#9f0011',
-			secondary: '#4362bc',
-			accent: '#f3f4f6',
-			neutral: '#1e3a8a',
-			'base-100': '#dbeafe',
-			info: '#39acea',
-			success: '#19947e',
-			warning: '#e75f76',
-			error: '#f91521',
+			primary: '#f49625',
+			secondary: '#f49625',
+			accent: '#1f79ad',
+			neutral: '#1f79ad',
+			'base-100': '#e5e7eb',
+			info: '#48b8e3',
+			success: '#4db0a9',
+			warning: '#cf9147',
+			error: '#e9929f',
 			'--rounded-box': '0.75rem', // border radius rounded-box utility class, used in card and other large boxes
 			'--rounded-btn': '0.75rem' // border radius rounded-btn utility class, used in buttons and similar element
 			// "--rounded-badge": "1.9rem", // border radius rounded-badge utility class, used in badges and similar
@@ -55,11 +55,11 @@ export const config = {
 			// "--tab-radius": "0.5rem", // border radius of tabs
 		},
 		daisyUIDarkTheme: {
-			primary: '#c7636b',
-			secondary: '#6f8db6',
-			accent: '#2a2d34',
-			neutral: '#94a3c4',
-			'base-100': '#252a34',
+			primary: '#f49625',
+			secondary: '#f49625',
+			accent: '#1f79ad',
+			neutral: '#1f79ad',
+			'base-100': '#202124',
 			info: '#48b8e3',
 			success: '#4db0a9',
 			warning: '#cf9147',
