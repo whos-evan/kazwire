@@ -12,14 +12,14 @@
 	/>
 </svelte:head>
 
-<main class="min-h-screen bg-base-100 flex items-center justify-center p-1">
-	<div class="card w-full max-w-2xl bg-base-200 shadow-2xl hover:shadow-3xl transition-shadow duration-300 rounded-box">
+<main class="min-h-screen bg-base-100 pt-8">
+	<div class="card w-full max-w-2xl bg-base-200 shadow-2xl hover:shadow-3xl transition-shadow duration-300 rounded-box mx-auto">
 		<div class="card-body text-center p-8">
 			<h1 class="text-5xl font-bold mb-8 bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">
 				Get More {config.branding.name} Links
 			</h1>
 			<p class="text-xl mb-8 leading-relaxed">
-				We distribute more links in our Discord server. Please join on a personal device like your phone instead of using {config.branding.name}, though, because Discord won't let you use our server from our proxy.
+				We distribute more links in our Discord server. Please join on a personal device like your phone instead of using {config.branding.name}, though, because Discord won't let you use our Discord server from our proxy.
 			</p>
 			<div class="space-y-6">
 				<a
@@ -38,7 +38,7 @@
 					>
 						joinkaz.com
 					</a>
-					on your phone to easily join our server.
+					on your phone to easily join our Discord server.
 				</p>
 			</div>
 		</div>

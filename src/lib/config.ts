@@ -1,7 +1,7 @@
 export const config = {
 	branding: {
 		name: 'Kazwire',
-		description: 'Say goodbye to slow internet speeds and hello to lightning-fast browsing with Kazwire.',
+		description: 'Enjoy fast, free, and safe gaming and browsing with Kazwire',
 		slogan: 'All your favorites all in one place!',
 		mainDomain: 'https://kazwire.com',
 		supportEmail: 'contact@kazwire.com'
