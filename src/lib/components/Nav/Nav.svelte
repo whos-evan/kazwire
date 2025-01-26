@@ -58,6 +58,11 @@
 				</form>
 			</li>
 			<li class="place-content-center">
+				<a class="tooltip tooltip-bottom" data-tip="Get More Links!" href="/links">
+					<Icon icon="line-md:link" class="text-2xl" />
+				</a>
+			</li>
+			<li class="place-content-center">
 				<a class="tooltip tooltip-bottom" data-tip="Games" href="/games">
 					<Icon icon="mdi:gamepad-variant" class="text-2xl" />
 				</a>
