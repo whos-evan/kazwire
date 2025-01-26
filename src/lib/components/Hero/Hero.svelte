@@ -14,10 +14,10 @@
 			<p class="py-6">{config.branding.description}</p>
 			<div class="flex flex-col gap-2 md:flex-row">
 				<a href="/games">
-					<button class="btn btn-primary w-full">Play Now!</button>
+					<button class="btn btn-primary w-full">Play Now</button>
 				</a>
 				<a href="/apps">
-					<button class="btn btn-primary w-full">Browse Now!</button>
+					<button class="btn btn-primary w-full">Browse Now</button>
 				</a>
 			</div>
 		</div>
