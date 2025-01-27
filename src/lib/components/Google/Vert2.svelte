@@ -37,7 +37,7 @@
 
 			<div class="text-center text-base-content">
 				<p class="text-lg">
-					Join our Discord server to chat with other users and get the latest news and updates.
+					Join our Discord server to get more links in case this one gets blocked.
 				</p>
 
 				<a
