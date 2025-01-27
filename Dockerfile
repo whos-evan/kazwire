@@ -1,6 +1,12 @@
 FROM node:18-alpine AS builder
 WORKDIR /app
 COPY package*.json .
+
+RUN set -ex; \
+    apk update; \
+    apk add --no-cache \
+    openssl
+
 RUN npm ci
 COPY . .
 RUN npx prisma generate
