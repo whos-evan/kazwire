@@ -53,11 +53,15 @@
 	{/if}
 
 	{#if config.analytics.exoclickEnabled}
-		<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
-		<ins class="eas6a97888e2" data-zoneid="5528778" />
-		<script>
-			(AdProvider = window.AdProvider || []).push({ serve: {} });
-		</script>
+		<iframe
+			src="//a.magsrv.com/iframe.php?idzone=5528776&size=160x600"
+			width="160"
+			height="600"
+			scrolling="no"
+			marginwidth="0"
+			marginheight="0"
+			frameborder="0"
+		/>
 	{:else}
 		<ins
 			id="Vert"
