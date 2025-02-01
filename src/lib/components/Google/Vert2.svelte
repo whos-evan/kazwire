@@ -30,10 +30,10 @@
 	</h3>
 
 	{#if showAlternate && typeof config.social.discord == 'string'}
-		<div class="h-full min-h-[600px] w-[224px] bg-base-300 p-4 flex justify-center items-center flex-col">
-			<h1 class="text-center font-black text-4xl text-base-content mb-6">
-				JOIN OUR DISCORD
-			</h1>
+		<div
+			class="flex h-full min-h-[600px] w-[224px] flex-col items-center justify-center bg-base-300 p-4"
+		>
+			<h1 class="mb-6 text-center text-4xl font-black text-base-content">JOIN OUR DISCORD</h1>
 
 			<div class="text-center text-base-content">
 				<p class="text-lg">
@@ -49,16 +49,24 @@
 					Join Discord
 				</a>
 			</div>
-		</div>		
+		</div>
 	{/if}
 
-	<ins
-		id="Vert2"
-		class="adsbygoogle"
-		style="display:block"
-		data-ad-client="ca-pub-7648886706850999"
-		data-ad-slot="4414262154"
-		data-ad-format="auto"
-		data-full-width-responsive="true"
-	/>
+	{#if config.analytics.exoclickEnabled}
+		<script async type="application/javascript" src="https://a.magsrv.com/ad-provider.js"></script>
+		<ins class="eas6a97888e2" data-zoneid="5528776" />
+		<script>
+			(AdProvider = window.AdProvider || []).push({ serve: {} });
+		</script>
+	{:else}
+		<ins
+			id="Vert2"
+			class="adsbygoogle"
+			style="display:block"
+			data-ad-client="ca-pub-7648886706850999"
+			data-ad-slot="4414262154"
+			data-ad-format="auto"
+			data-full-width-responsive="true"
+		/>
+	{/if}
 </div>
