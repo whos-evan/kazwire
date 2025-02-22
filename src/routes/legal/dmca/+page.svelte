@@ -15,7 +15,7 @@
 <article class="prose lg:prose-lg">
 	<h1>DMCA Policy</h1>
 	<p>
-		This Digital Millennium Copyright Act policy (“Policy”) applies to the (site-name).com website
+		This Digital Millennium Copyright Act policy (“Policy”) applies to the {config.branding.mainDomain} website
 		(“Website” or “Service”) and any of its related products and services (collectively, “Services”)
 		and outlines how this Website operator (“Operator”, “we”, “us” or “our”) addresses copyright
 		infringement notifications and how you (“you” or “your”) may submit a copyright infringement
@@ -121,5 +121,5 @@
 		contact us using the details below:
 	</p>
 	<p>Email: {config.branding.supportEmail}</p>
-	<p>This document was last updated on July 30, 2023</p>
+	<p>This document was last updated on February 22, 2025</p>
 </article>
