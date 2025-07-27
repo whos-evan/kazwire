@@ -6,9 +6,9 @@
  * However, if a user changes the location of uv.bundle.js/uv.config.js or sw.js is not relative to them, they will need to modify this script locally.
  */
 if ('undefined' === typeof window) {
-	importScripts("/uv/uv.bundle.js?v=8-24-2024");
-	importScripts("/uv/uv.config.js?v=8-24-2024");
-	importScripts(__uv$config.sw || "/uv/uv.sw.js?v=8-24-2024");
+	importScripts("/uv/uv.bundle.js");
+	importScripts("/uv/uv.config.js");
+	importScripts(__uv$config.sw || "/uv/uv.sw.js");
 
 	const sw = new UVServiceWorker();
 

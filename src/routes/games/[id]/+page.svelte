@@ -57,7 +57,24 @@
 	}
 
 	let canShare: boolean = false;
-	onMount(() => {
+	onMount(async () => {
+		// Initialize bare-mux (v3 approach)
+		try {
+			// Dynamic import for bare-mux using ESM
+			// @ts-ignore - BareMux types not available
+			const { BareMuxConnection } = await import('@mercuryworkshop/bare-mux');
+			const connection = new BareMuxConnection('/baremux/worker.js');
+			
+			// Set the transport to use epoxy with relative WebSocket path
+			const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
+			const wsUrl = `${protocol}//${window.location.host}/wisp/`;
+			await connection.setTransport('/epoxy/index.mjs', [{ wisp: wsUrl }]);
+			
+			console.log('Bare-mux initialized successfully');
+		} catch (err) {
+			console.error('Failed to initialize bare-mux:', err);
+		}
+
 		let interval = setInterval(async () => {
 			// @ts-ignore
 			if (navigator && __uv$config.prefix) {
@@ -200,9 +217,9 @@
 		content="Play {data.game.name} for free now on {config.branding.name}!"
 	/>
 
-	<script src="/uv/uv.bundle.js" defer></script>
-	<script src="/uv/uv.config.js" defer></script>
-	<script src="/uv.js" defer></script>
+	<script src="/uv/uv.bundle.js"></script>
+	<script src="/uv/uv.config.js"></script>
+	<script src="/uv.js"></script>
 </svelte:head>
 
 {#if expanded}

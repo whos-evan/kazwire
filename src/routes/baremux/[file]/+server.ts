@@ -3,7 +3,7 @@ import fs from 'node:fs';
 //@ts-ignore
 import { baremuxPath } from "@mercuryworkshop/bare-mux/node";
 
-export async function GET({params}) {
+export async function GET({ params }: { params: { file: string } }) {
     // find the raw contents of the file
     const file = baremuxPath + "/" + params.file;
     
