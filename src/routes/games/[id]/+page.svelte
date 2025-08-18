@@ -338,13 +338,13 @@
 				<div class="float-right mr-5">
 					<button class="mt-4 fill-white" on:click={() => fullScreen()}>
 						<!-- Full screen -->
-						<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
+						<Icon class="h-6 w-6" icon="material-symbols:expand-rounded" />
 					</button>
 				</div>
 				<div class="float-right mr-5">
 					<button class="mt-4" on:click={() => expandiFrame()}>
 						<!-- Fill screen -->
-						<Icon class="h-6 w-6" icon="ic:round-expand" />
+						<Icon class="h-6 w-6" icon="material-symbols:fullscreen-rounded" />
 					</button>
 				</div>
 				<div class="float-right mr-5">
