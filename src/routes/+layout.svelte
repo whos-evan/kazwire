@@ -80,7 +80,7 @@
 {/if}
 
 {#if !resetLayout}
-	<div class="min-h-[100vh] w-full bg-base-100 p-10 font-main">
+	<div class="min-h-[100vh] w-full bg-base-100 p-5 font-main">
 		{#if config.features.searchBar}
 			<dialog id="searchBar" class="modal">
 				<form method="dialog" class="modal-box h-fit" in:fade out:fade={{ duration: 50 }}>

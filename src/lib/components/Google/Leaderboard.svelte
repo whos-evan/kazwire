@@ -31,7 +31,7 @@
 
 	{#if showAlternate && typeof config.social.discord == 'string'}
 		<a
-			href={config.social.discord}
+			href="/links"
 			target="_blank"
 			rel="noopener noreferrer"
 			class="mx-auto flex h-[90px] w-[728px] flex-col items-center justify-center bg-base-300 p-4"

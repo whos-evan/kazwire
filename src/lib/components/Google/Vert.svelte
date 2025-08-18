@@ -22,7 +22,7 @@
 	});
 </script>
 
-<div class="items-center justify-center p-4 [text-align-last:center]">
+<div class="items-center justify-center pl-4 [text-align-last:center]">
 	<h3
 		class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400"
 	>
@@ -41,7 +41,7 @@
 				</p>
 
 				<a
-					href={config.social.discord}
+					href="/links"
 					target="_blank"
 					rel="noopener noreferrer"
 					class="btn btn-accent mt-4"

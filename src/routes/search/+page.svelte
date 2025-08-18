@@ -11,6 +11,8 @@
 
 	import { config } from '$lib/config';
 	import Vert from '$lib/components/Google/Vert.svelte';
+	import Vert2 from '$lib/components/Google/Vert2.svelte';
+	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 
 	function search(input: string) {
 		let template: string = 'https://www.google.com/search?q=%s&hl=en';
@@ -40,18 +42,29 @@
 	}
 
 	onMount(async () => {
+		// scroll 104 pixels down 3 second after the page loads
+		// if and only if the user has not scrolled down
+		setTimeout(() => {
+			if (window.scrollY === 0) {
+				window.scrollTo({
+					top: 104,
+					behavior: 'smooth'
+				});
+			}
+		}, 3000);
+
 		// Initialize bare-mux (v3 approach)
 		try {
 			// Dynamic import for bare-mux using ESM
 			// @ts-ignore - BareMux types not available
 			const { BareMuxConnection } = await import('@mercuryworkshop/bare-mux');
 			const connection = new BareMuxConnection('/baremux/worker.js');
-			
+
 			// Set the transport to use epoxy with relative WebSocket path
 			const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
 			const wsUrl = `${protocol}//${window.location.host}/wisp/`;
 			await connection.setTransport('/epoxy/index.mjs', [{ wisp: wsUrl }]);
-			
+
 			console.log('Bare-mux initialized successfully');
 		} catch (err) {
 			console.error('Failed to initialize bare-mux:', err);
@@ -222,9 +235,7 @@
 {/if}
 
 <div class="relative flex flex-row justify-center">
-	<div
-		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
-	>
+	<div class="float-left flex h-[calc(94vh-132px)] sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
 		<div class="align-center mb-14 flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 				<iframe
@@ -269,3 +280,7 @@
 		{/if}
 	</div>
 </div>
+
+{#if innerWidth >= 728}
+	<Leaderboard />
+{/if}

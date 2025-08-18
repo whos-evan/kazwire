@@ -64,12 +64,12 @@
 			// @ts-ignore - BareMux types not available
 			const { BareMuxConnection } = await import('@mercuryworkshop/bare-mux');
 			const connection = new BareMuxConnection('/baremux/worker.js');
-			
+
 			// Set the transport to use epoxy with relative WebSocket path
 			const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
 			const wsUrl = `${protocol}//${window.location.host}/wisp/`;
 			await connection.setTransport('/epoxy/index.mjs', [{ wisp: wsUrl }]);
-			
+
 			console.log('Bare-mux initialized successfully');
 		} catch (err) {
 			console.error('Failed to initialize bare-mux:', err);
@@ -183,6 +183,15 @@
 		setTimeout(() => {
 			loadedGame();
 		}, 5000);
+
+		// scroll 104 pixels down 3 second after the page loads
+		// if and only if the user has not scrolled down
+		if (window.scrollY === 0) {
+			window.scrollTo({
+				top: 104,
+				behavior: 'smooth'
+			});
+		}
 	}
 
 	function addView() {
@@ -233,9 +242,7 @@
 {/if}
 
 <div class="relative flex flex-row justify-center">
-	<div
-		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
-	>
+	<div class="float-left flex h-[calc(94vh-132px)] sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
 		{#if innerWidth > 1424}
 			<Vert2 />
 		{/if}
@@ -375,7 +382,7 @@
 
 <!-- Bottom area for displaying more information about the game -->
 <!-- Center the div -->
-<div class="flex justify-center">
+<div class="flex justify-center pt-4 sm:pt-4 md:pt-0 lg:pt-0 xl:pt-0">
 	<div
 		class="rounded-lg bg-base-300 p-5 align-middle text-base-content sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
 	>
