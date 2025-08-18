@@ -18,7 +18,7 @@
 		<div class="flex flex-col gap-4">
 			<!-- Display the apps -->
 			<!-- limit the width to the max size of the container -->
-			<div class="max-w-[calc(100vw-6rem)]">
+			<div class="max-w-[calc(100vw-2rem)]">
 				<h1 class="mb-1 flex text-2xl font-bold capitalize">
 					Loved Apps
 					<Icon icon="mdi:heart" class="my-auto ml-2 text-xl text-red-500" />
@@ -50,7 +50,7 @@
 	<div class="flex flex-col gap-4">
 		<!-- Display the apps -->
 		<!-- limit the width to the max size of the container -->
-		<div class="max-w-[calc(100vw-6rem)]">
+		<div class="max-w-[calc(100vw-2rem)]">
 			<h1 class="mb-1 flex text-2xl font-bold capitalize">
 				Apps
 				<!-- center the text vertically -->
@@ -81,7 +81,7 @@
 		<div class="flex flex-col gap-4">
 			<!-- Display the apps -->
 			<!-- limit the width to the max size of the container -->
-			<div class="max-w-[calc(100vw-6rem)]">
+			<div class="max-w-[calc(100vw-2rem)]">
 				<h1 class="mb-1 flex text-2xl font-bold capitalize">
 					Loved Games
 					<Icon icon="mdi:heart" class="my-auto ml-2 text-xl text-red-500" />
@@ -115,7 +115,7 @@
 		<div class="mb-10 flex flex-col gap-4">
 			<!-- Display the apps -->
 			<!-- limit the width to the max size of the container -->
-			<div class="max-w-[calc(100vw-6rem)]">
+			<div class="max-w-[calc(100vw-2rem)]">
 				<h1 class="mb-1 flex text-2xl font-bold capitalize">
 					Suggested Games
 					<Icon icon="material-symbols:recommend" class="my-auto ml-2 text-xl text-green-500" />
@@ -145,7 +145,7 @@
 		<div class="mb-10 flex flex-col gap-4">
 			<!-- Display the apps -->
 			<!-- limit the width to the max size of the container -->
-			<div class="max-w-[calc(100vw-6rem)]">
+			<div class="max-w-[calc(100vw-2rem)]">
 				<h1 class="mb-1 flex text-2xl font-bold capitalize">
 					Suggested Games
 					<Icon icon="material-symbols:recommend" class="my-auto ml-2 text-xl text-green-500" />
@@ -195,7 +195,7 @@
 		<!-- Display the games -->
 		{#each $page.data.gameTags as tag}
 			<!-- limit the width to the max size of the container -->
-			<div class="max-w-[calc(100vw-6rem)]">
+			<div class="max-w-[calc(100vw-2rem)]">
 				<h1 class="mb-1 flex text-2xl font-bold capitalize">
 					{#if tag.length > 3}
 						{tag}
