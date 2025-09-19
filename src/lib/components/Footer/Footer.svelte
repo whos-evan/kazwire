@@ -14,6 +14,7 @@
 	<div>
 		<span class="footer-title">Company</span>
 		<a class="link-hover link" href="/about">About us</a>
+		<a class="link-hover link" href="/carrers">Careers</a>
 		<a class="link-hover link" href="mailto:{config.branding.supportEmail}">Contact</a>
 	</div>
 	<div>

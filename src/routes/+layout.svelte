@@ -1,6 +1,7 @@
 <script lang="ts">
 	import Footer from '$lib/components/Footer/Footer.svelte';
 	import Nav from '$lib/components/Nav/Nav.svelte';
+	import CareerPopup from '$lib/components/CareerPopup/CareerPopup.svelte';
 	import Gtm from '$lib/components/Collection/GTM.svelte';
 	import { afterNavigate } from '$app/navigation';
 	import { browser } from '$app/environment';
@@ -100,3 +101,5 @@
 {#if !resetLayout}
 	<Footer />
 {/if}
+
+<CareerPopup />

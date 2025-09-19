@@ -12,7 +12,7 @@
 	/>
 </svelte:head>
 
-<article class="prose lg:prose-xl">
+<article class="prose lg:prose-xl p-6">
 	<h1>About</h1>
 
 	<p>
