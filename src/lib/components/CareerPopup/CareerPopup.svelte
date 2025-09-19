@@ -30,7 +30,7 @@
 
 	function goToCareers() {
         localStorage.setItem('career-popup-shown', 'true');
-		window.location.href = '/carrers';
+		window.location.href = '/careers';
 	}
 </script>
 
