@@ -1,21 +1,7 @@
 // Global Scramjet initialization
 (async function() {
     console.log('Starting Scramjet initialization...');
-    
-    // Wait for Scramjet to load
-    let attempts = 0;
-    const maxAttempts = 50; // 5 seconds max
-    
-    while (typeof window.$scramjetLoadController === 'undefined' && attempts < maxAttempts) {
-        await new Promise(resolve => setTimeout(resolve, 100));
-        attempts++;
-    }
-    
-    if (typeof window.$scramjetLoadController === 'undefined') {
-        console.error('Scramjet failed to load after 5 seconds');
-        return;
-    }
-    
+
     // Initialize Scramjet
     const { ScramjetController } = window.$scramjetLoadController();
     
@@ -37,7 +23,7 @@
     // const { BareMuxConnection } = await import('/baremux/index.js');
     const connection = new BareMux.BareMuxConnection('/baremux/worker.js');
     
-    const wsUrl = `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/wisp`;
+    const wsUrl = `${location.protocol === 'https:' ? 'wss' : 'ws'}://${location.host}/wisp/`;
     await connection.setTransport('/epoxy/index.mjs', [{ wisp: wsUrl }]);
     
     // Register Scramjet service worker
