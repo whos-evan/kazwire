@@ -1,13 +1,10 @@
-<script lang="ts" context="module">
-	declare var __uv$config: any;
-</script>
-
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
 	let searchQuery: string = '';
 	let contentTitle: string = 'Nothing yet...';
+	let scramjetReady: boolean = false;
 
 	import { config } from '$lib/config';
 	import Vert from '$lib/components/Google/Vert.svelte';
@@ -53,51 +50,6 @@
 			}
 		}, 3000);
 
-		// Initialize bare-mux (v3 approach)
-		try {
-			// Dynamic import for bare-mux using ESM
-			// @ts-ignore - BareMux types not available
-			const { BareMuxConnection } = await import('@mercuryworkshop/bare-mux');
-			const connection = new BareMuxConnection('/baremux/worker.js');
-
-			// Set the transport to use epoxy with relative WebSocket path
-			const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-			const wsUrl = `${protocol}//${window.location.host}/wisp/`;
-			await connection.setTransport('/epoxy/index.mjs', [{ wisp: wsUrl }]);
-
-			console.log('Bare-mux initialized successfully');
-		} catch (err) {
-			console.error('Failed to initialize bare-mux:', err);
-		}
-
-		// Register the service worker
-		try {
-			console.log('Registering service worker');
-			// wait until everything is loaded before registering the service worker
-
-			let interval = setInterval(async () => {
-				// @ts-ignore
-				if (navigator && __uv$config.prefix) {
-					//@ts-ignore
-					navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
-						if (reg.installing) {
-							const sw = reg.installing || reg.waiting;
-							sw.onstatechange = function () {
-								if (sw.state === 'installed') {
-									// SW installed.  Refresh page so SW can respond with SW-enabled page.
-									window.location.reload();
-								}
-							};
-						}
-					});
-
-					clearInterval(interval);
-				}
-			}, 500);
-		} catch (err) {
-			console.error('Failed to register the service worker:', err);
-		}
-
 		// get the search query from the url
 		const urlParams = new URLSearchParams(window.location.search);
 		const query = urlParams.get('q');
@@ -108,18 +60,12 @@
 	});
 
 	async function iframeSearch() {
-		let interval = setInterval(async () => {
-			// @ts-ignore
-			if (__uv$config.prefix) {
-				// Get the iframe
-				let iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
+		// Get the iframe
+		let iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 
-				// Set the iframe source to the search query
-				iframe.src = __uv$config.prefix + __uv$config.encodeUrl(search(searchQuery));
-
-				clearInterval(interval);
-			}
-		}, 500);
+		// Set the iframe source to the search query
+		const searchUrl = search(searchQuery);
+		iframe.src = scramjet.encodeUrl(searchUrl);
 	}
 
 	// Fullscreen the iframe
@@ -202,9 +148,6 @@
 	<meta property="og:title" content="{config.branding.name} - Search Freely" />
 	<meta name="description" content="Search freely with {config.branding.name}!" />
 	<meta property="og:description" content="Search freely with {config.branding.name}!" />
-	<script src="/uv/uv.bundle.js"></script>
-	<script src="/uv/uv.config.js"></script>
-	<script src="/uv.js"></script>
 </svelte:head>
 
 <!-- Search bar -->

@@ -1,7 +1,3 @@
-<script lang="ts" context="module">
-	declare var __uv$config: any;
-</script>
-
 <script lang="ts">
 	import type { PageData } from './$types';
 	export let data: PageData;
@@ -41,60 +37,9 @@
 		return template.replace('%s', encodeURIComponent(input));
 	}
 
-	function encodeURL(url: string): string {
-		if (!browser) {
-			return url;
-		}
-		// check if the service worker is installed
-		navigator.serviceWorker.getRegistrations().then((registrations) => {
-			if (registrations.length === 0) {
-				// Service worker is not installed so register it
-				registerServiceWorker();
-			}
-		});
-
-		return __uv$config.prefix + __uv$config.encodeUrl(search(url));
-	}
-
 	let canShare: boolean = false;
+
 	onMount(async () => {
-		// Initialize bare-mux (v3 approach)
-		try {
-			// Dynamic import for bare-mux using ESM
-			// @ts-ignore - BareMux types not available
-			const { BareMuxConnection } = await import('@mercuryworkshop/bare-mux');
-			const connection = new BareMuxConnection('/baremux/worker.js');
-
-			// Set the transport to use epoxy with relative WebSocket path
-			const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:';
-			const wsUrl = `${protocol}//${window.location.host}/wisp/`;
-			await connection.setTransport('/epoxy/index.mjs', [{ wisp: wsUrl }]);
-
-			console.log('Bare-mux initialized successfully');
-		} catch (err) {
-			console.error('Failed to initialize bare-mux:', err);
-		}
-
-		let interval = setInterval(async () => {
-			// @ts-ignore
-			if (navigator && __uv$config.prefix) {
-				//@ts-ignore
-				navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
-					if (reg.installing) {
-						const sw = reg.installing || reg.waiting;
-						sw.onstatechange = function () {
-							if (sw.state === 'installed') {
-								// SW installed.  Refresh page so SW can respond with SW-enabled page.
-								window.location.reload();
-							}
-						};
-					}
-				});
-
-				clearInterval(interval);
-			}
-		}, 500);
-
 		// Check if the browser supports the share API
 		if (navigator.canShare({ url: window.location.href })) {
 			canShare = true;
@@ -222,10 +167,6 @@
 		property="og:description"
 		content="Play {data.app.name} for free now on {config.branding.name}!"
 	/>
-
-	<script src="/uv/uv.bundle.js"></script>
-	<script src="/uv/uv.config.js"></script>
-	<script src="/uv.js"></script>
 </svelte:head>
 
 {#if expanded}
@@ -298,7 +239,7 @@
 							class="h-full w-full rounded-t-lg bg-white opacity-0"
 							id="iframe"
 							title={data.app.name}
-							src={encodeURL(data.app.embedURL)}
+							src={scramjet.encodeUrl(data.app.embedURL)}
 							on:load={() => loadedApp()}
 						/>
 					{/if}
