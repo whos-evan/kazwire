@@ -9,9 +9,11 @@
 	import Icon from '@iconify/svelte';
 
 	let innerWidth: number = 0;
+
+	$: sortedApps = $page.data.apps?.sort((a, b) => b.views - a.views) || [];
 </script>
 
-<svelte:window bind:innerWidth={innerWidth} />
+<svelte:window bind:innerWidth />
 
 <div class="justify-left mb-10 flex flex-col">
 	{#if $page.data.loved_apps !== undefined && $page.data.loved_apps.length > 0}
@@ -62,7 +64,7 @@
 				</a>
 			</h1>
 			<Carousel SCROLL_AMOUNT={640}>
-				{#each $page.data.apps as app}
+				{#each sortedApps as app}
 					<DefaultBox
 						name={app.name}
 						id={'app-' + app.id}
