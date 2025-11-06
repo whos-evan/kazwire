@@ -165,7 +165,7 @@
 					<div
 						class="absolute left-0 top-0 z-[1000] flex h-full w-full items-center justify-center"
 					>
-						<div class="max-w-md rounded-lg bg-accent bg-opacity-50 p-4">
+						<div class="max-w-md rounded-lg bg-primary-content bg-opacity-50 p-4">
 							<h1 class="mb-1 text-2xl font-bold">Sign up to see suggested games</h1>
 							<p class="mb-2 text-sm">
 								Sign up to see games that we think you will like based on your favorite games and
