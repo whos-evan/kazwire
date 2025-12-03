@@ -1,9 +1,0 @@
-<figure>
-    <img src="images/help/goalkeeper_slide.png">
-    <figcaption>
-        <p>Press <span class="key auto-wide auto-update" data-action="goalkeeperSlide">Q</span></p>
-    </figcaption>
-</figure>
-<p>Goalkeepers are controlled only by the AI. They will try to catch the ball or intercept it when they are closest team member. You can enforce a slide tackle using <span class="key auto-wide auto-update" data-action="goalkeeperSlide">Q</span> on your goalkeeper, but use this carefully. When a goalkeeper does the slide tackle he always does it towards the ball and if the ball is moving fast, goalkeeper will miss it most of the time.</p>
-<p>When your goalkeeper has the ball, you can make the regular pass or the lob pass using the appropriate buttons (<span class="key auto-wide auto-update" data-action="pass">S</span> and <span class="key auto-wide auto-update" data-action="lob">A</span>). Note, that you have a limited time for this: 3 seconds. If you do not make the pass in given time, then AI will take control of your goalkeeper.</p>
-<p>A goalkeeper is immune to slide tackles, but canâ€™t move with the ball.</p>

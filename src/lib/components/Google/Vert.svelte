@@ -1,14 +1,11 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
-
-	let showAlternate: boolean = false;
-	let imgURLs = ['discord-vert.png', 'discord-vert2.png'];
-	let imgURL = imgURLs[Math.floor(Math.random() * imgURLs.length)];
+	import { config } from '$lib/config';
+	let showAlternate = false;
 
 	onMount(() => {
 		(window.adsbygoogle = window.adsbygoogle || []).push({});
 
-		// Show alternative message if the ad isn't loaded
 		setTimeout(() => {
 			let element: HTMLElement | null = document.getElementById('Vert');
 			if (element.childElementCount == 0) {
@@ -23,18 +20,49 @@
 			}
 		}, 4000);
 	});
-
-	import { isLoading, _ } from 'svelte-i18n';
 </script>
 
-{#if !$isLoading}
-	<div class="h-fit items-center justify-center p-4 [text-align-last:center]">
-		<h3
-			class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400"
-		>
-			{$_('pages.google.advertisement')}
-		</h3>
+<div class="items-center justify-center pl-4 [text-align-last:center]">
+	<h3
+		class="min-w-[14rem] text-center text-xs uppercase tracking-widest text-gray-600 opacity-40 dark:text-gray-400"
+	>
+		Advertisement
+	</h3>
 
+	{#if showAlternate && typeof config.social.discord == 'string'}
+		<div
+			class="flex h-full min-h-[600px] w-[224px] flex-col items-center justify-center bg-base-300 p-4"
+		>
+			<h1 class="mb-6 text-center text-4xl font-black text-base-content">JOIN OUR DISCORD</h1>
+
+			<div class="text-center text-base-content">
+				<p class="text-lg">
+					Join our Discord server to get more links in case this one gets blocked.
+				</p>
+
+				<a
+					href="/links"
+					target="_blank"
+					rel="noopener noreferrer"
+					class="btn btn-accent mt-4"
+				>
+					Join Discord
+				</a>
+			</div>
+		</div>
+	{/if}
+
+	{#if config.analytics.exoclickEnabled}
+		<iframe
+			src="//a.magsrv.com/iframe.php?idzone=5528776&size=160x600"
+			width="160"
+			height="600"
+			scrolling="no"
+			marginwidth="0"
+			marginheight="0"
+			frameborder="0"
+		/>
+	{:else}
 		<ins
 			id="Vert"
 			class="adsbygoogle"
@@ -44,14 +72,5 @@
 			data-ad-format="auto"
 			data-full-width-responsive="true"
 		/>
-		{#if showAlternate}
-			<a href="/discord" target="_blank">
-				<img
-					src={'/assets/' + imgURL}
-					class="mx-auto h-[calc(76vh-200px)] min-h-[24rem] object-contain"
-					alt="Discord promo"
-				/>
-			</a>
-		{/if}
-	</div>
-{/if}
+	{/if}
+</div>

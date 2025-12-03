@@ -1,0 +1,19 @@
+# DATABASE_URL="postgresql://postgres:postgres@localhost:6500/postgres?schema=public"
+# Create a PostgreSQL database docker compose from the above configuration
+
+version: '3.1'
+services:
+  postgres:
+    image: postgres:13
+    container_name: kazwire-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    volumes:
+      - postgres:/var/lib/postgresql/data
+  
+volumes:
+  postgres:

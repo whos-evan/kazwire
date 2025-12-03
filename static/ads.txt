@@ -1,10 +1,8 @@
 google.com, pub-7648886706850999, DIRECT, f08c47fec0942fa0
 
-# WGPLAYER
 wgplayer.com, WGA5336138618, DIRECT
-
-#WG ADX			
-google.com, pub-4529402052683454, RESELLER, f08c47fec0942fa0	
+#WG ADX
+google.com, pub-4529402052683454, RESELLER, f08c47fec0942fa0
 
 # WGSOVRN
 sovrn.com, 267609, DIRECT, fafdf38b16bf6b2b
@@ -62,7 +60,7 @@ mobilefuse.com, 2281, RESELLER, 71e88b065d69c021
 movve.com, 4350252, RESELLER
 openx.com, 540421297, RESELLER, 6a698e2ec38604c6
 openx.com, 537152826, RESELLER, 6a698e2ec38604c6
-pokkt.com, 5886, RESELLER, c45702d9311e25fd 
+pokkt.com, 5886, RESELLER, c45702d9311e25fd
 pubmatic.com, 156177, RESELLER, 5d62403b186f2ace
 pubmatic.com, 156424, RESELLER, 5d62403b186f2ace
 pubmatic.com, 156425, RESELLER, 5d62403b186f2ace
@@ -109,44 +107,3 @@ smartadserver.com, 4012, DIRECT
 smartadserver.com, 4071, DIRECT
 smartadserver.com, 4073, DIRECT
 smartadserver.com, 4074, DIRECT
-
-# WGSharethrough
-sharethrough.com, 3k2BIUSG, DIRECT, d53b998a7bd4ecd2
-pubmatic.com, 156557, RESELLER
-rubiconproject.com, 18694, RESELLER, 0bfd66d529a55807
-openx.com, 540274407, RESELLER, 6a698e2ec38604c6
-33across.com, 0013300001kQj2HAAS, RESELLER, bbea06d9c4d2853c
-smaato.com, 1100047713, RESELLER, 07bcf65f187117b4
-yahoo.com, 59531, RESELLER, e1a5b5b6e3255540
-smartadserver.com, 4342, RESELLER
-smartadserver.com, 4012, RESELLER
-
-#WGMagnite
-rubiconproject.com, 25290, DIRECT, 0bfd66d529a55807
-rubiconproject.com, 25292, DIRECT, 0bfd66d529a55807
-
-# WGUnruly
-video.unrulymedia.com, 3076876877307789483, RESELLER
-advertising.com, 23089, RESELLER 
-advertising.com, 28605, RESELLER
-aniview.com, 603f65a2e291680ef30af9c7, RESELLER, 78b21b97965ec3f8
-appnexus.com, 12637, RESELLER, f5ab79cb980f11d1
-appnexus.com, 9382, RESELLER, f5ab79cb980f11d1
-appnexus.com, 6849, RESELLER
-google.com, pub-6346866704322274, RESELLER, f08c47fec0942fa0
-google.com, pub-3565385483761681, RESELLER, f08c47fec0942fa0
-google.com, pub-5717092533913515, RESELLER, f08c47fec0942fa0
-indexexchange.com, 182257, RESELLER
-pubmatic.com, 159277, RESELLER,
-pubmatic.com, 161335, RESELLER, 5d62403b186f2ace
-pubmatic.com, 160993, RESELLER, 5d62403b186f2ace
-pubmatic.com, 161058, RESELLER, 5d62403b186f2ace
-rubiconproject.com, 13918, RESELLER, 0bfd66d529a55807
-rubiconproject.com, 15268, RESELLER
-synacor.com, 82171, RESELLER, e108f11b2cdf7d5b
-yahoo.com, 59244, RESELLER
-loopme.com, 9718, RESELLER, 6c8d5f95897a5a3b
-
-
-# WGPubmatic
-pubmatic.com, 163164, RESELLER, 5d62403b186f2ace

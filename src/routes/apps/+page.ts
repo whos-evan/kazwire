@@ -1,18 +1,17 @@
-import { PUBLIC_API_BASE_URL } from '$env/static/public';
-import type { App } from '@prisma/client';
 import type { PageLoad } from './$types';
+import type { App } from '@prisma/client';
+import { PUBLIC_API_BASE_URL } from '$env/static/public';
 
-export const load = (async ({ url, fetch }) => {
-	let searchQuery: string = url.searchParams.get('search') || '';
-	// Get the games from the api
-	const response: Response = await fetch(
-		PUBLIC_API_BASE_URL + '/api/apps' + '?search=' + searchQuery
+// TODO: ALLOW PRERENDERING
+export const prerender = false;
+
+export const load = (async ({ fetch, url }) => {
+	const searchParam = url.searchParams.get('search') || '';
+
+	const response = await fetch(
+		PUBLIC_API_BASE_URL + '/api/apps' + (searchParam ? '?search=' + searchParam : '')
 	);
-
 	const apps: App[] = await response.json();
 
-	return {
-		// Return the game
-		apps: apps
-	};
+	return { apps, searchParam };
 }) satisfies PageLoad;

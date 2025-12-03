@@ -1,8 +1,0 @@
-<figure>
-    <img src="images/help/slide_tackle.png">
-    <figcaption>
-        <p>Press <span class="key auto-wide auto-update" data-action="slide">D</span></p>
-    </figcaption>
-</figure>
-<p>Press <span class="key auto-wide auto-update" data-action="slide">D</span> to slide tackle in the direction youâ€™re moving. It is a very powerful defensive maneuver, but requires a lot of precision, especially when trying to hit a moving opponent. Yes, targeting opponents instead of the ball is a very perfidious and surprising tactic. For example try to predict when your opponent will pass the ball next, and knock down the pass receiver before the ball reaches him. Players receiving lob passes are more vulnerable, as they are in many cases standing still and waiting for the ball.</p>
-<p>The slide tackle can be used also to â€œrunâ€ faster (without the ball), to score goals by going through the goalkeeper or to cancel precise shots.</p>

@@ -1,21 +1,33 @@
-import { PUBLIC_API_BASE_URL } from '$env/static/public';
-import type { Game } from '@prisma/client';
 import type { PageLoad } from './$types';
+import type { Game } from '@prisma/client';
+import { PUBLIC_API_BASE_URL } from '$env/static/public';
 
-export const load = (async ({ url, fetch }) => {
-	let searchQuery: string = url.searchParams.get('search') || '';
-	let tagQuery: string = url.searchParams.get('tag') || '';
+// TODO: ALLOW PRERENDERING
+export const prerender = false;
 
-	// Get the games from the api
-	const response: Response = await fetch(PUBLIC_API_BASE_URL + '/api/games' + '?search=' + searchQuery + '&tag=' + tagQuery);
+export const load = (async ({ fetch, url }) => {
+	const searchParam = url.searchParams.get('search') || '';
+	const tagParam = url.searchParams.get('tag') || '';
 
-	let games: Game[] = await response.json();
+	const response = await fetch(
+		PUBLIC_API_BASE_URL +
+			'/api/games' +
+			(searchParam ? '?search=' + searchParam : '') +
+			(tagParam ? '?tag=' + tagParam : '')
+	);
+	const games: Game[] = await response.json();
 
-	// Remove all games completely if they have a an errorMessage that isn't null
-	games = games.filter((game) => !game.errorMessage);
+	// go through every game to find all tags
+	const allGames = await fetch(PUBLIC_API_BASE_URL + '/api/games');
+	const allGamesJson: Game[] = await allGames.json();
+	let tags: string[] = [];
+	for (let i = 0; i < allGamesJson.length; i++) {
+		for (let j = 0; j < allGamesJson[i].tags.length; j++) {
+			if (!tags.includes(allGamesJson[i].tags[j])) {
+				tags.push(allGamesJson[i].tags[j]);
+			}
+		}
+	}
 
-	return {
-        // Return the game
-        games: games,
-    };
+	return { games, tags, searchParam, tagParam };
 }) satisfies PageLoad;

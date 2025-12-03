@@ -1,6 +1,12 @@
-FROM node:18-alpine AS builder
+FROM node:18-alpine3.16 AS builder
 WORKDIR /app
 COPY package*.json .
+
+RUN set -ex; \
+    apk update; \
+    apk add --no-cache \
+    openssl
+
 RUN npm ci
 COPY . .
 RUN npx prisma generate
@@ -8,7 +14,7 @@ ENV PUBLIC_API_BASE_URL=
 RUN npm run build
 RUN npm prune --production
 
-FROM node:18-alpine
+FROM node:18-alpine3.16
 WORKDIR /app
 COPY --from=builder /app/build build/
 COPY --from=builder /app/node_modules node_modules/

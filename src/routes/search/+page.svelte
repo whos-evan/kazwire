@@ -1,13 +1,15 @@
-<script lang="ts" context="module">
-	declare var __uv$config: any;
-</script>
-
 <script lang="ts">
 	import Icon from '@iconify/svelte';
 	import { onMount } from 'svelte';
 
 	let searchQuery: string = '';
 	let contentTitle: string = 'Nothing yet...';
+	let scramjetReady: boolean = false;
+
+	import { config } from '$lib/config';
+	import Vert from '$lib/components/Google/Vert.svelte';
+	import Vert2 from '$lib/components/Google/Vert2.svelte';
+	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 
 	function search(input: string) {
 		let template: string = 'https://www.google.com/search?q=%s&hl=en';
@@ -36,22 +38,25 @@
 		return template.replace('%s', encodeURIComponent(input));
 	}
 
-	function registerServiceWorker() {
-		// Register the service worker
-		navigator.serviceWorker.register('/uv.js', { scope: __uv$config.prefix }).then((reg) => {
-			if (reg.installing) {
-				const sw = reg.installing || reg.waiting;
-				sw.onstatechange = function () {
-					if (sw.state === 'installed') {
-						window.location.reload();
-					}
-				};
-			}
-		});
-	}
-
 	onMount(async () => {
-		registerServiceWorker();
+		// scroll 104 pixels down 3 second after the page loads
+		// if and only if the user has not scrolled down
+		setTimeout(() => {
+			if (window.scrollY === 0) {
+				window.scrollTo({
+					top: 104,
+					behavior: 'smooth'
+				});
+			}
+		}, 3000);
+
+		// get the search query from the url
+		const urlParams = new URLSearchParams(window.location.search);
+		const query = urlParams.get('q');
+		if (query) {
+			searchQuery = query;
+			await iframeSearch();
+		}
 	});
 
 	async function iframeSearch() {
@@ -59,7 +64,8 @@
 		let iframe: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 
 		// Set the iframe source to the search query
-		iframe.src = __uv$config.prefix + __uv$config.encodeUrl(search(searchQuery));
+		const searchUrl = search(searchQuery);
+		iframe.src = scramjet.encodeUrl(searchUrl);
 	}
 
 	// Fullscreen the iframe
@@ -68,9 +74,9 @@
 		iframe.requestFullscreen();
 	}
 
-	// Expand the iframe to fill the screen
 	let expanded: boolean = false;
-	function expandiFrame() {
+	// Expand the iframe to fill the screen
+	function expandiFrame(): void {
 		const document: Document = window.document;
 		const frame: HTMLIFrameElement = document.getElementById('iframe') as HTMLIFrameElement;
 
@@ -83,7 +89,7 @@
 		frame.style.right = '0px';
 		frame.style.height = '100%';
 		frame.style.width = '100%';
-		frame.style.zIndex = '9999';
+		frame.style.zIndex = '500';
 		frame.style.border = 'none';
 
 		frame.classList.toggle('rounded-t-lg');
@@ -132,98 +138,47 @@
 		contentTitle = iframe.contentDocument?.title || 'Nothing yet...';
 	}
 
-	function moveShrinkButton(e: MouseEvent) {
-		// Wait 2 seconds before moving the button
-		console.log(e);
-		setTimeout(() => {
-			// grab the current cursor position
-
-			// Check if the button is still being hovered over by grabbing the event x, y and comparing it to the current x, y
-			if (e.x == mousePos.x && e.y == mousePos.y) {
-				// Move the button to the bottom right
-				const button: HTMLButtonElement = document.getElementById(
-					'shrinkButton'
-				) as HTMLButtonElement;
-				button.classList.remove('m-4');
-				button.classList.add('ml-16');
-				button.classList.add('mt-4');
-
-				// Return it to the top left after 4 seconds
-				setTimeout(() => {
-					button.classList.remove('ml-16');
-					button.classList.remove('mt-4');
-					button.classList.add('m-4');
-				}, 4000);
-			}
-		}, 2000);
-	}
-
-	import Vert from '$lib/components/Google/Vert.svelte';
-	import Horz from '$lib/components/Google/Horz.svelte';
-	import Leaderboard from '$lib/components/Google/Leaderboard.svelte';
 	let innerWidth: number = 0;
-
-	let mousePos: { x: number; y: number } = { x: 0, y: 0 };
 </script>
 
-<svelte:window bind:innerWidth on:mousemove={(e) => (mousePos = { x: e.clientX, y: e.clientY })} />
+<svelte:window bind:innerWidth />
 
 <svelte:head>
-	<title>Kazwire - Search Freely</title>
-	<meta name="description" content="Search freely with Kazwire!" />
-	<meta property="og:description" content="Search freely with Kazwire!" />
-	<script src="/uv/uv.bundle.js" async={false}></script>
-	<script src="/uv/uv.config.js" async={false}></script>
-	<script src="/uv.js" async={false}></script>
+	<title>{config.branding.name} - Search Freely</title>
+	<meta property="og:title" content="{config.branding.name} - Search Freely" />
+	<meta name="description" content="Search freely with {config.branding.name}!" />
+	<meta property="og:description" content="Search freely with {config.branding.name}!" />
 </svelte:head>
 
 <!-- Search bar -->
 <div class="mb-6 flex justify-center">
 	<form
-		class="flex flex w-full max-w-[24rem] flex-col justify-center rounded-lg bg-none space-y-2 md:space-y-0 md:bg-white md:flex-row"
-		on:submit|preventDefault={() => iframeSearch()}
+		class="flex flex-col justify-center space-x-0 space-y-2 md:flex-row md:space-x-2 md:space-y-0"
 	>
-		<!-- Combined box with the search button on the right -->
-		<!-- <input
-			class="focus:shadow-outline h-10 rounded-lg border px-3 text-base placeholder-gray-600"
-			type="text"
-			placeholder="Search for your favorites..."
-			bind:value={searchQuery}
-		/>
-		<button class="btn" type="submit"> Search </button> -->
-		<img src="/logo.png" alt="Logo" class="my-auto ml-4 hidden h-6 w-6 md:block" />
 		<input
-			class="h-12 w-full rounded-lg px-3 text-base placeholder-gray-600 focus:outline-none md:rounded-r-none"
+			class="input input-bordered w-full max-w-xs"
 			type="text"
 			placeholder="Search for your favorites..."
 			bind:value={searchQuery}
 		/>
-		<button class="btn rounded-lg md:rounded-l-none" type="submit" on:click={() => iframeSearch()}>
-			<Icon class="mx-auto h-6 w-6" icon="ic:baseline-search" />
+		<button class="btn btn-primary" type="submit" on:click={async () => await iframeSearch()}>
+			Search
 		</button>
 	</form>
 </div>
 
 {#if expanded}
 	<!-- Button to shrink the iframe -->
-	<!-- if the user hovers over the button for two seconds move it so that they can access stuff below it send the event every 0.1 seconds -->
 	<button
-		id="shrinkButton"
-		class="absolute left-0 top-0 z-[10000] m-4 rounded-full bg-secondary p-2 opacity-40"
+		class="absolute left-0 top-0 z-[5000] m-4 rounded-full bg-secondary p-2 opacity-40"
 		on:click={() => shrinkiFrame()}
-		on:mouseover={(e) => moveShrinkButton(e)}
 	>
-		<Icon class="h-6 w-6 text-white" icon="ic:round-compress" />
+		<Icon class="h-6 w-6 text-secondary-content" icon="ic:round-compress" />
 	</button>
 {/if}
 
 <div class="relative flex flex-row justify-center">
-	<div
-		class="float-left flex h-[calc(80vh-132px)] pb-5 sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full"
-	>
-		{#if innerWidth > 1300}
-			<Vert />
-		{/if}
+	<div class="float-left flex h-[calc(94vh-132px)] sm:w-full md:w-[820px] lg:w-[1000px] xl:w-full">
 		<div class="align-center mb-14 flex-grow">
 			<div id="frame" class="h-full w-full rounded-t-lg bg-white">
 				<iframe
@@ -234,19 +189,17 @@
 				/>
 			</div>
 
-			<div
-				class="relative mt-2 w-full items-center rounded-b-lg bg-tertiary text-black dark:bg-tertiaryDark dark:text-white"
-			>
+			<div class="relative mt-2 w-full items-center rounded-b-lg bg-base-300 text-base-content">
 				<div class="float-right mr-5">
 					<button class="mt-4 fill-white" on:click={() => fullScreen()}>
 						<!-- Full screen -->
-						<Icon class="h-6 w-6" icon="ic:baseline-fullscreen" />
+						<Icon class="h-6 w-6" icon="material-symbols:expand-rounded" />
 					</button>
 				</div>
 				<div class="float-right mr-5">
 					<button class="mt-4" on:click={() => expandiFrame()}>
 						<!-- Fill screen -->
-						<Icon class="h-6 w-6" icon="ic:round-expand" />
+						<Icon class="h-6 w-6" icon="material-symbols:fullscreen-rounded" />
 					</button>
 				</div>
 				<div class="float-right mr-5">
@@ -265,14 +218,12 @@
 				</div>
 			</div>
 		</div>
+		{#if innerWidth > 1224}
+			<Vert />
+		{/if}
 	</div>
-	{#if innerWidth > 824}
-		<Vert />
-	{/if}
 </div>
 
-{#if innerWidth > 730}
+{#if innerWidth >= 728}
 	<Leaderboard />
-{:else}
-	<Horz />
 {/if}

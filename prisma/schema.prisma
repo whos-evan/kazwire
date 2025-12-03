@@ -27,6 +27,7 @@ model Game {
   emulatorCore String?
 
   views Int @default(0)
+  loves Int @default(0)
 }
 
 model App {
@@ -38,4 +39,43 @@ model App {
   embedURL    String
 
   views Int @default(0)
+  loves Int @default(0)
+}
+
+model User {
+  id             String  @id @unique
+  email          String  @unique
+  email_verified Boolean @default(false)
+  display_name   String
+  role           String  @default("user")
+
+  // custom fields
+  loved_games  String[] @default([])
+  played_games String[] @default([])
+
+  loved_apps  String[] @default([])
+  played_apps String[] @default([])
+
+  // auth
+  auth_session Session[]
+  auth_key     Key[]
+}
+
+model Session {
+  id             String @id @unique
+  user_id        String
+  active_expires BigInt
+  idle_expires   BigInt
+  user           User   @relation(references: [id], fields: [user_id], onDelete: Cascade)
+
+  @@index([user_id])
+}
+
+model Key {
+  id              String  @id @unique
+  hashed_password String?
+  user_id         String
+  user            User    @relation(references: [id], fields: [user_id], onDelete: Cascade)
+
+  @@index([user_id])
 }

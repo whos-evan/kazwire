@@ -1,3 +1,0 @@
-<div class="menu intro {{ classes }}" id="{{ id }}">
-
-</div>

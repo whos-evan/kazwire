@@ -1,65 +1,59 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
-	import type { Game } from '@prisma/client';
-	import { PUBLIC_API_BASE_URL } from '$env/static/public';
-
-	// Fetch all the games
-	let games: Game[] = [];
-	onMount(async () => {
-		const res = await fetch(PUBLIC_API_BASE_URL + '/api/games');
-		games = await res.json();
-	});
-
-	function updateGame() {
-		// POST /api/admin/edit/game
-		fetch(PUBLIC_API_BASE_URL + '/api/admin/edit/game', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-			},
-			body: JSON.stringify(selectedGame)
-		})
-			.then((res) => {
-				if (res.status === 200) {
-					alert('Successfully updated game!');
-				} else {
-					alert('Failed to update game!');
-				}
-			})
-			.catch((err) => {
-				alert('Failed to update game!');
-			});
-	}
-
-	let selectedGame: Game | null = null;
+	import type { PageData } from './$types';
+	export let data: PageData;
 </script>
 
-<div class="rounded-3xl bg-tertiary p-8 text-black dark:bg-tertiaryDark dark:text-white">
-	<h1 class="text-left text-4xl font-bold">Admin Panel</h1>
-	<div class="mt-2 text-xl">
-		<p>
-			Looks like someone got access to the fake password lol. Here's the admin panel. You can edit
-			games as needed, but please be careful. If you are unsure of what you are doing, please ask
-			for help.
-		</p>
+<article class="prose lg:prose-lg">
+	<h1>Admin Page</h1>
+	<p>This is an admin page.</p>
+
+	<a href="/admin/users">
+		<h2>Users:</h2>
+	</a>
+
+	<div class="stats shadow">
+		<div class="stat">
+			<div class="stat-title">Total Users</div>
+			<div class="stat-value">{data.userCount}</div>
+		</div>
 	</div>
 
-	<div class="mt-10 grid grid-cols-1 gap-10">
-		<div class="col-start-1 row-start-1">
-            <a href="/admin/games/add">
-				<button class="btn"> Add Games </button>
-			</a>
-			<a href="/admin/games/edit">
-				<button class="btn"> Edit Games </button>
-			</a>
-		</div>
-		<div class="col-start-1 row-start-2">
-            <a href="/admin/apps/add">
-				<button class="btn"> Add Apps </button>
-			</a>
-			<a href="/admin/apps/edit">
-				<button class="btn"> Edit Apps </button>
-			</a>
+	<code>
+		<pre class="max-h-[50rem]">{JSON.stringify(data.users, null, 2)}</pre>
+	</code>
+
+	<h2>Config:</h2>
+	<code>
+		<pre>{JSON.stringify(data.config, null, 2)}</pre>
+	</code>
+
+	<a href="/admin/games">
+		<h2>Game Data:</h2>
+	</a>
+
+	<div class="stats shadow">
+		<div class="stat">
+			<div class="stat-title">Total Game View Count</div>
+			<div class="stat-value">{data.gameViewCount}</div>
 		</div>
 	</div>
-</div>
+
+	<code>
+		<pre class="max-h-[50rem]">{JSON.stringify(data.games, null, 2)}</pre>
+	</code>
+
+	<a href="/admin/apps">
+		<h2>App Data:</h2>
+	</a>
+
+	<div class="stats shadow">
+		<div class="stat">
+			<div class="stat-title">Total App View Count</div>
+			<div class="stat-value">{data.appViewCount}</div>
+		</div>
+	</div>
+
+	<code>
+		<pre class="max-h-[50rem]">{JSON.stringify(data.apps, null, 2)}</pre>
+	</code>
+</article>

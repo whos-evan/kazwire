@@ -1,7 +1,0 @@
-<span id="{{ id }}" class="checkbox {% if focused %}focused{% endif %} {% if selected %}selected{% endif %}">
-    <svg width="415" height="95">
-        <path class="dark" d="M0,0l415.07168,5.303301-9.54594,85.55992-387.140963,3.889087z"/>
-    </svg>
-
-    <span class="label">{{ label }}</span>
-</span>

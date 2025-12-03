@@ -1,4 +1,0 @@
-{% extends 'container.txt' %}
-
-{% block panel_size %}large{% endblock %}
-{% block header_size %}large{% endblock %}

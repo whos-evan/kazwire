@@ -6,7 +6,7 @@ interface Opts {
 
 export async function GET({ url }: Opts): Promise<Response> {
 	// See if the user is searching for a specific game
-	const search = url.searchParams.get('search');
+	const search = url.searchParams.get('search') || '';
 
 	if (search) {
 		const app = await prisma.app.findMany({

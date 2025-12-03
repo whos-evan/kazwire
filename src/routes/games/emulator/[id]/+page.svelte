@@ -3,8 +3,9 @@
 
 	import type { PageData } from './$types';
 	export let data: PageData;
-	
+
 	import { onMount } from 'svelte';
+	import { config } from '$lib/config';
 
 	onMount(async () => {
 		// Get the game
@@ -17,8 +18,8 @@
 		// Set the varaibles
 		script2.innerHTML = `
             EJS_player = '#game';
-            EJS_gameUrl = '/game/emulated/${game.emulatorFile}'; // Url to Game rom
-            EJS_pathtodata = '/game/emulated/emulatorJS/';
+            EJS_gameUrl = '/cdn/game/emulated/${game.emulatorFile}'; // Url to Game rom
+            EJS_pathtodata = '/cdn/game/emulated/emulatorJS/';
             EJS_core = '${game.emulatorCore}';
         `;
 		// Append the script tag to the body
@@ -27,7 +28,7 @@
 		// Make a script tag
 		const script: HTMLScriptElement = document.createElement('script');
 		// Set the src to the game's loader
-		script.src = '/game/emulated/emulatorJS/loader.js';
+		script.src = '/cdn/game/emulated/emulatorJS/loader.js';
 		// Append the script tag
 		document.body.appendChild(script);
 	});
@@ -35,9 +36,15 @@
 
 {#if data.game.emulatorType == 'emulatorjs'}
 	<head>
-		<title>Kazwire - {data.game.name}</title>
-		<meta name="description" content="Play {data.game.name} for free now on Kazwire!" />
-		<meta property="og:description" content="Play {data.game.name} for free now on Kazwire!" />
+		<title>{config.branding.name} - {data.game.name}</title>
+		<meta
+			name="description"
+			content="Play {data.game.name} for free now on {config.branding.name}!"
+		/>
+		<meta
+			property="og:description"
+			content="Play {data.game.name} for free now on {config.branding.name}!"
+		/>
 	</head>
 
 	<div class="min-w-screen flex min-h-screen items-center justify-center text-center">

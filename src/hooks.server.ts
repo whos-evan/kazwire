@@ -1,31 +1,22 @@
+import { auth } from '$lib/server/lucia';
 import type { Handle } from '@sveltejs/kit';
-import { env } from '$env/dynamic/private';
-import { sequence } from '@sveltejs/kit/hooks';
-import { locale } from 'svelte-i18n';
 
-const admin: Handle = async ({ event, resolve }) => {
-	// Apply basic login for admin route
-	if (event.url.pathname.startsWith('/admin')) {
-		const adminAuth = env.ADMIN_AUTH || 'admin:admin';
+export const handle: Handle = async ({ event, resolve }) => {
+	// we can pass `event` because we used the SvelteKit middleware
+	event.locals.auth = auth.handleRequest(event);
 
-		const basicAuth = event.request.headers.get('Authorization');
-		if (basicAuth !== `Basic ${btoa(adminAuth)}`) {
-			return new Response('Not authorized', {
-				status: 401,
-				headers: {
-					'WWW-Authenticate': 'Basic realm="User Visible Realm", charset="UTF-8"'
-				}
-			});
+	if (event.url.pathname.startsWith('/api/admin') || event.url.pathname.startsWith('/admin')) {
+		const session = await event.locals.auth.validate();
+		if (!session) {
+			return new Response('Unauthorized');
+		}
+		if (session.user.role !== 'admin') {
+			return new Response('Unauthorized');
 		}
 	}
 
-	const response = await resolve(event);
-	return response;
-};
-
-export const api: Handle = async ({ resolve, event }) => {
 	// Apply CORS header for API routes
-	if (event.url.pathname.startsWith('/api')) {
+	if (event.url.pathname.startsWith('/api/games') || event.url.pathname.startsWith('/api/apps')) {
 		// Required for CORS to work
 		if (event.request.method === 'OPTIONS') {
 			return new Response(null, {
@@ -38,34 +29,11 @@ export const api: Handle = async ({ resolve, event }) => {
 		}
 	}
 
-	if (event.url.pathname.startsWith('/api/admin')) {
-		const adminAuth = env.ADMIN_AUTH || 'admin:admin';
+	// Service-Worker-Allowed HTTP header for service workers
+	await event.setHeaders({
+		'Service-Worker-Allowed': '/'
+	});
 
-		const basicAuth = event.request.headers.get('Authorization');
-		if (basicAuth !== `Basic ${btoa(adminAuth)}`) {
-			return new Response('Not authorized', {
-				status: 401,
-				headers: {
-					'WWW-Authenticate': 'Basic realm="User Visible Realm", charset="UTF-8"'
-				}
-			});
-		}
-	}
 
-	const response = await resolve(event);
-	if (event.url.pathname.startsWith('/api')) {
-		response.headers.append('Access-Control-Allow-Origin', `*`);
-	}
-	return response;
+	return await resolve(event);
 };
-
-export const locales: Handle = async ({ resolve, event }) => {
-	const lang = event.request.headers.get('accept-language')?.split(',')[0];
-	if (lang) {
-		locale.set(lang);
-	}
-	const response = await resolve(event);
-	return response;
-};
-
-export const handle: Handle = sequence(admin, api, locales);

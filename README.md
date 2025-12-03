@@ -7,17 +7,3 @@ Kazwire allows you to play your favorite games whenever, wherever you need while
 
 ## Support
 For support the fastest way to contact us is through Discord. Join our Discord server at https://discord.gg/Ve7JBjpYJg.
-
-## Installation
-Check out our [wiki](https://github.com/whos-evan/kazwire/wiki) for information about self-hosting!
-
-## Development
-Check out our [wiki](https://github.com/whos-evan/kazwire/wiki) for development instructions and help.
-
-## Screenshots!
-![brave_ssPQIyRguI](https://user-images.githubusercontent.com/72959444/212424732-bd5f40bf-0f2e-4bb7-ab52-2f5834f49a0a.png)
-![brave_GoBRyQUQkr](https://user-images.githubusercontent.com/72959444/212424742-c86a73e0-be9c-4d70-b9ae-47f68adeb736.png)
-![brave_QshtoKtUd1](https://user-images.githubusercontent.com/72959444/212424747-7056dc96-0e39-49a8-ae2d-29d74fdcf8db.png)
-
-## Credit:
-- [Interstellar](https://github.com/InterstellarNetwork/Interstellar) for their modified UV.

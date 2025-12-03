@@ -10,7 +10,7 @@ export async function GET({ url }: Opts): Promise<Response> {
 		orderBy: {
 			name: 'asc'
 		},
-		skip: Math.floor(Math.random() * await prisma.game.count())
+		skip: Math.floor(Math.random() * (await prisma.game.count()))
 	});
 
 	// Return the game as JSON

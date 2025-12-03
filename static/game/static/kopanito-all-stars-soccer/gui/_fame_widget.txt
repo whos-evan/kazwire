@@ -1,7 +1,0 @@
-<div class="fame-widget scalable">
-    <p>
-        <img src="images/logo.png" class="logo">
-        <img src="images/interface/fame.png">
-        <i class="value pink"></i>
-    </p>
-</div>
