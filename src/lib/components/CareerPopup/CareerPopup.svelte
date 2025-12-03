@@ -68,7 +68,7 @@
 				<h3 class="mb-2 text-xl font-bold">Earn Money with {config.branding.name}!</h3>
 				
 				<p class="mb-4 text-sm text-base-content/70">
-					Join our affiliate marketing program and earn a guaranteed minimum of <strong>$50</strong> for promoting our platform on social media.
+					Make TikToks for us for a guaranteed minimum <strong>$50</strong> a month.
 				</p>
 
 				<div class="flex flex-col gap-2 sm:flex-row">
