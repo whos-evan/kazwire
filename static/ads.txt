@@ -107,3 +107,5 @@ smartadserver.com, 4012, DIRECT
 smartadserver.com, 4071, DIRECT
 smartadserver.com, 4073, DIRECT
 smartadserver.com, 4074, DIRECT
+
+sharethrough.com, 4399, RESELLER, d53b998a7bd4ecd2
