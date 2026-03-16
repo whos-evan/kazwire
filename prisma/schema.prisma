@@ -29,6 +29,15 @@ model Game {
   views Int @default(0)
 }
 
+model Community {
+  id   String @id @unique @default(uuid())
+  name String
+
+  description String
+
+  embedURL String
+}
+
 model App {
   id          String @id @unique
   name        String
